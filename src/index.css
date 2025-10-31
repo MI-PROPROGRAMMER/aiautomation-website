@@ -13,10 +13,16 @@ All colors MUST be HSL.
     --primary: 210 100% 14%;
     --primary-foreground: 0 0% 100%;
     --primary-dark: 210 100% 10%;
-
+    
     /* Background is Primary - #002347 */
     --background: 210 100% 14%;
     --foreground: 0 0% 100%;
+    
+    /* Alternate section background - slightly darker */
+    --section-alt: 210 100% 12%;
+    
+    /* Footer - darker consistent blue */
+    --footer-bg: 210 100% 10%;
 
     /* Secondary is White - #FFFFFF */
     --secondary: 0 0% 100%;
@@ -30,10 +36,7 @@ All colors MUST be HSL.
     /* Neutrals - Light Gray #F2F2F2 */
     --muted: 0 0% 95%;
     --muted-foreground: 0 0% 70%;
-
-    /* Alternate section background - Light Gray #F2F2F2 */
-    --section-alt: 0 0% 95%;
-
+    
     /* Cards & Surfaces - Glass morphism on dark */
     --card: 210 100% 14% / 0.6;
     --card-foreground: 0 0% 100%;

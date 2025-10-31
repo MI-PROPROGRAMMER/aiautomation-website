@@ -40,14 +40,14 @@ export const FAQSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#F2F2F2]">
+    <section className="py-24 bg-[hsl(var(--section-alt))]">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
             Frequently Asked <span className="text-gradient">Questions</span>
           </h2>
-          <p className="text-xl text-primary/80">
+          <p className="text-xl text-primary-foreground/80">
             Everything you need to know about automation services
           </p>
         </div>
@@ -61,10 +61,10 @@ export const FAQSection = () => {
                 value={`item-${index}`}
                 className="glass-card-light rounded-2xl px-8 border-0"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold text-primary hover:no-underline py-6">
+                <AccordionTrigger className="text-left text-lg font-semibold text-primary-foreground hover:no-underline py-6">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-primary/80 leading-relaxed pb-6">
+                <AccordionContent className="text-primary-foreground/80 leading-relaxed pb-6">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
