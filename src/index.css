@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Brand Colors - AI Automation Agency */
+    /* Dark Blue Primary - #002347 */
+    --primary: 210 100% 14%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 210 100% 10%;
+
+    /* Background is Primary - #002347 */
+    --background: 210 100% 14%;
+    --foreground: 0 0% 100%;
+
+    /* Secondary is White - #FFFFFF */
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 210 100% 14%;
+
+    /* Cyan Accent - #00B5E2 */
+    --accent: 192 100% 44%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 192 100% 60%;
+
+    /* Neutrals - Light Gray #F2F2F2 */
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 70%;
+
+    /* Alternate section background - Light Gray #F2F2F2 */
+    --section-alt: 0 0% 95%;
+
+    /* Cards & Surfaces - Glass morphism on dark */
+    --card: 210 100% 14% / 0.6;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 210 100% 14%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Glass Morphism */
+    --glass-bg: 0 0% 100% / 0.08;
+    --glass-border: 0 0% 100% / 0.18;
+
+    /* Borders & Inputs */
+    --border: 0 0% 100% / 0.2;
+    --input: 0 0% 100% / 0.1;
+    --ring: 192 100% 44%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --radius: 0.75rem;
+    /* 12px - rounded corners */
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 14%) 0%, hsl(192 100% 44%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(210 100% 14%) 0%, hsl(210 100% 8%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(192 100% 44%) 0%, hsl(192 100% 60%) 100%);
+
+    /* Shadows */
+    --shadow-glow: 0 8px 32px hsl(192 100% 44% / 0.25);
+    --shadow-card: 0 4px 12px hsl(210 100% 14% / 0.08);
+    --shadow-elevated: 0 12px 40px hsl(210 100% 14% / 0.12);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-primary text-primary-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Typography - Inter/Poppins */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+  }
+
+  body,
+  p,
+  span,
+  div {
+    font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+
+  /* Glass Morphism */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .glass-card-light {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  /* Gradients */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(210 100% 14%) 0%, hsl(192 100% 44%) 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(180deg, hsl(210 100% 14%) 0%, hsl(210 100% 8%) 100%);
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, hsl(192 100% 44%) 0%, hsl(192 100% 60%) 100%);
+  }
+
+  /* Text Gradients */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(192 100% 44%) 0%, hsl(192 100% 60%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hover Lift */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Glow Effect */
+  .glow-accent {
+    box-shadow: 0 8px 32px hsl(192 100% 44% / 0.25);
+  }
+
+  .glow-accent:hover {
+    box-shadow: 0 12px 40px hsl(192 100% 44% / 0.35);
+  }
+}
