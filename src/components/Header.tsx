@@ -22,14 +22,17 @@ export const Header = () => {
             <a href="/services" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
               Services
             </a>
-            <a href="#process" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
-              Process
+            <a href="/about" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+              About Us
             </a>
             <a href="#case-studies" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
               Case Studies
             </a>
-            <a href="#contact" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
-              Contact
+            <a href="#process" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+              Process
+            </a>
+            <a href="/contact" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+              Contact Us
             </a>
           </nav>
 
@@ -67,6 +70,13 @@ export const Header = () => {
               Services
             </a>
             <a
+              href="/about"
+              className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About
+            </a>
+            <a
               href="#process"
               className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(false)}
@@ -81,7 +91,7 @@ export const Header = () => {
               Case Studies
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
