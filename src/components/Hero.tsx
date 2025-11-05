@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, Users, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-automation.jpg";
+import { CALENDLY_LINK } from "@/config/constants";
 
 export const Hero = () => {
   return (
@@ -33,9 +34,11 @@ export const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 animate-scale-in">
-            <Button size="lg" className="gradient-accent hover-lift glow-accent text-lg px-8 py-6">
-              Book a Free Automation Audit
-              <ArrowRight className="ml-2" size={20} />
+            <Button size="lg" className="gradient-accent hover-lift glow-accent text-lg px-8 py-6" asChild>
+              <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
+                Book a Free Automation Audit
+                <ArrowRight className="ml-2" size={20} />
+              </a>
             </Button>
             <Button
               size="lg"

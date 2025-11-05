@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { CALENDLY_LINK } from "@/config/constants";
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -38,8 +39,10 @@ export const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="gradient-accent hover-lift glow-accent">
-              Get Free Audit
+            <Button className="gradient-accent hover-lift glow-accent" asChild>
+              <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
+                Get Free Audit
+              </a>
             </Button>
           </div>
 
@@ -97,7 +100,11 @@ export const Header = () => {
             >
               Contact
             </a>
-            <Button className="w-full gradient-accent">Get Free Audit</Button>
+            <Button className="w-full gradient-accent" asChild>
+              <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
+                Get Free Audit
+              </a>
+            </Button>
           </div>
         )}
       </div>

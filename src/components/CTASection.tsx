@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { CALENDLY_LINK } from "@/config/constants";
 
 export const CTASection = () => {
   return (
@@ -25,9 +26,11 @@ export const CTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-            <Button size="lg" className="gradient-accent hover-lift glow-accent text-lg px-10 py-6">
-              Book Your Free Audit
-              <ArrowRight className="ml-2" size={20} />
+            <Button size="lg" className="gradient-accent hover-lift glow-accent text-lg px-10 py-6" asChild>
+              <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
+                Book Your Free Audit
+                <ArrowRight className="ml-2" size={20} />
+              </a>
             </Button>
           </div>
 
