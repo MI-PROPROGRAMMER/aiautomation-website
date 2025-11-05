@@ -316,7 +316,7 @@ const Contact = () => {
                             href="tel:+15551234567"
                             className="text-accent hover:underline text-primary-foreground/80"
                           >
-                            +1 (555) 123-4567
+                            +92 331 5183565
                           </a>
                         </div>
                       </div>
@@ -329,8 +329,8 @@ const Contact = () => {
                         </div>
                         <div>
                           <h3 className="font-semibold text-primary-foreground mb-1">Business Hours</h3>
-                          <p className="text-primary-foreground/80">Monday - Friday: 9:00 AM - 6:00 PM EST</p>
-                          <p className="text-primary-foreground/80">Weekend: By appointment</p>
+                          <p className="text-primary-foreground/80">Monday - Friday: 9:00 AM - 11:00 PM PKT</p>
+                          <p className="text-primary-foreground/80">Weekend: By appointment, Invite only</p>
                         </div>
                       </div>
                     </div>
