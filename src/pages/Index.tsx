@@ -18,7 +18,7 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>ApexifyLabs - AI Automation Agency | Reclaim Your Time</title>
+        <title>ApexifyLabs - Analyze. Automate. Apexify. | Reclaim Your Time</title>
         <meta
           name="description"
           content="Transform your business with custom AI automation. We help teams eliminate repetitive tasks and focus on strategic work. Book your free automation audit today."

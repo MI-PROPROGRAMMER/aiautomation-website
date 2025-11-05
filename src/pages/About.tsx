@@ -9,7 +9,7 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Us - ApexifyLabs | AI Automation Agency</title>
+        <title>About Us - ApexifyLabs | Analyze. Automate. Apexify.</title>
         <meta
           name="description"
           content="Learn about ApexifyLabs's journey from scripters to strategic partners, helping 50+ global clients reclaim their time through intelligent automation."
