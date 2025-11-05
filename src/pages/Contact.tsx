@@ -6,9 +6,126 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { ArrowRight, Mail, Phone, MapPin, Clock, Send } from "lucide-react";
-import { CALENDLY_LINK } from "@/config/constants";
+import { CALENDLY_LINK, EMAILJS_CONFIG } from "@/config/constants";
+import { useState, FormEvent } from "react";
+import emailjs from "@emailjs/browser";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Validation
+    if (!formData.firstName.trim() || !formData.lastName.trim()) {
+      toast({
+        title: "Validation Error",
+        description: "Please fill in your first and last name.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!formData.email.trim() || !formData.email.includes("@")) {
+      toast({
+        title: "Validation Error",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!formData.message.trim()) {
+      toast({
+        title: "Validation Error",
+        description: "Please enter your message.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Check if EmailJS is configured
+    if (
+      EMAILJS_CONFIG.SERVICE_ID === "YOUR_SERVICE_ID" ||
+      EMAILJS_CONFIG.TEMPLATE_ID === "YOUR_TEMPLATE_ID" ||
+      EMAILJS_CONFIG.PUBLIC_KEY === "YOUR_PUBLIC_KEY"
+    ) {
+      toast({
+        title: "Configuration Required",
+        description:
+          "EmailJS is not configured yet. Please set up your EmailJS credentials in src/config/constants.ts",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Initialize EmailJS
+      emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+
+      // Prepare template parameters
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        company: formData.company || "Not provided",
+        message: formData.message,
+        to_email: EMAILJS_CONFIG.RECIPIENT_EMAIL,
+      };
+
+      // Send email
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams
+      );
+
+      // Success feedback
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for contacting us. We'll get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        company: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast({
+        title: "Error Sending Message",
+        description:
+          "There was an error sending your message. Please try again or contact us directly at mi.tech0786@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <>
       <Helmet>
@@ -62,39 +179,51 @@ const Contact = () => {
                 {/* Left: Contact Form */}
                 <div className="glass-card p-8 rounded-xl">
                   <h2 className="text-3xl font-bold text-primary-foreground mb-6">Send us a message</h2>
-                  <form className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="firstName" className="text-primary-foreground">
-                          First Name
+                          First Name *
                         </Label>
                         <Input
                           id="firstName"
                           type="text"
                           placeholder="John"
+                          value={formData.firstName}
+                          onChange={handleInputChange}
+                          required
+                          disabled={isSubmitting}
                           className="bg-white/5 border-white/20 text-primary-foreground placeholder:text-primary-foreground/50"
                         />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="lastName" className="text-primary-foreground">
-                          Last Name
+                          Last Name *
                         </Label>
                         <Input
                           id="lastName"
                           type="text"
                           placeholder="Doe"
+                          value={formData.lastName}
+                          onChange={handleInputChange}
+                          required
+                          disabled={isSubmitting}
                           className="bg-white/5 border-white/20 text-primary-foreground placeholder:text-primary-foreground/50"
                         />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email" className="text-primary-foreground">
-                        Email
+                        Email *
                       </Label>
                       <Input
                         id="email"
                         type="email"
                         placeholder="john@example.com"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        disabled={isSubmitting}
                         className="bg-white/5 border-white/20 text-primary-foreground placeholder:text-primary-foreground/50"
                       />
                     </div>
@@ -106,23 +235,43 @@ const Contact = () => {
                         id="company"
                         type="text"
                         placeholder="Your Company"
+                        value={formData.company}
+                        onChange={handleInputChange}
+                        disabled={isSubmitting}
                         className="bg-white/5 border-white/20 text-primary-foreground placeholder:text-primary-foreground/50"
                       />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="message" className="text-primary-foreground">
-                        Message
+                        Message *
                       </Label>
                       <Textarea
                         id="message"
                         placeholder="Tell us about your automation needs..."
                         rows={6}
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        required
+                        disabled={isSubmitting}
                         className="bg-white/5 border-white/20 text-primary-foreground placeholder:text-primary-foreground/50 resize-none"
                       />
                     </div>
-                    <Button type="submit" className="w-full gradient-accent hover-lift glow-accent text-lg py-6">
-                      Send Message
-                      <Send className="w-5 h-5 ml-2" />
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full gradient-accent hover-lift glow-accent text-lg py-6 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <span className="animate-spin mr-2">⏳</span>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Send Message
+                          <Send className="w-5 h-5 ml-2" />
+                        </>
+                      )}
                     </Button>
                   </form>
                 </div>
