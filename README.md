@@ -1,8 +1,8 @@
-# 🚀 UX Pilot - AI Automation Agency Website
+# 🚀 ApexifyLabs - AI Automation Agency Website
 
 <div align="center">
 
-![UX Pilot](https://img.shields.io/badge/UX%20Pilot-AI%20Automation-00B5E2?style=for-the-badge&logo=artificial-intelligence&logoColor=white)
+![ApexifyLabs](https://img.shields.io/badge/ApexifyLabs-AI%20Automation-00B5E2?style=for-the-badge&logo=artificial-intelligence&logoColor=white)
 ![React](https://img.shields.io/badge/React-18.3+-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4+-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
@@ -17,7 +17,7 @@
 
 ## ✨ Overview
 
-UX Pilot is a modern, high-performance website for an AI Automation Agency. Built with cutting-edge technologies, this platform showcases automation services, case studies, ROI calculators, and industry-specific solutions. The design features a futuristic aesthetic with glass morphism effects, smooth animations, and a professional dark blue color scheme.
+ApexifyLabs is a modern, high-performance website for an AI Automation Agency. Built with cutting-edge technologies, this platform showcases automation services, case studies, ROI calculators, and industry-specific solutions. The design features a futuristic aesthetic with glass morphism effects, smooth animations, and a professional dark blue color scheme.
 
 ## 🎨 Design System
 
@@ -267,14 +267,14 @@ This project is proprietary and confidential.
 ## 🤝 Support
 
 For questions or issues:
-- Email: contact@uxpilot.ai
-- Website: [UX Pilot](https://uxpilot.ai)
+- Email: contact@apexifylabs.com
+- Website: [ApexifyLabs](https://apexifylabs.com)
 
 ---
 
 <div align="center">
 
-**Built with ❤️ by UX Pilot**
+**Built with ❤️ by ApexifyLabs**
 
 *Empowering businesses with intelligent automation*
 

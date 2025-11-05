@@ -8,7 +8,7 @@ export const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="text-2xl font-bold mb-4">
-              UX<span className="text-gradient">PILOT</span>
+              Apexify<span className="text-gradient">Labs</span>
             </div>
             <p className="text-primary-foreground/70 mb-6 max-w-md">
               Empowering businesses with intelligent AI automation. We help teams reclaim their time and focus on what
@@ -72,7 +72,7 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Get In Touch</h4>
             <ul className="space-y-2 text-primary-foreground/70">
-              <li>contact@uxpilot.ai</li>
+              <li>contact@apexifylabs.com</li>
               <li>+1 (555) 123-4567</li>
               <li className="pt-2">
                 <a href="#" className="text-accent hover:underline">
@@ -85,7 +85,7 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-primary-foreground/60 text-sm">© 2024 UX Pilot. All rights reserved.</p>
+          <p className="text-primary-foreground/60 text-sm">© 2024 ApexifyLabs. All rights reserved.</p>
           <div className="flex gap-6 text-sm text-primary-foreground/60">
             <a href="#" className="hover:text-accent transition-colors">
               Privacy Policy

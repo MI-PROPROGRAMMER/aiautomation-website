@@ -9,16 +9,16 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Us - UX Pilot | AI Automation Agency</title>
+        <title>About Us - ApexifyLabs | AI Automation Agency</title>
         <meta
           name="description"
-          content="Learn about UX Pilot's journey from scripters to strategic partners, helping 50+ global clients reclaim their time through intelligent automation."
+          content="Learn about ApexifyLabs's journey from scripters to strategic partners, helping 50+ global clients reclaim their time through intelligent automation."
         />
         <meta
           name="keywords"
-          content="about UX Pilot, automation agency, business automation, AI solutions, company story"
+          content="about ApexifyLabs, automation agency, business automation, AI solutions, company story"
         />
-        <meta property="og:title" content="About Us - UX Pilot" />
+        <meta property="og:title" content="About Us - ApexifyLabs" />
         <meta
           property="og:description"
           content="Freeing businesses from the grind of repetitive work. For over four years, we've been helping teams reclaim their time."

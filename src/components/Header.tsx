@@ -11,7 +11,7 @@ export const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="text-2xl font-bold text-primary-foreground">
-            UX<span className="text-gradient">PILOT</span>
+            Apexify<span className="text-gradient">Labs</span>
           </a>
 
           {/* Desktop Navigation */}

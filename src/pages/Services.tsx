@@ -15,7 +15,7 @@ const Services = () => {
   return (
     <>
       <Helmet>
-        <title>Our Services - AI Automation Solutions | UX Pilot</title>
+        <title>Our Services - AI Automation Solutions | ApexifyLabs</title>
         <meta
           name="description"
           content="Explore our comprehensive automation services: Sales & Marketing, Operations & Workflow, and Customer Support automation. Custom solutions tailored to your business needs."
@@ -24,7 +24,7 @@ const Services = () => {
           name="keywords"
           content="automation services, sales automation, marketing automation, workflow automation, customer support automation, AI solutions"
         />
-        <meta property="og:title" content="Our Services - UX Pilot" />
+        <meta property="og:title" content="Our Services - ApexifyLabs" />
         <meta
           property="og:description"
           content="Transform your business with our comprehensive automation services across sales, operations, and customer support."

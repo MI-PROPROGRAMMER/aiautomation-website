@@ -18,7 +18,7 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>UX Pilot - AI Automation Agency | Reclaim Your Time</title>
+        <title>ApexifyLabs - AI Automation Agency | Reclaim Your Time</title>
         <meta
           name="description"
           content="Transform your business with custom AI automation. We help teams eliminate repetitive tasks and focus on strategic work. Book your free automation audit today."
@@ -27,7 +27,7 @@ const Index = () => {
           name="keywords"
           content="AI automation, business automation, workflow automation, custom automation, AI solutions"
         />
-        <meta property="og:title" content="UX Pilot - AI Automation Agency" />
+        <meta property="og:title" content="ApexifyLabs - AI Automation Agency" />
         <meta
           property="og:description"
           content="Reclaim your time with custom AI automation solutions. Trusted by 50+ businesses worldwide."

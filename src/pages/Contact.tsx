@@ -11,16 +11,16 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us - UX Pilot | Get In Touch</title>
+        <title>Contact Us - ApexifyLabs | Get In Touch</title>
         <meta
           name="description"
-          content="Get in touch with UX Pilot. Book a free consultation or reach out to discuss your automation needs. We're here to help transform your business."
+          content="Get in touch with ApexifyLabs. Book a free consultation or reach out to discuss your automation needs. We're here to help transform your business."
         />
         <meta
           name="keywords"
-          content="contact UX Pilot, automation consultation, business automation, get in touch"
+          content="contact ApexifyLabs, automation consultation, business automation, get in touch"
         />
-        <meta property="og:title" content="Contact Us - UX Pilot" />
+        <meta property="og:title" content="Contact Us - ApexifyLabs" />
         <meta
           property="og:description"
           content="Ready to automate your workflows? Get in touch with our team for a free consultation."
@@ -146,10 +146,10 @@ const Contact = () => {
                         <div>
                           <h3 className="font-semibold text-primary-foreground mb-1">Email</h3>
                           <a
-                            href="mailto:contact@uxpilot.ai"
+                            href="mailto:contact@apexifylabs.com"
                             className="text-accent hover:underline text-primary-foreground/80"
                           >
-                            contact@uxpilot.ai
+                            contact@apexifylabs.com
                           </a>
                         </div>
                       </div>
