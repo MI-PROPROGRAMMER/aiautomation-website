@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Target, Zap, Globe, Code2, Wrench } from "lucide-react";
 import { GlobalReachMap } from "@/components/GlobalReachMap";
+import { CALENDLY_LINK } from "@/config/constants";
 
 const About = () => {
   return (
@@ -250,9 +251,11 @@ const About = () => {
                         We leverage the best of both worlds to deliver solutions that are powerful, maintainable, and
                         cost-effective.
                       </p>
-                      <Button className="gradient-accent hover-lift glow-accent">
-                        Let's Discuss Your Project
-                        <ArrowRight className="w-4 h-4 ml-2" />
+                      <Button className="gradient-accent hover-lift glow-accent" asChild>
+                        <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
+                          Let's Discuss Your Project
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </a>
                       </Button>
                     </div>
                   </div>

@@ -1,4 +1,5 @@
 import { Mail, Linkedin, Twitter } from "lucide-react";
+import { CALENDLY_LINK } from "@/config/constants";
 
 export const Footer = () => {
   return (
@@ -75,7 +76,7 @@ export const Footer = () => {
               <li>contact@apexifylabs.com</li>
               <li>+1 (555) 123-4567</li>
               <li className="pt-2">
-                <a href="#" className="text-accent hover:underline">
+                <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
                   Book Free Audit →
                 </a>
               </li>

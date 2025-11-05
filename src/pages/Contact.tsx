@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { ArrowRight, Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { CALENDLY_LINK } from "@/config/constants";
 
 const Contact = () => {
   return (
@@ -192,9 +193,11 @@ const Contact = () => {
                     <p className="text-primary-foreground/80 mb-4">
                       Get a free automation audit and discover opportunities to streamline your workflows.
                     </p>
-                    <Button className="gradient-accent hover-lift glow-accent w-full">
-                      Schedule Free Audit
-                      <ArrowRight className="w-4 h-4 ml-2" />
+                    <Button className="gradient-accent hover-lift glow-accent w-full" asChild>
+                      <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
+                        Schedule Free Audit
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </a>
                     </Button>
                   </div>
                 </div>

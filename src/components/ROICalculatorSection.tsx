@@ -2,6 +2,7 @@ import { Button } from "./ui/button";
 import { Calculator } from "lucide-react";
 import { useState, useMemo } from "react";
 import { Slider } from "./ui/slider";
+import { CALENDLY_LINK } from "@/config/constants";
 
 export const ROICalculatorSection = () => {
   const [teamMembers, setTeamMembers] = useState([10]);
@@ -134,8 +135,10 @@ export const ROICalculatorSection = () => {
 
           {/* CTA Button */}
           <div className="text-center mt-12">
-            <Button size="lg" className="gradient-accent text-accent-foreground font-semibold px-8">
-              Get Your Custom ROI Report
+            <Button size="lg" className="gradient-accent text-accent-foreground font-semibold px-8" asChild>
+              <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
+                Get Your Custom ROI Report
+              </a>
             </Button>
           </div>
         </div>

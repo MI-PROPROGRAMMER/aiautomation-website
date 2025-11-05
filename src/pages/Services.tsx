@@ -10,6 +10,7 @@ import { Footer } from "@/components/Footer";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { CALENDLY_LINK } from "@/config/constants";
 
 const Services = () => {
   return (
@@ -56,16 +57,21 @@ const Services = () => {
                   business.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" className="gradient-accent hover-lift glow-accent text-lg px-8 py-6">
-                    Book Free Consultation
-                    <ArrowRight className="w-5 h-5 ml-2" />
+                  <Button size="lg" className="gradient-accent hover-lift glow-accent text-lg px-8 py-6" asChild>
+                    <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
+                      Book Free Consultation
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </a>
                   </Button>
                   <Button
                     size="lg"
                     variant="outline"
                     className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 py-6"
+                    asChild
                   >
-                    Watch Demo
+                    <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
+                      Watch Demo
+                    </a>
                   </Button>
                 </div>
 
