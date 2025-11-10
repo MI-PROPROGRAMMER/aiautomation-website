@@ -18,16 +18,13 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          if (id.includes("node_modules")) {
-            if (id.includes("react-router")) return "react-router";
-            if (id.includes("react-dom") || id.includes("scheduler")) return "react";
-            if (id.includes("lucide-react")) return "icons";
-            if (id.includes("@radix-ui")) return "radix";
-            if (id.includes("react-simple-maps")) return "maps";
-            if (id.includes("recharts")) return "charts";
-            return "vendor";
-          }
+        manualChunks: {
+          react: ["react", "react-dom", "scheduler"],
+          router: ["react-router-dom"],
+          icons: ["lucide-react"],
+          radix: ["@radix-ui/react-accordion", "@radix-ui/react-dialog", "@radix-ui/react-toast"],
+          maps: ["react-simple-maps"],
+          charts: ["recharts"],
         },
       },
     },
