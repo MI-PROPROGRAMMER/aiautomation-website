@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, Users, Zap } from "lucide-react";
-import heroImage from "@/assets/hero-automation.jpg";
 import { CALENDLY_LINK } from "@/config/constants";
 import { Link } from "react-router-dom";
 
 export const Hero = () => {
+  const heroImage = "/hero-automation.jpg";
+
   return (
     <section className="relative min-h-screen flex items-center gradient-hero overflow-hidden">
       {/* Background Image with Overlay */}
