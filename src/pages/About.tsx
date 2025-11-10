@@ -3,8 +3,57 @@ import { Footer } from "@/components/Footer";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Target, Zap, Globe, Code2, Wrench } from "lucide-react";
-import { GlobalReachMap } from "@/components/GlobalReachMap";
+import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import { CALENDLY_LINK } from "@/config/constants";
+import { PageLoader } from "@/components/PageLoader";
+
+const LazyGlobalReachMap = lazy(() => import("@/components/GlobalReachMap"));
+
+const MapSection = () => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node || isVisible) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      {
+        rootMargin: "200px 0px",
+        threshold: 0.1,
+      },
+    );
+
+    observer.observe(node);
+
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  return (
+    <div className="relative glass-card p-12 rounded-xl overflow-hidden">
+      <div ref={containerRef} className="relative h-[400px] w-full rounded-xl overflow-hidden">
+        {isVisible ? (
+          <Suspense fallback={<PageLoader />}>
+            <LazyGlobalReachMap />
+          </Suspense>
+        ) : (
+          <div className="flex h-full w-full items-center justify-center bg-primary/40">
+            <span className="animate-pulse text-sm text-primary-foreground/70">Loading map…</span>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const About = () => {
   return (
@@ -82,7 +131,7 @@ const About = () => {
                         </svg>
                       </div>
                       <p className="text-sm text-primary-foreground/60">Journey Timeline Visualization</p>
-                      <p className="text-xs text-primary-foreground/40 mt-1">Image placeholder</p>
+                      <p className="text-xs text-primary-foreground/60 mt-1">Image placeholder</p>
                     </div>
                   </div>
                   {/* Uncomment below and add image path when ready */}
@@ -188,11 +237,7 @@ const About = () => {
                 </div>
 
                 {/* World Map Visualization */}
-                <div className="relative glass-card p-12 rounded-xl overflow-hidden">
-                  <div className="relative h-[400px] w-full rounded-xl overflow-hidden">
-                    <GlobalReachMap />
-                  </div>
-                </div>
+                <MapSection />
               </div>
             </div>
           </section>
@@ -236,7 +281,7 @@ const About = () => {
                             <Users className="w-8 h-8 text-accent" />
                           </div>
                           <p className="text-sm text-primary-foreground/60">Team/Collaboration Image</p>
-                          <p className="text-xs text-primary-foreground/40 mt-1">Image placeholder</p>
+                      <p className="text-xs text-primary-foreground/60 mt-1">Image placeholder</p>
                         </div>
                       </div>
                       {/* Uncomment below and add image path when ready */}

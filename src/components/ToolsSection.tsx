@@ -2,12 +2,12 @@ import { Shield, TrendingUp, Clock } from "lucide-react";
 
 export const ToolsSection = () => {
   const tools = [
-    { name: "Make.com", description: "Visual Automation", image: "/resources/make-logo-png_seeklogo-506859.png" },
-    { name: "n8n", description: "Open Source", image: "/resources/n8n.png" },
-    { name: "Zapier", description: "App Integration", image: "/resources/Zapier-logo.png" },
-    { name: "Botpress", description: "Chatbot Platform", image: "/resources/botpress.png" },
-    { name: "Python", description: "Custom Scripts", image: "/resources/python-logo.png" },
-    { name: "Node.js", description: "Backend Logic", image: "/resources/nodejs-logo.png" },
+    { name: "Make.com", description: "Visual Automation" },
+    { name: "n8n", description: "Open Source" },
+    { name: "Zapier", description: "App Integration" },
+    { name: "Botpress", description: "Chatbot Platform" },
+    { name: "Python", description: "Custom Scripts" },
+    { name: "Node.js", description: "Backend Logic" },
   ];
 
   const benefits = [
@@ -43,22 +43,26 @@ export const ToolsSection = () => {
 
         {/* Tools Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto mb-16">
-          {tools.map((tool, index) => (
-            <div
-              key={index}
-              className="glass-card-light rounded-2xl p-6 text-center hover-lift"
-            >
-              <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                <img 
-                  src={tool.image} 
-                  alt={`${tool.name} logo`}
-                  className="w-12 h-12 object-contain"
-                />
+          {tools.map((tool, index) => {
+            const initials = tool.name
+              .replace(/[^a-zA-Z ]/g, " ")
+              .split(" ")
+              .filter(Boolean)
+              .map((part) => part[0])
+              .join("")
+              .slice(0, 3)
+              .toUpperCase();
+
+            return (
+              <div key={index} className="glass-card-light rounded-2xl p-6 text-center hover-lift">
+                <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-sm font-semibold uppercase tracking-[0.35em] text-accent">{initials}</span>
+                </div>
+                <h3 className="font-bold text-primary-foreground mb-2">{tool.name}</h3>
+                <p className="text-sm text-primary-foreground/80">{tool.description}</p>
               </div>
-              <h3 className="font-bold text-primary-foreground mb-2">{tool.name}</h3>
-              <p className="text-sm text-primary-foreground/80">{tool.description}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Benefits */}

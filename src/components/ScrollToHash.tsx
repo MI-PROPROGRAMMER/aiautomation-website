@@ -5,15 +5,19 @@ export const ScrollToHash = () => {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (hash) {
-      const id = hash.replace("#", "");
-      const target = document.getElementById(id);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+    const runScroll = () => {
+      if (hash) {
+        const id = hash.replace("#", "");
+        const target = document.getElementById(id);
+        if (target) {
+          requestAnimationFrame(() => target.scrollIntoView({ behavior: "smooth", block: "start" }));
+        }
+      } else {
+        requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "smooth" }));
       }
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+    };
+
+    runScroll();
   }, [pathname, hash]);
 
   return null;

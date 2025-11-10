@@ -4,18 +4,14 @@ import { CALENDLY_LINK } from "@/config/constants";
 import { Link } from "react-router-dom";
 
 export const Hero = () => {
-  const heroImage = "/hero-automation.jpg";
-
   return (
     <section className="relative min-h-screen flex items-center gradient-hero overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Layer */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="AI Automation Dashboard"
-          className="w-full h-full object-cover opacity-40"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary" />
+        <div className="absolute -top-32 -left-24 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
+        <div className="absolute -bottom-16 right-0 h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(118,228,247,0.25),transparent_55%)]" />
       </div>
 
       {/* Content */}

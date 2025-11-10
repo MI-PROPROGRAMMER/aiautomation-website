@@ -9,10 +9,10 @@ export const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="text-2xl font-bold mb-4">
+            <div className="text-2xl font-bold mb-4 text-primary-foreground">
               Apexify<span className="text-gradient">Labs</span>
             </div>
-            <p className="text-primary-foreground/70 mb-6 max-w-md">
+            <p className="text-primary-foreground/85 mb-6 max-w-md">
               Empowering businesses with intelligent AI automation. We help teams reclaim their time and focus on what
               truly matters.
             </p>
@@ -21,7 +21,8 @@ export const Footer = () => {
                 href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-lg bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors"
+                aria-label="Visit ApexifyLabs on LinkedIn"
               >
                 <Linkedin size={20} />
               </a>
@@ -29,13 +30,15 @@ export const Footer = () => {
                 href={SOCIAL_LINKS.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-lg bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors"
+                aria-label="Read ApexifyLabs updates on X"
               >
                 <Twitter size={20} />
               </a>
               <a
                 href={SOCIAL_LINKS.email}
-                className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-lg bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors"
+                aria-label="Email ApexifyLabs"
               >
                 <Mail size={20} />
               </a>
@@ -44,35 +47,35 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <h3 className="font-semibold mb-4 text-primary-foreground">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" className="text-primary-foreground/70 hover:text-accent transition-colors">
+                <Link to="/services" className="text-primary-foreground/85 hover:text-accent transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-primary-foreground/70 hover:text-accent transition-colors">
+                <Link to="/about" className="text-primary-foreground/85 hover:text-accent transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="text-primary-foreground/70 hover:text-accent transition-colors">
+                <Link to="/blog" className="text-primary-foreground/85 hover:text-accent transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link to="/#process" className="text-primary-foreground/70 hover:text-accent transition-colors">
+                <Link to="/#process" className="text-primary-foreground/85 hover:text-accent transition-colors">
                   Process
                 </Link>
               </li>
               <li>
-                <Link to="/#case-studies" className="text-primary-foreground/70 hover:text-accent transition-colors">
+                <Link to="/#case-studies" className="text-primary-foreground/85 hover:text-accent transition-colors">
                   Case Studies
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-primary-foreground/70 hover:text-accent transition-colors">
+                <Link to="/contact" className="text-primary-foreground/85 hover:text-accent transition-colors">
                   Contact
                 </Link>
               </li>
@@ -81,8 +84,8 @@ export const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4">Get In Touch</h4>
-            <ul className="space-y-2 text-primary-foreground/70">
+            <h3 className="font-semibold mb-4 text-primary-foreground">Get In Touch</h3>
+            <ul className="space-y-2 text-primary-foreground/85">
               <li>{CONTACT_EMAIL}</li>
               <li>+92 331 5183565</li>
               <li className="pt-2">
@@ -96,8 +99,8 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-primary-foreground/60 text-sm">© 2024 ApexifyLabs. All rights reserved.</p>
-          <div className="flex gap-6 text-sm text-primary-foreground/60">
+          <p className="text-primary-foreground/80 text-sm">© 2024 ApexifyLabs. All rights reserved.</p>
+          <div className="flex gap-6 text-sm text-primary-foreground/80">
             <Link to="/privacy-policy" className="hover:text-accent transition-colors">
               Privacy Policy
             </Link>

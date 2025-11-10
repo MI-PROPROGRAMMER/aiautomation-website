@@ -18,25 +18,25 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+            <Link to="/" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
               Home
             </Link>
-            <Link to="/services" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+            <Link to="/services" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
               Services
             </Link>
-            <Link to="/about" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+            <Link to="/about" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
               About Us
             </Link>
-            <Link to="/blog" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+            <Link to="/blog" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
               Blog
             </Link>
-            <Link to="/#case-studies" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+            <Link to="/#case-studies" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
               Case Studies
             </Link>
-            <Link to="/#process" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+            <Link to="/#process" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
               Process
             </Link>
-            <Link to="/contact" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+            <Link to="/contact" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
               Contact Us
             </Link>
           </nav>
@@ -54,6 +54,9 @@ export const Header = () => {
           <button
             className="md:hidden text-primary-foreground"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="primary-navigation"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -61,52 +64,52 @@ export const Header = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 space-y-4">
+          <div id="primary-navigation" className="md:hidden py-4 space-y-4">
             <Link
               to="/"
-              className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              className="block text-sm text-primary-foreground/90 hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               to="/services"
-              className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              className="block text-sm text-primary-foreground/90 hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Services
             </Link>
             <Link
               to="/about"
-              className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              className="block text-sm text-primary-foreground/90 hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
             </Link>
             <Link
               to="/blog"
-              className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              className="block text-sm text-primary-foreground/90 hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Blog
             </Link>
             <Link
               to="/#process"
-              className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              className="block text-sm text-primary-foreground/90 hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Process
             </Link>
             <Link
               to="/#case-studies"
-              className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              className="block text-sm text-primary-foreground/90 hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Case Studies
             </Link>
             <Link
               to="/contact"
-              className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              className="block text-sm text-primary-foreground/90 hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
