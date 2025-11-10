@@ -3,15 +3,16 @@ import { Footer } from "@/components/Footer";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Target, Zap, Globe, Code2, Wrench } from "lucide-react";
-import { Suspense, lazy, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CALENDLY_LINK } from "@/config/constants";
 import { PageLoader } from "@/components/PageLoader";
 
-const LazyGlobalReachMap = lazy(() => import("@/components/GlobalReachMap"));
+type GlobalReachMapType = typeof import("@/components/GlobalReachMap").default;
 
 const MapSection = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [MapComponent, setMapComponent] = useState<GlobalReachMapType | null>(null);
 
   useEffect(() => {
     const node = containerRef.current;
@@ -38,13 +39,30 @@ const MapSection = () => {
     return () => observer.disconnect();
   }, [isVisible]);
 
+  useEffect(() => {
+    let cancelled = false;
+    if (isVisible && !MapComponent) {
+      import("@/components/GlobalReachMap").then((module) => {
+        if (!cancelled) {
+          setMapComponent(() => module.default);
+        }
+      });
+    }
+
+    return () => {
+      cancelled = true;
+    };
+  }, [isVisible, MapComponent]);
+
   return (
     <div className="relative glass-card p-12 rounded-xl overflow-hidden">
       <div ref={containerRef} className="relative h-[400px] w-full rounded-xl overflow-hidden">
         {isVisible ? (
-          <Suspense fallback={<PageLoader />}>
-            <LazyGlobalReachMap />
-          </Suspense>
+          MapComponent ? (
+            <MapComponent />
+          ) : (
+            <PageLoader />
+          )
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-primary/40">
             <span className="animate-pulse text-sm text-primary-foreground/70">Loading map…</span>

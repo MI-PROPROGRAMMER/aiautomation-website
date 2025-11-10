@@ -1,6 +1,6 @@
 import { Button } from "./ui/button";
 import { Calculator } from "lucide-react";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useId } from "react";
 import { Slider } from "./ui/slider";
 import { CALENDLY_LINK } from "@/config/constants";
 
@@ -8,6 +8,9 @@ export const ROICalculatorSection = () => {
   const [teamMembers, setTeamMembers] = useState([10]);
   const [hoursPerWeek, setHoursPerWeek] = useState([20]);
   const [hourlyCost, setHourlyCost] = useState([50]);
+  const teamLabelId = useId();
+  const hoursLabelId = useId();
+  const costLabelId = useId();
 
   const calculations = useMemo(() => {
     const employees = teamMembers[0];
@@ -44,7 +47,7 @@ export const ROICalculatorSection = () => {
             {/* Left Side - Input Visualization */}
             <div className="glass-card-light rounded-3xl p-10 space-y-8">
               <div>
-                <label className="text-sm font-medium text-primary-foreground mb-3 block">
+                <label id={teamLabelId} className="text-sm font-medium text-primary-foreground mb-3 block">
                   Team members doing manual work
                 </label>
                 <Slider
@@ -54,7 +57,7 @@ export const ROICalculatorSection = () => {
                   min={1}
                   step={1}
                   className="mb-2"
-                  aria-label="Team members doing manual work"
+                  aria-labelledby={teamLabelId}
                 />
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-primary-foreground/60">1</span>
@@ -64,7 +67,7 @@ export const ROICalculatorSection = () => {
               </div>
               
               <div>
-                <label className="text-sm font-medium text-primary-foreground mb-3 block">
+                <label id={hoursLabelId} className="text-sm font-medium text-primary-foreground mb-3 block">
                   Hours spent per week
                 </label>
                 <Slider
@@ -74,7 +77,7 @@ export const ROICalculatorSection = () => {
                   min={1}
                   step={1}
                   className="mb-2"
-                  aria-label="Hours spent per week"
+                  aria-labelledby={hoursLabelId}
                 />
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-primary-foreground/60">1</span>
@@ -84,7 +87,7 @@ export const ROICalculatorSection = () => {
               </div>
               
               <div>
-                <label className="text-sm font-medium text-primary-foreground mb-3 block">
+                <label id={costLabelId} className="text-sm font-medium text-primary-foreground mb-3 block">
                   Average hourly cost
                 </label>
                 <Slider
@@ -94,7 +97,7 @@ export const ROICalculatorSection = () => {
                   min={10}
                   step={5}
                   className="mb-2"
-                  aria-label="Average hourly cost"
+                  aria-labelledby={costLabelId}
                 />
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-primary-foreground/60">$10</span>
