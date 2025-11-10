@@ -6,7 +6,9 @@ import { StaticRouter } from "react-router-dom/server";
 import { Helmet } from "react-helmet";
 import { AppProviders, AppRoutes } from "../src/App";
 
-const routes = ["/", "/services", "/about", "/contact", "/privacy-policy", "/terms-of-service"];
+const staticRoutes = ["/", "/services", "/about", "/contact", "/privacy-policy", "/terms-of-service"];
+const blogRoutes = await collectBlogRoutes();
+const routes = [...staticRoutes, "/blog", ...blogRoutes];
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, "../dist");
@@ -43,6 +45,20 @@ async function writePrerenderedPage(route: string, html: string) {
 
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.writeFile(outputPath, html, "utf-8");
+}
+
+async function collectBlogRoutes() {
+  try {
+    const blogDir = path.resolve(__dirname, "../src/content/blog");
+    const entries = await fs.readdir(blogDir, { withFileTypes: true });
+
+    return entries
+      .filter((entry) => entry.isFile() && entry.name.endsWith(".mdx"))
+      .map((entry) => `/blog/${entry.name.replace(/\.mdx$/, "")}`);
+  } catch (error) {
+    console.warn("Skipping blog prerendering because posts could not be read.", error);
+    return [];
+  }
 }
 
 

@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import mdx from "@mdx-js/rollup";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
@@ -8,7 +9,12 @@ export default defineConfig({
     host: "::",
     port: 8080,
   },
-  plugins: [react()],
+  plugins: [
+    mdx({
+      extension: /\.mdx?$/,
+    }),
+    react(),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

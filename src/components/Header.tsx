@@ -27,6 +27,9 @@ export const Header = () => {
             <Link to="/about" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
               About Us
             </Link>
+            <Link to="/blog" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+              Blog
+            </Link>
             <Link to="/#case-studies" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
               Case Studies
             </Link>
@@ -79,6 +82,13 @@ export const Header = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               About
+            </Link>
+            <Link
+              to="/blog"
+              className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Blog
             </Link>
             <Link
               to="/#process"
