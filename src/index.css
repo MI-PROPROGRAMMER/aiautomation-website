@@ -162,4 +162,46 @@ All colors MUST be HSL.
   .glow-accent:hover {
     box-shadow: 0 12px 40px hsl(192 100% 44% / 0.35);
   }
+
+  .mdx-content {
+    @apply space-y-6 text-lg leading-relaxed text-primary-foreground/85;
+  }
+
+  .mdx-content h1,
+  .mdx-content h2,
+  .mdx-content h3 {
+    @apply font-bold text-primary-foreground;
+  }
+
+  .mdx-content h1 {
+    @apply text-4xl md:text-5xl mt-10;
+  }
+
+  .mdx-content h2 {
+    @apply text-3xl mt-10;
+  }
+
+  .mdx-content h3 {
+    @apply text-2xl mt-8;
+  }
+
+  .mdx-content p {
+    @apply text-primary-foreground/80;
+  }
+
+  .mdx-content ul {
+    @apply list-disc pl-6 space-y-3 text-primary-foreground/85;
+  }
+
+  .mdx-content li {
+    @apply marker:text-accent;
+  }
+
+  .mdx-content blockquote {
+    @apply border-l-4 border-accent/60 bg-accent/10 px-6 py-4 italic text-primary-foreground/90;
+  }
+
+  .mdx-content img {
+    @apply my-6 w-full rounded-xl border border-white/10 object-cover shadow-xl;
+  }
 }

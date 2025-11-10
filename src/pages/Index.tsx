@@ -1,18 +1,43 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { ProblemSection } from "@/components/ProblemSection";
-import { ServicesSection } from "@/components/ServicesSection";
-import { SocialProofSection } from "@/components/SocialProofSection";
-import { ProcessSection } from "@/components/ProcessSection";
-import { ToolsSection } from "@/components/ToolsSection";
-import { IndustrySection } from "@/components/IndustrySection";
-import { ROICalculatorSection } from "@/components/ROICalculatorSection";
-import { CaseStudiesSection } from "@/components/CaseStudiesSection";
-import { ServicesCTASection } from "@/components/ServicesCTASection";
-import { FAQSection } from "@/components/FAQSection";
-import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 import { Helmet } from "react-helmet";
+import { Suspense, lazy } from "react";
+import { PageLoader } from "@/components/PageLoader";
+
+const ProblemSection = lazy(() =>
+  import("@/components/ProblemSection").then((module) => ({ default: module.ProblemSection })),
+);
+const ServicesSection = lazy(() =>
+  import("@/components/ServicesSection").then((module) => ({ default: module.ServicesSection })),
+);
+const SocialProofSection = lazy(() =>
+  import("@/components/SocialProofSection").then((module) => ({ default: module.SocialProofSection })),
+);
+const ProcessSection = lazy(() =>
+  import("@/components/ProcessSection").then((module) => ({ default: module.ProcessSection })),
+);
+const ToolsSection = lazy(() =>
+  import("@/components/ToolsSection").then((module) => ({ default: module.ToolsSection })),
+);
+const IndustrySection = lazy(() =>
+  import("@/components/IndustrySection").then((module) => ({ default: module.IndustrySection })),
+);
+const ROICalculatorSection = lazy(() =>
+  import("@/components/ROICalculatorSection").then((module) => ({ default: module.ROICalculatorSection })),
+);
+const CaseStudiesSection = lazy(() =>
+  import("@/components/CaseStudiesSection").then((module) => ({ default: module.CaseStudiesSection })),
+);
+const ServicesCTASection = lazy(() =>
+  import("@/components/ServicesCTASection").then((module) => ({ default: module.ServicesCTASection })),
+);
+const FAQSection = lazy(() =>
+  import("@/components/FAQSection").then((module) => ({ default: module.FAQSection })),
+);
+const CTASection = lazy(() =>
+  import("@/components/CTASection").then((module) => ({ default: module.CTASection })),
+);
 
 const Index = () => {
   return (
@@ -40,16 +65,39 @@ const Index = () => {
         <Header />
         <main>
           <Hero />
-          {/* <SocialProofSection /> */}
-          <ServicesSection />
-          <ProcessSection />
-          <ToolsSection />
-          <IndustrySection />
-          <ROICalculatorSection />
-          <CaseStudiesSection />
-          <ServicesCTASection />
-          <FAQSection />
-          <CTASection />
+          <Suspense fallback={<PageLoader />}>
+            <ProblemSection />
+          </Suspense>
+          <Suspense fallback={<PageLoader />}>
+            <ServicesSection />
+          </Suspense>
+          <Suspense fallback={null}>
+            <SocialProofSection />
+          </Suspense>
+          <Suspense fallback={null}>
+            <ProcessSection />
+          </Suspense>
+          <Suspense fallback={null}>
+            <ToolsSection />
+          </Suspense>
+          <Suspense fallback={null}>
+            <IndustrySection />
+          </Suspense>
+          <Suspense fallback={<PageLoader />}>
+            <ROICalculatorSection />
+          </Suspense>
+          <Suspense fallback={null}>
+            <CaseStudiesSection />
+          </Suspense>
+          <Suspense fallback={null}>
+            <ServicesCTASection />
+          </Suspense>
+          <Suspense fallback={null}>
+            <FAQSection />
+          </Suspense>
+          <Suspense fallback={null}>
+            <CTASection />
+          </Suspense>
         </main>
         <Footer />
       </div>

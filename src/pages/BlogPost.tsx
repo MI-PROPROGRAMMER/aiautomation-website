@@ -146,7 +146,7 @@ const BlogPost = () => {
             <section className="bg-background pb-24">
               <div className="container mx-auto px-4">
                 <div className="mx-auto -mt-32 max-w-4xl rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl md:p-12">
-                  <div className="prose prose-lg prose-invert max-w-none prose-headings:text-primary-foreground prose-strong:text-primary-foreground prose-a:text-accent">
+                  <div className="mdx-content">
                     <MDXProvider components={mdxComponents}>
                       <Content />
                     </MDXProvider>
