@@ -1,5 +1,6 @@
 import { Mail, Linkedin, Twitter } from "lucide-react";
-import { CALENDLY_LINK } from "@/config/constants";
+import { CALENDLY_LINK, CONTACT_EMAIL, SOCIAL_LINKS } from "@/config/constants";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -17,19 +18,23 @@ export const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href={SOCIAL_LINKS.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
               >
                 <Linkedin size={20} />
               </a>
               <a
-                href="#"
+                href={SOCIAL_LINKS.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
               >
                 <Twitter size={20} />
               </a>
               <a
-                href="#"
+                href={SOCIAL_LINKS.email}
                 className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
               >
                 <Mail size={20} />
@@ -42,29 +47,29 @@ export const Footer = () => {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/services" className="text-primary-foreground/70 hover:text-accent transition-colors">
+                <Link to="/services" className="text-primary-foreground/70 hover:text-accent transition-colors">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about" className="text-primary-foreground/70 hover:text-accent transition-colors">
+                <Link to="/about" className="text-primary-foreground/70 hover:text-accent transition-colors">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#process" className="text-primary-foreground/70 hover:text-accent transition-colors">
+                <Link to="/#process" className="text-primary-foreground/70 hover:text-accent transition-colors">
                   Process
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#case-studies" className="text-primary-foreground/70 hover:text-accent transition-colors">
+                <Link to="/#case-studies" className="text-primary-foreground/70 hover:text-accent transition-colors">
                   Case Studies
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="text-primary-foreground/70 hover:text-accent transition-colors">
+                <Link to="/contact" className="text-primary-foreground/70 hover:text-accent transition-colors">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -73,8 +78,8 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Get In Touch</h4>
             <ul className="space-y-2 text-primary-foreground/70">
-              <li>contact@apexifylabs.com</li>
-              <li>+1 (555) 123-4567</li>
+              <li>{CONTACT_EMAIL}</li>
+              <li>+92 331 5183565</li>
               <li className="pt-2">
                 <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
                   Book Free Audit →
@@ -88,12 +93,12 @@ export const Footer = () => {
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-primary-foreground/60 text-sm">© 2024 ApexifyLabs. All rights reserved.</p>
           <div className="flex gap-6 text-sm text-primary-foreground/60">
-            <a href="#" className="hover:text-accent transition-colors">
+            <Link to="/privacy-policy" className="hover:text-accent transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-accent transition-colors">
+            </Link>
+            <Link to="/terms-of-service" className="hover:text-accent transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

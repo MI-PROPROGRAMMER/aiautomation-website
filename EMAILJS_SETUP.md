@@ -1,6 +1,6 @@
 # EmailJS Setup Guide
 
-This guide will help you set up EmailJS to enable the contact form on your website to send emails to `mi.tech0786@gmail.com`.
+This guide will help you set up EmailJS to enable the contact form on your website to send emails to your team inbox.
 
 ## Step 1: Create EmailJS Account
 
@@ -27,7 +27,7 @@ This guide will help you set up EmailJS to enable the contact form on your websi
    - `{{from_email}}` - Sender's email address
    - `{{company}}` - Sender's company (optional)
    - `{{message}}` - The message content
-   - `{{to_email}}` - Recipient email (will be `mi.tech0786@gmail.com`)
+   - `{{to_email}}` - Recipient email (will be the address you configure)
 
 ### Example Template:
 
@@ -134,7 +134,7 @@ Reply to: {{from_email}}
 This email was sent from your website contact form.
 ```
 
-5. Set **To Email** to: `mi.tech0786@gmail.com`
+5. Set **To Email** to the same address you configured in your EmailJS template (recommended: your team inbox)
 6. Set **From Name** to: `{{from_name}}`
 7. Set **Reply To** to: `{{from_email}}` (so you can reply directly)
 8. Click **Save**
@@ -148,24 +148,25 @@ This email was sent from your website contact form.
 
 ## Step 5: Update Configuration
 
-1. Open `src/config/constants.ts`
-2. Replace the placeholder values in `EMAILJS_CONFIG`:
+1. Create a `.env` file in the project root (it is already git-ignored).
+2. Add the following variables with your credentials:
 
-```typescript
-export const EMAILJS_CONFIG = {
-  SERVICE_ID: "service_xxxxx",        // Your Service ID from Step 2
-  TEMPLATE_ID: "template_xxxxx",     // Your Template ID from Step 3
-  PUBLIC_KEY: "xxxxxxxxxxxxxxxxxxxx", // Your Public Key from Step 4
-  RECIPIENT_EMAIL: "mi.tech0786@gmail.com", // Already set correctly
-};
 ```
+VITE_EMAILJS_SERVICE_ID=service_xxxxx
+VITE_EMAILJS_TEMPLATE_ID=template_xxxxx
+VITE_EMAILJS_PUBLIC_KEY=xxxxxxxxxxxxxxxxxxxx
+VITE_EMAILJS_RECIPIENT_EMAIL=team@yourcompany.com
+VITE_CONTACT_EMAIL=contact@yourcompany.com
+```
+
+3. Restart the dev server so Vite can pick up the new environment variables.
 
 ## Step 6: Test the Form
 
 1. Start your development server: `npm run dev`
 2. Navigate to the Contact page
 3. Fill out the form and submit
-4. Check your email inbox (`mi.tech0786@gmail.com`) for the message
+4. Check your email inbox for the message
 
 ## Troubleshooting
 

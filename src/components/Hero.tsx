@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, Users, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-automation.jpg";
 import { CALENDLY_LINK } from "@/config/constants";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
@@ -44,8 +45,9 @@ export const Hero = () => {
               size="lg"
               variant="outline"
               className="bg-white/10 border-white/30 text-primary-foreground hover:bg-white/20 text-lg px-8 py-6"
+              asChild
             >
-              See Our Success Stories
+              <Link to="/#case-studies">See Our Success Stories</Link>
             </Button>
           </div>
 

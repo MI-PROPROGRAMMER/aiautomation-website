@@ -31,6 +31,7 @@ const Services = () => {
           content="Transform your business with our comprehensive automation services across sales, operations, and customer support."
         />
         <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://apexifylabs.com/services" />
       </Helmet>
 
       <div className="min-h-screen">

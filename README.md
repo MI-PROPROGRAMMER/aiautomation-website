@@ -102,7 +102,21 @@ yarn install
 pnpm install
 ```
 
-3. **Start development server**
+3. **Configure environment variables**
+
+Create a `.env` file in the project root and add:
+
+```
+VITE_EMAILJS_SERVICE_ID=your-service-id
+VITE_EMAILJS_TEMPLATE_ID=your-template-id
+VITE_EMAILJS_PUBLIC_KEY=your-public-key
+VITE_EMAILJS_RECIPIENT_EMAIL=team@yourcompany.com
+VITE_CONTACT_EMAIL=contact@yourcompany.com
+VITE_LINKEDIN_URL=https://www.linkedin.com/company/apexifylabs
+VITE_TWITTER_URL=https://twitter.com/apexifylabs
+```
+
+4. **Start development server**
 
 ```bash
 npm run dev
@@ -118,7 +132,7 @@ The site will be available at `http://localhost:8080`
 
 ```bash
 npm run dev          # Start development server
-npm run build        # Build for production
+npm run build        # Build for production and prerender static pages
 npm run build:dev    # Build for development
 npm run preview      # Preview production build
 npm run lint         # Run ESLint

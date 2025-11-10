@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { CALENDLY_LINK } from "@/config/constants";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,30 +12,30 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="text-2xl font-bold text-primary-foreground">
+          <Link to="/" className="text-2xl font-bold text-primary-foreground">
             Apexify<span className="text-gradient">Labs</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="/" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+            <Link to="/" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
               Home
-            </a>
-            <a href="/services" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+            </Link>
+            <Link to="/services" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
               Services
-            </a>
-            <a href="/about" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+            </Link>
+            <Link to="/about" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
               About Us
-            </a>
-            <a href="#case-studies" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+            </Link>
+            <Link to="/#case-studies" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
               Case Studies
-            </a>
-            <a href="#process" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+            </Link>
+            <Link to="/#process" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
               Process
-            </a>
-            <a href="/contact" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
+            </Link>
+            <Link to="/contact" className="text-sm text-primary-foreground/80 hover:text-accent transition-colors">
               Contact Us
-            </a>
+            </Link>
           </nav>
 
           {/* CTA Button */}
@@ -58,48 +59,48 @@ export const Header = () => {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden py-4 space-y-4">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
-            </a>
-            <a
-              href="/services"
+            </Link>
+            <Link
+              to="/services"
               className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Services
-            </a>
-            <a
-              href="/about"
+            </Link>
+            <Link
+              to="/about"
               className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
-            </a>
-            <a
-              href="#process"
+            </Link>
+            <Link
+              to="/#process"
               className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Process
-            </a>
-            <a
-              href="#case-studies"
+            </Link>
+            <Link
+              to="/#case-studies"
               className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Case Studies
-            </a>
-            <a
-              href="/contact"
+            </Link>
+            <Link
+              to="/contact"
               className="block text-sm text-primary-foreground/80 hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
-            </a>
+            </Link>
             <Button className="w-full gradient-accent" asChild>
               <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
                 Get Free Audit

@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { ArrowRight, Mail, Phone, MapPin, Clock, Send } from "lucide-react";
-import { CALENDLY_LINK, EMAILJS_CONFIG } from "@/config/constants";
+import { CALENDLY_LINK, CONTACT_EMAIL, EMAILJS_CONFIG } from "@/config/constants";
 import { useState, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import { useToast } from "@/hooks/use-toast";
@@ -18,6 +18,7 @@ const Contact = () => {
     lastName: "",
     email: "",
     company: "",
+    companyWebsite: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -34,6 +35,12 @@ const Contact = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Honeypot check (bot detection)
+    if (formData.companyWebsite.trim() !== "") {
+      // Silently drop bot submissions
+      return;
+    }
 
     // Validation
     if (!formData.firstName.trim() || !formData.lastName.trim()) {
@@ -112,14 +119,14 @@ const Contact = () => {
         lastName: "",
         email: "",
         company: "",
+        companyWebsite: "",
         message: "",
       });
     } catch (error) {
       console.error("EmailJS Error:", error);
       toast({
         title: "Error Sending Message",
-        description:
-          "There was an error sending your message. Please try again or contact us directly at mi.tech0786@gmail.com",
+        description: `There was an error sending your message. Please try again or email us directly at ${CONTACT_EMAIL}`,
         variant: "destructive",
       });
     } finally {
@@ -144,6 +151,7 @@ const Contact = () => {
           content="Ready to automate your workflows? Get in touch with our team for a free consultation."
         />
         <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://apexifylabs.com/contact" />
       </Helmet>
 
       <div className="min-h-screen">
@@ -180,6 +188,20 @@ const Contact = () => {
                 <div className="glass-card p-8 rounded-xl">
                   <h2 className="text-3xl font-bold text-primary-foreground mb-6">Send us a message</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Honeypot Field - hidden from users */}
+                    <div className="hidden" aria-hidden="true">
+                      <Label htmlFor="companyWebsite" className="text-primary-foreground">
+                        Company Website
+                      </Label>
+                      <Input
+                        id="companyWebsite"
+                        type="text"
+                        autoComplete="off"
+                        tabIndex={-1}
+                        value={formData.companyWebsite}
+                        onChange={handleInputChange}
+                      />
+                    </div>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="firstName" className="text-primary-foreground">
@@ -296,10 +318,10 @@ const Contact = () => {
                         <div>
                           <h3 className="font-semibold text-primary-foreground mb-1">Email</h3>
                           <a
-                            href="mailto:contact@apexifylabs.com"
+                            href={`mailto:${CONTACT_EMAIL}`}
                             className="text-accent hover:underline text-primary-foreground/80"
                           >
-                            contact@apexifylabs.com
+                            {CONTACT_EMAIL}
                           </a>
                         </div>
                       </div>
@@ -313,7 +335,7 @@ const Contact = () => {
                         <div>
                           <h3 className="font-semibold text-primary-foreground mb-1">Phone</h3>
                           <a
-                            href="tel:+15551234567"
+                            href="tel:+923315183565"
                             className="text-accent hover:underline text-primary-foreground/80"
                           >
                             +92 331 5183565

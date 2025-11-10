@@ -33,6 +33,7 @@ const Index = () => {
           content="Reclaim your time with custom AI automation solutions. Trusted by 50+ businesses worldwide."
         />
         <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://apexifylabs.com/" />
       </Helmet>
 
       <div className="min-h-screen">

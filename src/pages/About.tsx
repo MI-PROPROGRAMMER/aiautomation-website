@@ -25,6 +25,7 @@ const About = () => {
           content="Freeing businesses from the grind of repetitive work. For over four years, we've been helping teams reclaim their time."
         />
         <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://apexifylabs.com/about" />
       </Helmet>
 
       <div className="min-h-screen">
