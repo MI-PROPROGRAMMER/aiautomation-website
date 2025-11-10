@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npx tsx scripts/prerender.tsx",
+    "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prerender": "npx tsx scripts/prerender.tsx"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
