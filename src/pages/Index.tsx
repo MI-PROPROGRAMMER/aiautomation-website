@@ -1,8 +1,63 @@
+const LazyROICalculator = () => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [Section, setSection] = useState<ROICalculatorType | null>(null);
+
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node || isVisible) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      {
+        rootMargin: "200px 0px",
+        threshold: 0.1,
+      },
+    );
+
+    observer.observe(node);
+
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  useEffect(() => {
+    let cancelled = false;
+    if (isVisible && !Section) {
+      import("@/components/ROICalculatorSection").then((module) => {
+        if (!cancelled) {
+          setSection(() => module.ROICalculatorSection);
+        }
+      });
+    }
+
+    return () => {
+      cancelled = true;
+    };
+  }, [isVisible, Section]);
+
+  return (
+    <div ref={containerRef}>
+      {isVisible && Section ? (
+        <Section />
+      ) : (
+        <div className="min-h-[28rem] w-full rounded-3xl border border-white/10 bg-white/5" aria-hidden="true" />
+      )}
+    </div>
+  );
+};
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { Helmet } from "react-helmet";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import { PageLoader } from "@/components/PageLoader";
 
 const ProblemSection = lazy(() =>
@@ -23,9 +78,6 @@ const ToolsSection = lazy(() =>
 const IndustrySection = lazy(() =>
   import("@/components/IndustrySection").then((module) => ({ default: module.IndustrySection })),
 );
-const ROICalculatorSection = lazy(() =>
-  import("@/components/ROICalculatorSection").then((module) => ({ default: module.ROICalculatorSection })),
-);
 const CaseStudiesSection = lazy(() =>
   import("@/components/CaseStudiesSection").then((module) => ({ default: module.CaseStudiesSection })),
 );
@@ -38,6 +90,8 @@ const FAQSection = lazy(() =>
 const CTASection = lazy(() =>
   import("@/components/CTASection").then((module) => ({ default: module.CTASection })),
 );
+
+type ROICalculatorType = typeof import("@/components/ROICalculatorSection").ROICalculatorSection;
 
 const Index = () => {
   return (
@@ -83,9 +137,7 @@ const Index = () => {
           <Suspense fallback={null}>
             <IndustrySection />
           </Suspense>
-          <Suspense fallback={<PageLoader />}>
-            <ROICalculatorSection />
-          </Suspense>
+          <LazyROICalculator />
           <Suspense fallback={null}>
             <CaseStudiesSection />
           </Suspense>

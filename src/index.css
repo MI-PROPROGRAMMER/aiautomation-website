@@ -204,4 +204,15 @@ All colors MUST be HSL.
   .mdx-content img {
     @apply my-6 w-full rounded-xl border border-white/10 object-cover shadow-xl;
   }
+
+  @media (max-width: 768px) {
+    .animate-fade-in-up,
+    .animate-fade-in,
+    .animate-scale-in,
+    .animate-slide-in-right {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
 }
