@@ -8,10 +8,21 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center gradient-hero overflow-hidden">
       {/* Background Layer */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary" />
-        <div className="absolute -top-32 -left-24 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
-        <div className="absolute -bottom-16 right-0 h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-3xl" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(118,228,247,0.25),transparent_55%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#011629] via-[#011932] to-[#021a33]" aria-hidden="true" />
+        <div
+          className="absolute -top-32 -left-24 h-96 w-96 rounded-full bg-accent/15 blur-3xl"
+          aria-hidden="true"
+          role="presentation"
+        />
+        <div
+          className="absolute -bottom-16 right-0 h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-3xl"
+          aria-hidden="true"
+          role="presentation"
+        />
+        <div
+          className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(118,228,247,0.18),transparent_55%)]"
+          aria-hidden="true"
+        />
       </div>
 
       {/* Content */}
@@ -38,12 +49,7 @@ export const Hero = () => {
                 <ArrowRight className="ml-2" size={20} />
               </a>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-white/10 border-white/30 text-primary-foreground hover:bg-white/20 text-lg px-8 py-6"
-              asChild
-            >
+            <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent/10 text-lg px-8 py-6" asChild>
               <Link to="/#case-studies">See Our Success Stories</Link>
             </Button>
           </div>

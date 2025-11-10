@@ -54,6 +54,7 @@ export const ROICalculatorSection = () => {
                   min={1}
                   step={1}
                   className="mb-2"
+                  aria-label="Team members doing manual work"
                 />
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-primary-foreground/60">1</span>
@@ -73,6 +74,7 @@ export const ROICalculatorSection = () => {
                   min={1}
                   step={1}
                   className="mb-2"
+                  aria-label="Hours spent per week"
                 />
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-primary-foreground/60">1</span>
@@ -92,6 +94,7 @@ export const ROICalculatorSection = () => {
                   min={10}
                   step={5}
                   className="mb-2"
+                  aria-label="Average hourly cost"
                 />
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-primary-foreground/60">$10</span>
