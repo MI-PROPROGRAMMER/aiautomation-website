@@ -18,7 +18,7 @@ const Blog = () => {
         <meta property="og:title" content="ApexifyLabs Blog" />
         <meta
           property="og:description"
-          content="Articles, frameworks, and case studies that help you ship AI automations with confidence."
+          content="Articles, frameworks, and case studies that help you ship AI solutions with confidence."
         />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://apexifylabs.com/blog" />
@@ -38,7 +38,7 @@ const Blog = () => {
                 Insights, Playbooks & Stories
               </div>
               <h1 className="mt-6 text-4xl font-bold leading-tight text-primary-foreground md:text-6xl">
-                Ship Agentic AI Automations With Confidence
+                Ship Agentic AI solutions With Confidence
               </h1>
               <p className="mt-4 text-lg text-primary-foreground/80">
                 Learn how growth teams across the globe design, launch, and scale automation that actually moves revenue,

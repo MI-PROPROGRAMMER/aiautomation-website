@@ -13,7 +13,7 @@ export const Footer = () => {
               Apexify<span className="text-gradient">Labs</span>
             </div>
             <p className="text-primary-foreground/85 mb-6 max-w-md">
-              Empowering businesses with intelligent AI automation. We help teams reclaim their time and focus on what
+              Empowering businesses with intelligent AI solutions. We help teams reclaim their time and focus on what
               truly matters.
             </p>
             <div className="flex gap-4">
@@ -70,8 +70,8 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/#case-studies" className="text-primary-foreground/85 hover:text-accent transition-colors">
-                  Case Studies
+                <Link to="/#portfolio" className="text-primary-foreground/85 hover:text-accent transition-colors">
+                  Portfolio
                 </Link>
               </li>
               <li>

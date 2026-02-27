@@ -16,7 +16,7 @@ const Services = () => {
   return (
     <>
       <Helmet>
-        <title>Our Services - AI Automation Solutions | ApexifyLabs</title>
+        <title>Our Services - AI Solutions | ApexifyLabs</title>
         <meta
           name="description"
           content="Explore our comprehensive automation services: Sales & Marketing, Operations & Workflow, and Customer Support automation. Custom solutions tailored to your business needs."
@@ -48,13 +48,13 @@ const Services = () => {
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
-                  We don't just sell tools; we deliver{" "}
+                  We don't just sell tools, We deliver{" "}
                   <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-accent to-white">
                     outcomes.
                   </span>
                 </h1>
                 <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 leading-relaxed">
-                  Our comprehensive automation services tackle the most time-consuming challenges across your entire
+                  Our comprehensive AI system services tackle the most time-consuming challenges across your entire
                   business.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

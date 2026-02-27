@@ -100,7 +100,7 @@ const Index = () => {
         <title>ApexifyLabs - Analyze. Automate. Apexify. | Reclaim Your Time</title>
         <meta
           name="description"
-          content="Transform your business with custom AI automation. We help teams eliminate repetitive tasks and focus on strategic work. Book your free automation audit today."
+          content="Transform your business with custom AI solutions. We help teams eliminate repetitive tasks and focus on strategic work. Book your free automation audit today."
         />
         <meta
           name="keywords"
@@ -109,7 +109,7 @@ const Index = () => {
         <meta property="og:title" content="ApexifyLabs - AI Automation Agency" />
         <meta
           property="og:description"
-          content="Reclaim your time with custom AI automation solutions. Trusted by 50+ businesses worldwide."
+          content="Reclaim your time with custom AI solutions. Trusted by 50+ businesses worldwide."
         />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://apexifylabs.com/" />

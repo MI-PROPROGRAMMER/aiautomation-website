@@ -1,101 +1,118 @@
-import { TrendingUp, Clock, DollarSign } from "lucide-react";
-import { Button } from "./ui/button";
+import { BadgeCheck, Bot, Workflow } from "lucide-react";
 
 export const CaseStudiesSection = () => {
-  const caseStudies = [
+  const portfolioItems = [
     {
-      company: "TechCorp",
-      industry: "SaaS",
-      challenge: "Manual lead qualification wasting 15 hours per week",
-      result: "90% time saved on lead processing",
-      stats: [
-        { icon: Clock, value: "15hrs", label: "saved weekly" },
-        { icon: TrendingUp, value: "3x", label: "more leads processed" },
-        { icon: DollarSign, value: "$78K", label: "annual savings" },
-      ],
+      title: "Customer Interaction Chatbot Demo",
+      type: "video" as const,
+      category: "WhatsApp Automation",
+      description: "Live walkthrough of a chatbot automating customer interactions for gyms.",
+      assetPath: "/resources/Chatbot (whatsapp)/Automating Customer Interaction_ A Chatbot Solution for Gyms.mp4",
     },
     {
-      company: "RetailHub",
-      industry: "E-commerce",
-      challenge: "Order processing taking 2 days, causing delivery delays",
-      result: "Same-day order fulfillment achieved",
-      stats: [
-        { icon: Clock, value: "2 days", label: "reduced to 2 hours" },
-        { icon: TrendingUp, value: "98%", label: "customer satisfaction" },
-        { icon: DollarSign, value: "$120K", label: "annual savings" },
-      ],
+      title: "WhatsApp, Instagram, Messenger Chatbot",
+      type: "image" as const,
+      category: "Omnichannel Chatbot",
+      description: "Unified chatbot setup handling conversations across major messaging channels.",
+      assetPath: "/resources/Chatbot (whatsapp)/Chatbot for whatsapp, instagram, messenger automation screenshot.png",
     },
     {
-      company: "HealthFirst",
-      industry: "Healthcare",
-      challenge: "Patient appointment scheduling overwhelming staff",
-      result: "Fully automated scheduling system",
-      stats: [
-        { icon: Clock, value: "25hrs", label: "saved weekly" },
-        { icon: TrendingUp, value: "60%", label: "more appointments" },
-        { icon: DollarSign, value: "$95K", label: "annual savings" },
-      ],
+      title: "WhatsApp Bot Conversation Flow",
+      type: "image" as const,
+      category: "Conversation Design",
+      description: "Sample end-to-end conversation between customer and automation assistant.",
+      assetPath: "/resources/Chatbot (whatsapp)/whatsapp conversation between chatbot and human screenshot.png",
+    },
+    {
+      title: "WhatsApp Assistant Response Demo",
+      type: "image" as const,
+      category: "Customer Support Bot",
+      description: "Automated response quality and routing shown in an actual WhatsApp flow.",
+      assetPath: "/resources/Chatbot (whatsapp)/conversation with whatsapp bot.png",
+    },
+    {
+      title: "n8n Omnichannel Chatbot Workflow",
+      type: "image" as const,
+      category: "n8n Workflow",
+      description: "n8n-based workflow powering chatbot interactions across WhatsApp, Instagram, and Messenger.",
+      assetPath: "/resources/n8n-portfolio/Chatbot for whatsapp, instagram, messenger.png",
+    },
+    {
+      title: "Discord and Telegram Posting Automation",
+      type: "image" as const,
+      category: "Content Automation",
+      description: "Automated publishing flow for cross-posting content to Discord and Telegram channels.",
+      assetPath: "/resources/n8n-portfolio/Discord and Telegram Posting Automation.png",
+    },
+    {
+      title: "Discord AI Conversation Starter",
+      type: "image" as const,
+      category: "Community Automation",
+      description: "Workflow that starts contextual AI conversations with community members.",
+      assetPath: "/resources/n8n-portfolio/Discord AI Conversation Starter.png",
+    },
+    {
+      title: "Discord and Telegram Automation (Khawar)",
+      type: "image" as const,
+      category: "Cross-platform Automation",
+      description: "Automation setup showing synchronized actions across Discord and Telegram.",
+      assetPath: "/resources/n8n-portfolio/Dicord and Telegram Automation Khawar.png",
+    },
+    {
+      title: "Discord AI Conversation Responder",
+      type: "image" as const,
+      category: "AI Responder",
+      description: "Automated AI responder flow for handling and continuing Discord conversations.",
+      assetPath: "/resources/n8n-portfolio/Discord AI Conversation Responder.png",
     },
   ];
 
   return (
-    <section id="case-studies" className="py-24 bg-primary">
+    <section id="portfolio" className="py-24 bg-primary">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-            Client Success <span className="text-gradient">Stories</span>
+            Our <span className="text-gradient">Portfolio</span>
           </h2>
           <p className="text-xl text-primary-foreground/80">
-            Real results from businesses that automated with us
+            Real chatbot and n8n automation work delivered for client use-cases.
           </p>
         </div>
 
-        {/* Case Study Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-          {caseStudies.map((study, index) => (
-            <div
-              key={index}
-              className="glass-card-light rounded-3xl p-8 hover-lift"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                  <div className="w-6 h-6 rounded-lg bg-accent"></div>
-                </div>
-                <div>
-                  <h3 className="font-bold text-primary-foreground">{study.company}</h3>
-                  <p className="text-sm text-primary-foreground/80">{study.industry}</p>
-                </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {portfolioItems.map((item) => (
+            <article key={item.assetPath} className="glass-card-light rounded-3xl p-5 hover-lift h-full">
+              <div className="rounded-2xl overflow-hidden border border-white/10 mb-5 bg-primary-dark/30">
+                {item.type === "video" ? (
+                  <video className="w-full h-56 object-cover" controls muted preload="metadata">
+                    <source src={encodeURI(item.assetPath)} type="video/mp4" />
+                    Your browser does not support video playback.
+                  </video>
+                ) : (
+                  <img
+                    src={encodeURI(item.assetPath)}
+                    alt={item.title}
+                    loading="lazy"
+                    className="w-full h-56 object-cover"
+                  />
+                )}
               </div>
 
-              <p className="text-sm text-primary-foreground/80 mb-4">
-                <span className="font-semibold text-primary-foreground">Challenge:</span> {study.challenge}
-              </p>
-
-              <p className="text-accent font-semibold mb-6">{study.result}</p>
-
-              <div className="space-y-4">
-                {study.stats.map((stat, statIndex) => (
-                  <div key={statIndex} className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <stat.icon className="w-5 h-5 text-accent" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-primary-foreground">{stat.value}</p>
-                      <p className="text-xs text-primary-foreground/80">{stat.label}</p>
-                    </div>
-                  </div>
-                ))}
+              <div className="flex items-center gap-2 mb-3">
+                {item.category.includes("n8n") ? (
+                  <Workflow className="w-5 h-5 text-accent" />
+                ) : item.category.includes("AI") || item.category.includes("Chatbot") ? (
+                  <Bot className="w-5 h-5 text-accent" />
+                ) : (
+                  <BadgeCheck className="w-5 h-5 text-accent" />
+                )}
+                <p className="text-sm text-accent font-semibold">{item.category}</p>
               </div>
-            </div>
+
+              <h3 className="text-lg font-bold text-primary-foreground mb-2 leading-snug">{item.title}</h3>
+              <p className="text-primary-foreground/80 text-sm leading-relaxed">{item.description}</p>
+            </article>
           ))}
-        </div>
-
-        {/* View All Button */}
-        <div className="text-center">
-          <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-            View All Case Studies
-          </Button>
         </div>
       </div>
     </section>

@@ -30,8 +30,8 @@ export const Header = () => {
             <Link to="/blog" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
               Blog
             </Link>
-            <Link to="/#case-studies" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
-              Case Studies
+            <Link to="/#portfolio" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
+              Portfolio
             </Link>
             <Link to="/#process" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
               Process
@@ -101,11 +101,11 @@ export const Header = () => {
               Process
             </Link>
             <Link
-              to="/#case-studies"
+              to="/#portfolio"
               className="block text-sm text-primary-foreground/90 hover:text-accent transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Case Studies
+              Portfolio
             </Link>
             <Link
               to="/contact"

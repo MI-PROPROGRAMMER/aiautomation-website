@@ -37,7 +37,7 @@ export const Hero = () => {
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-primary-foreground/80 max-w-3xl mx-auto animate-fade-in">
-            We design and deploy custom AI automation that handles the tedious work, so you and your team can focus on
+            We design and deploy custom AI solutions that handles the tedious work, so you and your team can focus on
             what truly drives your business forward.
           </p>
 
@@ -50,7 +50,7 @@ export const Hero = () => {
               </a>
             </Button>
             <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent/10 text-lg px-8 py-6" asChild>
-              <Link to="/#case-studies">See Our Success Stories</Link>
+              <Link to="/#portfolio">See Our Portfolio</Link>
             </Button>
           </div>
 
