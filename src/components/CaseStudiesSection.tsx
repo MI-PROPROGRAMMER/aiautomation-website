@@ -84,7 +84,15 @@ export const CaseStudiesSection = () => {
             <article key={item.assetPath} className="glass-card-light rounded-3xl p-5 hover-lift h-full">
               <div className="rounded-2xl overflow-hidden border border-white/10 mb-5 bg-primary-dark/30">
                 {item.type === "video" ? (
-                  <video className="w-full h-56 object-cover" controls muted preload="metadata">
+                  <video
+                    className="w-full h-56 object-cover"
+                    controls
+                    controlsList="nodownload noremoteplayback"
+                    disablePictureInPicture
+                    onContextMenu={(event) => event.preventDefault()}
+                    muted
+                    preload="metadata"
+                  >
                     <source src={encodeURI(item.assetPath)} type="video/mp4" />
                     Your browser does not support video playback.
                   </video>

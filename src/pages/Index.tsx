@@ -129,6 +129,9 @@ const Index = () => {
             <SocialProofSection />
           </Suspense>
           <Suspense fallback={null}>
+            <CaseStudiesSection />
+          </Suspense>
+          <Suspense fallback={null}>
             <ProcessSection />
           </Suspense>
           <Suspense fallback={null}>
@@ -138,9 +141,6 @@ const Index = () => {
             <IndustrySection />
           </Suspense>
           <LazyROICalculator />
-          <Suspense fallback={null}>
-            <CaseStudiesSection />
-          </Suspense>
           <Suspense fallback={null}>
             <ServicesCTASection />
           </Suspense>
