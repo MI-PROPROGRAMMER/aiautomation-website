@@ -17,11 +17,12 @@ export const CaseStudiesSection = () => {
       assetPath: "/resources/Chatbot (whatsapp)/Chatbot for whatsapp, instagram, messenger automation screenshot.png",
     },
     {
-      title: "WhatsApp Bot Conversation Flow",
+      title: "Fleet Management AI Assistant",
       type: "image" as const,
-      category: "Conversation Design",
-      description: "Sample end-to-end conversation between customer and automation assistant.",
-      assetPath: "/resources/Chatbot (whatsapp)/whatsapp conversation between chatbot and human screenshot.png",
+      category: "Fleet Operations AI",
+      description:
+        "AI-powered chat assistant for trucking and construction operations, designed to help teams quickly track vehicles, check active truck status, and answer day-to-day fleet questions in a simple conversational flow.",
+      assetPath: "/resources/Chatbot (whatsapp)/fleet-managment-ai-for-a-trucking-and-contruction-company.png",
     },
     {
       title: "WhatsApp Assistant Response Demo",
