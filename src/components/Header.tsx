@@ -1,125 +1,116 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { CALENDLY_LINK } from "@/config/constants";
 import { Link } from "react-router-dom";
 
+const NAV_LINKS = [
+  { to: "/services", label: "Services" },
+  { to: "/#case-studies", label: "Work" },
+  { to: "/about", label: "About" },
+  { to: "/blog", label: "Blog" },
+  { to: "/contact", label: "Contact" },
+];
+
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/10">
+    <header
+      className={`fixed left-4 right-4 top-4 z-50 rounded-2xl transition-all duration-500 ${
+        scrolled ? "premium-glass lux-border" : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-primary-foreground">
-            Apexify<span className="text-gradient">Labs</span>
+          {/* Wordmark */}
+          <Link
+            to="/"
+            onClick={() => {
+              // Reset the Hero scroll-jacking back to its initial state and
+              // scroll to absolute top. Works both when already on /  (no
+              // location change → ScrollToHash wouldn't fire) and after navigation.
+              window.dispatchEvent(new CustomEvent("resetSection"));
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="font-display text-2xl tracking-tight text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            Apexify<span className="text-gradient italic font-normal">Labs</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
-              Home
-            </Link>
-            <Link to="/services" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
-              Services
-            </Link>
-            <Link to="/about" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
-              About Us
-            </Link>
-            <Link to="/blog" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
-              Blog
-            </Link>
-            <Link to="/#case-studies" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
-              Case Studies
-            </Link>
-            <Link to="/#process" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
-              Process
-            </Link>
-            <Link to="/contact" className="text-sm text-primary-foreground/95 hover:text-accent transition-colors">
-              Contact Us
-            </Link>
+          {/* Desktop Navigation — letterspaced uppercase, editorial */}
+          <nav className="hidden md:flex items-center gap-7">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.to + link.label}
+                to={link.to}
+                className="smallcaps text-[0.7rem] text-primary-foreground/80 transition-colors hover:text-accent"
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA */}
           <div className="hidden md:block">
-            <Button className="gradient-accent hover-lift glow-accent" asChild>
+            <Button
+              size="sm"
+              className="gradient-accent hover-lift glow-accent sheen-card px-5 py-5 text-sm"
+              asChild
+            >
               <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
-                Get Free Audit
+                Free Audit
               </a>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-primary-foreground"
+          {/* Mobile menu button */}
+          <motion.button
+            whileTap={{ scale: 0.96 }}
+            className="md:hidden text-primary-foreground cursor-pointer"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={mobileMenuOpen}
             aria-controls="primary-navigation"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          </motion.button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div id="primary-navigation" className="md:hidden py-4 space-y-4">
-            <Link
-              to="/"
-              className="block text-sm text-primary-foreground/90 hover:text-accent transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              to="/services"
-              className="block text-sm text-primary-foreground/90 hover:text-accent transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Services
-            </Link>
-            <Link
-              to="/about"
-              className="block text-sm text-primary-foreground/90 hover:text-accent transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              to="/blog"
-              className="block text-sm text-primary-foreground/90 hover:text-accent transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Blog
-            </Link>
-            <Link
-              to="/#process"
-              className="block text-sm text-primary-foreground/90 hover:text-accent transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Process
-            </Link>
-            <Link
-              to="/#case-studies"
-              className="block text-sm text-primary-foreground/90 hover:text-accent transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Case Studies
-            </Link>
-            <Link
-              to="/contact"
-              className="block text-sm text-primary-foreground/90 hover:text-accent transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact
-            </Link>
-            <Button className="w-full gradient-accent" asChild>
+          <motion.div
+            id="primary-navigation"
+            className="md:hidden pb-6 pt-2 space-y-4 border-t border-white/10"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.to + link.label}
+                to={link.to}
+                className="smallcaps block text-xs text-primary-foreground/85 hover:text-accent transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Button className="w-full gradient-accent hover-lift glow-accent" asChild>
               <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
-                Get Free Audit
+                Free Audit
               </a>
             </Button>
-          </div>
+          </motion.div>
         )}
       </div>
     </header>

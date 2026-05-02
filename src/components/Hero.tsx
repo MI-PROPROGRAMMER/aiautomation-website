@@ -1,82 +1,102 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Clock, Users, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { CALENDLY_LINK } from "@/config/constants";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import ScrollExpandMedia from "@/components/ui/scroll-expansion-hero";
+import { HeroBackdrop } from "@/components/hero/HeroBackdrop";
+import { HeroFrameSVG } from "@/components/hero/HeroFrameSVG";
+import { HeroCoverOverlay } from "@/components/hero/HeroCoverOverlay";
 
+/**
+ * Hero — restores the scroll-expansion animation, but with AI/tech content:
+ *   - Background: HeroBackdrop (animated blueprint grid + node mesh)
+ *   - Foreground (the thing that expands as you scroll): HeroFrameSVG
+ *     (pure-SVG automation workflow canvas, scales perfectly via viewBox)
+ *   - Title: "Automate the grind" splits horizontally apart on scroll
+ *   - Children (after expansion completes): subhead, CTAs, stat strip
+ */
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center gradient-hero overflow-hidden">
-      {/* Background Layer */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#011629] via-[#011932] to-[#021a33]" aria-hidden="true" />
-        <div
-          className="absolute -top-32 -left-24 h-96 w-96 rounded-full bg-accent/15 blur-3xl"
-          aria-hidden="true"
-          role="presentation"
-        />
-        <div
-          className="absolute -bottom-16 right-0 h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-3xl"
-          aria-hidden="true"
-          role="presentation"
-        />
-        <div
-          className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(118,228,247,0.18),transparent_55%)]"
-          aria-hidden="true"
-        />
+    <ScrollExpandMedia
+      mediaType="image"
+      mediaContent={(progress) => <HeroFrameSVG progress={progress} />}
+      bgContent={<HeroBackdrop />}
+      overlayContent={(progress) => <HeroCoverOverlay progress={progress} />}
+    >
+      <div className="mx-auto max-w-5xl space-y-8 text-center">
+        <motion.div
+          className="flex items-center justify-center gap-3"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent animate-pulse" aria-hidden="true" />
+          <span className="tech-label text-primary-foreground/85">
+            AI Automation · since 2021
+          </span>
+        </motion.div>
+
+        <motion.p
+          className="mx-auto max-w-3xl text-xl leading-relaxed text-primary-foreground/90 md:text-2xl"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          Custom AI automation that hands your team back
+          <span className="text-accent"> 40% of their week</span> — so they can focus on growth, strategy, and the work only humans can do.
+        </motion.p>
+
+        <motion.div
+          className="flex flex-col items-center justify-center gap-4 pt-2 sm:flex-row"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.12 }}
+        >
+          <Button size="lg" className="gradient-accent px-10 py-6 text-base hover-lift glow-accent sheen-card" asChild>
+            <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
+              Book a free automation audit
+              <ArrowRight className="ml-2" size={18} />
+            </a>
+          </Button>
+          <Button
+            size="lg"
+            variant="ghost"
+            className="group px-6 py-6 text-base text-primary-foreground/85 hover:bg-transparent hover:text-accent"
+            asChild
+          >
+            <Link to="/#case-studies">
+              <span className="border-b border-primary-foreground/20 pb-1 transition-colors group-hover:border-accent">
+                See real outcomes
+              </span>
+              <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={16} />
+            </Link>
+          </Button>
+        </motion.div>
+
+        {/* Tech-readout stat strip — replaces fashion stat-line */}
+        <motion.div
+          className="mx-auto grid max-w-md grid-cols-3 gap-x-6 gap-y-3 border-t border-accent/20 pt-6 mt-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <HeroStat label="years" value="4+" />
+          <HeroStat label="clients" value="50+" />
+          <HeroStat label="hrs automated" value="10K+" />
+        </motion.div>
       </div>
-
-      {/* Content */}
-      <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground leading-tight animate-fade-in-up">
-            Reclaim Your Time.
-            <br />
-            <span className="text-gradient">Revolutionize Your Operations.</span>
-          </h1>
-
-          {/* Subheading */}
-          <p className="text-xl md:text-2xl text-primary-foreground/80 max-w-3xl mx-auto animate-fade-in">
-            We design and deploy custom AI automation that handles the tedious work, so you and your team can focus on
-            what truly drives your business forward.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 animate-scale-in">
-            <Button size="lg" className="gradient-accent hover-lift glow-accent text-lg px-8 py-6" asChild>
-              <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
-                Book a Free Automation Audit
-                <ArrowRight className="ml-2" size={20} />
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent/10 text-lg px-8 py-6" asChild>
-              <Link to="/#case-studies">See Our Success Stories</Link>
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16 animate-fade-in">
-            {[
-              { icon: Clock, label: "Years Experience", value: "4+" },
-              { icon: Users, label: "Clients Served", value: "50+" },
-              { icon: Zap, label: "Hours Automated", value: "10K+" },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="glass-card rounded-2xl p-6 hover-lift"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <stat.icon className="w-8 h-8 text-accent mx-auto mb-3" />
-                <div className="text-4xl font-bold text-primary-foreground mb-2">{stat.value}</div>
-                <div className="text-sm text-primary-foreground/70">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F2F2F2] to-transparent z-10"></div>
-    </section>
+    </ScrollExpandMedia>
   );
 };
+
+const HeroStat = ({ value, label }: { value: string; label: string }) => (
+  <div className="text-center">
+    <div className="tech-numeral text-2xl font-semibold text-primary-foreground md:text-3xl">{value}</div>
+    <div className="tech-label text-[0.6rem] text-primary-foreground/55">{label}</div>
+  </div>
+);

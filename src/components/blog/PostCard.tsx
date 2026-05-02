@@ -1,6 +1,6 @@
 import type { BlogPost } from "@/content/blog/posts";
 import { format } from "date-fns";
-import { Calendar, Clock } from "lucide-react";
+import { Calendar, Clock, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 type PostCardProps = {
@@ -16,44 +16,47 @@ export const PostCard = ({ post }: PostCardProps) => {
   const formattedDate = format(new Date(date), "MMMM d, yyyy");
 
   return (
-    <article className="overflow-hidden rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm transition hover:border-accent/40 hover:shadow-lg hover:shadow-accent/10">
-      <Link to={`/blog/${slug}`}>
-        <img
-          src={heroImage}
-          alt={title}
-          className="h-56 w-full object-cover"
-          loading="lazy"
-          decoding="async"
-        />
+    <article className="group relative">
+      <Link to={`/blog/${slug}`} className="block overflow-hidden rounded-xl">
+        <div className="aspect-[3/2] overflow-hidden">
+          <img
+            src={heroImage}
+            alt={title}
+            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
       </Link>
-      <div className="flex flex-col gap-4 p-6">
-        <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-wide text-primary-foreground/60">
-          <span className="inline-flex items-center gap-1">
-            <Calendar size={14} />
+
+      <div className="mt-6 flex flex-col gap-4">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-xs">
+          <span className="smallcaps text-[0.7rem] text-primary-foreground/55">
+            <Calendar size={12} className="mr-1.5 inline-block" />
             {formattedDate}
           </span>
           {readingTime && (
-            <span className="inline-flex items-center gap-1">
-              <Clock size={14} />
+            <span className="smallcaps text-[0.7rem] text-primary-foreground/55">
+              <Clock size={12} className="mr-1.5 inline-block" />
               {readingTime}
             </span>
           )}
         </div>
 
         <Link to={`/blog/${slug}`}>
-          <h3 className="text-2xl font-semibold text-primary-foreground transition-colors hover:text-accent">
+          <h3 className="font-display text-2xl font-bold leading-tight text-primary-foreground transition-colors group-hover:text-accent md:text-3xl">
             {title}
           </h3>
         </Link>
 
-        <p className="text-sm text-primary-foreground/70">{excerpt}</p>
+        <p className="text-base leading-relaxed text-primary-foreground/70">{excerpt}</p>
 
         {tags && tags.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium uppercase tracking-wide text-accent"
+                className="smallcaps text-[0.65rem] text-accent/85"
               >
                 {tag}
               </span>
@@ -61,16 +64,16 @@ export const PostCard = ({ post }: PostCardProps) => {
           </div>
         )}
 
-        <div className="pt-2">
-          <Link
-            to={`/blog/${slug}`}
-            className="text-sm font-semibold text-accent transition-colors hover:text-accent/80"
-          >
-            Read more →
-          </Link>
-        </div>
+        <Link
+          to={`/blog/${slug}`}
+          className="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-accent-foreground"
+        >
+          <span className="border-b border-accent/40 pb-0.5 transition-colors group-hover:border-accent">
+            Read essay
+          </span>
+          <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+        </Link>
       </div>
     </article>
   );
 };
-

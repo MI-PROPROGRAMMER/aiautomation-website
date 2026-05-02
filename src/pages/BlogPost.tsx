@@ -8,6 +8,7 @@ import { Calendar, Clock, Share2, Tag } from "lucide-react";
 import type { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 import { Helmet } from "react-helmet";
 import { Link, Navigate, useParams } from "react-router-dom";
+import { ChapterMarker } from "@/components/ui/editorial";
 
 const mdxComponents = {
   a: (props: ComponentPropsWithoutRef<"a">) => (
@@ -25,7 +26,7 @@ const mdxComponents = {
     />
   ),
   blockquote: ({ children }: PropsWithChildren) => (
-    <blockquote className="my-6 border-l-4 border-accent/60 bg-accent/10 px-6 py-4 italic text-primary-foreground/90">
+    <blockquote className="my-6 border-l-2 border-accent/60 px-6 py-4 italic text-primary-foreground/90 bg-accent/5">
       {children}
     </blockquote>
   ),
@@ -50,7 +51,7 @@ const BlogPost = () => {
   return (
     <>
       <Helmet>
-        <title>{`${title} | ApexifyLabs Blog`}</title>
+        <title>{`${title} | ApexifyLabs Journal`}</title>
         <meta name="description" content={seoDescription ?? excerpt} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={seoDescription ?? excerpt} />
@@ -64,60 +65,57 @@ const BlogPost = () => {
         <Header />
         <main>
           <article>
-            <section className="relative overflow-hidden bg-primary pt-32 pb-20">
-              <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-[-15%] left-[5%] h-96 w-96 rounded-full bg-accent blur-3xl" />
-                <div className="absolute bottom-[-10%] right-[10%] h-[26rem] w-[26rem] rounded-full bg-primary/60 blur-3xl" />
+            {/* Editorial hero — full-width image, large serif title below */}
+            <section className="relative overflow-hidden bg-primary pt-32">
+              <div className="absolute inset-0 opacity-25" aria-hidden="true">
+                <div className="absolute top-[-15%] left-[5%] h-[28rem] w-[28rem] rounded-full bg-accent/20 blur-3xl" />
+                <div className="absolute bottom-[-10%] right-[10%] h-[26rem] w-[26rem] rounded-full bg-accent/10 blur-3xl" />
               </div>
-              <div className="container relative z-10 mx-auto grid gap-10 px-4 lg:grid-cols-[3fr,2fr] lg:items-center">
-                <div>
-                  <div className="inline-flex items-center gap-3 text-sm text-accent/90">
-                    <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 uppercase tracking-[0.2em]">
-                      ApexifyLabs Blog
-                    </span>
-                  </div>
-                  <h1 className="mt-6 text-4xl font-semibold leading-tight text-primary-foreground md:text-6xl">
+
+              <div className="container relative z-10 mx-auto px-4 pb-16">
+                <div className="mx-auto max-w-5xl">
+                  <ChapterMarker number="" label="The Journal" />
+                  <h1 className="mt-8 font-display text-4xl font-bold leading-[1.05] text-primary-foreground md:text-6xl lg:text-7xl">
                     {title}
                   </h1>
-                  <p className="mt-4 max-w-2xl text-lg text-primary-foreground/80">{excerpt}</p>
-                  <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-primary-foreground/70">
-                    <span className="inline-flex items-center gap-2">
-                      <Calendar size={18} />
+                  <p className="mt-8 max-w-3xl text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
+                    {excerpt}
+                  </p>
+                  <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs text-primary-foreground/60">
+                    <span className="smallcaps inline-flex items-center gap-2">
+                      <Calendar size={14} />
                       {formattedDate}
                     </span>
                     {author && (
-                      <span className="inline-flex items-center gap-2">
-                        <Tag size={18} />
+                      <span className="smallcaps inline-flex items-center gap-2">
+                        <Tag size={14} />
                         {author}
                       </span>
                     )}
                     {readingTime && (
-                      <span className="inline-flex items-center gap-2">
-                        <Clock size={18} />
+                      <span className="smallcaps inline-flex items-center gap-2">
+                        <Clock size={14} />
                         {readingTime}
                       </span>
                     )}
                   </div>
                   {tags && tags.length > 0 && (
-                    <div className="mt-6 flex flex-wrap gap-2">
+                    <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
                       {tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent"
-                        >
+                        <span key={tag} className="smallcaps text-[0.65rem] text-accent/90">
                           {tag}
                         </span>
                       ))}
                     </div>
                   )}
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    <Button asChild variant="default" className="gradient-accent glow-accent">
+                  <div className="mt-10 flex flex-wrap gap-3">
+                    <Button asChild className="gradient-accent hover-lift glow-accent sheen-card">
                       <Link to="/contact">Talk to us about automation</Link>
                     </Button>
                     <Button
-                      variant="outline"
+                      variant="ghost"
                       asChild
-                      className="border-accent/50 bg-accent/10 text-accent hover:bg-accent/20"
+                      className="text-primary-foreground/85 hover:bg-white/5 hover:text-accent"
                     >
                       <a
                         href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(canonicalUrl)}&title=${encodeURIComponent(title)}`}
@@ -125,27 +123,35 @@ const BlogPost = () => {
                         rel="noopener noreferrer"
                         aria-label="Share on LinkedIn"
                       >
-                        <Share2 size={16} className="mr-2" />
-                        Share on LinkedIn
+                        <Share2 size={14} className="mr-2" />
+                        Share
                       </a>
                     </Button>
                   </div>
                 </div>
-                <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-xl">
-                  <img
-                    src={heroImage}
-                    alt={title}
-                    className="h-full w-full object-cover"
-                    loading="eager"
-                    decoding="async"
-                  />
+              </div>
+
+              {/* Hero image — full-bleed slab */}
+              <div className="relative">
+                <div className="container mx-auto px-4">
+                  <div className="mx-auto max-w-6xl overflow-hidden rounded-2xl">
+                    <img
+                      src={heroImage}
+                      alt={title}
+                      className="h-[26rem] w-full object-cover md:h-[36rem]"
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </div>
                 </div>
               </div>
             </section>
 
-            <section className="bg-background pb-24">
+            {/* Content — narrow column, no glass card wrapper */}
+            <section className="bg-background pb-32 pt-20">
               <div className="container mx-auto px-4">
-                <div className="mx-auto -mt-32 max-w-4xl rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl md:p-12">
+                <div className="hairline mx-auto max-w-3xl mb-16" aria-hidden="true" />
+                <div className="mx-auto max-w-3xl">
                   <div className="mdx-content">
                     <MDXProvider components={mdxComponents}>
                       <Content />
@@ -163,4 +169,3 @@ const BlogPost = () => {
 };
 
 export default BlogPost;
-

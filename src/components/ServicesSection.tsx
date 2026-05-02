@@ -1,99 +1,194 @@
-import { Code2, Zap, Workflow, Shield } from "lucide-react";
+import { Code2, Zap, Workflow, Shield, ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { BentoTile, ChapterMarker } from "@/components/ui/editorial";
+import { WorkflowPreview } from "@/components/infographics/WorkflowPreview";
 
 export const ServicesSection = () => {
+  const lowCodeFeatures = [
+    "Rapid deployment in days, not months",
+    "Visual workflow builders",
+    "Seamless app integrations",
+    "Cost-effective for clear playbooks",
+  ];
+
+  const customFeatures = [
+    "Unlimited customisation",
+    "Advanced data processing",
+    "Complex business logic",
+    "Scalable architecture",
+  ];
+
   return (
-    <section id="services" className="py-24 bg-[hsl(var(--section-alt))]">
+    <section id="services" className="py-32 bg-[hsl(var(--section-alt))]">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-            Your Business, Running on <span className="text-gradient">Autopilot</span>
-          </h2>
-          <p className="text-xl text-primary-foreground/80">
-            We combine the speed of no-code solutions with the power of custom development to create automation that
-            perfectly fits your unique needs.
-          </p>
-        </div>
-
-        {/* Service Cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Low-Code/No-Code */}
-          <div className="glass-card-light rounded-3xl p-10 hover-lift">
-            <div className="w-20 h-20 rounded-2xl gradient-accent flex items-center justify-center mb-6">
-              <Zap className="w-10 h-10 text-accent-foreground" />
+        <div className="mx-auto max-w-7xl">
+          {/* Editorial header */}
+          <div className="mb-20 grid gap-10 md:grid-cols-12 md:gap-16">
+            <div className="md:col-span-7">
+              <ChapterMarker number="03" label="What We Build" />
+              <h2 className="mt-6 text-4xl font-bold leading-[1.05] text-primary-foreground md:text-6xl">
+                Your business,
+                <span className="block font-normal text-gradient">running on autopilot.</span>
+              </h2>
             </div>
-            <h3 className="text-3xl font-bold text-primary-foreground mb-4">Low-Code/No-Code Agility</h3>
-            <p className="text-lg text-primary-foreground mb-6">Fast, Flexible, and Powerful</p>
-            <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-              We leverage platforms like Zapier, Make, and Bubble to get your automation up and running in days, not
-              months.
-            </p>
-            <ul className="space-y-3">
-              {[
-                "Rapid deployment and iteration",
-                "Visual workflow builders",
-                "Seamless app integrations",
-                "Cost-effective solutions",
-              ].map((feature, index) => (
-                <li key={index} className="flex items-start gap-3 text-primary-foreground/80">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2"></div>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="md:col-span-5 md:pt-16">
+              <p className="text-lg leading-relaxed text-primary-foreground/75 md:text-xl">
+                We combine the speed of no-code platforms with the precision of custom development —
+                building automation that fits the shape of your business, not the other way around.
+              </p>
+            </div>
           </div>
 
-          {/* Custom-Coded */}
-          <div className="glass-card-light rounded-3xl p-10 hover-lift">
-            <div className="w-20 h-20 rounded-2xl gradient-primary flex items-center justify-center mb-6">
-              <Code2 className="w-10 h-10 text-primary-foreground" />
-            </div>
-            <h3 className="text-3xl font-bold text-primary-foreground mb-4">Custom-Coded Precision</h3>
-            <p className="text-lg text-primary-foreground mb-6">Complex Problems, Tailored Solutions</p>
-            <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-              When your needs are unique or complex, we build custom solutions using Python, JavaScript, APIs, and cloud
-              processes.
-            </p>
-            <ul className="space-y-3">
-              {[
-                "Unlimited customization possibilities",
-                "Advanced data processing",
-                "Complex business logic",
-                "Scalable architecture",
-              ].map((feature, index) => (
-                <li key={index} className="flex items-start gap-3 text-primary-foreground/80">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2"></div>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+          {/* Asymmetric bento — one feature tile (large) + one tall companion */}
+          <div className="grid gap-6 md:grid-cols-12 md:gap-8">
+            {/* Feature tile — Low-Code/No-Code (spans 7) */}
+            <motion.div
+              className="md:col-span-7"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <BentoTile tone="feature" rounded="xl" withSheen className="p-10 md:p-14 h-full">
+                <div className="flex items-start justify-between gap-6">
+                  <div>
+                    <span className="eyebrow">Service · 01</span>
+                    <h3 className="mt-4 text-3xl font-bold text-primary-foreground md:text-5xl">
+                      Low-Code <span className="font-normal text-gradient">Agility</span>
+                    </h3>
+                    <p className="mt-4 text-lg text-primary-foreground/80">Fast, flexible, and powerful.</p>
+                  </div>
+                  <div className="hidden md:flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-accent/10 ring-1 ring-accent/30">
+                    <Zap className="h-7 w-7 text-accent" />
+                  </div>
+                </div>
 
-        {/* Hybrid Approach Benefits */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-12">
-          {[
-            {
-              icon: Workflow,
-              title: "Start Fast, Scale Smart",
-              description: "Begin with no-code for quick wins, then enhance with custom code as your needs evolve.",
-            },
-            {
-              icon: Shield,
-              title: "Best of Both Worlds",
-              description: "Get the speed of no-code with the power and flexibility of custom development.",
-            },
-          ].map((benefit, index) => (
-            <div key={index} className="flex gap-6 items-start">
-              <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                <benefit.icon className="w-7 h-7 text-accent" />
-              </div>
-              <div>
-                <h4 className="text-xl font-bold text-primary-foreground mb-2">{benefit.title}</h4>
-                <p className="text-primary-foreground/80 leading-relaxed">{benefit.description}</p>
-              </div>
-            </div>
-          ))}
+                <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/75 md:text-lg">
+                  We leverage Zapier, Make, n8n, and Bubble to ship automation in days — without sacrificing
+                  rigor or maintainability.
+                </p>
+
+                {/* Workflow diagram preview */}
+                <div className="mt-8 rounded-xl border border-accent/20 bg-primary/40 p-4 md:p-5 scan-rule">
+                  <div className="mb-3 flex items-center justify-between">
+                    <span className="tech-label text-[0.6rem] text-primary-foreground/60">
+                      pattern · linear-pipeline
+                    </span>
+                    <span className="tech-numeral text-[0.65rem] text-accent">live</span>
+                  </div>
+                  <WorkflowPreview variant="linear" className="h-12 w-full" />
+                </div>
+
+                <div className="hairline mt-10 mb-8" aria-hidden="true" />
+
+                <ul className="grid gap-3 md:grid-cols-2">
+                  {lowCodeFeatures.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-3 text-primary-foreground/85"
+                    >
+                      <span className="mt-2 inline-block h-1 w-4 bg-accent" aria-hidden="true" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </BentoTile>
+            </motion.div>
+
+            {/* Tall companion — Custom-Coded (spans 5) */}
+            <motion.div
+              className="md:col-span-5"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            >
+              <BentoTile tone="flat" rounded="xl" className="p-10 md:p-12 h-full">
+                <span className="eyebrow">Service · 02</span>
+                <h3 className="mt-4 text-2xl font-bold text-primary-foreground md:text-4xl">
+                  Custom-Coded <span className="italic font-normal">Precision</span>
+                </h3>
+                <p className="mt-3 text-base text-primary-foreground/80">Complex problems, tailored solutions.</p>
+
+                <div className="hairline-soft my-8" aria-hidden="true" />
+
+                <p className="text-sm leading-relaxed text-primary-foreground/70 md:text-base">
+                  When the problem is unique or the surface area is wide, we build with Python, TypeScript,
+                  cloud functions, and proper APIs.
+                </p>
+
+                {/* Workflow diagram preview — branching */}
+                <div className="mt-8 rounded-xl border border-accent/20 bg-primary/40 p-4 md:p-5 scan-rule">
+                  <div className="mb-3 flex items-center justify-between">
+                    <span className="tech-label text-[0.6rem] text-primary-foreground/60">
+                      pattern · fan-out / merge
+                    </span>
+                    <span className="tech-numeral text-[0.65rem] text-accent">async</span>
+                  </div>
+                  <WorkflowPreview variant="branching" className="h-20 w-full" />
+                </div>
+
+                <ul className="mt-8 space-y-3">
+                  {customFeatures.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-3 text-sm text-primary-foreground/85"
+                    >
+                      <Code2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </BentoTile>
+            </motion.div>
+
+            {/* Wide bare strip — "Hybrid by design" (spans 12, low height) */}
+            <motion.div
+              className="md:col-span-12"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.55, delay: 0.15, ease: "easeOut" }}
+            >
+              <BentoTile tone="bare" rounded="md" className="p-8 md:px-12 md:py-10">
+                <div className="grid gap-8 md:grid-cols-12 md:items-center md:gap-12">
+                  <div className="md:col-span-4">
+                    <span className="eyebrow">The hybrid advantage</span>
+                    <h4 className="mt-3 text-2xl font-bold text-primary-foreground md:text-3xl">
+                      Start fast.
+                      <span className="block font-normal text-gradient">Scale smart.</span>
+                    </h4>
+                  </div>
+                  <div className="md:col-span-4 flex gap-5">
+                    <Workflow className="mt-1 h-7 w-7 shrink-0 text-accent" />
+                    <p className="text-sm leading-relaxed text-primary-foreground/80 md:text-base">
+                      Begin with no-code for quick wins, then graduate to custom code where the unit economics demand it.
+                    </p>
+                  </div>
+                  <div className="md:col-span-4 flex gap-5">
+                    <Shield className="mt-1 h-7 w-7 shrink-0 text-accent" />
+                    <p className="text-sm leading-relaxed text-primary-foreground/80 md:text-base">
+                      Get the speed of no-code with the power and flexibility of custom development — never one or the other.
+                    </p>
+                  </div>
+                </div>
+              </BentoTile>
+            </motion.div>
+          </div>
+
+          {/* Inline closing line */}
+          <div className="mt-16 flex flex-col items-start gap-3 md:flex-row md:items-center md:justify-between">
+            <p className="display-italic text-lg italic text-primary-foreground/70 md:text-xl">
+              Built for businesses that move on conviction, not on cycles.
+            </p>
+            <a
+              href="#process"
+              className="inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-accent-foreground"
+            >
+              See how we deliver
+              <ArrowUpRight size={16} />
+            </a>
+          </div>
         </div>
       </div>
     </section>

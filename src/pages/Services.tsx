@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { CALENDLY_LINK } from "@/config/constants";
+import { ChapterMarker, StatLine } from "@/components/ui/editorial";
 
 const Services = () => {
   return (
@@ -20,10 +21,6 @@ const Services = () => {
         <meta
           name="description"
           content="Explore our comprehensive automation services: Sales & Marketing, Operations & Workflow, and Customer Support automation. Custom solutions tailored to your business needs."
-        />
-        <meta
-          name="keywords"
-          content="automation services, sales automation, marketing automation, workflow automation, customer support automation, AI solutions"
         />
         <meta property="og:title" content="Our Services - ApexifyLabs" />
         <meta
@@ -37,59 +34,56 @@ const Services = () => {
       <div className="min-h-screen">
         <Header />
         <main>
-          {/* Hero Section */}
-          <section className="pt-32 pb-20 gradient-hero relative overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute inset-0 opacity-20">
-              <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent rounded-full blur-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary rounded-full blur-3xl"></div>
+          {/* Editorial hero — left aligned, no centered card */}
+          <section className="relative overflow-hidden pt-40 pb-24 gradient-hero">
+            <div className="absolute inset-0 opacity-25" aria-hidden="true">
+              <div className="absolute -right-32 top-0 h-[40rem] w-[40rem] rounded-full bg-accent/20 blur-3xl" />
+              <div className="absolute -left-32 bottom-0 h-[36rem] w-[36rem] rounded-full bg-accent/10 blur-3xl" />
             </div>
 
-            <div className="container mx-auto px-4 relative z-10">
-              <div className="max-w-4xl mx-auto text-center">
-                <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
-                  We don't just sell tools; we deliver{" "}
-                  <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-accent to-white">
-                    outcomes.
-                  </span>
+            <div className="container relative z-10 mx-auto px-4">
+              <div className="mx-auto max-w-6xl">
+                <ChapterMarker number="" label="Services" />
+                <h1 className="mt-8 max-w-5xl text-5xl font-bold leading-[1.02] text-primary-foreground md:text-7xl lg:text-8xl">
+                  We don't sell tools.
+                  <span className="block font-normal text-gradient">We deliver outcomes.</span>
                 </h1>
-                <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 leading-relaxed">
-                  Our comprehensive automation services tackle the most time-consuming challenges across your entire
-                  business.
+                <p className="mt-10 max-w-2xl text-lg leading-relaxed text-primary-foreground/85 md:text-xl">
+                  Our automation work tackles the most time-consuming, error-prone, judgment-light tasks
+                  across your business — and gives that capacity back to your team.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" className="gradient-accent hover-lift glow-accent text-lg px-8 py-6" asChild>
+
+                <div className="mt-12 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+                  <Button size="lg" className="gradient-accent hover-lift glow-accent px-10 py-6 sheen-card" asChild>
                     <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
-                      Book Free Consultation
-                      <ArrowRight className="w-5 h-5 ml-2" />
+                      Book free consultation
+                      <ArrowRight className="w-4 h-4 ml-2" />
                     </a>
                   </Button>
                   <Button
                     size="lg"
-                    variant="outline"
-                    className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 py-6"
+                    variant="ghost"
+                    className="group text-primary-foreground/85 hover:bg-transparent hover:text-accent"
                     asChild
                   >
-                    <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
-                      Watch Demo
+                    <a href="#case-studies">
+                      <span className="border-b border-primary-foreground/30 pb-1 transition-colors group-hover:border-accent">
+                        See real outcomes
+                      </span>
                     </a>
                   </Button>
                 </div>
 
-                {/* Stats */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-3xl mx-auto">
-                  <div className="text-center">
-                    <div className="text-4xl md:text-5xl font-bold text-primary-foreground mb-2">500+</div>
-                    <div className="text-primary-foreground/80">Processes Automated</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl md:text-5xl font-bold text-primary-foreground mb-2">98%</div>
-                    <div className="text-primary-foreground/80">Client Satisfaction</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-4xl md:text-5xl font-bold text-primary-foreground mb-2">24/7</div>
-                    <div className="text-primary-foreground/80">Support Available</div>
-                  </div>
+                <div className="mt-20">
+                  <div className="hairline mb-12 max-w-md" aria-hidden="true" />
+                  <StatLine
+                    size="md"
+                    items={[
+                      { value: "4+", label: "Years experience" },
+                      { value: "50+", label: "Clients served" },
+                      { value: "10K+", label: "Hours automated" },
+                    ]}
+                  />
                 </div>
               </div>
             </div>

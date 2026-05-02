@@ -1,78 +1,110 @@
-import { Globe, Building2, Store, Heart } from "lucide-react";
+import { motion } from "framer-motion";
+import { ChapterMarker, HairlineRule, StatLine } from "@/components/ui/editorial";
 
 export const SocialProofSection = () => {
   const locations = [
-    { country: "USA", projects: 25 },
-    { country: "UK", projects: 12 },
+    { country: "United States", projects: 25 },
+    { country: "United Kingdom", projects: 12 },
     { country: "Australia", projects: 8 },
     { country: "Canada", projects: 15 },
   ];
 
   const industries = [
-    { icon: Building2, name: "Enterprise", count: "20+ Companies", color: "bg-blue-500/10 text-blue-500" },
-    { icon: Store, name: "E-commerce", count: "10+ Stores", color: "bg-purple-500/10 text-purple-500" },
-    { icon: Heart, name: "Healthcare", count: "8+ Practices", color: "bg-green-500/10 text-green-500" },
-    { icon: Globe, name: "Startups", count: "15+ Companies", color: "bg-orange-500/10 text-orange-500" },
+    { name: "Enterprise", count: "20+ Companies" },
+    { name: "E-commerce", count: "10+ Stores" },
+    { name: "Healthcare", count: "8+ Practices" },
+    { name: "Startups", count: "15+ Companies" },
   ];
 
   return (
-    <section className="py-24 bg-primary">
+    <section className="py-32 bg-[hsl(var(--section-alt))]">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-            Trusted by <span className="text-gradient">50+ Businesses</span> Across the Globe
-          </h2>
-          <p className="text-xl text-primary-foreground/80">
-            Delivering automation solutions across industries from startups to Fortune 500 companies.
-          </p>
-        </div>
-
-        {/* Stats Grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
-          {[
-            { value: "4+", label: "Years Experience" },
-            { value: "50+", label: "Clients Served" },
-            { value: "10K+", label: "Hours Automated", subtext: "Time returned to our clients for strategic work" },
-          ].map((stat, index) => (
-            <div
-              key={index}
-              className="glass-card-light rounded-3xl p-8 text-center hover-lift"
-            >
-              <div className="text-5xl font-bold text-gradient mb-3">{stat.value}</div>
-              <div className="text-lg font-semibold text-primary-foreground mb-2">{stat.label}</div>
-              {stat.subtext && <p className="text-sm text-primary-foreground/80">{stat.subtext}</p>}
-            </div>
-          ))}
-        </div>
-
-        {/* Global Reach */}
-        <div className="max-w-5xl mx-auto mb-12">
-          <h3 className="text-2xl font-bold text-center text-primary-foreground mb-8">Global Impact, Local Excellence</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {locations.map((location, index) => (
-              <div key={index} className="text-center p-6 glass-card-light rounded-xl hover-lift">
-                <div className="text-3xl font-bold text-accent mb-2">{location.projects}</div>
-                <div className="text-sm text-primary-foreground/80">Active Projects</div>
-                <div className="text-lg font-semibold text-primary-foreground mt-2">{location.country}</div>
-              </div>
-            ))}
+        <div className="mx-auto max-w-6xl">
+          {/* Editorial header */}
+          <div className="text-center">
+            <ChapterMarker label="Global Reach" align="center" />
+            <h2 className="mx-auto mt-8 max-w-4xl text-4xl font-bold leading-[1.05] text-primary-foreground md:text-6xl">
+              Trusted by{" "}
+              <span className="font-normal text-gradient">50+ businesses</span>
+              <br className="hidden md:block" /> across five continents.
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-primary-foreground/75">
+              Delivering automation across industries, from early-stage startups to Fortune 500 companies.
+            </p>
           </div>
-        </div>
 
-        {/* Industries */}
-        <div className="max-w-5xl mx-auto">
-          <h3 className="text-2xl font-bold text-center text-primary-foreground mb-8">Industries We Serve</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {industries.map((industry, index) => (
-              <div key={index} className="glass-card-light rounded-xl p-6 text-center hover-lift">
-                <div className={`w-16 h-16 rounded-xl ${industry.color} flex items-center justify-center mx-auto mb-4`}>
-                  <industry.icon className="w-8 h-8" />
-                </div>
-                <h4 className="font-semibold text-primary-foreground mb-1">{industry.name}</h4>
-                <p className="text-sm text-primary-foreground/80">{industry.count}</p>
-              </div>
-            ))}
+          {/* Oversized stat line, NOT three boxes */}
+          <div className="mt-20 mb-20">
+            <HairlineRule />
+            <div className="py-16">
+              <StatLine
+                size="lg"
+                items={[
+                  { value: "4+", label: "Years Experience" },
+                  { value: "50+", label: "Clients Served" },
+                  { value: "10K+", label: "Hours Automated" },
+                ]}
+              />
+            </div>
+            <HairlineRule variant="soft" />
+          </div>
+
+          {/* Global reach — text columns with hairlines, no boxes */}
+          <div className="grid gap-16 md:grid-cols-2 md:gap-20">
+            <div>
+              <span className="eyebrow">Global Impact, Local Excellence</span>
+              <h3 className="mt-4 text-3xl font-bold text-primary-foreground md:text-4xl">
+                Active in <span className="font-normal text-gradient">five continents.</span>
+              </h3>
+              <ul className="mt-10 divide-y divide-primary-foreground/10">
+                {locations.map((location, idx) => (
+                  <motion.li
+                    key={location.country}
+                    className="grid grid-cols-12 items-baseline gap-4 py-5"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 }}
+                  >
+                    <span className="col-span-7 smallcaps text-sm text-primary-foreground/85">
+                      {location.country}
+                    </span>
+                    <span className="col-span-3 text-right num-display text-2xl text-accent">
+                      {location.projects}
+                    </span>
+                    <span className="col-span-2 text-right text-xs text-primary-foreground/55">
+                      projects
+                    </span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <span className="eyebrow">Industries We Serve</span>
+              <h3 className="mt-4 text-3xl font-bold text-primary-foreground md:text-4xl">
+                From SaaS founders to <span className="font-normal text-gradient">global enterprise.</span>
+              </h3>
+              <ul className="mt-10 divide-y divide-primary-foreground/10">
+                {industries.map((industry, idx) => (
+                  <motion.li
+                    key={industry.name}
+                    className="grid grid-cols-12 items-baseline gap-4 py-5"
+                    initial={{ opacity: 0, x: 10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 }}
+                  >
+                    <span className="col-span-7 text-xl font-semibold text-primary-foreground">
+                      {industry.name}
+                    </span>
+                    <span className="col-span-5 text-right text-sm text-primary-foreground/70">
+                      {industry.count}
+                    </span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

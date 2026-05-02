@@ -1,74 +1,95 @@
-import { AlertCircle, Database, MessageSquare, Users } from "lucide-react";
+import { motion } from "framer-motion";
+import { ChapterMarker, HairlineRule, StatLine } from "@/components/ui/editorial";
+import { TimeBleedInfographic } from "@/components/infographics/TimeBleedInfographic";
 
 export const ProblemSection = () => {
   const problems = [
     {
-      icon: Database,
-      title: "Manual Data Entry",
-      description: "Manual data entry between apps eating up hours each day?",
+      title: "Manual data entry",
+      description: "Hours each day funnelled into copying fields between apps that should be talking to each other.",
     },
     {
-      icon: MessageSquare,
-      title: "Lost Inquiries",
-      description: "Customer inquiries getting lost or delayed in the shuffle?",
+      title: "Lost inquiries",
+      description: "Customer messages buried in inboxes, slipping past handoffs, costing trust and revenue.",
     },
     {
-      icon: AlertCircle,
-      title: "Error-Prone Processes",
-      description: "Inconsistent and error-prone internal processes causing headaches?",
+      title: "Error-prone processes",
+      description: "Inconsistent steps, missed edge cases, downstream cleanup — every week, a new fire to put out.",
     },
     {
-      icon: Users,
-      title: "No Strategic Time",
-      description: "Your team is busy working in the business, but never on it?",
+      title: "No strategic time",
+      description: "Your team is busy working in the business, never on it. The important work always waits.",
     },
   ];
 
   return (
-    <section className="py-24 bg-primary">
+    <section className="py-32 bg-primary">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-            Is Your Team's Potential <span className="text-gradient">Trapped</span> in Repetitive Tasks?
-          </h2>
-          <p className="text-xl text-primary-foreground/80">
-            Every minute your team spends on manual, repetitive work is a minute stolen from innovation, strategy, and
-            growth.
-          </p>
-        </div>
-
-        {/* Problem Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {problems.map((problem, index) => (
-            <div
-              key={index}
-              className="glass-card-light rounded-2xl p-8 hover-lift group"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                <problem.icon className="w-8 h-8 text-accent" />
-              </div>
-              <h3 className="text-xl font-bold text-primary-foreground mb-3">{problem.title}</h3>
-              <p className="text-primary-foreground/80 leading-relaxed">{problem.description}</p>
+        <div className="mx-auto max-w-6xl">
+          {/* Editorial header — left-aligned, asymmetric */}
+          <div className="grid gap-10 md:grid-cols-12 md:gap-16">
+            <div className="md:col-span-5">
+              <ChapterMarker number="02" label="The Problem" />
+              <h2 className="mt-6 text-4xl font-bold leading-[1.05] text-primary-foreground md:text-6xl">
+                Is your team's potential
+                <span className="block font-normal text-gradient">trapped in repetition?</span>
+              </h2>
             </div>
-          ))}
-        </div>
+            <div className="md:col-span-7 md:pt-16">
+              <p className="text-lg leading-relaxed text-primary-foreground/75 md:text-xl">
+                Every minute spent on manual, repetitive work is a minute stolen from innovation, strategy, and growth.
+                The cost compounds quietly — until it doesn't.
+              </p>
+            </div>
+          </div>
 
-        {/* Stats Card */}
-        <div className="max-w-5xl mx-auto glass-card-light rounded-3xl p-12">
-          <h3 className="text-2xl font-bold text-center text-primary-foreground mb-12">The Hidden Cost of Manual Work</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { value: "40%", label: "of work time spent on repetitive tasks" },
-              { value: "$15K", label: "average annual cost per employee" },
-              { value: "73%", label: "of employees want to automate tasks" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-5xl font-bold text-gradient mb-3">{stat.value}</div>
-                <p className="text-primary-foreground/80">{stat.label}</p>
-              </div>
-            ))}
+          {/* Problems as enumerated hairline list — NO box grid */}
+          <div className="mt-24">
+            <HairlineRule />
+            <ol>
+              {problems.map((problem, index) => (
+                <motion.li
+                  key={problem.title}
+                  className="group grid items-baseline gap-6 border-b border-primary-foreground/8 py-10 md:grid-cols-12 md:gap-12"
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.06 }}
+                >
+                  <div className="md:col-span-2">
+                    <span className="num-display text-5xl text-accent transition-colors group-hover:text-accent-foreground/0 md:text-6xl">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <h3 className="md:col-span-4 text-2xl font-semibold leading-tight text-primary-foreground md:text-3xl">
+                    {problem.title}
+                  </h3>
+                  <p className="md:col-span-6 text-base leading-relaxed text-primary-foreground/70 md:text-lg">
+                    {problem.description}
+                  </p>
+                </motion.li>
+              ))}
+            </ol>
+          </div>
+
+          {/* The hidden cost — Gantt infographic + supporting numerals */}
+          <div className="mt-24">
+            <div className="text-center">
+              <span className="eyebrow">The hidden cost of manual work</span>
+            </div>
+            <div className="mt-10">
+              <TimeBleedInfographic />
+            </div>
+            <div className="mt-12">
+              <StatLine
+                size="md"
+                items={[
+                  { value: "40%", label: "of work time on repetition" },
+                  { value: "$15K", label: "annual cost per employee" },
+                  { value: "73%", label: "of employees want this gone" },
+                ]}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -4,108 +4,125 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer className="bg-[hsl(var(--footer-bg))] text-primary-foreground py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <div className="text-2xl font-bold mb-4 text-primary-foreground">
-              Apexify<span className="text-gradient">Labs</span>
-            </div>
-            <p className="text-primary-foreground/85 mb-6 max-w-md">
-              Empowering businesses with intelligent AI automation. We help teams reclaim their time and focus on what
-              truly matters.
+    <footer className="relative bg-[hsl(var(--footer-bg))] text-primary-foreground">
+      {/* Top hairline */}
+      <div className="hairline" aria-hidden="true" />
+
+      <div className="container mx-auto px-4 py-20">
+        {/* Editorial top row — wordmark + manifesto */}
+        <div className="grid gap-12 md:grid-cols-12 md:gap-16 mb-20">
+          <div className="md:col-span-6">
+            <Link
+              to="/"
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent("resetSection"));
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="font-display text-4xl text-primary-foreground transition-opacity hover:opacity-90 md:text-5xl"
+            >
+              Apexify<span className="text-gradient italic font-normal">Labs</span>
+            </Link>
+            <p className="display-italic mt-8 text-2xl italic leading-snug text-primary-foreground/80 md:text-3xl">
+              Analyze. Automate. Apexify.
             </p>
-            <div className="flex gap-4">
+            <p className="mt-6 max-w-md text-base leading-relaxed text-primary-foreground/65">
+              Empowering businesses with intelligent AI automation. We help teams reclaim their time and focus on what
+              actually matters.
+            </p>
+          </div>
+
+          <div className="md:col-span-3">
+            <span className="eyebrow">Navigate</span>
+            <ul className="mt-6 space-y-3">
+              {[
+                { to: "/services", label: "Services" },
+                { to: "/#case-studies", label: "Work" },
+                { to: "/about", label: "About" },
+                { to: "/blog", label: "Blog" },
+                { to: "/contact", label: "Contact" },
+              ].map((link) => (
+                <li key={link.to + link.label}>
+                  <Link
+                    to={link.to}
+                    className="text-base text-primary-foreground/80 transition-colors hover:text-accent"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="md:col-span-3">
+            <span className="eyebrow">Get in touch</span>
+            <ul className="mt-6 space-y-3 text-base text-primary-foreground/80">
+              <li>
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="transition-colors hover:text-accent"
+                >
+                  {CONTACT_EMAIL}
+                </a>
+              </li>
+              <li>
+                <a href="tel:+923315183565" className="transition-colors hover:text-accent">
+                  +92 331 5183565
+                </a>
+              </li>
+              <li className="pt-3">
+                <a
+                  href={CALENDLY_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-accent transition-colors hover:text-accent-foreground"
+                >
+                  Book a free audit →
+                </a>
+              </li>
+            </ul>
+
+            <div className="mt-8 flex gap-3">
               <a
                 href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors"
-                aria-label="Visit ApexifyLabs on LinkedIn"
+                className="h-9 w-9 rounded-full border border-primary-foreground/15 hover:border-accent/60 hover:bg-accent/10 flex items-center justify-center transition-colors"
+                aria-label="ApexifyLabs on LinkedIn"
               >
-                <Linkedin size={20} />
+                <Linkedin size={16} />
               </a>
               <a
                 href={SOCIAL_LINKS.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors"
-                aria-label="Read ApexifyLabs updates on X"
+                className="h-9 w-9 rounded-full border border-primary-foreground/15 hover:border-accent/60 hover:bg-accent/10 flex items-center justify-center transition-colors"
+                aria-label="ApexifyLabs on X"
               >
-                <Twitter size={20} />
+                <Twitter size={16} />
               </a>
               <a
                 href={SOCIAL_LINKS.email}
-                className="w-10 h-10 rounded-lg bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors"
+                className="h-9 w-9 rounded-full border border-primary-foreground/15 hover:border-accent/60 hover:bg-accent/10 flex items-center justify-center transition-colors"
                 aria-label="Email ApexifyLabs"
               >
-                <Mail size={20} />
+                <Mail size={16} />
               </a>
             </div>
           </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold mb-4 text-primary-foreground">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/services" className="text-primary-foreground/85 hover:text-accent transition-colors">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-primary-foreground/85 hover:text-accent transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-primary-foreground/85 hover:text-accent transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="/#process" className="text-primary-foreground/85 hover:text-accent transition-colors">
-                  Process
-                </Link>
-              </li>
-              <li>
-                <Link to="/#case-studies" className="text-primary-foreground/85 hover:text-accent transition-colors">
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-primary-foreground/85 hover:text-accent transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="font-semibold mb-4 text-primary-foreground">Get In Touch</h3>
-            <ul className="space-y-2 text-primary-foreground/85">
-              <li>{CONTACT_EMAIL}</li>
-              <li>+92 331 5183565</li>
-              <li className="pt-2">
-                <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-                  Book Free Audit →
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-primary-foreground/80 text-sm">© 2024 ApexifyLabs. All rights reserved.</p>
-          <div className="flex gap-6 text-sm text-primary-foreground/80">
-            <Link to="/privacy-policy" className="hover:text-accent transition-colors">
-              Privacy Policy
+        {/* Hairline + colophon */}
+        <div className="hairline-soft" aria-hidden="true" />
+        <div className="mt-8 flex flex-col-reverse items-center justify-between gap-4 md:flex-row">
+          <p className="smallcaps text-xs text-primary-foreground/55">
+            © {new Date().getFullYear()} ApexifyLabs · All rights reserved
+          </p>
+          <div className="flex gap-8 text-xs text-primary-foreground/55">
+            <Link to="/privacy-policy" className="smallcaps hover:text-accent transition-colors">
+              Privacy
             </Link>
-            <Link to="/terms-of-service" className="hover:text-accent transition-colors">
-              Terms of Service
+            <Link to="/terms-of-service" className="smallcaps hover:text-accent transition-colors">
+              Terms
             </Link>
           </div>
         </div>

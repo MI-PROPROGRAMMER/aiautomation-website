@@ -1,81 +1,110 @@
 import { Shield, TrendingUp, Clock } from "lucide-react";
+import { motion } from "framer-motion";
+import { ChapterMarker, MarqueeRow } from "@/components/ui/editorial";
+import { BrandLogo } from "@/components/ui/BrandLogo";
+
+const TOOLS: Array<{ name: Parameters<typeof BrandLogo>[0]["name"]; label: string }> = [
+  { name: "openai", label: "OpenAI" },
+  { name: "anthropic", label: "Anthropic" },
+  { name: "zapier", label: "Zapier" },
+  { name: "n8n", label: "n8n" },
+  { name: "supabase", label: "Supabase" },
+  { name: "vercel", label: "Vercel" },
+  { name: "python", label: "Python" },
+  { name: "nodedotjs", label: "Node.js" },
+  { name: "postgresql", label: "PostgreSQL" },
+  { name: "github", label: "GitHub" },
+  { name: "slack", label: "Slack" },
+  { name: "hubspot", label: "HubSpot" },
+  { name: "notion", label: "Notion" },
+  { name: "airtable", label: "Airtable" },
+  { name: "stripe", label: "Stripe" },
+  { name: "amazonaws", label: "AWS" },
+];
 
 export const ToolsSection = () => {
-  const tools = [
-    { name: "Make.com", description: "Visual Automation" },
-    { name: "n8n", description: "Open Source" },
-    { name: "Zapier", description: "App Integration" },
-    { name: "Botpress", description: "Chatbot Platform" },
-    { name: "Python", description: "Custom Scripts" },
-    { name: "Node.js", description: "Backend Logic" },
-  ];
-
   const benefits = [
     {
       icon: Shield,
-      title: "Enterprise Security",
-      description: "Bank-level encryption and compliance standards",
+      title: "Enterprise-grade security",
+      description: "Bank-level encryption and compliance built in from day one.",
     },
     {
       icon: TrendingUp,
-      title: "Infinite Scalability",
-      description: "Automations that grow with your business",
+      title: "Built to scale",
+      description: "Architecture that grows with your business — no rebuilds at year two.",
     },
     {
       icon: Clock,
-      title: "24/7 Monitoring",
-      description: "Proactive maintenance and instant issue resolution",
+      title: "Always on",
+      description: "Proactive monitoring, alerting, and instant resolution. Always.",
     },
   ];
 
   return (
-    <section className="py-24 bg-[hsl(var(--section-alt))]">
+    <section className="py-32 bg-primary">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-            Tool-Agnostic, <span className="text-gradient">Expert in the Best</span>
-          </h2>
-          <p className="text-xl text-primary-foreground/80">
-            We choose the right technology to solve your problem efficiently, not the other way around
-          </p>
-        </div>
-
-        {/* Tools Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto mb-16">
-          {tools.map((tool, index) => {
-            const initials = tool.name
-              .replace(/[^a-zA-Z ]/g, " ")
-              .split(" ")
-              .filter(Boolean)
-              .map((part) => part[0])
-              .join("")
-              .slice(0, 3)
-              .toUpperCase();
-
-            return (
-              <div key={index} className="glass-card-light rounded-2xl p-6 text-center hover-lift">
-                <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-sm font-semibold uppercase tracking-[0.35em] text-accent">{initials}</span>
-                </div>
-                <h3 className="font-bold text-primary-foreground mb-2">{tool.name}</h3>
-                <p className="text-sm text-primary-foreground/80">{tool.description}</p>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Benefits */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="text-center">
-              <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                <benefit.icon className="w-8 h-8 text-accent" />
-              </div>
-              <h3 className="text-xl font-bold text-primary-foreground mb-3">{benefit.title}</h3>
-              <p className="text-primary-foreground/80 leading-relaxed">{benefit.description}</p>
+        <div className="mx-auto max-w-7xl">
+          {/* Editorial header */}
+          <div className="mb-16 grid gap-10 md:grid-cols-12 md:gap-16">
+            <div className="md:col-span-6">
+              <ChapterMarker number="06" label="Toolkit" />
+              <h2 className="mt-6 text-4xl font-bold leading-[1.05] text-primary-foreground md:text-6xl">
+                Tool-agnostic.
+                <span className="block text-3xl font-normal text-primary-foreground/85 md:text-5xl">
+                  Expert in <span className="text-gradient">the best.</span>
+                </span>
+              </h2>
             </div>
-          ))}
+            <div className="md:col-span-6 md:pt-16">
+              <p className="text-lg leading-relaxed text-primary-foreground/75 md:text-xl">
+                We pick the right tool for the problem — never the other way around. From enterprise SaaS
+                connectors to bespoke Python pipelines, we work in the stack that fits.
+              </p>
+            </div>
+          </div>
+
+          {/* Marquee row of real brand SVGs */}
+          <div className="my-16">
+            <div className="hairline-soft mb-10" aria-hidden="true" />
+            <MarqueeRow ariaLabel="Tools and platforms we work with">
+              {TOOLS.map((tool) => (
+                <div
+                  key={tool.label}
+                  className="group flex items-center gap-3 text-primary-foreground/55 transition-colors hover:text-accent"
+                  title={tool.label}
+                >
+                  <BrandLogo name={tool.name} size={32} title={tool.label} />
+                  <span className="tech-label text-[0.7rem]">
+                    {tool.label}
+                  </span>
+                </div>
+              ))}
+            </MarqueeRow>
+            <div className="hairline-soft mt-10" aria-hidden="true" />
+          </div>
+
+          {/* Benefits — typographic, NOT boxes */}
+          <div className="mt-24 grid gap-12 md:grid-cols-3 md:gap-16">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                className="border-t border-accent/40 pt-6"
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+              >
+                <benefit.icon className="h-7 w-7 text-accent" />
+                <h3 className="mt-6 text-2xl font-bold text-primary-foreground md:text-3xl">
+                  {benefit.title}
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-primary-foreground/70">
+                  {benefit.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

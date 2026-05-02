@@ -2,10 +2,12 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Target, Zap, Globe, Code2, Wrench } from "lucide-react";
+import { ArrowRight, Users, Target, Zap, Code2, Wrench } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { CALENDLY_LINK } from "@/config/constants";
 import { PageLoader } from "@/components/PageLoader";
+import { motion } from "framer-motion";
+import { ChapterMarker, BentoTile, StatLine, HairlineRule } from "@/components/ui/editorial";
 
 type GlobalReachMapType = typeof import("@/components/GlobalReachMap").default;
 
@@ -16,26 +18,16 @@ const MapSection = () => {
 
   useEffect(() => {
     const node = containerRef.current;
-    if (!node || isVisible) {
-      return;
-    }
-
+    if (!node || isVisible) return;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
+          if (entry.isIntersecting) setIsVisible(true);
         });
       },
-      {
-        rootMargin: "200px 0px",
-        threshold: 0.1,
-      },
+      { rootMargin: "200px 0px", threshold: 0.1 },
     );
-
     observer.observe(node);
-
     return () => observer.disconnect();
   }, [isVisible]);
 
@@ -43,35 +35,49 @@ const MapSection = () => {
     let cancelled = false;
     if (isVisible && !MapComponent) {
       import("@/components/GlobalReachMap").then((module) => {
-        if (!cancelled) {
-          setMapComponent(() => module.default);
-        }
+        if (!cancelled) setMapComponent(() => module.default);
       });
     }
-
     return () => {
       cancelled = true;
     };
   }, [isVisible, MapComponent]);
 
   return (
-    <div className="relative glass-card p-12 rounded-xl overflow-hidden">
-      <div ref={containerRef} className="relative h-[400px] w-full rounded-xl overflow-hidden">
+    <BentoTile tone="flat" rounded="lg" className="relative overflow-hidden p-6 md:p-10">
+      <div ref={containerRef} className="relative h-[400px] w-full overflow-hidden rounded-xl">
         {isVisible ? (
-          MapComponent ? (
-            <MapComponent />
-          ) : (
-            <PageLoader />
-          )
+          MapComponent ? <MapComponent /> : <PageLoader />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-primary/40">
             <span className="animate-pulse text-sm text-primary-foreground/70">Loading map…</span>
           </div>
         )}
       </div>
-    </div>
+    </BentoTile>
   );
 };
+
+const VALUES = [
+  {
+    icon: Users,
+    title: "Client-centric",
+    description:
+      "We start with your problem, never our solution. Every automation we build is shaped to your team's reality.",
+  },
+  {
+    icon: Zap,
+    title: "Efficiency obsessed",
+    description:
+      "There's always a better, faster, smarter way. We refine relentlessly and ship work we can stand behind.",
+  },
+  {
+    icon: Target,
+    title: "Transparent",
+    description:
+      "You're in the loop at every step — open communication, weekly demos, and zero surprises at delivery.",
+  },
+];
 
 const About = () => {
   return (
@@ -81,10 +87,6 @@ const About = () => {
         <meta
           name="description"
           content="Learn about ApexifyLabs's journey from scripters to strategic partners, helping 50+ global clients reclaim their time through intelligent automation."
-        />
-        <meta
-          name="keywords"
-          content="about ApexifyLabs, automation agency, business automation, AI solutions, company story"
         />
         <meta property="og:title" content="About Us - ApexifyLabs" />
         <meta
@@ -98,231 +100,179 @@ const About = () => {
       <div className="min-h-screen">
         <Header />
         <main>
-          {/* Hero Section */}
-          <section className="pt-32 pb-20 gradient-hero relative overflow-hidden">
-            {/* Background decoration with geometric patterns */}
-            <div className="absolute inset-0 opacity-20">
-              <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent rounded-full blur-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary rounded-full blur-3xl"></div>
-              {/* Geometric patterns */}
-              <div className="absolute top-1/4 left-1/4 w-96 h-96 border border-accent/30 rotate-45"></div>
-              <div className="absolute bottom-1/4 right-1/4 w-64 h-64 border border-accent/20 rotate-12"></div>
+          {/* Editorial hero — left-aligned, not centered card */}
+          <section className="relative overflow-hidden pt-40 pb-24 gradient-hero">
+            <div className="absolute inset-0 opacity-25" aria-hidden="true">
+              <div className="absolute -right-32 top-0 h-[40rem] w-[40rem] rounded-full bg-accent/20 blur-3xl" />
+              <div className="absolute -left-32 bottom-0 h-[36rem] w-[36rem] rounded-full bg-accent/10 blur-3xl" />
             </div>
-
-            <div className="container mx-auto px-4 relative z-10">
-              <div className="max-w-4xl mx-auto text-center">
-                <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
-                  Freeing Businesses from the Grind of{" "}
-                  <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-accent to-white">
-                    Repetitive Work
-                  </span>
+            <div className="container relative z-10 mx-auto px-4">
+              <div className="mx-auto max-w-6xl">
+                <ChapterMarker number="" label="About ApexifyLabs" />
+                <h1 className="mt-8 max-w-5xl text-5xl font-bold leading-[1.02] text-primary-foreground md:text-7xl lg:text-8xl">
+                  Freeing businesses from
+                  <span className="block font-normal text-gradient">repetitive work.</span>
                 </h1>
-                <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 leading-relaxed">
-                  For over four years, we've been helping teams reclaim their time through intelligent automation
+                <p className="mt-10 max-w-2xl text-lg leading-relaxed text-primary-foreground/85 md:text-xl">
+                  For over four years, we've helped teams across five continents reclaim their time through
+                  intelligent automation — and rebuild their businesses around the work that matters.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* Our Story Section */}
-          <section className="py-24 bg-primary">
+          {/* Our Journey — editorial spread, no placeholder box */}
+          <section className="py-32 bg-primary">
             <div className="container mx-auto px-4">
-              <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-                {/* Left: Abstract visualization */}
-                <div className="relative h-[400px] flex items-center justify-center rounded-xl overflow-hidden">
-                  {/* Image placeholder - Replace with actual journey timeline visualization image */}
-                  <div className="w-full h-full bg-primary/50 flex items-center justify-center border-2 border-dashed border-accent/30 rounded-xl">
-                    <div className="text-center p-8">
-                      <div className="w-16 h-16 bg-accent/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <svg
-                          className="w-8 h-8 text-accent"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                          />
-                        </svg>
-                      </div>
-                      <p className="text-sm text-primary-foreground/60">Journey Timeline Visualization</p>
-                      <p className="text-xs text-primary-foreground/60 mt-1">Image placeholder</p>
-                    </div>
+              <div className="mx-auto max-w-6xl">
+                <div className="grid items-start gap-16 md:grid-cols-12 md:gap-20">
+                  <div className="md:col-span-5 md:sticky md:top-32">
+                    <ChapterMarker number="01" label="Our Journey" />
+                    <h2 className="mt-6 text-4xl font-bold leading-[1.05] text-primary-foreground md:text-5xl">
+                      From scripters to
+                      <span className="block font-normal text-gradient">strategic partners.</span>
+                    </h2>
                   </div>
-                  {/* Uncomment below and add image path when ready */}
-                  {/* <img
-                    src="/path/to/journey-timeline-visualization.jpg"
-                    alt="Our Journey - Growth Timeline"
-                    className="w-full h-full object-cover rounded-xl"
-                  /> */}
+                  <div className="md:col-span-7 space-y-6 text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
+                    <p>
+                      What started as a team of scripters automating simple tasks has evolved into something much
+                      bigger. Over the past four years, we've transformed from technicians into strategic partners.
+                    </p>
+                    <p>
+                      Today, we serve <span className="text-accent font-semibold">50+ global clients</span> across five
+                      continents, helping them eliminate repetitive work and focus on what truly drives the business
+                      forward.
+                    </p>
+                    <p>
+                      We've learned that automation isn't just about writing code — it's about understanding workflows,
+                      identifying bottlenecks, and creating systems that grow with the business.
+                    </p>
+                  </div>
                 </div>
+              </div>
+            </div>
+          </section>
 
-                {/* Right: Our Journey text */}
-                <div>
-                  <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-                    Our <span className="text-gradient">Journey</span>
+          {/* Values — typographic columns, no boxes */}
+          <section className="py-32 bg-[hsl(var(--section-alt))]">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-6xl">
+                <div className="text-center">
+                  <ChapterMarker number="02" label="What We Stand For" align="center" />
+                  <h2 className="mx-auto mt-8 max-w-3xl text-4xl font-bold leading-[1.05] text-primary-foreground md:text-6xl">
+                    Why we do <span className="font-normal text-gradient">what we do.</span>
                   </h2>
-                  <p className="text-lg text-primary-foreground/80 mb-4 leading-relaxed">
-                    What started as a team of scripters automating simple tasks has evolved into something much bigger.
-                    Over the past four years, we've transformed from technicians into strategic partners.
-                  </p>
-                  <p className="text-lg text-primary-foreground/80 mb-4 leading-relaxed">
-                    Today, we serve 50+ global clients across five continents, helping them eliminate repetitive work
-                    and focus on what truly drives their business forward. Our journey has been marked by continuous
-                    learning, adapting to new technologies, and most importantly, understanding that every business has
-                    unique challenges that require thoughtful solutions.
-                  </p>
-                  <p className="text-lg text-primary-foreground/80 leading-relaxed">
-                    We've learned that automation isn't just about writing code—it's about understanding workflows,
-                    identifying bottlenecks, and creating systems that grow with your business.
-                  </p>
+                </div>
+
+                <HairlineRule className="mt-16" />
+
+                <div className="grid gap-12 md:grid-cols-3 md:gap-16 mt-16">
+                  {VALUES.map((value, i) => (
+                    <motion.div
+                      key={value.title}
+                      initial={{ opacity: 0, y: 18 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{ duration: 0.5, delay: i * 0.08 }}
+                    >
+                      <div className="num-display text-2xl text-primary-foreground/45">
+                        {String(i + 1).padStart(2, "0")}
+                      </div>
+                      <value.icon className="mt-6 h-7 w-7 text-accent" />
+                      <h3 className="mt-6 text-2xl font-bold text-primary-foreground md:text-3xl">{value.title}</h3>
+                      <p className="mt-3 text-base leading-relaxed text-primary-foreground/70">
+                        {value.description}
+                      </p>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Mission & Values Section */}
-          <section className="py-24 bg-[hsl(var(--section-alt))]">
+          {/* Global Reach */}
+          <section className="py-32 bg-primary">
             <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                  <span className="text-primary-foreground">Why We Do</span>{" "}
-                  <span className="text-accent">What We Do</span>
-                </h2>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                {/* Value Card 1 */}
-                <div className="glass-card p-8 rounded-xl hover-lift">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
-                    <Users className="w-6 h-6 text-accent" />
+              <div className="mx-auto max-w-6xl">
+                <div className="grid gap-12 md:grid-cols-12 md:items-end md:gap-16 mb-16">
+                  <div className="md:col-span-7">
+                    <ChapterMarker number="03" label="Global Reach" />
+                    <h2 className="mt-6 text-4xl font-bold leading-[1.05] text-primary-foreground md:text-5xl">
+                      Active across
+                      <span className="block font-normal text-gradient">five continents.</span>
+                    </h2>
                   </div>
-                  <h3 className="text-2xl font-bold text-primary-foreground mb-4">Client-Centric</h3>
-                  <p className="text-primary-foreground/80 leading-relaxed">
-                    We start with your problem, not our solution. Every automation we build is tailored to your specific
-                    needs, workflows, and goals.
-                  </p>
-                </div>
-
-                {/* Value Card 2 */}
-                <div className="glass-card p-8 rounded-xl hover-lift">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
-                    <Zap className="w-6 h-6 text-accent" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary-foreground mb-4">Efficiency Obsessed</h3>
-                  <p className="text-primary-foreground/80 leading-relaxed">
-                    We believe there's always a better, faster, smarter way. We continuously refine our processes and
-                    explore new technologies to deliver maximum value.
-                  </p>
-                </div>
-
-                {/* Value Card 3 */}
-                <div className="glass-card p-8 rounded-xl hover-lift">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
-                    <Target className="w-6 h-6 text-accent" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary-foreground mb-4">Transparent & Collaborative</h3>
-                  <p className="text-primary-foreground/80 leading-relaxed">
-                    You're involved in the process, every step of the way. We believe in open communication, regular
-                    updates, and making sure you understand exactly what we're building.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Global Reach Visualization */}
-          <section className="py-24 bg-primary">
-            <div className="container mx-auto px-4">
-              <div className="max-w-6xl mx-auto">
-                {/* Stats */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                  <div className="text-center glass-card p-8 rounded-xl hover-lift">
-                    <div className="text-5xl md:text-6xl font-bold text-gradient mb-2">50+</div>
-                    <div className="text-xl text-primary-foreground/80">Clients</div>
-                  </div>
-                  <div className="text-center glass-card p-8 rounded-xl hover-lift">
-                    <div className="text-5xl md:text-6xl font-bold text-gradient mb-2">5</div>
-                    <div className="text-xl text-primary-foreground/80">Continents</div>
-                  </div>
-                  <div className="text-center glass-card p-8 rounded-xl hover-lift">
-                    <div className="text-5xl md:text-6xl font-bold text-gradient mb-2">4+</div>
-                    <div className="text-xl text-primary-foreground/80">Years</div>
+                  <div className="md:col-span-5">
+                    <StatLine
+                      size="md"
+                      items={[
+                        { value: "50+", label: "Clients" },
+                        { value: "5", label: "Continents" },
+                        { value: "4+", label: "Years" },
+                      ]}
+                    />
                   </div>
                 </div>
-
-                {/* World Map Visualization */}
                 <MapSection />
               </div>
             </div>
           </section>
 
-          {/* Team Philosophy Section */}
-          <section className="py-24 bg-[hsl(var(--section-alt))]">
+          {/* How we partner — distinct from Services' "Hybrid" pitch */}
+          <section className="py-32 bg-[hsl(var(--section-alt))]">
             <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-                      Our <span className="text-gradient">Approach</span>
+              <div className="mx-auto max-w-6xl">
+                <div className="grid items-center gap-16 md:grid-cols-12 md:gap-20">
+                  <div className="md:col-span-7">
+                    <ChapterMarker label="How We Partner" />
+                    <h2 className="mt-6 text-4xl font-bold leading-[1.05] text-primary-foreground md:text-5xl">
+                      No black boxes.
+                      <span className="block font-normal text-gradient">You own what we ship.</span>
                     </h2>
-                    <p className="text-lg text-primary-foreground/80 mb-4 leading-relaxed">
-                      We don't believe in one-size-fits-all solutions. Our team combines deep expertise in both coded
-                      automation and low-code platforms, giving us the flexibility to choose the right tool for each
-                      problem.
+                    <p className="mt-8 max-w-xl text-lg leading-relaxed text-primary-foreground/80">
+                      Every engagement begins with a written acceptance criteria and ends with a clean, documented
+                      handoff. We are not a black-box agency: you get the source, the credentials, and a runbook your
+                      team can extend on day one — whether or not you renew with us.
                     </p>
-                    <p className="text-lg text-primary-foreground/80 mb-6 leading-relaxed">
-                      Sometimes the best solution is a custom Python script. Other times, it's a no-code workflow that
-                      your team can modify themselves. We assess each situation objectively and recommend what will work
-                      best for your specific needs, timeline, and budget.
-                    </p>
-                    <div className="flex flex-wrap gap-4">
-                      <div className="flex items-center gap-2 glass-card px-4 py-2 rounded-lg">
-                        <Code2 className="w-5 h-5 text-accent" />
-                        <span className="text-primary-foreground">Custom Code</span>
-                      </div>
-                      <div className="flex items-center gap-2 glass-card px-4 py-2 rounded-lg">
-                        <Wrench className="w-5 h-5 text-accent" />
-                        <span className="text-primary-foreground">Low-Code</span>
-                      </div>
+                    <div className="mt-10 flex flex-wrap gap-3">
+                      <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-4 py-2 text-sm text-primary-foreground">
+                        <Code2 className="h-4 w-4 text-accent" />
+                        Source delivered
+                      </span>
+                      <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-4 py-2 text-sm text-primary-foreground">
+                        <Wrench className="h-4 w-4 text-accent" />
+                        Documented runbooks
+                      </span>
                     </div>
                   </div>
-                  <div className="glass-card p-8 rounded-xl">
-                    {/* Image placeholder - Replace with team/collaboration image */}
-                    <div className="relative h-[300px] mb-6 rounded-xl overflow-hidden">
-                      <div className="w-full h-full bg-primary/50 flex items-center justify-center border-2 border-dashed border-accent/30 rounded-xl">
-                        <div className="text-center p-8">
-                          <div className="w-16 h-16 bg-accent/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                            <Users className="w-8 h-8 text-accent" />
-                          </div>
-                          <p className="text-sm text-primary-foreground/60">Team/Collaboration Image</p>
-                      <p className="text-xs text-primary-foreground/60 mt-1">Image placeholder</p>
-                        </div>
-                      </div>
-                      {/* Uncomment below and add image path when ready */}
-                      {/* <img
-                        src="/path/to/team-philosophy.jpg"
-                        alt="Our Team Philosophy - Hybrid Approach"
-                        className="w-full h-full object-cover rounded-xl"
-                      /> */}
-                    </div>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-gradient mb-4">Hybrid Expertise</div>
-                      <p className="text-primary-foreground/80 mb-6">
-                        We leverage the best of both worlds to deliver solutions that are powerful, maintainable, and
-                        cost-effective.
-                      </p>
-                      <Button className="gradient-accent hover-lift glow-accent" asChild>
-                        <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
-                          Let's Discuss Your Project
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
+                  <BentoTile tone="feature" rounded="xl" withSheen className="md:col-span-5 p-10 md:p-12">
+                    <span className="eyebrow">What you get on day one</span>
+                    <ul className="mt-8 space-y-5 text-base text-primary-foreground/85 md:text-lg">
+                      <li className="flex gap-4">
+                        <span className="num-display text-accent">01</span>
+                        <span>Source code, in your repo, under your licence.</span>
+                      </li>
+                      <li className="flex gap-4">
+                        <span className="num-display text-accent">02</span>
+                        <span>All credentials and integrations transferred to your accounts.</span>
+                      </li>
+                      <li className="flex gap-4">
+                        <span className="num-display text-accent">03</span>
+                        <span>Written runbook + Loom walkthrough, so your team can extend it.</span>
+                      </li>
+                      <li className="flex gap-4">
+                        <span className="num-display text-accent">04</span>
+                        <span>30-day defect warranty, no-questions-asked.</span>
+                      </li>
+                    </ul>
+                    <div className="hairline mt-10 mb-8" aria-hidden="true" />
+                    <Button className="gradient-accent hover-lift glow-accent w-full sheen-card" asChild>
+                      <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
+                        Discuss your project
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </a>
+                    </Button>
+                  </BentoTile>
                 </div>
               </div>
             </div>
@@ -335,4 +285,3 @@ const About = () => {
 };
 
 export default About;
-
