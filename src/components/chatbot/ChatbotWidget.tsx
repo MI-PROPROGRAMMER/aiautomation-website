@@ -13,10 +13,12 @@ import {
 
 const STORAGE_KEY = "apexify-chatbot-state-v1";
 const GREETINGS = [
-  "Hey — I'm Aria, here to help if you're poking around ApexifyLabs. What brought you in today?",
+  "Hey, I'm Aria. What brought you to ApexifyLabs today?",
   "Hi there. I'm Aria, the assistant for the ApexifyLabs team. What are you trying to figure out?",
-  "Hey, I'm Aria. Happy to help — what's on your mind?",
+  "Hey, I'm Aria. Happy to help. What's on your mind?",
 ];
+
+const stripDashes = (text: string): string => text.replace(/—/g, ",").replace(/–/g, "-");
 
 interface PersistedState {
   sessionId: string;
@@ -175,10 +177,10 @@ export const ChatbotWidget = () => {
         if (done) break;
         const chunk = decoder.decode(value, { stream: true });
         acc += chunk;
-        setStreamingText(acc);
+        setStreamingText(stripDashes(acc));
       }
 
-      const final = acc.trim() || "Sorry — I didn't catch that. Could you try rephrasing?";
+      const final = stripDashes(acc).trim() || "Sorry, I didn't catch that. Could you try rephrasing?";
       setTurns((prev) => [...prev, { role: "assistant", content: final, at: Date.now() }]);
       setStreamingText("");
 
@@ -191,7 +193,7 @@ export const ChatbotWidget = () => {
         {
           role: "assistant",
           content:
-            "Hmm, something glitched on my end. The fastest path is probably a quick note to contact@apexifylabs.com — the team will pick it up from there.",
+            "Hmm, something glitched on my end. The fastest path is probably a quick note to contact@apexifylabs.com, and the team will pick it up from there.",
           at: Date.now(),
         },
       ]);

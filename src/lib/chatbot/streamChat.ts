@@ -93,7 +93,7 @@ export const streamChatResponse = (
         console.error("[chat] stream error:", message);
         controller.enqueue(
           encoder.encode(
-            `\n\n[Sorry — I hit a snag on my end. Please try again, or email contact@apexifylabs.com.]`
+            `\n\n[Sorry, I hit a snag on my end. Please try again, or email contact@apexifylabs.com.]`
           )
         );
       } finally {
