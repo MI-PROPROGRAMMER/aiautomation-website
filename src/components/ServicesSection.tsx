@@ -19,7 +19,7 @@ export const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-32 bg-[hsl(var(--section-alt))]">
+    <section id="services" className="py-20 md:py-32 bg-[hsl(var(--section-alt))]">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-7xl">
           {/* Editorial header */}
@@ -49,7 +49,7 @@ export const ServicesSection = () => {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <BentoTile tone="feature" rounded="xl" withSheen className="p-10 md:p-14 h-full">
+              <BentoTile tone="feature" rounded="xl" withSheen className="p-7 md:p-14 h-full">
                 <div className="flex items-start justify-between gap-6">
                   <div>
                     <span className="eyebrow">Service · 01</span>
@@ -103,7 +103,7 @@ export const ServicesSection = () => {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             >
-              <BentoTile tone="flat" rounded="xl" className="p-10 md:p-12 h-full">
+              <BentoTile tone="flat" rounded="xl" className="p-7 md:p-12 h-full">
                 <span className="eyebrow">Service · 02</span>
                 <h3 className="mt-4 text-2xl font-bold text-primary-foreground md:text-4xl">
                   Custom-Coded <span className="italic font-normal">Precision</span>

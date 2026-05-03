@@ -47,7 +47,7 @@ export const ProcessSection = () => {
   ];
 
   return (
-    <section id="process" className="relative py-32 bg-primary">
+    <section id="process" className="relative py-20 md:py-32 bg-primary">
       {/* Subtle blueprint grid behind the section */}
       <div className="absolute inset-0 blueprint-grid-fine opacity-60" aria-hidden="true" />
       <div className="container relative mx-auto px-4">

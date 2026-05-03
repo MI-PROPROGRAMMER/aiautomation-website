@@ -41,7 +41,7 @@ export const FAQSection = () => {
   ];
 
   return (
-    <section className="py-32 bg-primary">
+    <section className="py-20 md:py-32 bg-primary">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-5xl">
           {/* Editorial header */}

@@ -65,7 +65,7 @@ export const ROICalculatorSection = () => {
   }, [calculations.weekly]);
 
   return (
-    <section className="py-32 bg-primary">
+    <section className="py-20 md:py-32 bg-primary">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-7xl">
           {/* Editorial header */}
@@ -90,7 +90,7 @@ export const ROICalculatorSection = () => {
           {/* Two-pane: inputs (flat) + outputs (feature with live chart) */}
           <div className="grid gap-6 md:grid-cols-12 md:gap-8">
             {/* Inputs */}
-            <BentoTile tone="flat" rounded="lg" className="md:col-span-5 p-10 md:p-12 space-y-10">
+            <BentoTile tone="flat" rounded="lg" className="md:col-span-5 p-6 md:p-12 space-y-8 md:space-y-10">
               <SliderInput
                 labelId={teamLabelId}
                 label="Team members on manual work"
@@ -127,7 +127,7 @@ export const ROICalculatorSection = () => {
             </BentoTile>
 
             {/* Outputs — live chart + KPIs */}
-            <BentoTile tone="feature" rounded="lg" className="md:col-span-7 p-8 md:p-10">
+            <BentoTile tone="feature" rounded="lg" className="md:col-span-7 p-6 md:p-10">
               <div className="mb-6 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <Calculator className="h-5 w-5 text-accent" />

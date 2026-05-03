@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export const CTASection = () => {
   return (
-    <section className="relative overflow-hidden py-32 gradient-hero">
+    <section className="relative overflow-hidden py-20 md:py-32 gradient-hero">
       {/* Subtle accent rings */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         <div className="absolute -left-32 top-1/4 h-96 w-96 rounded-full bg-accent/10 blur-[120px]" />
@@ -32,7 +32,7 @@ export const CTASection = () => {
           </div>
 
           <motion.h2
-            className="text-5xl font-bold leading-[1] text-primary-foreground md:text-7xl lg:text-8xl"
+            className="text-4xl font-bold leading-[1.05] text-primary-foreground sm:text-5xl md:text-7xl lg:text-8xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}

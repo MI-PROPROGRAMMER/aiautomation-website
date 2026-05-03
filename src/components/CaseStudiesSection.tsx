@@ -49,7 +49,7 @@ export const CaseStudiesSection = () => {
   ];
 
   return (
-    <section id="case-studies" className="py-32 bg-[hsl(var(--section-alt))]">
+    <section id="case-studies" className="py-20 md:py-32 bg-[hsl(var(--section-alt))]">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-7xl">
           {/* Editorial header */}
@@ -84,7 +84,7 @@ export const CaseStudiesSection = () => {
                 >
                   {/* Numeral + meta column */}
                   <div className={`md:col-span-3 ${isReversed ? "md:order-3" : ""}`}>
-                    <div className="num-display text-7xl text-accent md:text-8xl">
+                    <div className="num-display text-6xl text-accent sm:text-7xl md:text-8xl">
                       {String(index + 1).padStart(2, "0")}
                     </div>
                     <div className="hairline mt-6 mb-6" aria-hidden="true" />
@@ -107,7 +107,7 @@ export const CaseStudiesSection = () => {
 
                   {/* Stat tile — sparkline + KPI list */}
                   <div className={`md:col-span-4 ${isReversed ? "md:order-1" : ""}`}>
-                    <BentoTile tone={index === 0 ? "feature" : index === 1 ? "flat" : "recessed"} rounded="lg" className="p-7 md:p-8">
+                    <BentoTile tone={index === 0 ? "feature" : index === 1 ? "flat" : "recessed"} rounded="lg" className="p-6 md:p-8">
                       <div className="flex items-center justify-between">
                         <span className="tech-label text-[0.65rem] text-primary-foreground/85">Outcome</span>
                         <span className="tech-numeral text-[0.65rem] text-accent">live</span>

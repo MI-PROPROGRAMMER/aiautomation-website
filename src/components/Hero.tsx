@@ -9,12 +9,8 @@ import { HeroFrameSVG } from "@/components/hero/HeroFrameSVG";
 import { HeroCoverOverlay } from "@/components/hero/HeroCoverOverlay";
 
 /**
- * Hero — restores the scroll-expansion animation, but with AI/tech content:
- *   - Background: HeroBackdrop (animated blueprint grid + node mesh)
- *   - Foreground (the thing that expands as you scroll): HeroFrameSVG
- *     (pure-SVG automation workflow canvas, scales perfectly via viewBox)
- *   - Title: "Automate the grind" splits horizontally apart on scroll
- *   - Children (after expansion completes): subhead, CTAs, stat strip
+ * Hero — the cinematic scroll-expansion experience on every viewport.
+ * Cover overlay splits on scroll → reveals the 5-stage workflow timeline.
  */
 export const Hero = () => {
   return (
@@ -77,7 +73,6 @@ export const Hero = () => {
           </Button>
         </motion.div>
 
-        {/* Tech-readout stat strip — replaces fashion stat-line */}
         <motion.div
           className="mx-auto grid max-w-md grid-cols-3 gap-x-6 gap-y-3 border-t border-accent/20 pt-6 mt-12"
           initial={{ opacity: 0 }}

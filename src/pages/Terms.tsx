@@ -36,11 +36,11 @@ const TermsOfService = () => {
       </Helmet>
       <div className="min-h-screen bg-primary">
         <Header />
-        <main className="pt-40 pb-24">
+        <main className="pt-28 md:pt-40 pb-16 md:pb-24">
           <section className="container mx-auto px-4">
             <div className="mx-auto max-w-4xl">
               <ChapterMarker number="" label="Legal" />
-              <h1 className="mt-8 text-5xl font-bold leading-[1.05] text-primary-foreground md:text-7xl">
+              <h1 className="mt-8 text-4xl font-bold leading-[1.05] text-primary-foreground sm:text-5xl md:text-7xl">
                 Terms of <span className="font-normal text-gradient">service.</span>
               </h1>
               <p className="mt-6 smallcaps text-xs text-primary-foreground/60">

@@ -101,7 +101,7 @@ const About = () => {
         <Header />
         <main>
           {/* Editorial hero — left-aligned, not centered card */}
-          <section className="relative overflow-hidden pt-40 pb-24 gradient-hero">
+          <section className="relative overflow-hidden pt-28 md:pt-40 pb-16 md:pb-24 gradient-hero">
             <div className="absolute inset-0 opacity-25" aria-hidden="true">
               <div className="absolute -right-32 top-0 h-[40rem] w-[40rem] rounded-full bg-accent/20 blur-3xl" />
               <div className="absolute -left-32 bottom-0 h-[36rem] w-[36rem] rounded-full bg-accent/10 blur-3xl" />
@@ -109,7 +109,7 @@ const About = () => {
             <div className="container relative z-10 mx-auto px-4">
               <div className="mx-auto max-w-6xl">
                 <ChapterMarker number="" label="About ApexifyLabs" />
-                <h1 className="mt-8 max-w-5xl text-5xl font-bold leading-[1.02] text-primary-foreground md:text-7xl lg:text-8xl">
+                <h1 className="mt-8 max-w-5xl text-4xl font-bold leading-[1.05] text-primary-foreground sm:text-5xl md:text-7xl lg:text-8xl">
                   Freeing businesses from
                   <span className="block font-normal text-gradient">repetitive work.</span>
                 </h1>
@@ -122,7 +122,7 @@ const About = () => {
           </section>
 
           {/* Our Journey — editorial spread, no placeholder box */}
-          <section className="py-32 bg-primary">
+          <section className="py-20 md:py-32 bg-primary">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-6xl">
                 <div className="grid items-start gap-16 md:grid-cols-12 md:gap-20">
@@ -154,7 +154,7 @@ const About = () => {
           </section>
 
           {/* Values — typographic columns, no boxes */}
-          <section className="py-32 bg-[hsl(var(--section-alt))]">
+          <section className="py-20 md:py-32 bg-[hsl(var(--section-alt))]">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-6xl">
                 <div className="text-center">
@@ -191,7 +191,7 @@ const About = () => {
           </section>
 
           {/* Global Reach */}
-          <section className="py-32 bg-primary">
+          <section className="py-20 md:py-32 bg-primary">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-6xl">
                 <div className="grid gap-12 md:grid-cols-12 md:items-end md:gap-16 mb-16">
@@ -219,7 +219,7 @@ const About = () => {
           </section>
 
           {/* How we partner — distinct from Services' "Hybrid" pitch */}
-          <section className="py-32 bg-[hsl(var(--section-alt))]">
+          <section className="py-20 md:py-32 bg-[hsl(var(--section-alt))]">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-6xl">
                 <div className="grid items-center gap-16 md:grid-cols-12 md:gap-20">
@@ -245,7 +245,7 @@ const About = () => {
                       </span>
                     </div>
                   </div>
-                  <BentoTile tone="feature" rounded="xl" withSheen className="md:col-span-5 p-10 md:p-12">
+                  <BentoTile tone="feature" rounded="xl" withSheen className="md:col-span-5 p-7 md:p-12">
                     <span className="eyebrow">What you get on day one</span>
                     <ul className="mt-8 space-y-5 text-base text-primary-foreground/85 md:text-lg">
                       <li className="flex gap-4">

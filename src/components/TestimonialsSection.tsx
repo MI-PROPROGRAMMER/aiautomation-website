@@ -56,7 +56,7 @@ const TESTIMONIALS: Testimonial[] = [
 
 export const TestimonialsSection = () => {
   return (
-    <section className="py-32 bg-[hsl(var(--section-alt))]">
+    <section className="py-20 md:py-32 bg-[hsl(var(--section-alt))]">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-7xl">
           {/* Editorial header */}
@@ -89,7 +89,7 @@ export const TestimonialsSection = () => {
                 <BentoTile
                   tone={i === 1 ? "feature" : "flat"}
                   rounded="lg"
-                  className="flex h-full flex-col p-8 md:p-10"
+                  className="flex h-full flex-col p-6 md:p-10"
                 >
                   <Quote className="h-8 w-8 text-accent/55" aria-hidden="true" />
                   <blockquote className="mt-6 flex-1 text-lg leading-relaxed text-primary-foreground/90 md:text-xl">

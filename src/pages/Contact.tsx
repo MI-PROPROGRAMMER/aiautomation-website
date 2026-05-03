@@ -104,7 +104,7 @@ const Contact = () => {
         <Header />
         <main>
           {/* Editorial hero */}
-          <section className="relative overflow-hidden pt-40 pb-24 gradient-hero">
+          <section className="relative overflow-hidden pt-28 md:pt-40 pb-16 md:pb-24 gradient-hero">
             <div className="absolute inset-0 opacity-25" aria-hidden="true">
               <div className="absolute -right-32 top-0 h-[40rem] w-[40rem] rounded-full bg-accent/15 blur-3xl" />
               <div className="absolute -left-32 bottom-0 h-[30rem] w-[30rem] rounded-full bg-accent/10 blur-3xl" />
@@ -112,7 +112,7 @@ const Contact = () => {
             <div className="container relative z-10 mx-auto px-4">
               <div className="mx-auto max-w-6xl">
                 <ChapterMarker number="" label="Contact" />
-                <h1 className="mt-8 max-w-5xl text-5xl font-bold leading-[1.02] text-primary-foreground md:text-7xl lg:text-8xl">
+                <h1 className="mt-8 max-w-5xl text-4xl font-bold leading-[1.05] text-primary-foreground sm:text-5xl md:text-7xl lg:text-8xl">
                   Let's start a
                   <span className="block font-normal text-gradient">conversation.</span>
                 </h1>
@@ -130,7 +130,7 @@ const Contact = () => {
                 <div className="grid gap-12 md:grid-cols-12 md:gap-16">
                   {/* Form */}
                   <div className="md:col-span-7">
-                    <BentoTile tone="feature" rounded="xl" className="p-8 md:p-12">
+                    <BentoTile tone="feature" rounded="xl" className="p-6 md:p-12">
                       <span className="eyebrow">Send us a message</span>
                       <h2 className="mt-3 text-3xl font-bold text-primary-foreground md:text-4xl">
                         Tell us about your <span className="font-normal text-gradient">project.</span>

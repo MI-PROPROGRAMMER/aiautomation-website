@@ -29,7 +29,7 @@ const Blog = () => {
         <Header />
         <main>
           {/* Editorial hero — left aligned */}
-          <section className="relative overflow-hidden bg-primary pt-40 pb-20">
+          <section className="relative overflow-hidden bg-primary pt-28 md:pt-40 pb-20">
             <div className="absolute inset-0 opacity-25" aria-hidden="true">
               <div className="absolute top-[-15%] left-[5%] h-[28rem] w-[28rem] rounded-full bg-accent/20 blur-3xl" />
               <div className="absolute bottom-[-10%] right-[10%] h-[26rem] w-[26rem] rounded-full bg-accent/10 blur-3xl" />
@@ -37,7 +37,7 @@ const Blog = () => {
             <div className="container relative z-10 mx-auto px-4">
               <div className="mx-auto max-w-6xl">
                 <ChapterMarker number="" label="The Journal" />
-                <h1 className="mt-8 max-w-5xl text-5xl font-bold leading-[1.02] text-primary-foreground md:text-7xl lg:text-8xl">
+                <h1 className="mt-8 max-w-5xl text-4xl font-bold leading-[1.05] text-primary-foreground sm:text-5xl md:text-7xl lg:text-8xl">
                   Ship agentic AI
                   <span className="block font-normal text-gradient">with confidence.</span>
                 </h1>

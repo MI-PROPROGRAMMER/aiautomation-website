@@ -76,13 +76,13 @@ export const Header = () => {
           {/* Mobile menu button */}
           <motion.button
             whileTap={{ scale: 0.96 }}
-            className="md:hidden text-primary-foreground cursor-pointer"
+            className="md:hidden -mr-2 inline-flex h-11 w-11 items-center justify-center rounded-md text-primary-foreground cursor-pointer hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={mobileMenuOpen}
             aria-controls="primary-navigation"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </motion.button>
         </div>
 
@@ -90,7 +90,7 @@ export const Header = () => {
         {mobileMenuOpen && (
           <motion.div
             id="primary-navigation"
-            className="md:hidden pb-6 pt-2 space-y-4 border-t border-white/10"
+            className="md:hidden border-t border-white/10 pb-5 pt-3 space-y-1"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.25 }}
@@ -99,13 +99,17 @@ export const Header = () => {
               <Link
                 key={link.to + link.label}
                 to={link.to}
-                className="smallcaps block text-xs text-primary-foreground/85 hover:text-accent transition-colors"
+                className="smallcaps block rounded-md px-3 py-3 text-xs text-primary-foreground/85 transition-colors hover:bg-white/5 hover:text-accent"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <Button className="w-full gradient-accent hover-lift glow-accent" asChild>
+            <Button
+              className="mt-3 w-full gradient-accent hover-lift glow-accent py-6 text-sm"
+              asChild
+              onClick={() => setMobileMenuOpen(false)}
+            >
               <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">
                 Free Audit
               </a>

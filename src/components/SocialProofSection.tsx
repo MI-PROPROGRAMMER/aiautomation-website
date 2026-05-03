@@ -17,7 +17,7 @@ export const SocialProofSection = () => {
   ];
 
   return (
-    <section className="py-32 bg-[hsl(var(--section-alt))]">
+    <section className="py-20 md:py-32 bg-[hsl(var(--section-alt))]">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-6xl">
           {/* Editorial header */}

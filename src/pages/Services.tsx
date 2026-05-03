@@ -35,7 +35,7 @@ const Services = () => {
         <Header />
         <main>
           {/* Editorial hero — left aligned, no centered card */}
-          <section className="relative overflow-hidden pt-40 pb-24 gradient-hero">
+          <section className="relative overflow-hidden pt-28 md:pt-40 pb-16 md:pb-24 gradient-hero">
             <div className="absolute inset-0 opacity-25" aria-hidden="true">
               <div className="absolute -right-32 top-0 h-[40rem] w-[40rem] rounded-full bg-accent/20 blur-3xl" />
               <div className="absolute -left-32 bottom-0 h-[36rem] w-[36rem] rounded-full bg-accent/10 blur-3xl" />
@@ -44,7 +44,7 @@ const Services = () => {
             <div className="container relative z-10 mx-auto px-4">
               <div className="mx-auto max-w-6xl">
                 <ChapterMarker number="" label="Services" />
-                <h1 className="mt-8 max-w-5xl text-5xl font-bold leading-[1.02] text-primary-foreground md:text-7xl lg:text-8xl">
+                <h1 className="mt-8 max-w-5xl text-4xl font-bold leading-[1.05] text-primary-foreground sm:text-5xl md:text-7xl lg:text-8xl">
                   We don't sell tools.
                   <span className="block font-normal text-gradient">We deliver outcomes.</span>
                 </h1>
