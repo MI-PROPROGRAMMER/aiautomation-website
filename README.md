@@ -7,7 +7,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4+-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-**Transform your business with intelligent AI automation solutions**
+**Transform your business with intelligent AI solutions**
 
 [Features](#-features) • [Tech Stack](#-tech-stack) • [Getting Started](#-getting-started) • [Deployment](#-deployment)
 
@@ -17,7 +17,7 @@
 
 ## ✨ Overview
 
-ApexifyLabs is a modern, high-performance website for an AI Automation Agency. Built with cutting-edge technologies, this platform showcases automation services, case studies, ROI calculators, and industry-specific solutions. The design features a futuristic aesthetic with glass morphism effects, smooth animations, and a professional dark blue color scheme.
+ApexifyLabs is a modern, high-performance website for an AI Automation Agency. Built with Vite, React, and TypeScript, this platform showcases automation services, case studies, an interactive ROI calculator, industry-specific solutions, and a blog. The design features a futuristic aesthetic with glass morphism effects, smooth animations, and a professional dark blue color scheme.
 
 ## 🎨 Design System
 
@@ -47,11 +47,14 @@ ApexifyLabs is a modern, high-performance website for an AI Automation Agency. B
 
 - 🎯 **Modern UI/UX**: Glass morphism effects with smooth animations
 - 📱 **Mobile-First**: Fully responsive design across all devices
-- ⚡ **Performance**: Optimized with Vite for lightning-fast builds
+- ⚡ **Performance**: Optimized with Vite, lazy-loaded routes, and code splitting
 - 🎨 **Design System**: Consistent color palette and typography
-- 📊 **Interactive Components**: ROI calculator, FAQ accordion, case studies
-- 🌐 **SEO Optimized**: Meta tags and structured content
-- 🎭 **Accessible**: WCAG compliant components
+- 📊 **Interactive Components**: ROI calculator, FAQ accordion, case studies carousel
+- 🌐 **SEO Optimized**: Meta tags via React Helmet, sitemap, and robots.txt
+- 📝 **Blog**: MDX-powered blog system with post cards and individual post pages
+- 📧 **Contact Form**: EmailJS-powered contact form (no backend required)
+- 🗺️ **Global Reach Map**: Interactive world map visualization
+- 🎭 **Accessible**: WCAG compliant components via Radix UI
 
 ## 🛠 Tech Stack
 
@@ -64,17 +67,23 @@ ApexifyLabs is a modern, high-performance website for an AI Automation Agency. B
 
 ### UI Components
 
-- **[shadcn/ui](https://ui.shadcn.com/)** - Beautiful component library
-- **[Radix UI](https://www.radix-ui.com/)** - Unstyled, accessible components
+- **[shadcn/ui](https://ui.shadcn.com/)** - Beautiful component library (40+ components)
+- **[Radix UI](https://www.radix-ui.com/)** - Unstyled, accessible primitives
 - **[Lucide React](https://lucide.dev/)** - Icon library
 
 ### Additional Libraries
 
-- **React Router** - Client-side routing
-- **React Helmet** - SEO management
-- **React Query** - Data fetching and caching
-- **React Hook Form** - Form management
-- **Zod** - Schema validation
+- **[React Router DOM](https://reactrouter.com/)** - Client-side routing with lazy loading
+- **[React Helmet](https://github.com/nfl/react-helmet)** - SEO and meta tag management
+- **[React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/)** - Form management and validation
+- **[@emailjs/browser](https://www.emailjs.com/)** - Client-side email sending for contact form
+- **[@mdx-js/react](https://mdxjs.com/)** - MDX support for blog posts
+- **[Recharts](https://recharts.org/)** - Data visualization (ROI calculator charts)
+- **[react-simple-maps](https://www.react-simple-maps.io/)** - Interactive world map
+- **[Embla Carousel](https://www.embla-carousel.com/)** - Carousel/slider component
+- **[Sonner](https://sonner.emilkowal.dev/)** - Toast notifications
+- **[date-fns](https://date-fns.org/)** - Date utility library
+- **[next-themes](https://github.com/pacocoursey/next-themes)** - Theme management
 
 ## 🚀 Getting Started
 
@@ -116,14 +125,12 @@ VITE_LINKEDIN_URL=https://www.linkedin.com/company/apexifylabs
 VITE_TWITTER_URL=https://twitter.com/apexifylabs
 ```
 
+See `EMAILJS_SETUP.md` for detailed EmailJS configuration instructions.
+
 4. **Start development server**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 The site will be available at `http://localhost:8080`
@@ -132,61 +139,142 @@ The site will be available at `http://localhost:8080`
 
 ```bash
 npm run dev          # Start development server
-npm run build        # Build for production and prerender static pages
+npm run build        # Build for production
 npm run build:dev    # Build for development
 npm run preview      # Preview production build
 npm run lint         # Run ESLint
+npm run prerender    # Prerender static pages for SEO
 ```
 
 ## 📁 Project Structure
 
 ```
-├── public/                 # Static assets
+├── public/                    # Static assets
 │   ├── favicon.ico
-│   └── robots.txt
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── resources/             # Portfolio images, blog assets, media
+│       ├── n8n-portfolio/     # N8N automation screenshots
+│       ├── Chatbot (whatsapp)/ # Chatbot screenshots and demo videos
+│       └── blog/              # Blog post hero images
+│
+├── scripts/
+│   └── prerender.tsx          # Static site generation script
+│
 ├── src/
-│   ├── assets/            # Images and media
-│   ├── components/       # React components
-│   │   ├── ui/           # shadcn/ui components
+│   ├── components/            # React components
+│   │   ├── ui/                # shadcn/ui components (40+)
+│   │   ├── blog/              # Blog-specific components
+│   │   │   └── PostCard.tsx
 │   │   ├── Header.tsx
 │   │   ├── Hero.tsx
 │   │   ├── ServicesSection.tsx
-│   │   └── ...
-│   ├── hooks/            # Custom React hooks
-│   ├── lib/              # Utility functions
-│   ├── pages/            # Page components
-│   │   ├── Index.tsx
-│   │   └── Services.tsx
-│   ├── App.tsx           # Main app component
-│   ├── index.css         # Global styles
-│   └── main.tsx          # Entry point
-├── index.html
+│   │   ├── ServicesCTASection.tsx
+│   │   ├── ProcessSection.tsx
+│   │   ├── ToolsSection.tsx
+│   │   ├── IndustrySection.tsx
+│   │   ├── ROICalculatorSection.tsx
+│   │   ├── CaseStudiesSection.tsx
+│   │   ├── ProblemSection.tsx
+│   │   ├── SocialProofSection.tsx
+│   │   ├── FAQSection.tsx
+│   │   ├── CTASection.tsx
+│   │   ├── GlobalReachMap.tsx
+│   │   ├── Footer.tsx
+│   │   ├── PageLoader.tsx
+│   │   └── ScrollToHash.tsx
+│   │
+│   ├── config/
+│   │   └── constants.ts       # EmailJS config, social links, Calendly
+│   │
+│   ├── content/
+│   │   └── blog/              # Blog content
+│   │       ├── posts.ts       # Blog post loader/registry
+│   │       ├── automation-roi-playbook.mdx
+│   │       └── agentic-ai-blueprint.mdx
+│   │
+│   ├── hooks/                 # Custom React hooks
+│   │   ├── use-mobile.tsx
+│   │   └── use-toast.ts
+│   │
+│   ├── lib/
+│   │   └── utils.ts           # Utility functions (cn helper)
+│   │
+│   ├── pages/                 # Page components (lazy-loaded)
+│   │   ├── Index.tsx          # Home page
+│   │   ├── Services.tsx       # Services page
+│   │   ├── About.tsx          # About page
+│   │   ├── Contact.tsx        # Contact page (EmailJS form)
+│   │   ├── Blog.tsx           # Blog listing page
+│   │   ├── BlogPost.tsx       # Individual blog post page
+│   │   ├── Privacy.tsx        # Privacy policy
+│   │   ├── Terms.tsx          # Terms of service
+│   │   └── NotFound.tsx       # 404 page
+│   │
+│   ├── App.tsx                # Main app component with routing
+│   ├── App.css                # App-level styles
+│   ├── index.css              # Global styles and design system
+│   ├── main.tsx               # Entry point
+│   └── vite-env.d.ts          # Vite type declarations
+│
+├── components.json            # shadcn/ui configuration
+├── eslint.config.js           # ESLint configuration
+├── index.html                 # HTML entry point
 ├── package.json
-├── tailwind.config.ts
-├── tsconfig.json
-└── vite.config.ts
+├── postcss.config.js          # PostCSS (Tailwind + Autoprefixer)
+├── tailwind.config.ts         # Tailwind CSS configuration
+├── tsconfig.json              # TypeScript root config
+├── tsconfig.app.json          # App TypeScript config
+├── tsconfig.node.json         # Node TypeScript config
+├── vercel.json                # Vercel deployment config (SPA rewrites)
+└── EMAILJS_SETUP.md           # EmailJS setup guide
 ```
+
+## 🗺️ Routes
+
+| Route | Page | Description |
+|-------|------|-------------|
+| `/` | Index | Home page with all main sections |
+| `/services` | Services | Detailed services breakdown |
+| `/about` | About | Company information |
+| `/contact` | Contact | Contact form (EmailJS) |
+| `/blog` | Blog | Blog post listing |
+| `/blog/:slug` | BlogPost | Individual MDX blog post |
+| `/privacy-policy` | Privacy | Privacy policy |
+| `/terms-of-service` | Terms | Terms of service |
+| `*` | NotFound | 404 page |
+
+All routes are lazy-loaded with React Suspense for optimal performance.
 
 ## 🎯 Key Components
 
-### Sections
+### Page Sections
 
 - **Hero**: Eye-catching hero section with CTA
+- **ProblemSection**: Highlights pain points that automation solves
 - **Services**: Showcase automation services
-- **Process**: Implementation workflow
+- **ServicesCTA**: Services-specific call-to-action
+- **Process**: Implementation workflow steps
 - **Tools**: Technology stack display
 - **Industries**: Industry-specific solutions
-- **ROI Calculator**: Interactive ROI calculator
-- **Case Studies**: Client success stories
-- **FAQ**: Frequently asked questions
+- **ROI Calculator**: Interactive ROI calculator with charts (Recharts)
+- **Case Studies**: Client success stories carousel
+- **SocialProof**: Testimonials and trust indicators
+- **GlobalReachMap**: Interactive world map showing global presence
+- **FAQ**: Frequently asked questions accordion
 - **CTA**: Call-to-action sections
+
+### Blog System
+
+- MDX-powered blog posts in `src/content/blog/`
+- Post registry in `src/content/blog/posts.ts`
+- `PostCard` component for blog listing
+- Dynamic routing via `/blog/:slug`
 
 ### UI Components
 
-All components follow shadcn/ui patterns:
-- Accordion, Alert, Button, Card
-- Dialog, Dropdown, Input, Select
-- Toast, Tooltip, and more
+40+ shadcn/ui components including:
+Accordion, Alert, Avatar, Badge, Button, Calendar, Card, Carousel, Checkbox, Command, Dialog, Drawer, Dropdown Menu, Form, Hover Card, Input, Label, Menubar, Navigation Menu, Pagination, Popover, Progress, Radio Group, Scroll Area, Select, Separator, Sheet, Sidebar, Skeleton, Slider, Sonner (Toast), Table, Tabs, Toggle, Tooltip, and more.
 
 ## 🌐 Deployment
 
@@ -198,24 +286,18 @@ npm run build
 
 The `dist/` folder contains the production-ready files.
 
-### Deployment Options
+### Vercel (Configured)
 
-#### Vercel (Recommended)
+This project includes a `vercel.json` with SPA rewrite rules. To deploy:
 
 1. Install Vercel CLI: `npm i -g vercel`
 2. Run: `vercel`
 3. Follow the prompts
 
-#### Netlify
-
-1. Install Netlify CLI: `npm i -g netlify-cli`
-2. Run: `netlify deploy --prod`
-3. Configure build command: `npm run build`
-4. Set publish directory: `dist`
-
-#### Other Platforms
+### Other Platforms
 
 Any static hosting service works:
+- Netlify
 - GitHub Pages
 - AWS S3 + CloudFront
 - Azure Static Web Apps
@@ -249,6 +331,13 @@ h1, h2, h3 {
 
 All components are in `src/components/`. Each component is self-contained and can be easily modified.
 
+### Blog Posts
+
+Add new blog posts by:
+1. Creating an `.mdx` file in `src/content/blog/`
+2. Registering the post in `src/content/blog/posts.ts`
+3. Adding a hero image in `public/resources/blog/<slug>/`
+
 ## 📱 Responsive Design
 
 The website is fully responsive with breakpoints:
@@ -258,21 +347,6 @@ The website is fully responsive with breakpoints:
 - **Desktop**: > 1024px
 
 Components use Tailwind's responsive utilities (`sm:`, `md:`, `lg:`) for adaptive layouts.
-
-## 🧪 Development Tips
-
-### Adding New Components
-
-1. Create component in `src/components/`
-2. Import and use in pages
-3. Follow existing component patterns
-
-### Styling Guidelines
-
-- Use Tailwind utility classes
-- Leverage design system variables
-- Maintain glass morphism effects
-- Keep animations smooth and subtle
 
 ## 📄 License
 

@@ -19,7 +19,7 @@ const Blog = () => {
         <meta property="og:title" content="ApexifyLabs Blog" />
         <meta
           property="og:description"
-          content="Articles, frameworks, and case studies that help you ship AI automations with confidence."
+          content="Articles, frameworks, and case studies that help you ship AI solutions with confidence."
         />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://apexifylabs.com/blog" />
