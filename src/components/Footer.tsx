@@ -36,7 +36,7 @@ export const Footer = () => {
             <ul className="mt-6 space-y-3">
               {[
                 { to: "/services", label: "Services" },
-                { to: "/#case-studies", label: "Work" },
+                { to: "/#selected-work", label: "Work" },
                 { to: "/about", label: "About" },
                 { to: "/blog", label: "Blog" },
                 { to: "/contact", label: "Contact" },

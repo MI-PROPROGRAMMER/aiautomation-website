@@ -28,6 +28,9 @@ const IndustrySection = lazy(() =>
 const CaseStudiesSection = lazy(() =>
   import("@/components/CaseStudiesSection").then((module) => ({ default: module.CaseStudiesSection })),
 );
+const PortfolioSection = lazy(() =>
+  import("@/components/PortfolioSection").then((module) => ({ default: module.PortfolioSection })),
+);
 const TestimonialsSection = lazy(() =>
   import("@/components/TestimonialsSection").then((module) => ({ default: module.TestimonialsSection })),
 );
@@ -141,7 +144,12 @@ const Index = () => {
             <ToolsSection />
           </Suspense>
 
-          {/* 9. Testimonials — named voices */}
+          {/* 9. Selected Work — what we actually built */}
+          <Suspense fallback={null}>
+            <PortfolioSection />
+          </Suspense>
+
+          {/* 10. Testimonials — named voices */}
           <Suspense fallback={null}>
             <TestimonialsSection />
           </Suspense>
