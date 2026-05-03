@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { MessageCircle, X, Send, Sparkles } from "lucide-react";
+import { MessageCircle, X, Send, Sparkles, RotateCcw } from "lucide-react";
 import { ChatMessage } from "./ChatMessage";
 import { TypingIndicator } from "./TypingIndicator";
 import {
@@ -50,7 +50,7 @@ const saveState = (state: PersistedState) => {
 export const ChatbotWidget = () => {
   const initial = useMemo(() => loadState(), []);
   const [isOpen, setIsOpen] = useState<boolean>(initial?.isOpen ?? false);
-  const [sessionId] = useState<string>(initial?.sessionId ?? newSessionId());
+  const [sessionId, setSessionId] = useState<string>(initial?.sessionId ?? newSessionId());
   const [turns, setTurns] = useState<ChatTurn[]>(() => {
     if (initial?.turns?.length) return initial.turns;
     const greeting = GREETINGS[Math.floor(Math.random() * GREETINGS.length)];
@@ -92,6 +92,21 @@ export const ChatbotWidget = () => {
       return () => clearTimeout(t);
     }
   }, [isOpen]);
+
+  const clearChat = useCallback(() => {
+    abortRef.current?.abort();
+    abortRef.current = null;
+    notifiedFirstRef.current = false;
+    notifiedLeadRef.current = false;
+    leadRef.current = {};
+    setSessionId(newSessionId());
+    setStreamingText("");
+    setIsTyping(false);
+    setDraft("");
+    const greeting = GREETINGS[Math.floor(Math.random() * GREETINGS.length)];
+    setTurns([{ role: "assistant", content: greeting, at: Date.now() }]);
+    inputRef.current?.focus();
+  }, []);
 
   const fireLeadEmail = useCallback(
     async (reason: "first_message" | "lead_captured", currentTurns: ChatTurn[]) => {
@@ -263,14 +278,25 @@ export const ChatbotWidget = () => {
                   </div>
                 </div>
               </div>
-              <button
-                type="button"
-                onClick={() => setIsOpen(false)}
-                className="p-1.5 rounded-full text-primary-foreground/70 hover:text-primary-foreground hover:bg-white/5 transition-colors cursor-pointer"
-                aria-label="Minimize chat"
-              >
-                <X size={18} />
-              </button>
+              <div className="flex items-center gap-1">
+                <button
+                  type="button"
+                  onClick={clearChat}
+                  className="p-1.5 rounded-full text-primary-foreground/70 hover:text-accent hover:bg-white/5 transition-colors cursor-pointer"
+                  aria-label="Clear chat and start over"
+                  title="Clear chat"
+                >
+                  <RotateCcw size={16} />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setIsOpen(false)}
+                  className="p-1.5 rounded-full text-primary-foreground/70 hover:text-primary-foreground hover:bg-white/5 transition-colors cursor-pointer"
+                  aria-label="Minimize chat"
+                >
+                  <X size={18} />
+                </button>
+              </div>
             </div>
 
             {/* Messages */}
