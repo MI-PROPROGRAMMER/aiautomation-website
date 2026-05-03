@@ -99,14 +99,14 @@ const LinearPreview = ({ className }: { className?: string }) => (
     aria-label="Workflow preview: trigger to filter to transform to action"
   >
     {/* connectors */}
-    <Edge x1={28} y1={18} x2={68} y2={18} delay={0} />
-    <Edge x1={104} y1={18} x2={132} y2={18} delay={0.6} />
-    <Edge x1={168} y1={18} x2={196} y2={18} delay={1.2} />
-    {/* nodes */}
-    <Node x={28} y={18} label="trigger" />
-    <Node x={86} y={18} label="filter" />
-    <Node x={150} y={18} label="enrich" active />
-    <Node x={196 - 18} y={18} label="action" />
+    <Edge x1={40} y1={18} x2={56} y2={18} delay={0} />
+    <Edge x1={92} y1={18} x2={108} y2={18} delay={0.6} />
+    <Edge x1={144} y1={18} x2={160} y2={18} delay={1.2} />
+    {/* nodes — evenly spaced 4 nodes (width 36) within viewBox 200 */}
+    <Node x={22} y={18} label="trigger" />
+    <Node x={74} y={18} label="filter" />
+    <Node x={126} y={18} label="enrich" active />
+    <Node x={178} y={18} label="action" />
   </svg>
 );
 
