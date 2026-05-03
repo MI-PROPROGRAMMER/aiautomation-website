@@ -548,3 +548,39 @@ All colors MUST be HSL.
     }
   }
 }
+
+/* Chatbot widget — typing indicator + scrollbar */
+@keyframes chatbot-typing-bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.chatbot-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.chatbot-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.chatbot-scroll::-webkit-scrollbar-thumb {
+  background: hsl(var(--accent) / 0.25);
+  border-radius: 999px;
+}
+.chatbot-scroll::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent) / 0.45);
+}
+.chatbot-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--accent) / 0.25) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [aria-label="Aria is typing"] span {
+    animation: none !important;
+  }
+}
