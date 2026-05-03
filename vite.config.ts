@@ -1,37 +1,113 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv, type Plugin } from "vite";
 import mdx from "@mdx-js/rollup";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  server: {
-    host: "::",
-    port: 8080,
+const devChatbotApi = (apiKey: string | undefined): Plugin => ({
+  name: "dev-chatbot-api",
+  configureServer(server) {
+    server.middlewares.use("/api/chat", async (req, res) => {
+      if (req.method !== "POST") {
+        res.statusCode = 405;
+        res.end("Method not allowed");
+        return;
+      }
+
+      if (!apiKey) {
+        res.statusCode = 500;
+        res.setHeader("content-type", "application/json");
+        res.end(
+          JSON.stringify({
+            error: "ANTHROPIC_API_KEY missing — add it to .env (no VITE_ prefix) and restart the dev server.",
+          })
+        );
+        return;
+      }
+
+      let raw = "";
+      try {
+        for await (const chunk of req) raw += typeof chunk === "string" ? chunk : chunk.toString("utf-8");
+      } catch {
+        res.statusCode = 400;
+        res.end(JSON.stringify({ error: "Failed to read request body" }));
+        return;
+      }
+
+      let body: { messages?: unknown };
+      try {
+        body = JSON.parse(raw);
+      } catch {
+        res.statusCode = 400;
+        res.setHeader("content-type", "application/json");
+        res.end(JSON.stringify({ error: "Invalid JSON body" }));
+        return;
+      }
+
+      const { sanitizeMessages, streamChatResponse } = await server.ssrLoadModule(
+        "/src/lib/chatbot/streamChat.ts"
+      );
+      const messages = sanitizeMessages(body.messages);
+      if (messages.length === 0) {
+        res.statusCode = 400;
+        res.setHeader("content-type", "application/json");
+        res.end(JSON.stringify({ error: "messages array is required" }));
+        return;
+      }
+
+      res.statusCode = 200;
+      res.setHeader("content-type", "text/plain; charset=utf-8");
+      res.setHeader("cache-control", "no-cache, no-transform");
+
+      const stream: ReadableStream<Uint8Array> = streamChatResponse(messages, apiKey);
+      const reader = stream.getReader();
+      try {
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
+          if (value) res.write(Buffer.from(value));
+        }
+      } catch (err) {
+        console.error("[dev-chatbot-api] streaming failed:", err);
+      } finally {
+        res.end();
+      }
+    });
   },
-  plugins: [
-    mdx({
-      extension: /\.mdx?$/,
-    }),
-    react(),
-  ],
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          react: ["react", "react-dom", "scheduler"],
-          router: ["react-router-dom"],
-          icons: ["lucide-react"],
-          radix: ["@radix-ui/react-accordion", "@radix-ui/react-dialog", "@radix-ui/react-toast"],
-          maps: ["react-simple-maps"],
-          charts: ["recharts"],
+});
+
+// https://vitejs.dev/config/
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), "");
+  return {
+    server: {
+      host: "::",
+      port: 8080,
+    },
+    plugins: [
+      mdx({
+        extension: /\.mdx?$/,
+      }),
+      react(),
+      devChatbotApi(env.ANTHROPIC_API_KEY),
+    ],
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            react: ["react", "react-dom", "scheduler"],
+            router: ["react-router-dom"],
+            icons: ["lucide-react"],
+            radix: ["@radix-ui/react-accordion", "@radix-ui/react-dialog", "@radix-ui/react-toast"],
+            maps: ["react-simple-maps"],
+            charts: ["recharts"],
+          },
         },
       },
     },
-  },
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
+      },
     },
-  },
+  };
 });

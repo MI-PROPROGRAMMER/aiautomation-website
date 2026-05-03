@@ -320,7 +320,7 @@ export const ChatbotWidget = () => {
                 </button>
               </div>
               <div className="mt-2 px-1 text-center text-[10.5px] text-primary-foreground/40">
-                Powered by Claude · For the team directly,{" "}
+                email at{" "}
                 <a
                   href="mailto:contact@apexifylabs.com"
                   className="text-accent/80 hover:text-accent transition-colors cursor-pointer"

@@ -1,15 +1,8 @@
-import Anthropic from "@anthropic-ai/sdk";
-import { SYSTEM_PROMPT } from "../src/lib/chatbot/systemPrompt";
+import { sanitizeMessages, streamChatResponse } from "../src/lib/chatbot/streamChat";
 
 export const config = {
   runtime: "nodejs",
 };
-
-type ChatMessage = { role: "user" | "assistant"; content: string };
-
-const MODEL = "claude-sonnet-4-5";
-const MAX_TOKENS = 800;
-const MAX_HISTORY = 30;
 
 export default async function handler(req: Request): Promise<Response> {
   if (req.method !== "POST") {
@@ -24,7 +17,7 @@ export default async function handler(req: Request): Promise<Response> {
     );
   }
 
-  let body: { messages?: ChatMessage[] };
+  let body: { messages?: unknown };
   try {
     body = await req.json();
   } catch {
@@ -34,10 +27,7 @@ export default async function handler(req: Request): Promise<Response> {
     });
   }
 
-  const messages = (body.messages ?? [])
-    .filter((m) => m && (m.role === "user" || m.role === "assistant") && typeof m.content === "string")
-    .slice(-MAX_HISTORY);
-
+  const messages = sanitizeMessages(body.messages);
   if (messages.length === 0) {
     return new Response(JSON.stringify({ error: "messages array is required." }), {
       status: 400,
@@ -45,39 +35,7 @@ export default async function handler(req: Request): Promise<Response> {
     });
   }
 
-  const client = new Anthropic({ apiKey });
-
-  const encoder = new TextEncoder();
-  const stream = new ReadableStream({
-    async start(controller) {
-      try {
-        const response = await client.messages.stream({
-          model: MODEL,
-          max_tokens: MAX_TOKENS,
-          system: SYSTEM_PROMPT,
-          messages: messages.map((m) => ({ role: m.role, content: m.content })),
-        });
-
-        for await (const event of response) {
-          if (
-            event.type === "content_block_delta" &&
-            event.delta.type === "text_delta" &&
-            event.delta.text
-          ) {
-            controller.enqueue(encoder.encode(event.delta.text));
-          }
-        }
-      } catch (err) {
-        const message = err instanceof Error ? err.message : "Unknown error";
-        controller.enqueue(
-          encoder.encode(`\n\n[Sorry — I hit a snag on my end. Please try again, or email contact@apexifylabs.com.]`)
-        );
-        console.error("[api/chat] error:", message);
-      } finally {
-        controller.close();
-      }
-    },
-  });
+  const stream = streamChatResponse(messages, apiKey);
 
   return new Response(stream, {
     headers: {
