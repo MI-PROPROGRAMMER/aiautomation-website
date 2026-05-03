@@ -1,7 +1,31 @@
-import { defineConfig, loadEnv, type Plugin } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import mdx from "@mdx-js/rollup";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
+import fs from "node:fs";
+
+const readDotEnv = (dir: string): Record<string, string> => {
+  const out: Record<string, string> = {};
+  for (const file of [".env", ".env.local"]) {
+    const full = path.join(dir, file);
+    if (!fs.existsSync(full)) continue;
+    for (const line of fs.readFileSync(full, "utf-8").split(/\r?\n/)) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith("#")) continue;
+      const match = trimmed.match(/^([A-Z0-9_]+)\s*=\s*(.*)$/i);
+      if (!match) continue;
+      let value = match[2].trim();
+      if (
+        (value.startsWith('"') && value.endsWith('"')) ||
+        (value.startsWith("'") && value.endsWith("'"))
+      ) {
+        value = value.slice(1, -1);
+      }
+      if (value) out[match[1]] = value;
+    }
+  }
+  return out;
+};
 
 const devChatbotApi = (apiKey: string | undefined): Plugin => ({
   name: "dev-chatbot-api",
@@ -18,7 +42,7 @@ const devChatbotApi = (apiKey: string | undefined): Plugin => ({
         res.setHeader("content-type", "application/json");
         res.end(
           JSON.stringify({
-            error: "ANTHROPIC_API_KEY missing — add it to .env (no VITE_ prefix) and restart the dev server.",
+            error: "ANTHROPIC_API_KEY missing — add a non-empty value to .env and restart the dev server.",
           })
         );
         return;
@@ -76,8 +100,9 @@ const devChatbotApi = (apiKey: string | undefined): Plugin => ({
 });
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), "");
+export default defineConfig(() => {
+  const dotenv = readDotEnv(__dirname);
+  const apiKey = dotenv.ANTHROPIC_API_KEY || process.env.ANTHROPIC_API_KEY || undefined;
   return {
     server: {
       host: "::",
@@ -88,7 +113,7 @@ export default defineConfig(({ mode }) => {
         extension: /\.mdx?$/,
       }),
       react(),
-      devChatbotApi(env.ANTHROPIC_API_KEY),
+      devChatbotApi(apiKey),
     ],
     build: {
       rollupOptions: {
