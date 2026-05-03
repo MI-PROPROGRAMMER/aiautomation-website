@@ -1,4 +1,4 @@
-import { sanitizeMessages, streamChatResponse } from "../src/lib/chatbot/streamChat";
+import { sanitizeMessages, streamChatResponse } from "../src/lib/chatbot/streamChat.js";
 
 export const config = {
   runtime: "nodejs",

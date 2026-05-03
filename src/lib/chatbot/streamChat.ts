@@ -1,4 +1,4 @@
-import { SYSTEM_PROMPT } from "./systemPrompt";
+import { SYSTEM_PROMPT } from "./systemPrompt.js";
 
 export type ChatMessage = { role: "user" | "assistant"; content: string };
 
