@@ -2,10 +2,14 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import type { PropsWithChildren } from "react";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { PageLoader } from "@/components/PageLoader";
 import { ScrollToHash } from "@/components/ScrollToHash";
+
+const ChatbotWidget = lazy(() =>
+  import("@/components/chatbot/ChatbotWidget").then((m) => ({ default: m.ChatbotWidget }))
+);
 
 const Index = lazy(() => import("./pages/Index"));
 const Services = lazy(() => import("./pages/Services"));
@@ -17,11 +21,23 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
+const ClientOnlyChatbot = () => {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
+  return (
+    <Suspense fallback={null}>
+      <ChatbotWidget />
+    </Suspense>
+  );
+};
+
 export const AppProviders = ({ children }: PropsWithChildren) => (
   <TooltipProvider>
     <Toaster />
     <Sonner />
     {children}
+    <ClientOnlyChatbot />
   </TooltipProvider>
 );
 
