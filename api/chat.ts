@@ -1,7 +1,7 @@
 import { sanitizeMessages, streamChatResponse } from "../src/lib/chatbot/streamChat.js";
 
 export const config = {
-  runtime: "nodejs",
+  runtime: "edge",
 };
 
 export default async function handler(req: Request): Promise<Response> {
