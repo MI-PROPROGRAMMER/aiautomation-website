@@ -80,10 +80,17 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    /* iOS Safari needs the clip on <html> too — without it, any descendant
+       wider than the viewport (decorative blurs, wide marquees, big SVGs)
+       allows the page to scroll horizontally even when <body> clips. */
+    overflow-x: clip;
+  }
+
   body {
     @apply bg-primary text-primary-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
-    /* Prevent any rogue overflow on mobile (e.g. wide marquees, big SVGs) */
     overflow-x: clip;
   }
 
@@ -106,9 +113,6 @@ All colors MUST be HSL.
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
 }
 
 @layer utilities {

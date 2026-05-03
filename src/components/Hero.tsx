@@ -7,12 +7,19 @@ import ScrollExpandMedia from "@/components/ui/scroll-expansion-hero";
 import { HeroBackdrop } from "@/components/hero/HeroBackdrop";
 import { HeroFrameSVG } from "@/components/hero/HeroFrameSVG";
 import { HeroCoverOverlay } from "@/components/hero/HeroCoverOverlay";
+import { MobileHero } from "@/components/hero/MobileHero";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 
 /**
- * Hero — the cinematic scroll-expansion experience on every viewport.
- * Cover overlay splits on scroll → reveals the 5-stage workflow timeline.
+ * Hero — cinematic scroll-expansion on desktop, lightweight static layout on
+ * mobile. The desktop variant scroll-jacks and runs heavy framer-motion +
+ * blur effects that tank performance on phones, so we swap to a purpose-built
+ * MobileHero under 768px.
  */
 export const Hero = () => {
+  const isMobile = useIsMobile();
+  if (isMobile) return <MobileHero />;
+
   return (
     <ScrollExpandMedia
       mediaType="image"

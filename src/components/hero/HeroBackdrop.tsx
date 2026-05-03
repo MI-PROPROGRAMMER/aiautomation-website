@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 
 /**
  * HeroBackdrop — schematic, animated, on-brand for an AI/tech shop.
@@ -6,6 +7,9 @@ import { motion } from "framer-motion";
  *   1. Blueprint grid (CSS via class)
  *   2. Slowly-pulsing node mesh with traveling edge highlights
  *   3. Soft champagne/cyan radial glow corners (vignette-ish)
+ *
+ * Mobile (<768px): infinite framer-motion loops are skipped (they pegged
+ * the GPU on iOS) and the corner glow blur radius is reduced.
  */
 
 const NODES = [
@@ -24,6 +28,7 @@ const EDGES: Array<[number, number]> = [
 ];
 
 export const HeroBackdrop = () => {
+  const isMobile = useIsMobile();
   return (
     <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
       {/* Layer 1 — blueprint grid */}
@@ -61,36 +66,39 @@ export const HeroBackdrop = () => {
           />
         ))}
 
-        {/* Pulse-traveling highlights on selected edges */}
-        {[1, 5, 9, 13, 17].map((edgeIdx, i) => {
-          const [a, b] = EDGES[edgeIdx];
-          return (
-            <motion.line
-              key={`pulse-${i}`}
-              x1={NODES[a].x}
-              y1={NODES[a].y}
-              x2={NODES[b].x}
-              y2={NODES[b].y}
-              stroke="hsl(var(--accent))"
-              strokeWidth="0.35"
-              strokeDasharray="0.5 6"
-              initial={{ strokeDashoffset: 0 }}
-              animate={{ strokeDashoffset: -12 }}
-              transition={{
-                duration: 4 + i * 0.7,
-                repeat: Infinity,
-                ease: "linear",
-                delay: i * 0.5,
-              }}
-            />
-          );
-        })}
+        {/* Pulse-traveling highlights on selected edges (desktop only) */}
+        {!isMobile &&
+          [1, 5, 9, 13, 17].map((edgeIdx, i) => {
+            const [a, b] = EDGES[edgeIdx];
+            return (
+              <motion.line
+                key={`pulse-${i}`}
+                x1={NODES[a].x}
+                y1={NODES[a].y}
+                x2={NODES[b].x}
+                y2={NODES[b].y}
+                stroke="hsl(var(--accent))"
+                strokeWidth="0.35"
+                strokeDasharray="0.5 6"
+                initial={{ strokeDashoffset: 0 }}
+                animate={{ strokeDashoffset: -12 }}
+                transition={{
+                  duration: 4 + i * 0.7,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: i * 0.5,
+                }}
+              />
+            );
+          })}
 
         {/* Nodes */}
         {NODES.map((node, i) => (
           <g key={`node-${i}`}>
-            {/* Glow halo on a few nodes */}
-            {i % 3 === 0 && (
+            {/* Glow halo on a few nodes (desktop only — pulsing opacity is
+                cheap on a desktop GPU but compounds with everything else on
+                mobile) */}
+            {!isMobile && i % 3 === 0 && (
               <motion.circle
                 cx={node.x}
                 cy={node.y}
@@ -106,6 +114,9 @@ export const HeroBackdrop = () => {
                 }}
               />
             )}
+            {isMobile && i % 3 === 0 && (
+              <circle cx={node.x} cy={node.y} r="1.2" fill="url(#node-glow)" opacity="0.6" />
+            )}
             <circle
               cx={node.x}
               cy={node.y}
@@ -117,9 +128,10 @@ export const HeroBackdrop = () => {
         ))}
       </svg>
 
-      {/* Layer 3 — corner glows / vignette */}
-      <div className="absolute -left-32 -top-32 h-[36rem] w-[36rem] rounded-full bg-accent/10 blur-[140px]" />
-      <div className="absolute -right-32 -bottom-32 h-[36rem] w-[36rem] rounded-full bg-accent/8 blur-[140px]" />
+      {/* Layer 3 — corner glows / vignette. Smaller and less blurry on mobile
+          to dodge the per-frame blur cost on mobile GPUs. */}
+      <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-accent/10 blur-[60px] md:-left-32 md:-top-32 md:h-[36rem] md:w-[36rem] md:blur-[140px]" />
+      <div className="absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-accent/10 blur-[60px] md:-right-32 md:-bottom-32 md:h-[36rem] md:w-[36rem] md:blur-[140px] md:bg-accent/8" />
       <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-transparent to-primary/80" />
     </div>
   );
