@@ -1,5 +1,5 @@
 import { ShoppingCart, Home, Heart, GraduationCap, Factory, DollarSign } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ChapterMarker } from "@/components/ui/editorial";
 
 export const IndustrySection = () => {
@@ -98,7 +98,7 @@ export const IndustrySection = () => {
             {industries.map((industry, index) => {
               const isLeft = index % 2 === 0;
               return (
-                <motion.article
+                <m.article
                   key={industry.title}
                   className="group border-b border-primary-foreground/10 py-10"
                   initial={{ opacity: 0, y: 14 }}
@@ -141,7 +141,7 @@ export const IndustrySection = () => {
                       aria-hidden="true"
                     />
                   )}
-                </motion.article>
+                </m.article>
               );
             })}
           </div>

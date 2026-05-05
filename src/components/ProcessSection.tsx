@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Search, PenLine, Map, Boxes, Activity, RotateCcw } from "lucide-react";
 import { ChapterMarker } from "@/components/ui/editorial";
 
@@ -78,7 +78,7 @@ export const ProcessSection = () => {
             <div className="absolute left-0 right-0 top-[5.25rem] h-px hairline" aria-hidden="true" />
             <ol className="grid grid-cols-5 gap-6">
               {steps.map((step, index) => (
-                <motion.li
+                <m.li
                   key={step.title}
                   className="relative"
                   initial={{ opacity: 0, y: 20 }}
@@ -122,7 +122,7 @@ export const ProcessSection = () => {
                       {step.artifact}
                     </span>
                   </div>
-                </motion.li>
+                </m.li>
               ))}
             </ol>
           </div>
@@ -135,7 +135,7 @@ export const ProcessSection = () => {
             />
             <ol className="space-y-12 pl-10">
               {steps.map((step, index) => (
-                <motion.li
+                <m.li
                   key={step.title}
                   className="relative"
                   initial={{ opacity: 0, x: 16 }}
@@ -161,13 +161,13 @@ export const ProcessSection = () => {
                   <span className="mt-3 inline-block mono text-[0.65rem] text-primary-foreground/55">
                     {step.artifact}
                   </span>
-                </motion.li>
+                </m.li>
               ))}
             </ol>
           </div>
 
           {/* Iterate-until-satisfied callout — mirrors the loop in the Hero foreground */}
-          <motion.div
+          <m.div
             className="mt-20 flex flex-col items-center gap-4 md:mt-24"
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -184,7 +184,7 @@ export const ProcessSection = () => {
             <p className="display-italic max-w-2xl text-center text-lg italic leading-snug text-primary-foreground/85 md:text-xl">
               We iterate every stage until you're satisfied — never a hand-off, always a hand-back.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

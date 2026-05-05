@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { CALENDLY_LINK } from "@/config/constants";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Link } from "react-router-dom";
 import { HeroBackdrop } from "@/components/hero/HeroBackdrop";
 
@@ -20,7 +20,7 @@ export const MobileHero = () => {
       <div className="container relative z-10 mx-auto px-5">
         <div className="mx-auto max-w-xl">
           {/* Eyebrow */}
-          <motion.div
+          <m.div
             className="mb-8 flex items-center gap-2.5"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -33,10 +33,10 @@ export const MobileHero = () => {
             <span className="tech-label text-[0.65rem] text-primary-foreground/85">
               AI Automation · since 2021
             </span>
-          </motion.div>
+          </m.div>
 
           {/* Top headline */}
-          <motion.h1
+          <m.h1
             className="font-display font-bold leading-[0.9] tracking-[-0.04em] text-primary-foreground"
             style={{ fontSize: "clamp(3.25rem, 14vw, 5.5rem)" }}
             initial={{ opacity: 0, y: 16 }}
@@ -44,10 +44,10 @@ export const MobileHero = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             Automate
-          </motion.h1>
+          </m.h1>
 
           {/* Hairline + pulse */}
-          <motion.div
+          <m.div
             className="relative my-4 h-3"
             aria-hidden="true"
             initial={{ opacity: 0, scaleX: 0.4 }}
@@ -64,17 +64,17 @@ export const MobileHero = () => {
             />
             <span className="absolute left-0 top-1/2 -translate-y-1/2">
               <span className="relative block h-1.5 w-1.5">
-                <motion.span
+                <m.span
                   className="absolute inset-0 rounded-full bg-accent"
                   animate={{ opacity: [0.4, 1, 0.4] }}
                   transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
                 />
               </span>
             </span>
-          </motion.div>
+          </m.div>
 
           {/* Bottom headline */}
-          <motion.h1
+          <m.h1
             className="font-display font-bold italic leading-[0.9] tracking-[-0.04em] text-primary-foreground"
             style={{ fontSize: "clamp(3.25rem, 14vw, 5.5rem)" }}
             initial={{ opacity: 0, y: 16 }}
@@ -82,10 +82,10 @@ export const MobileHero = () => {
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
           >
             the grind.
-          </motion.h1>
+          </m.h1>
 
           {/* Subtitle */}
-          <motion.p
+          <m.p
             className="mt-8 text-base leading-relaxed text-primary-foreground/80 sm:text-lg"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -94,10 +94,10 @@ export const MobileHero = () => {
             Custom AI automation that hands your team back{" "}
             <span className="font-semibold text-accent">40% of their week</span> — so they can focus on
             growth, strategy, and the work only humans can do.
-          </motion.p>
+          </m.p>
 
           {/* CTAs — stacked, full width, big touch targets */}
-          <motion.div
+          <m.div
             className="mt-10 flex flex-col gap-3"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -121,10 +121,10 @@ export const MobileHero = () => {
             >
               <Link to="/#case-studies">See real outcomes</Link>
             </Button>
-          </motion.div>
+          </m.div>
 
           {/* Stats */}
-          <motion.div
+          <m.div
             className="mt-14 grid grid-cols-3 gap-x-4 gap-y-3 border-t border-accent/20 pt-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -133,10 +133,10 @@ export const MobileHero = () => {
             <Stat label="years" value="4+" />
             <Stat label="clients" value="50+" />
             <Stat label="hrs automated" value="10K+" />
-          </motion.div>
+          </m.div>
 
           {/* Scroll affordance */}
-          <motion.div
+          <m.div
             className="mt-16 flex flex-col items-center gap-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -145,13 +145,13 @@ export const MobileHero = () => {
             <span className="tech-label text-[0.6rem] text-primary-foreground/55">
               Scroll to explore
             </span>
-            <motion.div
+            <m.div
               animate={{ y: [0, 6, 0] }}
               transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
             >
               <ChevronDown className="h-4 w-4 text-accent" aria-hidden="true" />
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         </div>
       </div>
     </section>

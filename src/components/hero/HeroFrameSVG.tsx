@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 /**
  * HeroFrameSVG — the foreground media that grows from small to full-size as
@@ -72,7 +72,7 @@ export const HeroFrameSVG = ({ progress }: Props) => {
         {/* Header */}
         <g>
           <line x1="40" y1="64" x2={VB_W - 40} y2="64" stroke="hsl(192 100% 44%)" strokeOpacity="0.18" />
-          <motion.circle
+          <m.circle
             cx="48"
             cy="40"
             r="5"
@@ -153,7 +153,7 @@ export const HeroFrameSVG = ({ progress }: Props) => {
 
         {/* Animated traveling packet on the connector */}
         {POS_X.slice(0, -1).map((x, i) => (
-          <motion.circle
+          <m.circle
             key={`pkt-${i}`}
             cy={STAGE_Y_DOT}
             r="5"
@@ -260,7 +260,7 @@ const Stage = ({ x, id, label, meta, active }: StageProps) => {
       )}
 
       {active && (
-        <motion.circle
+        <m.circle
           cx={x}
           cy={STAGE_Y_DOT}
           r="14"
@@ -341,7 +341,7 @@ const IterateLoop = () => {
         strokeOpacity="0.35"
         strokeWidth="1.5"
       />
-      <motion.path
+      <m.path
         d={path}
         fill="none"
         stroke="hsl(192 100% 60%)"

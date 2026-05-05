@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Inbox, Database, Sparkles, Send, type LucideIcon } from "lucide-react";
 
 /**
@@ -59,7 +59,7 @@ export const HeroWorkflowFrame = () => {
             }}
           />
           {/* Animated traveling pulse on the connector */}
-          <motion.div
+          <m.div
             className="absolute top-1/2 h-1 w-12 -translate-y-1/2 rounded-full"
             aria-hidden="true"
             style={{
@@ -73,7 +73,7 @@ export const HeroWorkflowFrame = () => {
 
           <ol className="relative grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-3">
             {NODES.map((node, i) => (
-              <motion.li
+              <m.li
                 key={node.id}
                 className="relative"
                 initial={{ opacity: 0, y: 8 }}
@@ -81,7 +81,7 @@ export const HeroWorkflowFrame = () => {
                 transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
               >
                 <NodeCard node={node} index={i} />
-              </motion.li>
+              </m.li>
             ))}
           </ol>
         </div>

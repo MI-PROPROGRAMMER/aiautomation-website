@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Linkedin, Quote, Star } from "lucide-react";
 import { ChapterMarker, BentoTile } from "@/components/ui/editorial";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -80,7 +80,7 @@ export const TestimonialsSection = () => {
             {TESTIMONIALS.map((t, i) => {
               const isLong = t.quote.length > PREVIEW_THRESHOLD;
               return (
-                <motion.figure
+                <m.figure
                   key={t.name}
                   className="flex flex-col"
                   initial={{ opacity: 0, y: 18 }}
@@ -158,7 +158,7 @@ export const TestimonialsSection = () => {
                       </div>
                     </figcaption>
                   </BentoTile>
-                </motion.figure>
+                </m.figure>
               );
             })}
           </div>

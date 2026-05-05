@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ChapterMarker, HairlineRule, StatLine } from "@/components/ui/editorial";
 import { TimeBleedInfographic } from "@/components/infographics/TimeBleedInfographic";
 
@@ -48,7 +48,7 @@ export const ProblemSection = () => {
             <HairlineRule />
             <ol>
               {problems.map((problem, index) => (
-                <motion.li
+                <m.li
                   key={problem.title}
                   className="group grid items-baseline gap-6 border-b border-primary-foreground/8 py-10 md:grid-cols-12 md:gap-12"
                   initial={{ opacity: 0, y: 18 }}
@@ -67,7 +67,7 @@ export const ProblemSection = () => {
                   <p className="md:col-span-6 text-base leading-relaxed text-primary-foreground/70 md:text-lg">
                     {problem.description}
                   </p>
-                </motion.li>
+                </m.li>
               ))}
             </ol>
           </div>

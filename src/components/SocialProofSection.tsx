@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ChapterMarker, HairlineRule, StatLine } from "@/components/ui/editorial";
 
 export const SocialProofSection = () => {
@@ -58,7 +58,7 @@ export const SocialProofSection = () => {
               </h3>
               <ul className="mt-10 divide-y divide-primary-foreground/10">
                 {locations.map((location, idx) => (
-                  <motion.li
+                  <m.li
                     key={location.country}
                     className="grid grid-cols-12 items-baseline gap-4 py-5"
                     initial={{ opacity: 0, x: -10 }}
@@ -75,7 +75,7 @@ export const SocialProofSection = () => {
                     <span className="col-span-2 text-right text-xs text-primary-foreground/55">
                       projects
                     </span>
-                  </motion.li>
+                  </m.li>
                 ))}
               </ul>
             </div>
@@ -87,7 +87,7 @@ export const SocialProofSection = () => {
               </h3>
               <ul className="mt-10 divide-y divide-primary-foreground/10">
                 {industries.map((industry, idx) => (
-                  <motion.li
+                  <m.li
                     key={industry.name}
                     className="grid grid-cols-12 items-baseline gap-4 py-5"
                     initial={{ opacity: 0, x: 10 }}
@@ -101,7 +101,7 @@ export const SocialProofSection = () => {
                     <span className="col-span-5 text-right text-sm text-primary-foreground/70">
                       {industry.count}
                     </span>
-                  </motion.li>
+                  </m.li>
                 ))}
               </ul>
             </div>

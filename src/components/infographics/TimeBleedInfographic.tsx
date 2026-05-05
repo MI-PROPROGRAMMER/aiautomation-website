@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 /**
  * TimeBleedInfographic — visualizes the typical 8-hour workday split.
@@ -55,7 +55,7 @@ export const TimeBleedInfographic = () => {
       {/* Stacked Gantt bar */}
       <div className="relative mb-4 flex h-10 w-full overflow-hidden rounded-md border border-accent/25 bg-primary/40">
         {BANDS.map((band, i) => (
-          <motion.div
+          <m.div
             key={band.label}
             className={`relative h-full border-r last:border-r-0 ${VARIANT_CLASS[band.variant]}`}
             initial={{ width: 0 }}
@@ -69,7 +69,7 @@ export const TimeBleedInfographic = () => {
                 {band.hours}
               </span>
             </div>
-          </motion.div>
+          </m.div>
         ))}
         {/* axis ticks across the bar */}
         <div

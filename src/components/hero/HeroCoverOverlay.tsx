@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 /**
  * HeroCoverOverlay — premium minimal cover.
@@ -79,12 +79,12 @@ export const HeroCoverOverlay = ({ progress }: Props) => {
             style={{ opacity: beaconOpacity }}
           >
             <span className="relative block h-1.5 w-1.5">
-              <motion.span
+              <m.span
                 className="absolute inset-0 rounded-full bg-accent"
                 animate={{ opacity: [0.4, 1, 0.4] }}
                 transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
               />
-              <motion.span
+              <m.span
                 className="absolute -inset-1.5 rounded-full border border-accent/45"
                 animate={{ scale: [0.6, 1.6, 0.6], opacity: [0.7, 0, 0.7] }}
                 transition={{ duration: 2.4, repeat: Infinity, ease: "easeOut" }}

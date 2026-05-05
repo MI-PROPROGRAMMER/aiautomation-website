@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Play } from "lucide-react";
 import { Button } from "./ui/button";
@@ -198,7 +198,7 @@ export const PortfolioSection = () => {
             {portfolioItems.map((item, index) => {
               const isReversed = index % 2 === 1;
               return (
-                <motion.article
+                <m.article
                   key={item.title}
                   className="grid gap-10 md:grid-cols-12 md:gap-16 md:items-center"
                   initial={{ opacity: 0, y: 32 }}
@@ -229,7 +229,7 @@ export const PortfolioSection = () => {
                       <ImageMedia media={item.media} />
                     )}
                   </div>
-                </motion.article>
+                </m.article>
               );
             })}
           </div>

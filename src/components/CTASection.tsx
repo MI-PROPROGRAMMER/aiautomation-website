@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { CALENDLY_LINK } from "@/config/constants";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export const CTASection = () => {
   return (
@@ -31,7 +31,7 @@ export const CTASection = () => {
             <span className="hairline h-px w-20" aria-hidden="true" />
           </div>
 
-          <motion.h2
+          <m.h2
             className="text-4xl font-bold leading-[1.05] text-primary-foreground sm:text-5xl md:text-7xl lg:text-8xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -40,9 +40,9 @@ export const CTASection = () => {
           >
             Give your team
             <span className="block font-normal text-gradient">their time back.</span>
-          </motion.h2>
+          </m.h2>
 
-          <motion.p
+          <m.p
             className="mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-primary-foreground/80 md:text-xl"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -51,9 +51,9 @@ export const CTASection = () => {
           >
             Book a free automation audit. We'll map your highest-leverage opportunities and quantify the
             time and money on the table — in 30 minutes, no commitment.
-          </motion.p>
+          </m.p>
 
-          <motion.div
+          <m.div
             className="mt-12"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ export const CTASection = () => {
                 <ArrowRight className="ml-2" size={18} />
               </a>
             </Button>
-          </motion.div>
+          </m.div>
 
           {/* Trust indicators on a hairline */}
           <div className="mt-20">

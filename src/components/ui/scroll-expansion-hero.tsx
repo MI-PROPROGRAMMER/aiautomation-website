@@ -1,5 +1,5 @@
 import { type ReactNode, useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 interface ScrollExpandMediaProps {
   mediaType?: "video" | "image";
@@ -188,7 +188,7 @@ const ScrollExpandMedia = ({
     <div ref={sectionRef} className="overflow-x-hidden transition-colors duration-700 ease-in-out">
       <section className="relative flex min-h-[100dvh] flex-col items-center justify-start">
         <div className="relative flex min-h-[100dvh] w-full flex-col items-center">
-          <motion.div
+          <m.div
             className="absolute inset-0 z-0 h-full"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 - scrollProgress }}
@@ -207,11 +207,11 @@ const ScrollExpandMedia = ({
                 <div className="absolute inset-0 bg-black/20" />
               </>
             )}
-          </motion.div>
+          </m.div>
 
           <div className="container relative z-10 mx-auto flex flex-col items-center justify-start px-4">
             <div className="relative h-[100dvh] w-full">
-              <motion.div
+              <m.div
                 className="absolute inset-0 z-0 flex items-center justify-center transition-none"
                 animate={{
                   opacity: mediaRevealProgress,
@@ -248,7 +248,7 @@ const ScrollExpandMedia = ({
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                       />
-                      <motion.div
+                      <m.div
                         className="absolute inset-0 rounded-xl bg-black/30"
                         initial={{ opacity: 0.7 }}
                         animate={{ opacity: 0.5 - scrollProgress * 0.3 }}
@@ -270,7 +270,7 @@ const ScrollExpandMedia = ({
                         disablePictureInPicture
                         disableRemotePlayback
                       />
-                      <motion.div
+                      <m.div
                         className="absolute inset-0 rounded-xl bg-black/30"
                         initial={{ opacity: 0.7 }}
                         animate={{ opacity: 0.5 - scrollProgress * 0.3 }}
@@ -281,7 +281,7 @@ const ScrollExpandMedia = ({
                 ) : (
                   <div className="relative h-full w-full">
                     <img src={mediaSrc} alt={title || "Media content"} className="h-full w-full rounded-xl object-cover" />
-                    <motion.div
+                    <m.div
                       className="absolute inset-0 rounded-xl bg-black/50"
                       initial={{ opacity: 0.7 }}
                       animate={{ opacity: 0.7 - scrollProgress * 0.3 }}
@@ -290,7 +290,7 @@ const ScrollExpandMedia = ({
                   </div>
                 )}
               </div>
-              </motion.div>
+              </m.div>
 
               {overlayContent ? (
                 <div className="absolute inset-0 z-10">
@@ -300,18 +300,18 @@ const ScrollExpandMedia = ({
                 <div
                   className={`pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 text-center transition-none ${textBlend ? "mix-blend-difference" : "mix-blend-normal"}`}
                 >
-                  <motion.h2
+                  <m.h2
                     className="text-4xl font-bold text-blue-200 transition-none md:text-5xl lg:text-6xl"
                     style={{ transform: `translateX(-${textTranslateX}vw)` }}
                   >
                     {firstWord}
-                  </motion.h2>
-                  <motion.h2
+                  </m.h2>
+                  <m.h2
                     className="text-center text-4xl font-bold text-blue-200 transition-none md:text-5xl lg:text-6xl"
                     style={{ transform: `translateX(${textTranslateX}vw)` }}
                   >
                     {restOfTitle}
-                  </motion.h2>
+                  </m.h2>
                 </div>
               )}
 
@@ -331,14 +331,14 @@ const ScrollExpandMedia = ({
               )}
             </div>
 
-            <motion.section
+            <m.section
               className="flex w-full flex-col px-4 py-10 md:px-8 lg:py-20"
               initial={{ opacity: 0 }}
               animate={{ opacity: showContent ? 1 : 0 }}
               transition={{ duration: 0.7 }}
             >
               {children}
-            </motion.section>
+            </m.section>
           </div>
         </div>
       </section>

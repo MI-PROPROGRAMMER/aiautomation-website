@@ -1,5 +1,5 @@
 import { Shield, TrendingUp, Clock } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ChapterMarker, MarqueeRow } from "@/components/ui/editorial";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 
@@ -87,7 +87,7 @@ export const ToolsSection = () => {
           {/* Benefits — typographic, NOT boxes */}
           <div className="mt-24 grid gap-12 md:grid-cols-3 md:gap-16">
             {benefits.map((benefit, index) => (
-              <motion.div
+              <m.div
                 key={benefit.title}
                 className="border-t border-accent/40 pt-6"
                 initial={{ opacity: 0, y: 14 }}
@@ -102,7 +102,7 @@ export const ToolsSection = () => {
                 <p className="mt-3 text-base leading-relaxed text-primary-foreground/70">
                   {benefit.description}
                 </p>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>

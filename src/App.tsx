@@ -1,11 +1,21 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import type { PropsWithChildren } from "react";
 import { Suspense, lazy, useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LazyMotion, domAnimation } from "framer-motion";
 import { PageLoader } from "@/components/PageLoader";
 import { ScrollToHash } from "@/components/ScrollToHash";
+
+// Both Toasters are lazy-loaded — they only need to mount before the first
+// toast actually fires. Keeping them out of the eager bundle saves the
+// radix-toast (~53 KiB gzip) and sonner (~16 KiB gzip) chunks from first
+// paint. They land in the background and are ready well before any user
+// interaction triggers a toast.
+const Toaster = lazy(() =>
+  import("@/components/ui/toaster").then((m) => ({ default: m.Toaster })),
+);
+const Sonner = lazy(() =>
+  import("@/components/ui/sonner").then((m) => ({ default: m.Toaster })),
+);
 
 const ChatbotWidget = lazy(() =>
   import("@/components/chatbot/ChatbotWidget").then((m) => ({ default: m.ChatbotWidget }))
@@ -33,12 +43,18 @@ const ClientOnlyChatbot = () => {
 };
 
 export const AppProviders = ({ children }: PropsWithChildren) => (
-  <TooltipProvider>
-    <Toaster />
-    <Sonner />
+  // No TooltipProvider here — the only consumer of @radix-ui/react-tooltip
+  // was the dead-code sidebar.tsx scaffold file, so wrapping the app in a
+  // provider was paying ~30 KB gzip for radix-tooltip + Floating UI without
+  // ever rendering a tooltip. Both Toasters are also lazy-loaded.
+  <LazyMotion features={domAnimation} strict>
+    <Suspense fallback={null}>
+      <Toaster />
+      <Sonner />
+    </Suspense>
     {children}
     <ClientOnlyChatbot />
-  </TooltipProvider>
+  </LazyMotion>
 );
 
 export const AppRoutes = () => (

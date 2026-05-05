@@ -1,5 +1,5 @@
 import { Code2, Zap, Workflow, Shield, ArrowUpRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { BentoTile, ChapterMarker } from "@/components/ui/editorial";
 import { WorkflowPreview } from "@/components/infographics/WorkflowPreview";
 
@@ -42,7 +42,7 @@ export const ServicesSection = () => {
           {/* Asymmetric bento — one feature tile (large) + one tall companion */}
           <div className="grid gap-6 md:grid-cols-12 md:gap-8">
             {/* Feature tile — Low-Code/No-Code (spans 7) */}
-            <motion.div
+            <m.div
               className="md:col-span-7"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -93,10 +93,10 @@ export const ServicesSection = () => {
                   ))}
                 </ul>
               </BentoTile>
-            </motion.div>
+            </m.div>
 
             {/* Tall companion — Custom-Coded (spans 5) */}
-            <motion.div
+            <m.div
               className="md:col-span-5"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -140,10 +140,10 @@ export const ServicesSection = () => {
                   ))}
                 </ul>
               </BentoTile>
-            </motion.div>
+            </m.div>
 
             {/* Wide bare strip — "Hybrid by design" (spans 12, low height) */}
-            <motion.div
+            <m.div
               className="md:col-span-12"
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -173,7 +173,7 @@ export const ServicesSection = () => {
                   </div>
                 </div>
               </BentoTile>
-            </motion.div>
+            </m.div>
           </div>
 
           {/* Inline closing line */}

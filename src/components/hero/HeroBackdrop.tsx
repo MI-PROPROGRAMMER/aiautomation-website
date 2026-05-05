@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useIsMobile } from "@/hooks/use-is-mobile";
 
 /**
@@ -71,7 +71,7 @@ export const HeroBackdrop = () => {
           [1, 5, 9, 13, 17].map((edgeIdx, i) => {
             const [a, b] = EDGES[edgeIdx];
             return (
-              <motion.line
+              <m.line
                 key={`pulse-${i}`}
                 x1={NODES[a].x}
                 y1={NODES[a].y}
@@ -99,7 +99,7 @@ export const HeroBackdrop = () => {
                 cheap on a desktop GPU but compounds with everything else on
                 mobile) */}
             {!isMobile && i % 3 === 0 && (
-              <motion.circle
+              <m.circle
                 cx={node.x}
                 cy={node.y}
                 r="1.4"

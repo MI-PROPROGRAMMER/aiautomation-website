@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 /**
  * BeforeAfterBar — minimal horizontal bar comparison.
@@ -67,7 +67,7 @@ const Row = ({
       {label}
     </span>
     <div className="relative h-4 flex-1 overflow-hidden rounded-sm border border-primary-foreground/10 bg-primary/30">
-      <motion.div
+      <m.div
         className={`h-full ${
           variant === "before"
             ? "bg-primary-foreground/25"

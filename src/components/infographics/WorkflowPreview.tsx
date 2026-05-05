@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 /**
  * WorkflowPreview — small node-graph diagrams used inside service tiles.
@@ -75,7 +75,7 @@ const Edge = ({
       stroke="hsl(var(--accent) / 0.35)"
       strokeWidth="0.4"
     />
-    <motion.line
+    <m.line
       x1={x1}
       y1={y1}
       x2={x2}

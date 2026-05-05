@@ -157,12 +157,12 @@ export default defineConfig(() => {
             react: ["react", "react-dom", "scheduler"],
             router: ["react-router-dom"],
             icons: ["lucide-react"],
-            // Only the radix primitives that mount on every page (Tooltip +
-            // Toast via AppProviders) are pinned to the eager radix chunk.
-            // Accordion (FAQ — below the fold, lazy section) and Dialog
-            // (chatbot widget — lazy) are intentionally NOT listed so Vite
-            // co-locates them with their lazy consumers.
-            radix: ["@radix-ui/react-tooltip", "@radix-ui/react-toast"],
+            // Radix is intentionally NOT in manualChunks now. Tooltip was
+            // removed entirely (the only consumer was a dead sidebar.tsx).
+            // Accordion (FAQ — lazy below-fold), Dialog (chatbot — lazy
+            // client-only), and Toast (Toaster + Sonner — also lazy now)
+            // each auto-bundle with their lazy consumers, so no radix code
+            // lands in the eager first-paint bundle at all.
             // framer-motion is a 100+ KB lib used by Hero, sections, and
             // animated UI. Pin it to its own chunk so it caches separately
             // and is preloaded once instead of being merged into the entry.

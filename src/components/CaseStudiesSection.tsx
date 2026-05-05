@@ -1,5 +1,5 @@
 import { TrendingUp, Clock, DollarSign, ArrowUpRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import { ChapterMarker, BentoTile } from "@/components/ui/editorial";
@@ -74,7 +74,7 @@ export const CaseStudiesSection = () => {
             {caseStudies.map((study, index) => {
               const isReversed = index % 2 === 1;
               return (
-                <motion.article
+                <m.article
                   key={study.company}
                   className="grid gap-10 md:grid-cols-12 md:gap-16 md:items-start"
                   initial={{ opacity: 0, y: 24 }}
@@ -139,7 +139,7 @@ export const CaseStudiesSection = () => {
                       </div>
                     </BentoTile>
                   </div>
-                </motion.article>
+                </m.article>
               );
             })}
           </div>

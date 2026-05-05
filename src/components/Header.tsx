@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useEffect, useState } from "react";
 import { CALENDLY_LINK } from "@/config/constants";
 import { Link } from "react-router-dom";
@@ -74,7 +74,7 @@ export const Header = () => {
           </div>
 
           {/* Mobile menu button */}
-          <motion.button
+          <m.button
             whileTap={{ scale: 0.96 }}
             className="md:hidden -mr-2 inline-flex h-11 w-11 items-center justify-center rounded-md text-primary-foreground cursor-pointer hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -83,12 +83,12 @@ export const Header = () => {
             aria-controls="primary-navigation"
           >
             {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-          </motion.button>
+          </m.button>
         </div>
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <motion.div
+          <m.div
             id="primary-navigation"
             className="md:hidden border-t border-white/10 pb-5 pt-3 space-y-1"
             initial={{ opacity: 0, y: -8 }}
@@ -114,7 +114,7 @@ export const Header = () => {
                 Free Audit
               </a>
             </Button>
-          </motion.div>
+          </m.div>
         )}
       </div>
     </header>

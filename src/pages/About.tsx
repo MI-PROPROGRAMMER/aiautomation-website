@@ -6,7 +6,7 @@ import { ArrowRight, Users, Target, Zap, Code2, Wrench } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { CALENDLY_LINK } from "@/config/constants";
 import { PageLoader } from "@/components/PageLoader";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ChapterMarker, BentoTile, StatLine, HairlineRule } from "@/components/ui/editorial";
 import { JsonLd } from "@/components/JsonLd";
 import { buildBreadcrumbs, ORG_ID, SITE_URL } from "@/lib/seo";
@@ -198,7 +198,7 @@ const About = () => {
 
                 <div className="grid gap-12 md:grid-cols-3 md:gap-16 mt-16">
                   {VALUES.map((value, i) => (
-                    <motion.div
+                    <m.div
                       key={value.title}
                       initial={{ opacity: 0, y: 18 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -213,7 +213,7 @@ const About = () => {
                       <p className="mt-3 text-base leading-relaxed text-primary-foreground/70">
                         {value.description}
                       </p>
-                    </motion.div>
+                    </m.div>
                   ))}
                 </div>
               </div>

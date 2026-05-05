@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { MessageCircle, X, Send, Sparkles, RotateCcw } from "lucide-react";
 import { ChatMessage } from "./ChatMessage";
 import { TypingIndicator } from "./TypingIndicator";
@@ -215,7 +215,7 @@ export const ChatbotWidget = () => {
       {/* Floating launcher */}
       <AnimatePresence>
         {!isOpen && (
-          <motion.button
+          <m.button
             key="launcher"
             type="button"
             onClick={() => setIsOpen(true)}
@@ -232,14 +232,14 @@ export const ChatbotWidget = () => {
             {hasUnread && (
               <span className="ml-1 inline-block h-2 w-2 rounded-full bg-primary animate-pulse" aria-hidden="true" />
             )}
-          </motion.button>
+          </m.button>
         )}
       </AnimatePresence>
 
       {/* Chat panel */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             key="panel"
             initial={{ opacity: 0, y: 24, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -357,7 +357,7 @@ export const ChatbotWidget = () => {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </>
