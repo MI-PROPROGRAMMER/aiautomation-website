@@ -119,12 +119,21 @@ export default defineConfig(() => {
       rollupOptions: {
         output: {
           manualChunks: {
+            // Eager vendor chunks — these are needed on first paint, so giving
+            // them stable, dedicated bundles helps long-term caching.
             react: ["react", "react-dom", "scheduler"],
             router: ["react-router-dom"],
             icons: ["lucide-react"],
             radix: ["@radix-ui/react-accordion", "@radix-ui/react-dialog", "@radix-ui/react-toast"],
-            maps: ["react-simple-maps"],
-            charts: ["recharts"],
+            // recharts (ROI calculator) and react-simple-maps (About page map)
+            // are intentionally NOT pinned to a manual chunk. The object form
+            // of manualChunks emits a <link rel="modulepreload"> for the chunk
+            // on every page that touches the entry graph, which made the
+            // homepage eagerly download ~106 KiB of recharts even though only
+            // the below-the-fold ROI calculator uses it. Letting Vite auto-
+            // split keeps these libs inside their lazy consumers
+            // (ROICalculatorSection, GlobalReachMap) so they only ship when
+            // those components actually render.
           },
         },
       },
