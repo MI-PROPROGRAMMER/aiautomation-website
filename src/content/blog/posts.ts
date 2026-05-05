@@ -23,7 +23,18 @@ type MdxModule = {
   frontmatter?: Partial<BlogFrontmatter> & { slug?: string };
 };
 
-const modules = import.meta.glob<MdxModule>("./*.mdx", { eager: true });
+type GlobFn = (
+  pattern: string,
+  options: { eager: true },
+) => Record<string, MdxModule>;
+
+const viteGlob = (
+  import.meta as unknown as { glob?: GlobFn }
+).glob;
+
+const modules: Record<string, MdxModule> = viteGlob
+  ? viteGlob("./*.mdx", { eager: true })
+  : {};
 
 const normalizeFrontmatter = (frontmatter: MdxModule["frontmatter"], fallbackSlug: string): BlogFrontmatter => {
   if (!frontmatter) {

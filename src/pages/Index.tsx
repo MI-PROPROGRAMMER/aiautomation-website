@@ -6,6 +6,8 @@ import { Helmet } from "react-helmet";
 import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import { PageLoader } from "@/components/PageLoader";
 import { PremiumBackground } from "@/components/PremiumBackground";
+import { JsonLd } from "@/components/JsonLd";
+import { buildBreadcrumbs, buildFAQPage, ORG_ID, SITE_URL } from "@/lib/seo";
 
 const ProblemSection = lazy(() =>
   import("@/components/ProblemSection").then((module) => ({ default: module.ProblemSection })),
@@ -101,8 +103,65 @@ const Index = () => {
           content="Reclaim your team's time with custom AI automation. 50+ clients, 10,000+ hours automated, 4+ years."
         />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://apexifylabs.com/" />
+        <meta property="og:image" content="https://apexifylabs.com/hero-automation.jpg" />
+        <meta name="twitter:title" content="ApexifyLabs - AI Automation Agency" />
+        <meta
+          name="twitter:description"
+          content="Reclaim your team's time with custom AI automation. 50+ clients, 10,000+ hours automated, 4+ years."
+        />
+        <meta name="twitter:image" content="https://apexifylabs.com/hero-automation.jpg" />
         <link rel="canonical" href="https://apexifylabs.com/" />
       </Helmet>
+
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          "@id": `${SITE_URL}/#professional-service`,
+          name: "ApexifyLabs",
+          url: `${SITE_URL}/`,
+          parentOrganization: { "@id": ORG_ID },
+          description:
+            "Custom AI automation agency serving 50+ businesses across five continents. We design, build, and maintain workflow automation, agentic AI pilots, and custom integrations.",
+          areaServed: "Worldwide",
+          priceRange: "$$",
+          serviceType: [
+            "AI automation",
+            "Workflow automation",
+            "Agentic AI",
+            "Custom integrations",
+            "Sales automation",
+            "Operations automation",
+            "Customer support automation",
+          ],
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.9",
+            reviewCount: "50",
+            bestRating: "5",
+            worstRating: "1",
+          },
+          knowsAbout: [
+            "Zapier",
+            "Make",
+            "n8n",
+            "OpenAI",
+            "Anthropic",
+            "Python",
+            "TypeScript",
+            "Node.js",
+          ],
+        }}
+      />
+
+      <JsonLd data={buildFAQPage()} />
+
+      <JsonLd
+        data={buildBreadcrumbs([
+          { name: "Home", url: `${SITE_URL}/` },
+        ])}
+      />
 
       <div className="min-h-screen relative">
         <PremiumBackground />

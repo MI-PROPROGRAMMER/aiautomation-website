@@ -9,6 +9,8 @@ import type { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 import { Helmet } from "react-helmet";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { ChapterMarker } from "@/components/ui/editorial";
+import { JsonLd } from "@/components/JsonLd";
+import { buildBreadcrumbs, ORG_ID, SITE_URL } from "@/lib/seo";
 
 const mdxComponents = {
   a: (props: ComponentPropsWithoutRef<"a">) => (
@@ -56,10 +58,53 @@ const BlogPost = () => {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={seoDescription ?? excerpt} />
         <meta property="og:type" content="article" />
-        <meta property="og:image" content={heroImage} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta
+          property="og:image"
+          content={heroImage.startsWith("http") ? heroImage : `${SITE_URL}${heroImage}`}
+        />
         <meta property="article:published_time" content={new Date(date).toISOString()} />
+        {author && <meta property="article:author" content={author} />}
+        {tags?.map((tag) => (
+          <meta property="article:tag" content={tag} key={tag} />
+        ))}
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={seoDescription ?? excerpt} />
+        <meta
+          name="twitter:image"
+          content={heroImage.startsWith("http") ? heroImage : `${SITE_URL}${heroImage}`}
+        />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
+
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "@id": `${canonicalUrl}#blogposting`,
+          mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+          headline: title,
+          description: seoDescription ?? excerpt,
+          datePublished: new Date(date).toISOString(),
+          dateModified: new Date(date).toISOString(),
+          author: author
+            ? { "@type": "Person", name: author }
+            : { "@id": ORG_ID },
+          publisher: { "@id": ORG_ID },
+          image: heroImage.startsWith("http") ? heroImage : `${SITE_URL}${heroImage}`,
+          url: canonicalUrl,
+          keywords: tags?.join(", "),
+          inLanguage: "en",
+        }}
+      />
+
+      <JsonLd
+        data={buildBreadcrumbs([
+          { name: "Home", url: `${SITE_URL}/` },
+          { name: "Blog", url: `${SITE_URL}/blog` },
+          { name: title, url: canonicalUrl },
+        ])}
+      />
 
       <div className="min-h-screen bg-background">
         <Header />

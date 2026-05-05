@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { ChapterMarker } from "@/components/ui/editorial";
+import { JsonLd } from "@/components/JsonLd";
+import { buildBreadcrumbs, ORG_ID, SITE_URL } from "@/lib/seo";
 
 const Blog = () => {
   return (
@@ -22,8 +24,48 @@ const Blog = () => {
           content="Articles, frameworks, and case studies that help you ship AI solutions with confidence."
         />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://apexifylabs.com/blog" />
+        <meta property="og:image" content="https://apexifylabs.com/hero-automation.jpg" />
+        <meta name="twitter:title" content="ApexifyLabs Blog" />
+        <meta
+          name="twitter:description"
+          content="Frameworks and playbooks for shipping AI automation with confidence."
+        />
+        <meta name="twitter:image" content="https://apexifylabs.com/hero-automation.jpg" />
         <link rel="canonical" href="https://apexifylabs.com/blog" />
       </Helmet>
+
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "@id": `${SITE_URL}/blog#blog`,
+          url: `${SITE_URL}/blog`,
+          name: "ApexifyLabs Journal",
+          description:
+            "Playbooks, frameworks, and case studies on AI automation, agentic AI pilots, and automation ROI from the ApexifyLabs team.",
+          publisher: { "@id": ORG_ID },
+          blogPost: blogPosts.map((post) => ({
+            "@type": "BlogPosting",
+            headline: post.frontmatter.title,
+            url: `${SITE_URL}/blog/${post.slug}`,
+            datePublished: new Date(post.frontmatter.date).toISOString(),
+            author: post.frontmatter.author
+              ? { "@type": "Person", name: post.frontmatter.author }
+              : { "@id": ORG_ID },
+            image: post.frontmatter.heroImage.startsWith("http")
+              ? post.frontmatter.heroImage
+              : `${SITE_URL}${post.frontmatter.heroImage}`,
+          })),
+        }}
+      />
+
+      <JsonLd
+        data={buildBreadcrumbs([
+          { name: "Home", url: `${SITE_URL}/` },
+          { name: "Blog", url: `${SITE_URL}/blog` },
+        ])}
+      />
 
       <div className="min-h-screen bg-background">
         <Header />

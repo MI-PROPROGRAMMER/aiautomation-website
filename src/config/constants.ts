@@ -5,6 +5,9 @@
 
 export const CALENDLY_LINK = "https://calendly.com/mi-tech0786";
 
+const env: Record<string, string | undefined> =
+    (import.meta as { env?: Record<string, string | undefined> }).env ?? {};
+
 const {
     VITE_EMAILJS_SERVICE_ID,
     VITE_EMAILJS_TEMPLATE_ID,
@@ -13,7 +16,7 @@ const {
     VITE_LINKEDIN_URL,
     VITE_TWITTER_URL,
     VITE_CONTACT_EMAIL,
-} = import.meta.env;
+} = env;
 
 /**
  * Contact form email configuration

@@ -11,6 +11,8 @@ import { useState, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import { useToast } from "@/hooks/use-toast";
 import { ChapterMarker, BentoTile } from "@/components/ui/editorial";
+import { JsonLd } from "@/components/JsonLd";
+import { buildBreadcrumbs, ORG_ID, SITE_URL } from "@/lib/seo";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -97,8 +99,57 @@ const Contact = () => {
         <meta property="og:title" content="Contact Us - ApexifyLabs" />
         <meta property="og:description" content="Ready to automate your workflows? Get in touch with our team for a free consultation." />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://apexifylabs.com/contact" />
+        <meta property="og:image" content="https://apexifylabs.com/hero-automation.jpg" />
+        <meta name="twitter:title" content="Contact Us - ApexifyLabs" />
+        <meta
+          name="twitter:description"
+          content="Book a free 30-minute automation audit or send us a message — we reply within one business day."
+        />
+        <meta name="twitter:image" content="https://apexifylabs.com/hero-automation.jpg" />
         <link rel="canonical" href="https://apexifylabs.com/contact" />
       </Helmet>
+
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "@id": `${SITE_URL}/contact#contactpage`,
+          url: `${SITE_URL}/contact`,
+          name: "Contact ApexifyLabs",
+          description:
+            "Get in touch with ApexifyLabs. Book a free 30-minute automation consultation or send us a project brief.",
+          mainEntity: {
+            "@id": ORG_ID,
+            "@type": "Organization",
+            contactPoint: [
+              {
+                "@type": "ContactPoint",
+                contactType: "customer service",
+                email: CONTACT_EMAIL,
+                telephone: "+92-331-5183565",
+                availableLanguage: ["English"],
+                areaServed: "Worldwide",
+              },
+              {
+                "@type": "ContactPoint",
+                contactType: "sales",
+                email: CONTACT_EMAIL,
+                url: CALENDLY_LINK,
+                availableLanguage: ["English"],
+                areaServed: "Worldwide",
+              },
+            ],
+          },
+        }}
+      />
+
+      <JsonLd
+        data={buildBreadcrumbs([
+          { name: "Home", url: `${SITE_URL}/` },
+          { name: "Contact", url: `${SITE_URL}/contact` },
+        ])}
+      />
 
       <div className="min-h-screen">
         <Header />

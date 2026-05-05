@@ -12,6 +12,14 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { CALENDLY_LINK } from "@/config/constants";
 import { ChapterMarker, StatLine } from "@/components/ui/editorial";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  buildBreadcrumbs,
+  buildFAQPage,
+  buildHowTo,
+  ORG_ID,
+  SITE_URL,
+} from "@/lib/seo";
 
 const Services = () => {
   return (
@@ -28,8 +36,93 @@ const Services = () => {
           content="Transform your business with our comprehensive automation services across sales, operations, and customer support."
         />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://apexifylabs.com/services" />
+        <meta property="og:image" content="https://apexifylabs.com/hero-automation.jpg" />
+        <meta name="twitter:title" content="Our Services - ApexifyLabs" />
+        <meta
+          name="twitter:description"
+          content="Sales, operations, and support automation built to fit your business — not the other way around."
+        />
+        <meta name="twitter:image" content="https://apexifylabs.com/hero-automation.jpg" />
         <link rel="canonical" href="https://apexifylabs.com/services" />
       </Helmet>
+
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": `${SITE_URL}/services#service`,
+          name: "AI automation services",
+          url: `${SITE_URL}/services`,
+          provider: { "@id": ORG_ID },
+          areaServed: "Worldwide",
+          serviceType: "AI automation",
+          description:
+            "Custom AI automation across sales, operations, and customer support — combining low-code platforms (Zapier, Make, n8n) with custom-coded systems (Python, TypeScript) to ship in 2–6 weeks.",
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "ApexifyLabs automation services",
+            itemListElement: [
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Low-Code Agility",
+                  description:
+                    "Rapid automation built on Zapier, Make, n8n, and Bubble — shipped in days for clear playbooks.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Custom-Coded Precision",
+                  description:
+                    "Python, TypeScript, and cloud-function systems for complex business logic, advanced data processing, and scalable architecture.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Sales & Marketing automation",
+                  description:
+                    "Lead enrichment, outbound sequencing, attribution, and CRM hygiene workflows.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Operations & Workflow automation",
+                  description:
+                    "Internal tools, approval workflows, data sync, and reporting automation.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Customer Support automation",
+                  description:
+                    "Chatbots, ticket routing, knowledge-base sync, and SLA monitoring.",
+                },
+              },
+            ],
+          },
+        }}
+      />
+
+      <JsonLd data={buildHowTo()} />
+
+      <JsonLd data={buildFAQPage()} />
+
+      <JsonLd
+        data={buildBreadcrumbs([
+          { name: "Home", url: `${SITE_URL}/` },
+          { name: "Services", url: `${SITE_URL}/services` },
+        ])}
+      />
 
       <div className="min-h-screen">
         <Header />

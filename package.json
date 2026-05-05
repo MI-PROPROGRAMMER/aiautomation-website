@@ -9,7 +9,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prerender": "npx tsx scripts/prerender.tsx"
+    "prerender": "npx tsx --tsconfig ./tsconfig.app.json scripts/prerender.tsx"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

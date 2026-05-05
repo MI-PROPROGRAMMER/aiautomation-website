@@ -8,6 +8,8 @@ import { CALENDLY_LINK } from "@/config/constants";
 import { PageLoader } from "@/components/PageLoader";
 import { motion } from "framer-motion";
 import { ChapterMarker, BentoTile, StatLine, HairlineRule } from "@/components/ui/editorial";
+import { JsonLd } from "@/components/JsonLd";
+import { buildBreadcrumbs, ORG_ID, SITE_URL } from "@/lib/seo";
 
 type GlobalReachMapType = typeof import("@/components/GlobalReachMap").default;
 
@@ -94,8 +96,36 @@ const About = () => {
           content="Freeing businesses from the grind of repetitive work. For over four years, we've been helping teams reclaim their time."
         />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://apexifylabs.com/about" />
+        <meta property="og:image" content="https://apexifylabs.com/hero-automation.jpg" />
+        <meta name="twitter:title" content="About Us - ApexifyLabs" />
+        <meta
+          name="twitter:description"
+          content="Four years freeing teams from repetitive work. 50+ clients across five continents."
+        />
+        <meta name="twitter:image" content="https://apexifylabs.com/hero-automation.jpg" />
         <link rel="canonical" href="https://apexifylabs.com/about" />
       </Helmet>
+
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "@id": `${SITE_URL}/about#aboutpage`,
+          url: `${SITE_URL}/about`,
+          name: "About ApexifyLabs",
+          description:
+            "ApexifyLabs has spent four years helping 50+ teams across five continents reclaim their time through intelligent automation.",
+          mainEntity: { "@id": ORG_ID },
+        }}
+      />
+
+      <JsonLd
+        data={buildBreadcrumbs([
+          { name: "Home", url: `${SITE_URL}/` },
+          { name: "About", url: `${SITE_URL}/about` },
+        ])}
+      />
 
       <div className="min-h-screen">
         <Header />

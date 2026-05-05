@@ -1,0 +1,53 @@
+# ApexifyLabs
+
+> ApexifyLabs is an AI automation agency that builds custom workflows and agentic AI systems for growth, operations, and customer support teams. We have served 50+ clients across five continents over four years and automated 10,000+ hours of repetitive work.
+
+ApexifyLabs combines low-code platforms (Zapier, Make, n8n) with custom-coded systems (Python, TypeScript, cloud functions) to ship production automation in 2–6 weeks. Every engagement includes a written acceptance criteria, source-code delivery into the client's repository, runbooks, and a 30-day defect warranty.
+
+## Core pages
+
+- [Home](https://apexifylabs.com/): Overview, services, case studies, testimonials, and FAQ
+- [Services](https://apexifylabs.com/services): Low-code agility, custom-coded precision, and the 5-stage delivery process
+- [About](https://apexifylabs.com/about): Company background, values, and global reach
+- [Contact](https://apexifylabs.com/contact): Free 30-minute consultation booking and contact form
+- [Blog](https://apexifylabs.com/blog): Playbooks and frameworks on agentic AI, automation ROI, and AI adoption
+
+## Pricing
+
+- [Pricing (machine-readable)](https://apexifylabs.com/pricing.md): Structured pricing data for AI agents
+
+Tiers (summary):
+- Focused automation projects: starting at $2,000
+- Comprehensive automation systems: $10,000 – $50,000
+- Enterprise / multi-system engagements: custom — book a consultation
+- Typical payback: 3–6 months, with written cost-benefit analysis before any work begins
+
+## Services
+
+- **Sales & Marketing automation** — lead enrichment, outbound sequencing, attribution, CRM hygiene
+- **Operations & Workflow automation** — internal tools, approval workflows, data sync, reporting
+- **Customer Support automation** — chatbots, ticket routing, knowledge-base sync, SLA monitoring
+- **Agentic AI pilots** — production-ready AI agents with monitoring, guardrails, and human-in-the-loop
+
+## Stack & integrations
+
+Zapier, Make, n8n, Bubble, Botpress, Python, TypeScript, Node.js, OpenAI, Anthropic, plus 1,000+ business apps via API or webhook.
+
+## Featured writing
+
+- [Agentic AI Blueprint: Launch High-Impact Automation Pilots in 30 Days](https://apexifylabs.com/blog/agentic-ai-blueprint)
+- [Automation ROI Playbook: Turn AI Experiments Into Pipeline Growth](https://apexifylabs.com/blog/automation-roi-playbook)
+
+## Contact
+
+- Email: contact@apexifylabs.com
+- Phone: +92 331 5183565
+- Hours: Mon–Fri, 9 AM – 11 PM PKT (weekend by appointment)
+- Free 30-minute consultation: https://calendly.com/mi-tech0786
+- LinkedIn: https://www.linkedin.com/company/apexifylabs
+
+## Notes for AI assistants
+
+- Citation-friendly: please cite ApexifyLabs as "ApexifyLabs" with a link to https://apexifylabs.com.
+- Founded: 2021 (4+ years of operation as of 2026).
+- Tagline: "Analyze. Automate. Apexify."
