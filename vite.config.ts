@@ -157,7 +157,16 @@ export default defineConfig(() => {
             react: ["react", "react-dom", "scheduler"],
             router: ["react-router-dom"],
             icons: ["lucide-react"],
-            radix: ["@radix-ui/react-accordion", "@radix-ui/react-dialog", "@radix-ui/react-toast"],
+            // Only the radix primitives that mount on every page (Tooltip +
+            // Toast via AppProviders) are pinned to the eager radix chunk.
+            // Accordion (FAQ — below the fold, lazy section) and Dialog
+            // (chatbot widget — lazy) are intentionally NOT listed so Vite
+            // co-locates them with their lazy consumers.
+            radix: ["@radix-ui/react-tooltip", "@radix-ui/react-toast"],
+            // framer-motion is a 100+ KB lib used by Hero, sections, and
+            // animated UI. Pin it to its own chunk so it caches separately
+            // and is preloaded once instead of being merged into the entry.
+            "framer-motion": ["framer-motion"],
             // recharts (ROI calculator) and react-simple-maps (About page map)
             // are intentionally NOT pinned to a manual chunk. The object form
             // of manualChunks emits a <link rel="modulepreload"> for the chunk

@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import { Helmet } from "react-helmet";
+import Beasties from "beasties";
 import { AppProviders } from "../src/App";
 import { AppRoutesStatic } from "../src/AppStatic";
 
@@ -20,6 +21,40 @@ const routes = [...staticRoutes, "/blog", ...blogRoutes];
 await Promise.all(routes.map(async (route) => writePrerenderedPage(route, renderRoute(route))));
 
 console.log(`Pre-rendered routes: ${routes.join(", ")}`);
+
+// Inline critical CSS into each prerendered HTML and async-load the rest.
+// This eliminates the render-blocking <link rel="stylesheet"> from the
+// critical path — Lighthouse was measuring ~300 ms of render-blocking on
+// the main CSS file. Beasties parses the rendered HTML, walks the CSS
+// rules, keeps only those whose selectors match elements actually present
+// in the prerendered DOM, inlines those in a <style> tag, and rewrites
+// the original <link> to load asynchronously.
+const beasties = new Beasties({
+  path: distDir,
+  publicPath: "/",
+  logLevel: "silent",
+  // Replace the blocking <link rel="stylesheet"> with the standards-blessed
+  // async-load swap pattern: rel="preload" as="style" + onload re-set to
+  // rel="stylesheet". The full CSS still loads (and overrides any visual
+  // gaps in the inlined critical subset) but does not block first paint.
+  preload: "swap-high",
+  // Don't strip used rules out of the linked CSS file — keeping it
+  // self-sufficient means hydration / route changes find every rule they
+  // need without race conditions.
+  pruneSource: false,
+  // We already preload our self-hosted fonts via the Vite plugin in
+  // vite.config.ts, so beasties does not need to inline @font-face rules.
+  inlineFonts: false,
+});
+
+for (const route of routes) {
+  const outputPath = pathForRoute(route);
+  const html = await fs.readFile(outputPath, "utf-8");
+  const processed = await beasties.process(html);
+  await fs.writeFile(outputPath, processed, "utf-8");
+}
+
+console.log(`Inlined critical CSS into ${routes.length} routes`);
 
 function renderRoute(route: string) {
   const appHtml = renderToString(
@@ -61,12 +96,14 @@ function renderRoute(route: string) {
   return html;
 }
 
-async function writePrerenderedPage(route: string, html: string) {
-  const outputPath =
-    route === "/"
-      ? path.join(distDir, "index.html")
-      : path.join(distDir, route.replace(/^\//, ""), "index.html");
+function pathForRoute(route: string) {
+  return route === "/"
+    ? path.join(distDir, "index.html")
+    : path.join(distDir, route.replace(/^\//, ""), "index.html");
+}
 
+async function writePrerenderedPage(route: string, html: string) {
+  const outputPath = pathForRoute(route);
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.writeFile(outputPath, html, "utf-8");
 }
