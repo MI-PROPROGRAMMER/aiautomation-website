@@ -24,37 +24,55 @@ console.log(`Pre-rendered routes: ${routes.join(", ")}`);
 
 // Inline critical CSS into each prerendered HTML and async-load the rest.
 // This eliminates the render-blocking <link rel="stylesheet"> from the
-// critical path — Lighthouse was measuring ~300 ms of render-blocking on
-// the main CSS file. Beasties parses the rendered HTML, walks the CSS
-// rules, keeps only those whose selectors match elements actually present
-// in the prerendered DOM, inlines those in a <style> tag, and rewrites
-// the original <link> to load asynchronously.
-const beasties = new Beasties({
-  path: distDir,
-  publicPath: "/",
-  logLevel: "silent",
-  // Use the media="print" + onload="this.media='all'" swap pattern. Unlike
-  // the preload-based swap, this does NOT mark the stylesheet as a
-  // preload resource, so Lighthouse no longer counts it in the "critical
-  // request chain" audit. The browser still fetches it (eventually) and
-  // applies it on load.
-  preload: "media",
-  // Strip the rules we just inlined out of the source CSS file so the
-  // async-loaded stylesheet only contains genuinely-non-critical rules
-  // (lazy sections, hover states, route-specific overrides). Cuts the
-  // "Reduce unused CSS" finding by removing the duplicated above-the-fold
-  // rules from the file we ship asynchronously.
-  pruneSource: true,
-  // Self-hosted fonts are already preloaded via the preloadLatinFonts
-  // Vite plugin, so beasties does not need to inline @font-face rules.
-  inlineFonts: false,
-});
+// critical path.
+//
+// Important pipeline detail: pruneSource: true makes beasties rewrite the
+// shared CSS file in place after every .process() call, removing whatever
+// it inlined. With multiple routes sharing one CSS file, the second /
+// third / Nth route would see an already-eviscerated file and be unable
+// to inline its own critical rules — leaving later-processed pages with
+// nothing inlined and broken visuals.
+//
+// Workaround: snapshot the original CSS once, reset the file before
+// processing each route so beasties always sees the full ruleset, then
+// after the loop write the original CSS back so the async-loaded
+// stylesheet on every route contains the complete ruleset (each route's
+// critical subset is already inlined in its own <style> block).
+const cssLinkRe = /<link[^>]+href="(\/assets\/index-[^"]+\.css)"/;
+const sampleHtml = await fs.readFile(pathForRoute("/"), "utf-8");
+const cssLinkMatch = sampleHtml.match(cssLinkRe);
+const cssRelativePath = cssLinkMatch ? cssLinkMatch[1] : null;
+const cssAbsolutePath = cssRelativePath ? path.join(distDir, cssRelativePath) : null;
+const originalCss = cssAbsolutePath ? await fs.readFile(cssAbsolutePath, "utf-8") : null;
 
 for (const route of routes) {
+  // Reset the CSS file so this iteration of beasties sees the full
+  // ruleset rather than what previous iterations have already pruned.
+  if (cssAbsolutePath && originalCss !== null) {
+    await fs.writeFile(cssAbsolutePath, originalCss, "utf-8");
+  }
+  const beasties = new Beasties({
+    path: distDir,
+    publicPath: "/",
+    logLevel: "silent",
+    // media="print" + onload="this.media='all'" swap. No "preload"
+    // keyword so Lighthouse does not mark the stylesheet as critical.
+    preload: "media",
+    pruneSource: true,
+    // Fonts are preloaded by the preloadLatinFonts Vite plugin.
+    inlineFonts: false,
+  });
   const outputPath = pathForRoute(route);
   const html = await fs.readFile(outputPath, "utf-8");
   const processed = await beasties.process(html);
   await fs.writeFile(outputPath, processed, "utf-8");
+}
+
+// Final restore: each route's critical subset is already inlined, so the
+// async-loaded CSS on whichever page the user lands needs to be the full
+// original file (for hydration, route changes, lazy sections, etc.).
+if (cssAbsolutePath && originalCss !== null) {
+  await fs.writeFile(cssAbsolutePath, originalCss, "utf-8");
 }
 
 console.log(`Inlined critical CSS into ${routes.length} routes`);

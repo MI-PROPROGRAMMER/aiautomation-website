@@ -123,6 +123,46 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+  /* content-visibility: auto lets the browser skip rendering work for
+     subtrees that are off-screen. Wrapping below-the-fold sections in
+     <div class="cv-auto"> drops the initial Style & Layout cost (Lighthouse
+     was reporting ~490 ms on mobile) because the browser only paints and
+     lays out the visible viewport on first paint, then progressively
+     hydrates the rest as the user scrolls.
+
+     contain-intrinsic-size gives the browser a placeholder height per
+     section so the scrollbar geometry stays accurate (no CLS) and so
+     <a href="#anchor"> jumps land at the right scroll position.
+
+     We also use contain-intrinsic-size: auto <fallback>; the browser
+     remembers the rendered height after a section has been visible once,
+     keeping the placeholder accurate across scrolls.
+
+     Browser support: Chrome 85+, Edge 85+, Safari 18.2+, Firefox 125+.
+     Older browsers ignore the property entirely — graceful degradation. */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
+  }
+
+  /* backdrop-filter is one of the most expensive paint operations on
+     mobile GPUs. The marketing-site glass effects look fine on desktop
+     but cost ~100–200 ms of paint time per frame on a mid-tier phone.
+     Disable the blur on coarse pointers (touch devices) — the underlying
+     translucent background still shows through; only the soft blur is
+     dropped. */
+  @media (pointer: coarse) {
+    .glass-card,
+    .glass-card-light,
+    .lux-panel,
+    .lux-panel-feature {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+  }
+}
+
+@layer utilities {
 
   /* ============================================================
      EDITORIAL TYPOGRAPHY (uses existing Playfair + Inter)
