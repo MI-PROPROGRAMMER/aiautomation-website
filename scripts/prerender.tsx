@@ -5,7 +5,8 @@ import { fileURLToPath } from "node:url";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import { Helmet } from "react-helmet";
-import { AppProviders, AppRoutesStatic } from "../src/App";
+import { AppProviders } from "../src/App";
+import { AppRoutesStatic } from "../src/AppStatic";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, "../dist");

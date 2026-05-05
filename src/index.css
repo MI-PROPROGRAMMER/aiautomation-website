@@ -1,4 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@600;700;800&display=swap");
+/* Self-hosted fonts via fontsource — kills the Google Fonts cross-origin
+   critical chain (was costing ~950 ms LCP on mobile). Vite bundles the
+   woff2 files into /assets/ on build, served same-origin and parallel
+   to the main JS. */
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/playfair-display";
+@import "@fontsource-variable/jetbrains-mono";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -101,7 +108,7 @@ All colors MUST be HSL.
   h4,
   h5,
   h6 {
-    font-family: "Playfair Display", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "Playfair Display Variable", "Playfair Display", "Inter Variable", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-weight: 700;
     letter-spacing: -0.02em;
   }
@@ -110,7 +117,7 @@ All colors MUST be HSL.
   p,
   span,
   div {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "Inter Variable", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 
 }
@@ -121,7 +128,7 @@ All colors MUST be HSL.
      EDITORIAL TYPOGRAPHY (uses existing Playfair + Inter)
      ============================================================ */
   .eyebrow {
-    font-family: "JetBrains Mono", "SF Mono", "Menlo", monospace;
+    font-family: "JetBrains Mono Variable", "JetBrains Mono", "SF Mono", "Menlo", monospace;
     font-size: 0.7rem;
     font-weight: 500;
     letter-spacing: 0.18em;
@@ -130,12 +137,12 @@ All colors MUST be HSL.
   }
 
   .mono {
-    font-family: "JetBrains Mono", "SF Mono", "Menlo", "Consolas", monospace;
+    font-family: "JetBrains Mono Variable", "JetBrains Mono", "SF Mono", "Menlo", "Consolas", monospace;
     font-feature-settings: "ss01" 1, "calt" 1, "zero" 1;
   }
 
   .tech-label {
-    font-family: "JetBrains Mono", "SF Mono", "Menlo", monospace;
+    font-family: "JetBrains Mono Variable", "JetBrains Mono", "SF Mono", "Menlo", monospace;
     font-size: 0.6875rem;
     font-weight: 500;
     letter-spacing: 0.05em;
@@ -144,7 +151,7 @@ All colors MUST be HSL.
   }
 
   .tech-numeral {
-    font-family: "JetBrains Mono", "SF Mono", "Menlo", monospace;
+    font-family: "JetBrains Mono Variable", "JetBrains Mono", "SF Mono", "Menlo", monospace;
     font-feature-settings: "tnum" 1, "zero" 1;
     font-variant-numeric: tabular-nums slashed-zero;
     letter-spacing: -0.01em;
@@ -178,14 +185,14 @@ All colors MUST be HSL.
   }
 
   .smallcaps {
-    font-family: "Inter", sans-serif;
+    font-family: "Inter Variable", "Inter", sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.18em;
     font-weight: 500;
   }
 
   .num-display {
-    font-family: "Playfair Display", serif;
+    font-family: "Playfair Display Variable", "Playfair Display", serif;
     font-weight: 700;
     font-variant-numeric: lining-nums tabular-nums;
     font-feature-settings: "lnum" 1, "tnum" 1;
@@ -193,14 +200,14 @@ All colors MUST be HSL.
   }
 
   .display-italic {
-    font-family: "Playfair Display", "Inter", serif;
+    font-family: "Playfair Display Variable", "Playfair Display", "Inter Variable", "Inter", serif;
     font-style: italic;
     font-weight: 600;
     letter-spacing: -0.015em;
   }
 
   .display-serif {
-    font-family: "Playfair Display", "Inter", serif;
+    font-family: "Playfair Display Variable", "Playfair Display", "Inter Variable", "Inter", serif;
     font-weight: 700;
     letter-spacing: -0.025em;
   }

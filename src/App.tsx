@@ -7,16 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { PageLoader } from "@/components/PageLoader";
 import { ScrollToHash } from "@/components/ScrollToHash";
 
-import IndexEager from "./pages/Index";
-import ServicesEager from "./pages/Services";
-import AboutEager from "./pages/About";
-import ContactEager from "./pages/Contact";
-import PrivacyEager from "./pages/Privacy";
-import TermsEager from "./pages/Terms";
-import BlogEager from "./pages/Blog";
-import BlogPostEager from "./pages/BlogPost";
-import NotFoundEager from "./pages/NotFound";
-
 const ChatbotWidget = lazy(() =>
   import("@/components/chatbot/ChatbotWidget").then((m) => ({ default: m.ChatbotWidget }))
 );
@@ -71,28 +61,9 @@ export const AppRoutes = () => (
   </>
 );
 
-/**
- * Eager-import variant of AppRoutes used only by scripts/prerender.tsx.
- * Lazy + Suspense renders the fallback during renderToString, which
- * strips per-page <Helmet> output (titles, meta, JSON-LD) from the
- * static HTML. Bypassing lazy here makes prerender ship full SEO.
- */
-export const AppRoutesStatic = () => (
-  <>
-    <ScrollToHash />
-    <Routes>
-      <Route path="/" element={<IndexEager />} />
-      <Route path="/services" element={<ServicesEager />} />
-      <Route path="/about" element={<AboutEager />} />
-      <Route path="/contact" element={<ContactEager />} />
-      <Route path="/blog" element={<BlogEager />} />
-      <Route path="/blog/:slug" element={<BlogPostEager />} />
-      <Route path="/privacy-policy" element={<PrivacyEager />} />
-      <Route path="/terms-of-service" element={<TermsEager />} />
-      <Route path="*" element={<NotFoundEager />} />
-    </Routes>
-  </>
-);
+// AppRoutesStatic (eager-imported variant for scripts/prerender.tsx) lives
+// in src/AppStatic.tsx so the eager page imports never enter the client
+// bundle's static import graph.
 
 const App = () => (
   <BrowserRouter>
