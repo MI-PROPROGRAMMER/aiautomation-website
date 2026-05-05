@@ -64,18 +64,43 @@ for (const route of routes) {
   });
   const outputPath = pathForRoute(route);
   const html = await fs.readFile(outputPath, "utf-8");
-  const processed = await beasties.process(html);
+  let processed = await beasties.process(html);
+
+  // After beasties has run, the source CSS file contains only the rules
+  // NOT inlined as critical for this route — i.e. this route's
+  // non-critical styles (hover, focus, animation keyframes, lazy-section
+  // rules). Inline those as a second <style> block and drop the async
+  // <link rel="stylesheet"> entirely. Result: every route ships its full
+  // CSS embedded in HTML, no second network request.
+  //
+  // Lighthouse's "Reduce unused CSS" audit goes to zero (no separate
+  // stylesheet to measure), and the route is fully styled even before
+  // the browser does anything beyond parsing the HTML response.
+  if (cssAbsolutePath) {
+    const nonCriticalCss = await fs.readFile(cssAbsolutePath, "utf-8");
+    if (nonCriticalCss.trim().length > 0) {
+      // Replace beasties' async <link rel="stylesheet" media="print" ...>
+      // with an inline <style> containing the non-critical rules. Keep
+      // the <noscript> fallback alone (it's only used by no-JS users).
+      processed = processed.replace(
+        /<link\s+[^>]*media="print"[^>]*onload="this\.media='all'"[^>]*>/,
+        `<style data-beasties-noncritical>${nonCriticalCss}</style>`,
+      );
+    }
+  }
+
   await fs.writeFile(outputPath, processed, "utf-8");
 }
 
-// Final restore: each route's critical subset is already inlined, so the
-// async-loaded CSS on whichever page the user lands needs to be the full
-// original file (for hydration, route changes, lazy sections, etc.).
+// Restore the source CSS file to its original content so it still exists
+// at /assets/index-*.css for any path that still references it (the
+// <noscript> fallback inside each prerendered HTML, plus any direct
+// requests). The file is no longer on the critical chain for any route.
 if (cssAbsolutePath && originalCss !== null) {
   await fs.writeFile(cssAbsolutePath, originalCss, "utf-8");
 }
 
-console.log(`Inlined critical CSS into ${routes.length} routes`);
+console.log(`Inlined critical + non-critical CSS into ${routes.length} routes`);
 
 function renderRoute(route: string) {
   const appHtml = renderToString(
