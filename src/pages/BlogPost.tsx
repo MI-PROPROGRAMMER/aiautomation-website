@@ -32,6 +32,11 @@ const mdxComponents = {
       {children}
     </blockquote>
   ),
+  table: (props: ComponentPropsWithoutRef<"table">) => (
+    <div className="table-wrap">
+      <table {...props} />
+    </div>
+  ),
 };
 
 const BlogPost = () => {
