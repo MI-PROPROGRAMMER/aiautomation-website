@@ -178,6 +178,7 @@ const BlogPost = () => {
                       className="h-[26rem] w-full object-cover md:h-[36rem]"
                       loading="eager"
                       decoding="async"
+                      {...({ fetchpriority: "high" } as Record<string, string>)}
                     />
                   </div>
                 </div>

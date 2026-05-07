@@ -97,8 +97,8 @@ const Blog = () => {
               <div className="mx-auto max-w-7xl">
                 <div className="hairline mb-16" aria-hidden="true" />
                 <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
-                  {blogPosts.map((post) => (
-                    <PostCard key={post.slug} post={post} />
+                  {blogPosts.map((post, index) => (
+                    <PostCard key={post.slug} post={post} priority={index === 0} />
                   ))}
                   {blogPosts.length === 0 && (
                     <div className="md:col-span-2 xl:col-span-3">

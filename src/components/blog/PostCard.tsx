@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 
 type PostCardProps = {
   post: BlogPost;
+  priority?: boolean;
 };
 
-export const PostCard = ({ post }: PostCardProps) => {
+export const PostCard = ({ post, priority = false }: PostCardProps) => {
   const {
     slug,
     frontmatter: { title, excerpt, heroImage, date, tags, readingTime },
@@ -23,8 +24,9 @@ export const PostCard = ({ post }: PostCardProps) => {
             src={heroImage}
             alt={title}
             className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            loading="lazy"
+            loading={priority ? "eager" : "lazy"}
             decoding="async"
+            {...(priority ? ({ fetchpriority: "high" } as Record<string, string>) : {})}
           />
         </div>
       </Link>
@@ -44,9 +46,9 @@ export const PostCard = ({ post }: PostCardProps) => {
         </div>
 
         <Link to={`/blog/${slug}`}>
-          <h3 className="font-display text-2xl font-bold leading-tight text-primary-foreground transition-colors group-hover:text-accent md:text-3xl">
+          <h2 className="font-display text-2xl font-bold leading-tight text-primary-foreground transition-colors group-hover:text-accent md:text-3xl">
             {title}
-          </h3>
+          </h2>
         </Link>
 
         <p className="text-base leading-relaxed text-primary-foreground/70">{excerpt}</p>
