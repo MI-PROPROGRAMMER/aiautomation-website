@@ -647,12 +647,22 @@ All colors MUST be HSL.
       opacity: 1 !important;
       transform: none !important;
     }
+
+    /* text-shimmer animates background-position, which forces paint each
+       frame and can't be composited. Static gradient is fine on mobile. */
+    .text-shimmer {
+      animation: none;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .sheen-card::after {
       animation: none;
       opacity: 0;
+    }
+
+    .text-shimmer {
+      animation: none;
     }
 
     * {
