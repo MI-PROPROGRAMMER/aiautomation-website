@@ -45,8 +45,20 @@ The vertical with the **fewest** posts is the next vertical. Tie-break alphabeti
 Each title must:
 - Hit at least one keyword anchor from `articles.md` (AI automation, Agentic AI, n8n, chatbot, AI for [vertical], ROI / cost of not automating).
 - Be concrete enough to write a real article — not a generic listicle prompt.
-- Not duplicate or near-duplicate any existing post slug or theme.
 - Be ≤ 60 characters where possible (SERP friendliness — Helmet appends ` | ApexifyLabs Journal` so the rendered title stays under ~80 chars).
+- **Pass the topic-uniqueness check below.**
+
+### Topic-uniqueness check (mandatory, runs daily)
+
+Slug-uniqueness is not enough — two articles with different slugs can still cover the same idea, which is worse than useless (it's spammy and Google penalises it). Before proposing or finalising **any** topic:
+
+1. Read the `title`, `excerpt`, and `tags` of every existing post in `src/content/blog/*.mdx`.
+2. Reject any proposed topic that overlaps substantively with an existing post — even if the slug would differ. Examples of what counts as overlap:
+   - Existing: *"The Hidden Cost of a Manual Freight Sales Desk"* → REJECT proposals like *"Why Your Freight Sales Team Is Losing Money"*, *"What Manual Freight Sales Really Costs"*, or any new angle on the same core thesis (manual sales desk waste).
+   - Existing: *"The Follow-Up Gap"* → REJECT new pieces on freight lead conversion, sales follow-up cadence, or dropped leads in freight.
+3. The new article must say something **genuinely different** — a different sub-problem, a different operational layer, a different audience-pain — within the chosen vertical.
+4. If you cannot find 3 fresh angles in the rotated vertical, **rotate to the next vertical** rather than producing near-duplicates. Better to drift the rotation than ship a duplicate.
+5. When in doubt, narrow the scope. *"AI for logistics"* (overlap risk) → *"AI carrier-matching for FTL brokers under 100 trucks"* (specific, fresh).
 
 **Present the 3 options** to the user with one-line angles for each. If the run is non-interactive (see next section), skip the wait and go with option 1.
 
