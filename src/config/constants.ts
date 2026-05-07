@@ -14,7 +14,7 @@ const {
     VITE_EMAILJS_PUBLIC_KEY,
     VITE_EMAILJS_RECIPIENT_EMAIL,
     VITE_LINKEDIN_URL,
-    VITE_TWITTER_URL,
+    VITE_INSTAGRAM_URL,
     VITE_CONTACT_EMAIL,
 } = env;
 
@@ -38,7 +38,7 @@ export const CONTACT_EMAIL = VITE_CONTACT_EMAIL ?? "contact@apexifylabs.com";
 
 export const SOCIAL_LINKS = {
     linkedin: VITE_LINKEDIN_URL ?? "https://www.linkedin.com/company/apexifylabs",
-    twitter: VITE_TWITTER_URL ?? "https://twitter.com/apexifylabs",
+    instagram: VITE_INSTAGRAM_URL ?? "https://www.instagram.com/apexifylabs/",
     email: `mailto:${CONTACT_EMAIL}`,
 };
 

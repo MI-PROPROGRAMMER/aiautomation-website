@@ -50,4 +50,4 @@ To produce a fully prerendered static build the way Vercel ships it: `npm run bu
 
 ### Configuration & env
 - All external links and EmailJS credentials live in `src/config/constants.ts` and read from `import.meta.env.VITE_*` with hardcoded fallbacks. **Don't scatter URLs across components** — add them to constants.
-- Required env vars (see `EMAILJS_SETUP.md` for the contact-form flow): `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY`, `VITE_EMAILJS_RECIPIENT_EMAIL`, `VITE_CONTACT_EMAIL`, `VITE_LINKEDIN_URL`, `VITE_TWITTER_URL`.
+- Required env vars (see `EMAILJS_SETUP.md` for the contact-form flow): `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY`, `VITE_EMAILJS_RECIPIENT_EMAIL`, `VITE_CONTACT_EMAIL`, `VITE_LINKEDIN_URL`, `VITE_INSTAGRAM_URL`.

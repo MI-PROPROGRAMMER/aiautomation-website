@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Twitter } from "lucide-react";
+import { Mail, Linkedin, Instagram } from "lucide-react";
 import { CALENDLY_LINK, CONTACT_EMAIL, SOCIAL_LINKS } from "@/config/constants";
 import { Link } from "react-router-dom";
 
@@ -92,13 +92,13 @@ export const Footer = () => {
                 <Linkedin size={16} />
               </a>
               <a
-                href={SOCIAL_LINKS.twitter}
+                href={SOCIAL_LINKS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-9 w-9 rounded-full border border-primary-foreground/15 hover:border-accent/60 hover:bg-accent/10 flex items-center justify-center transition-colors"
-                aria-label="ApexifyLabs on X"
+                aria-label="ApexifyLabs on Instagram"
               >
-                <Twitter size={16} />
+                <Instagram size={16} />
               </a>
               <a
                 href={SOCIAL_LINKS.email}
