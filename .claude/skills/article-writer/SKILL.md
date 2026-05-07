@@ -7,7 +7,12 @@ description: Write, draft, and publish a new blog article for the ApexifyLabs ma
 
 You are operating as the article-writer skill for the ApexifyLabs marketing site. Your job is to draft a high-quality blog article that obeys every rule in `articles.md` (the editorial source of truth at the repo root) and ship it to production via a single git commit on `main`.
 
-**Before you do anything else, read `articles.md` at the repo root.** Every rule there shapes what we publish — tone, structure, length, banned patterns, the Cardinal Rule. The rest of this file describes the operational workflow that wraps those editorial rules.
+**Before you do anything else, read these two files in order:**
+
+1. `articles.md` at the repo root — editorial source of truth (tone, structure, length, banned patterns, the Cardinal Rule).
+2. `.claude/skills/article-writer/published-articles.md` — the **topics ledger**. The list of every article already shipped, plus the title shapes, headline numbers, and recurring phrases that are now off-limits because they have been used to saturation. The ledger is non-optional. Do not propose or draft a topic without reading it first, and do not consider the run finished until the new article has been appended to it.
+
+The rest of this file describes the operational workflow that wraps those editorial rules.
 
 ## Mental model
 
@@ -48,17 +53,19 @@ Each title must:
 - Be ≤ 60 characters where possible (SERP friendliness — Helmet appends ` | ApexifyLabs Journal` so the rendered title stays under ~80 chars).
 - **Pass the topic-uniqueness check below.**
 
-### Topic-uniqueness check (mandatory, runs daily)
+### Topic-uniqueness check (mandatory, runs every time)
 
-Slug-uniqueness is not enough — two articles with different slugs can still cover the same idea, which is worse than useless (it's spammy and Google penalises it). Before proposing or finalising **any** topic:
+Slug-uniqueness is not enough — two articles with different slugs can still cover the same idea, which is worse than useless (it's spammy and Google penalises it). The single source of truth for what's already on the blog is `.claude/skills/article-writer/published-articles.md`. Before proposing or finalising **any** topic:
 
-1. Read the `title`, `excerpt`, and `tags` of every existing post in `src/content/blog/*.mdx`.
-2. Reject any proposed topic that overlaps substantively with an existing post — even if the slug would differ. Examples of what counts as overlap:
-   - Existing: *"The Hidden Cost of a Manual Freight Sales Desk"* → REJECT proposals like *"Why Your Freight Sales Team Is Losing Money"*, *"What Manual Freight Sales Really Costs"*, or any new angle on the same core thesis (manual sales desk waste).
-   - Existing: *"The Follow-Up Gap"* → REJECT new pieces on freight lead conversion, sales follow-up cadence, or dropped leads in freight.
-3. The new article must say something **genuinely different** — a different sub-problem, a different operational layer, a different audience-pain — within the chosen vertical.
-4. If you cannot find 3 fresh angles in the rotated vertical, **rotate to the next vertical** rather than producing near-duplicates. Better to drift the rotation than ship a duplicate.
-5. When in doubt, narrow the scope. *"AI for logistics"* (overlap risk) → *"AI carrier-matching for FTL brokers under 100 trucks"* (specific, fresh).
+1. **Read the ledger** (`published-articles.md`). Look at every article entry AND the "Burned patterns" section at the top. The ledger is canonical — if it disagrees with what `src/content/blog/*.mdx` shows, update the ledger.
+2. **Thesis-overlap check.** Reject any proposed topic whose thesis substantially overlaps an existing entry — even if the slug, vertical sub-problem, or wording would differ. Same idea = duplicate, regardless of phrasing.
+   - Existing: *"The Hidden Cost of a Manual Freight Sales Desk"* → REJECT *"Why Your Freight Sales Team Is Losing Money"*, *"What Manual Freight Sales Really Costs"*, or any new angle on manual freight sales waste.
+   - Existing: *"The Follow-Up Gap: Where 80% of Freight Leads Die"* → REJECT new pieces on freight lead conversion, sales follow-up cadence, or dropped freight leads.
+3. **Title-shape diversity check.** Compare your proposed title's syntactic template against the title shapes used by the **most recent 5 articles** in the ledger. Reject any proposal that reuses a saturated template (the ledger lists which templates are currently saturated). At most one of the most recent 5 articles may share any given template.
+4. **Headline-number diversity check.** If your proposed title, excerpt, or seoDescription anchors on a number (a percentage, dollar figure, time saving, etc.), check whether that exact number is already on the ledger's "Banned headline numbers" list. If yes, pick a different anchor stat. The ledger explicitly bans **80%** as a headline number for now — use a different framing even if 80% is the most familiar shorthand.
+5. **Recurring-phrase check.** Read the ledger's "Banned recurring phrases" list. If your draft uses any of those phrases or a close paraphrase, rewrite. These are saturated.
+6. **Narrow the scope when in doubt.** *"AI for logistics"* (overlap risk) → *"AI carrier-matching for FTL brokers under 100 trucks"* (specific, fresh).
+7. **Drift the vertical rotation if needed.** If you cannot find 3 fresh angles in the rotated vertical without triggering a banned pattern, rotate to the next vertical instead. Better to drift the rotation than ship a near-duplicate.
 
 **Present the 3 options** to the user with one-line angles for each. If the run is non-interactive (see next section), skip the wait and go with option 1.
 
@@ -168,12 +175,21 @@ After success, optionally spot-check `dist/blog/<slug>/index.html`:
 - `<meta name="description">` is present and matches the seoDescription.
 - Body text length > 1,000 chars (full content prerendered, not a Suspense bailout).
 
-## Step 7 — Commit and push
+## Step 7 — Update the topics ledger
 
-Each article is its **own** commit. Never bundle multiple articles in one commit.
+Do this **before** the commit, so the ledger entry ships in the same commit as the article. The run is not finished until `published-articles.md` records the new article.
+
+1. Open `.claude/skills/article-writer/published-articles.md`.
+2. Add a one-line entry at the **top** of the `## Articles (newest first)` list, in the format shown at the bottom of that file: `- YYYY-MM-DD — <title> · <vertical> · `<slug>``.
+3. Update the **Burned patterns** section at the top of the ledger if this article saturates a new pattern (e.g. a title shape, headline number, or phrase that has now appeared in 2+ articles within the last 5). Add it to the list. Conversely, remove an item if enough fresh articles have shipped on top that it's safe again. Keep the section short — only patterns that are genuinely saturated belong there.
+
+## Step 8 — Commit and push
+
+Each article is its **own** commit. Never bundle multiple articles in one commit. The ledger entry for this article ships in the same commit as the article — they are atomically linked, so reverting one reverts the other.
 
 ```bash
-git add src/content/blog/<slug>.mdx public/blog/<slug>/ public/sitemap.xml
+git add src/content/blog/<slug>.mdx public/blog/<slug>/ public/sitemap.xml \
+        .claude/skills/article-writer/published-articles.md
 git commit -m "Add: <article title>"
 git push origin main
 ```
@@ -203,12 +219,15 @@ When invoked by a scheduled agent or with `--auto`:
 - Cite unsourced numbers as if they were facts.
 - Push directly to main if the build failed.
 - Re-use a slug that already exists.
+- Reuse a title shape, headline number, or recurring phrase listed under "Burned patterns" in `published-articles.md`. If the new topic genuinely needs one of these, surface a different angle in the title and excerpt and cite the saturated stat with a source inside the body.
+- Ship an article without appending its entry to `published-articles.md`.
 
 ## Quick reference
 
 | Field | Value |
 |---|---|
-| Source of truth | `articles.md` at repo root |
+| Source of truth (editorial) | `articles.md` at repo root |
+| Source of truth (topics shipped) | `.claude/skills/article-writer/published-articles.md` (the ledger) |
 | Tier 1 verticals | logistics · e-com ops · construction |
 | Author byline | `ApexifyLabs Team` |
 | CTA | Free automation audit → `/contact` |
