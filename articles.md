@@ -56,6 +56,7 @@ We do not teach buyers to DIY. If a reader can replicate our service after readi
 - At least **one comparison table** OR **numbered list**.
 - **Concrete numbers / examples**; cite external stats.
 - **Frontmatter drives all SEO** — `BlogPost.tsx` auto-generates `<Helmet>` + `BlogPosting` JSON-LD. Required fields: `title`, `excerpt`, `seoDescription` (~150–160 chars), `heroImage`, `date`, `author`, `tags`, `readingTime`. Add inline `FAQPage` JSON-LD only if the post has a real Q&A section.
+- **Author byline:** always `ApexifyLabs Team` unless a specific human author is explicitly requested.
 - Update `public/sitemap.xml` on ship.
 
 ## Length
