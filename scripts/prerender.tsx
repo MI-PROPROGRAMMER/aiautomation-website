@@ -1,16 +1,22 @@
 import React from "react";
 import fs from "node:fs/promises";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import { Helmet } from "react-helmet";
+import { LazyMotion, domAnimation } from "framer-motion";
 import Beasties from "beasties";
-import { AppProviders } from "../src/App";
+// AppRoutesStatic is bundled in via Vite SSR build (see package.json
+// `prerender` script). The Vite SSR build is what lets MDX imports and
+// import.meta.glob resolve — running this file directly via tsx leaves
+// `import.meta.glob` undefined and blog routes silently render <Navigate />.
 import { AppRoutesStatic } from "../src/AppStatic";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const distDir = path.resolve(__dirname, "../dist");
+// __dirname differs between dev (tsx → scripts/) and prod (Vite SSR build →
+// dist/_ssr/). process.cwd() is the project root in both flows because
+// `npm run prerender` is always executed from there.
+const projectRoot = process.cwd();
+const distDir = path.resolve(projectRoot, "dist");
 const templatePath = path.join(distDir, "index.html");
 const template = await fs.readFile(templatePath, "utf-8");
 
@@ -103,12 +109,19 @@ if (cssAbsolutePath && originalCss !== null) {
 console.log(`Inlined critical + non-critical CSS into ${routes.length} routes`);
 
 function renderRoute(route: string) {
+  // We deliberately bypass AppProviders here. It mounts lazy-loaded
+  // <Toaster />, <Sonner />, and <ChatbotWidget /> behind <Suspense>, which
+  // suspends during renderToString and causes React to emit a bailout
+  // template in place of the entire app tree. Those components are purely
+  // client-side and hydrate after JS loads, so the prerender does not need
+  // them. LazyMotion is kept because pages render framer-motion's <m.*>
+  // primitives, which require its context.
   const appHtml = renderToString(
-    <AppProviders>
+    <LazyMotion features={domAnimation} strict>
       <StaticRouter location={route}>
         <AppRoutesStatic />
       </StaticRouter>
-    </AppProviders>,
+    </LazyMotion>,
   );
 
   const helmet = Helmet.renderStatic();
@@ -156,7 +169,7 @@ async function writePrerenderedPage(route: string, html: string) {
 
 async function collectBlogRoutes() {
   try {
-    const blogDir = path.resolve(__dirname, "../src/content/blog");
+    const blogDir = path.resolve(projectRoot, "src/content/blog");
     const entries = await fs.readdir(blogDir, { withFileTypes: true });
 
     return entries

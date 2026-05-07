@@ -23,18 +23,12 @@ type MdxModule = {
   frontmatter?: Partial<BlogFrontmatter> & { slug?: string };
 };
 
-type GlobFn = (
-  pattern: string,
-  options: { eager: true },
-) => Record<string, MdxModule>;
-
-const viteGlob = (
-  import.meta as unknown as { glob?: GlobFn }
-).glob;
-
-const modules: Record<string, MdxModule> = viteGlob
-  ? viteGlob("./*.mdx", { eager: true })
-  : {};
+// Vite statically analyses `import.meta.glob(...)` and rewrites the call into
+// inline imports at build time. That static analysis only fires when the call
+// is in this exact shape — assigning `import.meta.glob` to a variable first
+// (as this file used to do) suppresses the rewrite, so the call falls through
+// to runtime where `import.meta.glob` is `undefined` and no posts load.
+const modules = import.meta.glob<MdxModule>("./*.mdx", { eager: true });
 
 const normalizeFrontmatter = (frontmatter: MdxModule["frontmatter"], fallbackSlug: string): BlogFrontmatter => {
   if (!frontmatter) {

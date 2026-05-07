@@ -132,7 +132,7 @@ const devChatbotApi = (apiKey: string | undefined): Plugin => ({
 });
 
 // https://vitejs.dev/config/
-export default defineConfig(() => {
+export default defineConfig(({ isSsrBuild }) => {
   const dotenv = readDotEnv(__dirname);
   const apiKey = dotenv.ANTHROPIC_API_KEY || process.env.ANTHROPIC_API_KEY || undefined;
   return {
@@ -149,9 +149,15 @@ export default defineConfig(() => {
       preloadLatinFonts(),
     ],
     build: {
+      // The SSR bundle runs on Node, which has top-level await. The default
+      // browser target (es2020) does not, so we widen it for SSR.
+      target: isSsrBuild ? "node18" : undefined,
       rollupOptions: {
         output: {
-          manualChunks: {
+          // manualChunks only applies to the client build. SSR builds resolve
+          // react/react-dom/etc. as Node externals, and Rollup errors if you
+          // try to manualChunk an external module.
+          manualChunks: isSsrBuild ? undefined : {
             // Eager vendor chunks — these are needed on first paint, so giving
             // them stable, dedicated bundles helps long-term caching.
             react: ["react", "react-dom", "scheduler"],
