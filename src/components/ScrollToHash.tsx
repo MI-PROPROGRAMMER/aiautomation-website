@@ -27,14 +27,30 @@ export const ScrollToHash = () => {
         if (attempts++ < MAX_ATTEMPTS) requestAnimationFrame(tryScroll);
         return;
       }
+
       // Two rAFs after lock release so the Hero's wheel/scroll handlers
       // re-register with `mediaFullyExpanded=true`. Otherwise the stale
-      // `handleScroll` snaps us back to (0, 0) the moment scrollIntoView
-      // fires its scroll event.
+      // `handleScroll` snaps us back to (0, 0) the moment we scroll.
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           if (cancelled) return;
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+          // Sections below the fold use `content-visibility: auto` with a
+          // placeholder `contain-intrinsic-size`. Smooth-scroll computes the
+          // target y from those placeholders, but as the scroll passes each
+          // section it renders and the real size replaces the placeholder —
+          // the smooth-scroll keeps tracking the (now stale) y and lands
+          // short of the target. Instant-scroll, then re-correct after a
+          // few frames so any final layout shift is absorbed.
+          target.scrollIntoView({ behavior: "auto", block: "start" });
+
+          let recorrects = 0;
+          const recorrect = () => {
+            if (cancelled || recorrects++ >= 3) return;
+            target.scrollIntoView({ behavior: "auto", block: "start" });
+            requestAnimationFrame(recorrect);
+          };
+          requestAnimationFrame(recorrect);
         });
       });
     };
