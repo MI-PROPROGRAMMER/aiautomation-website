@@ -145,6 +145,15 @@ All colors MUST be HSL.
     contain-intrinsic-size: auto 800px;
   }
 
+  /* During hash-anchor navigation we need every section's real height to
+     be in the layout — otherwise scrollIntoView lands at a y computed
+     against the 800px cv-auto placeholders, not against the real
+     content. ScrollToHash flips this class on <html>, scrolls, then
+     removes it. */
+  html.scrolling-to-hash .cv-auto {
+    content-visibility: visible;
+  }
+
   /* backdrop-filter is one of the most expensive paint operations on
      mobile GPUs. The marketing-site glass effects look fine on desktop
      but cost ~100–200 ms of paint time per frame on a mid-tier phone.
