@@ -46,12 +46,8 @@ To produce a fully prerendered static build the way Vercel ships it: `npm run bu
 - Tailwind tokens are HSL CSS variables defined in `src/index.css` under `:root`. Brand palette: primary `#002347` (dark blue), accent `#00B5E2` (cyan), white. The site is dark-only — `<html>` doesn't toggle a `.dark` class even though `darkMode: ["class"]` is set in `tailwind.config.ts`.
 - shadcn/ui is configured via `components.json` with `@/components/ui` as the install target. Use `npx shadcn@latest add <component>` for new primitives.
 - Path alias `@/*` → `src/*` (configured in `vite.config.ts` and `tsconfig.json`).
-- `design-system/ai-automation-agency/MASTER.md` is the persisted output from the `ui-ux-pro-max` Cursor skill and documents the agreed-upon style/typography/color rules. Treat it as the source of truth for visual decisions; per-page deviations live in `design-system/ai-automation-agency/pages/`.
+- `design-system/ai-automation-agency/MASTER.md` documents the agreed-upon style/typography/color rules. Treat it as the source of truth for visual decisions; per-page deviations live in `design-system/ai-automation-agency/pages/`. Visual constraints to apply: use SVG icons (not emojis), `cursor-pointer` on every interactive element, sufficient contrast for the dark theme, `transition-colors duration-200` for hover states, no layout-shifting hover scales.
 
 ### Configuration & env
 - All external links and EmailJS credentials live in `src/config/constants.ts` and read from `import.meta.env.VITE_*` with hardcoded fallbacks. **Don't scatter URLs across components** — add them to constants.
 - Required env vars (see `EMAILJS_SETUP.md` for the contact-form flow): `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY`, `VITE_EMAILJS_RECIPIENT_EMAIL`, `VITE_CONTACT_EMAIL`, `VITE_LINKEDIN_URL`, `VITE_TWITTER_URL`.
-
-## Cursor skill: ui-ux-pro-max
-
-`.cursor/skills/ui-ux-pro-max/SKILL.md` defines a Python-backed design-system search tool. When doing UI/UX work, the established workflow is to run `python3 scripts/search.py "<query>" --design-system -p "<project>"` (the path is relative to the skill dir). Key constraints from that skill that apply here: use SVG icons (not emojis), `cursor-pointer` on every interactive element, sufficient contrast for the dark theme, `transition-colors duration-200` for hover states, no layout-shifting hover scales.
