@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { getPostBySlug } from "@/content/blog/posts";
 import { MDXProvider } from "@mdx-js/react";
 import { format } from "date-fns";
-import { Calendar, Clock, Share2, Tag } from "lucide-react";
+import { Calendar, Clock, Tag } from "lucide-react";
+import { SharePopover } from "@/components/blog/SharePopover";
 import type { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 import { Helmet } from "react-helmet";
 import { Link, Navigate, useParams } from "react-router-dom";
@@ -162,21 +163,7 @@ const BlogPost = () => {
                     <Button asChild className="gradient-accent hover-lift glow-accent sheen-card">
                       <Link to="/contact">Talk to us about automation</Link>
                     </Button>
-                    <Button
-                      variant="ghost"
-                      asChild
-                      className="text-primary-foreground/85 hover:bg-white/5 hover:text-accent"
-                    >
-                      <a
-                        href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(canonicalUrl)}&title=${encodeURIComponent(title)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Share on LinkedIn"
-                      >
-                        <Share2 size={14} className="mr-2" />
-                        Share
-                      </a>
-                    </Button>
+                    <SharePopover url={canonicalUrl} title={title} excerpt={excerpt} />
                   </div>
                 </div>
               </div>
