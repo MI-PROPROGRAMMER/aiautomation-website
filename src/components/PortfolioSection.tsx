@@ -173,7 +173,10 @@ const ImageMedia = ({ media }: { media: Extract<PortfolioMedia, { kind: "image" 
 
 export const PortfolioSection = () => {
   return (
-    <section id="selected-work" className="py-20 md:py-32 bg-[hsl(var(--section-base))]">
+    <section
+      id="selected-work"
+      className="scroll-mt-24 md:scroll-mt-28 py-20 md:py-32 bg-[hsl(var(--section-base))]"
+    >
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-7xl">
           {/* Editorial header */}
