@@ -27,7 +27,7 @@ export const Header = () => {
   return (
     <header
       className={`fixed left-4 right-4 top-4 z-50 rounded-2xl transition-all duration-500 ${
-        scrolled ? "premium-glass lux-border" : "bg-transparent"
+        scrolled ? "premium-glass lux-border" : "mobile-nav-bg md:bg-transparent md:shadow-none md:border-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
