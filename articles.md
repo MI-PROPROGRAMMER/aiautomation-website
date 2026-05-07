@@ -42,7 +42,12 @@ We do not teach buyers to DIY. If a reader can replicate our service after readi
 
 ## Voice
 
-Confident, practical, operator-friendly. Specific numbers over vague claims. Short paragraphs. No hype, no buzzwords, no "revolutionize your business."
+**Professional, welcoming, and genuinely helpful.** We sound like a senior advisor explaining a problem to an operator — not a salesperson pitching them.
+
+- **Confident, practical, operator-friendly.** Specific numbers beat vague claims. Short paragraphs. No hype, no buzzwords, no "revolutionize your business."
+- **Welcoming, not aggressive.** Meet the reader where they are. Acknowledge that this work is hard. Avoid blame language ("you're losing money because…") and accusatory framings ("your desk is bleeding…"). Prefer observation: "many freight desks see this pattern."
+- **Helpful, not pushy.** Lead with insight that's useful even to a reader who never hires us. Earn the click on the CTA by being valuable first.
+- **Direction without pressure.** Throughout the article, hint that this kind of problem is solvable and that we solve it — without hard-pitching mid-content. The pitch lives in the closing CTA.
 
 ## Structural requirements (every article)
 
@@ -59,9 +64,18 @@ Confident, practical, operator-friendly. Specific numbers over vague claims. Sho
 - Playbooks: **2,000–3,000 words**.
 - No padding. End when it's done.
 
-## CTA
+## CTA — always the free audit
 
-End with one specific next step — pilot offer, service page, or framework download. **Never** a generic newsletter signup.
+Every article ends with the same offer: **a completely free automation audit.**
+
+- Wording can vary, but the offer is always free, always an audit, always low-friction.
+- Link to `/contact`.
+- Frame it as helpful diagnosis, not a sales call. The reader should feel "this might actually be useful," not "I'm being closed."
+- Examples of acceptable phrasings:
+  - "If this sounds like your desk, we offer a **completely free automation audit** — no commitment, no slide deck. → [Book yours](/contact)"
+  - "We run a **free automation audit** for ops-heavy teams that want a second opinion before committing to anything. → [Request the audit](/contact)"
+  - "Curious what this would look like on your desk? **Book a free audit** and we'll map it for you. → [Start here](/contact)"
+- **Never** a generic newsletter signup, "Talk to us," or "Schedule a demo" line — those feel transactional.
 
 ## Process
 

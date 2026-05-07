@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="The Follow-Up Gap visualization">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="The Follow-Up Gap visualization">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#001a36"/>
       <stop offset="1" stop-color="#002347"/>
     </linearGradient>
-    <radialGradient id="glow" cx="0.8" cy="0.25" r="0.55">
-      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.2"/>
+    <radialGradient id="glow" cx="0.78" cy="0.28" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.22"/>
       <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
@@ -15,56 +15,55 @@
     </linearGradient>
   </defs>
 
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
 
   <g stroke="#0a3a66" stroke-width="1" opacity="0.4">
-    <path d="M0 80 H1200" /><path d="M0 160 H1200" /><path d="M0 240 H1200" />
-    <path d="M0 320 H1200" /><path d="M0 400 H1200" /><path d="M0 480 H1200" />
-    <path d="M0 560 H1200" />
+    <path d="M0 200 H1500" /><path d="M0 360 H1500" /><path d="M0 520 H1500" />
+    <path d="M0 680 H1500" /><path d="M0 840 H1500" />
   </g>
 
-  <g transform="translate(120,150)" font-family="Georgia, 'Times New Roman', serif" fill="#ffffff">
+  <g transform="translate(180,260)" font-family="Georgia, 'Times New Roman', serif">
     <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
-    <text y="80" font-size="64" font-weight="700">The Follow-Up Gap</text>
-    <text y="160" font-size="34" font-weight="400" fill="#cfe5f1" opacity="0.9">Where 80% of freight leads quietly die</text>
+    <text y="100" font-size="84" font-weight="700" fill="#ffffff">The Follow-Up Gap</text>
+    <text y="170" font-size="40" font-weight="400" fill="#cfe5f1" opacity="0.9">where 80% of freight leads quietly die</text>
   </g>
 
-  <g transform="translate(120,360)" opacity="0.95">
-    <text font-family="Georgia, serif" font-size="14" letter-spacing="3" fill="#7fb6d6">TOUCH-BY-TOUCH LEAD SURVIVAL</text>
+  <g transform="translate(180,560)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">TOUCH-BY-TOUCH LEAD SURVIVAL</text>
 
-    <g transform="translate(0,30)">
-      <text font-family="Georgia, serif" font-size="13" fill="#9fc4dc">TOUCH 1</text>
-      <rect x="120" y="-12" width="540" height="14" fill="#0a3a66"/>
-      <rect x="120" y="-12" width="540" height="14" fill="#00B5E2" opacity="0.95"/>
-      <text x="680" y="0" font-family="Georgia, serif" font-size="13" fill="#cfe5f1">100%</text>
+    <g transform="translate(0,40)">
+      <text font-size="14" fill="#9fc4dc">TOUCH 1</text>
+      <rect x="160" y="-14" width="900" height="16" fill="#0a3a66"/>
+      <rect x="160" y="-14" width="900" height="16" fill="#00B5E2" opacity="0.95"/>
+      <text x="1080" y="0" font-size="14" fill="#cfe5f1">100%</text>
     </g>
 
-    <g transform="translate(0,60)">
-      <text font-family="Georgia, serif" font-size="13" fill="#9fc4dc">TOUCH 2</text>
-      <rect x="120" y="-12" width="540" height="14" fill="#0a3a66"/>
-      <rect x="120" y="-12" width="304" height="14" fill="#00B5E2" opacity="0.85"/>
-      <text x="680" y="0" font-family="Georgia, serif" font-size="13" fill="#cfe5f1">56%</text>
-    </g>
-
-    <g transform="translate(0,90)">
-      <text font-family="Georgia, serif" font-size="13" fill="#9fc4dc">TOUCH 3</text>
-      <rect x="120" y="-12" width="540" height="14" fill="#0a3a66"/>
-      <rect x="120" y="-12" width="118" height="14" fill="#00B5E2" opacity="0.7"/>
-      <text x="680" y="0" font-family="Georgia, serif" font-size="13" fill="#cfe5f1">22%</text>
+    <g transform="translate(0,80)">
+      <text font-size="14" fill="#9fc4dc">TOUCH 2</text>
+      <rect x="160" y="-14" width="900" height="16" fill="#0a3a66"/>
+      <rect x="160" y="-14" width="504" height="16" fill="#00B5E2" opacity="0.85"/>
+      <text x="1080" y="0" font-size="14" fill="#cfe5f1">56%</text>
     </g>
 
     <g transform="translate(0,120)">
-      <text font-family="Georgia, serif" font-size="13" fill="#9fc4dc">TOUCH 5+</text>
-      <rect x="120" y="-12" width="540" height="14" fill="#0a3a66"/>
-      <rect x="120" y="-12" width="34" height="14" fill="#00B5E2" opacity="0.55"/>
-      <text x="680" y="0" font-family="Georgia, serif" font-size="13" fill="#cfe5f1">6%</text>
+      <text font-size="14" fill="#9fc4dc">TOUCH 3</text>
+      <rect x="160" y="-14" width="900" height="16" fill="#0a3a66"/>
+      <rect x="160" y="-14" width="198" height="16" fill="#00B5E2" opacity="0.7"/>
+      <text x="1080" y="0" font-size="14" fill="#cfe5f1">22%</text>
     </g>
 
     <g transform="translate(0,160)">
-      <text font-family="Georgia, serif" font-size="11" letter-spacing="2" fill="#5e8aa6">80% OF SALES REQUIRE 5+ FOLLOW-UPS · MOST DESKS STOP AT 2</text>
+      <text font-size="14" fill="#9fc4dc">TOUCH 5+</text>
+      <rect x="160" y="-14" width="900" height="16" fill="#0a3a66"/>
+      <rect x="160" y="-14" width="54" height="16" fill="#00B5E2" opacity="0.55"/>
+      <text x="1080" y="0" font-size="14" fill="#cfe5f1">6%</text>
+    </g>
+
+    <g transform="translate(0,210)">
+      <text font-size="12" letter-spacing="2" fill="#5e8aa6">80% OF SALES REQUIRE 5+ FOLLOW-UPS · MOST DESKS STOP AT 2</text>
     </g>
   </g>
 
-  <rect x="0" y="624" width="1200" height="6" fill="url(#accentLine)"/>
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
 </svg>

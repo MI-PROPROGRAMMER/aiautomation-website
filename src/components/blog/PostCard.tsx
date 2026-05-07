@@ -69,7 +69,7 @@ export const PostCard = ({ post }: PostCardProps) => {
           className="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-accent-foreground"
         >
           <span className="border-b border-accent/40 pb-0.5 transition-colors group-hover:border-accent">
-            Read essay
+            Read article
           </span>
           <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5" />
         </Link>

@@ -1,5 +1,6 @@
 import { defineConfig, type Plugin } from "vite";
 import mdx from "@mdx-js/rollup";
+import remarkGfm from "remark-gfm";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import fs from "node:fs";
@@ -143,6 +144,10 @@ export default defineConfig(({ isSsrBuild }) => {
     plugins: [
       mdx({
         extension: /\.mdx?$/,
+        // remark-gfm enables GitHub-Flavored Markdown features in MDX:
+        // tables, strikethrough, autolinks, task lists. Without it, table
+        // syntax renders as raw pipe characters in the article body.
+        remarkPlugins: [remarkGfm],
       }),
       react(),
       devChatbotApi(apiKey),
