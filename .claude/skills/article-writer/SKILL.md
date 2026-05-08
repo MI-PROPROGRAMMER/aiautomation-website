@@ -119,7 +119,7 @@ export const frontmatter = {
   heroImage: "/blog/<slug>/hero.svg",
   seoDescription:
     "<150–160 chars; ships as <meta name=description>; differs from excerpt>",
-  readingTime: "<computed: word_count ÷ 200, rounded up — e.g. '7 min read'>",
+  readingTime: "<computed: word_count ÷ 400, rounded up. e.g. '4 min read'. We use 400 wpm (not the conventional 200) because the user has confirmed published times feel high; halving lands closer to perceived reading speed.>",
 };
 ```
 
@@ -216,6 +216,7 @@ When invoked by a scheduled agent or with `--auto`:
 - Use a CTA other than the free automation audit.
 - Open with a generic AI introduction ("In today's fast-paced world…").
 - Include emojis in body copy.
+- Use em dashes (—) in any article content (title, excerpt, seoDescription, body, headings, tables). Em dashes read as AI-generated boilerplate to readers and are explicitly banned. Use commas, periods, semicolons, colons, or parentheses instead. En dashes for numeric ranges (e.g. "50–70%", "$15M–$30M") are fine; only the wider em dash is banned.
 - Cite unsourced numbers as if they were facts.
 - Push directly to main if the build failed.
 - Re-use a slug that already exists.

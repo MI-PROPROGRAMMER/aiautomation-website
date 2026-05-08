@@ -94,4 +94,5 @@ Every article ends with the same offer: **a completely free automation audit.**
 - Tutorials a freelancer could ship from
 - Pricing / implementation-detail giveaways
 - Emojis in body copy
+- Em dashes (—) anywhere in article content. They read as AI-generated and dent authority. Use commas, periods, semicolons, colons, or parentheses instead. En dashes (–) for numeric ranges like "50–70%" or "$15M–$30M" are fine.
 - Unsourced statistics

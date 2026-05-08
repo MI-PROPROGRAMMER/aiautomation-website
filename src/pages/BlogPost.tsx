@@ -168,14 +168,14 @@ const BlogPost = () => {
                 </div>
               </div>
 
-              {/* Hero image — full-bleed slab */}
+              {/* Hero image — natural 3:2 aspect so the SVG safe zone is never cropped */}
               <div className="relative">
                 <div className="container mx-auto px-4">
-                  <div className="mx-auto max-w-6xl overflow-hidden rounded-2xl">
+                  <div className="mx-auto aspect-[3/2] max-w-6xl overflow-hidden rounded-2xl">
                     <img
                       src={heroImage}
                       alt={title}
-                      className="h-[26rem] w-full object-cover md:h-[36rem]"
+                      className="h-full w-full object-cover"
                       loading="eager"
                       decoding="async"
                       {...({ fetchpriority: "high" } as Record<string, string>)}
@@ -185,15 +185,16 @@ const BlogPost = () => {
               </div>
             </section>
 
-            {/* Content — narrow column, no glass card wrapper */}
+            {/* Content — narrow reading column with elevated panel for visual relief */}
             <section className="bg-background pb-32 pt-20">
               <div className="container mx-auto px-4">
-                <div className="hairline mx-auto max-w-3xl mb-16" aria-hidden="true" />
                 <div className="mx-auto max-w-3xl">
-                  <div className="mdx-content">
-                    <MDXProvider components={mdxComponents}>
-                      <Content />
-                    </MDXProvider>
+                  <div className="rounded-2xl border border-white/[0.06] bg-white/[0.025] px-6 py-12 shadow-2xl shadow-black/40 md:px-14 md:py-16">
+                    <div className="mdx-content">
+                      <MDXProvider components={mdxComponents}>
+                        <Content />
+                      </MDXProvider>
+                    </div>
                   </div>
                 </div>
               </div>
