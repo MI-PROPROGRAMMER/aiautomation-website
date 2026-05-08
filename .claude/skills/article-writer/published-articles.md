@@ -24,6 +24,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-05-08 — Manual vs AI-Augmented Order Exception Handling · e-com ops · `manual-vs-ai-order-exception-handling`
 - 2026-05-07 — The Hidden Cost of Manual Submittal Tracking on a GC's Desk · construction · `hidden-cost-manual-submittal-tracking-gcs`
 - 2026-05-07 — The Hidden Cost of a Manual Freight Sales Desk · logistics · `hidden-cost-manual-freight-sales-desk`
 - 2026-05-07 — The Follow-Up Gap: Where 80% of Freight Leads Die · logistics · `follow-up-gap-freight-leads`
