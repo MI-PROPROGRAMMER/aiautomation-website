@@ -616,6 +616,18 @@ All colors MUST be HSL.
     @apply text-primary-foreground/80;
   }
 
+  /* Default link styling for any anchor inside MDX content. The MDXProvider
+     override in BlogPost.tsx adds target="_blank" for external URLs at runtime,
+     but the SSR pass renders bare anchors, so the styling has to live in CSS to
+     hold up before hydration. */
+  .mdx-content a {
+    @apply text-accent underline decoration-accent/40 underline-offset-4 transition-colors;
+  }
+
+  .mdx-content a:hover {
+    @apply text-accent/90 decoration-accent/20;
+  }
+
   /* Editorial drop cap on the lead paragraph — adds magazine-style character to
      the article opener. Only the first paragraph (the snippet-extractable lead)
      gets it; subsequent paragraphs render normally. */

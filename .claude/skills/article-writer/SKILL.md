@@ -91,7 +91,13 @@ Default to interactive (wait for user pick) when none of these signal applies.
    - **Stats:** every number should be sourced. Cite generically when needed ("industry surveys consistently report…") but never fabricate specifics.
    - **Voice:** professional, welcoming, helping, non-pushy. Observation over blame. See `articles.md` Voice section.
 
-3. **Write the closing CTA.** Always the **completely free automation audit**, linking `/contact`. Frame it as helpful diagnosis, not a sales call. Vary the wording each article — sample phrasings live in `articles.md` CTA section.
+3. **Write the closing CTA.** Always the **completely free automation audit**, linking directly to the Calendly URL `https://calendly.com/mi-tech0786` (NOT `/contact`). **Use raw HTML for the anchor, not Markdown link syntax** — the MDX provider override that adds `target="_blank"` only fires at hydration, so Markdown links ship a bare anchor in SSR. Inlined raw HTML guarantees the popup opens on first paint:
+
+   ```mdx
+   → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>
+   ```
+
+   Styling is provided by `.mdx-content a` in `src/index.css`. Frame it as helpful diagnosis, not a sales call. Vary the wording each article. Sample phrasings live in `articles.md` CTA section.
 
 4. **Cardinal Rule self-check.** Before finalizing, re-read and ask: *"If a reader hands this article to a $20/hr freelancer, can they ship our service?"* If yes, rewrite. We describe outcomes and possibilities, never steps and tools.
 

@@ -70,13 +70,20 @@ We do not teach buyers to DIY. If a reader can replicate our service after readi
 Every article ends with the same offer: **a completely free automation audit.**
 
 - Wording can vary, but the offer is always free, always an audit, always low-friction.
-- Link to `/contact`.
+- Link **directly to Calendly**, not to `/contact`. Use the canonical URL `https://calendly.com/mi-tech0786` (matches the "Free Audit" button in the header).
+- **Use raw HTML for the CTA anchor**, not Markdown link syntax. The MDX `<a>` provider override only fires at hydration time, so SSR/prerender ships a bare anchor without `target="_blank"`. Inlining the anchor as raw HTML guarantees the popup behavior works on first paint and for crawlers.
+
+  ```mdx
+  → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>
+  ```
+
+  Styling is handled by `.mdx-content a` in `src/index.css`, so no inline classes are needed.
 - Frame it as helpful diagnosis, not a sales call. The reader should feel "this might actually be useful," not "I'm being closed."
-- Examples of acceptable phrasings:
-  - "If this sounds like your desk, we offer a **completely free automation audit** — no commitment, no slide deck. → [Book yours](/contact)"
-  - "We run a **free automation audit** for ops-heavy teams that want a second opinion before committing to anything. → [Request the audit](/contact)"
-  - "Curious what this would look like on your desk? **Book a free audit** and we'll map it for you. → [Start here](/contact)"
-- **Never** a generic newsletter signup, "Talk to us," or "Schedule a demo" line — those feel transactional.
+- Examples of acceptable phrasings (always raw HTML, always the Calendly URL, always `target="_blank"`):
+  - `If this sounds like your desk, we offer a **completely free automation audit**. No commitment, no slide deck. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book yours</a>`
+  - `We run a **free automation audit** for ops-heavy teams that want a second opinion before committing to anything. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>`
+  - `Curious what this would look like on your desk? **Book a free audit** and we'll map it for you. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Start here</a>`
+- **Never** a generic newsletter signup, "Talk to us," or "Schedule a demo" line. Those feel transactional.
 
 ## Process
 

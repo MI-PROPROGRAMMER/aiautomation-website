@@ -14,12 +14,20 @@ import { JsonLd } from "@/components/JsonLd";
 import { buildBreadcrumbs, ORG_ID, SITE_URL } from "@/lib/seo";
 
 const mdxComponents = {
-  a: (props: ComponentPropsWithoutRef<"a">) => (
-    <a
-      {...props}
-      className="text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:text-accent/90 hover:decoration-accent/20"
-    />
-  ),
+  a: ({ href, ...props }: ComponentPropsWithoutRef<"a">) => {
+    const isExternal =
+      typeof href === "string" && /^https?:\/\//.test(href);
+    return (
+      <a
+        href={href}
+        {...(isExternal
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
+        {...props}
+        className="text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:text-accent/90 hover:decoration-accent/20"
+      />
+    );
+  },
   img: (props: ComponentPropsWithoutRef<"img">) => (
     <img
       {...props}
