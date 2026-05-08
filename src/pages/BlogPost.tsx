@@ -185,8 +185,8 @@ const BlogPost = () => {
               </div>
             </section>
 
-            {/* Content — narrow reading column with elevated panel for visual relief */}
-            <section className="bg-background pb-32 pt-20">
+            {/* Content — narrow reading column on a dot-grid bg, prose lifted into a panel */}
+            <section className="article-bg pb-32 pt-20">
               <div className="container mx-auto px-4">
                 <div className="mx-auto max-w-3xl">
                   <div className="rounded-2xl border border-white/[0.06] bg-white/[0.025] px-6 py-12 shadow-2xl shadow-black/40 md:px-14 md:py-16">

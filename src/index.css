@@ -560,6 +560,36 @@ All colors MUST be HSL.
     box-shadow: 0 12px 40px hsl(192 100% 44% / 0.35);
   }
 
+  /* Article body background — a faint blueprint dot-grid that gives the empty
+     side margins editorial texture. The reading panel sits on top and its own
+     bg layer absorbs most of the dots, so the texture only reads strongly in
+     the negative space around the prose column. */
+  .article-bg {
+    background-color: hsl(var(--background));
+    background-image: radial-gradient(
+      circle at center,
+      hsl(var(--accent) / 0.075) 1px,
+      transparent 1.4px
+    );
+    background-size: 28px 28px;
+    background-position: 0 0;
+  }
+
+  /* Section ornament — three centered dots before every H2 except the first.
+     Acts as a quiet rhythm break between major sections without using a hard
+     rule. Disabled on the first H2 so the lead paragraph flows directly into
+     its first heading. */
+  .mdx-content h2:not(:first-of-type)::before {
+    content: "· · ·";
+    display: block;
+    margin: 3rem auto 1.5rem;
+    text-align: center;
+    letter-spacing: 0.6em;
+    color: hsl(var(--accent) / 0.55);
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+
   .mdx-content {
     @apply space-y-6 text-lg leading-relaxed text-primary-foreground/85;
   }
@@ -584,6 +614,27 @@ All colors MUST be HSL.
 
   .mdx-content p {
     @apply text-primary-foreground/80;
+  }
+
+  /* Editorial drop cap on the lead paragraph — adds magazine-style character to
+     the article opener. Only the first paragraph (the snippet-extractable lead)
+     gets it; subsequent paragraphs render normally. */
+  .mdx-content > p:first-of-type::first-letter {
+    float: left;
+    margin: 0.35rem 0.6rem 0 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 4.25rem;
+    line-height: 0.9;
+    font-weight: 700;
+    color: hsl(var(--accent));
+    letter-spacing: -0.02em;
+  }
+
+  @media (min-width: 768px) {
+    .mdx-content > p:first-of-type::first-letter {
+      font-size: 5rem;
+      margin-right: 0.75rem;
+    }
   }
 
   .mdx-content ul {
