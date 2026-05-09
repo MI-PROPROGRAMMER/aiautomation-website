@@ -15,6 +15,9 @@ dist-ssr
 .env.*
 !.env.example
 
+# Personal documentation / reference material — not shipped with the repo
+docs/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
