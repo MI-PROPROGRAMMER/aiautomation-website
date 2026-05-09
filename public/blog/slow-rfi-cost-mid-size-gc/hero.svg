@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="What slow RFIs cost a mid-size GC: a cycle visualization">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.22" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="manualBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0a3a66"/>
+      <stop offset="1" stop-color="#5e8aa6"/>
+    </linearGradient>
+    <linearGradient id="aiBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#7fb6d6" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.3">
+    <path d="M0 220 H1500"/>
+    <path d="M0 420 H1500"/>
+    <path d="M0 620 H1500"/>
+    <path d="M0 800 H1500"/>
+  </g>
+
+  <g transform="translate(180,200)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="84" font-weight="700" fill="#ffffff">Slow RFIs</text>
+    <text y="170" font-size="38" font-weight="400" fill="#cfe5f1" opacity="0.9">the 8-to-14-day cycle on a mid-size GC</text>
+  </g>
+
+  <g font-family="Georgia, serif">
+    <text x="180" y="500" font-size="14" letter-spacing="3" fill="#7fb6d6">RFI LIFECYCLE · DAYS PER STAGE</text>
+
+    <g font-size="14" fill="#cfe5f1">
+      <text x="180" y="540">Drafted by PE</text>
+      <text x="180" y="586">Architect review</text>
+      <text x="180" y="632">Engineer review</text>
+      <text x="180" y="678">Compile + sign</text>
+      <text x="180" y="724">Distribute to field</text>
+    </g>
+
+    <g>
+      <rect x="430" y="525" width="60" height="22" rx="4" fill="url(#manualBar)"/>
+      <text x="500" y="542" font-size="13" fill="#7fb6d6">~0.5 d</text>
+    </g>
+    <g>
+      <rect x="430" y="571" width="420" height="22" rx="4" fill="url(#manualBar)"/>
+      <text x="860" y="588" font-size="13" fill="#7fb6d6">2–6 d</text>
+    </g>
+    <g>
+      <rect x="430" y="617" width="350" height="22" rx="4" fill="url(#manualBar)"/>
+      <text x="790" y="634" font-size="13" fill="#7fb6d6">2–5 d</text>
+    </g>
+    <g>
+      <rect x="430" y="663" width="120" height="22" rx="4" fill="url(#manualBar)"/>
+      <text x="560" y="680" font-size="13" fill="#7fb6d6">1–2 d</text>
+    </g>
+    <g>
+      <rect x="430" y="709" width="120" height="22" rx="4" fill="url(#manualBar)"/>
+      <text x="560" y="726" font-size="13" fill="#7fb6d6">~1 d</text>
+    </g>
+
+    <g transform="translate(180,790)">
+      <rect x="0" y="0" width="500" height="46" rx="6" fill="#0a3a66" stroke="#5e8aa6" stroke-width="1"/>
+      <text x="20" y="20" font-size="11" letter-spacing="2" fill="#7fb6d6">MANUAL CYCLE</text>
+      <text x="20" y="38" font-size="18" fill="#cfe5f1" font-weight="700">8 to 14 calendar days</text>
+    </g>
+
+    <g transform="translate(720,790)">
+      <rect x="0" y="0" width="500" height="46" rx="6" fill="url(#aiBar)"/>
+      <text x="20" y="20" font-size="11" letter-spacing="2" fill="#001a36" font-weight="700">AI-ASSISTED CYCLE</text>
+      <text x="20" y="38" font-size="18" fill="#001a36" font-weight="700">routine RFIs, drafted in minutes</text>
+    </g>
+
+    <text x="180" y="870" font-size="13" letter-spacing="3" fill="#5e8aa6">EVERY DAY OPEN IS A DAY TRADES ARE WAITING</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>

@@ -1,0 +1,114 @@
+export const frontmatter = {
+  title: "What Slow RFIs Really Cost a Mid-Size GC",
+  excerpt:
+    "On a mid-size GC, the average RFI takes 8 to 14 days to resolve. The cost lands as schedule weeks, rework, and PM hours, not as a single P&L line.",
+  date: "2026-05-09",
+  author: "ApexifyLabs Team",
+  tags: ["Construction", "GCs", "RFIs", "AI Automation"],
+  heroImage: "/blog/slow-rfi-cost-mid-size-gc/hero.svg",
+  seoDescription:
+    "Routine RFI cycles cost mid-size GCs schedule weeks, rework, and PM bandwidth. See where the time actually goes, and what an AI-assisted RFI flow changes.",
+  readingTime: "4 min read",
+};
+
+On a mid-size commercial project, the average RFI takes 8 to 14 days to resolve. That delay rarely shows up as a P&L line item. It shows up as schedule slippage, rework, and PM hours spent chasing answers. Here is what routine RFI cycles actually cost a $50M to $150M GC over a year, and what shifts when AI handles the routine ones.
+
+## What is an RFI, and why do they pile up on every job?
+
+A request for information (RFI) is the formal mechanism by which a contractor asks the design team to clarify, correct, or interpret something in the contract documents. On a single $30M commercial project, expect 200 to 600 RFIs across the build. On a portfolio of three to six active projects, that is several thousand a year per GC.
+
+RFIs are unavoidable. Drawings have ambiguities, specifications conflict with each other, field conditions reveal things the architect did not anticipate. The question is never whether RFIs happen. The question is how fast they get resolved, and what each one really costs while it is open.
+
+Construction-industry research has consistently identified RFI volume and cycle time as a primary contributor to schedule overrun on commercial projects. The pattern is structural, not a sign of poor management.
+
+## Where does the time on each RFI actually go?
+
+Walk a typical RFI from open to close on a mid-size GC and the breakdown looks roughly like this.
+
+| Stage | Typical duration | What happens |
+|---|---|---|
+| Field PE drafts the question | 30 to 90 minutes | PE writes the question, attaches markups, tries to anticipate the answer the architect needs |
+| Logged into the platform | Same day | RFI uploaded to Procore, ACC, or PlanGrid; routed to the architect of record |
+| Architect review and routing | 2 to 6 days | Architect either responds, kicks to the engineer of record, or asks for clarification on the question itself |
+| Engineer review (if needed) | 2 to 5 days | Structural, MEP, or civil engineer issues a response |
+| Architect compiles and signs | 1 to 2 days | Final response packaged and returned to GC |
+| GC distributes to the field | Same day to 2 days | Superintendent and trades receive the answer; impact is assessed |
+
+The total typically lands at 8 to 14 calendar days for a routine RFI. That is the median across many published industry benchmarks. Half of those days are dead time, sitting in someone's inbox, waiting for a response.
+
+The cost of an RFI is not the labor to write it. It is the labor of every trade waiting on the answer, plus the schedule it might shift.
+
+## What does a slow RFI cycle cost a mid-size GC?
+
+Five places the money quietly leaks. None of them appear cleanly on a project P&L, which is part of why the cost is hard to see.
+
+**1. Direct cost per RFI.** Industry benchmarks have placed the average direct cost per RFI on commercial projects at roughly $1,000 to $1,500 in design-team and contractor labor combined. For a project running 400 RFIs, that is $400,000 to $600,000 in direct costs alone, before you count any schedule impact.
+
+**2. Schedule cascade from late answers.** A single RFI on a long-lead item, say a structural connection or a custom mechanical penetration, can stall a multi-week sequence. Construction-delay studies routinely attribute a meaningful share of schedule overrun on commercial projects to slow design-team responses. On a 12-month project, three to six weeks of avoidable delay translates directly into general conditions burn that nobody planned for.
+
+**3. PM and PE time on choreography.** Surveys of construction project staff consistently find that 25 to 40 percent of a PM's or PE's week is spent on document and communication overhead, including chasing RFIs, reconciling responses across trades, and updating logs. Senior PMs cost $130K to $180K loaded; field PEs cost $90K to $120K. A meaningful share of that compensation is, on those days, doing administrative chase work.
+
+**4. Trade idling and field rework.** When an RFI response is late, trades on site either guess and proceed, or stop and wait. Both options create cost. Guessing leads to rework if the answer comes back differently than expected. Waiting becomes idle labor. The Construction Industry Institute and similar bodies have estimated rework at roughly 5 percent of total project value on commercial work, with document and communication breakdowns among the leading drivers.
+
+**5. Owner and architect relationship cost.** Owners notice when an RFI log is fuzzy or stale. Architects notice when the same kind of question keeps coming back from the GC's field staff. The relational cost of looking disorganized is invisible on the current job, but it shows up in the next bid you do not get invited to.
+
+Add those across a portfolio of three to six active projects and the recurring drag is large. It is also the kind of cost that is easy to live with, because it never lands in one obvious line item.
+
+## Manual RFI flow vs. AI-assisted RFI flow: what changes?
+
+The cleanest way to see the shift is stage by stage. Below is a typical mid-size GC's RFI workflow today, side by side with what the same flow looks like with an AI agent layer doing the routine triage.
+
+| Stage | Manual RFI flow | AI-assisted RFI flow |
+|---|---|---|
+| RFI drafting | PE writes from scratch, often without checking whether a similar RFI already exists on this or a sister project | Agent drafts a first version from the field markup, surfaces similar past RFIs and their resolutions for the PE to reuse |
+| Routing | PM decides who to send it to; sometimes the wrong recipient | Routed automatically based on RFI type, spec section, and historical routing on similar items |
+| Status visibility | Updated by hand; "current" depends on who you ask | Continuously updated from platform activity and email; one source of truth |
+| Late-answer alerts | Discovered when a sub calls or a sequence slips | Surfaced before the due date, with the responsible party flagged and a draft escalation ready |
+| Cross-project memory | Lessons live in someone's head, lost at closeout | Past resolutions for similar conditions surfaced when a new RFI is opened |
+| Schedule linkage | Done manually, if at all | RFI cross-referenced to long-lead items and float; downstream impact visible immediately |
+| Owner reporting | Weekly PDF, often outdated by Tuesday | Live dashboard, updated as RFIs move |
+
+Judgment calls still belong to the PM, the architect, and the engineer of record. What changes is the choreography. The routine 70 percent of RFIs (clarify dimension on grid line C between elevations 102 and 103) get drafted, routed, and tracked without consuming senior time.
+
+## What does the project manager and the project executive get back?
+
+A PM running an AI-assisted RFI flow does not get a faster log. They get back the half-day a week they used to spend chasing answers across email, the platform, and the field.
+
+A few things shift visibly within a project or two.
+
+- Mornings start with exceptions surfaced (the four RFIs at risk of becoming critical-path items this week), not an inbox archaeology session.
+- The "did this get answered?" Slack thread from the field gets a verified answer in under a minute, not after a 20-minute search.
+- Trade foremen stop hedging on schedule because they trust the RFI response is current.
+- Owner status meetings open with a current-state dashboard already on the screen.
+- At project close, the RFI log requires no archaeology; it has been clean throughout.
+
+For the project executive, the most material change is forecast accuracy. With timely, structured RFI data across active projects, schedule risk becomes visible weeks before it would have surfaced through manual reporting.
+
+## When does AI-assisted RFI handling pay off for a GC?
+
+It is usually a fit when:
+
+- Active project portfolio is in the **$50M to $300M annual revenue** range, with three or more concurrent commercial jobs.
+- Average RFI volume is **above 300 per project**, with response times measured in days, not hours.
+- Projects use a standard platform (Procore, Autodesk Construction Cloud, PlanGrid, Newforma) so integration is on rails, not bespoke.
+- Senior PMs are saying, in plain language, that they cannot get to the work that requires a senior PM because of administrative load.
+
+It is usually not a fit yet when:
+
+- The GC is doing a single owner-rep job at a time and PMs have visible slack.
+- Project documentation is still on file shares and email threads, with no platform of record.
+- The work is heavily design-build with a colocated team where most RFIs resolve in conversation.
+
+## Three signals an RFI process is costing more than it looks
+
+1. **Your PMs find out an RFI is overdue from a sub or a foreman, not from the log.** The log is supposed to be early-warning. If it is a historical record, the warning has already failed.
+2. **The same kind of clarifying question shows up on three separate projects without a documented resolution being reused.** That is institutional knowledge leaking out the bottom every time a job closes.
+3. **Owner RFI status reports are produced by hand on a Friday afternoon by a senior PM.** A senior PM doing report assembly is paid the wrong rate for that work, and the report is stale before Monday.
+
+Most GCs we talk to recognize at least two of these. The cost is real, and it compounds quietly across a portfolio.
+
+## Curious what an AI-assisted RFI flow would look like on your projects?
+
+We run a **completely free automation audit** for GCs that want a second opinion on where their RFI, submittal, and change-order flow is silently costing them. No slide deck, no procurement gauntlet. We map your current process, look at where the queue actually leaks, and show you what an AI-assisted RFI layer would look like on top of your existing platform.
+
+→ <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>

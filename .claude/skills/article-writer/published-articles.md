@@ -24,6 +24,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-05-09 — What Slow RFIs Really Cost a Mid-Size GC · construction · `slow-rfi-cost-mid-size-gc`
 - 2026-05-08 — Manual vs AI-Augmented Order Exception Handling · e-com ops · `manual-vs-ai-order-exception-handling`
 - 2026-05-07 — The Hidden Cost of Manual Submittal Tracking on a GC's Desk · construction · `hidden-cost-manual-submittal-tracking-gcs`
 - 2026-05-07 — The Hidden Cost of a Manual Freight Sales Desk · logistics · `hidden-cost-manual-freight-sales-desk`
