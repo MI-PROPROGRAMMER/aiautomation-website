@@ -28,85 +28,52 @@ await Promise.all(routes.map(async (route) => writePrerenderedPage(route, render
 
 console.log(`Pre-rendered routes: ${routes.join(", ")}`);
 
-// Inline critical CSS into each prerendered HTML and async-load the rest.
-// This eliminates the render-blocking <link rel="stylesheet"> from the
-// critical path.
+// Inline the full CSS bundle into each prerendered HTML so every route
+// ships fully-styled markup with zero render-blocking stylesheet requests.
 //
-// Important pipeline detail: pruneSource: true makes beasties rewrite the
-// shared CSS file in place after every .process() call, removing whatever
-// it inlined. With multiple routes sharing one CSS file, the second /
-// third / Nth route would see an already-eviscerated file and be unable
-// to inline its own critical rules — leaving later-processed pages with
-// nothing inlined and broken visuals.
+// We deliberately do NOT use beasties' critical-CSS extraction. Most
+// sections on the homepage are React.lazy()-loaded behind Suspense, and
+// during SSR those suspend and render as their fallback (often `null`).
+// Their utility classes (md:col-span-5, md:order-2, hover:bg-accent, …)
+// therefore never appear in the rendered HTML, so beasties' selector
+// matcher prunes them as "unused" — silently breaking the grid layout
+// in every below-the-fold section once the client hydrates.
 //
-// Workaround: snapshot the original CSS once, reset the file before
-// processing each route so beasties always sees the full ruleset, then
-// after the loop write the original CSS back so the async-loaded
-// stylesheet on every route contains the complete ruleset (each route's
-// critical subset is already inlined in its own <style> block).
+// Setting inlineThreshold above the bundle size makes beasties dump the
+// entire stylesheet into a <style> block without per-rule pruning, while
+// still removing the render-blocking <link rel="stylesheet">.
 const cssLinkRe = /<link[^>]+href="(\/assets\/index-[^"]+\.css)"/;
 const sampleHtml = await fs.readFile(pathForRoute("/"), "utf-8");
 const cssLinkMatch = sampleHtml.match(cssLinkRe);
-const cssRelativePath = cssLinkMatch ? cssLinkMatch[1] : null;
-const cssAbsolutePath = cssRelativePath ? path.join(distDir, cssRelativePath) : null;
-const originalCss = cssAbsolutePath ? await fs.readFile(cssAbsolutePath, "utf-8") : null;
+const orphanedCssPath = cssLinkMatch
+  ? path.join(distDir, cssLinkMatch[1])
+  : null;
 
 for (const route of routes) {
-  // Reset the CSS file so this iteration of beasties sees the full
-  // ruleset rather than what previous iterations have already pruned.
-  if (cssAbsolutePath && originalCss !== null) {
-    await fs.writeFile(cssAbsolutePath, originalCss, "utf-8");
-  }
   const beasties = new Beasties({
     path: distDir,
     publicPath: "/",
     logLevel: "silent",
-    // media="print" + onload="this.media='all'" swap. No "preload"
-    // keyword so Lighthouse does not mark the stylesheet as critical.
-    preload: "media",
-    pruneSource: true,
+    // Inline any external stylesheet smaller than ~10 MB verbatim. Our
+    // single Tailwind bundle is ~75 KB, so this captures it whole.
+    inlineThreshold: 10_000_000,
     // Fonts are preloaded by the preloadLatinFonts Vite plugin.
     inlineFonts: false,
   });
   const outputPath = pathForRoute(route);
   const html = await fs.readFile(outputPath, "utf-8");
-  let processed = await beasties.process(html);
-
-  // After beasties has run, the source CSS file contains only the rules
-  // NOT inlined as critical for this route — i.e. this route's
-  // non-critical styles (hover, focus, animation keyframes, lazy-section
-  // rules). Inline those as a second <style> block and drop the async
-  // <link rel="stylesheet"> entirely. Result: every route ships its full
-  // CSS embedded in HTML, no second network request.
-  //
-  // Lighthouse's "Reduce unused CSS" audit goes to zero (no separate
-  // stylesheet to measure), and the route is fully styled even before
-  // the browser does anything beyond parsing the HTML response.
-  if (cssAbsolutePath) {
-    const nonCriticalCss = await fs.readFile(cssAbsolutePath, "utf-8");
-    if (nonCriticalCss.trim().length > 0) {
-      // Replace beasties' async <link rel="stylesheet" media="print" ...>
-      // with an inline <style> containing the non-critical rules. Keep
-      // the <noscript> fallback alone (it's only used by no-JS users).
-      processed = processed.replace(
-        /<link\s+[^>]*media="print"[^>]*onload="this\.media='all'"[^>]*>/,
-        `<style data-beasties-noncritical>${nonCriticalCss}</style>`,
-      );
-    }
-  }
-
+  const processed = await beasties.process(html);
   await fs.writeFile(outputPath, processed, "utf-8");
 }
 
-// Restore the source CSS file to its original content so it still exists
-// at /assets/index-*.css for any path that still references it (the
-// <noscript> fallback inside each prerendered HTML, plus any direct
-// requests). The file is no longer on the critical chain for any route.
-if (cssAbsolutePath && originalCss !== null) {
-  await fs.writeFile(cssAbsolutePath, originalCss, "utf-8");
+// The external CSS file is no longer referenced from any prerendered HTML
+// (beasties stripped the <link> on every route). Drop it from the build
+// output so we don't upload ~75 KB of bytes nothing will ever fetch.
+if (orphanedCssPath) {
+  await fs.unlink(orphanedCssPath).catch(() => {});
 }
 
-console.log(`Inlined critical + non-critical CSS into ${routes.length} routes`);
+console.log(`Inlined full CSS into ${routes.length} routes`);
 
 function renderRoute(route: string) {
   // We deliberately bypass AppProviders here. It mounts lazy-loaded
