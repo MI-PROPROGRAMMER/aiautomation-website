@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="DTC Returns: where the margin goes after the refund">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.18" cy="0.22" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <path d="M0 200 H1500"/><path d="M0 360 H1500"/><path d="M0 520 H1500"/>
+    <path d="M0 680 H1500"/><path d="M0 840 H1500"/>
+  </g>
+
+  <g transform="translate(180,260)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="84" font-weight="700" fill="#ffffff">DTC Returns</text>
+    <text y="170" font-size="38" font-weight="400" fill="#cfe5f1" opacity="0.9">where the margin goes after the refund</text>
+  </g>
+
+  <g transform="translate(180,560)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">PER-RETURN COST STACK · $60 ITEM, FULLY REFUNDED</text>
+
+    <g transform="translate(0,40)">
+      <text font-size="14" fill="#9fc4dc">VISIBLE</text>
+      <text x="0" y="22" font-size="13" fill="#5e8aa6">Refund issued</text>
+      <rect x="220" y="6" width="900" height="20" fill="#0a3a66"/>
+      <rect x="220" y="6" width="360" height="20" fill="#00B5E2" opacity="0.95"/>
+      <text x="1140" y="22" font-size="14" fill="#cfe5f1">$60</text>
+    </g>
+
+    <g transform="translate(0,90)">
+      <text font-size="14" fill="#9fc4dc" opacity="0.55">HIDDEN</text>
+      <text x="0" y="22" font-size="13" fill="#5e8aa6">Reverse logistics</text>
+      <rect x="220" y="6" width="900" height="20" fill="#0a3a66"/>
+      <rect x="220" y="6" width="90" height="20" fill="#00B5E2" opacity="0.55"/>
+      <text x="1140" y="22" font-size="14" fill="#cfe5f1">$15</text>
+    </g>
+
+    <g transform="translate(0,130)">
+      <text x="0" y="22" font-size="13" fill="#5e8aa6">Receiving and grading</text>
+      <rect x="220" y="6" width="900" height="20" fill="#0a3a66"/>
+      <rect x="220" y="6" width="138" height="20" fill="#00B5E2" opacity="0.55"/>
+      <text x="1140" y="22" font-size="14" fill="#cfe5f1">$23</text>
+    </g>
+
+    <g transform="translate(0,170)">
+      <text x="0" y="22" font-size="13" fill="#5e8aa6">Inventory write-down</text>
+      <rect x="220" y="6" width="900" height="20" fill="#0a3a66"/>
+      <rect x="220" y="6" width="126" height="20" fill="#00B5E2" opacity="0.55"/>
+      <text x="1140" y="22" font-size="14" fill="#cfe5f1">$21</text>
+    </g>
+
+    <g transform="translate(0,210)">
+      <text x="0" y="22" font-size="13" fill="#5e8aa6">CS, ops, and LTV impact</text>
+      <rect x="220" y="6" width="900" height="20" fill="#0a3a66"/>
+      <rect x="220" y="6" width="120" height="20" fill="#00B5E2" opacity="0.55"/>
+      <text x="1140" y="22" font-size="14" fill="#cfe5f1">$20</text>
+    </g>
+
+    <g transform="translate(0,260)">
+      <text x="0" y="22" font-size="14" font-weight="700" fill="#ffffff">FULL LANDED COST</text>
+      <rect x="220" y="6" width="900" height="22" fill="#0a3a66"/>
+      <rect x="220" y="6" width="834" height="22" fill="#00B5E2" opacity="0.95"/>
+      <text x="1140" y="23" font-size="15" font-weight="700" fill="#ffffff">$139</text>
+    </g>
+
+    <g transform="translate(0,315)">
+      <text font-size="12" letter-spacing="2" fill="#5e8aa6">FULL LANDED COST RUNS 1.7 TO 2.8 TIMES THE VISIBLE REFUND</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
