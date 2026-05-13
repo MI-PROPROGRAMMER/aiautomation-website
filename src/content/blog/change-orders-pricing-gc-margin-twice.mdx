@@ -1,0 +1,115 @@
+export const frontmatter = {
+  title: "Change Orders Are Pricing GC Margin Twice",
+  excerpt:
+    "On a mid-size GC, a typical change order takes 7 to 21 days to price. During that window, margin compresses twice: first on cost variance, then on cash float.",
+  date: "2026-05-13",
+  author: "ApexifyLabs Team",
+  tags: ["Construction", "GCs", "Change Orders", "AI Automation"],
+  heroImage: "/blog/change-orders-pricing-gc-margin-twice/hero.svg",
+  seoDescription:
+    "A typical change order takes 7 to 21 days to price on a mid-size GC. See how the pricing lag compresses margin twice, and what an AI-assisted flow shifts.",
+  readingTime: "5 min read",
+};
+
+On a mid-size general contractor, a routine change order takes 7 to 21 days from field discovery to pricing approval. During that window, margin compresses in two directions: first on cost variance, as work advances ahead of locked pricing, then on cash float, as billing waits on an executed PCO. The compounding is structural, not a sign of a slow PM.
+
+## What is a change order, and where does the pricing actually lag?
+
+A change order is the formal contract amendment used to add, remove, or modify scope after the contract is signed. On a typical commercial project under AIA, ConsensusDocs, or CCDC templates, change orders begin as a proposed change order (PCO) and convert to an executed change order (ECO) once the owner and design team approve scope and price.
+
+Industry research has consistently placed aggregate change-order value between 5% and 15% of contract value on commercial work, distributed across 15 to 40 individual change orders on a $30M project. The volume is unavoidable. Drawings have ambiguities. Field conditions reveal things the design team did not foresee. Owners change their mind on finishes after the cabinets are ordered. The question is never whether change orders happen. The question is how fast each one prices out, and what each open day actually costs.
+
+The lag almost never sits in one place. It sits across half a dozen handoffs, each reasonable on its own and unreasonable in aggregate.
+
+## Where does the time on a routine change order actually go?
+
+Walk a routine change order from field discovery to executed PCO on a mid-size GC and the breakdown looks roughly like this.
+
+| Stage | Typical duration | What happens |
+|---|---|---|
+| Field condition discovered | Day 0 | Superintendent or PE flags a scope change in a daily report, RFI response, or owner directive |
+| PM scopes the change | 1 to 3 days | PM defines the change, identifies impacted trades, drafts a scope narrative |
+| Sub pricing requests issued | Same day | Pricing requests sent to one to four affected subs |
+| Sub pricing responses returned | 3 to 10 days | Subs price internally against open vendor quotes, return T&M or lump sum |
+| GC review, markup, and assembly | 1 to 3 days | PM reconciles sub pricing, applies general conditions and markup, assembles the PCO |
+| Owner and architect review | 2 to 7 days | Architect verifies scope, owner authorizes spend, PCO becomes ECO |
+| Billing reflected on next pay app | Up to 30 days | ECO clears into the next pay application cycle |
+
+End to end, a routine change order typically lands between 7 and 21 calendar days before pricing locks, with another billing cycle before cash arrives. Half of those days are dead time, sitting in a sub's inbox or an architect's review queue.
+
+The cost of a slow change order is not the labor to write it. It is the cost of every trade that worked through priced scope before the price was locked, plus the working capital sitting unbilled.
+
+## How does a slow change order price out margin twice?
+
+Five places the money compresses, each small in isolation and material in aggregate. None of them appear cleanly on a project P&L, which is part of why the cost is hard to see and easy to live with.
+
+**1. Cost variance against unlocked scope.** When a change order takes two weeks to price, the work it represents often begins before the price is fixed. Material prices move, labor rates shift, and subs sequence around the change as if it were already approved. By the time pricing lands, the cost basis assumed during pricing no longer matches the cost basis the field actually incurred. The variance is small per change order, real across thirty.
+
+**2. Cash float on unbilled work.** A change order that prices in 14 days and clears into the next pay application cycle is, in effect, 30 to 50 days of unbilled work the GC is financing. CFMA industry surveys have consistently identified change-order delay as one of the larger working capital drags on commercial contractors. On a portfolio of three to six active projects, the unbilled balance compounds in a way that rarely shows up as a single line item.
+
+**3. Sub risk premium on delayed approvals.** Subs who have been burned on slow approvals price defensively. The unit rates returned on the third change order of a project often look different from the first, because the sub has learned the GC's approval cadence. The premium is invisible, structural, and recoverable.
+
+**4. PM and PE time on choreography.** Surveys of construction project staff routinely find that 25% to 40% of a PM's week is spent on document and communication overhead, including chasing sub pricing, reconciling responses, and assembling PCOs. Senior PMs cost $130K to $180K loaded. A meaningful share of that compensation, on those days, is doing administrative chase work that does not require a senior PM.
+
+**5. Owner trust and closeout posture.** Owners notice when a change-order log is slow or fuzzy. Architects notice when pricing arrives after the work being priced is already done. The relational cost of looking reactive is invisible during the build. It surfaces at closeout, when contested PCOs become disputed scope and the GC's negotiating posture is weaker than it should have been.
+
+Stack these across a portfolio and the recurring drag is meaningful. The drag is also the kind that compounds without anyone choosing it.
+
+## Manual change-order pricing vs. AI-assisted pricing: what shifts stage by stage?
+
+The cleanest way to see the shift is stage by stage. Below is a typical mid-size GC's change-order flow today, side by side with what the same flow looks like with an AI agent layer handling the routine choreography.
+
+| Stage | Manual flow | AI-assisted flow |
+|---|---|---|
+| Scope drafting | PM writes from scratch, often without checking past PCOs on this or sister projects | Agent drafts a first version from the field markup, surfaces similar past PCOs and their priced lines for the PM to reuse |
+| Sub pricing requests | Sent one at a time, sometimes to the wrong contact, often without a deadline | Sent in parallel to the right trade contacts with a structured response template and an automatic reminder cadence |
+| Pricing intake | Free-form email replies, manual extraction into spreadsheets | Structured intake from email and platform, normalized to line items, variances surfaced against historical pricing |
+| Markup and assembly | Spreadsheet, recalculated by hand for each PCO | Standardized markup applied against current general conditions; assembly becomes a review, not a build |
+| Owner and architect routing | Email plus PDF, easy to lose in a thread | Routed via the platform of record with read receipts and an automatic escalation cadence |
+| Status visibility | Updated weekly by hand on a log; "current" depends on who you ask | Continuously updated; one source of truth across PMs, PXs, and the owner team |
+| Billing handoff | PM exports to accounting once approved; clearance into pay app takes another cycle | ECO data flows directly into the next pay application; clearance is mechanical |
+
+Judgment calls still belong to the PM, the architect, and the owner. What changes is the choreography. The routine 60% to 70% of change orders (mid-job dimension adjustments, fixture substitutions, scope clarifications already seen on sister projects) get drafted, priced, and routed without consuming senior time.
+
+## What does the project team get back when change-order pricing is on rails?
+
+A PM running an AI-assisted change-order flow does not get a faster log. They get back the half-day a week they used to spend reconciling sub responses, drafting markup, and chasing approvals.
+
+A few things shift visibly within a project or two.
+
+- Mornings start with exceptions surfaced (the three PCOs at risk of breaching a sub's pricing window this week), not an inbox archaeology session.
+- "Did we price that scope yet?" gets a verified answer in under a minute, not after a 20-minute search across email, the platform, and a spreadsheet.
+- Subs stop pricing defensively, because the GC's approval cadence has become visible and reliable.
+- Owner status meetings open with a current change-order forecast, not a stale PDF that lagged the actual state by a week.
+- Closeout opens with a clean change-order log; disputed PCOs are rare, because nothing aged into ambiguity.
+
+For the project executive, the most material change is forecast accuracy. With timely, structured change-order data across active projects, margin risk becomes visible weeks before it would have surfaced through manual reporting.
+
+## When does AI-assisted change-order pricing pay off for a GC?
+
+It is usually a fit when:
+
+- Active project portfolio is in the **$50M to $300M annual revenue** range, with three or more concurrent commercial jobs.
+- Change-order volume is **above 20 per project**, with pricing windows measured in weeks rather than days.
+- Projects use a standard platform (Procore, Autodesk Construction Cloud, Sage, CMiC) so integration is on rails, not bespoke.
+- Senior PMs are saying, in plain language, that they cannot get to the work that requires a senior PM because of PCO load.
+
+It is usually not a fit yet when:
+
+- The GC is doing one owner-rep job at a time and PMs have visible slack.
+- Project documentation is still on file shares and email threads, with no platform of record.
+- The work is heavily design-build with a colocated team where most change orders resolve in conversation, not on paper.
+
+## Three signals change orders are eating more margin than the log shows
+
+1. **A PM finds out a PCO is overdue from a sub or a foreman, not from the log.** The log is supposed to be early-warning. If it is a historical record, the early warning has already failed.
+2. **The same kind of priced scope shows up across three projects without a reusable line basis.** That is institutional pricing intelligence leaking out the bottom every time a job closes.
+3. **Owner change-order reports are produced by hand on a Friday afternoon by a senior PM.** A senior PM doing report assembly is paid the wrong rate for that work, and the report is stale before the next progress meeting.
+
+Most GCs we talk to recognize at least two of these. The cost is real, and it compounds across a portfolio in a way that rarely surfaces on a single project's P&L.
+
+## Curious how the math lands on your projects?
+
+We run a **completely free automation audit** for GCs that want a second opinion on where their change-order, RFI, and submittal flow is silently costing them. No slide deck, no procurement gauntlet. We map your current process, look at where the pricing window actually leaks, and show you what an AI-assisted change-order layer would look like on top of your existing platform.
+
+→ <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>
