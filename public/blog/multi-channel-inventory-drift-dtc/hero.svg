@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Multi-channel inventory drift on a $10M DTC brand">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.18" r="0.6">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.30">
+    <path d="M0 200 H1500"/><path d="M0 360 H1500"/><path d="M0 520 H1500"/>
+    <path d="M0 680 H1500"/><path d="M0 840 H1500"/>
+  </g>
+
+  <g transform="translate(180,230)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="84" font-weight="700" fill="#ffffff">Inventory Drift</text>
+    <text y="170" font-size="38" font-weight="400" fill="#cfe5f1" opacity="0.9">three channels, one warehouse, three numbers</text>
+  </g>
+
+  <g transform="translate(180,540)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">SAME SKU · SAME WAREHOUSE · LIVE COUNT BY CHANNEL</text>
+
+    <g transform="translate(0,40)">
+      <text x="0" y="22" font-size="15" fill="#cfe5f1">SHOPIFY</text>
+      <rect x="220" y="6" width="900" height="22" fill="#0a3a66"/>
+      <rect x="220" y="6" width="612" height="22" fill="#00B5E2" opacity="0.95"/>
+      <text x="1140" y="23" font-size="15" fill="#ffffff">204 units</text>
+    </g>
+
+    <g transform="translate(0,90)">
+      <text x="0" y="22" font-size="15" fill="#cfe5f1">AMAZON FBA</text>
+      <rect x="220" y="6" width="900" height="22" fill="#0a3a66"/>
+      <rect x="220" y="6" width="468" height="22" fill="#00B5E2" opacity="0.75"/>
+      <text x="1140" y="23" font-size="15" fill="#ffffff">156 units</text>
+    </g>
+
+    <g transform="translate(0,140)">
+      <text x="0" y="22" font-size="15" fill="#cfe5f1">FAIRE WHOLESALE</text>
+      <rect x="220" y="6" width="900" height="22" fill="#0a3a66"/>
+      <rect x="220" y="6" width="711" height="22" fill="#00B5E2" opacity="0.55"/>
+      <text x="1140" y="23" font-size="15" fill="#ffffff">237 units</text>
+    </g>
+
+    <g transform="translate(0,200)">
+      <text x="0" y="22" font-size="15" font-weight="700" fill="#ffffff">PHYSICAL SHELF</text>
+      <rect x="220" y="6" width="900" height="22" fill="#0a3a66"/>
+      <rect x="220" y="6" width="555" height="22" fill="#ffffff" opacity="0.9"/>
+      <text x="1140" y="23" font-size="15" font-weight="700" fill="#ffffff">185 units</text>
+    </g>
+
+    <g transform="translate(0,260)">
+      <text font-size="12" letter-spacing="2" fill="#5e8aa6">VARIANCE COMPOUNDS ACROSS CHANNELS UNTIL SOMEONE OVERSELLS, OR PAID MEDIA STARVES A LIVE SKU</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
