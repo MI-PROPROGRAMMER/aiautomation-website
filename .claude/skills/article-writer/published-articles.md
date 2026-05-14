@@ -24,6 +24,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-05-14 — Spot Load Carrier Sourcing: Before and After Agentic AI · logistics · `spot-load-carrier-sourcing-agentic-ai`
 - 2026-05-13 — Multi-Channel Inventory Drift on a $10M DTC Brand · e-com ops · `multi-channel-inventory-drift-dtc`
 - 2026-05-13 — Change Orders Are Pricing GC Margin Twice · construction · `change-orders-pricing-gc-margin-twice`
 - 2026-05-10 — DTC Returns: Where the Margin Goes After the Refund · e-com ops · `dtc-returns-margin-after-refund`

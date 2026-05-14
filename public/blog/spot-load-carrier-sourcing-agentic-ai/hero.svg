@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Spot load carrier sourcing before and after agentic AI">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.18" cy="0.22" r="0.6">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.30">
+    <path d="M0 200 H1500"/><path d="M0 360 H1500"/><path d="M0 520 H1500"/>
+    <path d="M0 680 H1500"/><path d="M0 840 H1500"/>
+  </g>
+
+  <g transform="translate(180,220)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="78" font-weight="700" fill="#ffffff">Spot Load Carrier Sourcing</text>
+    <text y="166" font-size="36" font-weight="400" fill="#cfe5f1" opacity="0.9">before and after agentic AI in the loop</text>
+  </g>
+
+  <g transform="translate(180,500)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">ONE LOAD, ONE DESK, TWO PIPELINES</text>
+
+    <g transform="translate(0,40)">
+      <text font-size="16" letter-spacing="2" fill="#9fc4dc">BEFORE</text>
+      <text x="0" y="50" font-size="22" fill="#ffffff">Broker</text>
+      <line x1="100" y1="42" x2="1100" y2="42" stroke="#0a3a66" stroke-width="2"/>
+      <g>
+        <circle cx="200" cy="42" r="9" fill="#00B5E2" opacity="0.7"/>
+        <circle cx="290" cy="42" r="9" fill="#00B5E2" opacity="0.6"/>
+        <circle cx="380" cy="42" r="9" fill="#00B5E2" opacity="0.5"/>
+        <circle cx="470" cy="42" r="9" fill="#00B5E2" opacity="0.45"/>
+        <circle cx="560" cy="42" r="9" fill="#00B5E2" opacity="0.4"/>
+        <circle cx="650" cy="42" r="9" fill="#00B5E2" opacity="0.35"/>
+        <circle cx="740" cy="42" r="9" fill="#00B5E2" opacity="0.3"/>
+        <circle cx="830" cy="42" r="9" fill="#00B5E2" opacity="0.28"/>
+        <circle cx="920" cy="42" r="9" fill="#00B5E2" opacity="0.25"/>
+        <circle cx="1010" cy="42" r="9" fill="#00B5E2" opacity="0.22"/>
+      </g>
+      <text x="1130" y="48" font-size="18" fill="#cfe5f1">6 to 20 carrier touches</text>
+      <text x="0" y="80" font-size="13" letter-spacing="2" fill="#5e8aa6">SERIAL CALLS, EMAILS, LOAD-BOARD PINGS, COMPLIANCE CHECKS AFTER QUOTE</text>
+    </g>
+
+    <g transform="translate(0,200)">
+      <text font-size="16" letter-spacing="2" fill="#00B5E2">AFTER</text>
+      <text x="0" y="50" font-size="22" fill="#ffffff">Broker</text>
+      <line x1="100" y1="42" x2="500" y2="42" stroke="#0a3a66" stroke-width="2"/>
+      <rect x="160" y="22" width="160" height="40" fill="#0a3a66" stroke="#00B5E2" stroke-width="1.5"/>
+      <text x="240" y="48" font-size="16" fill="#ffffff" text-anchor="middle">Agent</text>
+      <line x1="320" y1="42" x2="1100" y2="42" stroke="#0a3a66" stroke-width="2"/>
+      <g>
+        <circle cx="500" cy="42" r="11" fill="#00B5E2" opacity="0.95"/>
+        <circle cx="590" cy="42" r="11" fill="#00B5E2" opacity="0.85"/>
+        <circle cx="680" cy="42" r="11" fill="#00B5E2" opacity="0.7"/>
+      </g>
+      <text x="1130" y="48" font-size="18" fill="#cfe5f1">3 shortlisted, compliant, ranked</text>
+      <text x="0" y="80" font-size="13" letter-spacing="2" fill="#5e8aa6">PARALLEL OUTREACH, COMPLIANCE UP FRONT, BROKER REVIEWS A DEDUPED QUOTE SHEET</text>
+    </g>
+
+    <g transform="translate(0,360)">
+      <text font-size="12" letter-spacing="2" fill="#5e8aa6">FROM COORDINATION WORK TO EXCEPTION WORK · 6 TO 8 LOADS A DAY BECOMES 12 TO 15</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
