@@ -24,6 +24,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-05-15 — Subcontractor Bid Leveling: Manual vs AI-Assisted Review · construction · `subcontractor-bid-leveling-ai-assisted`
 - 2026-05-14 — Spot Load Carrier Sourcing: Before and After Agentic AI · logistics · `spot-load-carrier-sourcing-agentic-ai`
 - 2026-05-13 — Multi-Channel Inventory Drift on a $10M DTC Brand · e-com ops · `multi-channel-inventory-drift-dtc`
 - 2026-05-13 — Change Orders Are Pricing GC Margin Twice · construction · `change-orders-pricing-gc-margin-twice`
