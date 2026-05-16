@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="The Wholesale Order Entry Tax on DTC Brands visualization">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.28" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.4">
+    <path d="M0 200 H1500"/><path d="M0 360 H1500"/><path d="M0 520 H1500"/>
+    <path d="M0 680 H1500"/><path d="M0 840 H1500"/>
+  </g>
+
+  <g transform="translate(180,230)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="84" font-weight="700" fill="#ffffff">The Wholesale</text>
+    <text y="190" font-size="84" font-weight="700" fill="#ffffff">Order Entry Tax</text>
+    <text y="252" font-size="34" font-weight="400" fill="#cfe5f1" opacity="0.9">on DTC brands going omnichannel</text>
+  </g>
+
+  <g transform="translate(180,620)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">PO FORMATS LANDING ON A WHOLESALE DESK</text>
+
+    <g transform="translate(0,40)">
+      <rect x="0" y="0" width="120" height="44" rx="4" fill="#0a3a66" stroke="#5e8aa6" stroke-width="1"/>
+      <text x="60" y="29" font-size="16" fill="#cfe5f1" text-anchor="middle">PDF PO</text>
+
+      <rect x="140" y="0" width="120" height="44" rx="4" fill="#0a3a66" stroke="#5e8aa6" stroke-width="1"/>
+      <text x="200" y="29" font-size="16" fill="#cfe5f1" text-anchor="middle">EDI 850</text>
+
+      <rect x="280" y="0" width="120" height="44" rx="4" fill="#0a3a66" stroke="#5e8aa6" stroke-width="1"/>
+      <text x="340" y="29" font-size="16" fill="#cfe5f1" text-anchor="middle">FAIRE</text>
+
+      <rect x="420" y="0" width="170" height="44" rx="4" fill="#0a3a66" stroke="#5e8aa6" stroke-width="1"/>
+      <text x="505" y="29" font-size="16" fill="#cfe5f1" text-anchor="middle">VENDOR CENTRAL</text>
+
+      <rect x="610" y="0" width="120" height="44" rx="4" fill="#0a3a66" stroke="#5e8aa6" stroke-width="1"/>
+      <text x="670" y="29" font-size="16" fill="#cfe5f1" text-anchor="middle">NUORDER</text>
+
+      <rect x="750" y="0" width="140" height="44" rx="4" fill="#0a3a66" stroke="#5e8aa6" stroke-width="1"/>
+      <text x="820" y="29" font-size="16" fill="#cfe5f1" text-anchor="middle">EMAIL / CSV</text>
+    </g>
+
+    <g transform="translate(910,62)" stroke="#00B5E2" stroke-width="2" fill="none" opacity="0.85">
+      <path d="M0 0 L120 0"/>
+      <path d="M110 -8 L120 0 L110 8"/>
+    </g>
+
+    <g transform="translate(1050,40)">
+      <rect x="0" y="0" width="170" height="44" rx="4" fill="#00B5E2" opacity="0.95"/>
+      <text x="85" y="29" font-size="16" font-weight="700" fill="#001a36" text-anchor="middle">CLEAN OMS ROW</text>
+    </g>
+
+    <g transform="translate(0,140)">
+      <text font-size="14" letter-spacing="3" fill="#7fb6d6">MEDIAN TIME PER PO, MANUAL ENTRY</text>
+      <text y="48" font-size="56" font-weight="700" fill="#ffffff">8 to 12 minutes</text>
+      <text y="86" font-size="20" fill="#cfe5f1" opacity="0.8">scaling linearly with wholesale revenue</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
