@@ -24,6 +24,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-05-17 — Why Brokerages Leave Detention Dollars on the Dock · logistics · `why-brokerages-leave-detention-on-the-dock`
 - 2026-05-16 — The Wholesale Order Entry Tax on DTC Brands · e-com ops · `wholesale-order-entry-tax-dtc-brands`
 - 2026-05-15 — Subcontractor Bid Leveling: Manual vs AI-Assisted Review · construction · `subcontractor-bid-leveling-ai-assisted`
 - 2026-05-14 — Spot Load Carrier Sourcing: Before and After Agentic AI · logistics · `spot-load-carrier-sourcing-agentic-ai`
