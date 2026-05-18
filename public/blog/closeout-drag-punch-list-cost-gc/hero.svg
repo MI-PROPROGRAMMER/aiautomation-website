@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" width="1500" height="1000" role="img" aria-label="Closeout Drag: What Stalled Punch Lists Cost a GC">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#001a36"/>
+      <stop offset="100%" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00B5E2"/>
+      <stop offset="50%" stop-color="#0a3a66"/>
+      <stop offset="100%" stop-color="#00B5E2"/>
+    </linearGradient>
+    <linearGradient id="dragFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00B5E2" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#00B5E2" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="shortClose" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00B5E2" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#00B5E2" stop-opacity="0.75"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <!-- Faint construction grid texture -->
+  <g opacity="0.06" stroke="#cfe5f1" stroke-width="1">
+    <line x1="120" y1="155" x2="1380" y2="155"/>
+    <line x1="120" y1="870" x2="1380" y2="870"/>
+  </g>
+
+  <!-- Journal label -->
+  <text x="120" y="205" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="6" fill="#00B5E2" font-weight="bold">THE JOURNAL</text>
+
+  <!-- Title -->
+  <text x="120" y="320" font-family="Georgia, 'Times New Roman', serif" font-size="86" fill="#ffffff" font-weight="bold">Closeout Drag</text>
+
+  <!-- Subtitle -->
+  <text x="120" y="395" font-family="Georgia, 'Times New Roman', serif" font-size="36" fill="#cfe5f1" font-style="italic" opacity="0.92">What stalled punch lists cost a GC</text>
+
+  <!-- Chart axis title -->
+  <text x="120" y="495" font-family="Georgia, 'Times New Roman', serif" font-size="18" letter-spacing="4" fill="#7fb6d6">PROJECT TIMELINE TO FINAL ACCEPTANCE</text>
+
+  <!-- Substantial completion marker line -->
+  <line x1="720" y1="525" x2="720" y2="800" stroke="#cfe5f1" stroke-width="1" stroke-dasharray="4 6" opacity="0.55"/>
+  <text x="720" y="515" font-family="Georgia, 'Times New Roman', serif" font-size="18" fill="#cfe5f1" text-anchor="middle" opacity="0.9">Substantial completion</text>
+
+  <!-- Row 1: Manual closeout -->
+  <text x="120" y="560" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#cfe5f1" letter-spacing="2">Manual closeout</text>
+  <!-- Construction segment -->
+  <rect x="120" y="580" width="600" height="60" fill="#0a3a66" stroke="#5e8aa6" stroke-width="1"/>
+  <text x="420" y="617" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#cfe5f1" text-anchor="middle">Construction</text>
+  <!-- Closeout drag segment (long) -->
+  <rect x="720" y="580" width="540" height="60" fill="url(#dragFade)"/>
+  <text x="990" y="617" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#001a36" text-anchor="middle" font-weight="bold">Closeout drag, 60–90 days</text>
+
+  <!-- Row 2: AI-augmented closeout -->
+  <text x="120" y="690" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#cfe5f1" letter-spacing="2">AI-augmented closeout</text>
+  <!-- Construction segment -->
+  <rect x="120" y="710" width="600" height="60" fill="#0a3a66" stroke="#5e8aa6" stroke-width="1"/>
+  <text x="420" y="747" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#cfe5f1" text-anchor="middle">Construction</text>
+  <!-- Short closeout segment -->
+  <rect x="720" y="710" width="220" height="60" fill="url(#shortClose)"/>
+  <text x="830" y="747" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#001a36" text-anchor="middle" font-weight="bold">25–45 days</text>
+
+  <!-- Time savings callout arrow -->
+  <line x1="945" y1="740" x2="1255" y2="740" stroke="#00B5E2" stroke-width="2" stroke-dasharray="6 6" opacity="0.65"/>
+  <polygon points="1255,740 1245,734 1245,746" fill="#00B5E2" opacity="0.85"/>
+  <text x="1100" y="725" font-family="Georgia, 'Times New Roman', serif" font-size="18" fill="#cfe5f1" text-anchor="middle" opacity="0.85" font-style="italic">Time recovered</text>
+
+  <!-- Bottom axis line -->
+  <line x1="120" y1="800" x2="1260" y2="800" stroke="#5e8aa6" stroke-width="1" opacity="0.6"/>
+  <text x="120" y="830" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#7fb6d6">Day 0</text>
+  <text x="1260" y="830" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#7fb6d6" text-anchor="end">Final acceptance, retainage released</text>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
