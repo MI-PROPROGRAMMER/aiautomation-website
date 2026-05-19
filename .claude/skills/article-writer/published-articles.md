@@ -24,6 +24,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-05-19 — How AI Clears the WISMO Ticket Backlog at a $10M DTC Brand · e-com ops · `ai-wismo-tickets-dtc-brand`
 - 2026-05-18 — Closeout Drag: What Stalled Punch Lists Cost a GC · construction · `closeout-drag-punch-list-cost-gc`
 - 2026-05-17 — Why Brokerages Leave Detention Dollars on the Dock · logistics · `why-brokerages-leave-detention-on-the-dock`
 - 2026-05-16 — The Wholesale Order Entry Tax on DTC Brands · e-com ops · `wholesale-order-entry-tax-dtc-brands`

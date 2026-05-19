@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Clearing the WISMO ticket backlog on a DTC support desk">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.32" r="0.6">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="cardFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a3a66"/>
+      <stop offset="1" stop-color="#062a4a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <path d="M0 220 H1500"/>
+    <path d="M0 400 H1500"/>
+    <path d="M0 580 H1500"/>
+    <path d="M0 760 H1500"/>
+  </g>
+
+  <g transform="translate(150,210)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="78" font-weight="700" fill="#ffffff">Clearing the WISMO</text>
+    <text y="186" font-size="78" font-weight="700" fill="#ffffff">Ticket Backlog</text>
+    <text y="252" font-size="34" font-weight="400" fill="#cfe5f1" opacity="0.9">what the support desk looks like after AI</text>
+  </g>
+
+  <g transform="translate(150,620)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">QUEUE OVER TIME, BEFORE AND AFTER AI</text>
+
+    <g transform="translate(0,40)">
+      <rect x="0" y="0" width="120" height="180" rx="6" fill="url(#cardFill)" stroke="#5e8aa6" stroke-width="1"/>
+      <rect x="0" y="0" width="120" height="180" rx="6" fill="#5e8aa6" opacity="0.55"/>
+      <text x="60" y="32" font-size="13" letter-spacing="2" fill="#cfe5f1" text-anchor="middle">BACKLOG</text>
+      <text x="60" y="78" font-size="42" font-weight="700" fill="#ffffff" text-anchor="middle">3.2k</text>
+      <text x="60" y="108" font-size="13" fill="#9fc4dc" text-anchor="middle">open tickets</text>
+      <text x="60" y="148" font-size="11" letter-spacing="2" fill="#7fb6d6" text-anchor="middle">DAY 0</text>
+
+      <rect x="160" y="40" width="100" height="140" rx="6" fill="url(#cardFill)" stroke="#5e8aa6" stroke-width="1"/>
+      <text x="210" y="68" font-size="11" letter-spacing="2" fill="#9fc4dc" text-anchor="middle">PEAK</text>
+      <text x="210" y="112" font-size="32" font-weight="700" fill="#ffffff" text-anchor="middle">3.9k</text>
+      <text x="210" y="148" font-size="11" letter-spacing="2" fill="#7fb6d6" text-anchor="middle">DAY 3</text>
+
+      <rect x="290" y="70" width="100" height="110" rx="6" fill="url(#cardFill)" stroke="#5e8aa6" stroke-width="1"/>
+      <text x="340" y="100" font-size="11" letter-spacing="2" fill="#9fc4dc" text-anchor="middle">TRIAGE</text>
+      <text x="340" y="142" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle">2.6k</text>
+      <text x="340" y="170" font-size="11" letter-spacing="2" fill="#7fb6d6" text-anchor="middle">DAY 7</text>
+
+      <rect x="420" y="100" width="100" height="80" rx="6" fill="url(#cardFill)" stroke="#7fb6d6" stroke-width="1"/>
+      <text x="470" y="126" font-size="11" letter-spacing="2" fill="#9fc4dc" text-anchor="middle">DEFLECT</text>
+      <text x="470" y="158" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">1.3k</text>
+
+      <rect x="550" y="124" width="100" height="56" rx="6" fill="url(#cardFill)" stroke="#00B5E2" stroke-width="1.5"/>
+      <text x="600" y="145" font-size="11" letter-spacing="2" fill="#9fc4dc" text-anchor="middle">AI ON</text>
+      <text x="600" y="170" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">540</text>
+
+      <rect x="680" y="140" width="100" height="40" rx="6" fill="url(#cardFill)" stroke="#00B5E2" stroke-width="1.5"/>
+      <text x="730" y="166" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">210</text>
+
+      <rect x="810" y="152" width="100" height="28" rx="6" fill="url(#cardFill)" stroke="#00B5E2" stroke-width="1.5"/>
+      <text x="860" y="172" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">90</text>
+
+      <rect x="940" y="160" width="100" height="20" rx="6" fill="url(#cardFill)" stroke="#00B5E2" stroke-width="1.5"/>
+      <text x="990" y="175" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">40</text>
+
+      <g transform="translate(1080,40)">
+        <rect x="0" y="0" width="160" height="140" rx="6" fill="#04314f" stroke="#00B5E2" stroke-width="2"/>
+        <rect x="0" y="0" width="160" height="140" rx="6" fill="#00B5E2" opacity="0.08"/>
+        <text x="80" y="32" font-size="13" letter-spacing="2" fill="#00B5E2" text-anchor="middle">RESOLVED</text>
+        <text x="80" y="84" font-size="44" font-weight="700" fill="#ffffff" text-anchor="middle">98%</text>
+        <text x="80" y="116" font-size="13" fill="#cfe5f1" text-anchor="middle">no human touch</text>
+      </g>
+
+      <path d="M130 100 L1070 100" stroke="#00B5E2" stroke-width="1" stroke-dasharray="4 6" opacity="0.5"/>
+      <polygon points="1064,94 1078,100 1064,106" fill="#00B5E2" opacity="0.7"/>
+    </g>
+
+    <g transform="translate(0,260)">
+      <text font-size="12" letter-spacing="2" fill="#5e8aa6">WISMO IS 30 TO 50% OF DTC SUPPORT VOLUME. THE BACKLOG DOES NOT NEED MORE AGENTS, IT NEEDS A DIFFERENT SHAPE.</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
