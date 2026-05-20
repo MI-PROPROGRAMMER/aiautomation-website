@@ -1,0 +1,57 @@
+<svg viewBox="0 0 1500 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accentBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.25" stop-color="#00B5E2"/>
+      <stop offset="0.75" stop-color="#00B5E2"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="trackLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7fb6d6"/>
+      <stop offset="1" stop-color="#00B5E2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bgGrad)"/>
+
+  <text x="750" y="190" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="6" font-weight="500">THE JOURNAL</text>
+
+  <text x="750" y="322" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="96" font-weight="700">Check Calls</text>
+
+  <text x="750" y="392" text-anchor="middle" fill="#cfe5f1" fill-opacity="0.9" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-style="italic">A freight desk before and after AI</text>
+
+  <text x="415" y="498" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="5">BEFORE</text>
+  <text x="1085" y="498" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="5">AFTER</text>
+
+  <line x1="750" y1="470" x2="750" y2="830" stroke="#00B5E2" stroke-opacity="0.3" stroke-dasharray="6 8"/>
+
+  <g>
+    <rect x="200" y="558" width="150" height="20" rx="10" fill="#5e8aa6"/>
+    <circle cx="200" cy="568" r="14" fill="#5e8aa6"/>
+    <rect x="338" y="618" width="212" height="20" rx="10" fill="#5e8aa6" fill-opacity="0.85"/>
+    <circle cx="338" cy="628" r="14" fill="#5e8aa6" fill-opacity="0.85"/>
+    <rect x="242" y="678" width="120" height="20" rx="10" fill="#5e8aa6" fill-opacity="0.7"/>
+    <circle cx="242" cy="688" r="14" fill="#5e8aa6" fill-opacity="0.7"/>
+    <rect x="360" y="738" width="184" height="20" rx="10" fill="#5e8aa6" fill-opacity="0.55"/>
+    <circle cx="360" cy="748" r="14" fill="#5e8aa6" fill-opacity="0.55"/>
+    <text x="415" y="812" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-style="italic">a person dials for every update</text>
+  </g>
+
+  <g>
+    <polyline points="822,720 922,652 1022,690 1122,602 1222,640 1322,560" fill="none" stroke="url(#trackLine)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="822" cy="720" r="12" fill="#7fb6d6"/>
+    <circle cx="922" cy="652" r="12" fill="#7fb6d6"/>
+    <circle cx="1022" cy="690" r="12" fill="#7fb6d6"/>
+    <circle cx="1122" cy="602" r="12" fill="#7fb6d6"/>
+    <circle cx="1222" cy="640" r="12" fill="#7fb6d6"/>
+    <circle cx="1322" cy="560" r="30" fill="none" stroke="#00B5E2" stroke-opacity="0.4" stroke-width="3"/>
+    <circle cx="1322" cy="560" r="18" fill="#00B5E2"/>
+    <text x="1085" y="812" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-style="italic">the load reports itself</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentBar)"/>
+</svg>

@@ -13,6 +13,7 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Phrase "what the same desk looks like once AI handles the repetitive/repeatable 80%"**.
 - **Self-coined "[noun] gap"** branding — already used once ("the follow-up gap"), do not coin another.
 - **Phrase "never says no — just goes silent"** in any form.
+- **Title shape "[Topic], Before and After [AI]"** — used twice (spot-load carrier sourcing, freight check calls). Pick a different shape next.
 
 ## Title-shape diversity rule
 
@@ -24,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-05-20 — Freight Check Calls, Before and After AI · logistics · `freight-check-calls-before-after-ai`
 - 2026-05-19 — How AI Clears the WISMO Ticket Backlog at a $10M DTC Brand · e-com ops · `ai-wismo-tickets-dtc-brand`
 - 2026-05-18 — Closeout Drag: What Stalled Punch Lists Cost a GC · construction · `closeout-drag-punch-list-cost-gc`
 - 2026-05-17 — Why Brokerages Leave Detention Dollars on the Dock · logistics · `why-brokerages-leave-detention-on-the-dock`
