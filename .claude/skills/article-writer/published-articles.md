@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-05-24 — POD Lag and the DSO Math Every Freight Broker Ignores · logistics · `pod-lag-dso-math-freight-brokers`
 - 2026-05-23 — Chargeback Disputes vs Returns: The DTC Margin Story · e-com ops · `chargeback-disputes-vs-returns-dtc-margin-story`
 - 2026-05-21 — When Subcontractor Insurance Lapses on an Active Job · construction · `subcontractor-insurance-lapse-active-job`
 - 2026-05-20 — Freight Check Calls, Before and After AI · logistics · `freight-check-calls-before-after-ai`
