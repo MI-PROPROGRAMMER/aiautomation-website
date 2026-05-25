@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-05-25 — The Cash Flow Cost of Slow Lien Waiver Collection on GCs · construction · `cash-flow-cost-slow-lien-waiver-collection-gcs`
 - 2026-05-24 — POD Lag and the DSO Math Every Freight Broker Ignores · logistics · `pod-lag-dso-math-freight-brokers`
 - 2026-05-23 — Chargeback Disputes vs Returns: The DTC Margin Story · e-com ops · `chargeback-disputes-vs-returns-dtc-margin-story`
 - 2026-05-21 — When Subcontractor Insurance Lapses on an Active Job · construction · `subcontractor-insurance-lapse-active-job`

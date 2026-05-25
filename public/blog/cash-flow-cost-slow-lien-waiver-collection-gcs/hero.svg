@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="The cash flow cost of slow lien waiver collection on GCs">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.18" cy="0.85" r="0.65">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <path d="M0 200 H1500"/>
+    <path d="M0 360 H1500"/>
+    <path d="M0 520 H1500"/>
+    <path d="M0 680 H1500"/>
+    <path d="M0 840 H1500"/>
+  </g>
+
+  <g transform="translate(180,235)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="90" font-size="78" font-weight="700" fill="#ffffff">The Cash Flow Cost</text>
+    <text y="170" font-size="50" font-weight="400" fill="#cfe5f1" opacity="0.95">of slow lien waiver collection on GCs</text>
+  </g>
+
+  <g transform="translate(180,560)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">MONTHLY DRAW CYCLE  ·  WORK COMPLETED TO FUNDED</text>
+
+    <g transform="translate(0,50)">
+      <text font-size="16" fill="#9fc4dc">DAY 1</text>
+      <text x="280" font-size="16" fill="#9fc4dc">PAY APP READY</text>
+      <text x="640" font-size="16" fill="#9fc4dc">WAIVERS IN</text>
+      <text x="960" font-size="16" fill="#9fc4dc">DRAW SUBMITTED</text>
+      <text x="1280" font-size="16" fill="#9fc4dc">FUNDED</text>
+    </g>
+
+    <g transform="translate(0,100)">
+      <line x1="0" y1="0" x2="1380" y2="0" stroke="#0a3a66" stroke-width="2"/>
+      <circle cx="0" cy="0" r="9" fill="#7fb6d6"/>
+      <circle cx="290" cy="0" r="9" fill="#7fb6d6"/>
+      <circle cx="650" cy="0" r="9" fill="#7fb6d6"/>
+      <circle cx="970" cy="0" r="9" fill="#7fb6d6"/>
+      <circle cx="1290" cy="0" r="11" fill="#5e8aa6"/>
+
+      <rect x="290" y="-22" width="360" height="44" fill="#00B5E2" opacity="0.18"/>
+      <rect x="290" y="-22" width="360" height="44" fill="none" stroke="#00B5E2" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="470" y="-30" text-anchor="middle" font-size="13" fill="#00B5E2" letter-spacing="2">WAIVER CHASE  7 TO 14 DAYS</text>
+    </g>
+
+    <g transform="translate(0,180)">
+      <text font-size="14" fill="#9fc4dc">DAYS</text>
+      <text x="0" y="22" font-size="13" fill="#5e8aa6">0</text>
+      <text x="285" y="22" font-size="13" fill="#5e8aa6">30</text>
+      <text x="645" y="22" font-size="13" fill="#5e8aa6">37 to 44</text>
+      <text x="965" y="22" font-size="13" fill="#5e8aa6">45</text>
+      <text x="1280" y="22" font-size="13" fill="#5e8aa6">55+</text>
+    </g>
+
+    <g transform="translate(0,260)">
+      <text font-size="13" letter-spacing="2" fill="#cfe5f1">10 DAYS OF WAIVER DELAY  ≈  $1.1M FLOATED  ≈  ~$87K / YEAR IN LINE-OF-CREDIT INTEREST</text>
+      <text y="22" font-size="12" letter-spacing="1" fill="#5e8aa6">illustrative, $40M GC, 8% APR on the line</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
