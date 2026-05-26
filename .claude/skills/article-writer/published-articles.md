@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-05-26 — Why DTC False Declines Cost More Than the Fraud They Stop · e-com ops · `dtc-false-declines-cost-more-than-fraud`
 - 2026-05-25 — The Cash Flow Cost of Slow Lien Waiver Collection on GCs · construction · `cash-flow-cost-slow-lien-waiver-collection-gcs`
 - 2026-05-24 — POD Lag and the DSO Math Every Freight Broker Ignores · logistics · `pod-lag-dso-math-freight-brokers`
 - 2026-05-23 — Chargeback Disputes vs Returns: The DTC Margin Story · e-com ops · `chargeback-disputes-vs-returns-dtc-margin-story`
