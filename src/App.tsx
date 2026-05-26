@@ -21,7 +21,19 @@ const ChatbotWidget = lazy(() =>
   import("@/components/chatbot/ChatbotWidget").then((m) => ({ default: m.ChatbotWidget }))
 );
 
-const Index = lazy(() => import("./pages/Index"));
+// Index is eager-imported. main.tsx uses createRoot().render() (not
+// hydrateRoot), so React discards the prerendered DOM and re-renders from
+// scratch on boot. If Index were lazy, the route-level <Suspense> below
+// would paint <PageLoader /> for the duration of the chunk download — a
+// visible "prerendered DOM → Loading… → real DOM" flash on first paint.
+//
+// Trade-off: pages aren't in manualChunks (vite.config.ts), so Index now
+// ships in the entry chunk and other-route visitors download it too.
+// Accepted because the homepage is the dominant landing. Structural fix
+// (kills the same flash on every prerendered route, drops the cost) is
+// hydrateRoot at src/main.tsx — left as follow-up because react-helmet
+// and framer-motion need a careful hydration-mismatch pass first.
+import Index from "./pages/Index";
 const Services = lazy(() => import("./pages/Services"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));

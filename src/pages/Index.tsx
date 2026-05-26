@@ -4,7 +4,6 @@ import { LogoWall } from "@/components/LogoWall";
 import { Footer } from "@/components/Footer";
 import { Helmet } from "react-helmet";
 import { Suspense, lazy, useEffect, useRef, useState } from "react";
-import { PageLoader } from "@/components/PageLoader";
 import { PremiumBackground } from "@/components/PremiumBackground";
 import { JsonLd } from "@/components/JsonLd";
 import { buildBreadcrumbs, buildFAQPage, ORG_ID, SITE_URL } from "@/lib/seo";
@@ -190,13 +189,13 @@ const Index = () => {
           </div>
 
           <div className="cv-auto">
-            <Suspense fallback={<PageLoader />}>
+            <Suspense fallback={null}>
               <ProblemSection />
             </Suspense>
           </div>
 
           <div className="cv-auto">
-            <Suspense fallback={<PageLoader />}>
+            <Suspense fallback={null}>
               <ServicesSection />
             </Suspense>
           </div>
