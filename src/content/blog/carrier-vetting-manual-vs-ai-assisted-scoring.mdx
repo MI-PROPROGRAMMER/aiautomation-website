@@ -1,0 +1,99 @@
+export const frontmatter = {
+  title: "Carrier Vetting: Manual Reviews vs AI-Assisted Scoring",
+  excerpt:
+    "Carrier vetting still runs on manual lookups at most brokerages. AI-assisted scoring shortens onboarding and catches the signals a tired reviewer misses.",
+  date: "2026-05-27",
+  author: "ApexifyLabs Team",
+  tags: ["Logistics", "Carrier Vetting", "Freight Brokers", "AI Automation"],
+  heroImage: "/blog/carrier-vetting-manual-vs-ai-assisted-scoring/hero.svg",
+  seoDescription:
+    "Carrier vetting at freight brokerages is slow, fragmented, and risky when run manually. See where AI-assisted scoring changes onboarding speed and fraud risk.",
+  readingTime: "4 min read",
+};
+
+Carrier vetting is the broker's first defense against fraud, claims, and chargebacks, but it still runs on manual lookups at most brokerages. A coordinator opens five tabs, pastes a DOT number into each, copies values into a spreadsheet, and decides in minutes. AI-assisted scoring shortens that loop and catches signals a tired set of eyes will miss.
+
+This article looks at what carrier vetting is, where the manual workflow breaks under volume, what changes when scoring is automated, and the three places the cost of staying manual usually shows up on a brokerage's P&L.
+
+## What is carrier vetting in freight brokerage?
+
+Carrier vetting is the process a freight broker runs every time a new (or reactivated) motor carrier is considered for a load. It pulls together FMCSA authority status, insurance certificates, safety ratings, performance history, double-brokering flags, and identity checks. The Transportation Intermediaries Association (TIA) has reported that cargo theft and double-brokering losses in U.S. freight have climbed past $700M in recent years, and FreightWaves coverage of the same trend traces most of the documented losses back to onboarding decisions that should have been caught at the vetting step.
+
+The stall usually has nothing to do with carrier quality. It is that the vetting workflow itself is slow, fragmented, and biased toward the carriers your team has time to process. Loads sit. Capacity-light lanes lose options. Coordinators rush. Risk gets through.
+
+## Where does manual carrier vetting break down?
+
+### The data is scattered across systems
+
+A thorough manual review touches FMCSA SAFER, the broker's TMS, an insurance verification service, a fraud-watch board, sometimes a phone call to verify the dispatcher's identity, and occasionally a credit reference. Each source has its own login, its own format, its own latency. The coordinator's job is to merge that picture in their head and decide before a load goes stale.
+
+That works fine for ten carriers a week. It breaks at fifty.
+
+### Risk signals get missed under deadline pressure
+
+Many of the highest-leverage signals in carrier fraud are not single red flags. They are combinations. A new MC authority paired with a recently changed dispatch phone number. A clean safety record but a Texas address that is actually a UPS Store. An insurance certificate dated yesterday on a carrier that has been in business for two months. Manual reviewers catch these on a calm Tuesday. On a Friday afternoon with three loads waiting, they do not.
+
+Industry conversations consistently describe the same pattern. Most fraud losses are not from carriers that looked obviously bad, but from carriers that looked acceptable to a rushed reviewer.
+
+### Onboarding queues create capacity bottlenecks
+
+A brokerage with a 30 to 90 minute manual vetting standard can only process so many carriers per day. When sales finds a great lane match with a carrier you have never used, the vetting backlog decides whether you can cover the load. That bottleneck becomes invisible. You do not measure the loads you lost to capacity you could not onboard fast enough.
+
+## How does AI-assisted carrier scoring change the workflow?
+
+AI-assisted vetting does not replace the coordinator. It does the lookups, normalizes the data, scores the risk, and surfaces the exceptions, so the coordinator spends their attention on the small share of cases that actually need a human call.
+
+| Workflow step | Manual review | AI-assisted scoring |
+| --- | --- | --- |
+| Pull FMCSA, insurance, safety data | 5 to 15 min per carrier, multiple tabs | Aggregated automatically, seconds |
+| Cross-check identity (address, phone, dispatcher) | Often skipped under load | Always checked, flags inconsistencies |
+| Detect double-brokering patterns | Relies on reviewer memory | Pattern-matched against known signals |
+| Score risk | Subjective, varies by reviewer | Consistent rubric, every carrier scored the same way |
+| Time to decision | 30 to 90 min on a thorough review | Most carriers cleared in under 2 min, exceptions surfaced |
+| Audit trail | Spreadsheet plus memory | Every check logged with timestamp |
+
+The shift is structural, not tooling-driven. AI-assisted vetting changes what the coordinator is paid to think about. Instead of being the data aggregator, they become the judgment layer on the edge cases.
+
+## What does the cost of staying manual actually look like?
+
+Three places where the cost shows up, even if the line item never makes it to the P&L.
+
+1. **Fraud losses and claims.** A single double-brokering incident on a mid-value load can erase weeks of margin on the rest of the lane. TIA bulletins and FreightWaves reporting both track the same rise in incidents; brokerages running purely manual vetting are disproportionately represented in the cases that surface.
+2. **Onboarding bottleneck loads.** When the lane match exists but the carrier has not cleared vetting, the load either goes stale or covers at a worse rate with a stretched carrier. Most brokers cannot quantify this, but operators we speak to typically describe it as a few percent of weekly load count.
+3. **Coordinator attention tax.** A coordinator spending two hours a day on tab-switching vetting is two hours not on capacity development, customer service, or exception resolution. The opportunity cost compounds.
+
+We hear the same observation from operators. It is not that any one of these costs is large. It is that they sit in three different parts of the P&L, so no single owner sees the total.
+
+## When does AI-assisted vetting earn its keep?
+
+The break-even is sharper than most operators expect. Brokerages where AI-assisted vetting pays off quickly tend to share three traits.
+
+- Vetting volume above 30 to 50 new or reactivated carriers per week.
+- A claims or fraud loss history that someone on the leadership team can describe in dollar terms.
+- A capacity team that already complains about onboarding lag on tight lanes.
+
+If any one of those is true, the math usually favors automating the lookup-and-score layer. If all three are true, the question is not whether to move off manual vetting. It is how fast the team can run the transition without disrupting active loads.
+
+## What stays human in an AI-assisted vetting workflow?
+
+This is the part operators worry about and almost always end up reassured by once they see it running. The judgment calls stay human. A carrier with a borderline safety score and a strong reference from a sister office is still a human conversation. A new MC authority on a lane your operation knows well is still a human decision. AI-assisted scoring is best understood as a faster, more consistent first pass, not a replacement for the relationships your team has built.
+
+The job change for the coordinator is real but welcome. Less data entry. More carrier development. More time on the calls that actually move freight.
+
+## Three questions to ask before automating vetting
+
+Before any tooling decision, three questions tell a brokerage whether vetting is the right place to spend automation budget this quarter.
+
+1. **How many new or reactivated carriers do we vet per week, and what is the average time per review?** The product of those two is the coordinator-hours your current workflow consumes.
+2. **What has our claims and fraud loss exposure been in the last twelve months, and how much of it traces back to carrier selection?** If the answer is meaningful, vetting is a margin conversation, not an ops conversation.
+3. **How many loads in the last quarter did we cover at a worse rate (or lose entirely) because the right carrier had not cleared onboarding?** Most brokerages cannot answer this exactly. The exercise of trying surfaces the bottleneck.
+
+If the answers point to a real number, the work is worth doing. If they do not, there are usually larger leaks elsewhere on the desk.
+
+## Where this lands for a brokerage thinking it through
+
+Manual carrier vetting is not broken because the coordinators are bad at it. It is broken because the workflow asks a person to be a search engine, a fraud analyst, an insurance verifier, and a risk scorer all in the same five minute window. The shift to AI-assisted scoring is mostly about giving that work to the system that is actually good at it, and giving the coordinator the part of the job that pays off.
+
+If your desk is processing more carriers than your vetting workflow was designed for, or you have absorbed a fraud loss in the last twelve months that you can still feel in the numbers, this is the part of the operation worth a second look.
+
+We run a **completely free automation audit** for brokerages that want a second opinion on where vetting time and risk are leaking. No commitment, no slide deck, no upsell. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>
