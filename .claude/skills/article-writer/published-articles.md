@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-05-29 — Vendor Chargebacks: Where DTC Wholesale Margin Slips · e-com ops · `vendor-chargebacks-dtc-wholesale-margin`
 - 2026-05-28 — Daily Reports on GC Jobs: From Forms to AI Summaries · construction · `daily-reports-gc-jobs-forms-to-ai-summaries`
 - 2026-05-27 — Carrier Vetting: Manual Reviews vs AI-Assisted Scoring · logistics · `carrier-vetting-manual-vs-ai-assisted-scoring`
 - 2026-05-26 — Why DTC False Declines Cost More Than the Fraud They Stop · e-com ops · `dtc-false-declines-cost-more-than-fraud`
