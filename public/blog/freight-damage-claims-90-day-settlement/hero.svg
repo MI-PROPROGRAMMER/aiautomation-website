@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Why Freight Damage Claims Take 90 Days to Settle">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.30" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bar3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00B5E2"/>
+      <stop offset="1" stop-color="#0a3a66"/>
+    </linearGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <path d="M0 250 H1500" /><path d="M0 420 H1500" /><path d="M0 600 H1500" /><path d="M0 780 H1500" />
+  </g>
+
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="160" y="200" font-size="22" letter-spacing="6" fill="#00B5E2" font-weight="600">THE JOURNAL</text>
+    <text x="160" y="320" font-size="76" font-weight="700" fill="#ffffff">Why Freight Damage Claims</text>
+    <text x="160" y="410" font-size="76" font-weight="700" fill="#ffffff">Take 90 Days to Settle</text>
+    <text x="160" y="490" font-size="34" font-style="italic" fill="#cfe5f1" opacity="0.9">Where the cash sits, and what AI triage changes about cycle time.</text>
+  </g>
+
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="160" y="610" font-size="16" letter-spacing="4" fill="#7fb6d6" font-weight="600">AGE OF OPEN BROKER CLAIMS · ILLUSTRATIVE DISTRIBUTION</text>
+
+    <line x1="160" y1="820" x2="1340" y2="820" stroke="#5e8aa6" stroke-width="2"/>
+
+    <rect x="240" y="785" width="180" height="35" fill="#5e8aa6"/>
+    <text x="330" y="770" text-anchor="middle" font-size="20" fill="#cfe5f1" opacity="0.8">low</text>
+    <text x="330" y="860" text-anchor="middle" font-size="24" fill="#cfe5f1">0 to 30 days</text>
+
+    <rect x="510" y="725" width="180" height="95" fill="#7fb6d6"/>
+    <text x="600" y="710" text-anchor="middle" font-size="20" fill="#cfe5f1" opacity="0.8">rising</text>
+    <text x="600" y="860" text-anchor="middle" font-size="24" fill="#cfe5f1">31 to 60 days</text>
+
+    <rect x="780" y="640" width="180" height="180" fill="url(#bar3)"/>
+    <text x="870" y="625" text-anchor="middle" font-size="22" fill="#00B5E2" font-weight="600">90-day median</text>
+    <text x="870" y="860" text-anchor="middle" font-size="24" fill="#cfe5f1">61 to 90 days</text>
+
+    <rect x="1050" y="695" width="180" height="125" fill="#7fb6d6" fill-opacity="0.65"/>
+    <text x="1140" y="680" text-anchor="middle" font-size="20" fill="#cfe5f1" opacity="0.8">tail</text>
+    <text x="1140" y="860" text-anchor="middle" font-size="24" fill="#cfe5f1">90+ days</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
