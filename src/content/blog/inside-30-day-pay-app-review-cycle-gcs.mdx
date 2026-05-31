@@ -1,0 +1,88 @@
+export const frontmatter = {
+  title: "Inside the 30-Day Pay App Review Cycle on Mid-Size GCs",
+  excerpt:
+    "Inside a mid-size GC's billing cycle, the trip from submitted pay app to deposited cash runs 30 to 45 days. Most of the delay sits in review, not float.",
+  date: "2026-05-31",
+  author: "ApexifyLabs Team",
+  tags: ["Construction", "GC Operations", "Working Capital", "Pay Applications"],
+  heroImage: "/blog/inside-30-day-pay-app-review-cycle-gcs/hero.svg",
+  seoDescription:
+    "Why pay application review on mid-size GC jobs stretches 30 to 45 days, what the working capital math actually looks like, and where AI compresses it.",
+  readingTime: "4 min read",
+};
+
+On a mid-size general contractor's billing cycle, the journey from a submitted pay application (the AIA G702 and G703 package) to deposited cash typically spans 30 to 45 days. Most of that delay sits inside review, not float. Each handoff between PM, architect, and owner accountant adds days, and the working capital cost compounds across active jobs.
+
+## What is a pay application review cycle?
+
+A pay application is the monthly billing document a general contractor submits to the project owner. On most commercial work the format is the AIA G702 (the summary affidavit) paired with the G703 (the line-by-line continuation sheet against the schedule of values). The "review cycle" covers every step between the GC's project manager finalizing that package and the owner's accounts payable team releasing payment.
+
+A typical sequence on a job running standard AIA contracts:
+
+1. GC project manager assembles updated quantities, supporting backup (photos, daily reports, T&M tickets), and conditional lien waivers from subs.
+2. Owner's representative or construction manager performs a first-pass review against the schedule of values.
+3. Architect of record certifies the work in place, often after a site visit.
+4. Owner's accounting team queues the certified invoice for the next pay run.
+5. Check or ACH lands in the GC's account.
+
+The contract typically calls for payment within 30 days of certification. In practice the certification clock alone often runs three to four weeks before payment terms even start.
+
+## Why does the review cycle stretch to 30 days or more?
+
+Construction has the longest collection cycle of any major industry tracked. Procore's reporting and earlier Levelset Construction Cash Flow benchmarks consistently place average days-sales-outstanding (DSO) in the high 80s to low 90s, longer than any other sector measured. The drag is not random. It compounds from mechanical handoffs:
+
+| Step in the cycle | Typical delay | Why it takes that long |
+|---|---|---|
+| Backup assembly | 2 to 4 days | PM stitching photos, tickets, payroll, and lien waivers across multiple trades |
+| First owner-side review | 5 to 10 days | Sits in a queue behind other contractors' pay apps |
+| Architect certification | 3 to 7 days | Cross-check against site visit notes, open RFIs, pending change orders |
+| Owner accounting cut-off | Up to 30 days | Owners pay on a monthly cycle, missing the cut-off slides everything another month |
+
+A $1.2M monthly pay app that sits two extra weeks waiting on the architect is two weeks of vendor and labor cost the GC is financing from its line of credit. At today's LOC rates (commonly 7 to 9 percent for mid-market GCs after the recent base-rate moves), that cost is real, recurring, and rarely tracked back to the billing workflow.
+
+## What does the working capital math actually look like?
+
+Pick a mid-size general contractor running roughly $80M annual revenue across 14 active jobs. Monthly billings sit near $6.7M. Each additional day of float carries a measurable price:
+
+- $6.7M x (1 / 365) x 8% LOC rate equals about $1,470 per day in interest cost.
+- A 14-day cycle lengthening across the portfolio adds roughly $20,580 per month in interest expense.
+- Annualized, that is about $247,000 of avoidable carrying cost.
+
+That number is just the interest line. It does not capture:
+
+- Retainage (commonly 5 to 10 percent of contract value) sitting unpaid until closeout, which on a $200M backlog ties up $10M to $20M of receivable.
+- Surety capacity tied up against unbilled work, which constrains the next bid.
+- Controller and CFO hours spent juggling project draws against payroll Fridays.
+- Bonding capacity haircut when DSO drifts above 75 days, as reported in CFMA's annual Financial Survey on contractor performance benchmarks.
+
+Most GCs treat this as the cost of doing business. The underlying problem is a process bottleneck with a recoverable price tag, not a market condition.
+
+## Where does AI actually compress the cycle?
+
+Three loops that historically required senior-PM judgment now have AI in the loop without removing the human:
+
+**Backup assembly.** Daily reports, T&M tickets, photo logs, and certified payroll arrive from the field in dozens of formats. AI document understanding stitches the right items to the right G703 line, surfaces confidence scores, and lets the PM review exceptions rather than build the binder from scratch.
+
+**Schedule-of-values reconciliation.** Every G703 line represents a percent-complete claim. Cross-checking the claim against observed project signals (daily reports, RFIs answered, photos uploaded, change orders approved) used to take a half-day per pay app. AI now pre-flags lines where claimed completion diverges from the field record, so the conversation with the owner's rep starts grounded.
+
+**Architect and owner-side review.** On the owner side, the same techniques compress the certification step. Site-visit notes get cross-referenced against the G703 automatically, so the certifying architect spends time on the disputed lines instead of reading every page.
+
+What AI does not do: replace judgment on disputed work, manage the relationship with a difficult owner's rep, or have the collection conversation when a check is late. Those stay human, by design.
+
+Across the construction operators we have seen ship this work, the realistic cycle compression sits around 30 to 45 day cycles dropping to 15 to 22 days. About half of the gain is process redesign (collapsing handoffs, parallelizing reviews). The other half is AI handling the document and reconciliation lift that used to fall on the PM.
+
+## When this analysis does not apply
+
+A few honest caveats before anyone runs the math on their own jobs:
+
+- If the owner is a slow-paying institutional client (state DOT, large hospital system, federal job), the binding bottleneck is the owner's internal AP cycle, not the GC's backup. AI inside the GC's shop cannot fix that on its own.
+- On lump-sum residential or small commercial work without a G703, the line-by-line reconciliation math does not apply the same way.
+- For GCs under roughly $20M annual revenue, the fixed cost of redesigning the billing workflow often outweighs the interest savings until volume grows.
+
+For GCs in the $40M to $200M range running AIA contracts with private or institutional owners, the math almost always works in the GC's favor.
+
+## What we will not turn this into
+
+This article does not name the specific parsers, prompts, or workflow tools that make the AI side of the loop run. That part is the build, and the build is what we configure on each client engagement. The point of this piece is the math: the interest expense, the cycle map, and the question of whether your billing process is leaving money on the line of credit each month.
+
+If your pay applications routinely come back with markups, miss the owner's monthly cut-off, or sit in the architect's queue without explanation, that is a process problem with a measurable cost. We run a **completely free automation audit** for GCs that want a second opinion on where their billing cycle is leaking time and cash. No commitment, no slide deck. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>

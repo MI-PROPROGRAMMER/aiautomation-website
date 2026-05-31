@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" width="1500" height="1000" role="img" aria-label="Inside the 30-Day Pay App Review Cycle on Mid-Size GCs">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#001a36"/>
+      <stop offset="100%" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accentBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#00B5E2"/>
+      <stop offset="80%" stop-color="#00B5E2"/>
+      <stop offset="100%" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="trackFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00B5E2" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#5e8aa6" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <!-- Decorative concentric arcs (subtle, top-right) -->
+  <g opacity="0.08" stroke="#7fb6d6" fill="none" stroke-width="1.5">
+    <circle cx="1380" cy="180" r="120"/>
+    <circle cx="1380" cy="180" r="180"/>
+    <circle cx="1380" cy="180" r="240"/>
+  </g>
+
+  <!-- Top label -->
+  <text x="120" y="180" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#00B5E2" letter-spacing="6">THE JOURNAL</text>
+  <line x1="120" y1="200" x2="280" y2="200" stroke="#00B5E2" stroke-width="2" opacity="0.7"/>
+
+  <!-- Title (3 lines) -->
+  <text x="120" y="290" font-family="Georgia, 'Times New Roman', serif" font-size="76" fill="#ffffff" font-weight="bold">Inside the 30-Day</text>
+  <text x="120" y="378" font-family="Georgia, 'Times New Roman', serif" font-size="76" fill="#ffffff" font-weight="bold">Pay App Review Cycle</text>
+  <text x="120" y="466" font-family="Georgia, 'Times New Roman', serif" font-size="76" fill="#ffffff" font-weight="bold">on Mid-Size GCs</text>
+
+  <!-- Subtitle -->
+  <text x="120" y="528" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#cfe5f1" opacity="0.9" font-style="italic">The working capital math behind every G702.</text>
+
+  <!-- Timeline visual: 5 nodes from Submit to Cash, spanning the safe zone -->
+  <g transform="translate(120, 680)">
+    <!-- Track line with gradient -->
+    <line x1="0" y1="80" x2="1260" y2="80" stroke="url(#trackFade)" stroke-width="3"/>
+
+    <!-- Day-tick marks every ~252px (5 segments) -->
+    <g stroke="#5e8aa6" stroke-width="1" opacity="0.4">
+      <line x1="63" y1="73" x2="63" y2="87"/>
+      <line x1="126" y1="73" x2="126" y2="87"/>
+      <line x1="189" y1="73" x2="189" y2="87"/>
+      <line x1="252" y1="73" x2="252" y2="87"/>
+      <line x1="378" y1="73" x2="378" y2="87"/>
+      <line x1="441" y1="73" x2="441" y2="87"/>
+      <line x1="504" y1="73" x2="504" y2="87"/>
+      <line x1="567" y1="73" x2="567" y2="87"/>
+      <line x1="693" y1="73" x2="693" y2="87"/>
+      <line x1="756" y1="73" x2="756" y2="87"/>
+      <line x1="819" y1="73" x2="819" y2="87"/>
+      <line x1="882" y1="73" x2="882" y2="87"/>
+      <line x1="1008" y1="73" x2="1008" y2="87"/>
+      <line x1="1071" y1="73" x2="1071" y2="87"/>
+      <line x1="1134" y1="73" x2="1134" y2="87"/>
+      <line x1="1197" y1="73" x2="1197" y2="87"/>
+    </g>
+
+    <!-- Node 1: Submit -->
+    <circle cx="0" cy="80" r="22" fill="#00B5E2"/>
+    <text x="0" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#cfe5f1" text-anchor="middle">Submit</text>
+    <text x="0" y="135" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#7fb6d6" text-anchor="middle">Day 0</text>
+
+    <!-- Node 2: Owner review -->
+    <circle cx="315" cy="80" r="16" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+    <text x="315" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#cfe5f1" text-anchor="middle">Owner review</text>
+    <text x="315" y="135" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#7fb6d6" text-anchor="middle">Day 5 to 15</text>
+
+    <!-- Node 3: Architect cert -->
+    <circle cx="630" cy="80" r="16" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+    <text x="630" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#cfe5f1" text-anchor="middle">Architect cert</text>
+    <text x="630" y="135" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#7fb6d6" text-anchor="middle">Day 8 to 22</text>
+
+    <!-- Node 4: AP cut-off -->
+    <circle cx="945" cy="80" r="16" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+    <text x="945" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#cfe5f1" text-anchor="middle">AP cut-off</text>
+    <text x="945" y="135" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#7fb6d6" text-anchor="middle">Day 15 to 30</text>
+
+    <!-- Node 5: Cash -->
+    <circle cx="1260" cy="80" r="22" fill="#00B5E2"/>
+    <text x="1260" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#cfe5f1" text-anchor="middle">Cash</text>
+    <text x="1260" y="135" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#7fb6d6" text-anchor="middle">Day 30 to 45</text>
+  </g>
+
+  <!-- Footer attribution -->
+  <text x="120" y="850" font-family="Georgia, 'Times New Roman', serif" font-size="18" fill="#7fb6d6" opacity="0.7">apexifylabs.com / journal</text>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentBar)"/>
+</svg>
