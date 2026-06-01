@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Parcel surcharge refunds DTC brands never claim - stylized carrier invoice with refundable line items highlighted in cyan">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.22" cy="0.78" r="0.7">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="paperFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a3a66" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#001a36" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="flagFill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.28">
+    <path d="M0 260 H1500"/>
+    <path d="M0 440 H1500"/>
+    <path d="M0 620 H1500"/>
+    <path d="M0 800 H1500"/>
+  </g>
+
+  <g transform="translate(150,200)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="84" font-weight="700" fill="#ffffff">Parcel Surcharge Refunds</text>
+    <text y="190" font-size="68" font-weight="700" fill="#ffffff">DTC Brands Never Claim</text>
+    <text y="252" font-size="32" font-weight="400" fill="#cfe5f1" opacity="0.9">the line items hiding inside a carrier invoice</text>
+  </g>
+
+  <g transform="translate(180,540)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="13" letter-spacing="3" fill="#7fb6d6">A SINGLE PARCEL INVOICE LINE, AND WHAT AN AUDIT FLAGS</text>
+
+    <g transform="translate(0,40)">
+      <rect x="0" y="0" width="700" height="280" rx="4" fill="url(#paperFill)" stroke="#0a3a66" stroke-width="1.5"/>
+      <rect x="0" y="0" width="700" height="34" fill="#0a3a66" opacity="0.85"/>
+      <text x="20" y="22" font-size="13" letter-spacing="3" fill="#cfe5f1">TRACKING 1Z999AA10123456784</text>
+      <text x="680" y="22" font-size="13" letter-spacing="3" fill="#cfe5f1" text-anchor="end">$24.18</text>
+
+      <g font-size="17" fill="#cfe5f1">
+        <text x="20" y="68">Base ground rate</text>
+        <text x="680" y="68" text-anchor="end" fill="#7fb6d6">$11.42</text>
+
+        <text x="20" y="100">Fuel surcharge</text>
+        <text x="680" y="100" text-anchor="end" fill="#7fb6d6">$1.78</text>
+
+        <rect x="10" y="116" width="680" height="32" fill="url(#flagFill)"/>
+        <rect x="10" y="116" width="3" height="32" fill="#00B5E2"/>
+        <text x="20" y="138" fill="#ffffff">Residential surcharge</text>
+        <text x="680" y="138" text-anchor="end" fill="#ffffff" font-weight="700">$5.85</text>
+
+        <text x="20" y="172">Delivery Area Surcharge</text>
+        <text x="680" y="172" text-anchor="end" fill="#7fb6d6">$3.95</text>
+
+        <rect x="10" y="188" width="680" height="32" fill="url(#flagFill)"/>
+        <rect x="10" y="188" width="3" height="32" fill="#00B5E2"/>
+        <text x="20" y="210" fill="#ffffff">DIM reweight adjustment</text>
+        <text x="680" y="210" text-anchor="end" fill="#ffffff" font-weight="700">$1.18</text>
+
+        <text x="20" y="244">Address correction</text>
+        <text x="680" y="244" text-anchor="end" fill="#7fb6d6">$0.00</text>
+      </g>
+
+      <line x1="10" y1="260" x2="690" y2="260" stroke="#5e8aa6" stroke-width="0.8" opacity="0.5"/>
+    </g>
+
+    <g transform="translate(780,40)">
+      <text font-size="14" letter-spacing="3" fill="#00B5E2">AUDIT FLAGS</text>
+
+      <g transform="translate(0,30)">
+        <circle cx="8" cy="10" r="5" fill="#00B5E2"/>
+        <text x="26" y="15" font-size="20" fill="#ffffff" font-weight="700">Residential misclass</text>
+        <text x="26" y="44" font-size="15" fill="#cfe5f1" opacity="0.85">business address flagged residential</text>
+        <text x="26" y="66" font-size="15" fill="#7fb6d6">recoverable: $5.85</text>
+      </g>
+
+      <g transform="translate(0,124)">
+        <circle cx="8" cy="10" r="5" fill="#00B5E2"/>
+        <text x="26" y="15" font-size="20" fill="#ffffff" font-weight="700">DIM reweight</text>
+        <text x="26" y="44" font-size="15" fill="#cfe5f1" opacity="0.85">carrier dims disagree with label</text>
+        <text x="26" y="66" font-size="15" fill="#7fb6d6">recoverable: $1.18</text>
+      </g>
+
+      <line x1="0" y1="220" x2="500" y2="220" stroke="#00B5E2" stroke-width="0.8" opacity="0.55"/>
+      <text x="0" y="252" font-size="14" letter-spacing="3" fill="#7fb6d6">DISPUTABLE THIS INVOICE</text>
+      <text x="0" y="282" font-size="32" fill="#ffffff" font-weight="700">$7.03 on $24.18</text>
+      <text x="0" y="306" font-size="14" fill="#cfe5f1" opacity="0.8">about 29% of this shipment line</text>
+    </g>
+  </g>
+
+  <g transform="translate(150,888)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="12" letter-spacing="2" fill="#5e8aa6">SOURCES: SHIPWARE, AFS LOGISTICS, REVEEL, 71LBS PARCEL AUDITING BENCHMARKS</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>

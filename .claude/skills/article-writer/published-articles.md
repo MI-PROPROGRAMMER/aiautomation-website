@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-06-01 — Parcel Surcharge Refunds DTC Brands Never Claim · e-com ops · `parcel-surcharge-refunds-dtc-brands-never-claim`
 - 2026-05-31 — Inside the 30-Day Pay App Review Cycle on Mid-Size GCs · construction · `inside-30-day-pay-app-review-cycle-gcs`
 - 2026-05-30 — Why Freight Damage Claims Take 90 Days to Settle · logistics · `freight-damage-claims-90-day-settlement`
 - 2026-05-29 — Vendor Chargebacks: Where DTC Wholesale Margin Slips · e-com ops · `vendor-chargebacks-dtc-wholesale-margin`
