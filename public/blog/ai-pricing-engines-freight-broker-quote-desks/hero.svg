@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="AI pricing engines change freight broker quote desks visualization">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.22" cy="0.32" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.32">
+    <path d="M250 200 V880" /><path d="M500 200 V880" /><path d="M750 200 V880" />
+    <path d="M1000 200 V880" /><path d="M1250 200 V880" />
+  </g>
+
+  <g transform="translate(180,250)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="76" font-weight="700" fill="#ffffff">AI Pricing Engines</text>
+    <text y="180" font-size="76" font-weight="700" fill="#ffffff">on the Quote Desk</text>
+    <text y="244" font-size="34" font-weight="400" fill="#cfe5f1" opacity="0.9">Response time, win rate, and pricer focus</text>
+  </g>
+
+  <g transform="translate(180,610)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">SPOT QUOTE RESPONSE TIME</text>
+
+    <g transform="translate(0,52)">
+      <text font-size="16" fill="#9fc4dc">MANUAL DESK</text>
+      <rect x="240" y="-18" width="900" height="24" fill="#0a3a66"/>
+      <rect x="240" y="-18" width="900" height="24" fill="#5e8aa6" opacity="0.85"/>
+      <text x="1160" y="0" font-size="16" fill="#cfe5f1">30 to 90 min</text>
+    </g>
+
+    <g transform="translate(0,118)">
+      <text font-size="16" fill="#9fc4dc">AI-ASSISTED</text>
+      <rect x="240" y="-18" width="900" height="24" fill="#0a3a66"/>
+      <rect x="240" y="-18" width="60" height="24" fill="#00B5E2" opacity="0.95"/>
+      <text x="1160" y="0" font-size="16" fill="#cfe5f1">under 5 min</text>
+    </g>
+
+    <g transform="translate(0,200)">
+      <text font-size="12" letter-spacing="2" fill="#5e8aa6">SHIPPERS TEND TO AWARD WHICHEVER BROKER REPLIES FIRST WITH A DEFENSIBLE NUMBER</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
