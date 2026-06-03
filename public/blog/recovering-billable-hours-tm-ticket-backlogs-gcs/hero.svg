@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Recovering Billable Hours from T&amp;M Ticket Backlogs at GCs">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#001a36"/>
+      <stop offset="100%" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accentBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#001a36"/>
+      <stop offset="18%" stop-color="#0a3a66"/>
+      <stop offset="50%" stop-color="#00B5E2"/>
+      <stop offset="82%" stop-color="#0a3a66"/>
+      <stop offset="100%" stop-color="#001a36"/>
+    </linearGradient>
+    <linearGradient id="ticketCaptured" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00B5E2" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0a3a66" stop-opacity="0.95"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 0 40" fill="none" stroke="#0a3a66" stroke-width="0.4" opacity="0.35"/>
+    </pattern>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#grid)"/>
+
+  <!-- Top label -->
+  <text x="100" y="195" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#00B5E2" letter-spacing="6" font-weight="600">THE JOURNAL</text>
+
+  <!-- Title -->
+  <text x="100" y="305" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="700" fill="#ffffff">Recovering Billable</text>
+  <text x="100" y="395" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="700" fill="#ffffff">Hours from T&amp;M</text>
+  <text x="100" y="485" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="700" fill="#ffffff">Ticket Backlogs.</text>
+
+  <!-- Subtitle -->
+  <text x="100" y="555" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#cfe5f1" opacity="0.9" font-style="italic">How mid-size GCs lose billable margin at month-end.</text>
+
+  <!-- Visual element: ticket recovery grid -->
+  <!-- Section label -->
+  <text x="100" y="650" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#7fb6d6" letter-spacing="4">A MONTH OF FIELD TICKETS</text>
+  <line x1="100" y1="670" x2="420" y2="670" stroke="#0a3a66" stroke-width="1"/>
+
+  <!-- Ticket grid: 4 rows × 14 columns, last 4 of each row dashed (lost) -->
+  <!-- Each cell ~85 wide, 48 tall, with 10 gap; starts x=100 -->
+  <g transform="translate(100,700)">
+    <!-- Row 1: 10 captured, 4 lost -->
+    <g>
+      <rect x="0"   y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="90"  y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="180" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="270" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="360" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="450" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="540" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="630" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="720" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="810" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="900" y="0" width="80" height="46" rx="4" fill="none" stroke="#5e8aa6" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
+      <rect x="990" y="0" width="80" height="46" rx="4" fill="none" stroke="#5e8aa6" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
+      <rect x="1080" y="0" width="80" height="46" rx="4" fill="none" stroke="#5e8aa6" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
+      <rect x="1170" y="0" width="80" height="46" rx="4" fill="none" stroke="#5e8aa6" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
+    </g>
+    <!-- Row 2 -->
+    <g transform="translate(0,56)">
+      <rect x="0"   y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="90"  y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="180" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="270" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="360" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="450" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="540" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="630" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="720" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="810" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="900" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="990" y="0" width="80" height="46" rx="4" fill="none" stroke="#5e8aa6" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
+      <rect x="1080" y="0" width="80" height="46" rx="4" fill="none" stroke="#5e8aa6" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
+      <rect x="1170" y="0" width="80" height="46" rx="4" fill="none" stroke="#5e8aa6" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
+    </g>
+    <!-- Row 3 -->
+    <g transform="translate(0,112)">
+      <rect x="0"   y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="90"  y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="180" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="270" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="360" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="450" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="540" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="630" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="720" y="0" width="80" height="46" rx="4" fill="url(#ticketCaptured)" stroke="#00B5E2" stroke-width="1"/>
+      <rect x="810" y="0" width="80" height="46" rx="4" fill="none" stroke="#5e8aa6" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
+      <rect x="900" y="0" width="80" height="46" rx="4" fill="none" stroke="#5e8aa6" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
+      <rect x="990" y="0" width="80" height="46" rx="4" fill="none" stroke="#5e8aa6" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
+      <rect x="1080" y="0" width="80" height="46" rx="4" fill="none" stroke="#5e8aa6" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
+      <rect x="1170" y="0" width="80" height="46" rx="4" fill="none" stroke="#5e8aa6" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6"/>
+    </g>
+
+    <!-- Brace + labels -->
+    <g transform="translate(0,175)">
+      <line x1="0" y1="0" x2="890" y2="0" stroke="#00B5E2" stroke-width="1.5"/>
+      <line x1="0" y1="-6" x2="0" y2="6" stroke="#00B5E2" stroke-width="1.5"/>
+      <line x1="890" y1="-6" x2="890" y2="6" stroke="#00B5E2" stroke-width="1.5"/>
+      <text x="0" y="32" font-family="Georgia, serif" font-size="22" fill="#00B5E2" font-weight="600">CAPTURED &amp; BILLED</text>
+
+      <line x1="900" y1="0" x2="1250" y2="0" stroke="#7fb6d6" stroke-width="1.5" stroke-dasharray="6 5"/>
+      <line x1="900" y1="-6" x2="900" y2="6" stroke="#7fb6d6" stroke-width="1.5"/>
+      <line x1="1250" y1="-6" x2="1250" y2="6" stroke="#7fb6d6" stroke-width="1.5"/>
+      <text x="900" y="32" font-family="Georgia, serif" font-size="22" fill="#cfe5f1" opacity="0.85" font-style="italic">LEFT ON THE TABLE</text>
+    </g>
+  </g>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentBar)"/>
+</svg>

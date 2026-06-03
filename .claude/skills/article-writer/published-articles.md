@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-06-03 — Recovering Billable Hours from T&M Ticket Backlogs at GCs · construction · `recovering-billable-hours-tm-ticket-backlogs-gcs`
 - 2026-06-02 — How AI Pricing Engines Change Freight Broker Quote Desks · logistics · `ai-pricing-engines-freight-broker-quote-desks`
 - 2026-06-01 — Parcel Surcharge Refunds DTC Brands Never Claim · e-com ops · `parcel-surcharge-refunds-dtc-brands-never-claim`
 - 2026-05-31 — Inside the 30-Day Pay App Review Cycle on Mid-Size GCs · construction · `inside-30-day-pay-app-review-cycle-gcs`
