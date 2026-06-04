@@ -314,7 +314,8 @@ const done=new Set();
 /* ===== QuickBooks customer names — EDIT HERE if a name changes or a new stop is added.
    Key = the LAST 2 digits of the invoice number (e.g. "26 21 04" → "04").
    Each value must match QuickBooks EXACTLY: the Circle K "Parent:Sub" format,
-   "Marai", and the apostrophes are all intentional. ===== */
+   "Marai", and the straight ASCII apostrophes are all intentional. cleanName()
+   also normalizes any smart quote / fancy dash to ASCII on export. ===== */
 const CUSTOMERS = {
   "02":"02 Newberry Zephyr",
   "03":"Circle K Stores Inc.:03 Newberry Circle K 2746203",
@@ -329,12 +330,12 @@ const CUSTOMERS = {
   "13":"13 Pickford Co-Op Store",
   "14":"14 Midpoint Marathon",
   "15":"Circle K Stores Inc.:15 SSM Circle K South 2746174",
-  "16":"16 Woody’s One Stop",
+  "16":"16 Woody's One Stop",
   "17":"17 The Merch",
   "21":"21 Manistique Zephyr",
-  "22":"22 Linda’s Bread Box",
+  "22":"22 Linda's Bread Box",
   "25":"25 Sky Fuel Ishpeming",
-  "26":"26 Kassel’s",
+  "26":"26 Kassel's",
   "27":"Circle K Stores Inc.:27 Harvey Circle K 2746231",
   "28":"Circle K Stores Inc.:28 Marquette Circle K 2746159",
   "29":"29 Superior Blue Link",
@@ -368,7 +369,7 @@ async function handle(file){
       const kind=await headerKind(page);
       if(kind==="blue"){ SKIPPED.push({account:inv.account||"(unnamed)",reason:"not delivered (blue heading)",gross:inv.gross}); continue; }
       const key=custKey(inv.inv);
-      const customer = CUSTOMERS[key] || inv.account;
+      const customer = cleanName(CUSTOMERS[key] || inv.account);
       if(!CUSTOMERS[key]) inv.flags.push("Customer not in your QuickBooks list — check the name before import");
       const ex=parseExtras(text);
 
@@ -396,6 +397,13 @@ function csvCell(v){v=String(v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')
 // innerHTML below, so a malformed or crafted sheet can't inject markup into
 // this page's origin.
 function esc(v){return String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+// Normalize smart quotes / fancy dashes / non-breaking spaces from parsed text to plain ASCII so the
+// exported names match QuickBooks (which stores straight ' " and -).
+function cleanName(v){return String(v)
+  .replace(/[‘’‚‛]/g,"'")
+  .replace(/[“”„‟]/g,'"')
+  .replace(/[‐‑‒–—―−]/g,"-")
+  .replace(/\u00A0/g," ");}
 function buildCSV(){
   const head=["InvoiceNo","Customer","InvoiceDate","DueDate","Item","ItemDescription","ItemQuantity","ItemRate","ItemAmount"];
   const rows=[head];
