@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Alpha Deli → QuickBooks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Spline+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" integrity="sha512-q+4liFwdPC/bNdhUpZx6aXDx/h77yEQtn4I1slHydcbZK34nLaR3cAeYSJshoxIOq3mjEf7xJE8YWIUHMn+oCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+  :root{
+    --paper:#f3ead9; --paper2:#efe3cf; --ink:#211d17; --ink-soft:#5a5043;
+    --red:#b6312a; --red-dk:#8f241e; --green:#3f6b3a; --amber:#c98a16;
+    --line:#cdbfa6; --shadow:rgba(40,30,15,.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:"Spline Sans",sans-serif;-webkit-font-smoothing:antialiased}
+  body{
+    background-image:
+      repeating-linear-gradient(0deg,rgba(120,90,40,.025) 0 1px,transparent 1px 4px),
+      radial-gradient(circle at 20% 10%,rgba(182,49,42,.05),transparent 60%);
+    min-height:100vh;padding:0 0 80px;
+  }
+  /* awning stripe */
+  .awning{height:14px;background:repeating-linear-gradient(90deg,var(--red) 0 28px,var(--paper) 28px 56px);border-bottom:2px solid var(--ink)}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
+  header.top{text-align:center;padding:38px 0 26px;border-bottom:2px dashed var(--line)}
+  header.top .kick{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--red-dk);margin-bottom:10px}
+  header.top h1{font-family:"Fraunces",serif;font-weight:700;font-size:clamp(30px,6vw,52px);line-height:.98;letter-spacing:-.01em}
+  header.top h1 em{font-style:italic;color:var(--red)}
+  header.top p{margin-top:12px;color:var(--ink-soft);font-size:15px;max-width:560px;margin-left:auto;margin-right:auto}
+
+  /* drop zone */
+  .drop{display:flex;flex-direction:column;align-items:center;margin:34px 0;border:2.5px dashed var(--red);border-radius:4px;background:linear-gradient(180deg,#fbf5e9,#f1e6d2);
+    padding:46px 24px;text-align:center;cursor:pointer;transition:.18s;position:relative}
+  .drop:hover{background:#fdf8ee;transform:translateY(-1px);box-shadow:0 8px 26px var(--shadow)}
+  .drop.drag{background:#fff;border-color:var(--green);transform:scale(1.005)}
+  .drop .ic{font-size:34px}
+  .drop h2{font-family:"Fraunces",serif;font-size:22px;margin:10px 0 6px}
+  .drop small{color:var(--ink-soft);font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.04em}
+  #file{display:none}
+  .busy{display:none;font-family:"JetBrains Mono",monospace;color:var(--red-dk);margin-top:14px}
+  .drop.loaded{flex-direction:row;gap:12px;padding:13px 22px;margin:18px 0;border-style:solid;border-color:var(--green);background:#eef5ea}
+  .drop.loaded .ic{font-size:20px}
+  .drop.loaded h2{font-size:15px;margin:0}
+  .drop.loaded small{margin-left:auto}
+
+  /* summary */
+  .summary{display:none;margin:8px 0 28px}
+  .statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:10px}
+  .recon{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ink-soft);letter-spacing:.02em;text-align:center;margin:0 0 22px}
+  .stat{background:#fbf6ea;border:1.5px solid var(--line);border-radius:4px;padding:14px 16px;box-shadow:0 2px 0 var(--line)}
+  .stat .n{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:26px;line-height:1}
+  .stat .l{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft);margin-top:7px}
+  .stat.green .n{color:var(--green)} .stat.red .n{color:var(--red)} .stat.amber .n{color:var(--amber)}
+
+  .cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:var(--ink);color:var(--paper);border-radius:5px;padding:18px 22px}
+  .cta .big{font-family:"Fraunces",serif;font-size:19px}
+  .cta .sub{font-size:13px;color:#cdbfa6;font-family:"JetBrains Mono",monospace}
+  button.dl{margin-left:auto;background:var(--red);color:#fff;border:none;font-family:"JetBrains Mono",monospace;font-weight:700;
+    letter-spacing:.06em;font-size:14px;padding:14px 22px;border-radius:4px;cursor:pointer;transition:.15s}
+  button.dl:hover{background:var(--red-dk);transform:translateY(-1px)}
+  button.dl:active{transform:translateY(0)}
+
+  .howto{background:#fbf6ea;border:1.5px dashed var(--line);border-radius:4px;padding:16px 20px;margin-top:14px;font-size:14px;color:var(--ink-soft)}
+  .howto b{color:var(--ink);font-family:"Fraunces",serif}
+  .howto ol{margin:8px 0 0 18px} .howto li{margin:4px 0}
+  .howto code{font-family:"JetBrains Mono",monospace;background:#efe3cf;padding:1px 6px;border-radius:3px;color:var(--ink);font-size:12.5px}
+
+  /* section headings */
+  .sec{margin:40px 0 16px;display:flex;align-items:baseline;gap:12px}
+  .sec h3{font-family:"Fraunces",serif;font-size:24px}
+  .sec .rule{flex:1;border-bottom:2px dashed var(--line)}
+  .sec .cnt{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ink-soft)}
+
+  /* invoice ticket cards */
+  .tickets{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+  .ticket{background:#fcf8ee;border:1px solid var(--line);border-radius:3px;position:relative;
+    box-shadow:0 4px 14px var(--shadow);overflow:hidden}
+  .ticket::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+    background:repeating-linear-gradient(90deg,transparent 0 7px,var(--paper) 7px 8px),var(--red)}
+  .ticket.flag{border-color:var(--red);box-shadow:0 0 0 2px rgba(182,49,42,.25),0 4px 14px var(--shadow)}
+  .ticket.done{opacity:.62}
+  .t-head{padding:16px 16px 10px;border-bottom:2px dashed var(--line)}
+  .t-head .inv{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--red-dk);letter-spacing:.05em}
+  .t-head .cust{font-family:"Fraunces",serif;font-weight:700;font-size:18px;line-height:1.1;margin:3px 0}
+  .t-head .date{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink-soft)}
+  .t-lines{padding:10px 16px;font-family:"JetBrains Mono",monospace;font-size:12.5px}
+  .t-lines .row{display:grid;grid-template-columns:1fr auto auto;gap:8px;padding:2.5px 0;color:var(--ink)}
+  .t-lines .row .nm{color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .t-lines .row .q{text-align:right}
+  .t-lines .row .a{text-align:right;font-weight:700}
+  .t-tot{padding:12px 16px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;align-items:center;
+    font-family:"JetBrains Mono",monospace}
+  .t-tot .lab{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  .t-tot .val{font-weight:700;font-size:19px}
+  .t-flag{background:#fbe8e6;color:var(--red-dk);font-size:12px;padding:8px 16px;border-top:1px dashed var(--red);font-family:"JetBrains Mono",monospace}
+  .t-foot{padding:11px 16px;background:#f1e6d2;border-top:1px dashed var(--line)}
+  .stamp{display:flex;align-items:center;gap:9px;cursor:pointer;font-family:"JetBrains Mono",monospace;font-size:12px;
+    text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft);user-select:none}
+  .stamp .box{width:18px;height:18px;border:2px solid var(--ink-soft);border-radius:3px;display:grid;place-items:center;font-size:13px;color:transparent}
+  .stamp.on .box{background:var(--green);border-color:var(--green);color:#fff}
+  .stamp.on{color:var(--green);font-weight:700}
+  .ticket.nodel{opacity:.7;box-shadow:0 2px 9px var(--shadow)}
+  .ticket.nodel::before{background:repeating-linear-gradient(90deg,transparent 0 7px,var(--paper) 7px 8px),var(--ink-soft)}
+  .nodel-body{padding:20px 16px;display:flex;justify-content:space-between;align-items:center;border-top:2px dashed var(--line)}
+  .nodel-stamp{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);border:1.5px solid var(--line);border-radius:3px;padding:5px 10px}
+  .nodel-amt{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:18px;color:var(--ink-soft)}
+
+  /* manual checklist */
+  .manual{background:#fbf6ea;border:1.5px solid var(--line);border-radius:4px;overflow:hidden}
+  .manual .mrow{padding:14px 18px;border-bottom:1px dashed var(--line);display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+  .manual .mrow:last-child{border-bottom:none}
+  .manual .who{font-family:"Fraunces",serif;font-weight:700;font-size:15px;min-width:180px}
+  .manual .meta{font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--ink-soft)}
+  .pill{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.04em}
+  .pill.check{background:#e6efe4;color:var(--green)} .pill.open{background:#f6e9c9;color:var(--amber)}
+  .pill.credit{background:#fbe3e0;color:var(--red-dk)}
+  .empty{padding:18px;color:var(--ink-soft);font-family:"JetBrains Mono",monospace;font-size:13px;text-align:center}
+
+  .skiplist{font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--ink-soft);line-height:1.9}
+  .skiplist span{display:inline-block;background:#efe3cf;border:1px solid var(--line);border-radius:3px;padding:2px 9px;margin:3px 5px 3px 0;color:var(--ink)}
+
+  footer{text-align:center;margin-top:50px;padding-top:22px;border-top:2px dashed var(--line);font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink-soft);letter-spacing:.05em}
+  .note{font-size:12.5px;color:var(--ink-soft);margin-top:10px;line-height:1.5}
+  .note b{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="awning"></div>
+<div class="wrap">
+  <header class="top">
+    <div class="kick">Route Sheet · PDF → QuickBooks Online</div>
+    <h1>Alpha Deli <em>Ticket</em> Reader</h1>
+    <p>Drop a weekly invoice PDF. It reads every delivery, checks the math, and builds a QuickBooks-ready invoice file — plus a checklist for the credits and payments you enter by hand.</p>
+  </header>
+
+  <label class="drop" id="drop" for="file">
+    <div class="ic">🥪</div>
+    <h2>Drop the week's PDF here</h2>
+    <small>or click to choose a file · stays on this computer</small>
+    <div class="busy" id="busy">reading pages…</div>
+  </label>
+  <input type="file" id="file" accept="application/pdf,.pdf">
+
+  <section class="summary" id="summary">
+    <div class="statgrid" id="stats"></div>
+    <div class="recon" id="recon"></div>
+
+    <div class="cta">
+      <div>
+        <div class="big">Invoices ready to import</div>
+        <div class="sub" id="ctaSub"></div>
+      </div>
+      <button class="dl" id="download">⬇ Download QBO CSV</button>
+    </div>
+
+    <div class="howto">
+      <b>Import into QuickBooks Online</b>
+      <ol>
+        <li>Gear icon ⚙ → <code>Import data</code> → <code>Invoices</code></li>
+        <li>Upload the downloaded CSV, then map the columns (they're named to match)</li>
+        <li>Review and import. Up to 100 invoices per file.</li>
+      </ol>
+      <div class="note"><b>One-time setup:</b> the Customer names and Item names in the file must match your QBO exactly, or those rows are rejected. Credits and payments are in the checklist below — QBO's importer can't take those.</div>
+    </div>
+
+    <div id="flagWarn"></div>
+
+    <div class="sec"><h3>Invoices</h3><div class="rule"></div><span class="cnt" id="delCnt"></span></div>
+    <div class="tickets" id="tickets"></div>
+
+    <div class="sec"><h3>Enter by hand · Credits</h3><div class="rule"></div></div>
+    <div class="manual" id="credits"></div>
+
+    <div class="sec"><h3>Enter by hand · Payments</h3><div class="rule"></div></div>
+    <div class="manual" id="payments"></div>
+    <div class="note">Rule: a check <b>with a number</b> → record it (and apply its credit if it has one); <b>cash</b> → record it; <b>no check number</b> → leave the invoice open. The check number is read from the sheet's Check column — but always confirm the method against the paper, since the PDF can't reliably tell cash apart from an open invoice.</div>
+
+    <div class="sec"><h3>Skipped (not entered)</h3><div class="rule"></div></div>
+    <div class="skiplist" id="skipped"></div>
+    <div class="note">Two kinds, neither billable: the PDF's route/week <b>summary pages</b>, and any stop whose header <b>isn't red</b> (a "not delivered" sheet — blue/cyan). Listed so you can confirm every page was accounted for. If a skipped stop ever shows a dollar amount, check it against the paper.</div>
+  </section>
+
+  <footer>ALPHA DELI · NEWBERRY, MI · interim helper — not connected to QuickBooks</footer>
+</div>
+
+<script>
+/* ---------- product table (name, wholesale rate) ---------- */
+const PRODUCTS = [
+  ["Super Yooper",6.00],["Club Sub",6.00],["Double Ham",6.00],["Italian",6.00],
+  ["Buffalo Chicken",6.00],["Turkey & Swiss",5.40],["Pizza",6.00],
+  ["Big Beef & Swiss",6.50],["Meatball",6.50],["Bacon Burger",5.40],
+  ["Ham Bagel",5.40],["Breakfast Sandwich",4.70],["Smoked Ham",5.40],
+  ["Chuckwagon",5.00],["Spinach Wrap",6.50],["Jalapeno Wrap",6.50],
+  ["Sun Dried Tomato",6.50],["Ham Hoagie",4.00],["Turkey Hoagie",4.00],
+  ["Ham Salad",4.70],["Chicken Salad",6.00],["Onion Roll Up",4.50],
+  ["Pickle Roll Up",4.50]
+];
+
+/* ---------- parsing (validated against real Week 21 data) ---------- */
+function lineField(text,label){
+  const line=text.split(/\r?\n/).find(l=>new RegExp(label,"i").test(l));
+  return line||"";
+}
+function fmtDate(d){ // 5/18/26 -> 05/18/2026
+  const m=d.match(/^(\d{1,2})\/(\d{1,2})\/(\d{2,4})$/); if(!m)return d;
+  let [_,mo,da,yr]=m; if(yr.length===2)yr="20"+yr;
+  return mo.padStart(2,"0")+"/"+da.padStart(2,"0")+"/"+yr;
+}
+function parseInvoice(text){
+  const acctLine=lineField(text,"Account:");
+  let account=acctLine?acctLine.split(/Account:/i)[1].trim():"";
+  account=account.replace(/\s{2,}.*$/,"").trim();
+  const headLine=lineField(text,"Invoice#:");
+  const dateM=headLine.match(/Date:\s*([0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2,4})/);
+  const invM=headLine.match(/Invoice#:\s*([0-9 ]+?)\s*(?:C\b\s*)?Account:/i);
+  const date=dateM?dateM[1]:"";
+  const inv=invM?invM[1].trim():"";
+  const isCredit=/Invoice#:\s*[0-9 ]+\s*C\b/i.test(headLine);
+  const isTotals=/\btotals\b/i.test(account)||/\bIN:\s*IN:/.test(text)||account==="";
+
+  const t=text.replace(/\s+/g," ").trim();
+  let cursor=0; const pos=[];
+  for(const [name] of PRODUCTS){const idx=t.indexOf(name,cursor);pos.push(idx);if(idx>=0)cursor=idx+name.length;}
+  const lines=[]; const flags=[];
+  for(let i=0;i<PRODUCTS.length;i++){
+    const [name,rate]=PRODUCTS[i]; const start=pos[i]; if(start<0)continue;
+    const nextP=pos.slice(i+1).filter(p=>p>=0);
+    let end=nextP.length?Math.min(...nextP):(()=>{const ti=t.indexOf("Totals",start);return ti>=0?ti:t.length;})();
+    const toks=t.slice(start+name.length,end).trim().split(" ").filter(Boolean);
+    let qty=0; if(toks.length&&/^\d+$/.test(toks[0]))qty=parseInt(toks[0],10);
+    const dollars=toks.filter(x=>/^\$[\d,]+\.\d{2}$/.test(x)).map(x=>parseFloat(x.replace(/[$,]/g,"")));
+    const pRate=dollars[0], pAmt=dollars[1];
+    if(qty>0){
+      const amt=+(qty*rate).toFixed(2);
+      lines.push({name,qty,rate,amt});
+      if(pRate!=null&&Math.abs(pRate-rate)>0.001)flags.push(name+": rate on sheet $"+pRate.toFixed(2)+" ≠ expected $"+rate.toFixed(2));
+      if(pAmt!=null&&Math.abs(pAmt-amt)>0.001)flags.push(name+": line total on sheet $"+pAmt.toFixed(2)+" ≠ qty×rate $"+amt.toFixed(2));
+    }
+  }
+  const gross=+lines.reduce((s,l)=>s+l.amt,0).toFixed(2);
+  return {date,inv,account,isCredit,isTotals,lines,gross,flags};
+}
+function parseExtras(text){
+  const t=text.replace(/\s+/g," ").trim();
+  const ck=t.match(/\bX\s?(\d{3,6})\b/);
+  const checkNo=ck?ck[1]:null;
+  const credits=[];
+  let cursor=0; const pos=[];
+  for(const [name] of PRODUCTS){const idx=t.indexOf(name,cursor);pos.push(idx);if(idx>=0)cursor=idx+name.length;}
+  for(let i=0;i<PRODUCTS.length;i++){
+    const [name]=PRODUCTS[i]; const start=pos[i]; if(start<0)continue;
+    const nextP=pos.slice(i+1).filter(p=>p>=0);
+    let end=nextP.length?Math.min(...nextP):(()=>{const ti=t.indexOf("Totals",start);return ti>=0?ti:t.length;})();
+    const toks=t.slice(start+name.length,end).trim().split(" ").filter(Boolean);
+    const dPos=[]; toks.forEach((x,ix)=>{if(/^\$[\d,]+\.\d{2}$/.test(x))dPos.push(ix);});
+    if(dPos.length>=3){
+      const camt=parseFloat(toks[dPos[2]].replace(/[$,]/g,""));
+      if(camt>0.001){
+        let cq=0;
+        for(let k=dPos[1]+1;k<dPos[2];k++){if(/^\d+$/.test(toks[k])){cq=parseInt(toks[k],10);break;}}
+        credits.push({name,qty:cq,amt:camt});
+      }
+    }
+  }
+  return {checkNo,credits};
+}
+
+/* ---------- pdf text extraction (line-grouped) ---------- */
+pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+async function pageText(page){
+  const tc=await page.getTextContent();
+  const items=tc.items.filter(i=>i.str&&i.str.trim()!=="").map(i=>({x:i.transform[4],y:i.transform[5],s:i.str}));
+  const buckets=new Map();
+  for(const it of items){
+    const key=Math.round(it.y/3)*3;
+    if(!buckets.has(key))buckets.set(key,[]);
+    buckets.get(key).push(it);
+  }
+  const ys=[...buckets.keys()].sort((a,b)=>b-a);
+  return ys.map(y=>buckets.get(y).sort((a,b)=>a.x-b.x).map(o=>o.s).join(" ")).join("\n");
+}
+
+/* ---------- header colour: blue/cyan banner = "didn't deliver" → skip; anything else kept ---------- */
+async function headerKind(page){
+  try{
+    const vp=page.getViewport({scale:0.55});
+    const cv=document.createElement("canvas");
+    cv.width=Math.max(1,Math.ceil(vp.width)); cv.height=Math.max(1,Math.ceil(vp.height));
+    const ctx=cv.getContext("2d",{willReadFrequently:true});
+    await page.render({canvasContext:ctx,viewport:vp}).promise;
+    const bandH=Math.max(1,Math.round(cv.height*0.16));          // top ~16% = the ALPHA DELI banner
+    const d=ctx.getImageData(0,0,cv.width,bandH).data;
+    let R=0,G=0,B=0,n=0;
+    for(let i=0;i<d.length;i+=4){
+      const r=d[i],g=d[i+1],b=d[i+2];
+      if(Math.max(r,g,b)-Math.min(r,g,b)>45){R+=r;G+=g;B+=b;n++;}  // count only saturated (banner) pixels
+    }
+    if(n===0) return "unknown";
+    R/=n;G/=n;B/=n;
+    return (B>110 && B>R*1.3) ? "blue" : "other";                 // blue/cyan = not delivered; red/anything else = keep
+  }catch(e){ return "unknown"; }                                  // render trouble → keep (never silently drop a delivery)
+}
+
+/* ---------- state ---------- */
+let DELIV=[], CREDITS=[], PAYMENTS=[], SKIPPED=[];
+let PAGES=0;
+const done=new Set();
+
+/* ===== QuickBooks customer names — EDIT HERE if a name changes or a new stop is added.
+   Key = the LAST 2 digits of the invoice number (e.g. "26 21 04" → "04").
+   Each value must match QuickBooks EXACTLY: the Circle K "Parent:Sub" format,
+   "Marai", and the apostrophes are all intentional. ===== */
+const CUSTOMERS = {
+  "02":"02 Newberry Zephyr",
+  "03":"Circle K Stores Inc.:03 Newberry Circle K 2746203",
+  "04":"04 Trout Lake IGA",
+  "05":"05 Speedy Mart",
+  "06":"06 Moran",
+  "07":"07 Mackinac City Mall",
+  "08":"Circle K Stores Inc.:08 St Ignace Circle K 2746204",
+  "10":"10 Coast Guard PX",
+  "11":"11 Brim-Cor",
+  "12":"12 Rudyard Co-Op Store",
+  "13":"13 Pickford Co-Op Store",
+  "14":"14 Midpoint Marathon",
+  "15":"Circle K Stores Inc.:15 SSM Circle K South 2746174",
+  "16":"16 Woody’s One Stop",
+  "17":"17 The Merch",
+  "21":"21 Manistique Zephyr",
+  "22":"22 Linda’s Bread Box",
+  "25":"25 Sky Fuel Ishpeming",
+  "26":"26 Kassel’s",
+  "27":"Circle K Stores Inc.:27 Harvey Circle K 2746231",
+  "28":"Circle K Stores Inc.:28 Marquette Circle K 2746159",
+  "29":"29 Superior Blue Link",
+  "30":"Circle K Stores Inc.:30 Negaunee Circle K 2746086",
+  "31":"Circle K Stores Inc.:31 Champion Circle K 2736528",
+  "32":"Circle K Stores Inc.:32 Ishpeming Circle K 2746165",
+  "35":"35 Bayshore Grand Marai"
+};
+function custKey(inv){ return (String(inv).trim().split(/\s+/).pop()||"").padStart(2,"0"); }
+
+/* ---------- main ---------- */
+const drop=document.getElementById("drop"), fileEl=document.getElementById("file"), busy=document.getElementById("busy");
+["dragenter","dragover"].forEach(e=>drop.addEventListener(e,ev=>{ev.preventDefault();drop.classList.add("drag")}));
+["dragleave","drop"].forEach(e=>drop.addEventListener(e,ev=>{ev.preventDefault();drop.classList.remove("drag")}));
+drop.addEventListener("drop",ev=>{const f=ev.dataTransfer.files[0];if(f)handle(f);});
+fileEl.addEventListener("change",ev=>{const f=ev.target.files[0];if(f)handle(f);});
+
+async function handle(file){
+  busy.style.display="block"; busy.textContent="reading pages…";
+  DELIV=[];CREDITS=[];PAYMENTS=[];SKIPPED=[];done.clear();
+  try{
+    const buf=await file.arrayBuffer();
+    const pdf=await pdfjsLib.getDocument({data:buf}).promise;
+    PAGES=pdf.numPages;
+    for(let p=1;p<=pdf.numPages;p++){
+      busy.textContent="reading page "+p+" of "+pdf.numPages+"…";
+      const page=await pdf.getPage(p);
+      const text=await pageText(page);
+      const inv=parseInvoice(text);
+      if(inv.isTotals){ SKIPPED.push({account:inv.account||"Route / week totals",reason:"totals page"}); continue; }
+      const kind=await headerKind(page);
+      if(kind==="blue"){ SKIPPED.push({account:inv.account||"(unnamed)",reason:"not delivered (blue heading)",gross:inv.gross}); continue; }
+      const key=custKey(inv.inv);
+      const customer = CUSTOMERS[key] || inv.account;
+      if(!CUSTOMERS[key]) inv.flags.push("Customer not in your QuickBooks list — check the name before import");
+      const ex=parseExtras(text);
+
+      if(inv.lines.length>0){                              // red delivery — billable
+        DELIV.push({...inv,id:"d"+p,delivered:true,customer});
+        if(ex.credits.length) CREDITS.push({account:inv.account,customer,inv:inv.inv,credits:ex.credits});
+        PAYMENTS.push({account:inv.account,customer,inv:inv.inv,amount:inv.gross,checkNo:ex.checkNo});
+      } else if(inv.isCredit||ex.credits.length){          // credit-only adjustment → credits checklist
+        if(ex.credits.length) CREDITS.push({account:inv.account,customer,inv:inv.inv,credits:ex.credits});
+        else CREDITS.push({account:inv.account,customer,inv:inv.inv,credits:[]});
+      } else {                                             // red $0 — show as no-delivery card
+        DELIV.push({...inv,id:"d"+p,delivered:false,customer});
+      }
+    }
+    render();
+  }catch(err){
+    busy.textContent="Couldn't read that file: "+err.message;
+    return;
+  }
+  busy.style.display="none";
+}
+
+function csvCell(v){v=String(v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;}
+// Escape any string parsed from the uploaded PDF before it is placed into
+// innerHTML below, so a malformed or crafted sheet can't inject markup into
+// this page's origin.
+function esc(v){return String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function buildCSV(){
+  const head=["InvoiceNo","Customer","InvoiceDate","DueDate","Item","ItemDescription","ItemQuantity","ItemRate","ItemAmount"];
+  const rows=[head];
+  for(const d of DELIV){
+    if(!d.delivered) continue;
+    if(done.has(d.id)) continue;            // checked "Entered in QuickBooks" → leave out of the CSV
+    const no=d.inv.replace(/\s+/g,"-"), dt=fmtDate(d.date);
+    for(const l of d.lines){
+      rows.push([no,d.customer,dt,dt,l.name,l.name,l.qty,l.rate.toFixed(2),l.amt.toFixed(2)]);
+    }
+  }
+  return rows.map(r=>r.map(csvCell).join(",")).join("\r\n");
+}
+function refreshBar(){
+  const rem=DELIV.filter(d=>d.delivered && !done.has(d.id));
+  const tot=rem.reduce((s,d)=>s+d.gross,0);
+  const all=DELIV.filter(d=>d.delivered).length;
+  document.getElementById("ctaSub").textContent = (all-rem.length)>0
+    ? rem.length+" of "+all+" left · $"+tot.toFixed(2)+" · checked invoices are left out of the CSV"
+    : all+" invoices · $"+tot.toFixed(2)+" · save then upload to QBO";
+}
+document.getElementById("download").addEventListener("click",()=>{
+  const rem=DELIV.filter(d=>d.delivered && !done.has(d.id));
+  if(!rem.length){ alert("Every invoice is checked as entered — nothing left to download. Uncheck one to include it."); return; }
+  const blob=new Blob([buildCSV()],{type:"text/csv;charset=utf-8;"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url; a.download="alpha_deli_qbo_invoices.csv"; a.click();
+  URL.revokeObjectURL(url);
+});
+
+function render(){
+  document.getElementById("summary").style.display="block";
+  const dropEl=document.getElementById("drop");
+  dropEl.classList.add("loaded");
+  dropEl.querySelector(".ic").textContent="✓";
+  dropEl.querySelector("h2").textContent="Week loaded";
+  dropEl.querySelector("small").textContent="drop another PDF to start over";
+  const deliveredArr=DELIV.filter(d=>d.delivered);
+  const noDelivArr=DELIV.filter(d=>!d.delivered);
+  const total=deliveredArr.reduce((s,d)=>s+d.gross,0);
+  const flagged=deliveredArr.filter(d=>d.flags.length).length;
+
+  document.getElementById("stats").innerHTML=`
+    <div class="stat green"><div class="n">${deliveredArr.length}</div><div class="l">Invoices ready</div></div>
+    <div class="stat"><div class="n">$${total.toFixed(2)}</div><div class="l">Total billed</div></div>
+    <div class="stat"><div class="n">${noDelivArr.length}</div><div class="l">No delivery</div></div>
+    <div class="stat amber"><div class="n">${CREDITS.length}</div><div class="l">Credits to enter</div></div>
+    <div class="stat ${flagged?'red':''}"><div class="n">${flagged}</div><div class="l">Need a look</div></div>
+    <div class="stat"><div class="n">${SKIPPED.length}</div><div class="l">Skipped</div></div>`;
+
+  refreshBar();
+  document.getElementById("delCnt").textContent=deliveredArr.length+" delivered · "+noDelivArr.length+" no delivery";
+  document.getElementById("recon").textContent="Read all "+PAGES+" pages · "+SKIPPED.length+" skipped (totals pages + non-red stops, listed at the bottom)";
+
+  document.getElementById("flagWarn").innerHTML = flagged
+    ? `<div class="howto" style="border-color:var(--red);background:#fbe8e6;color:var(--red-dk)"><b style="color:var(--red-dk)">⚠ ${flagged} invoice(s) didn't add up</b><div class="note" style="color:var(--red-dk)">The totals on those tickets don't match the line items — check them against the PDF before importing (highlighted in red below).</div></div>`
+    : "";
+
+  // tickets — every customer invoice in PDF order; $0 stops shown as muted cards
+  document.getElementById("tickets").innerHTML = DELIV.map(d=>{
+    if(!d.delivered){
+      return `<div class="ticket nodel" id="${d.id}">
+        <div class="t-head"><div class="inv">No. ${esc(d.inv)}</div><div class="cust">${esc(d.customer)}</div><div class="date">${esc(d.date)}</div></div>
+        <div class="nodel-body"><span class="nodel-stamp">No delivery this week</span><span class="nodel-amt">$0.00</span></div>
+      </div>`;
+    }
+    const rows=d.lines.map(l=>`<div class="row"><span class="nm">${esc(l.name)}</span><span class="q">${l.qty} × ${l.rate.toFixed(2)}</span><span class="a">$${l.amt.toFixed(2)}</span></div>`).join("");
+    const flag=d.flags.length?`<div class="t-flag">⚠ ${d.flags.map(esc).join("<br>⚠ ")}</div>`:"";
+    return `<div class="ticket ${d.flags.length?'flag':''} ${done.has(d.id)?'done':''}" id="${d.id}">
+      <div class="t-head"><div class="inv">No. ${esc(d.inv)}</div><div class="cust">${esc(d.customer)}</div><div class="date">${esc(d.date)}</div></div>
+      <div class="t-lines">${rows}</div>
+      <div class="t-tot"><span class="lab">Invoice total</span><span class="val">$${d.gross.toFixed(2)}</span></div>
+      ${flag}
+      <div class="t-foot"><div class="stamp ${done.has(d.id)?'on':''}" data-id="${d.id}"><span class="box">✓</span><span>Entered in QuickBooks</span></div></div>
+    </div>`;
+  }).join("");
+  document.querySelectorAll(".stamp").forEach(s=>s.addEventListener("click",()=>{
+    const id=s.dataset.id; done.has(id)?done.delete(id):done.add(id);
+    s.classList.toggle("on"); document.getElementById(id).classList.toggle("done");
+    refreshBar();
+  }));
+
+  // credits
+  const cEl=document.getElementById("credits");
+  cEl.innerHTML = CREDITS.length ? CREDITS.map(c=>{
+    const items=c.credits.length
+      ? c.credits.map(x=>`${x.name} ×${x.qty} ($${x.amt.toFixed(2)})`).join(" · ")
+      : "see PDF for credited items";
+    const tot=c.credits.reduce((s,x)=>s+x.amt,0);
+    return `<div class="mrow"><span class="who">${esc(c.customer)}</span><span class="pill credit">CREDIT MEMO</span><span class="meta">${items}${tot?" · total $"+tot.toFixed(2):""}</span></div>`;
+  }).join("") : `<div class="empty">No credits this week ✓</div>`;
+
+  // payments — check# → record (with credit applied if any); cash → record; no check# → leave open
+  const credByInv={};
+  CREDITS.forEach(c=>{const t=c.credits.reduce((s,x)=>s+x.amt,0); if(t>0) credByInv[c.inv]=(credByInv[c.inv]||0)+t;});
+  const pEl=document.getElementById("payments");
+  pEl.innerHTML = PAYMENTS.length ? PAYMENTS.map(p=>{
+    const pill = p.checkNo ? `<span class="pill check">CHECK #${p.checkNo}</span>` : `<span class="pill open">NO CHECK #</span>`;
+    const action = p.checkNo ? "record" : "if cash → record · else leave open";
+    const cr=credByInv[p.inv]; const crNote=cr?` · apply credit $${cr.toFixed(2)}`:"";
+    return `<div class="mrow"><span class="who">${esc(p.customer)}</span>${pill}<span class="meta">No. ${esc(p.inv)} · $${p.amount.toFixed(2)} · ${action}${crNote}</span></div>`;
+  }).join("") : `<div class="empty">No payments to record ✓</div>`;
+
+  // skipped (route/week totals + non-red "not delivered" stops)
+  document.getElementById("skipped").innerHTML = SKIPPED.length
+    ? SKIPPED.map(s=>{
+        const flag=(s.gross&&s.gross>0)?` — <b style="color:var(--red)">$${s.gross.toFixed(2)}, check this</b>`:"";
+        const why=(s.reason&&s.reason!=="totals page")?` <span style="opacity:.6">· not delivered</span>`:"";
+        return `<span>${esc(s.account||"(unnamed)")}${why}${flag}</span>`;
+      }).join("")
+    : `<span>None</span>`;
+
+  document.getElementById("summary").scrollIntoView({behavior:"smooth",block:"start"});
+}
+</script>
+</body>
+</html>
