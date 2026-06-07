@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-06-07 — Address Errors Are Costing DTC Brands More Than the Reships · e-com ops · `address-errors-dtc-reship-cost`
 - 2026-06-06 — Why GC Backcharges Rarely Get Recovered in Full · construction · `gc-backcharges-rarely-recovered`
 - 2026-06-05 — Freight Bill Audit: Sampled vs AI Line-Item Review · logistics · `freight-bill-audit-sampled-vs-ai-line-item-review`
 - 2026-06-04 — Card-on-File Declines and DTC Subscription Churn · e-com ops · `card-on-file-declines-dtc-subscription-churn`
