@@ -1,0 +1,95 @@
+export const frontmatter = {
+  title: "How Port Demurrage Eats Drayage Broker Margin",
+  excerpt:
+    "Demurrage charges compound on import containers that miss their free-time window. Drayage brokerage margin slips on the appointment, not the move.",
+  date: "2026-06-08",
+  author: "ApexifyLabs Team",
+  tags: ["Logistics", "Drayage", "Brokerage Operations", "Cost of Inaction"],
+  heroImage: "/blog/port-demurrage-drayage-broker-margin/hero.svg",
+  seoDescription:
+    "Port demurrage on import containers erodes drayage broker margin in small recurring leaks. What manual desks miss and what AI-augmented dispatch changes.",
+  readingTime: "4 min read",
+};
+
+Port demurrage is the per-day fee an ocean carrier charges when a container sits at the terminal past its free-time clock. For drayage brokers, a single missed appointment can turn a $200 margin container into a $1,500 loss. The fee rarely appears as one line item; it shows up as small recurring leaks.
+
+## What is port demurrage, exactly?
+
+Demurrage covers the time an import container sits inside the marine terminal after free time expires. Detention, often billed alongside, covers time the equipment stays outside the terminal past its allowed window. Both are billed by the ocean carrier or terminal, and both compound: rates frequently double after the first 5 days and double again after 10.
+
+Under the Federal Maritime Commission's 2024 final rule on Demurrage and Detention Billing (effective May 28, 2024), ocean carriers and marine terminal operators must now issue invoices within 30 calendar days of the charges accruing and itemize the basis for each charge. That rule has made the leak more visible to brokers, but visibility does not equal containment. The dispute window is still short, the evidence still has to be assembled, and the fee still gets paid if the audit trail is incomplete.
+
+## How do these fees actually add up?
+
+For an import-heavy lane through a US West Coast port, the math looks like this. Per-container, illustrative figures are consistent with publicly reported 2023 to 2024 D&D benchmarking from container logistics platforms.
+
+| Stage | Free time | Day 1 to 5 | Day 6 to 10 | Day 11 and beyond |
+|---|---|---|---|---|
+| Demurrage at terminal | 3 to 5 days | $150 to $200/day | $300 to $400/day | $500 and up per day |
+| Per-diem detention on chassis | 3 to 5 days | $75 to $125/day | $150 to $200/day | $250 and up per day |
+
+A drayage broker working a $250 net margin per move loses the entire margin on day 1 of demurrage, and is paying out of pocket by day 3. On a 400-container monthly book, a 4 percent rate of late pulls (16 containers, average 2 days each) erases roughly $9,600 of margin in a single month. That is the leak most desks underestimate.
+
+## Why do containers sit past free time at all?
+
+Operators rarely point to a single failure. The pattern is a chain of small coordination gaps:
+
+1. **Free-time clocks tracked in spreadsheets.** Each steamship line publishes free time differently, and last-free-day data is republished every time a vessel discharge changes. A broker tracking 30 to 50 in-transit containers in Excel typically catches the wrong-day expiration once or twice a week.
+2. **Appointment systems that move faster than email.** Most US container terminals now require pre-booked dispatch appointments through their own portals. Slots open and close inside the same hour. A broker checking portals manually three times a day misses the slot.
+3. **Chassis shortages decoupled from the container schedule.** A 24-hour chassis dip turns a same-day pull into a next-week pull, and the free-time clock keeps running.
+4. **Customs and ISF exceptions surfaced late.** Holds are often visible at the line level a day or more before the broker checks the line portal manually.
+5. **Driver capacity allocated to the loudest customer, not the most exposed container.** Without a per-container P&L view, dispatch sequences by relationship, not by demurrage risk.
+
+Industry surveys from drayage trade press through 2023 and 2024 regularly cite demurrage and detention disputes as a top operating headache for US drayage operators, with manual tracking commonly named as the root cause.
+
+## What does the desk look like before automation?
+
+A typical mid-size drayage brokerage running 300 to 800 containers per month maintains a free-time tracker in a shared spreadsheet. The dispatch lead spends the first hour of every morning reconciling steamship line emails, terminal portal screenshots, and trucker WhatsApp updates into the tracker. Exception alerts arrive by email and are triaged by whoever is at the keyboard.
+
+The downstream effects are predictable. Per-container margin is invisible until the carrier invoice arrives 20 to 30 days later. Disputes are filed reactively, against a clock the broker did not realize had started. Customers who churn over a single bad month rarely explain that demurrage was the trigger; they cite "service quality" or simply quote a competitor next quarter.
+
+There is also a hidden second-order cost. The dispatch lead who spends two hours a day on the free-time spreadsheet is the same person who would otherwise be selling the next lane, training a new dispatcher, or rebuilding the customer review process. That opportunity cost rarely appears on a P&L, but it shows up in the rate at which the business stops growing.
+
+## What changes when an AI-augmented system runs the clock?
+
+The shift is not about replacing dispatchers. It is about giving them a desk that surfaces the right container at the right hour.
+
+- **Per-container free-time clocks are calculated automatically** from line schedules and last-free-day data, ranked by margin-at-risk rather than by ship-call order.
+- **Terminal appointment portals are watched continuously**, with slot availability fed into the dispatch queue. The dispatcher sees three viable appointment windows for a container before opening a single tab.
+- **Chassis availability is matched against the container queue**, so a 24-hour gap reshuffles the priority list rather than collapsing the day's plan.
+- **Customs holds and ISF mismatches surface within an hour** of the line update, not the next morning.
+- **The dispute file builds itself.** When a charge is invoiced, the audit trail (appointment attempts, terminal closures, hold timestamps) is already attached, so the dispute window measured in days, not weeks, is usable.
+
+The downstream KPI most operators watch is "containers pulled within free time," and a well-instrumented desk routinely moves that number from the high 80s to the mid-to-high 90s. The margin recovery is mechanical: every 1 percent improvement on a 400-container book recovers roughly $1,200 a month at the rates above.
+
+None of this is theoretical. Public case discussions from drayage operators that have moved to platforms with automated D&D tracking consistently report mid-single-digit percentage point improvements in on-time pulls within the first quarter of deployment. The dispatchers do not work harder. They work on the right container.
+
+## How does this compare to the old "hire another dispatcher" answer?
+
+The traditional path was headcount. Adding a junior dispatcher to babysit the spreadsheet costs $55,000 to $75,000 fully loaded in most US markets, and the spreadsheet still does not learn. The comparison most operators eventually run looks like this:
+
+| Approach | Containers tracked reliably / month | Time-to-alert on missed slot | Recurring monthly cost | Capacity ceiling |
+|---|---|---|---|---|
+| Manual, single tracker | 100 to 150 | Same-day to next-day | $0 incremental | Hard ceiling at one operator's bandwidth |
+| Manual, two-person desk | 250 to 400 | Within 4 to 6 hours | $5K to $7K added headcount | Headcount must double to double capacity |
+| AI-augmented dispatch desk | 800 to 1,500 | Within 15 to 30 minutes | Small fraction of one headcount | Scales with container count, not staff |
+
+The trade-off is not labor cost alone. It is the leverage ratio. A spreadsheet desk scales linearly with headcount. An AI-augmented desk scales with volume.
+
+Headcount also caps how fast the brokerage can take on new accounts. Onboarding a new shipper means another set of preferred terminals, another set of free-time idiosyncrasies, and another set of appointment portals to learn. The dispatcher hired to absorb that complexity is usually fully utilized by month three, and the next account waits.
+
+## When is it worth looking at this seriously?
+
+Three signals tend to show up before the leak becomes obvious on the P&L:
+
+- Monthly demurrage and detention exposure crosses 1 percent of revenue.
+- The dispatch lead spends more than 90 minutes a day reconciling free-time data.
+- More than one customer in the last quarter raised D&D as a churn reason during a renewal call.
+
+None of these alone is fatal. Two of them together usually means the desk is running 5 to 10 points below its achievable on-time pull rate, and the recovery is in the dispatch process, not in the rate sheet.
+
+## A note on what we do not put into a tutorial
+
+The instrumentation, the per-container P&L logic, and the appointment-portal integration patterns are where this work actually lives. Each broker's TMS, terminal mix, and customer base bends the build differently, and the design choices that determine whether the system moves the KPI are the parts a generic guide cannot give you. Our role is to design and ship that system, then hand the operating desk a tool that pays for itself in containers, not contracts.
+
+If port demurrage shows up in your monthly numbers more often than you would like, we run a **completely free automation audit** for drayage and import brokerage desks. We look at your free-time leakage, your appointment workflow, and one quarter of D&D invoices, then map where the margin is recoverable. No commitment, no slide deck. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>
