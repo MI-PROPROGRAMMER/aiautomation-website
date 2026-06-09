@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="When Estimating Capacity Caps a Mid-Size GC's Pipeline">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.22" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="submittedFill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2"/>
+      <stop offset="1" stop-color="#0a8fb8"/>
+    </linearGradient>
+    <linearGradient id="declinedFill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5e8aa6"/>
+      <stop offset="1" stop-color="#3d617a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <path d="M0 200 H1500"/><path d="M0 360 H1500"/><path d="M0 520 H1500"/>
+    <path d="M0 680 H1500"/><path d="M0 840 H1500"/>
+  </g>
+
+  <g transform="translate(140,210)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.9">THE JOURNAL</text>
+    <text y="100" font-size="78" font-weight="700" fill="#ffffff">When Estimating Capacity</text>
+    <text y="190" font-size="78" font-weight="700" fill="#ffffff">Caps a Mid-Size GC's Bid Funnel</text>
+    <text y="260" font-size="34" font-weight="400" fill="#cfe5f1" opacity="0.9">the pipeline left on the table when the bench runs flat</text>
+  </g>
+
+  <g transform="translate(140,640)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">ONE MONTH OF INCOMING BID INVITATIONS · ILLUSTRATIVE SHARES</text>
+
+    <g transform="translate(0,30)">
+      <rect x="0" y="0" width="540" height="64" fill="url(#submittedFill)" rx="2"/>
+      <rect x="540" y="0" width="540" height="64" fill="url(#declinedFill)"/>
+      <rect x="1080" y="0" width="140" height="64" fill="#0a3a66" rx="2"/>
+
+      <line x1="540" y1="-6" x2="540" y2="70" stroke="#001a36" stroke-width="2" opacity="0.65"/>
+      <line x1="1080" y1="-6" x2="1080" y2="70" stroke="#001a36" stroke-width="2" opacity="0.65"/>
+
+      <text x="0" y="100" font-size="22" font-weight="700" fill="#ffffff">SUBMITTED</text>
+      <text x="0" y="128" font-size="18" fill="#cfe5f1" opacity="0.85">about 45%</text>
+
+      <text x="540" y="100" font-size="22" font-weight="700" fill="#ffffff">DECLINED FOR CAPACITY</text>
+      <text x="540" y="128" font-size="18" fill="#cfe5f1" opacity="0.85">about 45%</text>
+
+      <text x="1080" y="100" font-size="22" font-weight="700" fill="#ffffff">STRATEGIC NO-BID</text>
+      <text x="1080" y="128" font-size="18" fill="#cfe5f1" opacity="0.85">about 10%</text>
+    </g>
+
+    <g transform="translate(0,210)">
+      <text font-size="13" letter-spacing="2" fill="#5e8aa6">THE MIDDLE BAND IS WHERE PIPELINE LEAKS · CAPACITY, NOT FIT, IS THE CAP</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
