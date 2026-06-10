@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="t d">
+  <title id="t">The Margin Cost of MAP Violations Across DTC Catalogs</title>
+  <desc id="d">A line chart contrasting a steady MAP price line against a marketplace average that drifts downward over unmonitored time, with the gap shaded as compounding margin loss.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accentBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0a3a66"/>
+      <stop offset="0.25" stop-color="#00B5E2"/>
+      <stop offset="0.75" stop-color="#00B5E2"/>
+      <stop offset="1" stop-color="#0a3a66"/>
+    </linearGradient>
+    <linearGradient id="lossFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.06"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <text x="750" y="195" text-anchor="middle" fill="#00B5E2"
+        font-family="Georgia, 'Times New Roman', serif" font-size="22"
+        letter-spacing="6">THE JOURNAL</text>
+
+  <text x="750" y="300" text-anchor="middle" fill="#ffffff"
+        font-family="Georgia, 'Times New Roman', serif" font-size="78"
+        font-weight="bold">The Margin Cost of</text>
+  <text x="750" y="388" text-anchor="middle" fill="#ffffff"
+        font-family="Georgia, 'Times New Roman', serif" font-size="78"
+        font-weight="bold">MAP Violations</text>
+
+  <text x="750" y="448" text-anchor="middle" fill="#cfe5f1" fill-opacity="0.9"
+        font-family="Georgia, 'Times New Roman', serif" font-size="32"
+        font-style="italic">Across DTC Catalogs</text>
+
+  <line x1="230" y1="830" x2="1270" y2="830" stroke="#5e8aa6" stroke-width="2" stroke-opacity="0.55"/>
+  <line x1="230" y1="540" x2="230" y2="830" stroke="#5e8aa6" stroke-width="2" stroke-opacity="0.55"/>
+
+  <path d="M 230 600 L 1270 600 L 1270 810 L 1166 793 L 1062 772 L 958 745 L 854 712 L 750 680 L 646 652 L 542 632 L 438 618 L 334 608 L 230 603 Z"
+        fill="url(#lossFill)"/>
+
+  <line x1="230" y1="600" x2="1270" y2="600" stroke="#cfe5f1" stroke-width="3" stroke-dasharray="10 6"/>
+  <text x="246" y="586" fill="#cfe5f1"
+        font-family="Georgia, 'Times New Roman', serif" font-size="22" font-style="italic">MAP price</text>
+
+  <path d="M 230 603 L 334 608 L 438 618 L 542 632 L 646 652 L 750 680 L 854 712 L 958 745 L 1062 772 L 1166 793 L 1270 810"
+        fill="none" stroke="#00B5E2" stroke-width="4"/>
+
+  <circle cx="230" cy="603" r="5" fill="#00B5E2"/>
+  <circle cx="438" cy="618" r="5" fill="#00B5E2"/>
+  <circle cx="646" cy="652" r="5" fill="#00B5E2"/>
+  <circle cx="854" cy="712" r="5" fill="#00B5E2"/>
+  <circle cx="1062" cy="772" r="5" fill="#00B5E2"/>
+  <circle cx="1270" cy="810" r="5" fill="#00B5E2"/>
+
+  <text x="1254" y="858" fill="#00B5E2"
+        font-family="Georgia, 'Times New Roman', serif" font-size="22" font-style="italic" text-anchor="end">marketplace average</text>
+  <text x="248" y="858" fill="#7fb6d6"
+        font-family="Georgia, 'Times New Roman', serif" font-size="20" font-style="italic">unmonitored quarters</text>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentBar)"/>
+</svg>
