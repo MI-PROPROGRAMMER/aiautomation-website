@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Certified Payroll at GCs: Spreadsheets vs AI Reporting">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.18" cy="0.22" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <path d="M0 240 H1500"/>
+    <path d="M0 420 H1500"/>
+    <path d="M0 600 H1500"/>
+    <path d="M0 780 H1500"/>
+  </g>
+
+  <g transform="translate(140,200)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.9">THE JOURNAL</text>
+    <line x1="0" y1="22" x2="180" y2="22" stroke="#00B5E2" stroke-width="2" opacity="0.7"/>
+
+    <text y="120" font-size="82" font-weight="700" fill="#ffffff">Certified Payroll at GCs:</text>
+    <text y="210" font-size="82" font-weight="700" fill="#ffffff">Spreadsheets vs AI</text>
+
+    <text y="280" font-size="36" font-weight="400" fill="#cfe5f1" opacity="0.9">Why the weekly cycle takes 6 to 15 hours per job.</text>
+  </g>
+
+  <g transform="translate(140,520)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="16" letter-spacing="4" fill="#7fb6d6">WEEKLY HOURS PER ACTIVE PUBLIC JOB</text>
+
+    <text x="80" y="40" font-size="18" letter-spacing="3" fill="#cfe5f1">SPREADSHEET DESK</text>
+    <text x="620" y="40" font-size="18" letter-spacing="3" fill="#cfe5f1">AI-AUGMENTED DESK</text>
+
+    <g font-size="16" fill="#9fc4dc" letter-spacing="2">
+      <text x="0" y="86">MON</text>
+      <text x="0" y="128">TUE</text>
+      <text x="0" y="170">WED</text>
+      <text x="0" y="212">THU</text>
+      <text x="0" y="254">FRI</text>
+    </g>
+
+    <g>
+      <rect x="80" y="70" width="420" height="22" fill="#0a3a66"/>
+      <rect x="80" y="70" width="252" height="22" fill="#5e8aa6" opacity="0.85"/>
+      <text x="510" y="86" font-size="14" fill="#cfe5f1">3 h</text>
+
+      <rect x="80" y="112" width="420" height="22" fill="#0a3a66"/>
+      <rect x="80" y="112" width="336" height="22" fill="#5e8aa6" opacity="0.85"/>
+      <text x="510" y="128" font-size="14" fill="#cfe5f1">4 h</text>
+
+      <rect x="80" y="154" width="420" height="22" fill="#0a3a66"/>
+      <rect x="80" y="154" width="252" height="22" fill="#5e8aa6" opacity="0.85"/>
+      <text x="510" y="170" font-size="14" fill="#cfe5f1">3 h</text>
+
+      <rect x="80" y="196" width="420" height="22" fill="#0a3a66"/>
+      <rect x="80" y="196" width="420" height="22" fill="#7fb6d6" opacity="0.95"/>
+      <text x="510" y="212" font-size="14" fill="#cfe5f1">5 h</text>
+
+      <rect x="80" y="238" width="420" height="22" fill="#0a3a66"/>
+      <rect x="80" y="238" width="336" height="22" fill="#7fb6d6" opacity="0.95"/>
+      <text x="510" y="254" font-size="14" fill="#cfe5f1">4 h</text>
+
+      <line x1="80" y1="280" x2="560" y2="280" stroke="#0a3a66" stroke-width="1"/>
+      <text x="80" y="305" font-size="16" letter-spacing="2" fill="#9fc4dc">WEEKLY TOTAL</text>
+      <text x="470" y="305" font-size="18" font-weight="700" fill="#ffffff">19 hours</text>
+    </g>
+
+    <g>
+      <rect x="620" y="70" width="420" height="22" fill="#0a3a66"/>
+      <rect x="620" y="70" width="42" height="22" fill="#00B5E2" opacity="0.9"/>
+      <text x="1050" y="86" font-size="14" fill="#cfe5f1">0.5 h</text>
+
+      <rect x="620" y="112" width="420" height="22" fill="#0a3a66"/>
+      <rect x="620" y="112" width="42" height="22" fill="#00B5E2" opacity="0.9"/>
+      <text x="1050" y="128" font-size="14" fill="#cfe5f1">0.5 h</text>
+
+      <rect x="620" y="154" width="420" height="22" fill="#0a3a66"/>
+      <rect x="620" y="154" width="84" height="22" fill="#00B5E2" opacity="0.9"/>
+      <text x="1050" y="170" font-size="14" fill="#cfe5f1">1 h</text>
+
+      <rect x="620" y="196" width="420" height="22" fill="#0a3a66"/>
+      <rect x="620" y="196" width="126" height="22" fill="#00B5E2"/>
+      <text x="1050" y="212" font-size="14" fill="#cfe5f1">1.5 h</text>
+
+      <rect x="620" y="238" width="420" height="22" fill="#0a3a66"/>
+      <rect x="620" y="238" width="42" height="22" fill="#00B5E2" opacity="0.9"/>
+      <text x="1050" y="254" font-size="14" fill="#cfe5f1">0.5 h</text>
+
+      <line x1="620" y1="280" x2="1100" y2="280" stroke="#0a3a66" stroke-width="1"/>
+      <text x="620" y="305" font-size="16" letter-spacing="2" fill="#9fc4dc">WEEKLY TOTAL</text>
+      <text x="1010" y="305" font-size="18" font-weight="700" fill="#ffffff">4 hours</text>
+    </g>
+
+    <text x="0" y="340" font-size="13" letter-spacing="2" fill="#5e8aa6">ILLUSTRATIVE · ONE ACTIVE COVERED JOB · WH-347 + SUB INTAKE + PORTAL SUBMISSION</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>

@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-06-12 — Certified Payroll at GCs: Spreadsheets vs AI Reporting · construction · `certified-payroll-spreadsheets-vs-ai-gc`
 - 2026-06-11 — The Annual Lane RFP Crunch on Mid-Size Brokerages · logistics · `annual-lane-rfp-crunch-mid-size-brokerages`
 - 2026-06-10 — The Margin Cost of MAP Violations Across DTC Catalogs · e-com ops · `margin-cost-of-map-violations-across-dtc-catalogs`
 - 2026-06-09 — When Estimating Capacity Caps a Mid-Size GC's Pipeline · construction · `estimating-capacity-caps-mid-size-gc-pipeline`
