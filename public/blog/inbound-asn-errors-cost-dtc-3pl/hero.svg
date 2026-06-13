@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Inbound ASN error cost visualization">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.18" cy="0.78" r="0.6">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="barGood" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="barBad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5e8aa6" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#0a3a66" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.4">
+    <path d="M0 220 H1500" /><path d="M0 380 H1500" /><path d="M0 540 H1500" />
+    <path d="M0 700 H1500" /><path d="M0 860 H1500" />
+  </g>
+
+  <g transform="translate(150,230)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="78" font-weight="700" fill="#ffffff">Where Inbound ASN Errors Cost</text>
+    <text y="180" font-size="78" font-weight="700" fill="#ffffff">DTC Brands at the 3PL</text>
+    <text y="248" font-size="36" font-weight="400" fill="#cfe5f1" opacity="0.9">the dock-side cost of bad inbound data</text>
+  </g>
+
+  <g transform="translate(150,580)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">INVENTORY BLACKOUT WINDOW · TRUCK ARRIVAL TO WMS POST</text>
+
+    <g transform="translate(0,50)">
+      <text font-size="16" fill="#9fc4dc">MANUAL ASN</text>
+      <rect x="220" y="-16" width="980" height="22" fill="#0a3a66" opacity="0.55"/>
+      <rect x="220" y="-16" width="940" height="22" fill="url(#barBad)"/>
+      <text x="1175" y="0" font-size="16" fill="#cfe5f1">24 to 72 hrs</text>
+    </g>
+
+    <g transform="translate(0,110)">
+      <text font-size="16" fill="#9fc4dc">AI-VALIDATED</text>
+      <rect x="220" y="-16" width="980" height="22" fill="#0a3a66" opacity="0.55"/>
+      <rect x="220" y="-16" width="140" height="22" fill="url(#barGood)"/>
+      <text x="1175" y="0" font-size="16" fill="#cfe5f1">under 6 hrs</text>
+    </g>
+
+    <g transform="translate(0,170)">
+      <text font-size="14" fill="#9fc4dc">RECEIVING LEAD TIME PER EXCEPTION PALLET</text>
+    </g>
+
+    <g transform="translate(0,210)">
+      <text font-size="14" fill="#cfe5f1" opacity="0.75">Manual</text>
+      <rect x="220" y="-13" width="980" height="14" fill="#0a3a66" opacity="0.5"/>
+      <rect x="220" y="-13" width="780" height="14" fill="#5e8aa6" opacity="0.75"/>
+      <text x="1175" y="0" font-size="14" fill="#cfe5f1">2 to 4 hrs</text>
+    </g>
+
+    <g transform="translate(0,245)">
+      <text font-size="14" fill="#cfe5f1" opacity="0.75">Validated</text>
+      <rect x="220" y="-13" width="980" height="14" fill="#0a3a66" opacity="0.5"/>
+      <rect x="220" y="-13" width="180" height="14" fill="#00B5E2" opacity="0.85"/>
+      <text x="1175" y="0" font-size="14" fill="#cfe5f1">30 to 45 min</text>
+    </g>
+
+    <g transform="translate(0,290)">
+      <text font-size="12" letter-spacing="2" fill="#5e8aa6">BAD ASNS PUSH SENIOR OPS INTO A CLERICAL RECONCILIATION QUEUE</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
