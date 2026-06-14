@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-06-14 — Why Cold Chain Claims Stall on Freight Brokerage Desks · logistics · `why-cold-chain-claims-stall-broker-desks`
 - 2026-06-13 — Where Inbound ASN Errors Cost DTC Brands at the 3PL · e-com ops · `inbound-asn-errors-cost-dtc-3pl`
 - 2026-06-12 — Certified Payroll at GCs: Spreadsheets vs AI Reporting · construction · `certified-payroll-spreadsheets-vs-ai-gc`
 - 2026-06-11 — The Annual Lane RFP Crunch on Mid-Size Brokerages · logistics · `annual-lane-rfp-crunch-mid-size-brokerages`
