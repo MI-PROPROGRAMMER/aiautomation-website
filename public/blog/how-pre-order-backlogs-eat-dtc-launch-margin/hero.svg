@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Pre-order backlog aging across the launch window visualization">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.74" r="0.6">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="0.55" stop-color="#5e8aa6" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#0a3a66" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <path d="M0 220 H1500" /><path d="M0 380 H1500" /><path d="M0 540 H1500" />
+    <path d="M0 700 H1500" /><path d="M0 860 H1500" />
+  </g>
+
+  <g transform="translate(150,230)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="80" font-weight="700" fill="#ffffff">How Pre-Order Backlogs Eat</text>
+    <text y="184" font-size="80" font-weight="700" fill="#ffffff">DTC Launch Margin</text>
+    <text y="252" font-size="36" font-weight="400" fill="#cfe5f1" opacity="0.9">between checkout and ship, the order data ages</text>
+  </g>
+
+  <g transform="translate(150,600)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">THE PRE-ORDER WAIT WINDOW · CHECKOUT TO SHIP</text>
+
+    <line x1="80" y1="200" x2="1180" y2="200" stroke="url(#rail)" stroke-width="3"/>
+
+    <g transform="translate(80,200)">
+      <circle r="11" fill="#00B5E2"/>
+      <text y="40" font-size="14" fill="#9fc4dc" text-anchor="middle">DAY 0</text>
+      <text y="60" font-size="12" fill="#7fb6d6" text-anchor="middle">checkout</text>
+    </g>
+
+    <g transform="translate(355,200)">
+      <circle r="10" fill="#00B5E2" opacity="0.85"/>
+      <text y="40" font-size="14" fill="#9fc4dc" text-anchor="middle">DAY 14</text>
+      <g transform="translate(-110,-90)">
+        <rect width="220" height="26" rx="3" fill="#0a3a66" opacity="0.85"/>
+        <text x="110" y="17" font-size="13" fill="#cfe5f1" text-anchor="middle">card holds expire</text>
+      </g>
+    </g>
+
+    <g transform="translate(630,200)">
+      <circle r="10" fill="#00B5E2" opacity="0.7"/>
+      <text y="40" font-size="14" fill="#9fc4dc" text-anchor="middle">DAY 30</text>
+      <g transform="translate(-110,-128)">
+        <rect width="220" height="26" rx="3" fill="#0a3a66" opacity="0.85"/>
+        <text x="110" y="17" font-size="13" fill="#cfe5f1" text-anchor="middle">recapture queue grows</text>
+      </g>
+      <g transform="translate(-110,-90)">
+        <rect width="220" height="26" rx="3" fill="#0a3a66" opacity="0.85"/>
+        <text x="110" y="17" font-size="13" fill="#cfe5f1" text-anchor="middle">addresses begin drifting</text>
+      </g>
+    </g>
+
+    <g transform="translate(905,200)">
+      <circle r="10" fill="#00B5E2" opacity="0.55"/>
+      <text y="40" font-size="14" fill="#9fc4dc" text-anchor="middle">DAY 45</text>
+      <g transform="translate(-110,-166)">
+        <rect width="220" height="26" rx="3" fill="#0a3a66" opacity="0.85"/>
+        <text x="110" y="17" font-size="13" fill="#cfe5f1" text-anchor="middle">WISMO inbox ramps</text>
+      </g>
+      <g transform="translate(-110,-128)">
+        <rect width="220" height="26" rx="3" fill="#0a3a66" opacity="0.85"/>
+        <text x="110" y="17" font-size="13" fill="#cfe5f1" text-anchor="middle">recapture queue grows</text>
+      </g>
+      <g transform="translate(-110,-90)">
+        <rect width="220" height="26" rx="3" fill="#0a3a66" opacity="0.85"/>
+        <text x="110" y="17" font-size="13" fill="#cfe5f1" text-anchor="middle">addresses begin drifting</text>
+      </g>
+    </g>
+
+    <g transform="translate(1180,200)">
+      <circle r="14" fill="#00B5E2"/>
+      <text y="40" font-size="14" fill="#cfe5f1" text-anchor="middle">DAY 60</text>
+      <text y="60" font-size="12" fill="#00B5E2" text-anchor="middle">SHIP</text>
+      <g transform="translate(-110,-204)">
+        <rect width="220" height="26" rx="3" fill="#0a3a66" opacity="0.9"/>
+        <text x="110" y="17" font-size="13" fill="#cfe5f1" text-anchor="middle">fraud queue saturates</text>
+      </g>
+      <g transform="translate(-110,-166)">
+        <rect width="220" height="26" rx="3" fill="#0a3a66" opacity="0.9"/>
+        <text x="110" y="17" font-size="13" fill="#cfe5f1" text-anchor="middle">WISMO inbox ramps</text>
+      </g>
+      <g transform="translate(-110,-128)">
+        <rect width="220" height="26" rx="3" fill="#0a3a66" opacity="0.9"/>
+        <text x="110" y="17" font-size="13" fill="#cfe5f1" text-anchor="middle">recapture queue grows</text>
+      </g>
+      <g transform="translate(-110,-90)">
+        <rect width="220" height="26" rx="3" fill="#0a3a66" opacity="0.9"/>
+        <text x="110" y="17" font-size="13" fill="#cfe5f1" text-anchor="middle">addresses begin drifting</text>
+      </g>
+    </g>
+
+    <text y="280" font-size="12" letter-spacing="2" fill="#5e8aa6">ORDER DATA AGES AS THE WAIT WINDOW LENGTHENS · BACKLOG COMPOUNDS BY SHIP DAY</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
