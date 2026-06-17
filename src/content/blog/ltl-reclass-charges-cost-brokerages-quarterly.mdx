@@ -1,0 +1,86 @@
+export const frontmatter = {
+  title: "What LTL Reclass Charges Cost a Brokerage Each Quarter",
+  excerpt:
+    "Carrier reclassification rebills land days after pickup and eat margin most LTL brokerages never claim back. Here is what the exposure looks like.",
+  date: "2026-06-17",
+  author: "ApexifyLabs Team",
+  tags: ["Logistics", "Freight Brokerage", "LTL", "Margin Recovery"],
+  heroImage: "/blog/ltl-reclass-charges-cost-brokerages-quarterly/hero.svg",
+  seoDescription:
+    "LTL reclass charges land days after pickup and drain freight brokerage margin. See how the exposure stacks up across the quarter and where AI changes the math.",
+  readingTime: "4 min read",
+};
+
+LTL reclassification charges land days after pickup, billed back to the brokerage by the carrier, and most desks absorb them rather than dispute. A mid-size brokerage running 4,000 LTL shipments a quarter typically carries $48,000 to $90,000 in reclass exposure, with under a third recovered through manual review.
+
+## What is an LTL reclass charge?
+
+LTL pricing turns on freight class, the 1-to-500 NMFC code that combines density, stowability, handling, and liability. The shipper or the brokerage declares a class at booking, the carrier confirms it at pickup, and the invoice is built off that class. When the carrier's dock dimensioner reads a different density, or the bill of lading shows the wrong NMFC code, the carrier reclassifies the shipment after the fact and rebills the brokerage at the higher class.
+
+The rebill is often 30% to 90% above the original quote. Multiply that across a quarter of LTL volume and the line item lands somewhere most brokerage owners would rather not look.
+
+## Why do reclass bills hit brokerages so hard?
+
+A few forces compound on the same invoice:
+
+1. **The clock favors the carrier.** Most LTL contracts give the carrier 30 to 60 days to reclassify, while the brokerage has a tight window after the rebill arrives to file a dispute. Manual review of every reclass takes more time than most desks have in their week.
+2. **Documentation lives on the carrier's side.** Dimensioner photos, weigh tickets, and density calculations sit inside the carrier's TMS. A brokerage that wants to dispute has to request that documentation, then reconcile it against the shipper's bill of lading. Most of that paperwork chain is still a human chase.
+3. **The shipper does not always pay.** Many brokerage customers refuse to absorb a reclass they argue should not have happened. The brokerage either eats the difference, fights the carrier, fights the shipper, or in many cases all three.
+4. **Margin is already thin.** Industry reporting from Logistics Management and Armstrong & Associates consistently puts LTL gross margins for non-asset brokerages in the single-digit percent range. A 50% rebill on a $400 shipment can erase the brokerage's entire margin on that load.
+
+The result is that reclass invoices show up in a desk's monthly P&L as "billing adjustments" or "carrier corrections," tucked under the cost of revenue, where they rarely get attention until the quarter closes.
+
+## How much leakage sits at a typical mid-size brokerage?
+
+The numbers below model a brokerage handling 4,000 LTL shipments per quarter. Reclass rates draw from carrier dimensioner deployment surveys reported by FreightWaves and from the National Motor Freight Traffic Association's published reclassification volume tracking, which consistently put the average LTL reclassification rate between 8% and 15% on shipments where the shipper self-classifies.
+
+| Scenario | Manual dispute desk | AI-augmented dispute workflow |
+|---|---|---|
+| LTL shipments per quarter | 4,000 | 4,000 |
+| Carrier reclassification rate | ~12% | ~12% |
+| Reclass invoices to review | ~480 | ~480 |
+| Total reclass exposure | $48,000 to $90,000 | $48,000 to $90,000 |
+| Reviewed within carrier dispute window | ~35% | 100% |
+| Disputes filed with full documentation | ~25% | ~80% |
+| Recovered margin per quarter | $4,000 to $9,000 | $24,000 to $54,000 |
+| Net absorbed cost | $39,000 to $81,000 | $9,000 to $27,000 |
+
+The recovery delta is not only about disputing more invoices. It is about disputing the right invoices, with the right evidence, before the carrier's dispute window closes.
+
+## Why do manual dispute workflows fall behind?
+
+There are four chokepoints, in order:
+
+- **Inbox triage.** Reclass invoices arrive across carrier portals, EDI 210 feeds, and PDF email attachments. A coordinator has to recognize a reclass line item against the original quote, often across thousands of weekly invoices. The miss rate at this step alone is substantial.
+- **Documentation chase.** Once a reclass is flagged, the coordinator requests dimensioner photos, weight tickets, and the carrier's reclassification rationale. Some carriers respond in hours, some in weeks. The brokerage's own dispute clock is already running.
+- **Density math.** The dispute lives or dies on density (pounds per cubic foot) and the NMFC item that applies. A senior coordinator runs the math quickly. A junior one second-guesses, asks the carrier, and waits another day for confirmation.
+- **Shipper conversation.** If the dispute fails, someone has to call the shipper. That conversation either recovers the cost, hardens the relationship, or both. Either way it eats time the brokerage does not bill for.
+
+Stack four chokepoints on a single invoice and the math is brutal: every step costs a day or two, and the carrier's dispute window does not pause for the brokerage's calendar.
+
+## What changes when AI handles the reclass workflow?
+
+The brokerage does not stop reviewing reclasses. The work just stops being the bottleneck. A connected workflow that monitors carrier portals and EDI feeds for reclass line items, pairs them with the original bill of lading and quote, pulls dimensioner data where the carrier exposes it, runs the density calculation against the disputed NMFC code, and stages a dispute packet for the coordinator to review, shifts the math on the desk in four ways:
+
+- **Coverage moves toward 100%.** Every reclass invoice gets reviewed, not just the ones a coordinator happened to spot.
+- **Dispute timeliness becomes a non-issue.** The packet is ready inside the carrier's window, every time.
+- **Coordinators run exceptions, not invoices.** The senior person in the seat reviews the calculation and decides whether to file, escalate, or absorb. Their judgment is the last step, not the only one.
+- **Customer trust improves.** Shippers that get a clean explanation of why a reclass was filed (and recovered) stop treating the brokerage as a pass-through for carrier surprises.
+
+The brokerage's relationship with both the carrier and the shipper gets harder to misread, because the evidence has been collected and structured from the start.
+
+## Three signs reclass leakage is happening on your desk
+
+You do not need a formal audit to know whether this is a problem. Three quick checks usually settle it:
+
+1. **Pull your dispute win rate over the last two quarters.** If you are winning more than 70% of the reclasses you file but filing on fewer than half of the reclasses you receive, you are absorbing margin you could recover.
+2. **Search the quarter's invoices for "reclass," "reweigh," "NMFC correction," and "audit adjustment."** Count what comes back. Most brokerage owners are surprised by the number.
+3. **Ask your coordinator how often a reclass slips past the dispute window.** If the honest answer is "every week," the absorbed cost is structural rather than occasional.
+
+## A different read on the same desk
+
+Reclass exposure is not a hidden line. It is just one that is hard to act on at human speed. The brokerages that pull this back into recovered margin are not necessarily adding headcount. They are putting the documentation chase and the density math on a connected workflow, then letting a senior coordinator decide.
+
+That is the shift. Same desk, same carriers, same shippers. The work that used to sit in the slowest part of the dispute window now happens before the window closes.
+
+If your LTL reclass numbers feel softer than they should, we run a **completely free automation audit** for freight brokerages. We pull a quarter of your reclass invoices, model where the recoverable margin actually lives, and walk through what a connected dispute workflow would change. No commitment, no slide deck. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>
