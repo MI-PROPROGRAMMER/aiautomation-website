@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-06-18 — Material Delivery Misses Are a GC Labor Cost · construction · `material-delivery-misses-gc-labor-cost`
 - 2026-06-17 — What LTL Reclass Charges Cost a Brokerage Each Quarter · logistics · `ltl-reclass-charges-cost-brokerages-quarterly`
 - 2026-06-16 — How Pre-Order Backlogs Eat DTC Launch Margin · e-com ops · `how-pre-order-backlogs-eat-dtc-launch-margin`
 - 2026-06-15 — Equipment Rental Returns: Where GCs Burn Idle Time · construction · `equipment-rental-returns-gc-idle-time`

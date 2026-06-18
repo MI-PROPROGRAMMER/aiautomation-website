@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Material delivery miss versus crew labor window on a GC jobsite">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.22" r="0.65">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="working" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.70"/>
+    </linearGradient>
+    <linearGradient id="idle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5e8aa6" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#0a3a66" stop-opacity="0.80"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.30">
+    <path d="M0 220 H1500"/><path d="M0 380 H1500"/><path d="M0 540 H1500"/>
+    <path d="M0 700 H1500"/><path d="M0 860 H1500"/>
+  </g>
+
+  <g transform="translate(150,230)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="80" font-weight="700" fill="#ffffff">Material Delivery Misses</text>
+    <text y="184" font-size="80" font-weight="700" fill="#ffffff">Are a GC Labor Cost</text>
+    <text y="252" font-size="36" font-weight="400" fill="#cfe5f1" opacity="0.9">when the truck slips, the crew on the clock pays</text>
+  </g>
+
+  <g transform="translate(150,600)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">ONE CREW DAY, BURDENED LABOR ALREADY ON THE CLOCK</text>
+
+    <g transform="translate(0,60)">
+      <text x="0" y="0" font-size="16" fill="#9fc4dc">CREW WINDOW</text>
+      <rect x="240" y="-18" width="950" height="26" fill="url(#working)" rx="2"/>
+      <text x="715" y="-26" font-size="14" fill="#cfe5f1" text-anchor="middle">crew on site, ready to work · 7am to 3:30pm</text>
+    </g>
+
+    <g transform="translate(0,140)">
+      <text x="0" y="0" font-size="16" fill="#9fc4dc">PLANNED DELIVERY</text>
+      <rect x="240" y="-18" width="950" height="26" fill="#0a3a66" opacity="0.55" rx="2"/>
+      <rect x="280" y="-18" width="160" height="26" fill="url(#working)" rx="2"/>
+      <text x="360" y="-26" font-size="14" fill="#cfe5f1" text-anchor="middle">drop window</text>
+      <line x1="360" y1="14" x2="360" y2="40" stroke="#00B5E2" stroke-width="2"/>
+      <text x="360" y="56" font-size="12" fill="#7fb6d6" text-anchor="middle">crew starts pouring</text>
+    </g>
+
+    <g transform="translate(0,235)">
+      <text x="0" y="0" font-size="16" fill="#9fc4dc">ACTUAL DELIVERY</text>
+      <rect x="240" y="-18" width="950" height="26" fill="#0a3a66" opacity="0.55" rx="2"/>
+      <rect x="280" y="-18" width="540" height="26" fill="url(#idle)" rx="2"/>
+      <rect x="820" y="-18" width="160" height="26" fill="url(#working)" rx="2"/>
+      <text x="550" y="-26" font-size="14" fill="#7fb6d6" text-anchor="middle">crew idle, waiting on the truck</text>
+      <text x="900" y="-26" font-size="14" fill="#cfe5f1" text-anchor="middle">truck arrives</text>
+      <line x1="900" y1="14" x2="900" y2="40" stroke="#00B5E2" stroke-width="2"/>
+      <text x="900" y="56" font-size="12" fill="#7fb6d6" text-anchor="middle">half a shift later</text>
+    </g>
+
+    <g transform="translate(0,330)">
+      <text font-size="12" letter-spacing="2" fill="#5e8aa6">THE BILL RARELY LANDS ON THE PROCUREMENT P&amp;L. IT LANDS ON LABOR.</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
