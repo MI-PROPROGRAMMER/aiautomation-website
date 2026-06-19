@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Listing Quality Score decay across months">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.22" cy="0.28" r="0.6">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="decay" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.4">
+    <path d="M0 200 H1500" /><path d="M0 360 H1500" /><path d="M0 520 H1500" />
+    <path d="M0 680 H1500" /><path d="M0 840 H1500" />
+  </g>
+
+  <g transform="translate(140,230)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="110" font-size="78" font-weight="700" fill="#ffffff">When Catalog Data Goes Stale</text>
+    <text y="178" font-size="36" font-weight="400" fill="#cfe5f1" opacity="0.9">how stale catalog data drags marketplace rank</text>
+  </g>
+
+  <g transform="translate(140,540)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">LISTING QUALITY SCORE BY MONTHS SINCE LAST UPDATE</text>
+
+    <g transform="translate(0,40)">
+      <line x1="0" y1="220" x2="1220" y2="220" stroke="#0a3a66" stroke-width="2"/>
+
+      <g>
+        <rect x="20" y="50" width="140" height="170" fill="#00B5E2" opacity="0.95"/>
+        <text x="90" y="245" font-size="14" fill="#9fc4dc" text-anchor="middle">M0</text>
+        <text x="90" y="40" font-size="16" fill="#cfe5f1" text-anchor="middle">96</text>
+      </g>
+      <g>
+        <rect x="200" y="62" width="140" height="158" fill="#00B5E2" opacity="0.88"/>
+        <text x="270" y="245" font-size="14" fill="#9fc4dc" text-anchor="middle">M3</text>
+        <text x="270" y="52" font-size="16" fill="#cfe5f1" text-anchor="middle">92</text>
+      </g>
+      <g>
+        <rect x="380" y="84" width="140" height="136" fill="#00B5E2" opacity="0.78"/>
+        <text x="450" y="245" font-size="14" fill="#9fc4dc" text-anchor="middle">M6</text>
+        <text x="450" y="74" font-size="16" fill="#cfe5f1" text-anchor="middle">85</text>
+      </g>
+      <g>
+        <rect x="560" y="116" width="140" height="104" fill="#00B5E2" opacity="0.68"/>
+        <text x="630" y="245" font-size="14" fill="#9fc4dc" text-anchor="middle">M9</text>
+        <text x="630" y="106" font-size="16" fill="#cfe5f1" text-anchor="middle">74</text>
+      </g>
+      <g>
+        <rect x="740" y="152" width="140" height="68" fill="#00B5E2" opacity="0.55"/>
+        <text x="810" y="245" font-size="14" fill="#9fc4dc" text-anchor="middle">M12</text>
+        <text x="810" y="142" font-size="16" fill="#cfe5f1" text-anchor="middle">62</text>
+      </g>
+      <g>
+        <rect x="920" y="178" width="140" height="42" fill="#00B5E2" opacity="0.42"/>
+        <text x="990" y="245" font-size="14" fill="#9fc4dc" text-anchor="middle">M15</text>
+        <text x="990" y="168" font-size="16" fill="#cfe5f1" text-anchor="middle">54</text>
+      </g>
+      <g>
+        <rect x="1100" y="196" width="140" height="24" fill="#00B5E2" opacity="0.3"/>
+        <text x="1170" y="245" font-size="14" fill="#9fc4dc" text-anchor="middle">M18</text>
+        <text x="1170" y="186" font-size="16" fill="#cfe5f1" text-anchor="middle">47</text>
+      </g>
+
+      <line x1="0" y1="116" x2="1240" y2="116" stroke="#7fb6d6" stroke-dasharray="6 6" stroke-width="1" opacity="0.55"/>
+      <text x="1248" y="120" font-size="12" letter-spacing="2" fill="#7fb6d6">QUALIFIES FOR PROMO PLACEMENTS</text>
+    </g>
+
+    <g transform="translate(0,310)">
+      <text font-size="12" letter-spacing="2" fill="#5e8aa6">DIRECTIONAL · SCORES TRACKED BY MARKETPLACE LISTING-QUALITY DASHBOARDS</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
