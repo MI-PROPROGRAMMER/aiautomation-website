@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Receiver Appointment Portals visualization">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.18" cy="0.82" r="0.6">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <marker id="arrowHead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00B5E2"/>
+    </marker>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g transform="translate(180,230)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="76" font-weight="700" fill="#ffffff">Receiver Appointment Portals</text>
+    <text y="170" font-size="36" font-weight="400" fill="#cfe5f1" opacity="0.9">and the FTL broker cycle time hit</text>
+  </g>
+
+  <g transform="translate(180,520)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">WEEKLY SLOT MAP · ONE MID-SIZE BROKER, FIVE PORTALLED RECEIVERS</text>
+
+    <g font-size="13" fill="#9fc4dc" letter-spacing="1">
+      <text x="40" y="30">MON</text>
+      <text x="270" y="30">TUE</text>
+      <text x="500" y="30">WED</text>
+      <text x="730" y="30">THU</text>
+      <text x="960" y="30">FRI</text>
+    </g>
+
+    <g transform="translate(0,50)">
+      <g>
+        <rect x="0" y="0" width="200" height="50" rx="3" fill="#0a3a66"/>
+        <rect x="0" y="58" width="200" height="50" rx="3" fill="#00B5E2" opacity="0.92"/>
+        <rect x="0" y="116" width="200" height="50" rx="3" fill="#0a3a66"/>
+        <rect x="0" y="174" width="200" height="50" rx="3" fill="#0a3a66"/>
+      </g>
+
+      <g transform="translate(230,0)">
+        <rect x="0" y="0" width="200" height="50" rx="3" fill="#00B5E2" opacity="0.92"/>
+        <rect x="0" y="58" width="200" height="50" rx="3" fill="#0a3a66"/>
+        <rect x="0" y="116" width="200" height="50" rx="3" fill="#0a3a66"/>
+        <rect x="0" y="174" width="200" height="50" rx="3" fill="#0a3a66"/>
+      </g>
+
+      <g transform="translate(460,0)">
+        <rect x="0" y="0" width="200" height="50" rx="3" fill="#0a3a66"/>
+        <rect x="0" y="58" width="200" height="50" rx="3" fill="#0a3a66"/>
+        <rect x="0" y="116" width="200" height="50" rx="3" fill="#0a3a66"/>
+        <rect x="0" y="174" width="200" height="50" rx="3" fill="#00B5E2" opacity="0.6" stroke="#00B5E2" stroke-dasharray="4 3" stroke-opacity="0.7"/>
+      </g>
+
+      <g transform="translate(690,0)">
+        <rect x="0" y="0" width="200" height="50" rx="3" fill="#00B5E2" opacity="0.92"/>
+        <rect x="0" y="58" width="200" height="50" rx="3" fill="#0a3a66"/>
+        <rect x="0" y="116" width="200" height="50" rx="3" fill="#0a3a66"/>
+        <rect x="0" y="174" width="200" height="50" rx="3" fill="#0a3a66"/>
+      </g>
+
+      <g transform="translate(920,0)">
+        <rect x="0" y="0" width="200" height="50" rx="3" fill="#0a3a66"/>
+        <rect x="0" y="58" width="200" height="50" rx="3" fill="#0a3a66"/>
+        <rect x="0" y="116" width="200" height="50" rx="3" fill="#00B5E2" opacity="0.92"/>
+        <rect x="0" y="174" width="200" height="50" rx="3" fill="#0a3a66"/>
+      </g>
+
+      <path d="M 460 165 C 430 200, 420 235, 530 235" stroke="#00B5E2" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#arrowHead)" opacity="0.85"/>
+      <text x="350" y="260" font-size="13" fill="#cfe5f1" opacity="0.85">PICKUP DELAY → SLOT CASCADE</text>
+    </g>
+
+    <g transform="translate(1170,55)" font-size="13" font-family="Georgia, serif" fill="#9fc4dc">
+      <text>06:00</text>
+      <text y="58">10:00</text>
+      <text y="116">14:00</text>
+      <text y="174">18:00</text>
+    </g>
+
+    <g transform="translate(0,305)">
+      <rect x="0" y="0" width="20" height="14" fill="#00B5E2" opacity="0.92" rx="2"/>
+      <text x="32" y="12" font-size="13" fill="#cfe5f1">CAPTURED</text>
+
+      <rect x="170" y="0" width="20" height="14" fill="#00B5E2" opacity="0.6" stroke="#00B5E2" stroke-dasharray="4 3" stroke-opacity="0.7" rx="2"/>
+      <text x="202" y="12" font-size="13" fill="#cfe5f1">REBOOKED</text>
+
+      <rect x="340" y="0" width="20" height="14" fill="#0a3a66" rx="2"/>
+      <text x="372" y="12" font-size="13" fill="#cfe5f1">UNAVAILABLE</text>
+
+      <text x="540" y="12" font-size="13" letter-spacing="2" fill="#5e8aa6">EVERY MISS = CHARGEBACK + DETENTION + LOST LANE PREFERENCE</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
