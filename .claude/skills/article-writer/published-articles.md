@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-06-22 — Returns Fraud at DTC Brands: The Margin Tax Few Track · e-com ops · `returns-fraud-dtc-margin-tax`
 - 2026-06-21 — Long-Lead Procurement Slippage on Mid-Size GC Schedules · construction · `long-lead-procurement-slippage-gc-schedule`
 - 2026-06-20 — Receiver Appointment Portals and the FTL Broker Cycle Time Hit · logistics · `receiver-appointment-portals-ftl-broker-cycle-time`
 - 2026-06-19 — What Stale Product Data Does to DTC Marketplace Rankings · e-com ops · `stale-product-data-dtc-marketplace-rankings`
