@@ -1,0 +1,113 @@
+export const frontmatter = {
+  title: "The Accessorial Revenue Most Brokerages Forget to Bill",
+  excerpt:
+    "Lumper fees, layover, redelivery, and tarp charges often get absorbed by brokerages instead of re-billed. Here is where recoverable revenue actually sits.",
+  date: "2026-06-23",
+  author: "ApexifyLabs Team",
+  tags: ["Logistics", "Freight Brokerage", "Accessorials", "Revenue Recovery"],
+  heroImage: "/blog/accessorial-revenue-brokerages-forget-to-bill/hero.svg",
+  seoDescription:
+    "Mid-size brokerages absorb lumper, layover, redelivery, and tarp accessorials instead of billing them. Where the recoverable revenue actually sits.",
+  readingTime: "4 min read",
+};
+
+Accessorial charges, the lumper fees, layover, redelivery, tarp, and reweigh line items that pile onto a load after dispatch, are a steady source of margin leak at most mid-size freight brokerages. The charges often get absorbed by the broker instead of re-billed to the shipper, because the proof and the timing rarely line up.
+
+This article looks at why so much of the accessorial pool stays unrecovered, where the proof actually leaks, what a typical year of missed re-bills costs, and what changes when an AI-augmented layer handles documentation and re-billing on the broker's behalf.
+
+## What counts as accessorial revenue on a freight brokerage's desk?
+
+Accessorial revenue is anything beyond the agreed linehaul rate that the broker is contractually allowed to pass through to the shipper when the load incurs it. The list is longer than most operators name from memory.
+
+- Detention beyond the free window at pickup or delivery.
+- Lumper fees paid at the receiver to unload pallets.
+- Layover when the driver sits overnight because the appointment slid.
+- Redelivery attempts after a missed receiver window.
+- Tarp and untarp on open-deck freight.
+- Reweigh and reclass adjustments when the BOL weight is off.
+- Inside delivery, liftgate, residential, and limited-access fees.
+- Stop-off charges for multi-stop runs.
+- TONU when a tender is canceled after dispatch.
+- Hazmat and protective service surcharges on temperature-controlled loads.
+- Storage and chassis split fees on drayage.
+
+Each charge has its own threshold, its own proof requirement, and its own contractual right to pass through. The broker's rate confirmation and the shipper's contract usually cover the right. The operational question is whether the brokerage can demonstrate the charge happened, when it happened, and at what cost in time for the customer to accept the invoice.
+
+## Why do so many accessorials never get billed?
+
+Three reasons keep showing up when we talk to operators.
+
+First, proof lives in the wrong place. The carrier invoice arrives in accounting two weeks after the event. The dispatcher's notes are in a TMS comment field, an email thread, or a Slack channel. The driver's photo of the lumper receipt is on someone's phone. By the time AP tries to reassemble the chain to re-bill the shipper, the cleanest documentation has already aged out of the conversation.
+
+Second, the operational cost of billing a small accessorial often exceeds the recovery. A $90 lumper fee that requires twenty minutes of an AP clerk's time to trace, scan, attach, and submit is rational to skip on a single load. Multiply that decision across a few hundred loads a month and the brokerage absorbs a five-figure quarterly number without anyone making a call to absorb it.
+
+Third, shipper-side AP departments contest aggressively. A clean accessorial invoice with the right receipt, the right timestamps, and the right contractual reference usually gets paid. A messy one becomes a months-long short-pay negotiation that the customer success team eventually closes for a partial credit just to move on.
+
+The combined effect is a recoverable revenue pool that the brokerage's P&L never sees, because the work to convert it lives between three different teams.
+
+## Where does the recoverable revenue actually sit?
+
+Industry reporting from TIA, FreightWaves, and broker association surveys consistently places unbilled or unrecovered accessorials in the range of roughly 3% to 8% of total brokerage gross revenue for mid-size operations. The figure varies sharply by mode and customer mix.
+
+| Mode | Common accessorial drivers | Typical underrecovery signal |
+| --- | --- | --- |
+| Dry van FTL | Detention, lumper, layover, TONU | Detention recovery rate well under 50% |
+| Refrigerated | Detention, lumper, protective service, reweigh | Temperature-related claims undocumented |
+| Flatbed and open deck | Tarp, untarp, oversize escorts, permits | Tarp fees split between carrier and shipper unclear |
+| Drayage | Demurrage, per diem, chassis, storage | Per diem absorbed by broker on first cycle |
+| LTL | Reclass, residential, liftgate, limited access | Reclass corrections never passed through |
+
+The accessorials in open-deck and drayage modes are the most volatile. A single tarp dispute or a single per-diem reset can swing a load from net positive to net negative in margin. The accessorials in dry van are smaller per event but enormous in aggregate, because the volume of loads is higher and the documentation routine is the same on every one.
+
+## What does a typical year of missed re-bills cost?
+
+The number that matters is not the lost charge on a single load. It is the steady-state percentage of accessorials the brokerage fails to convert.
+
+Consider a brokerage with $25M in annual gross revenue and a 20% accessorial incidence rate, where the typical accessorial event averages $180. At full recovery, the accessorial pool is around $900K. At a 55% recovery rate, the brokerage walks away from roughly $400K in receivable revenue every year. None of that line appears on the lost-margin report, because the invoices were never issued.
+
+The cost shows up later, in three quieter ways. Customer accounts that look profitable on the linehaul line are actually flat once unbilled accessorials are netted. Carrier relationships strain when the broker eats a lumper or detention the carrier billed cleanly, because the broker did not pass it through. And the AP team's quarter-end always carries a backlog of stale accessorials that have crossed the contractual billing window and are now permanently unrecoverable.
+
+## How do most teams handle accessorial documentation today?
+
+On a typical mid-size brokerage desk, the workflow is informal. The dispatcher notes the detention start time in the TMS. The carrier emails the lumper receipt within a day or two. The driver texts a tarp photo to the operations lead. Settlement processes the carrier's accessorial invoice when it arrives. Customer billing tries to assemble the proof if the customer is large enough to make it worth the effort.
+
+That workflow holds at low volume. It strains at growth, at peak season, and when account managers turn over. The proof exists, but it is scattered across the people who held it at the moment of the event. The customer-facing invoice depends on someone choosing to chase down the documentation, in their own time, against everything else on the queue.
+
+## What changes when AI handles the accessorial trail?
+
+Picture the same desk, but every accessorial event has a single record that assembles itself as the load runs. The detention clock starts when the dispatcher records the arrival in the TMS. The lumper receipt is captured from the driver's phone and matched to the load before the truck leaves the dock. The tarp photo, the reweigh document, the redelivery confirmation all land against the same load record, with timestamps that the customer's AP team cannot easily dispute.
+
+| Step | Manual workflow | AI-augmented workflow |
+| --- | --- | --- |
+| Event capture | Notes in TMS, email, phone | Auto-attached to the load record at the moment of event |
+| Proof assembly | AP clerk reassembles two weeks later | Compiled in near real time |
+| Re-bill threshold decision | Per-load judgment, often skipped | Rules-based, applied consistently |
+| Customer invoice prep | Manual document attachment | Bundled with linehaul invoice |
+| Short-pay disputes | Reactive, slow | Documented proof reduces dispute volume |
+| Recovery rate tracking | Quarterly, often after the fact | Continuous, by customer and accessorial type |
+
+The interesting outcome is not the labor saved at the billing step. It is the conversion rate. A brokerage that moves from a 55% to a 75% accessorial recovery rate, on the same underlying load volume, surfaces material revenue that was already earned and never invoiced.
+
+## When should a brokerage take a closer look at this layer?
+
+A few signals tend to mean the math has already shifted in favor of reviewing accessorial recovery sooner rather than later.
+
+- Detention recovery rate below 60% across the customer base.
+- Open-deck or drayage volume that has grown faster than the AP team.
+- Settlement backlog that consistently includes accessorials older than 60 days.
+- Customer success absorbing recurring short-pays on accessorial lines.
+- Carriers raising frustration with how often their billed accessorials become broker-absorbed.
+
+The tighter those signals get, the more likely the brokerage is paying the carriers cleanly and leaving the shipper-side recovery on the table.
+
+## A note on what AI does not solve here
+
+It does not write the brokerage's contracts, does not negotiate the per-event rate with the shipper, and does not replace the customer success conversation when an accessorial line is in dispute. What it does is take the documentation chain off three different people, hold the proof in one place at the moment the event happens, and give billing a clean record to invoice from.
+
+That is the change. Not a brokerage that re-bills 100% of accessorials. A brokerage that knows the real accessorial pool it earned, and converts the recoverable share on purpose.
+
+## Where this lands for a brokerage thinking it through
+
+Accessorial revenue is one of those P&L lines that looks small at any single load and large across a year of loads. The brokerages that get hurt are rarely the ones with no accessorial process. They are the ones that built the process for a smaller book of business and have been carrying the same documentation routine through years of volume growth, with the recoverable pool growing faster than the team's capacity to capture it.
+
+We run a **completely free automation audit** for brokerages that want a clear read on what their accessorial pool is actually worth, and what share of it is sitting unbilled. No commitment, no slide deck, no upsell. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>
