@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Promo Code Stacking and DTC Campaign Margin visualization">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.22" r="0.6">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="welcomeFill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5e8aa6"/>
+      <stop offset="1" stop-color="#7fb6d6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.32">
+    <path d="M0 220 H1500" /><path d="M0 380 H1500" /><path d="M0 540 H1500" />
+    <path d="M0 700 H1500" /><path d="M0 860 H1500" />
+  </g>
+
+  <g transform="translate(180,250)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="84" font-weight="700" fill="#ffffff">Promo Code Stacking</text>
+    <text y="170" font-size="38" font-weight="400" fill="#cfe5f1" opacity="0.9">where the DTC discount floor quietly breaks</text>
+  </g>
+
+  <g transform="translate(180,540)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">A $120 ORDER · DISCOUNT STACK VS. INTENDED FLOOR</text>
+
+    <g transform="translate(0,46)">
+      <text x="0" y="0" font-size="16" fill="#cfe5f1" opacity="0.9">Intended (welcome only)</text>
+      <rect x="320" y="-22" width="180" height="32" fill="url(#welcomeFill)" opacity="0.9"/>
+      <text x="510" y="2" font-size="18" fill="#ffffff" font-weight="700">15%</text>
+    </g>
+
+    <g transform="translate(0,108)">
+      <text x="0" y="0" font-size="16" fill="#cfe5f1" opacity="0.9">Welcome + loyalty</text>
+      <rect x="320" y="-22" width="180" height="32" fill="url(#welcomeFill)" opacity="0.9"/>
+      <rect x="500" y="-22" width="120" height="32" fill="#5e8aa6" opacity="0.7"/>
+      <text x="630" y="2" font-size="18" fill="#ffffff" font-weight="700">25%</text>
+    </g>
+
+    <g transform="translate(0,170)">
+      <text x="0" y="0" font-size="16" fill="#cfe5f1" opacity="0.9">Welcome + loyalty + affiliate</text>
+      <rect x="320" y="-22" width="180" height="32" fill="url(#welcomeFill)" opacity="0.9"/>
+      <rect x="500" y="-22" width="120" height="32" fill="#5e8aa6" opacity="0.7"/>
+      <rect x="620" y="-22" width="120" height="32" fill="#00B5E2"/>
+      <text x="750" y="2" font-size="18" fill="#ffffff" font-weight="700">35%</text>
+    </g>
+
+    <g transform="translate(500,-10)">
+      <path d="M0 0 V230" stroke="#00B5E2" stroke-width="2" stroke-dasharray="6 8" opacity="0.85"/>
+      <text x="8" y="-18" font-size="13" letter-spacing="2" fill="#00B5E2" opacity="0.9">INTENDED MARGIN FLOOR</text>
+    </g>
+
+    <g transform="translate(0,250)">
+      <text font-size="13" letter-spacing="2" fill="#5e8aa6">ILLUSTRATIVE · ASSUMES 60% PRE-PROMO PRODUCT MARGIN</text>
+    </g>
+
+    <g transform="translate(0,290)" font-family="Georgia, serif">
+      <text font-size="16" fill="#cfe5f1" opacity="0.85">Welcome series  ·  Loyalty engine  ·  Affiliate link  ·  Cashback extension  ·  Referral code</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>

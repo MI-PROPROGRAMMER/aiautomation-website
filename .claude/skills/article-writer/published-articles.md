@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-06-24 — How Promo Code Stacking Drains DTC Campaign Margin · e-com ops · `promo-code-stacking-drains-dtc-campaign-margin`
 - 2026-06-23 — The Accessorial Revenue Most Brokerages Forget to Bill · logistics · `accessorial-revenue-brokerages-forget-to-bill`
 - 2026-06-22 — Returns Fraud at DTC Brands: The Margin Tax Few Track · e-com ops · `returns-fraud-dtc-margin-tax`
 - 2026-06-21 — Long-Lead Procurement Slippage on Mid-Size GC Schedules · construction · `long-lead-procurement-slippage-gc-schedule`
