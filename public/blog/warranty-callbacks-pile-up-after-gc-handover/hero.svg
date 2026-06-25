@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Warranty callback volume spikes around month six after handover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.42" cy="0.72" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="barSpike" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfe5f1" stop-opacity="1"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.75"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.4">
+    <path d="M0 220 H1500"/>
+    <path d="M0 380 H1500"/>
+    <path d="M0 540 H1500"/>
+    <path d="M0 700 H1500"/>
+    <path d="M0 840 H1500"/>
+  </g>
+
+  <g transform="translate(160,200)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="96" font-size="78" font-weight="700" fill="#ffffff">Warranty Callbacks</text>
+    <text y="180" font-size="40" font-weight="400" fill="#cfe5f1" opacity="0.9">why volume spikes six months after handover</text>
+  </g>
+
+  <g transform="translate(180,520)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">CALLBACK VOLUME BY MONTH AFTER SUBSTANTIAL COMPLETION</text>
+
+    <g transform="translate(0,300)">
+      <path d="M0 0 H1140" stroke="#5e8aa6" stroke-width="1.2" opacity="0.7"/>
+
+      <g>
+        <rect x="20"  y="-60"  width="70" height="60"  fill="url(#bar)"/>
+        <rect x="115" y="-90"  width="70" height="90"  fill="url(#bar)"/>
+        <rect x="210" y="-130" width="70" height="130" fill="url(#bar)"/>
+        <rect x="305" y="-180" width="70" height="180" fill="url(#bar)"/>
+        <rect x="400" y="-220" width="70" height="220" fill="url(#bar)"/>
+        <rect x="495" y="-260" width="70" height="260" fill="url(#barSpike)"/>
+        <rect x="590" y="-210" width="70" height="210" fill="url(#bar)"/>
+        <rect x="685" y="-170" width="70" height="170" fill="url(#bar)"/>
+        <rect x="780" y="-140" width="70" height="140" fill="url(#bar)"/>
+        <rect x="875" y="-115" width="70" height="115" fill="url(#bar)"/>
+        <rect x="970" y="-95"  width="70" height="95"  fill="url(#bar)"/>
+        <rect x="1065" y="-80" width="70" height="80"  fill="url(#bar)"/>
+      </g>
+
+      <g font-size="14" fill="#9fc4dc" text-anchor="middle">
+        <text x="55"   y="22">M1</text>
+        <text x="150"  y="22">M2</text>
+        <text x="245"  y="22">M3</text>
+        <text x="340"  y="22">M4</text>
+        <text x="435"  y="22">M5</text>
+        <text x="530"  y="22" fill="#cfe5f1" font-weight="700">M6</text>
+        <text x="625"  y="22">M7</text>
+        <text x="720"  y="22">M8</text>
+        <text x="815"  y="22">M9</text>
+        <text x="910"  y="22">M10</text>
+        <text x="1005" y="22">M11</text>
+        <text x="1100" y="22">M12</text>
+      </g>
+
+      <g transform="translate(530,-300)" font-family="Georgia, serif">
+        <text font-size="16" letter-spacing="2" fill="#cfe5f1" text-anchor="middle">PEAK</text>
+        <path d="M0 8 L0 26" stroke="#cfe5f1" stroke-width="1.4"/>
+      </g>
+    </g>
+
+    <g transform="translate(0,360)">
+      <text font-size="12" letter-spacing="2" fill="#5e8aa6">SEASONAL CYCLE, OCCUPANT LOAD, AND FULL FM STAFFING ALL LAND IN THE SAME WINDOW</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
