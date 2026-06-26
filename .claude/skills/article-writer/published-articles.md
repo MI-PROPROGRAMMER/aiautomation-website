@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-06-26 — What Manual Tender Acceptance Costs a Routing Guide · logistics · `manual-tender-acceptance-brokerage-routing-guide`
 - 2026-06-25 — Why Warranty Callbacks Pile Up Six Months After Handover · construction · `warranty-callbacks-pile-up-after-gc-handover`
 - 2026-06-24 — How Promo Code Stacking Drains DTC Campaign Margin · e-com ops · `promo-code-stacking-drains-dtc-campaign-margin`
 - 2026-06-23 — The Accessorial Revenue Most Brokerages Forget to Bill · logistics · `accessorial-revenue-brokerages-forget-to-bill`

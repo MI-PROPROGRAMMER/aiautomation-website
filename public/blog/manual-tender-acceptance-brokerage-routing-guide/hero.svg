@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Routing guide tender response window visualization">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.18" cy="0.82" r="0.6">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="timeBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.95"/>
+      <stop offset="0.55" stop-color="#00B5E2" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#5e8aa6" stop-opacity="0.35"/>
+    </linearGradient>
+    <pattern id="missed" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#0a3a66"/>
+      <path d="M-1,1 l3,-3 M0,8 l8,-8 M6,10 l3,-3" stroke="#5e8aa6" stroke-width="1" stroke-opacity="0.45"/>
+    </pattern>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g transform="translate(180,200)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="92" font-size="72" font-weight="700" fill="#ffffff">What Manual Tender Acceptance</text>
+    <text y="172" font-size="72" font-weight="700" fill="#ffffff">Costs a Routing Guide</text>
+    <text y="232" font-size="32" font-weight="400" fill="#cfe5f1" opacity="0.9">When the SLA clock outruns the desk</text>
+  </g>
+
+  <g transform="translate(180,560)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">TENDER RESPONSE WINDOW · PRIMARY HOLDER · ILLUSTRATIVE 30-MINUTE SLA</text>
+
+    <g transform="translate(0,30)" font-size="13" fill="#7fb6d6">
+      <line x1="0" y1="14" x2="1100" y2="14" stroke="#5e8aa6" stroke-width="1" stroke-opacity="0.35"/>
+      <g>
+        <line x1="0" y1="8" x2="0" y2="20" stroke="#5e8aa6" stroke-width="1" stroke-opacity="0.45"/>
+        <text x="-4" y="40">0 min</text>
+      </g>
+      <g>
+        <line x1="275" y1="8" x2="275" y2="20" stroke="#5e8aa6" stroke-width="1" stroke-opacity="0.45"/>
+        <text x="262" y="40">7.5</text>
+      </g>
+      <g>
+        <line x1="550" y1="8" x2="550" y2="20" stroke="#5e8aa6" stroke-width="1" stroke-opacity="0.45"/>
+        <text x="540" y="40">15</text>
+      </g>
+      <g>
+        <line x1="825" y1="8" x2="825" y2="20" stroke="#5e8aa6" stroke-width="1" stroke-opacity="0.45"/>
+        <text x="815" y="40">22.5</text>
+      </g>
+      <g>
+        <line x1="1100" y1="8" x2="1100" y2="20" stroke="#5e8aa6" stroke-width="1" stroke-opacity="0.45"/>
+        <text x="1080" y="40">30 min SLA</text>
+      </g>
+    </g>
+
+    <g transform="translate(0,100)" font-size="14" fill="#cfe5f1">
+      <g transform="translate(0,0)">
+        <text x="-20" y="14" text-anchor="end" font-size="13">AI-AUGMENTED DESK</text>
+        <rect x="0" y="0" width="155" height="22" rx="2" fill="url(#timeBar)"/>
+        <circle cx="155" cy="11" r="6" fill="#00B5E2"/>
+        <text x="172" y="15" font-size="13" fill="#cfe5f1">Auto-accepted at ~4 min</text>
+      </g>
+
+      <g transform="translate(0,46)">
+        <text x="-20" y="14" text-anchor="end" font-size="13">RESPONSIVE DESK</text>
+        <rect x="0" y="0" width="660" height="22" rx="2" fill="url(#timeBar)"/>
+        <circle cx="660" cy="11" r="6" fill="#00B5E2"/>
+        <text x="677" y="15" font-size="13" fill="#cfe5f1">Accepted at ~18 min, inside SLA</text>
+      </g>
+
+      <g transform="translate(0,92)">
+        <text x="-20" y="14" text-anchor="end" font-size="13">BUSY MANUAL DESK</text>
+        <rect x="0" y="0" width="1100" height="22" rx="2" fill="url(#missed)"/>
+        <line x1="1100" y1="-6" x2="1100" y2="28" stroke="#00B5E2" stroke-width="2" stroke-opacity="0.85" stroke-dasharray="4,3"/>
+        <text x="1112" y="15" font-size="13" fill="#7fb6d6">Timed out, drops to backup</text>
+      </g>
+
+      <g transform="translate(0,138)">
+        <text x="-20" y="14" text-anchor="end" font-size="13">AFTER-HOURS TENDER</text>
+        <rect x="0" y="0" width="1100" height="22" rx="2" fill="url(#missed)"/>
+        <line x1="1100" y1="-6" x2="1100" y2="28" stroke="#00B5E2" stroke-width="2" stroke-opacity="0.85" stroke-dasharray="4,3"/>
+        <text x="1112" y="15" font-size="13" fill="#7fb6d6">Seen next morning, demoted on guide</text>
+      </g>
+    </g>
+
+    <g transform="translate(0,300)">
+      <rect x="0" y="0" width="18" height="14" rx="2" fill="url(#timeBar)"/>
+      <text x="28" y="12" font-size="13" fill="#cfe5f1">RESPONSE INSIDE WINDOW</text>
+
+      <rect x="240" y="0" width="18" height="14" rx="2" fill="url(#missed)"/>
+      <text x="268" y="12" font-size="13" fill="#cfe5f1">TIMED OUT, RANKED DOWN</text>
+
+      <text x="560" y="12" font-size="13" letter-spacing="2" fill="#5e8aa6">PRIMARY ACCEPTANCE BAND 65–85% · SONAR / TIA / COYOTE MARKET GUIDES</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
