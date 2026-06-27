@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="As-Built Reconciliation: drawing overlay with red-line conflict markers">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.80" cy="0.30" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <path d="M0 220 H1500"/><path d="M0 380 H1500"/><path d="M0 540 H1500"/>
+    <path d="M0 700 H1500"/><path d="M0 860 H1500"/>
+  </g>
+
+  <g transform="translate(180,250)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="78" font-weight="700" fill="#ffffff">As-Built Reconciliation</text>
+    <text y="170" font-size="36" font-weight="400" fill="#cfe5f1" opacity="0.9">the closeout drag GCs forget to price</text>
+  </g>
+
+  <g transform="translate(820,540)">
+    <text x="0" y="-30" font-family="Georgia, serif" font-size="13" letter-spacing="3" fill="#7fb6d6">CONTRACT SET · RED-LINE OVERLAY</text>
+
+    <g opacity="0.92">
+      <rect x="0" y="0" width="460" height="290" fill="#0a3a66" stroke="#5e8aa6" stroke-width="1.5"/>
+      <g stroke="#7fb6d6" stroke-width="1.2" fill="none" opacity="0.85">
+        <path d="M30 40 H430 V250 H30 Z"/>
+        <path d="M30 110 H430"/>
+        <path d="M180 40 V250"/>
+        <path d="M300 110 V250"/>
+        <circle cx="80" cy="75" r="6"/>
+        <circle cx="240" cy="75" r="6"/>
+        <circle cx="370" cy="180" r="6"/>
+      </g>
+      <text x="20" y="280" font-family="Georgia, serif" font-size="13" fill="#cfe5f1" opacity="0.7">CONTRACT</text>
+    </g>
+
+    <g transform="translate(40,40)" opacity="0.96">
+      <rect x="0" y="0" width="460" height="290" fill="#001a36" stroke="#00B5E2" stroke-width="1.6"/>
+      <g stroke="#cfe5f1" stroke-width="1.2" fill="none" opacity="0.8">
+        <path d="M30 40 H430 V250 H30 Z"/>
+        <path d="M30 110 H430"/>
+        <path d="M195 40 V250"/>
+        <path d="M315 110 V250"/>
+      </g>
+      <g stroke="#00B5E2" stroke-width="2.2" fill="none">
+        <path d="M30 95 H430" stroke-dasharray="6 6"/>
+        <path d="M195 40 V250" stroke-dasharray="6 6"/>
+      </g>
+      <g fill="#00B5E2">
+        <circle cx="90" cy="80" r="9"/>
+        <circle cx="250" cy="80" r="9"/>
+        <circle cx="380" cy="170" r="9"/>
+      </g>
+      <g font-family="Georgia, serif" font-size="13" fill="#001a36" font-weight="700">
+        <text x="86" y="84">1</text>
+        <text x="246" y="84">2</text>
+        <text x="376" y="174">3</text>
+      </g>
+      <text x="20" y="280" font-family="Georgia, serif" font-size="13" fill="#00B5E2" opacity="0.95">FIELD RED-LINES</text>
+    </g>
+  </g>
+
+  <g transform="translate(180,610)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">FROM RED-LINE TO LOCKED CLOSEOUT</text>
+
+    <g transform="translate(0,40)">
+      <text font-size="14" fill="#9fc4dc">MANUAL</text>
+      <rect x="160" y="-14" width="520" height="16" fill="#0a3a66"/>
+      <rect x="160" y="-14" width="520" height="16" fill="#5e8aa6" opacity="0.9"/>
+      <text x="700" y="0" font-size="14" fill="#cfe5f1">45–90 days</text>
+    </g>
+
+    <g transform="translate(0,80)">
+      <text font-size="14" fill="#9fc4dc">AI-ASSISTED</text>
+      <rect x="160" y="-14" width="520" height="16" fill="#0a3a66"/>
+      <rect x="160" y="-14" width="155" height="16" fill="#00B5E2" opacity="0.95"/>
+      <text x="700" y="0" font-size="14" fill="#cfe5f1">10–25 days</text>
+    </g>
+
+    <g transform="translate(0,130)">
+      <text font-size="12" letter-spacing="2" fill="#5e8aa6">RETENTION SITS UNRELEASED UNTIL THE AS-BUILT PACKAGE LOCKS</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
