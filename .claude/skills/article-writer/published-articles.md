@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-06-28 — Out-of-Stock Pages and the DTC Conversion Spillover Few Track · e-com ops · `dtc-out-of-stock-conversion-spillover`
 - 2026-06-27 — As-Built Reconciliation: The Closeout Drag GCs Forget to Price · construction · `as-built-reconciliation-closeout-drag-gc`
 - 2026-06-26 — What Manual Tender Acceptance Costs a Routing Guide · logistics · `manual-tender-acceptance-brokerage-routing-guide`
 - 2026-06-25 — Why Warranty Callbacks Pile Up Six Months After Handover · construction · `warranty-callbacks-pile-up-after-gc-handover`
