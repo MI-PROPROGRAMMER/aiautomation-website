@@ -25,11 +25,12 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-06-29 — Carrier No-Show Re-Coverage on Spot Brokerage Desks · logistics · `carrier-no-show-re-coverage-spot-brokerage`
 - 2026-06-28 — Out-of-Stock Pages and the DTC Conversion Spillover Few Track · e-com ops · `dtc-out-of-stock-conversion-spillover`
 - 2026-06-27 — As-Built Reconciliation: The Closeout Drag GCs Forget to Price · construction · `as-built-reconciliation-closeout-drag-gc`
 - 2026-06-26 — What Manual Tender Acceptance Costs a Routing Guide · logistics · `manual-tender-acceptance-brokerage-routing-guide`
 - 2026-06-25 — Why Warranty Callbacks Pile Up Six Months After Handover · construction · `warranty-callbacks-pile-up-after-gc-handover`
-- 2026-06-24 — How Promo Code Stacking Drains DTC Campaign Margin · e-com ops · `promo-code-stacking-drains-dtc-campaign-margin`
+- 2026-06-24 — How Promo Code Stacking Drains DTC Campaign Margin · e-com ops · `how-promo-code-stacking-drains-dtc-campaign-margin`
 - 2026-06-23 — The Accessorial Revenue Most Brokerages Forget to Bill · logistics · `accessorial-revenue-brokerages-forget-to-bill`
 - 2026-06-22 — Returns Fraud at DTC Brands: The Margin Tax Few Track · e-com ops · `returns-fraud-dtc-margin-tax`
 - 2026-06-21 — Long-Lead Procurement Slippage on Mid-Size GC Schedules · construction · `long-lead-procurement-slippage-gc-schedule`
