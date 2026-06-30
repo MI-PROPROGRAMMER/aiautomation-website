@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-06-30 — Why Untracked Field Purchase Orders Drive GC Cost Overruns · construction · `field-purchase-orders-drive-gc-cost-overruns`
 - 2026-06-29 — Carrier No-Show Re-Coverage on Spot Brokerage Desks · logistics · `carrier-no-show-re-coverage-spot-brokerage`
 - 2026-06-28 — Out-of-Stock Pages and the DTC Conversion Spillover Few Track · e-com ops · `dtc-out-of-stock-conversion-spillover`
 - 2026-06-27 — As-Built Reconciliation: The Closeout Drag GCs Forget to Price · construction · `as-built-reconciliation-closeout-drag-gc`

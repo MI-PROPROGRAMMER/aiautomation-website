@@ -1,0 +1,83 @@
+export const frontmatter = {
+  title: "Why Untracked Field Purchase Orders Drive GC Cost Overruns",
+  excerpt:
+    "Mid-job calls to the supplier pro desk add up to four-figure monthly variances PMs see only when invoices land. Where field POs leak and what changes.",
+  date: "2026-06-30",
+  author: "ApexifyLabs Team",
+  tags: ["Construction", "GC Operations", "Cost Control", "Materials Management"],
+  heroImage: "/blog/field-purchase-orders-drive-gc-cost-overruns/hero.svg",
+  seoDescription:
+    "Field POs are the materials supers buy mid-job outside the formal PO routing. Where the spend slips, why PMs miss it, and what an AI layer changes.",
+  readingTime: "4 min read",
+};
+
+Field purchase orders are the materials and small equipment a superintendent or foreman buys mid-job from a local supplier, often by phone, often outside the standard PO routing. On mid-size GC work they stack into four-figure monthly variances that surface only when the invoice arrives, well after the reforecast went out.
+
+This article looks at where that spend originates, why even disciplined project managers lose track of it, and what changes when an AI layer catches a field PO inside the same week it is placed rather than the month it is paid.
+
+## What counts as a field purchase order on a GC job?
+
+A field PO is any spend a project superintendent, foreman, or assistant super initiates from the job site against the project budget, outside the PM's standard purchase requisition flow. The typical example is a phone call to the supplier's pro desk for a forgotten box of fasteners, a rented breaker the crew needs by lunch, or a second pallet of grout because the first one went short.
+
+These spends are not fraud. They are how schedules get protected. A super who waits an afternoon for a PM to cut a formal PO is a super whose framing crew is sitting on the slab. The pressure to keep the job moving is real, and the path of least resistance is a phone order against the company's house account at the local supplier.
+
+## Why does field PO spend slip through the cracks?
+
+Three patterns repeat across mid-size GCs with otherwise solid cost controls.
+
+The first is timing. Suppliers do not push order confirmations into the GC's project management system. They send a PDF to whichever email the super provided, sometimes a personal one, and the invoice follows a few weeks later through accounts payable. The PM does not see the spend until the second half of that cycle.
+
+The second is attribution. When the invoice does arrive, the cost code is often missing or wrong. The super remembers the order in broad strokes, the supplier's invoice references a generic SKU, and the AP clerk codes the line to the closest plausible code rather than chasing the super for a confirmation. That guess survives the rest of the job.
+
+The third is volume. Any single field PO looks like noise. A half-day equipment rental, an extra case of caulk, a same-day delivery fee. The aggregate is what matters. The Associated General Contractors of America has flagged materials and small-tools cost control as a recurring driver of project-level margin erosion in its annual contractor surveys, with field-initiated spend cited as one of the harder leak points to instrument (AGC annual contractor surveys).
+
+## How much budget is typically at stake?
+
+The honest answer is that most mid-size GCs do not know with precision, which is part of the problem. Industry indicators give a directional read.
+
+The Construction Financial Management Association reports through its annual benchmarker that gross profit fade on completed jobs in the commercial GC segment runs in the low single digits of revenue, with materials and small equipment variance contributing meaningfully to that fade (CFMA Annual Financial Survey). McKinsey's Reinventing Construction work has separately put productivity and cost leakage on large projects at a level that dwarfs other industries (McKinsey Global Institute, Reinventing Construction). Field PO leakage is not the whole story, but it is a category that hides inside materials variance and rarely gets its own line in the cost report.
+
+A useful planning estimate: on a mid-size GC managing $30M of annual self-perform plus subcontracted work, even one to two percent of materials spend slipping through field POs without timely attribution can move project-level gross margin by tens of thousands of dollars per quarter. That figure is a directional planning number, not a benchmark. Each GC's exposure depends on supplier mix, superintendent discretion, and how tight the buyout was at award.
+
+## Manual versus AI-augmented field PO tracking
+
+| Step | Manual process today | AI-augmented process |
+|---|---|---|
+| Order origination | Super calls or texts the supplier pro desk | Same call, plus the AI layer ingests the supplier confirmation email and SMS the moment it arrives |
+| Cost-code attribution | PM or AP clerk guesses at month close | Order is matched against the active cost-code dictionary for the job and proposed to the PM in minutes |
+| Budget reforecast | Reactive, after invoice posts in AP | Proactive, surfaced in the same weekly cost report |
+| Variance trail | Reconstructed from invoices at job close | Continuous audit log of every field-initiated spend with originator and timestamp |
+| Supplier discipline | Trusted on the honor system | Discrepancies between confirmation, packing slip, and invoice are flagged automatically |
+| Subcontractor coordination | GC and sub sometimes double-buy because nobody knows the field PO went out | Field PO is visible to the relevant sub's PM through the GC's portal, no extra meeting needed |
+
+The structural shift is not stopping field POs. Field POs are a feature of how construction actually runs. The shift is closing the loop between the order being placed and the cost code being charged, so the PM is reforecasting against real numbers rather than a guess.
+
+## What three signs say field POs are already leaking?
+
+A GC that runs its job-cost reports honestly will usually see at least one of these patterns when field PO leakage is meaningful.
+
+- Materials variance against buyout runs consistently in the positive direction across multiple active jobs, without a clear root cause that the PMs can name in a job review.
+- Supplier statements at month close show line items that none of the project's open POs can absorb, and the AP team is regularly opening one-off POs after the fact to clear the invoice.
+- Subcontractors raise scope clarifications about materials that were apparently delivered to the site but never logged, which usually means a super ordered them and never told the PM in writing.
+
+The tighter those signals are, the more likely the GC is carrying a structural leak on a workflow that nobody currently owns end to end.
+
+## What changes when an AI layer holds the field PO loop?
+
+The shift is not a job site where supers stop making field calls. That would be the wrong fix. The shift is what the PM sees inside the same week the order goes out.
+
+At the order step, the AI layer monitors the supplier confirmation emails that already exist, parses the line items, and proposes a cost-code match against the project's active buyout. The super does not change behavior. The supplier does not change behavior. The PM gets a working entry inside the cost system within hours, not weeks.
+
+At the reforecast step, the weekly job-cost report includes field PO accruals as a distinct line, so the variance against buyout reflects everything actually committed against the budget, not just the formal POs that flowed through the requisition system.
+
+At the closeout step, every field PO has an originator, a timestamp, a confirmation trail, and a final invoice match, so the post-mortem on materials variance points to a real pattern rather than an unprovable guess.
+
+## What this does not solve
+
+It does not set the discretion limit a super gets for field POs without PM approval. It does not negotiate the GC's supplier master, decide which jobs warrant a tighter buyout, or rewrite the cost-code dictionary the PMs already maintain. Those remain operational choices the GC owns. What it does is take the field PO process the GC already runs informally and instrument it, so the policy the company believes it has is the policy it actually executes.
+
+## Where this leaves a GC thinking it through
+
+Field PO leakage is one of those problems that looks like a paperwork inconvenience and behaves like a margin event. The contractors that take the biggest hit are rarely the ones with sloppy supers. They are the ones that scaled job count, supplier roster, and PM workload in parallel without closing the gap between the moment a field call is made and the moment that spend lands on the right cost code.
+
+If your materials variance has been creeping in a way the job reviews cannot fully explain, we offer a **completely free automation audit** that maps where field-initiated spend is entering your books and what an instrumented version of that process would look like. No commitment, no slide deck. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book yours</a>
