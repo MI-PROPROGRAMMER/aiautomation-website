@@ -1,0 +1,101 @@
+export const frontmatter = {
+  title: "Bracketed Returns and DTC Apparel Margin Compression",
+  excerpt:
+    "Bracketed sizing turns a healthy DTC apparel order into a partial refund with reverse-logistics cost attached. Here is how the margin actually moves and where it lands.",
+  date: "2026-07-01",
+  author: "ApexifyLabs Team",
+  tags: ["E-commerce", "DTC", "Returns", "Apparel"],
+  heroImage: "/blog/bracketed-returns-dtc-apparel-margin-compression/hero.svg",
+  seoDescription:
+    "Size bracketing on DTC apparel doubles return rates and compresses margin. Where the cost actually lands, and what makes it different from returns fraud.",
+  readingTime: "5 min read",
+};
+
+Bracketed sizing is when a shopper orders two or three sizes of the same apparel item planning to keep one and return the rest. On DTC apparel brands it can push return rates from about 25% to 40 to 60% on the affected orders, and the cost hits reverse logistics, restocking, and the temporary stockout window during transit.
+
+The behavior is common, it is legal, and it is actively encouraged by free-return policies. Yet on most DTC apparel P&Ls the true cost is under-priced because the ops team reads returns as a single-line KPI rather than a bracket-driven pattern. This article looks at what bracketed returns actually cost, why the compression is larger than it looks, how the picture differs from returns fraud, and where the upstream lever sits for teams that want to reclaim the margin without breaking the return-friendly experience.
+
+## What is size bracketing on DTC apparel?
+
+Size bracketing means one shopper buys the same item in multiple sizes (usually two or three, sometimes four for outerwear or denim), tries them at home, keeps the size that fits, and returns the rest. It is not fraud. It is the return-friendly buying behavior that free returns and generous return windows actively encourage.
+
+The behavior sits at the intersection of three DTC realities: sizing charts are inconsistent across brands and even styles, home try-on has become the default replacement for the fitting room, and free return shipping removes the financial disincentive to over-order. Loop Returns' 2024 Return Index reported that apparel now averages a 24.4% return rate, with brackets clustering in a 40 to 60% return band.
+
+That is a meaningful subset. A brand with $12M in apparel revenue, roughly 8% of orders arriving as brackets, and an average bracket size of 2.5 items, ships and reverses far more inventory than the topline suggests.
+
+## Why do DTC apparel brands see it more than mass retail?
+
+Two structural reasons.
+
+First, the buyer's cost is asymmetric. On the shopper's side, bracketing costs nothing when returns are free. On the brand's side, a bracket spawns a return receipt, a pick-pack event, a truck slot, an inbound receiving line, a grader inspection, and (usually) a refurb pass before the item is sellable again. The National Retail Federation's 2024 Consumer Returns study put the average per-unit return processing cost at $27 for retailers, higher for apparel that requires steaming or repackaging.
+
+Second, the DTC brand carries less inventory than a big-box competitor. When a size 8 goes into transit as a return, that unit is unavailable for the next 5 to 12 business days. On a fast-moving SKU, that is enough to trigger an oversell warning or a "notify me" event that shows the customer a competing brand instead. Mass retail hides bracketing behind rounder inventory positions. DTC does not have that cushion.
+
+## What does a bracketed order actually cost?
+
+The easiest way to see the compression is to compare a single-size order against an equivalent bracket. The table below is built on public benchmarks from NRF's Consumer Returns study, Optoro's Returns Unlocked report, and Loop Returns' Return Index, applied to a hypothetical $80 average order value at a mid-market DTC apparel brand.
+
+| Line item | Single-size order | Bracketed order (3 sizes, keeps 1) |
+|---|---|---|
+| Gross revenue booked | $80 | $240 |
+| Net revenue after returns | $80 | $80 |
+| Outbound parcel and pick-pack | $9 | $9 |
+| Return shipping (2 units, prepaid label) | $0 | $14 |
+| Inbound receiving and inspection | $0 | $10 |
+| Refurb or repackage on grade B units | $0 | $6 |
+| Payment processing on gross value | $2.40 | $7.20 |
+| Contribution margin vs single-size baseline | baseline | $25 to $32 lower per bracket |
+
+The payment-processing line is worth flagging. Card and wallet fees are charged on gross transaction value, not on net revenue after the refund. A brand that processes $240 gross to net $80 pays fees on $240 both directions in most fee schedules. On a portfolio with a 10% bracket rate, that alone can move payment cost as a share of net revenue by 60 to 90 basis points.
+
+Applied to that same $12M brand, an 8% bracket rate would compress annual contribution margin by somewhere in the $240K to $310K range before accounting for the second-order stockout effect. That is not the storyline the returns dashboard shows, because most returns dashboards report units and rate, not the per-order economics of the underlying bracket.
+
+## Where does the margin compression actually happen?
+
+Three places, in decreasing order of visibility.
+
+### The reverse logistics leg
+
+Carriers price return shipments on a per-parcel basis, not per-order. A bracket that returns as two parcels (many brands enforce one label per SKU) pays double. Even single-parcel returns incur inbound receiving labor, which is not typically loaded back into the SKU's landed cost. The result is that a brand's cost accounting understates the true landed cost on any SKU that attracts bracketing behavior.
+
+### The re-inspection and grade-out leg
+
+Apparel returns are graded. A garment tried on and returned in sellable condition is Grade A. One that shows wear marks, deodorant transfer, or steaming loss is Grade B, and is typically discounted 20 to 40% at outlet or resold as open-box. Optoro reports that Grade B outcomes account for a meaningful share of apparel returns; on a bracket the odds are higher because the shopper physically wore three items instead of one.
+
+### The re-list latency and stockout leg
+
+This is the piece that is hardest to see and often the largest. When two sizes leave the sellable inventory pool for 5 to 12 days, the brand cannot backfill demand at those sizes. A customer landing on a "size 8 unavailable" PDP now enters retargeting or bounces. If the ad cost to acquire that customer was $22 (a mid-range DTC number), the effective cost of that stockout window includes wasted paid acquisition, not just the gross-margin loss on the missed unit.
+
+## How is bracketing different from returns fraud?
+
+The two often get lumped together in board decks. They behave differently.
+
+| Dimension | Bracketing | Returns fraud |
+|---|---|---|
+| Legality | Legal, brand-encouraged | Policy violation or illegal |
+| Frequency | Common (5% to 15% of apparel orders) | Rare (~1% of returns) |
+| Detection signal | Order pattern (multi-size, same SKU) | Behavioral and anomaly signals |
+| Right response | Merchandising and UX | Blocklist, KYC, policy tightening |
+| Absolute margin impact | Higher (larger denominator) | Higher per event when it hits |
+
+Confusing the two is expensive. Brands that respond to bracketing with fraud-style crackdowns (short return windows, restocking fees, blocklists) drive away first-time shoppers who were just uncertain about sizing. Brands that ignore bracketing accept the margin compression as a fixed cost of doing DTC apparel, which it does not have to be.
+
+## What changes when the pattern is observable in real time?
+
+The interesting shift is not on the returns dashboard. It is upstream, at the product page and cart.
+
+When a brand can see (in the moment a shopper adds two sizes of the same SKU to cart) that the order matches the bracket pattern, the merchandising surface can respond. Some brands present a fit-guide overlay before checkout. Some show a size-recommender that dissuades the third add. Some ship a bracket with a "return one, keep two, get 10% off next order" incentive so the second garment does not come back. None of these are new ideas in isolation, but running them consistently across every session requires continuous observation across the checkout, order management, and returns systems at once.
+
+That is where agentic automation earns its keep. Not a single AI action, but continuous observation across the funnel with the ability to nudge, price, and message the shopper at the right micro-moment. The brand that treats bracketing as a data-generating behavior (rather than a policy problem) recovers a large slice of the margin without sacrificing the return-friendliness that drove the acquisition in the first place.
+
+## What to check on your own returns data first
+
+Three simple diagnostics surface how much bracketing is really happening across a DTC apparel catalog.
+
+1. **Multi-size same-SKU rate.** Count orders where 2 or more line items share a base SKU differing only in size. On a healthy apparel brand this is 5 to 15% of orders; over 15% is a red flag.
+2. **Bracket keep-rate distribution.** For those orders, what percentage of units are kept? A brand-average below 50% keep rate on brackets means the shopper is treating the shipment as a fitting room.
+3. **Bracket-adjusted contribution margin.** Recompute per-SKU contribution margin using return processing cost, reverse shipping, and grade-out haircut. The SKUs where bracket-adjusted CM drops more than 8 to 10 points are the ones to price differently, fit-gate, or restrict returns on.
+
+None of the three require new tooling. They require pulling the data out of the OMS, the returns platform, and finance in the same view, which is the actual bottleneck at most brands.
+
+Bracketed returns are the DTC apparel margin conversation hiding inside a healthy-looking topline. Curious what your catalog's bracket-adjusted contribution margin actually looks like? We run a completely free automation audit for ops-heavy DTC teams that want a second opinion on where the margin is really going. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book yours</a>

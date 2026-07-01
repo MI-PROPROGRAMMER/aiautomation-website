@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="heroTitle">
+  <title id="heroTitle">Bracketed Returns and DTC Apparel Margin Compression</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#001a36"/>
+      <stop offset="100%" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accentBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00B5E2" stop-opacity="0.2"/>
+      <stop offset="30%" stop-color="#00B5E2" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="#00B5E2" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#00B5E2" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="costFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00B5E2" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#00B5E2" stop-opacity="0.75"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <line x1="0" y1="240" x2="1500" y2="240"/>
+    <line x1="0" y1="500" x2="1500" y2="500"/>
+    <line x1="0" y1="760" x2="1500" y2="760"/>
+  </g>
+
+  <text x="150" y="215" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#00B5E2" letter-spacing="6" font-weight="600">THE JOURNAL</text>
+
+  <text x="150" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="72" fill="#ffffff" font-weight="700">Bracketed Returns</text>
+  <text x="150" y="418" font-family="Georgia, 'Times New Roman', serif" font-size="72" fill="#ffffff" font-weight="700">and DTC Apparel</text>
+  <text x="150" y="506" font-family="Georgia, 'Times New Roman', serif" font-size="72" fill="#ffffff" font-weight="700">Margin Compression</text>
+
+  <text x="150" y="580" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#cfe5f1" font-style="italic" opacity="0.9">Where the return-friendly order actually costs the brand.</text>
+
+  <g transform="translate(150, 640)">
+    <text x="0" y="0" font-family="Georgia, serif" font-size="20" fill="#7fb6d6" letter-spacing="3">SHIPPED OUT</text>
+    <g fill="#cfe5f1">
+      <g transform="translate(0, 30)">
+        <path d="M 20 40 L 60 20 L 80 20 L 90 40 L 130 40 L 130 100 L 105 100 L 105 170 L 45 170 L 45 100 L 20 100 Z" opacity="0.95"/>
+        <text x="70" y="215" font-family="Georgia, serif" font-size="22" fill="#7fb6d6" text-anchor="middle">Size S</text>
+      </g>
+      <g transform="translate(160, 30)">
+        <path d="M 20 40 L 60 20 L 80 20 L 90 40 L 130 40 L 130 100 L 105 100 L 105 170 L 45 170 L 45 100 L 20 100 Z" opacity="0.95"/>
+        <text x="70" y="215" font-family="Georgia, serif" font-size="22" fill="#7fb6d6" text-anchor="middle">Size M</text>
+      </g>
+      <g transform="translate(320, 30)">
+        <path d="M 20 40 L 60 20 L 80 20 L 90 40 L 130 40 L 130 100 L 105 100 L 105 170 L 45 170 L 45 100 L 20 100 Z" opacity="0.95"/>
+        <text x="70" y="215" font-family="Georgia, serif" font-size="22" fill="#7fb6d6" text-anchor="middle">Size L</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(700, 640)">
+    <path d="M 0 100 L 100 100" stroke="#00B5E2" stroke-width="4" opacity="0.5"/>
+    <path d="M 90 90 L 105 100 L 90 110 Z" fill="#00B5E2" opacity="0.7"/>
+    <text x="52" y="70" font-family="Georgia, serif" font-size="18" fill="#cfe5f1" text-anchor="middle" font-style="italic">try at home</text>
+  </g>
+
+  <g transform="translate(830, 640)">
+    <text x="0" y="0" font-family="Georgia, serif" font-size="20" fill="#7fb6d6" letter-spacing="3">RETURNED</text>
+    <g transform="translate(0, 30)">
+      <path d="M 20 40 L 60 20 L 80 20 L 90 40 L 130 40 L 130 100 L 105 100 L 105 170 L 45 170 L 45 100 L 20 100 Z" fill="#5e8aa6" opacity="0.55"/>
+      <line x1="30" y1="30" x2="120" y2="180" stroke="#00B5E2" stroke-width="3" opacity="0.6"/>
+      <text x="70" y="215" font-family="Georgia, serif" font-size="22" fill="#7fb6d6" text-anchor="middle">Size S</text>
+    </g>
+    <g transform="translate(160, 30)">
+      <path d="M 20 40 L 60 20 L 80 20 L 90 40 L 130 40 L 130 100 L 105 100 L 105 170 L 45 170 L 45 100 L 20 100 Z" fill="#ffffff" opacity="0.95"/>
+      <text x="70" y="140" font-family="Georgia, serif" font-size="18" fill="#002347" text-anchor="middle" font-weight="700">KEPT</text>
+      <text x="70" y="215" font-family="Georgia, serif" font-size="22" fill="#00B5E2" text-anchor="middle" font-weight="700">Size M</text>
+    </g>
+    <g transform="translate(320, 30)">
+      <path d="M 20 40 L 60 20 L 80 20 L 90 40 L 130 40 L 130 100 L 105 100 L 105 170 L 45 170 L 45 100 L 20 100 Z" fill="#5e8aa6" opacity="0.55"/>
+      <line x1="30" y1="30" x2="120" y2="180" stroke="#00B5E2" stroke-width="3" opacity="0.6"/>
+      <text x="70" y="215" font-family="Georgia, serif" font-size="22" fill="#7fb6d6" text-anchor="middle">Size L</text>
+    </g>
+  </g>
+
+  <g transform="translate(150, 895)">
+    <rect x="0" y="0" width="360" height="12" fill="#5e8aa6" opacity="0.5" rx="2"/>
+    <text x="0" y="-10" font-family="Georgia, serif" font-size="18" fill="#7fb6d6">SINGLE ORDER MARGIN</text>
+    <text x="0" y="45" font-family="Georgia, serif" font-size="22" fill="#cfe5f1" font-weight="700">$80 net</text>
+  </g>
+
+  <g transform="translate(830, 895)">
+    <rect x="0" y="0" width="360" height="12" fill="url(#costFade)" rx="2"/>
+    <text x="0" y="-10" font-family="Georgia, serif" font-size="18" fill="#00B5E2" letter-spacing="1">BRACKET-ADJUSTED MARGIN</text>
+    <text x="0" y="45" font-family="Georgia, serif" font-size="22" fill="#ffffff" font-weight="700">$25 to $32 lower per bracket</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentBar)"/>
+</svg>
