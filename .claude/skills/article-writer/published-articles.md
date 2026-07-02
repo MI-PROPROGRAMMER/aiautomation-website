@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-07-02 — Fuel Surcharge Update Lag on Freight Broker Margin · logistics · `fuel-surcharge-update-lag-broker-margin`
 - 2026-07-01 — Bracketed Returns and DTC Apparel Margin Compression · e-com ops · `bracketed-returns-dtc-apparel-margin-compression`
 - 2026-06-30 — Why Untracked Field Purchase Orders Drive GC Cost Overruns · construction · `field-purchase-orders-drive-gc-cost-overruns`
 - 2026-06-29 — Carrier No-Show Re-Coverage on Spot Brokerage Desks · logistics · `carrier-no-show-re-coverage-spot-brokerage`

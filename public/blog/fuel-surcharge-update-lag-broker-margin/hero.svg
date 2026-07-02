@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Fuel Surcharge Update Lag — hero art">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent-bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.15" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="0.5" stop-color="#7fb6d6" stop-opacity="0.95"/>
+      <stop offset="0.85" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lag-fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1500" height="1000" fill="url(#bg)"/>
+
+  <g opacity="0.06" stroke="#7fb6d6" stroke-width="1">
+    <line x1="100" y1="540" x2="1400" y2="540"/>
+    <line x1="100" y1="620" x2="1400" y2="620"/>
+    <line x1="100" y1="700" x2="1400" y2="700"/>
+    <line x1="100" y1="780" x2="1400" y2="780"/>
+  </g>
+
+  <text x="750" y="205" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="6">THE JOURNAL</text>
+
+  <text x="750" y="330" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="700">Fuel Surcharge Update Lag</text>
+
+  <text x="750" y="410" text-anchor="middle" fill="#cfe5f1" opacity="0.9" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-style="italic">When the EIA index moves faster than the FSC table</text>
+
+  <g>
+    <line x1="260" y1="820" x2="1240" y2="820" stroke="#5e8aa6" stroke-width="1.5"/>
+    <line x1="260" y1="540" x2="260" y2="820" stroke="#5e8aa6" stroke-width="1.5"/>
+
+    <text x="220" y="626" text-anchor="end" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="18">new FSC</text>
+    <text x="220" y="756" text-anchor="end" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="18">prior FSC</text>
+
+    <text x="290" y="852" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="20">Mon</text>
+    <text x="525" y="852" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="20">Tue</text>
+    <text x="760" y="852" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="20">Wed</text>
+    <text x="995" y="852" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="20">Thu</text>
+    <text x="1220" y="852" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="20">Fri</text>
+
+    <path d="M 300 620 L 800 620 L 800 750 L 300 750 Z" fill="url(#lag-fill)" stroke="#00B5E2" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="4 4"/>
+
+    <text x="550" y="695" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-style="italic" opacity="0.92">Lag window: margin drift</text>
+
+    <path d="M 260 750 L 300 750 L 300 620 L 1240 620" stroke="#00B5E2" stroke-width="5" fill="none" stroke-linejoin="round"/>
+    <circle cx="300" cy="620" r="8" fill="#00B5E2"/>
+    <circle cx="1240" cy="620" r="6" fill="#00B5E2"/>
+
+    <path d="M 260 750 L 780 750 L 800 620 L 1240 620" stroke="#7fb6d6" stroke-width="4" fill="none" stroke-linejoin="round" stroke-dasharray="12 8"/>
+    <circle cx="800" cy="620" r="7" fill="#7fb6d6"/>
+
+    <line x1="300" y1="540" x2="300" y2="620" stroke="#00B5E2" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 4"/>
+    <line x1="800" y1="540" x2="800" y2="620" stroke="#7fb6d6" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 4"/>
+
+    <text x="300" y="525" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="18">EIA publishes</text>
+    <text x="800" y="525" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="18">Broker table refreshes</text>
+
+    <text x="1390" y="614" text-anchor="end" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="20">EIA index (same day)</text>
+    <text x="1390" y="750" text-anchor="end" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="20">Broker FSC (Wed refresh)</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent-bar)"/>
+</svg>
