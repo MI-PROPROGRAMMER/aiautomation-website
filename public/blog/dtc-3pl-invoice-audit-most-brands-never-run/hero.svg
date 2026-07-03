@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Sample DTC 3PL monthly statement with three flagged accessorial line items">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.85" cy="0.22" r="0.6">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <path d="M0 200 H1500"/>
+    <path d="M0 360 H1500"/>
+    <path d="M0 520 H1500"/>
+    <path d="M0 680 H1500"/>
+    <path d="M0 840 H1500"/>
+  </g>
+
+  <g transform="translate(180,220)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.9">THE JOURNAL</text>
+    <text y="88" font-size="72" font-weight="700" fill="#ffffff">The DTC 3PL Invoice Audit</text>
+    <text y="168" font-size="72" font-weight="700" fill="#ffffff">Most Brands Never Run</text>
+    <text y="226" font-size="30" font-weight="400" fill="#cfe5f1" opacity="0.9">line-item exposure hiding on every statement</text>
+  </g>
+
+  <g transform="translate(180,540)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">MONTHLY 3PL STATEMENT · SAMPLE</text>
+
+    <g font-size="13" letter-spacing="2" fill="#5e8aa6">
+      <text x="0" y="34">LINE ITEM</text>
+      <text x="820" y="34" text-anchor="end">AMOUNT</text>
+      <text x="1140" y="34" text-anchor="end">FLAG</text>
+    </g>
+    <line x1="0" y1="46" x2="1140" y2="46" stroke="#0a3a66" stroke-width="1"/>
+
+    <g font-family="Georgia, serif" font-size="20" fill="#cfe5f1">
+      <text x="0" y="78">Pick and pack, base</text>
+      <text x="820" y="78" text-anchor="end" fill="#9fc4dc">$18,420.00</text>
+
+      <text x="0" y="112">Storage, per pallet</text>
+      <text x="820" y="112" text-anchor="end" fill="#9fc4dc">$4,290.00</text>
+
+      <text x="0" y="146" fill="#ffffff">Oversized handling</text>
+      <text x="820" y="146" text-anchor="end" fill="#ffffff">$2,145.00</text>
+      <circle cx="1120" cy="140" r="8" fill="#00B5E2"/>
+
+      <text x="0" y="180" fill="#ffffff">Kit assembly, per unit</text>
+      <text x="820" y="180" text-anchor="end" fill="#ffffff">$1,872.00</text>
+      <circle cx="1120" cy="174" r="8" fill="#00B5E2"/>
+
+      <text x="0" y="214">Rush pick fee</text>
+      <text x="820" y="214" text-anchor="end" fill="#9fc4dc">$612.00</text>
+
+      <text x="0" y="248" fill="#ffffff">Remnant storage</text>
+      <text x="820" y="248" text-anchor="end" fill="#ffffff">$986.00</text>
+      <circle cx="1120" cy="242" r="8" fill="#00B5E2"/>
+
+      <text x="0" y="282">Receiving overtime</text>
+      <text x="820" y="282" text-anchor="end" fill="#9fc4dc">$428.00</text>
+
+      <text x="0" y="316">Handling adjustment</text>
+      <text x="820" y="316" text-anchor="end" fill="#9fc4dc">$412.75</text>
+    </g>
+
+    <line x1="0" y1="338" x2="1140" y2="338" stroke="#0a3a66" stroke-width="1"/>
+    <text x="0" y="368" font-size="13" letter-spacing="2" fill="#7fb6d6">3 FLAGGED · RECOVERABLE EXPOSURE $5,003.00</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>

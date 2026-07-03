@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-07-03 — The DTC 3PL Invoice Audit Most Brands Never Run · e-com ops · `dtc-3pl-invoice-audit-most-brands-never-run`
 - 2026-07-02 — Fuel Surcharge Update Lag on Freight Broker Margin · logistics · `fuel-surcharge-update-lag-broker-margin`
 - 2026-07-01 — Bracketed Returns and DTC Apparel Margin Compression · e-com ops · `bracketed-returns-dtc-apparel-margin-compression`
 - 2026-06-30 — Why Untracked Field Purchase Orders Drive GC Cost Overruns · construction · `field-purchase-orders-drive-gc-cost-overruns`
