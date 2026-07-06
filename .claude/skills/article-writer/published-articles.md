@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-07-06 — When Trade Buyout Overruns Erode GC Job Margin · construction · `trade-buyout-overruns-erode-gc-job-margin`
 - 2026-07-05 — How Slow Shipper Pay Ages a Freight Broker's Books · logistics · `how-slow-shipper-pay-ages-freight-broker-books`
 - 2026-07-04 — Retainage Aging: The Slow-Cash Cycle on Mid-Size GCs · construction · `retainage-aging-slow-cash-cycle-mid-size-gcs`
 - 2026-07-03 — The DTC 3PL Invoice Audit Most Brands Never Run · e-com ops · `dtc-3pl-invoice-audit-most-brands-never-run`
