@@ -1,0 +1,46 @@
+<svg viewBox="0 0 1500 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Store Credit vs Cash Refund: The DTC Repeat-Purchase Split">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#001a36"/>
+      <stop offset="100%" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#001a36"/>
+      <stop offset="50%" stop-color="#00B5E2"/>
+      <stop offset="100%" stop-color="#001a36"/>
+    </linearGradient>
+    <linearGradient id="creditBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00B5E2"/>
+      <stop offset="100%" stop-color="#0a3a66"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <text x="100" y="200" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="6">THE JOURNAL</text>
+
+  <text x="100" y="310" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold">Store Credit vs Cash Refund</text>
+
+  <text x="100" y="380" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="38" opacity="0.9">The DTC repeat-purchase split</text>
+
+  <g transform="translate(100, 520)">
+    <text x="0" y="0" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="2">90-DAY REPEAT PURCHASE ON REFUNDED CUSTOMERS</text>
+
+    <line x1="0" y1="330" x2="1300" y2="330" stroke="#5e8aa6" stroke-width="1"/>
+
+    <rect x="60" y="180" width="220" height="150" fill="#5e8aa6" opacity="0.85"/>
+    <text x="170" y="160" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="30" text-anchor="middle" font-weight="bold">Cash</text>
+    <text x="170" y="360" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="20" text-anchor="middle">baseline</text>
+
+    <rect x="360" y="60" width="220" height="270" fill="url(#creditBar)"/>
+    <text x="470" y="40" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="30" text-anchor="middle" font-weight="bold">Store Credit</text>
+    <text x="470" y="360" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="20" text-anchor="middle">+20 to 40% higher</text>
+
+    <line x1="660" y1="200" x2="720" y2="200" stroke="#00B5E2" stroke-width="2" opacity="0.6"/>
+    <text x="740" y="180" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="26" opacity="0.9">The default at the RMA step</text>
+    <text x="740" y="215" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="26" opacity="0.9">decides the split, not the</text>
+    <text x="740" y="250" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="26" opacity="0.9">customer's preference.</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
