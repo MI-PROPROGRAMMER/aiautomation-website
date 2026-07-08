@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-07-08 — Why Slow Broker Payment Terms Cost Spot Fill Rates · logistics · `slow-broker-pay-terms-cost-spot-fill-rates`
 - 2026-07-07 — Store Credit vs Cash Refund: The DTC Repeat-Purchase Split · e-com ops · `store-credit-vs-cash-refund-dtc-repeat-purchase`
 - 2026-07-06 — When Trade Buyout Overruns Erode GC Job Margin · construction · `trade-buyout-overruns-erode-gc-job-margin`
 - 2026-07-05 — How Slow Shipper Pay Ages a Freight Broker's Books · logistics · `how-slow-shipper-pay-ages-freight-broker-books`
