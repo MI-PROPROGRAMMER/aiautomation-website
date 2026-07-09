@@ -1,0 +1,88 @@
+export const frontmatter = {
+  title: "Split Shipments and the DTC Multi-Warehouse Margin Leak",
+  excerpt:
+    "One customer order routed to two nodes can compress order margin by several points. On DTC brands with two or three warehouses, the leak hides inside order-level reporting.",
+  date: "2026-07-09",
+  author: "ApexifyLabs Team",
+  tags: ["E-commerce", "DTC", "Order Ops", "Fulfillment"],
+  heroImage: "/blog/split-shipments-dtc-multi-warehouse-margin-leak/hero.svg",
+  seoDescription:
+    "Split shipments compress DTC order margin by several points, and standard reporting rarely surfaces the leak. What changes when order routing gets smarter.",
+  readingTime: "5 min read",
+};
+
+Split shipments (a single customer order fulfilled from two or more warehouses instead of one) look like a routine operational quirk. On a mid-size DTC brand running two or three fulfillment nodes, they can compress order-level margin by several points across the year, and standard order reporting rarely surfaces the leak until it lands on a peak-season parcel invoice.
+
+## What is a split shipment on a DTC order?
+
+A split shipment happens when one order goes out in two or more parcels from two or more origins. The customer bought once, but the warehouse network could not source every line from a single node, so the order fragments and ships across separate labels, carriers, and delivery dates.
+
+That is different from an intentional split (buy-online-pickup-store, marketplace drop-ship, or a preorder that stages a follow-up shipment). Those are planned. The split shipments that erode margin are the unplanned ones, where routing logic could not keep the order intact even though the customer expected one box.
+
+## Why do split shipments cluster on multi-node DTC brands?
+
+Multi-node fulfillment (typically a coastal pair, or a 3-node network for zone-skipping) is a healthy operating decision. It compresses delivery times and cuts zone-based parcel cost. It also introduces a class of edge cases where an individual order cannot be sourced from a single node. A few common patterns:
+
+- **SKU allocation gaps.** Not every SKU lives in every warehouse. Long-tail or newly launched SKUs often sit in only one node.
+- **Regional demand imbalance.** A viral moment or paid campaign concentrates demand on one coast, and safety stock in that node runs out mid-week.
+- **Kit and bundle logic.** A bundle SKU can decrement one child from Node A and another from Node B, forcing a split at pick even when both children exist in one warehouse on paper.
+- **Return-restock timing.** A returned unit is in transit or in receiving on the east coast, but the outbound demand for that SKU today is on the west coast.
+- **Promo waves.** A flash sale on a limited-inventory SKU pushes fulfillment past the primary node's stock within hours.
+
+None of these are unusual on their own. Stacked together on a $10M to $30M DTC brand, they produce a steady split-shipment rate that shows up on the parcel invoice long before it shows up in the order dashboard.
+
+## What does a split shipment actually cost?
+
+The parcel bill is the obvious line item: two parcels instead of one, two pick tickets, two labels, two dim-weight calculations. The less obvious costs sit downstream, in labor, customer experience, and returns exposure. Below, a directional order economics comparison for a $60 average order value on apparel or consumables, before promos or returns:
+
+| Order structure | Parcel and packaging | Labor cost | Delivery risk | Order margin impact |
+|---|---|---|---|---|
+| Single node, one parcel | Baseline | 1 pick, 1 pack | 1 delivery event | Baseline |
+| Two nodes, two parcels | +30 to +60% vs single | 2 picks, 2 packs | 2 events, 2 tracking windows | 3 to 6 points down |
+| Three nodes, three parcels | +55 to +90% vs single | 3 picks, 3 packs | 3 events, higher WISMO | 5 to 9 points down |
+
+Directional ranges reflect published commentary from parcel-benchmark reporting (ShipMatrix, ShipBob, and Radial), industry write-ups on multi-node fulfillment (Shopify Fulfillment Network, Deliverr), and 3PL rate cards commonly cited by DTC operators. Precise margin impact varies by category, package weight, and the mix of ground versus expedited service.
+
+The point is not the exact percentage. The point is that a 6 to 10 percent split rate (common on multi-node DTC brands during promo windows) can drag full-year order margin by 40 to 90 basis points on its own. On a $15M brand running a 35 percent gross margin, that is roughly $60K to $135K sitting inside the split-shipment column of the parcel invoice, spread across thousands of orders that each look fine in isolation.
+
+## Where do split shipments hide in DTC reporting?
+
+Most DTC ops stacks report order-level margin against category-level parcel cost. Split shipments do not have their own row. Three reasons this specific leak stays hidden longer than it should:
+
+1. **Order-level margin buries the split premium.** The order still lands within an acceptable margin band, so it never triggers a review, even though it cost 30 to 60 percent more to fulfill than the median order of the same size.
+2. **3PL invoicing lumps ancillary spend.** Split-related surcharges (residential fees, delivery area surcharges, fuel adders) get charged on both parcels, but roll up into a monthly parcel line that looks smooth month over month.
+3. **Peak season masks the pattern.** Q4 lifts everyone's parcel spend. The split rate can double from November through January without a single alarm firing, because the base rate is up across the board.
+
+Finance sees a healthy top line. Ops sees on-time delivery. The split-shipment premium sits in between them, and nobody explicitly owns it.
+
+## What changes when order routing gets smarter?
+
+The traditional lever is a routing rule set inside the OMS. Rules work, but they are static. They cannot weigh same-day node inventory, in-transit restock, expected returns, promo velocity, and per-order carrier cost at the same time.
+
+AI-assisted order routing changes the shape of that decision. Instead of a rule per SKU, the routing engine can evaluate every open order against real-time node inventory and forward-looking demand, then choose the node combination that keeps the order intact whenever the customer experience allows, and knowingly accepts a split only when the intact option would cost more than the split premium (rare, but possible on oversized or cross-category orders).
+
+For a DTC ops team, a few weekly puzzles stop being manual:
+
+- **Promise-date versus cost tradeoffs surface pre-cart**, not after the label prints.
+- **SKU-node allocation gaps get flagged proactively**, so purchasing and receiving know which SKUs need parity coverage across nodes before the next promo.
+- **Split rate becomes a first-class KPI**, tracked daily and attributed to SKU, node, and campaign, instead of a quarterly discovery on the parcel invoice.
+
+We describe outcomes here, not the recipe. The stack behind that is where operator-level automation earns its budget.
+
+## Three signals worth checking on your own desk
+
+If you are running two or more fulfillment nodes, three quick reads before your next parcel invoice review:
+
+1. **Split rate as a percent of orders.** Under 4 percent is typical for a well-tuned two-node brand. Over 8 percent for weeks at a time is a signal, not a spike.
+2. **Multi-parcel spend as a percent of parcel spend.** If splits are 6 percent of orders but multi-parcel spend is 12 percent of parcel dollars, the split premium is doing more damage than the order count suggests.
+3. **WISMO and reship rate on split orders versus intact orders.** Split orders generate a disproportionate share of WISMO tickets (two tracking numbers, two delivery windows, two chances to miss a customer expectation) and a slightly higher reship rate when one leg goes astray.
+
+None of these require a new tool to compute. They require a query and the discipline to run it every week.
+
+## Closing
+
+Split shipments are the kind of leak that never triggers an alarm because every individual order still looks fine. The margin damage shows up in aggregate, on a parcel invoice that finance already assumed was a fixed cost of doing DTC business.
+
+If your team is running two or more nodes and has not looked at the split rate this quarter, that is the audit worth running first.
+
+We run a **completely free automation audit** for DTC ops teams who want a second read on where routing, splits, and parcel spend are drifting. No slide deck, no sales pitch, just the numbers on your own network. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book yours</a>

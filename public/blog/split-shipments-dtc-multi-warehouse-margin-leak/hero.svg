@@ -1,0 +1,54 @@
+<svg viewBox="0 0 1500 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Split Shipments and the DTC Multi-Warehouse Margin Leak">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#001a36"/>
+      <stop offset="100%" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#001a36"/>
+      <stop offset="50%" stop-color="#00B5E2"/>
+      <stop offset="100%" stop-color="#001a36"/>
+    </linearGradient>
+    <linearGradient id="nodeFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a3a66"/>
+      <stop offset="100%" stop-color="#001a36"/>
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto">
+      <polygon points="0 0, 12 7, 0 14" fill="#00B5E2"/>
+    </marker>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <text x="100" y="175" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="6">THE JOURNAL</text>
+
+  <text x="100" y="280" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="bold">Split Shipments and the</text>
+  <text x="100" y="365" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="bold">DTC Multi-Warehouse Leak</text>
+
+  <text x="100" y="425" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="34" opacity="0.9">Two nodes, two parcels, one hidden margin premium</text>
+
+  <text x="100" y="500" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="3">ONE ORDER, TWO ORIGINS</text>
+
+  <rect x="630" y="530" width="240" height="100" rx="6" fill="url(#nodeFill)" stroke="#00B5E2" stroke-width="2"/>
+  <text x="750" y="572" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="26" text-anchor="middle" font-weight="bold">ORDER #4218</text>
+  <text x="750" y="608" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="18" text-anchor="middle">3 lines, 1 customer</text>
+
+  <line x1="670" y1="632" x2="360" y2="732" stroke="#00B5E2" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowhead)"/>
+  <line x1="830" y1="632" x2="1140" y2="732" stroke="#00B5E2" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrowhead)"/>
+
+  <rect x="160" y="740" width="340" height="120" rx="6" fill="url(#nodeFill)" stroke="#5e8aa6" stroke-width="1.5"/>
+  <text x="330" y="778" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="18" text-anchor="middle" letter-spacing="3">NODE A / EAST</text>
+  <text x="330" y="820" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="28" text-anchor="middle" font-weight="bold">1 parcel</text>
+  <text x="330" y="848" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="16" text-anchor="middle">2 lines shipped</text>
+
+  <rect x="1000" y="740" width="340" height="120" rx="6" fill="url(#nodeFill)" stroke="#5e8aa6" stroke-width="1.5"/>
+  <text x="1170" y="778" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="18" text-anchor="middle" letter-spacing="3">NODE B / WEST</text>
+  <text x="1170" y="820" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="28" text-anchor="middle" font-weight="bold">1 parcel</text>
+  <text x="1170" y="848" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="16" text-anchor="middle">1 line shipped</text>
+
+  <rect x="580" y="770" width="340" height="60" rx="4" fill="#00B5E2" opacity="0.14" stroke="#00B5E2" stroke-width="1.5"/>
+  <text x="750" y="795" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="16" text-anchor="middle" letter-spacing="3">SPLIT PREMIUM</text>
+  <text x="750" y="820" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="20" text-anchor="middle" font-weight="bold">+30 to +60% parcel cost</text>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
