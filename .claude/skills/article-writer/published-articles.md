@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-07-10 — What Unclaimed Weather Delays Cost Mid-Size GCs · construction · `unclaimed-weather-delays-cost-mid-size-gcs`
 - 2026-07-09 — Split Shipments and the DTC Multi-Warehouse Margin Leak · e-com ops · `split-shipments-dtc-multi-warehouse-margin-leak`
 - 2026-07-08 — Why Slow Broker Payment Terms Cost Spot Fill Rates · logistics · `slow-broker-pay-terms-cost-spot-fill-rates`
 - 2026-07-07 — Store Credit vs Cash Refund: The DTC Repeat-Purchase Split · e-com ops · `store-credit-vs-cash-refund-dtc-repeat-purchase`

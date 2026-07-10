@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Unclaimed Weather Delays visualization">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.2" cy="0.28" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="windowFill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <path d="M0 220 H1500" /><path d="M0 380 H1500" /><path d="M0 540 H1500" />
+    <path d="M0 700 H1500" /><path d="M0 860 H1500" />
+  </g>
+
+  <g transform="translate(180,260)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="84" font-weight="700" fill="#ffffff">Unclaimed Weather Days</text>
+    <text y="170" font-size="38" font-weight="400" fill="#cfe5f1" opacity="0.9">the schedule extensions GCs never file</text>
+  </g>
+
+  <g transform="translate(180,590)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">21-DAY CONTRACT NOTICE WINDOW · DAY OF WEATHER EVENT</text>
+
+    <g transform="translate(0,32)">
+      <rect x="0" y="0" width="1140" height="8" fill="#0a3a66"/>
+      <rect x="0" y="0" width="420" height="8" fill="url(#windowFill)"/>
+      <rect x="0" y="0" width="420" height="8" fill="#00B5E2" opacity="0.55"/>
+
+      <g fill="#cfe5f1" font-size="13">
+        <text x="0" y="34">DAY 0</text>
+        <text x="200" y="34">DAY 7</text>
+        <text x="400" y="34">DAY 21</text>
+        <text x="700" y="34">DAY 45</text>
+        <text x="1050" y="34">CLOSEOUT</text>
+      </g>
+
+      <g stroke="#5e8aa6" stroke-width="1" opacity="0.7">
+        <path d="M0 -6 V 14"/>
+        <path d="M200 -6 V 14"/>
+        <path d="M400 -6 V 14"/>
+        <path d="M700 -6 V 14"/>
+        <path d="M1050 -6 V 14"/>
+      </g>
+
+      <g transform="translate(0,74)">
+        <circle cx="0" cy="0" r="10" fill="#00B5E2"/>
+        <text x="22" y="5" font-size="14" fill="#cfe5f1">RAIN EVENT · SUPER LOGS ON PHONE</text>
+      </g>
+
+      <g transform="translate(0,110)">
+        <circle cx="200" cy="0" r="8" fill="#00B5E2" opacity="0.75"/>
+        <text x="222" y="5" font-size="14" fill="#cfe5f1">DAY 7 · OWNER NOTICE DRAFTED</text>
+      </g>
+
+      <g transform="translate(0,146)">
+        <circle cx="400" cy="0" r="8" fill="#00B5E2" opacity="0.55"/>
+        <text x="422" y="5" font-size="14" fill="#cfe5f1">DAY 21 · CONTRACT NOTICE WINDOW CLOSES</text>
+      </g>
+
+      <g transform="translate(0,182)">
+        <circle cx="700" cy="0" r="6" fill="#5e8aa6"/>
+        <text x="722" y="5" font-size="14" fill="#7fb6d6" opacity="0.9">DAY 45 · CLAIM REASSEMBLED · TOO LATE</text>
+      </g>
+
+      <g transform="translate(0,222)">
+        <text font-size="12" letter-spacing="2" fill="#5e8aa6">MOST WEATHER CLAIMS DIE BETWEEN DAY 7 AND DAY 21 · UNTIMELY, NOT UNTRUE</text>
+      </g>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
