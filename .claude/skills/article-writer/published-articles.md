@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-07-11 — How Rate Confirmation Errors Shrink Freight Broker Margin · logistics · `rate-confirmation-errors-shrink-freight-broker-margin`
 - 2026-07-10 — What Unclaimed Weather Delays Cost Mid-Size GCs · construction · `unclaimed-weather-delays-cost-mid-size-gcs`
 - 2026-07-09 — Split Shipments and the DTC Multi-Warehouse Margin Leak · e-com ops · `split-shipments-dtc-multi-warehouse-margin-leak`
 - 2026-07-08 — Why Slow Broker Payment Terms Cost Spot Fill Rates · logistics · `slow-broker-pay-terms-cost-spot-fill-rates`
