@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="COI Collection Lag visualization">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.2" cy="0.28" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="manualBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="aiBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <path d="M0 220 H1500" /><path d="M0 380 H1500" /><path d="M0 540 H1500" />
+    <path d="M0 700 H1500" /><path d="M0 860 H1500" />
+  </g>
+
+  <g transform="translate(180,260)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="84" font-weight="700" fill="#ffffff">COI Collection Lag</text>
+    <text y="170" font-size="38" font-weight="400" fill="#cfe5f1" opacity="0.9">the mobilization days pre-construction never sees</text>
+  </g>
+
+  <g transform="translate(180,570)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">BUSINESS DAYS FROM AWARD TO COMPLIANT COI · MID-SIZE GC</text>
+
+    <g transform="translate(0,44)">
+      <path d="M280 174 H1160" stroke="#0a3a66" stroke-width="1" opacity="0.7"/>
+
+      <g stroke="#5e8aa6" stroke-width="1" opacity="0.6">
+        <path d="M280 168 V180"/>
+        <path d="M500 168 V180"/>
+        <path d="M720 168 V180"/>
+        <path d="M940 168 V180"/>
+        <path d="M1160 168 V180"/>
+      </g>
+      <g fill="#7fb6d6" font-size="13" text-anchor="middle">
+        <text x="280" y="200">0 d</text>
+        <text x="500" y="200">3 d</text>
+        <text x="720" y="200">6 d</text>
+        <text x="940" y="200">9 d</text>
+        <text x="1160" y="200">12 d</text>
+      </g>
+
+      <text x="0" y="52" font-size="18" fill="#cfe5f1">MANUAL COI CYCLE</text>
+      <text x="0" y="76" font-size="13" fill="#7fb6d6" opacity="0.8">endorsement rework, agent batch, queue</text>
+      <rect x="280" y="34" width="880" height="34" fill="#0a3a66" opacity="0.35"/>
+      <rect x="647" y="34" width="367" height="34" fill="url(#manualBar)"/>
+
+      <text x="0" y="136" font-size="18" fill="#cfe5f1">AI-AUGMENTED CYCLE</text>
+      <text x="0" y="160" font-size="13" fill="#7fb6d6" opacity="0.8">parsed request, auto-flagged discrepancies</text>
+      <rect x="280" y="118" width="880" height="34" fill="#0a3a66" opacity="0.35"/>
+      <rect x="353" y="118" width="147" height="34" fill="url(#aiBar)"/>
+
+      <text x="0" y="230" font-size="12" letter-spacing="2" fill="#5e8aa6">EACH REWORK ADDS A DAY · MOBILIZATION WAITS ON THE LAST CORRECTED COI</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
