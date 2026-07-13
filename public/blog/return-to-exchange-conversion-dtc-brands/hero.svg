@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Return to exchange conversion visualization">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.24" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="exchangeFill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="1"/>
+    </linearGradient>
+    <pattern id="refundFill" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="12" height="12" fill="#0a3a66" fill-opacity="0.55"/>
+      <path d="M0 0 V12" stroke="#5e8aa6" stroke-width="1" stroke-opacity="0.35"/>
+    </pattern>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.3">
+    <path d="M0 240 H1500"/>
+    <path d="M0 420 H1500"/>
+    <path d="M0 600 H1500"/>
+    <path d="M0 780 H1500"/>
+  </g>
+
+  <g transform="translate(180,240)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="96" font-size="80" font-weight="700" fill="#ffffff">Return to Exchange</text>
+    <text y="170" font-size="36" font-weight="400" fill="#cfe5f1" opacity="0.9">the retained-revenue metric most DTC brands do not track</text>
+  </g>
+
+  <g transform="translate(180,560)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">SHARE OF RETURN INITIATIONS · APPAREL-ADJACENT DTC</text>
+
+    <g transform="translate(0,44)">
+      <text x="0" y="52" font-size="18" fill="#cfe5f1">DEFAULT PORTAL</text>
+      <text x="0" y="76" font-size="13" fill="#7fb6d6" opacity="0.8">refund is the primary action</text>
+      <rect x="280" y="34" width="880" height="42" fill="url(#refundFill)"/>
+      <rect x="280" y="34" width="70" height="42" fill="url(#exchangeFill)"/>
+      <text x="1180" y="60" font-size="18" fill="#ffffff">8%</text>
+      <text x="1180" y="76" font-size="11" letter-spacing="1" fill="#7fb6d6">EXCHANGED</text>
+
+      <text x="0" y="152" font-size="18" fill="#cfe5f1">AI-ASSISTED FLOW</text>
+      <text x="0" y="176" font-size="13" fill="#7fb6d6" opacity="0.8">alternatives surfaced in the return step</text>
+      <rect x="280" y="134" width="880" height="42" fill="url(#refundFill)"/>
+      <rect x="280" y="134" width="211" height="42" fill="url(#exchangeFill)"/>
+      <text x="1180" y="160" font-size="18" fill="#ffffff">24%</text>
+      <text x="1180" y="176" font-size="11" letter-spacing="1" fill="#7fb6d6">EXCHANGED</text>
+
+      <g stroke="#5e8aa6" stroke-width="1" opacity="0.55">
+        <path d="M280 210 V222"/>
+        <path d="M500 210 V222"/>
+        <path d="M720 210 V222"/>
+        <path d="M940 210 V222"/>
+        <path d="M1160 210 V222"/>
+      </g>
+      <g fill="#7fb6d6" font-size="12" text-anchor="middle">
+        <text x="280" y="240">0%</text>
+        <text x="500" y="240">25%</text>
+        <text x="720" y="240">50%</text>
+        <text x="940" y="240">75%</text>
+        <text x="1160" y="240">100%</text>
+      </g>
+
+      <text x="0" y="286" font-size="12" letter-spacing="2" fill="#5e8aa6">EACH POINT OF EXCHANGE SHARE IS A POINT OF RETAINED REVENUE</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
