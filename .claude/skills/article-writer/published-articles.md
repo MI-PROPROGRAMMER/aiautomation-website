@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-07-15 — When Marketplace Suppressions Halt DTC Sales for Hours · e-com ops · `marketplace-suppressions-halt-dtc-sales-hours`
 - 2026-07-14 — Why Double-Brokering Fraud Slips Past Mid-Size Brokerages · logistics · `double-brokering-fraud-mid-size-brokerages`
 - 2026-07-13 — The Return-to-Exchange Conversion DTC Brands Rarely Measure · e-com ops · `return-to-exchange-conversion-dtc-brands`
 - 2026-07-12 — COI Collection Lag Delays GC Job Mobilization · construction · `coi-collection-lag-delays-gc-job-mobilization`
