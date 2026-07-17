@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Bill of Lading Errors and the Freight Broker Cash Trap">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.22" cy="0.30" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <path d="M0 220 H1500"/><path d="M0 400 H1500"/><path d="M0 580 H1500"/>
+    <path d="M0 760 H1500"/>
+  </g>
+
+  <g transform="translate(180,260)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="80" font-weight="700" fill="#ffffff">Bill of Lading Errors</text>
+    <text y="176" font-size="38" font-weight="400" fill="#cfe5f1" opacity="0.9">and the freight broker cash trap</text>
+  </g>
+
+  <g transform="translate(180,560)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">TENDER VS BOL AT ORIGIN</text>
+
+    <g transform="translate(0,32)">
+      <text x="0" y="0" font-size="15" fill="#9fc4dc" letter-spacing="1">TENDER</text>
+      <text x="640" y="0" font-size="15" fill="#9fc4dc" letter-spacing="1">BOL AS RECEIVED</text>
+    </g>
+
+    <g transform="translate(0,72)" font-size="20" fill="#ffffff">
+      <rect x="-10" y="-24" width="1140" height="42" fill="#0a3a66" opacity="0.35"/>
+      <text x="0" y="4">weight  24,600 lb</text>
+      <text x="640" y="4">24,600 lb</text>
+      <circle cx="1100" cy="-2" r="7" fill="#00B5E2"/>
+    </g>
+
+    <g transform="translate(0,124)" font-size="20" fill="#ffffff">
+      <rect x="-10" y="-24" width="1140" height="42" fill="#0a3a66" opacity="0.35"/>
+      <text x="0" y="4">class   70</text>
+      <text x="640" y="4" fill="#cfe5f1">class 100 (hand-written)</text>
+      <rect x="1093" y="-9" width="14" height="14" fill="#cfe5f1" opacity="0.9"/>
+    </g>
+
+    <g transform="translate(0,176)" font-size="20" fill="#ffffff">
+      <rect x="-10" y="-24" width="1140" height="42" fill="#0a3a66" opacity="0.35"/>
+      <text x="0" y="4">PO      3184927</text>
+      <text x="640" y="4" fill="#cfe5f1">PO 3184972</text>
+      <rect x="1093" y="-9" width="14" height="14" fill="#cfe5f1" opacity="0.9"/>
+    </g>
+
+    <g transform="translate(0,228)" font-size="20" fill="#ffffff">
+      <rect x="-10" y="-24" width="1140" height="42" fill="#0a3a66" opacity="0.35"/>
+      <text x="0" y="4">appt    14:00 liftgate</text>
+      <text x="640" y="4" fill="#cfe5f1">appt 14:00, note missing</text>
+      <rect x="1093" y="-9" width="14" height="14" fill="#cfe5f1" opacity="0.9"/>
+    </g>
+
+    <g transform="translate(0,280)" font-size="20" fill="#ffffff">
+      <rect x="-10" y="-24" width="1140" height="42" fill="#0a3a66" opacity="0.35"/>
+      <text x="0" y="4">consignee  Acme #4</text>
+      <text x="640" y="4">Acme #4</text>
+      <circle cx="1100" cy="-2" r="7" fill="#00B5E2"/>
+    </g>
+
+    <g transform="translate(0,338)">
+      <text font-size="12" letter-spacing="2" fill="#5e8aa6">3 OF 5 FIELDS DISAGREE  ·  INVOICE HELD AT SHIPPER AP PORTAL</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>

@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-07-17 — Bill of Lading Errors and the Freight Broker Cash Trap · logistics · `bill-of-lading-errors-freight-broker-cash-trap`
 - 2026-07-16 — Weekly OAC Meeting Prep: Where GC PM Hours Go · construction · `weekly-oac-meeting-prep-gc-pm-hours`
 - 2026-07-15 — When Marketplace Suppressions Halt DTC Sales for Hours · e-com ops · `marketplace-suppressions-halt-dtc-sales-hours`
 - 2026-07-14 — Why Double-Brokering Fraud Slips Past Mid-Size Brokerages · logistics · `double-brokering-fraud-mid-size-brokerages`
