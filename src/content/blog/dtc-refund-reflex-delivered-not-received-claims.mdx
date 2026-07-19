@@ -1,0 +1,140 @@
+export const frontmatter = {
+  title: "The DTC Refund Reflex on Delivered-Not-Received Claims",
+  excerpt:
+    "Delivered-not-received tickets land in DTC customer service every week. The reflex reship or refund adds up. Where the margin actually goes.",
+  date: "2026-07-19",
+  author: "ApexifyLabs Team",
+  tags: ["E-commerce", "DTC", "Order Ops", "CX"],
+  heroImage: "/blog/dtc-refund-reflex-delivered-not-received-claims/hero.svg",
+  seoDescription:
+    "How delivered-not-received claims compound across DTC shipping, CX capacity, and repeat purchase behavior, and what a pattern-aware response looks like.",
+  readingTime: "5 min read",
+};
+
+Delivered-not-received claims sit in a small, awkward corner of DTC customer service. The tracking scan says delivered. The customer says otherwise. Most brands respond by reshipping or refunding on the first ask, treating each ticket in isolation. Across a year of order volume, that pattern reshapes shipping margin, CX capacity, and repeat purchase rates.
+
+## What is a delivered-not-received claim?
+
+A delivered-not-received (DNR) claim is a customer report that a package marked "delivered" by the carrier never actually arrived at their door, mailbox, or building. It sits between three familiar categories and belongs cleanly to none of them.
+
+It is not a lost-in-transit case, since the carrier scan closed the shipment. It is not a return, because nothing has been shipped back. It is not a payment dispute yet, though it can become one if the brand refuses. That in-between status is exactly why DNR claims land in customer service and stay there.
+
+The National Retail Federation's 2024 Returns and Fraud report groups porch-theft and delivery-fraud claims into a broader "delivery-related fraud" category the trade group has flagged as a growing DTC cost line. What the CX queue sees each week is one small facet of that broader trend.
+
+## How common are DNR claims across DTC?
+
+The exact rate varies by carrier, region, and product category, but a few reference points are worth holding onto.
+
+Parcel-industry surveys consistently report DNR-adjacent claims (theft, misdelivery, disputed scans) in the low single-digit percentages of shipped volume for consumer retail. C+R Research's annual package-theft survey has, for several years running, placed the share of U.S. households reporting at least one stolen package in the 40–50% range over a rolling 12-month window. Not every household loss becomes a brand ticket, but a share does.
+
+On an operational level, DNR volume tends to concentrate in three places:
+
+1. High-density urban zip codes where doorstep drop-off is the default.
+2. Apartment buildings without a secure receiving desk or concierge.
+3. Peak-season weeks when carriers push volume through in bulk and misdelivery rates rise.
+
+For a $10M–$30M DTC brand shipping across the U.S., that translates to a real, recurring ticket type, not an occasional edge case.
+
+## What does the standard DTC response look like?
+
+The typical playbook is short:
+
+- Agent receives the ticket.
+- Agent checks tracking. Tracking shows delivered.
+- Agent asks the customer to check with neighbors and building staff, and to wait 24 to 48 hours.
+- If the customer follows up, agent issues a reship or a refund.
+
+The whole flow is optimized for one goal: preserve the customer relationship. That goal is not wrong. What it misses is that each individual "yes, we'll take care of it" is a small decision the brand is making blind, without any view of the pattern that the same customer, address, product, or carrier route sits inside.
+
+## Where does the refund reflex drain margin?
+
+Every DNR resolution carries a stack of costs that add up quickly at volume:
+
+- **Original shipping and fulfillment.** Already spent. Not recoverable on a reship.
+- **New shipping and fulfillment on the replacement.** Full second-ship cost, often expedited to smooth the customer experience.
+- **Product cost of the reshipped unit.** If refunded rather than reshipped, revenue is written off; the unit itself sits in "delivered" limbo.
+- **CX labor per ticket.** Industry benchmarks from Zendesk, Gorgias, and Kustomer place the average cost per contact for retail in the $5 to $12 range depending on tier and channel. DNR claims usually take more than one touch.
+- **Carrier claim recovery, usually skipped.** Most carriers allow the brand to file a claim on the shipment. Very few brands do this consistently, because the labor to file exceeds the recovery on any single package.
+
+Multiply the per-claim cost by even a low single-digit percent of annual orders and the number gets uncomfortable. For a brand shipping 200,000 orders a year, a 1.5% DNR rate at a fully loaded per-claim cost near $30 lands around $90,000 in annual erosion, before the second-order impact on repeat purchase and cohort economics.
+
+## Why does the same ticket look different in aggregate?
+
+A single DNR ticket, in a vacuum, is almost impossible to judge. Was the package stolen? Misdelivered next door? Left at the wrong apartment? Reported as missing by a customer who found it in a bush the following day? Impossible to say.
+
+The same ticket, viewed across a full year of order data, starts to reveal shape.
+
+- The same address showing four claims in six months is a different signal than a first-time customer's first claim.
+- A cluster of claims from three zip codes served by the same carrier route is a different signal than isolated claims spread across the country.
+- Claims concentrated on a single high-value SKU are a different signal than claims spread across the catalog.
+- Claims that spike the week after a promo pushed order volume by 3x are a different signal than steady baseline claims.
+
+None of these patterns are visible from inside a single ticket. They live in the intersection between order history, carrier data, geography, and product mix, in a place CX agents rarely have the time or tooling to reach mid-conversation.
+
+## Reactive DNR handling vs pattern-aware DNR handling
+
+| Dimension | Reactive one-off | Pattern-aware ops signal |
+|---|---|---|
+| Trigger | Individual ticket | Ticket plus historical context |
+| Decision input | Tracking scan, customer statement | Address history, carrier route, SKU, order cohort, prior claims |
+| Default action | Reship or refund on first ask | Tailored response by risk pattern |
+| Repeat-claim visibility | Manual lookup, often skipped | Automatic flag on second claim from same address |
+| Carrier claim recovery | Occasional, ad hoc | Batched and filed on eligible shipments |
+| Repeat-purchase read | Assumed positive | Measured against a matched control cohort |
+| Cost view | Per ticket | Per cohort, per carrier route, per zip |
+| Ops role | CX-only | Shared across CX, fulfillment, and finance |
+
+The right column is not about denying customers. It is about knowing what you are looking at before you decide.
+
+## What separates a genuine DNR from claim abuse at the pattern level?
+
+The honest answer is that no single ticket cleanly separates them. The pattern layer is where the signal lives.
+
+A few of the pattern features that ops and CX leaders in DTC have flagged as useful, based on operator interviews and published analyses from Signifyd, Riskified, and NRF working groups:
+
+- Repeat claim rate per shipping address across a rolling 12 months.
+- Claim rate per SKU relative to that SKU's return rate and category baseline.
+- Claim rate per carrier route or last-mile provider.
+- Time from delivery scan to first customer contact.
+- Correlation between the claiming customer's account age, prior order count, and payment method.
+- Cluster patterns tied to promo events or price drops.
+
+The point of collecting these features is not to build a policing regime. It is to give the CX agent a one-glance view of context, so the response can match the pattern: fast reship for a first-time claim from a clean cohort, a different conversation for the fifth claim from the same address on the same expensive SKU.
+
+## What changes when DNR is treated as an ops signal, not just a CX ticket?
+
+The shift is less about tooling and more about who owns the pattern.
+
+When DNR sits inside a CX inbox, the metrics that get watched are average handle time and customer satisfaction on that ticket. Both push toward the refund reflex, because a fast yes closes the loop cleanly.
+
+When DNR sits in a shared ops view, the metrics that get watched include:
+
+- Total DNR rate as a percentage of shipped units.
+- Refund-and-reship cost per 1,000 orders.
+- Carrier claim recovery dollars per quarter.
+- Repeat DNR rate by address and by cohort.
+- Downstream repeat purchase rate for customers who filed a DNR, versus a matched cohort who did not.
+
+The last one is the most interesting and the least commonly tracked. Some DTC operators have reported that customers who file a DNR and are quickly reshipped actually re-order at a higher rate than baseline for a short window afterward, then regress. Others have reported a steady drop. Which pattern shows up in a specific catalog is only visible if the brand is looking. Most are not.
+
+## What we are not saying
+
+We are not saying DTC brands should default to denying DNR claims. That is the opposite mistake, and it costs more in customer lifetime value than the refund reflex costs in margin.
+
+We are saying that the current default assumes each ticket is independent, and the data almost never supports that assumption. Between the fast-yes reflex and the reflexive-no policing stance, there is a middle ground that most $10M to $50M DTC brands have not yet built into their CX and fulfillment ops.
+
+## What a better default looks like on your desk
+
+Every brand's mix is different, so the specific policy will vary. The shape of a better default tends to include:
+
+- A DNR ticket type distinct from lost-in-transit and returns, with its own tags, metrics, and response rules.
+- An address-level history flag visible to the agent at ticket open.
+- A carrier-route and zip-cluster view surfaced monthly to fulfillment.
+- A cohort-level view surfaced quarterly to finance.
+- A standing question in the quarterly business review about whether the DNR line is moving up or down.
+
+None of that requires ripping and replacing a helpdesk or a WMS. It requires deciding that the DNR line is a real ops metric and giving it a real owner.
+
+## The free automation audit
+
+If delivered-not-received claims, or any adjacent CX-to-fulfillment gap, are running against your margin and you want a second opinion before touching anything, we run a completely free automation audit for DTC ops teams. No commitment, no slide deck, just a working map of where the pattern lives on your desk and what changes when it is surfaced. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book yours</a>

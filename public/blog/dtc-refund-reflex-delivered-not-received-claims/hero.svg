@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="DTC delivered-not-received claim cost stack visualization">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.22" cy="0.28" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <path d="M0 200 H1500" />
+    <path d="M0 360 H1500" />
+    <path d="M0 520 H1500" />
+    <path d="M0 680 H1500" />
+    <path d="M0 840 H1500" />
+  </g>
+
+  <g transform="translate(180,260)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="84" font-weight="700" fill="#ffffff">The Refund Reflex</text>
+    <text y="170" font-size="38" font-weight="400" fill="#cfe5f1" opacity="0.9">what one delivered-not-received claim actually costs</text>
+  </g>
+
+  <g transform="translate(180,570)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">TYPICAL DNR RESOLUTION COST STACK</text>
+
+    <g transform="translate(0,60)">
+      <rect x="0" y="0" width="1140" height="42" fill="#0a3a66"/>
+      <rect x="0" y="0" width="228" height="42" fill="#00B5E2" opacity="0.95"/>
+      <rect x="228" y="0" width="285" height="42" fill="#00B5E2" opacity="0.8"/>
+      <rect x="513" y="0" width="342" height="42" fill="#00B5E2" opacity="0.65"/>
+      <rect x="855" y="0" width="228" height="42" fill="#00B5E2" opacity="0.5"/>
+      <rect x="1083" y="0" width="57" height="42" fill="#00B5E2" opacity="0.35"/>
+
+      <text x="114" y="27" text-anchor="middle" font-size="16" fill="#001a36" font-weight="700">20%</text>
+      <text x="370" y="27" text-anchor="middle" font-size="16" fill="#001a36" font-weight="700">25%</text>
+      <text x="684" y="27" text-anchor="middle" font-size="16" fill="#001a36" font-weight="700">30%</text>
+      <text x="969" y="27" text-anchor="middle" font-size="16" fill="#001a36" font-weight="700">20%</text>
+      <text x="1111" y="27" text-anchor="middle" font-size="12" fill="#001a36" font-weight="700">5%</text>
+    </g>
+
+    <g transform="translate(0,140)" font-size="15" font-family="Georgia, serif">
+      <g transform="translate(0,0)">
+        <rect x="0" y="-11" width="14" height="14" fill="#00B5E2" opacity="0.95"/>
+        <text x="24" y="1" fill="#cfe5f1">Original ship and fulfillment</text>
+      </g>
+      <g transform="translate(0,32)">
+        <rect x="0" y="-11" width="14" height="14" fill="#00B5E2" opacity="0.8"/>
+        <text x="24" y="1" fill="#cfe5f1">Replacement ship, often expedited</text>
+      </g>
+      <g transform="translate(0,64)">
+        <rect x="0" y="-11" width="14" height="14" fill="#00B5E2" opacity="0.65"/>
+        <text x="24" y="1" fill="#cfe5f1">Product cost of reshipped unit</text>
+      </g>
+      <g transform="translate(0,96)">
+        <rect x="0" y="-11" width="14" height="14" fill="#00B5E2" opacity="0.5"/>
+        <text x="24" y="1" fill="#cfe5f1">CX labor across multiple touches</text>
+      </g>
+      <g transform="translate(0,128)">
+        <rect x="0" y="-11" width="14" height="14" fill="#00B5E2" opacity="0.35"/>
+        <text x="24" y="1" fill="#cfe5f1">Carrier claim recovery, usually skipped</text>
+      </g>
+    </g>
+
+    <text y="290" font-size="12" letter-spacing="2" fill="#5e8aa6">CX SEES ONE TICKET. FINANCE SEES A LINE ITEM.</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
