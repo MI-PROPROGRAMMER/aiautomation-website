@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-07-20 — How OTIF Penalties Erode Broker Margin on Retail Freight · logistics · `otif-penalties-erode-broker-margin-retail-freight`
 - 2026-07-19 — The DTC Refund Reflex on Delivered-Not-Received Claims · e-com ops · `dtc-refund-reflex-delivered-not-received-claims`
 - 2026-07-18 — Subcontractor Prequal Cycle Time on GC Preconstruction Desks · construction · `subcontractor-prequal-cycle-time-gc-preconstruction`
 - 2026-07-17 — Bill of Lading Errors and the Freight Broker Cash Trap · logistics · `bill-of-lading-errors-freight-broker-cash-trap`

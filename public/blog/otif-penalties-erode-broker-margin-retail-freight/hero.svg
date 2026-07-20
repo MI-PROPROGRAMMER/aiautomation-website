@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="OTIF penalty exposure across retail freight lanes">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.22" cy="0.22" r="0.65">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="barFill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <path d="M0 220 H1500"/><path d="M0 360 H1500"/><path d="M0 500 H1500"/>
+    <path d="M0 640 H1500"/><path d="M0 780 H1500"/>
+  </g>
+
+  <g transform="translate(180,230)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="76" font-weight="700" fill="#ffffff">OTIF Penalties</text>
+    <text y="180" font-size="76" font-weight="700" fill="#ffffff">on Retail Freight</text>
+    <text y="240" font-size="34" font-weight="400" fill="#cfe5f1" opacity="0.9">how the compliance chargeback compounds</text>
+  </g>
+
+  <g transform="translate(180,585)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">FINE EXPOSURE AS % OF RETAIL LANE REVENUE</text>
+
+    <g transform="translate(0,44)">
+      <text font-size="16" fill="#9fc4dc">WALMART</text>
+      <rect x="240" y="-14" width="880" height="16" fill="#0a3a66"/>
+      <rect x="240" y="-14" width="620" height="16" fill="url(#barFill)"/>
+      <text x="1140" y="0" font-size="16" fill="#cfe5f1">3.1%</text>
+    </g>
+
+    <g transform="translate(0,84)">
+      <text font-size="16" fill="#9fc4dc">HOME DEPOT</text>
+      <rect x="240" y="-14" width="880" height="16" fill="#0a3a66"/>
+      <rect x="240" y="-14" width="580" height="16" fill="url(#barFill)" opacity="0.9"/>
+      <text x="1140" y="0" font-size="16" fill="#cfe5f1">2.9%</text>
+    </g>
+
+    <g transform="translate(0,124)">
+      <text font-size="16" fill="#9fc4dc">TARGET</text>
+      <rect x="240" y="-14" width="880" height="16" fill="#0a3a66"/>
+      <rect x="240" y="-14" width="480" height="16" fill="url(#barFill)" opacity="0.8"/>
+      <text x="1140" y="0" font-size="16" fill="#cfe5f1">2.4%</text>
+    </g>
+
+    <g transform="translate(0,164)">
+      <text font-size="16" fill="#9fc4dc">KROGER</text>
+      <rect x="240" y="-14" width="880" height="16" fill="#0a3a66"/>
+      <rect x="240" y="-14" width="360" height="16" fill="url(#barFill)" opacity="0.7"/>
+      <text x="1140" y="0" font-size="16" fill="#cfe5f1">1.8%</text>
+    </g>
+
+    <g transform="translate(0,220)">
+      <text font-size="12" letter-spacing="2" fill="#5e8aa6">TYPICAL EXPOSURE ON A MID-SIZE BROKERAGE, RETAIL FREIGHT BOOK</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
