@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-07-22 — Why Restock Alert Lag Drains DTC Waitlist Revenue · e-com ops · `restock-alert-lag-drains-dtc-waitlist-revenue`
 - 2026-07-21 — Owner Verbal Directives That Never Become Change Orders · construction · `owner-verbal-directives-never-become-change-orders`
 - 2026-07-20 — How OTIF Penalties Erode Broker Margin on Retail Freight · logistics · `otif-penalties-erode-broker-margin-retail-freight`
 - 2026-07-19 — The DTC Refund Reflex on Delivered-Not-Received Claims · e-com ops · `dtc-refund-reflex-delivered-not-received-claims`
