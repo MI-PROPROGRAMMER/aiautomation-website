@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="OFCI Delivery Slips Are Extending GC Turnover Windows">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#001a36"/>
+      <stop offset="100%" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accentBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="80%" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="promisedBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5e8aa6"/>
+      <stop offset="100%" stop-color="#7fb6d6"/>
+    </linearGradient>
+    <linearGradient id="actualBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00B5E2"/>
+      <stop offset="70%" stop-color="#00B5E2"/>
+      <stop offset="100%" stop-color="#0a3a66"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <!-- Faint grid backdrop -->
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <line x1="150" y1="820" x2="1350" y2="820"/>
+    <line x1="150" y1="880" x2="1350" y2="880"/>
+    <line x1="150" y1="940" x2="1350" y2="940"/>
+  </g>
+
+  <!-- Journal label -->
+  <text x="150" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#00B5E2" letter-spacing="6">THE JOURNAL</text>
+
+  <!-- Title -->
+  <text x="150" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="bold" fill="#ffffff">OFCI Delivery Slips</text>
+  <text x="150" y="386" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="bold" fill="#ffffff">Are Extending GC</text>
+  <text x="150" y="472" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="bold" fill="#ffffff">Turnover Windows</text>
+
+  <!-- Subtitle -->
+  <text x="150" y="540" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#cfe5f1" opacity="0.9">Owner-furnished equipment. Contractor-owned schedule risk.</text>
+
+  <!-- Schedule visual: promised vs actual -->
+  <g>
+    <!-- Row labels -->
+    <text x="150" y="705" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#cfe5f1">Promised install</text>
+    <text x="150" y="805" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#cfe5f1">Actual install</text>
+
+    <!-- Turnover vertical line -->
+    <line x1="1050" y1="640" x2="1050" y2="830" stroke="#ffffff" stroke-width="2" stroke-dasharray="6 6" opacity="0.85"/>
+    <text x="1050" y="620" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#ffffff" text-anchor="middle" opacity="0.95">Turnover</text>
+
+    <!-- Promised bar (ends before turnover) -->
+    <rect x="440" y="670" width="580" height="40" rx="6" fill="url(#promisedBar)" opacity="0.85"/>
+
+    <!-- Actual bar (extends past turnover) -->
+    <rect x="440" y="770" width="820" height="40" rx="6" fill="url(#actualBar)"/>
+    <!-- Slip overhang marker -->
+    <line x1="1050" y1="770" x2="1050" y2="810" stroke="#001a36" stroke-width="2" opacity="0.6"/>
+    <text x="1155" y="758" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#00B5E2" text-anchor="middle">slip</text>
+  </g>
+
+  <!-- Bottom-edge accent bar -->
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentBar)"/>
+</svg>
