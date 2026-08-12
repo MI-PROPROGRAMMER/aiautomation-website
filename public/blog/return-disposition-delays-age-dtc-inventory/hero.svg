@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="When Return Disposition Delays Age DTC Inventory">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#001a36"/>
+      <stop offset="100%" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00B5E2"/>
+      <stop offset="50%" stop-color="#0a3a66"/>
+      <stop offset="100%" stop-color="#00B5E2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <text x="750" y="200" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="20" fill="#00B5E2" letter-spacing="6">THE JOURNAL</text>
+
+  <text x="750" y="295" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="66" font-weight="bold" fill="#ffffff">When Return Disposition Delays</text>
+  <text x="750" y="375" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="66" font-weight="bold" fill="#ffffff">Age DTC Inventory</text>
+
+  <text x="750" y="445" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="32" fill="#cfe5f1" opacity="0.9" font-style="italic">The days between refund and back-on-sale</text>
+
+  <g transform="translate(300, 560)">
+    <text x="450" y="0" font-family="Georgia, 'Times New Roman', serif"
+          font-size="20" fill="#cfe5f1" text-anchor="middle" letter-spacing="4">REALIZABLE VALUE ACROSS DISPOSITION DAYS</text>
+
+    <line x1="-60" y1="260" x2="960" y2="260" stroke="#5e8aa6" stroke-width="1" opacity="0.5"/>
+
+    <rect x="-60"  y="40"  width="120" height="220" fill="#00B5E2" opacity="0.95" rx="4"/>
+    <rect x="165"  y="75"  width="120" height="185" fill="#00B5E2" opacity="0.78" rx="4"/>
+    <rect x="390"  y="120" width="120" height="140" fill="#00B5E2" opacity="0.60" rx="4"/>
+    <rect x="615"  y="160" width="120" height="100" fill="#00B5E2" opacity="0.42" rx="4"/>
+    <rect x="840"  y="200" width="120" height="60"  fill="#00B5E2" opacity="0.26" rx="4"/>
+
+    <text x="0"   y="295" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#7fb6d6" text-anchor="middle">Day 0</text>
+    <text x="225" y="295" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#7fb6d6" text-anchor="middle">Day 3</text>
+    <text x="450" y="295" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#7fb6d6" text-anchor="middle">Day 7</text>
+    <text x="675" y="295" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#7fb6d6" text-anchor="middle">Day 10</text>
+    <text x="900" y="295" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#7fb6d6" text-anchor="middle">Day 15</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
