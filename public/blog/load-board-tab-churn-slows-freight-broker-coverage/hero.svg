@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Load board tab churn on a freight brokerage coverage desk">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.3" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.28">
+    <path d="M0 200 H1500"/>
+    <path d="M0 400 H1500"/>
+    <path d="M0 600 H1500"/>
+    <path d="M0 800 H1500"/>
+  </g>
+
+  <g transform="translate(180,220)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="90" font-size="76" font-weight="700" fill="#ffffff">Load Board Tab Churn</text>
+    <text y="170" font-size="76" font-weight="700" fill="#ffffff">Slows Broker Coverage</text>
+    <text y="230" font-size="32" font-weight="400" fill="#cfe5f1" opacity="0.9">capacity is real, it lives in five windows at once</text>
+  </g>
+
+  <g transform="translate(180,510)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">FIVE BOARDS, ONE COVERAGE REP</text>
+
+    <g transform="translate(0,40)">
+      <rect x="0" y="0" width="1000" height="46" fill="#0a3a66" opacity="0.9" rx="4"/>
+      <rect x="0" y="0" width="4" height="46" fill="#00B5E2"/>
+      <text x="24" y="30" font-size="18" fill="#ffffff" font-weight="600" letter-spacing="1">DAT</text>
+      <text x="200" y="30" font-size="13" fill="#9fc4dc" letter-spacing="2">POSTED TRUCKS</text>
+      <g fill="#00B5E2" opacity="0.85">
+        <circle cx="420" cy="23" r="6"/><circle cx="450" cy="23" r="6"/><circle cx="480" cy="23" r="6"/>
+        <circle cx="510" cy="23" r="6"/><circle cx="540" cy="23" r="6"/><circle cx="570" cy="23" r="6"/>
+        <circle cx="600" cy="23" r="6"/><circle cx="630" cy="23" r="6"/>
+      </g>
+      <text x="920" y="30" font-size="16" fill="#cfe5f1" text-anchor="end">42 lanes</text>
+    </g>
+
+    <g transform="translate(28,96)">
+      <rect x="0" y="0" width="1000" height="46" fill="#0a3a66" opacity="0.78" rx="4"/>
+      <rect x="0" y="0" width="4" height="46" fill="#00B5E2"/>
+      <text x="24" y="30" font-size="18" fill="#ffffff" font-weight="600" letter-spacing="1">TRUCKSTOP</text>
+      <text x="200" y="30" font-size="13" fill="#9fc4dc" letter-spacing="2">POSTED TRUCKS</text>
+      <g fill="#00B5E2" opacity="0.72">
+        <circle cx="420" cy="23" r="6"/><circle cx="450" cy="23" r="6"/><circle cx="480" cy="23" r="6"/>
+        <circle cx="510" cy="23" r="6"/><circle cx="540" cy="23" r="6"/><circle cx="570" cy="23" r="6"/>
+      </g>
+      <text x="920" y="30" font-size="16" fill="#cfe5f1" text-anchor="end">31 lanes</text>
+    </g>
+
+    <g transform="translate(56,152)">
+      <rect x="0" y="0" width="1000" height="46" fill="#0a3a66" opacity="0.66" rx="4"/>
+      <rect x="0" y="0" width="4" height="46" fill="#00B5E2"/>
+      <text x="24" y="30" font-size="18" fill="#ffffff" font-weight="600" letter-spacing="1">SYLECTUS</text>
+      <text x="200" y="30" font-size="13" fill="#9fc4dc" letter-spacing="2">POSTED TRUCKS</text>
+      <g fill="#00B5E2" opacity="0.6">
+        <circle cx="420" cy="23" r="6"/><circle cx="450" cy="23" r="6"/><circle cx="480" cy="23" r="6"/>
+        <circle cx="510" cy="23" r="6"/>
+      </g>
+      <text x="920" y="30" font-size="16" fill="#cfe5f1" text-anchor="end">18 lanes</text>
+    </g>
+
+    <g transform="translate(84,208)">
+      <rect x="0" y="0" width="1000" height="46" fill="#0a3a66" opacity="0.54" rx="4"/>
+      <rect x="0" y="0" width="4" height="46" fill="#00B5E2"/>
+      <text x="24" y="30" font-size="18" fill="#ffffff" font-weight="600" letter-spacing="1">PRIVATE-A</text>
+      <text x="200" y="30" font-size="13" fill="#9fc4dc" letter-spacing="2">POSTED TRUCKS</text>
+      <g fill="#00B5E2" opacity="0.52">
+        <circle cx="420" cy="23" r="6"/><circle cx="450" cy="23" r="6"/><circle cx="480" cy="23" r="6"/>
+      </g>
+      <text x="920" y="30" font-size="16" fill="#cfe5f1" text-anchor="end">11 lanes</text>
+    </g>
+
+    <g transform="translate(112,264)">
+      <rect x="0" y="0" width="1000" height="46" fill="#0a3a66" opacity="0.44" rx="4"/>
+      <rect x="0" y="0" width="4" height="46" fill="#00B5E2"/>
+      <text x="24" y="30" font-size="18" fill="#ffffff" font-weight="600" letter-spacing="1">PRIVATE-B</text>
+      <text x="200" y="30" font-size="13" fill="#9fc4dc" letter-spacing="2">POSTED TRUCKS</text>
+      <g fill="#00B5E2" opacity="0.46">
+        <circle cx="420" cy="23" r="6"/><circle cx="450" cy="23" r="6"/>
+      </g>
+      <text x="920" y="30" font-size="16" fill="#cfe5f1" text-anchor="end">7 lanes</text>
+    </g>
+
+    <g stroke="#00B5E2" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.7" fill="none">
+      <path d="M420 63 Q 428 100 476 152"/>
+      <path d="M450 63 Q 470 130 534 208"/>
+      <path d="M510 63 Q 540 160 622 264"/>
+    </g>
+
+    <text x="0" y="335" font-size="13" letter-spacing="2" fill="#5e8aa6">DASHED LINES · SAME MC POSTED ACROSS MULTIPLE BOARDS · DEDUPE HAPPENS BY HAND</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
