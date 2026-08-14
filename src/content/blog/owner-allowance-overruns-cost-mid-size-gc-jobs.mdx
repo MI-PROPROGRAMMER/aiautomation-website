@@ -1,0 +1,77 @@
+export const frontmatter = {
+  title: "What Owner Allowance Overruns Cost Mid-Size GC Jobs",
+  excerpt:
+    "Owner allowances on mid-size GC jobs drift over budget through substitutions and late invoice matching. The overruns land at closeout, and the GC usually absorbs them.",
+  date: "2026-08-14",
+  author: "ApexifyLabs Team",
+  tags: ["Construction", "GC Operations", "Allowance Tracking", "Closeout"],
+  heroImage: "/blog/owner-allowance-overruns-cost-mid-size-gc-jobs/hero.svg",
+  seoDescription:
+    "Owner allowance overruns on mid-size GC jobs get reconciled at closeout, often as GC write-offs. See where the drift comes from and how to prevent it.",
+  readingTime: "4 min read",
+};
+
+Owner allowances on mid-size GC jobs look like protected line items in the contract. In practice, they drift over budget through informal approvals, late invoice matching, and unlogged substitutions, and only surface at closeout. Reconciliation is where the overruns land, often five figures per job the GC absorbs to keep the relationship.
+
+## What is an owner allowance on a GC contract?
+
+An allowance is a placeholder dollar amount in the prime contract for a scope element the owner has not fully specified at signing. Kitchen appliances at $22,000. Interior finish package at $85,000. Landscaping at $40,000. The GC carries the placeholder in the schedule of values, procures against it once the owner makes selections, and reconciles the actual cost during payment applications.
+
+The mechanism sounds clean on paper. The industry has been using allowances since well before spreadsheets existed. On smaller residential jobs, the numbers usually stay small enough that overruns get caught in the monthly draw.
+
+On mid-size commercial and institutional work, allowances behave differently. A single project can carry 15 to 40 discrete allowance line items, each with its own vendor, selection cycle, freight terms, and sometimes AHJ requirements the specifier did not anticipate. The tracking burden is real work, and it is split across the PM, the estimator, the accountant, and often the interiors coordinator.
+
+## Why do allowances overrun without a change order triggering?
+
+The typical mid-size GC change order workflow flags scope additions, not budget drift inside a line item that was already priced. That is exactly where allowances slip.
+
+Three patterns produce most of the drift.
+
+**Owner-directed selections above the allowance.** The owner walks the showroom, picks the higher-end faucet, and the interiors coordinator confirms availability. A written change order for the delta rarely gets executed because the line item already exists in the contract. The invoice comes in ninety days later, over allowance, and the accountant flags it during pay app review.
+
+**Substitution creep.** The specified allowance covered a Tier 2 product. The submitted product is Tier 1 due to lead time or availability. The submitted price is higher, sometimes by 30 to 60 percent, and the field team accepts because the schedule cannot absorb another selection cycle. The overrun is real, and no one initiates the change order because it feels like a delivery issue, not a scope change.
+
+**Freight, taxes, and site charges.** Allowances are often quoted at the product line. Actual invoiced totals include freight, packaging, restocking on returns, and applicable sales tax at the delivery jurisdiction rate. On specialty equipment with white glove delivery, these charges alone can push the invoice five to twelve percent over allowance.
+
+None of these triggers a change order request in most GC workflows. They all show up as allowance overruns at reconciliation.
+
+## What does the reconciliation look like at closeout?
+
+Reconciling allowance line items is one of the last real accounting exercises before final payment. On a typical mid-size commercial job, this happens 30 to 60 days after substantial completion, often while punch list, warranty documentation, and as-built assembly are still open.
+
+The PM or accountant pulls the schedule of values, opens each allowance line, and matches every invoice, PO, and receipt against the contract number. On paper it is clean. In practice, the folder for a $40,000 landscaping allowance can hold nine invoices from three vendors, two credit memos, and one field-note substitution that never made it into the accounting system.
+
+When the total lands over the allowance, the GC has two choices. Package the overruns as a closeout change order and ask the owner to sign. Or write the difference off internally, especially if the relationship or the next job pipeline depends on the owner feeling closed cleanly.
+
+McKinsey's 2017 report *Reinventing Construction: A Route to Higher Productivity* found that large projects typically run 20 percent over on schedule and 80 percent over on cost, with data fragmentation between field and office cited as a root cause. FMI and Autodesk's *Construction Disconnected* study estimated that bad data and rework cost the US construction industry $177 billion in 2018 alone. Allowance reconciliation is exactly the workflow those numbers describe: the data exists, but it is spread across three or four systems and reassembled by hand at the worst possible time in the job.
+
+## Where does the money actually go?
+
+Comparing what allowance tracking usually looks like against what it can look like when reconciliation happens continuously makes the gap concrete. The ranges below reflect operator interviews and closeout retrospectives across mid-size commercial GCs; specific numbers vary with allowance density, vendor mix, and how tightly the schedule of values is structured at contract signing.
+
+| Aspect | Reconciled at closeout (typical) | Reconciled continuously (AI-assisted) |
+|---|---|---|
+| Time from invoice to line-item match | 30 to 90 days | Same day |
+| PM hours per job on allowance closeout | 12 to 25 hours | 2 to 4 hours |
+| Overruns caught before owner approval | 20 to 40 percent | 85 to 95 percent |
+| Closeout change orders required | Bundled, submitted late | Filed as they occur |
+| Average absorbed cost per mid-size job | $8,000 to $40,000 | Under $5,000 |
+| Owner surprise at closeout | Common | Rare |
+
+The absorbed cost figure varies with job size, allowance density, and how much of the buyout the owner keeps outside the contract. On the high end, a mid-size GC running 20 to 40 projects per year with average allowance density can be writing off six figures annually in aggregate. The line rarely shows up as a discrete cost of poor quality because it is buried in the job close entries.
+
+## What changes when allowances are tracked in real time?
+
+Two things move. The first is timing. When each vendor invoice is matched to its allowance line the day it arrives, the overrun is a live flag rather than a closeout surprise. That gives the PM room to route the change order request to the owner while the selection is still fresh, which is when it is easiest to sign. Owners rarely dispute a $2,400 upgrade they picked out three days ago. They routinely dispute a $2,400 charge that surfaces four months later attached to a batch of other numbers.
+
+The second is visibility across the job. When allowance status is a live number rather than a periodic accounting exercise, the interiors coordinator sees remaining allowance before confirming the next selection. Substitution decisions get made against a live budget, and the field team stops accepting "we will figure it out at closeout" as a working default.
+
+Neither of these outcomes requires the GC to change how allowances are structured, how the owner selects, or how vendors invoice. It is a data and workflow change, not a contract change. Which is why the transformation is usually invisible to the owner and steadily reprices a chunk of the operations margin for the GC.
+
+## What operators say once they see the numbers
+
+The most common reaction from GCs who audit their allowance workflow for the first time is not surprise at the individual overruns. Those are usually recognized in the moment. The surprise is the aggregate. A single job's writeoff feels absorbable. The annual total across the pipeline usually does not.
+
+That aggregate is the number that moves the conversation from "allowances are a cost of doing business" to "allowance reconciliation is a workflow worth rebuilding." At mid-size scale, it is often the difference between a healthy operations margin and a break-even year on the ops side that has to be rescued by preconstruction fees.
+
+If your closeout reconciliation is where allowance overruns first become real, we run a completely free automation audit for mid-size GCs that want a second opinion on where the drift is happening. No commitment, no slide deck. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>
