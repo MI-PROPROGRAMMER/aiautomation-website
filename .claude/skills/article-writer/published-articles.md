@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-08-15 — Backorder Delays Cost DTC Brands the Next Order · e-com ops · `backorder-delays-cost-dtc-brands-next-order`
 - 2026-08-14 — What Owner Allowance Overruns Cost Mid-Size GC Jobs · construction · `owner-allowance-overruns-cost-mid-size-gc-jobs`
 - 2026-08-13 — How Load Board Tab Churn Slows Freight Broker Coverage · logistics · `load-board-tab-churn-slows-freight-broker-coverage`
 - 2026-08-12 — When Return Disposition Delays Age DTC Inventory · e-com ops · `return-disposition-delays-age-dtc-inventory`
