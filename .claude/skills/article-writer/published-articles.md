@@ -25,6 +25,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-08-17 — Where Third-Party Inspections Stall GC Project Turnover · construction · `third-party-inspections-stall-gc-project-turnover`
 - 2026-08-16 — Why Off-Hours Loads Slip Through Mid-Size Freight Brokerages · logistics · `off-hours-loads-slip-mid-size-freight-brokerages`
 - 2026-08-15 — Backorder Delays Cost DTC Brands the Next Order · e-com ops · `backorder-delays-cost-dtc-brands-next-order`
 - 2026-08-14 — What Owner Allowance Overruns Cost Mid-Size GC Jobs · construction · `owner-allowance-overruns-cost-mid-size-gc-jobs`
