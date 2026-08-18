@@ -14,6 +14,7 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Self-coined "[noun] gap"** branding — already used once ("the follow-up gap"), do not coin another.
 - **Phrase "never says no — just goes silent"** in any form.
 - **Title shape "[Topic], Before and After [AI]"** — used twice (spot-load carrier sourcing, freight check calls). Pick a different shape next.
+- **Title shape "[X] Cost [Y]"** (with or without leading "What" / "How much") — used twice across recent 5 (backorder delays, owner allowance overruns). Saturated. Pick a different shape until it clears the recent-5 window.
 
 ## Title-shape diversity rule
 
@@ -25,6 +26,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-08-18 — Cancellation Reason Capture and the DTC Winback Blind Spot · e-com ops · `cancellation-reason-capture-dtc-winback-blind-spot`
 - 2026-08-17 — Where Third-Party Inspections Stall GC Project Turnover · construction · `third-party-inspections-stall-gc-project-turnover`
 - 2026-08-16 — Why Off-Hours Loads Slip Through Mid-Size Freight Brokerages · logistics · `off-hours-loads-slip-mid-size-freight-brokerages`
 - 2026-08-15 — Backorder Delays Cost DTC Brands the Next Order · e-com ops · `backorder-delays-cost-dtc-brands-next-order`

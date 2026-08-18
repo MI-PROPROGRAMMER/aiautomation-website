@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Cancellation reason capture: undifferentiated cancellations split into coded reasons routing to distinct winback flows">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.32" r="0.6">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="blob" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5e8aa6" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#0a3a66" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00B5E2" opacity="0.85"/>
+    </marker>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <path d="M0 220 H1500"/><path d="M0 380 H1500"/><path d="M0 540 H1500"/>
+    <path d="M0 700 H1500"/><path d="M0 860 H1500"/>
+  </g>
+
+  <g transform="translate(150,220)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="90" font-size="70" font-weight="700" fill="#ffffff">Cancellation Reason Capture</text>
+    <text y="165" font-size="40" font-weight="400" fill="#cfe5f1" opacity="0.9">and the DTC winback blind spot</text>
+  </g>
+
+  <g transform="translate(150,520)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">ONE BLOB IN, FOUR PLAYS OUT</text>
+
+    <g transform="translate(0,50)">
+      <rect x="0" y="0" width="260" height="220" rx="10" fill="url(#blob)"/>
+      <text x="130" y="105" font-size="18" fill="#cfe5f1" text-anchor="middle" font-family="Georgia, serif">Cancelled</text>
+      <text x="130" y="130" font-size="18" fill="#cfe5f1" text-anchor="middle" font-family="Georgia, serif">subscribers</text>
+      <text x="130" y="170" font-size="12" letter-spacing="2" fill="#7fb6d6" text-anchor="middle">UNCODED SIGNAL</text>
+    </g>
+
+    <g stroke="#00B5E2" stroke-width="2" fill="none" opacity="0.75">
+      <path d="M270 610 Q 500 610 780 555" marker-end="url(#arrow)"/>
+      <path d="M270 640 Q 500 640 780 630" marker-end="url(#arrow)"/>
+      <path d="M270 670 Q 500 670 780 705" marker-end="url(#arrow)"/>
+      <path d="M270 700 Q 500 700 780 780" marker-end="url(#arrow)"/>
+    </g>
+
+    <g transform="translate(0,0)" font-family="Georgia, serif" font-size="18">
+      <g transform="translate(800,20)">
+        <rect x="0" y="0" width="440" height="52" rx="8" fill="#00B5E2" opacity="0.9"/>
+        <text x="24" y="34" fill="#001a36" font-weight="700">Price sensitivity</text>
+        <text x="425" y="34" fill="#001a36" text-anchor="end" font-size="14">tier downgrade</text>
+      </g>
+      <g transform="translate(800,90)">
+        <rect x="0" y="0" width="440" height="52" rx="8" fill="#7fb6d6" opacity="0.95"/>
+        <text x="24" y="34" fill="#001a36" font-weight="700">Product fit</text>
+        <text x="425" y="34" fill="#001a36" text-anchor="end" font-size="14">alt-SKU offer</text>
+      </g>
+      <g transform="translate(800,160)">
+        <rect x="0" y="0" width="440" height="52" rx="8" fill="#cfe5f1" opacity="0.9"/>
+        <text x="24" y="34" fill="#001a36" font-weight="700">Life change</text>
+        <text x="425" y="34" fill="#001a36" text-anchor="end" font-size="14">pause, not exit</text>
+      </g>
+      <g transform="translate(800,230)">
+        <rect x="0" y="0" width="440" height="52" rx="8" fill="#5e8aa6" opacity="0.95"/>
+        <text x="24" y="34" fill="#ffffff" font-weight="700">Service issue</text>
+        <text x="425" y="34" fill="#ffffff" text-anchor="end" font-size="14">human touch</text>
+      </g>
+    </g>
+
+    <g transform="translate(0,320)">
+      <text font-size="12" letter-spacing="2" fill="#5e8aa6">SAME CANCELLATION EVENT · FOUR DIFFERENT WINBACK PLAYS</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
