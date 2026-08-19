@@ -26,6 +26,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-08-19 — How LTL Reweigh Fees Compound on Freight Broker P&Ls · logistics · `ltl-reweigh-fees-compound-broker-margin`
 - 2026-08-18 — Cancellation Reason Capture and the DTC Winback Blind Spot · e-com ops · `cancellation-reason-capture-dtc-winback-blind-spot`
 - 2026-08-17 — Where Third-Party Inspections Stall GC Project Turnover · construction · `third-party-inspections-stall-gc-project-turnover`
 - 2026-08-16 — Why Off-Hours Loads Slip Through Mid-Size Freight Brokerages · logistics · `off-hours-loads-slip-mid-size-freight-brokerages`

@@ -1,0 +1,92 @@
+export const frontmatter = {
+  title: "How LTL Reweigh Fees Compound on Freight Broker P&Ls",
+  excerpt:
+    "LTL reweigh charges are a small per-shipment fee that quietly builds a meaningful annual base most freight brokerages absorb without ever pulling the scale ticket.",
+  date: "2026-08-19",
+  author: "ApexifyLabs Team",
+  tags: ["Logistics", "LTL", "Freight Broker Margin", "Invoice Audit"],
+  heroImage: "/blog/ltl-reweigh-fees-compound-broker-margin/hero.svg",
+  seoDescription:
+    "LTL reweigh fees compound faster than most broker desks model. See where margin leaks, what to dispute, and how post-audit workflows change the recovery rate.",
+  readingTime: "4 min read",
+};
+
+LTL reweigh fees are a small per-shipment charge that quietly compounds across a freight broker's ledger. Carriers reweigh freight at cross-dock scales, flag discrepancies against the declared weight on the BOL, and bill the broker for both the reweigh and the corrected freight. Over a year, the total often surprises the desk running the P&L.
+
+## What is an LTL reweigh fee?
+
+A reweigh fee is what an LTL carrier charges when they weigh a shipment at their cross-dock and it does not match the declared weight on the bill of lading. Two things happen in one motion. The carrier assesses a flat administrative fee (typically $20 to $75 per shipment, depending on carrier and tariff) and reissues the freight bill against the corrected weight. If the difference is 200 pounds on a 1,000-pound quote, the freight rerate can be far larger than the reweigh fee itself.
+
+For a broker, that reprice hits the invoice the shipper already accepted. Either the broker eats the delta, or spends time producing a certified scale ticket to challenge it. Most of the time the delta gets absorbed silently, because nobody has the bandwidth to chase down each $18 or $46 disparity across weeks-old paperwork.
+
+## Why do reweighs happen so often?
+
+The reasons cluster into a handful of predictable causes:
+
+1. Shipper scales are out of calibration, sometimes by hundreds of pounds on a heavy shipment.
+2. Packaging weight (pallets, dunnage, banding) gets estimated instead of measured, especially on rush pickups.
+3. The BOL was copied from an old order and the actual freight profile has changed.
+4. Freight consolidation on the shipper's floor mixed light and heavy SKUs, and the estimator never updated the total.
+5. Density-based freight class was miscalculated, so the reweigh triggers a weight correction and a class correction on the same shipment.
+
+None of these are exotic. They are ordinary shipper-side habits that most LTL desks have grown accustomed to reprice on a weekly cadence.
+
+## How much do reweigh charges add up on a broker's book?
+
+The answer depends on the broker's LTL volume and their tolerance for review. A mid-size brokerage doing 300 to 800 LTL shipments per week is a useful reference point.
+
+Public LTL industry reporting consistently indicates that a non-trivial share of shipments come back reweighed and rebilled. FreightWaves and SMC3 have both flagged weight and density verification as an ongoing revenue-recovery lever for carriers, with reweigh and reclass together accounting for a meaningful slice of post-invoice adjustments. Broker-facing benchmarks in NMFTA's public materials describe the same pattern from the shipper side: the corrected invoice frequently runs noticeably higher than the original quote.
+
+Run the math on a 500-shipment-per-week desk with an average LTL invoice of $420. If even 5 percent of shipments come back reweighed at an average 8 percent invoice inflation, that is 25 shipments per week where the broker is reconciling a reissued invoice around $34 higher than the original. Across a year, the raw reprice volume is roughly $44,000. Add the flat reweigh fees on top and the annual charge base is meaningfully larger than most quarterly variance reports show.
+
+That number is not the loss. The loss is the portion of that base that the broker absorbs because nobody pulled the certified scale ticket in time. Most brokerages we speak to admit the absorb rate is high, because chasing $34 across weeks-old paperwork is not a fight anyone volunteers for.
+
+## Manual reweigh disputing vs AI-assisted audit
+
+The table below compares the two approaches on the LTL reweigh workflow, focused on what actually determines whether a broker recovers the charge or absorbs it.
+
+| Step | Manual review | AI-assisted audit |
+|---|---|---|
+| Detect reweigh charge on invoice | Spot-checked, often caught days late during batch reconciliation | Flagged at invoice ingestion, before payment run |
+| Match to original BOL and quote | Requires pulling shipper docs by hand | Documents auto-linked from TMS records |
+| Compare declared vs corrected weight | Spreadsheet math per shipment | Delta and threshold rules applied automatically |
+| Determine dispute viability | Depends on which rep opens the file | Rules pre-applied against carrier tariff and prior scale-ticket outcomes |
+| Trigger scale-ticket request | Manual outreach to shipper | Templated request sent same day |
+| Dispute filing on qualifying loads | Sporadic, based on rep bandwidth | Consistent, filed within the carrier's dispute window |
+| Recovery rate on qualifying shipments | Low, because the window closes | Meaningfully higher, because filings are always on time |
+
+The point of the comparison is not that a rep is bad at this. Reps are excellent at reweigh disputes when they have time. The point is that manual disputing is a bandwidth problem, and bandwidth is what compounds a fee that starts small.
+
+## When is a reweigh worth disputing?
+
+Not every reweigh is disputable. The judgment call sits on three axes.
+
+1. The delta between declared and reweighed weight. Small deltas (under 5 percent) are usually within calibration tolerance and hard to win at hearing.
+2. Whether the shipper has a recent certified scale ticket that documents the actual weight at pickup.
+3. Whether the carrier's tariff window is still open. Most LTL carriers require dispute filing within 30 to 90 days depending on carrier. Miss the window and the charge is final regardless of the merits.
+
+A reasonable operating floor is to auto-review anything with a delta over 10 percent or a fee over $30, and let the rep spend their judgment on the shipments that fall on the edge.
+
+## What changes when this runs on autopilot?
+
+When invoice audit runs as a background process on every LTL invoice rather than a monthly project, three things move.
+
+First, the recovery rate on qualifying reweighs climbs into a range that meaningfully offsets the fee base. Second, the dispute paperwork stops being a rep task and becomes an exception queue only the edge cases hit. Third, and less obvious, the shipper conversation improves. When a broker can show a shipper that their BOL weights have drifted 12 percent high over the last quarter with source data attached, the shipper fixes their scale. Which shrinks the fee base at the source.
+
+The desk that runs LTL post-audit as an ongoing check tends to develop a much cleaner picture of which shippers are hitting them with silent recharges and which are not. That data itself becomes useful in the next quote cycle and in the annual lane conversation.
+
+## What does the post-audit workflow look like in practice?
+
+For teams that have made this shift, the shape is roughly consistent. Invoices flow in from carriers on their normal cadence (EDI 210 or PDF, depending on carrier). Each invoice is compared against the original quoted rate and the shipping documentation on file, and any variance beyond a set tolerance is flagged into a queue. The rep sees a short summary per exception, not a stack of PDFs to open.
+
+For reweighs specifically, the queue entry shows the declared weight, the corrected weight, the fee, the reweigh reason if the carrier provided one, and a recommendation on whether the dispute has a viable path. The rep either files or waives, and the outcome is logged back against the shipper so the pattern becomes visible over time.
+
+The measurable difference is not the individual dispute. It is the shift from monthly reconciliation batches to a daily rolling check that catches the charge inside the dispute window. That timing gap is where most of the absorbed margin lives.
+
+## Where does this sit alongside other LTL post-audit work?
+
+Reweighs are one line in a broader LTL post-audit picture that includes reclass adjustments, accessorial charges, fuel-surcharge drift, and detention. Reweighs are worth pulling out on their own because they are among the highest-frequency, lowest-per-event adjustments in that stack, which means they are also the most likely to be absorbed silently. A desk that only audits the six-figure invoices will miss the reweigh base entirely, because it lives in the tail.
+
+The brokerages that treat reweigh audit as a first-class workflow rather than a byproduct of general invoice reconciliation are usually the ones that discover their reweigh recovery rate was much lower than they assumed, and their annual charge base much higher.
+
+If your LTL invoice audit lives on a rep's task list and the reweigh volume feels like a rounding error, it may be larger than the ledger shows. We offer a **completely free automation audit** for freight brokerages that want a second look at where their invoice reconciliation is leaking margin. No slide deck, no commitment, just a working diagnosis. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>
