@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="pipeActive" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2"/>
+      <stop offset="1" stop-color="#0a3a66"/>
+    </linearGradient>
+    <linearGradient id="pipeQueue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5e8aa6"/>
+      <stop offset="1" stop-color="#0a3a66"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="0.65" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <text x="750" y="205" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="8">THE JOURNAL</text>
+
+  <text x="750" y="325" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold">Carrier Onboarding</text>
+  <text x="750" y="405" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="60" font-weight="bold">Backlog</text>
+
+  <text x="750" y="470" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill-opacity="0.9">from cleared to bookable, on a broker desk</text>
+
+  <text x="220" y="565" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="18" letter-spacing="4" fill-opacity="0.9">CLEARED</text>
+  <text x="1280" y="565" text-anchor="end" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="18" letter-spacing="4" fill-opacity="0.95">BOOKABLE</text>
+
+  <rect x="220" y="590" width="1060" height="30" fill="#5e8aa6" fill-opacity="0.12" rx="4"/>
+
+  <rect x="220" y="590" width="150" height="30" fill="url(#pipeQueue)" rx="4"/>
+  <text x="295" y="611" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill-opacity="0.9">COI</text>
+
+  <rect x="380" y="590" width="150" height="30" fill="url(#pipeQueue)" rx="4"/>
+  <text x="455" y="611" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill-opacity="0.9">W-9</text>
+
+  <rect x="540" y="590" width="150" height="30" fill="url(#pipeQueue)" rx="4"/>
+  <text x="615" y="611" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill-opacity="0.9">Contract</text>
+
+  <rect x="700" y="590" width="150" height="30" fill="url(#pipeQueue)" rx="4"/>
+  <text x="775" y="611" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill-opacity="0.9">Factor NOA</text>
+
+  <rect x="860" y="590" width="150" height="30" fill="url(#pipeQueue)" rx="4"/>
+  <text x="935" y="611" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill-opacity="0.9">TMS</text>
+
+  <rect x="1020" y="590" width="150" height="30" fill="url(#pipeQueue)" rx="4"/>
+  <text x="1095" y="611" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill-opacity="0.9">Lanes</text>
+
+  <text x="220" y="675" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="16" letter-spacing="3" fill-opacity="0.85">MANUAL DESK</text>
+  <rect x="220" y="695" width="800" height="26" fill="url(#pipeQueue)" rx="3"/>
+  <text x="1040" y="713" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill-opacity="0.9">3–7 business days</text>
+
+  <text x="220" y="775" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="16" letter-spacing="3" fill-opacity="0.95">AI-ASSISTED DESK</text>
+  <rect x="220" y="795" width="180" height="26" fill="url(#pipeActive)" rx="3"/>
+  <text x="420" y="813" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill-opacity="0.95">hours to same day</text>
+
+  <line x1="220" y1="860" x2="1280" y2="860" stroke="#5e8aa6" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="750" y="890" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="18" fill-opacity="0.75">spot windows close in 12–24 hours · vetted ≠ bookable</text>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
