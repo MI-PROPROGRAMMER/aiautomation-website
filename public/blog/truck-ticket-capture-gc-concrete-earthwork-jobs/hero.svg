@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="ticketFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a3a66"/>
+      <stop offset="1" stop-color="#001a36"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="0.65" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <text x="750" y="205" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="8">THE JOURNAL</text>
+
+  <text x="750" y="325" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold">Truck Ticket Capture</text>
+  <text x="750" y="400" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="48" font-weight="bold">on GC Concrete &amp; Earthwork Jobs</text>
+
+  <text x="750" y="465" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill-opacity="0.9">field-to-accounting latency, per pour</text>
+
+  <line x1="220" y1="750" x2="1280" y2="750" stroke="#5e8aa6" stroke-opacity="0.35" stroke-width="1"/>
+
+  <circle cx="220" cy="750" r="8" fill="#00B5E2"/>
+  <text x="220" y="795" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="18" letter-spacing="3" fill-opacity="0.95">SIGNED</text>
+  <text x="220" y="820" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill-opacity="0.75">day 0, at the cab</text>
+
+  <circle cx="1280" cy="750" r="8" fill="#7fb6d6" fill-opacity="0.6"/>
+  <text x="1280" y="795" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="18" letter-spacing="3" fill-opacity="0.85">RECONCILED</text>
+  <text x="1280" y="820" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill-opacity="0.75">whenever it lands</text>
+
+  <g transform="translate(310,660) rotate(-4)">
+    <rect x="0" y="0" width="80" height="52" fill="url(#ticketFill)" stroke="#7fb6d6" stroke-opacity="0.45" rx="3"/>
+    <line x1="8" y1="14" x2="72" y2="14" stroke="#7fb6d6" stroke-opacity="0.35" stroke-width="1"/>
+    <line x1="8" y1="26" x2="60" y2="26" stroke="#7fb6d6" stroke-opacity="0.35" stroke-width="1"/>
+    <line x1="8" y1="38" x2="50" y2="38" stroke="#7fb6d6" stroke-opacity="0.35" stroke-width="1"/>
+  </g>
+  <line x1="350" y1="720" x2="350" y2="750" stroke="#5e8aa6" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="350" y="738" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill-opacity="0.7">day 2</text>
+
+  <g transform="translate(455,650) rotate(3)">
+    <rect x="0" y="0" width="80" height="52" fill="url(#ticketFill)" stroke="#7fb6d6" stroke-opacity="0.45" rx="3"/>
+    <line x1="8" y1="14" x2="72" y2="14" stroke="#7fb6d6" stroke-opacity="0.35" stroke-width="1"/>
+    <line x1="8" y1="26" x2="60" y2="26" stroke="#7fb6d6" stroke-opacity="0.35" stroke-width="1"/>
+    <line x1="8" y1="38" x2="50" y2="38" stroke="#7fb6d6" stroke-opacity="0.35" stroke-width="1"/>
+  </g>
+  <g transform="translate(470,662) rotate(-2)">
+    <rect x="0" y="0" width="80" height="52" fill="url(#ticketFill)" stroke="#7fb6d6" stroke-opacity="0.45" rx="3"/>
+    <line x1="8" y1="14" x2="72" y2="14" stroke="#7fb6d6" stroke-opacity="0.35" stroke-width="1"/>
+  </g>
+  <line x1="510" y1="720" x2="510" y2="750" stroke="#5e8aa6" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="510" y="738" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill-opacity="0.7">day 4</text>
+
+  <g transform="translate(640,668) rotate(5)">
+    <rect x="0" y="0" width="80" height="52" fill="url(#ticketFill)" stroke="#7fb6d6" stroke-opacity="0.45" rx="3"/>
+    <line x1="8" y1="14" x2="72" y2="14" stroke="#7fb6d6" stroke-opacity="0.35" stroke-width="1"/>
+    <line x1="8" y1="26" x2="60" y2="26" stroke="#7fb6d6" stroke-opacity="0.35" stroke-width="1"/>
+  </g>
+  <line x1="680" y1="720" x2="680" y2="750" stroke="#5e8aa6" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="680" y="738" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill-opacity="0.7">day 8</text>
+
+  <g transform="translate(850,655) rotate(-6)">
+    <rect x="0" y="0" width="80" height="52" fill="url(#ticketFill)" stroke="#7fb6d6" stroke-opacity="0.45" rx="3"/>
+    <line x1="8" y1="14" x2="72" y2="14" stroke="#7fb6d6" stroke-opacity="0.35" stroke-width="1"/>
+    <line x1="8" y1="26" x2="60" y2="26" stroke="#7fb6d6" stroke-opacity="0.35" stroke-width="1"/>
+  </g>
+  <line x1="890" y1="720" x2="890" y2="750" stroke="#5e8aa6" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="890" y="738" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill-opacity="0.7">day 14</text>
+
+  <g transform="translate(1030,670) rotate(4)">
+    <rect x="0" y="0" width="80" height="52" fill="url(#ticketFill)" stroke="#7fb6d6" stroke-opacity="0.45" rx="3"/>
+    <line x1="8" y1="14" x2="72" y2="14" stroke="#7fb6d6" stroke-opacity="0.35" stroke-width="1"/>
+  </g>
+  <line x1="1070" y1="720" x2="1070" y2="750" stroke="#5e8aa6" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="1070" y="738" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill-opacity="0.7">day 21</text>
+
+  <text x="1180" y="682" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="18" letter-spacing="4" fill-opacity="0.55">? ? ?</text>
+  <text x="1180" y="708" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="12" fill-opacity="0.6">never arrive</text>
+
+  <line x1="220" y1="843" x2="1280" y2="843" stroke="#5e8aa6" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="750" y="872" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="18" fill-opacity="0.75">a busy pour day can generate 40 to 120 tickets across half a dozen suppliers</text>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>

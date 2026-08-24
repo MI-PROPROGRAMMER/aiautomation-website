@@ -26,6 +26,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-08-24 — Truck Ticket Capture on GC Concrete and Earthwork Jobs · construction · `truck-ticket-capture-gc-concrete-earthwork-jobs`
 - 2026-08-23 — Manual Credit Reviews Delay Broker First-Load Bookings · logistics · `manual-credit-reviews-delay-broker-first-loads`
 - 2026-08-22 — Mispick Rates on DTC 3PL Contracts Drive Reorder Losses · e-com ops · `mispick-rates-dtc-3pl-contracts-drive-reorder-losses`
 - 2026-08-21 — Carrier Onboarding Backlogs Cap Broker Spot Coverage · logistics · `carrier-onboarding-backlogs-cap-broker-spot-coverage`
