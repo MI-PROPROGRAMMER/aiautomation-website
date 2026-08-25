@@ -31,6 +31,7 @@ const H1_RE = /<h1[\s>]/gi;
 const CONTENT_ATTR_RE = /\bcontent="([^"]*)"/i;
 const HREF_ATTR_RE = /\bhref="([^"]*)"/i;
 const LOC_RE = /<loc>([\s\S]*?)<\/loc>/gi;
+const FRONTMATTER_BLOCK_RE = /export const frontmatter\s*=\s*\{([\s\S]*?)^\};/m;
 
 const failures: string[] = [];
 
@@ -67,7 +68,14 @@ async function readFileOrNull(filePath: string) {
 
 /**
  * Parses `export const frontmatter = { ... }` with field-level regexes. The
- * validator must stay dependency-free, so it never imports the MDX modules.
+ * validator must stay dependency-free, so it never imports the MDX modules and
+ * deliberately re-derives the route list instead of reusing scripts/seo-routes.ts
+ * — it has to be able to disagree with the generator.
+ *
+ * Fields are read only from inside the exported frontmatter object. Scanning the
+ * whole file would let article prose or a fenced code sample containing
+ * `draft: true` or `slug: "..."` silently drop or rename a published route, so
+ * the validator would then check a different route set than the sitemap.
  */
 async function readBlogRoutes(projectRoot: string) {
   const blogDir = path.resolve(projectRoot, "src/content/blog");
@@ -78,9 +86,16 @@ async function readBlogRoutes(projectRoot: string) {
     if (!entry.isFile() || !entry.name.endsWith(".mdx")) continue;
 
     const source = await fs.readFile(path.join(blogDir, entry.name), "utf-8");
-    if (/\bdraft:\s*true\b/.test(source)) continue;
+    const block = source.match(FRONTMATTER_BLOCK_RE)?.[1];
 
-    const explicitSlug = source.match(/\bslug:\s*"([^"]+)"/)?.[1];
+    if (block === undefined) {
+      failures.push(`${entry.name}: no "export const frontmatter" object found`);
+      continue;
+    }
+
+    if (/^\s*draft:\s*true\b/m.test(block)) continue;
+
+    const explicitSlug = block.match(/^\s*slug:\s*"([^"]+)"/m)?.[1];
     slugs.push(explicitSlug ?? entry.name.replace(/\.mdx$/, ""));
   }
 
