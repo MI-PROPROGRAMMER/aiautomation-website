@@ -23,6 +23,11 @@ const templatePath = path.join(distDir, "index.html");
 
 const RENDER_TIMEOUT_MS = 30_000;
 
+// Synthetic location used to render the catch-all route into dist/404.html.
+// It is not an indexable URL, so it never enters the route list, the sitemap,
+// or the prerendered-routes log.
+const NOT_FOUND_ROUTE = "/__not-found__";
+
 // Vite's SSR chunks import their shared bindings (React, framer-motion, …)
 // back from this entry module, so a top-level `await` would leave the entry
 // mid-evaluation and deadlock every dynamic import() behind a React.lazy()
@@ -49,6 +54,15 @@ async function main() {
 
   console.log(`Pre-rendered routes: ${routes.join(", ")}`);
 
+  // Vercel serves dist/404.html for any request that matches no static file, so
+  // the not-found document has to be built like any other page — otherwise an
+  // unknown path falls back to a generic host error page with no navigation and
+  // no noindex directive.
+  const notFoundPath = path.join(distDir, "404.html");
+  await fs.writeFile(notFoundPath, await renderRoute(NOT_FOUND_ROUTE), "utf-8");
+
+  const documentPaths = [...routes.map(pathForRoute), notFoundPath];
+
   // Inline the full CSS bundle into each prerendered HTML so every route
   // ships fully-styled markup with zero render-blocking stylesheet requests.
   //
@@ -70,7 +84,7 @@ async function main() {
     ? path.join(distDir, cssLinkMatch[1])
     : null;
 
-  for (const route of routes) {
+  for (const outputPath of documentPaths) {
     const beasties = new Beasties({
       path: distDir,
       publicPath: "/",
@@ -81,7 +95,6 @@ async function main() {
       // Fonts are preloaded by the preloadLatinFonts Vite plugin.
       inlineFonts: false,
     });
-    const outputPath = pathForRoute(route);
     const html = await fs.readFile(outputPath, "utf-8");
     const processed = await beasties.process(html);
     await fs.writeFile(outputPath, processed, "utf-8");
@@ -94,7 +107,7 @@ async function main() {
     await fs.unlink(orphanedCssPath).catch(() => {});
   }
 
-  console.log(`Inlined full CSS into ${routes.length} routes`);
+  console.log(`Inlined full CSS into ${documentPaths.length} documents (${routes.length} routes + dist/404.html)`);
 }
 
 main().catch((error) => {
