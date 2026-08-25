@@ -48,6 +48,13 @@ const mdxComponents = {
   ),
 };
 
+// Every published post is bylined to the company, not to a person. Schema.org
+// author must then resolve to the Organization node rather than inventing a
+// Person that no page on the site backs up. A real human byline stays possible:
+// any other author string still emits a Person, and giving that person their own
+// profile page is a later editorial change.
+const ORG_AUTHOR_NAME = "ApexifyLabs Team";
+
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPostBySlug(slug) : undefined;
@@ -57,10 +64,11 @@ const BlogPost = () => {
   }
 
   const {
-    frontmatter: { title, excerpt, heroImage, date, tags, author, readingTime, seoDescription },
+    frontmatter: { title, excerpt, heroImage, date, updated, tags, author, readingTime, seoDescription },
     Content,
   } = post;
 
+  const isOrgAuthor = author === undefined || author === ORG_AUTHOR_NAME;
   const formattedDate = format(new Date(date), "MMMM d, yyyy");
   const canonicalUrl = `https://apexifylabs.com/blog/${post.slug}`;
 
@@ -100,10 +108,8 @@ const BlogPost = () => {
           headline: title,
           description: seoDescription ?? excerpt,
           datePublished: new Date(date).toISOString(),
-          dateModified: new Date(date).toISOString(),
-          author: author
-            ? { "@type": "Person", name: author }
-            : { "@id": ORG_ID },
+          dateModified: new Date(updated ?? date).toISOString(),
+          author: isOrgAuthor ? { "@id": ORG_ID } : { "@type": "Person", name: author },
           publisher: { "@id": ORG_ID },
           image: heroImage.startsWith("http") ? heroImage : `${SITE_URL}${heroImage}`,
           url: canonicalUrl,
@@ -148,7 +154,16 @@ const BlogPost = () => {
                     {author && (
                       <span className="smallcaps inline-flex items-center gap-2">
                         <Tag size={14} />
-                        {author}
+                        {isOrgAuthor ? (
+                          <Link
+                            to="/about"
+                            className="cursor-pointer underline decoration-primary-foreground/25 underline-offset-4 transition-colors duration-200 hover:text-accent"
+                          >
+                            {author}
+                          </Link>
+                        ) : (
+                          author
+                        )}
                       </span>
                     )}
                     {readingTime && (

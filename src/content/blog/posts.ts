@@ -4,6 +4,8 @@ export type BlogFrontmatter = {
   title: string;
   excerpt: string;
   date: string;
+  /** Set only when the article was materially revised; drives schema dateModified. */
+  updated?: string;
   author?: string;
   tags?: string[];
   heroImage: string;
@@ -17,6 +19,10 @@ export type BlogPost = {
   frontmatter: BlogFrontmatter;
   Content: ComponentType<Record<string, unknown>>;
 };
+
+// scripts/seo-routes.ts reads these same fields out of the MDX source text to
+// build <lastmod>, so both sides have to accept exactly one date shape.
+const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
 type MdxModule = {
   default: ComponentType<Record<string, unknown>>;
@@ -40,6 +46,7 @@ const normalizeFrontmatter = (frontmatter: MdxModule["frontmatter"], fallbackSlu
     excerpt,
     heroImage,
     date,
+    updated,
     seoDescription,
     author,
     tags,
@@ -51,11 +58,16 @@ const normalizeFrontmatter = (frontmatter: MdxModule["frontmatter"], fallbackSlu
     throw new Error(`Blog post "${fallbackSlug}" is missing required frontmatter fields.`);
   }
 
+  if (updated !== undefined && !ISO_DATE_RE.test(updated)) {
+    throw new Error(`Blog post "${fallbackSlug}" has frontmatter "updated" that is not YYYY-MM-DD: ${updated}`);
+  }
+
   return {
     title,
     excerpt,
     heroImage,
     date,
+    updated,
     seoDescription: seoDescription ?? excerpt,
     author,
     tags,
