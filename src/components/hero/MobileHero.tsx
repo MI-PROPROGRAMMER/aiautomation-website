@@ -35,54 +35,66 @@ export const MobileHero = () => {
             </span>
           </m.div>
 
-          {/* Top headline */}
-          <m.h1
-            className="font-display font-bold leading-[0.9] tracking-[-0.04em] text-primary-foreground"
-            style={{ fontSize: "clamp(3.25rem, 14vw, 5.5rem)" }}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+          {/*
+            One <h1> for the whole headline — the halves and the hairline
+            between them are decorative, so aria-label carries the heading
+            text and each part animates as an aria-hidden phrasing span.
+          */}
+          <h1
+            aria-label="Automate the grind."
+            className="font-display font-bold leading-[0.9] text-primary-foreground"
           >
-            Automate
-          </m.h1>
+            {/* Top headline */}
+            <m.span
+              aria-hidden="true"
+              className="block tracking-[-0.04em]"
+              style={{ fontFamily: "inherit", fontSize: "clamp(3.25rem, 14vw, 5.5rem)" }}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              Automate
+            </m.span>
 
-          {/* Hairline + pulse */}
-          <m.div
-            className="relative my-4 h-3"
-            aria-hidden="true"
-            initial={{ opacity: 0, scaleX: 0.4 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            style={{ transformOrigin: "left" }}
-          >
-            <div
-              className="absolute left-0 right-0 top-1/2 h-px -translate-y-1/2"
-              style={{
-                background:
-                  "linear-gradient(90deg, hsl(var(--accent) / 0.7) 0%, hsl(var(--accent) / 0.35) 60%, transparent 100%)",
-              }}
-            />
-            <span className="absolute left-0 top-1/2 -translate-y-1/2">
-              <span className="relative block h-1.5 w-1.5">
-                <m.span
-                  className="absolute inset-0 rounded-full bg-accent"
-                  animate={{ opacity: [0.4, 1, 0.4] }}
-                  transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-                />
+            {/* Hairline + pulse */}
+            <m.span
+              className="relative my-4 block h-3"
+              aria-hidden="true"
+              initial={{ opacity: 0, scaleX: 0.4 }}
+              animate={{ opacity: 1, scaleX: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              style={{ transformOrigin: "left" }}
+            >
+              <span
+                className="absolute left-0 right-0 top-1/2 h-px -translate-y-1/2"
+                style={{
+                  background:
+                    "linear-gradient(90deg, hsl(var(--accent) / 0.7) 0%, hsl(var(--accent) / 0.35) 60%, transparent 100%)",
+                }}
+              />
+              <span className="absolute left-0 top-1/2 -translate-y-1/2">
+                <span className="relative block h-1.5 w-1.5">
+                  <m.span
+                    className="absolute inset-0 rounded-full bg-accent"
+                    animate={{ opacity: [0.4, 1, 0.4] }}
+                    transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                </span>
               </span>
-            </span>
-          </m.div>
+            </m.span>
 
-          {/* Bottom headline */}
-          <m.h1
-            className="font-display font-bold italic leading-[0.9] tracking-[-0.04em] text-primary-foreground"
-            style={{ fontSize: "clamp(3.25rem, 14vw, 5.5rem)" }}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-          >
-            the grind.
-          </m.h1>
+            {/* Bottom headline */}
+            <m.span
+              aria-hidden="true"
+              className="block italic tracking-[-0.04em]"
+              style={{ fontFamily: "inherit", fontSize: "clamp(3.25rem, 14vw, 5.5rem)" }}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+            >
+              the grind.
+            </m.span>
+          </h1>
 
           {/* Subtitle */}
           <m.p

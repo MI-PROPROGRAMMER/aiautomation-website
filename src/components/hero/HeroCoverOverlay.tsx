@@ -30,30 +30,43 @@ export const HeroCoverOverlay = ({ progress }: Props) => {
 
   return (
     <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-6">
-      <div
-        className="flex w-full flex-col items-center"
+      {/*
+        The two headline halves and the seam between them are one <h1>: the
+        page needs a single semantic heading, and the visual split is purely
+        decorative. aria-label carries the real heading text, so the split
+        spans are hidden from assistive tech rather than announced as
+        fragments. Only phrasing content may live inside a heading, so every
+        node below is a <span>.
+      */}
+      <h1
+        aria-label="Automate the grind."
+        className="flex w-full flex-col items-center font-display text-center font-bold leading-[0.85] text-primary-foreground"
         style={{ maxWidth: "min(64vw, 64rem)" }}
       >
         {/* Top headline */}
-        <h1
-          className="font-display text-center font-bold leading-[0.85] tracking-[-0.04em] text-primary-foreground will-change-transform"
+        <span
+          aria-hidden="true"
+          className="block tracking-[-0.04em] will-change-transform"
           style={{
+            // src/index.css gives every <span> the Inter stack in @layer base, so
+            // the headline halves have to opt back into the <h1>'s display serif.
+            fontFamily: "inherit",
             fontSize: "clamp(2.5rem, 9vw, 9rem)",
             transform: `translate3d(0, ${topY}vh, 0)`,
             opacity: contentOpacity,
           }}
         >
           Automate
-        </h1>
+        </span>
 
         {/* Hairline seam — the cut happens here */}
-        <div
-          className="relative my-4 w-full md:my-6"
+        <span
+          className="relative my-4 block w-full md:my-6"
           style={{ height: "14px" }}
           aria-hidden="true"
         >
           {/* Subtle base hairline (always visible while cover is on screen) */}
-          <div
+          <span
             className="absolute left-0 right-0 top-1/2 h-px -translate-y-1/2"
             style={{
               opacity: baseHairlineOpacity,
@@ -63,7 +76,7 @@ export const HeroCoverOverlay = ({ progress }: Props) => {
           />
 
           {/* Bright scan-line — peaks during the cut */}
-          <div
+          <span
             className="absolute left-0 right-0 top-1/2 h-px -translate-y-1/2"
             style={{
               opacity: scanOpacity,
@@ -74,7 +87,7 @@ export const HeroCoverOverlay = ({ progress }: Props) => {
           />
 
           {/* Pulse beacon at the centre seam */}
-          <div
+          <span
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
             style={{ opacity: beaconOpacity }}
           >
@@ -90,21 +103,25 @@ export const HeroCoverOverlay = ({ progress }: Props) => {
                 transition={{ duration: 2.4, repeat: Infinity, ease: "easeOut" }}
               />
             </span>
-          </div>
-        </div>
+          </span>
+        </span>
 
         {/* Bottom headline */}
-        <h1
-          className="font-display text-center font-bold italic leading-[0.85] tracking-[-0.04em] text-primary-foreground will-change-transform"
+        <span
+          aria-hidden="true"
+          className="block italic tracking-[-0.04em] will-change-transform"
           style={{
+            // src/index.css gives every <span> the Inter stack in @layer base, so
+            // the headline halves have to opt back into the <h1>'s display serif.
+            fontFamily: "inherit",
             fontSize: "clamp(2.5rem, 9vw, 9rem)",
             transform: `translate3d(0, ${bottomY}vh, 0)`,
             opacity: contentOpacity,
           }}
         >
           the grind.
-        </h1>
-      </div>
+        </span>
+      </h1>
     </div>
   );
 };
