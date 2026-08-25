@@ -87,7 +87,12 @@ something to patch by hand.
    to a few hours to propagate; retry rather than creating a second property.
 3. **Submit the sitemap.** Sitemaps → *Add a new sitemap*.
 
-   > **Submit exactly `https://apexifylabs.com/sitemap.xml`.**
+   > **The submitted URL must end up as exactly `https://apexifylabs.com/sitemap.xml`.**
+   >
+   > Search Console pre-fills the property origin (`https://apexifylabs.com/`) and gives you
+   > a box for the rest of the path. Type **only `sitemap.xml`** into that box — pasting the
+   > full URL produces `https://apexifylabs.com/https://apexifylabs.com/sitemap.xml`.
+   > Read back the URL the page shows before pressing Submit.
    >
    > Before submitting, confirm the file answers `200` with `content-type: application/xml`
    > (see the curl above). **Never submit `/sitemap`.** That path has no file behind it and
@@ -111,8 +116,12 @@ something to patch by hand.
      *Duplicate without user-selected canonical*, *Soft 404*, or *Crawled – currently not
      indexed*. Soft-404 reports were the specific defect this phase fixed; their absence
      is the confirmation that the fix took.
-   - **Core Web Vitals** and **Mobile Usability** — field data only appears once the
-     property has enough traffic.
+   - **Core Web Vitals** — field data only appears once the property has enough traffic.
+
+   Search Console no longer has a Mobile Usability report. Check mobile rendering and
+   performance with [PageSpeed Insights](https://pagespeed.web.dev/) (run the mobile tab
+   against the same representative URLs) or a local Lighthouse mobile run. PageSpeed
+   Insights shows lab results immediately, so it does not wait on field data.
 
 ---
 

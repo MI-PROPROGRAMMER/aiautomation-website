@@ -49,7 +49,7 @@ Allow: /
 User-agent: Perplexity-User
 Allow: /
 
-# Google Gemini & AI Overviews
+# Google Gemini and Vertex AI
 User-agent: Google-Extended
 Allow: /
 
