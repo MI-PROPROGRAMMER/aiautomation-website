@@ -12,6 +12,7 @@ import Beasties from "beasties";
 // import.meta.glob resolve — running this file directly via tsx leaves
 // `import.meta.glob` undefined and blog routes silently render <Navigate />.
 import { AppRoutesStatic } from "../src/AppStatic";
+import { getIndexableRoutes } from "./seo-routes";
 
 // __dirname differs between dev (tsx → scripts/) and prod (Vite SSR build →
 // dist/_ssr/). process.cwd() is the project root in both flows because
@@ -22,8 +23,6 @@ const templatePath = path.join(distDir, "index.html");
 
 const RENDER_TIMEOUT_MS = 30_000;
 
-const staticRoutes = ["/", "/services", "/about", "/contact", "/privacy-policy", "/terms-of-service"];
-
 // Vite's SSR chunks import their shared bindings (React, framer-motion, …)
 // back from this entry module, so a top-level `await` would leave the entry
 // mid-evaluation and deadlock every dynamic import() behind a React.lazy()
@@ -33,8 +32,9 @@ let template = "";
 async function main() {
   template = await fs.readFile(templatePath, "utf-8");
 
-  const blogRoutes = await collectBlogRoutes();
-  const routes = [...staticRoutes, "/blog", ...blogRoutes];
+  // Same discovery the sitemap uses, so prerendered pages and sitemap URLs
+  // cannot drift apart.
+  const routes = (await getIndexableRoutes(projectRoot)).map((route) => route.path);
 
   // Routes are rendered one at a time on purpose. react-helmet collects the
   // <Helmet> tags of every mounted instance in module-global state that
@@ -221,18 +221,4 @@ async function writePrerenderedPage(route: string, html: string) {
   const outputPath = pathForRoute(route);
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.writeFile(outputPath, html, "utf-8");
-}
-
-async function collectBlogRoutes() {
-  try {
-    const blogDir = path.resolve(projectRoot, "src/content/blog");
-    const entries = await fs.readdir(blogDir, { withFileTypes: true });
-
-    return entries
-      .filter((entry) => entry.isFile() && entry.name.endsWith(".mdx"))
-      .map((entry) => `/blog/${entry.name.replace(/\.mdx$/, "")}`);
-  } catch (error) {
-    console.warn("Skipping blog prerendering because posts could not be read.", error);
-    return [];
-  }
 }
