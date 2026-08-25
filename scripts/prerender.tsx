@@ -1,7 +1,8 @@
 import React from "react";
 import fs from "node:fs/promises";
 import path from "node:path";
-import { renderToString } from "react-dom/server";
+import { PassThrough } from "node:stream";
+import { renderToPipeableStream } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import { Helmet } from "react-helmet";
 import { LazyMotion, domAnimation } from "framer-motion";
@@ -18,78 +19,166 @@ import { AppRoutesStatic } from "../src/AppStatic";
 const projectRoot = process.cwd();
 const distDir = path.resolve(projectRoot, "dist");
 const templatePath = path.join(distDir, "index.html");
-const template = await fs.readFile(templatePath, "utf-8");
+
+const RENDER_TIMEOUT_MS = 30_000;
 
 const staticRoutes = ["/", "/services", "/about", "/contact", "/privacy-policy", "/terms-of-service"];
-const blogRoutes = await collectBlogRoutes();
-const routes = [...staticRoutes, "/blog", ...blogRoutes];
 
-await Promise.all(routes.map(async (route) => writePrerenderedPage(route, renderRoute(route))));
+// Vite's SSR chunks import their shared bindings (React, framer-motion, …)
+// back from this entry module, so a top-level `await` would leave the entry
+// mid-evaluation and deadlock every dynamic import() behind a React.lazy()
+// section. All async work therefore runs inside main().
+let template = "";
 
-console.log(`Pre-rendered routes: ${routes.join(", ")}`);
+async function main() {
+  template = await fs.readFile(templatePath, "utf-8");
 
-// Inline the full CSS bundle into each prerendered HTML so every route
-// ships fully-styled markup with zero render-blocking stylesheet requests.
-//
-// We deliberately do NOT use beasties' critical-CSS extraction. Most
-// sections on the homepage are React.lazy()-loaded behind Suspense, and
-// during SSR those suspend and render as their fallback (often `null`).
-// Their utility classes (md:col-span-5, md:order-2, hover:bg-accent, …)
-// therefore never appear in the rendered HTML, so beasties' selector
-// matcher prunes them as "unused" — silently breaking the grid layout
-// in every below-the-fold section once the client hydrates.
-//
-// Setting inlineThreshold above the bundle size makes beasties dump the
-// entire stylesheet into a <style> block without per-rule pruning, while
-// still removing the render-blocking <link rel="stylesheet">.
-const cssLinkRe = /<link[^>]+href="(\/assets\/index-[^"]+\.css)"/;
-const sampleHtml = await fs.readFile(pathForRoute("/"), "utf-8");
-const cssLinkMatch = sampleHtml.match(cssLinkRe);
-const orphanedCssPath = cssLinkMatch
-  ? path.join(distDir, cssLinkMatch[1])
-  : null;
+  const blogRoutes = await collectBlogRoutes();
+  const routes = [...staticRoutes, "/blog", ...blogRoutes];
 
-for (const route of routes) {
-  const beasties = new Beasties({
-    path: distDir,
-    publicPath: "/",
-    logLevel: "silent",
-    // Inline any external stylesheet smaller than ~10 MB verbatim. Our
-    // single Tailwind bundle is ~75 KB, so this captures it whole.
-    inlineThreshold: 10_000_000,
-    // Fonts are preloaded by the preloadLatinFonts Vite plugin.
-    inlineFonts: false,
+  // Routes are rendered one at a time on purpose. react-helmet collects the
+  // <Helmet> tags of every mounted instance in module-global state that
+  // Helmet.renderStatic() drains, so overlapping renders leak each other's
+  // titles, descriptions, canonicals, and JSON-LD. Streaming SSR makes renders
+  // genuinely concurrent, which under Promise.all left dist/index.html with an
+  // empty <title> and no canonical.
+  for (const route of routes) {
+    const html = await renderRoute(route);
+    await writePrerenderedPage(route, html);
+  }
+
+  console.log(`Pre-rendered routes: ${routes.join(", ")}`);
+
+  // Inline the full CSS bundle into each prerendered HTML so every route
+  // ships fully-styled markup with zero render-blocking stylesheet requests.
+  //
+  // We deliberately do NOT use beasties' critical-CSS extraction. Most
+  // sections on the homepage are React.lazy()-loaded behind Suspense, and
+  // during SSR those suspend and render as their fallback (often `null`).
+  // Their utility classes (md:col-span-5, md:order-2, hover:bg-accent, …)
+  // therefore never appear in the rendered HTML, so beasties' selector
+  // matcher prunes them as "unused" — silently breaking the grid layout
+  // in every below-the-fold section once the client hydrates.
+  //
+  // Setting inlineThreshold above the bundle size makes beasties dump the
+  // entire stylesheet into a <style> block without per-rule pruning, while
+  // still removing the render-blocking <link rel="stylesheet">.
+  const cssLinkRe = /<link[^>]+href="(\/assets\/index-[^"]+\.css)"/;
+  const sampleHtml = await fs.readFile(pathForRoute("/"), "utf-8");
+  const cssLinkMatch = sampleHtml.match(cssLinkRe);
+  const orphanedCssPath = cssLinkMatch
+    ? path.join(distDir, cssLinkMatch[1])
+    : null;
+
+  for (const route of routes) {
+    const beasties = new Beasties({
+      path: distDir,
+      publicPath: "/",
+      logLevel: "silent",
+      // Inline any external stylesheet smaller than ~10 MB verbatim. Our
+      // single Tailwind bundle is ~75 KB, so this captures it whole.
+      inlineThreshold: 10_000_000,
+      // Fonts are preloaded by the preloadLatinFonts Vite plugin.
+      inlineFonts: false,
+    });
+    const outputPath = pathForRoute(route);
+    const html = await fs.readFile(outputPath, "utf-8");
+    const processed = await beasties.process(html);
+    await fs.writeFile(outputPath, processed, "utf-8");
+  }
+
+  // The external CSS file is no longer referenced from any prerendered HTML
+  // (beasties stripped the <link> on every route). Drop it from the build
+  // output so we don't upload ~75 KB of bytes nothing will ever fetch.
+  if (orphanedCssPath) {
+    await fs.unlink(orphanedCssPath).catch(() => {});
+  }
+
+  console.log(`Inlined full CSS into ${routes.length} routes`);
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
+
+// Streaming SSR is what makes the commercial homepage crawlable.
+// renderToString gives up at the first Suspense boundary, so every
+// React.lazy() section on Index.tsx (case studies, services, process,
+// portfolio, FAQ, …) rendered as its `null` fallback and never reached the
+// static HTML. renderToPipeableStream's onAllReady waits for those lazy
+// imports to resolve, so the generated markup contains the full page while
+// the client bundle keeps its per-section code splitting.
+function renderAppToHtml(route: string): Promise<string> {
+  return new Promise<string>((resolve, reject) => {
+    const chunks: Buffer[] = [];
+    let recoverableError: unknown = null;
+    let settled = false;
+
+    const settle = (finish: () => void) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timeout);
+      finish();
+    };
+    const fail = (error: unknown) => settle(() => reject(toRenderError(route, error)));
+    const succeed = (html: string) => settle(() => resolve(html));
+
+    // We deliberately bypass AppProviders here. It mounts lazy-loaded
+    // <Toaster />, <Sonner />, and <ChatbotWidget />, which are purely
+    // client-side and hydrate after JS loads, so the prerender does not need
+    // them. LazyMotion is kept because pages render framer-motion's <m.*>
+    // primitives, which require its context.
+    const { pipe, abort } = renderToPipeableStream(
+      <LazyMotion features={domAnimation} strict>
+        <StaticRouter location={route}>
+          <AppRoutesStatic />
+        </StaticRouter>
+      </LazyMotion>,
+      {
+        onAllReady() {
+          const stream = new PassThrough();
+          stream.on("data", (chunk: Buffer) => chunks.push(Buffer.from(chunk)));
+          stream.on("error", fail);
+          stream.on("end", () => {
+            // A lazy import that fails still streams (the Suspense fallback
+            // takes over), so surface it here instead of shipping a page with
+            // a silently missing section.
+            if (recoverableError !== null) {
+              fail(recoverableError);
+              return;
+            }
+            succeed(Buffer.concat(chunks).toString("utf-8"));
+          });
+          pipe(stream);
+        },
+        onShellError: fail,
+        onError(error) {
+          recoverableError ??= error;
+        },
+      },
+    );
+
+    const timeout = setTimeout(() => {
+      abort();
+      fail(new Error(`Prerender timed out for ${route}`));
+    }, RENDER_TIMEOUT_MS);
   });
-  const outputPath = pathForRoute(route);
-  const html = await fs.readFile(outputPath, "utf-8");
-  const processed = await beasties.process(html);
-  await fs.writeFile(outputPath, processed, "utf-8");
 }
 
-// The external CSS file is no longer referenced from any prerendered HTML
-// (beasties stripped the <link> on every route). Drop it from the build
-// output so we don't upload ~75 KB of bytes nothing will ever fetch.
-if (orphanedCssPath) {
-  await fs.unlink(orphanedCssPath).catch(() => {});
+function toRenderError(route: string, error: unknown) {
+  if (error instanceof Error) {
+    error.message = error.message.startsWith("Prerender")
+      ? error.message
+      : `Prerender failed for ${route}: ${error.message}`;
+    return error;
+  }
+
+  return new Error(`Prerender failed for ${route}: ${String(error)}`);
 }
 
-console.log(`Inlined full CSS into ${routes.length} routes`);
-
-function renderRoute(route: string) {
-  // We deliberately bypass AppProviders here. It mounts lazy-loaded
-  // <Toaster />, <Sonner />, and <ChatbotWidget /> behind <Suspense>, which
-  // suspends during renderToString and causes React to emit a bailout
-  // template in place of the entire app tree. Those components are purely
-  // client-side and hydrate after JS loads, so the prerender does not need
-  // them. LazyMotion is kept because pages render framer-motion's <m.*>
-  // primitives, which require its context.
-  const appHtml = renderToString(
-    <LazyMotion features={domAnimation} strict>
-      <StaticRouter location={route}>
-        <AppRoutesStatic />
-      </StaticRouter>
-    </LazyMotion>,
-  );
+async function renderRoute(route: string): Promise<string> {
+  const appHtml = await renderAppToHtml(route);
 
   const helmet = Helmet.renderStatic();
 
