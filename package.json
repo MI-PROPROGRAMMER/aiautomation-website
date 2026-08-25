@@ -10,7 +10,8 @@
     "vercel-build": "vite build && npm run prerender",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prerender": "vite build --ssr scripts/prerender.tsx --outDir dist/_ssr --minify=false && node dist/_ssr/prerender.js && rm -rf dist/_ssr"
+    "prerender": "vite build --ssr scripts/prerender.tsx --outDir dist/_ssr --minify=false && node dist/_ssr/prerender.js && rm -rf dist/_ssr",
+    "validate:seo": "tsx scripts/validate-seo.ts"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
