@@ -18,7 +18,7 @@ export interface LeadSnapshot {
 const EMAIL_RE = /\b[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}\b/i;
 const PHONE_RE = /(?:\+?\d[\d\s().-]{7,}\d)/;
 const NAME_HINT_RE = /\b(?:i'?m|i am|my name is|this is|name:?)\s+([A-Z][a-zA-Z'-]+(?:\s+[A-Z][a-zA-Z'-]+)?)/;
-const COMPANY_HINT_RE = /\b(?:from|at|with|work\s+at|company\s*[:\-]?)\s+([A-Z][\w&.\s-]{1,40})/;
+const COMPANY_HINT_RE = /\b(?:from|at|with|work\s+at|company\s*[:-]?)\s+([A-Z][\w&.\s-]{1,40})/;
 
 const STOP_WORDS = new Set([
   "Hello",
