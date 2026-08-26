@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Vendor invoice three-way match visualization">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.22" cy="0.28" r="0.55">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="docFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a3a66"/>
+      <stop offset="1" stop-color="#062544"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.35">
+    <path d="M0 220 H1500"/><path d="M0 380 H1500"/><path d="M0 540 H1500"/>
+    <path d="M0 700 H1500"/><path d="M0 860 H1500"/>
+  </g>
+
+  <g transform="translate(150,220)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="100" font-size="78" font-weight="700" fill="#ffffff">The Three-Way Match</text>
+    <text y="168" font-size="36" font-weight="400" fill="#cfe5f1" opacity="0.9">where GC invoice reconciliation stalls</text>
+  </g>
+
+  <g transform="translate(240,540)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">PURCHASE ORDER  ·  DELIVERY TICKET  ·  VENDOR INVOICE</text>
+
+    <g transform="translate(0,60)">
+      <rect x="0" y="0" width="260" height="300" rx="6" fill="url(#docFill)" stroke="#00B5E2" stroke-opacity="0.55" stroke-width="1.5"/>
+      <text x="20" y="34" font-size="14" letter-spacing="2" fill="#00B5E2">PO</text>
+      <text x="20" y="72" font-size="20" fill="#ffffff">Purchase Order</text>
+      <g stroke="#5e8aa6" stroke-width="1" opacity="0.7">
+        <path d="M20 108 H240"/><path d="M20 138 H210"/><path d="M20 168 H240"/>
+        <path d="M20 198 H190"/><path d="M20 228 H230"/>
+      </g>
+      <text x="20" y="272" font-size="12" letter-spacing="2" fill="#7fb6d6">QTY  ·  RATE  ·  COST CODE</text>
+    </g>
+
+    <g transform="translate(370,60)">
+      <rect x="0" y="0" width="260" height="300" rx="6" fill="url(#docFill)" stroke="#00B5E2" stroke-opacity="0.55" stroke-width="1.5"/>
+      <text x="20" y="34" font-size="14" letter-spacing="2" fill="#00B5E2">RECEIVING</text>
+      <text x="20" y="72" font-size="20" fill="#ffffff">Delivery Ticket</text>
+      <g stroke="#5e8aa6" stroke-width="1" opacity="0.7">
+        <path d="M20 108 H240"/><path d="M20 138 H180"/><path d="M20 168 H220"/>
+        <path d="M20 198 H210"/><path d="M20 228 H200"/>
+      </g>
+      <text x="20" y="272" font-size="12" letter-spacing="2" fill="#7fb6d6">SIGN  ·  DATE  ·  QTY IN</text>
+    </g>
+
+    <g transform="translate(740,60)">
+      <rect x="0" y="0" width="260" height="300" rx="6" fill="url(#docFill)" stroke="#00B5E2" stroke-opacity="0.55" stroke-width="1.5"/>
+      <text x="20" y="34" font-size="14" letter-spacing="2" fill="#00B5E2">AP</text>
+      <text x="20" y="72" font-size="20" fill="#ffffff">Vendor Invoice</text>
+      <g stroke="#5e8aa6" stroke-width="1" opacity="0.7">
+        <path d="M20 108 H240"/><path d="M20 138 H200"/><path d="M20 168 H240"/>
+        <path d="M20 198 H180"/><path d="M20 228 H220"/>
+      </g>
+      <text x="20" y="272" font-size="12" letter-spacing="2" fill="#7fb6d6">BILL  ·  TAX  ·  FREIGHT</text>
+    </g>
+
+    <g fill="none" stroke="#00B5E2" stroke-width="2" opacity="0.8">
+      <path d="M260 210 Q315 190 370 210"/>
+      <path d="M630 210 Q685 190 740 210"/>
+    </g>
+    <g fill="#00B5E2" opacity="0.9">
+      <circle cx="315" cy="192" r="4"/>
+      <circle cx="685" cy="192" r="4"/>
+    </g>
+
+    <g transform="translate(0,400)">
+      <text font-size="12" letter-spacing="2" fill="#5e8aa6">WHEN ANY OF THE THREE DISAGREE, THE EXCEPTION ROUTES BACK TO THE FIELD</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>

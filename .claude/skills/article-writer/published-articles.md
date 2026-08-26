@@ -26,6 +26,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-08-26 — When Vendor Invoice Matching Stalls GC AP Desks · construction · `vendor-invoice-matching-stalls-gc-ap-desks`
 - 2026-08-25 — DDP vs DAP Shipping: The DTC Cross-Border Margin Story · e-com ops · `ddp-vs-dap-shipping-dtc-cross-border-margin-story`
 - 2026-08-24 — Truck Ticket Capture on GC Concrete and Earthwork Jobs · construction · `truck-ticket-capture-gc-concrete-earthwork-jobs`
 - 2026-08-23 — Manual Credit Reviews Delay Broker First-Load Bookings · logistics · `manual-credit-reviews-delay-broker-first-loads`
