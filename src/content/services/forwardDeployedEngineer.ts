@@ -40,7 +40,7 @@ export const forwardDeployedEngineer: ServicePageContent = {
   },
 
   answer:
-    "A forward deployed engineer (FDE) is a senior engineer who works inside your business rather than at arm's length from it — sitting with the team that has the problem, building against your real systems, and staying through deployment and iteration. It suits organisations whose blocker is implementation, not advice. The outcome is working software in production, owned by you.",
+    "A forward deployed engineer (FDE) is a senior engineer who works inside your workflow rather than at arm's length from it — embedded with the team that owns the problem, building against your real systems, and staying through deployment and iteration. It suits organisations whose blocker is implementation, not advice. The outcome is working software in production, owned by you.",
 
   intro:
     "The model exists because the expensive part of an AI or automation project is almost never the idea. It is the fifty small decisions that only surface once someone is looking at the actual data, the actual exceptions, and the actual people doing the work. An embedded engineer makes those decisions in hours instead of routing them through a statement of work.",
@@ -53,12 +53,12 @@ export const forwardDeployedEngineer: ServicePageContent = {
       {
         title: "The recommendation was right and nothing shipped",
         body:
-          "A consulting engagement produces a roadmap, a vendor shortlist, and a business case. Six months later the roadmap is still a roadmap, because nobody with the ability to build it was ever inside the building.",
+          "A consulting engagement produces a roadmap, a vendor shortlist, and a business case. Six months later the roadmap is still a roadmap, because nobody with the ability to build it was ever part of the engagement.",
       },
       {
         title: "The requirements were wrong in a way only the data shows",
         body:
-          "Written requirements describe the process people believe they run. The exceptions, the manual workarounds, and the spreadsheet that quietly holds everything together only appear when an engineer sits with the work.",
+          "Written requirements describe the process people believe they run. The exceptions, the manual workarounds, and the spreadsheet that quietly holds everything together only appear when an engineer works through the process record by record.",
       },
       {
         title: "Integration turns out to be the whole project",
@@ -91,12 +91,12 @@ export const forwardDeployedEngineer: ServicePageContent = {
       {
         title: "Taking an AI pilot to production",
         body:
-          "A promising prototype exists and the gap to production is throughput, exceptions, monitoring, and the approval of whoever owns the system it has to write into. That gap is delivery work, done in place.",
+          "A promising prototype exists and the gap to production is throughput, exceptions, monitoring, and the approval of whoever owns the system it has to write into. That gap is delivery work, done inside the workflow that has to absorb it.",
       },
       {
         title: "Automating a process nobody has documented",
         body:
-          "The process runs on institutional memory and a spreadsheet. Discovery has to happen by observation and instrumentation rather than interview, which is only possible from inside.",
+          "The process runs on institutional memory and a spreadsheet. Discovery has to happen by observation and instrumentation rather than interview, which needs access to the running process rather than a description of it.",
       },
       {
         title: "Integrating systems that were never meant to meet",
@@ -162,13 +162,13 @@ export const forwardDeployedEngineer: ServicePageContent = {
   process: {
     heading: "How an embedded engagement runs.",
     intro:
-      "Same five stages as the rest of our work — the difference is that they happen next to the team that owns the process, so the loop between a question and an answer is hours rather than a change request.",
+      "Same five stages as the rest of our work — the difference is that they happen with the team that owns the process, so the loop between a question and an answer is hours rather than a change request.",
     steps: [
       {
-        name: "Discover in place",
+        name: "Discover inside the workflow",
         meta: "Week 1",
         body:
-          "Sit with the work. Watch the process run, read the real records, and find the exceptions. Most scoping surprises surface here, which is exactly where they are cheapest.",
+          "Watch the process run, read the real records, and find the exceptions. Most scoping surprises surface here, which is exactly where they are cheapest.",
       },
       {
         name: "Design against reality",
@@ -365,6 +365,29 @@ export const forwardDeployedEngineer: ServicePageContent = {
         "Yes, and that is often the better arrangement. Your engineers know the systems and the constraints; the embedded engineer brings the discovery and the AI or automation delivery pattern. We agree the split of responsibilities in writing at the start so nobody is guessing who owns which surface.",
     },
   ],
+
+  work: {
+    heading: "Implementations you can look at.",
+    intro:
+      "Embedded delivery is hard to show in a slide, so these are the closest thing: systems that ended up inside someone's daily workflow. That is the only outcome this model is measured on.",
+    items: [
+      {
+        id: "fleet-supervisor-copilot",
+        relevance:
+          "Built for supervisors who ask in plain language rather than open a dashboard. A deployment like this succeeds or fails on whether that audience adopts it, which is exactly what the last stage of an engagement is for.",
+      },
+      {
+        id: "internal-automation-graph",
+        relevance:
+          "A workflow running on a schedule with no operator watching it — the difference between a pilot that demos well and a system that runs.",
+      },
+      {
+        id: "content-operations-pipeline",
+        relevance:
+          "An end-to-end pipeline where the people involved moved into approval mode. Handing over that much of a process is what the engagement is trying to reach.",
+      },
+    ],
+  },
 
   articles: {
     heading: "Reading that sits behind this work.",

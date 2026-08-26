@@ -39,10 +39,10 @@ const Services = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://apexifylabs.com/services" />
         <meta property="og:image" content="https://apexifylabs.com/hero-automation.jpg" />
-        <meta name="twitter:title" content="Our Services - ApexifyLabs" />
+        <meta name="twitter:title" content="AI Automation Services | ApexifyLabs" />
         <meta
           name="twitter:description"
-          content="Sales, operations, and support automation built to fit your business — not the other way around."
+          content="AI automation services across sales, operations, and customer support — plus specialist engagements for AI chatbots, embedded delivery, and custom AI software."
         />
         <meta name="twitter:image" content="https://apexifylabs.com/hero-automation.jpg" />
         <link rel="canonical" href="https://apexifylabs.com/services" />

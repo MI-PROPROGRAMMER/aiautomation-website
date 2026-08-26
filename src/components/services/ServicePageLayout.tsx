@@ -9,6 +9,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { Button } from "@/components/ui/button";
 import { BentoTile, ChapterMarker, HairlineRule } from "@/components/ui/editorial";
 import { CALENDLY_LINK } from "@/config/constants";
+import { getPortfolioItem } from "@/content/portfolio";
 import type { ServicePageContent } from "@/content/services/types";
 import { ORG_ID, SITE_URL, buildBreadcrumbs, buildFAQPage } from "@/lib/seo";
 
@@ -401,10 +402,72 @@ export const ServicePageLayout = ({ content }: { content: ServicePageContent }) 
             </dl>
           </Section>
 
-          {/* Supporting articles — the informational half of the topic cluster */}
+          {/*
+            Proof. Every project here is one already published in Selected Work
+            on the homepage, rendered from the same data — see
+            src/content/portfolio.ts. The page contributes only the `relevance`
+            line; it never restates a project as something it is not, and it
+            claims no metric the demo does not show.
+          */}
           <Section tone="alt">
             <SectionHeader
               number="10"
+              label="Relevant Work"
+              heading={content.work.heading}
+              intro={content.work.intro}
+            />
+            <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
+              {content.work.items.map(({ id, relevance }) => {
+                const project = getPortfolioItem(id);
+                return (
+                  <article key={id}>
+                    <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
+                      {project.media.kind === "video" ? (
+                        <video
+                          src={project.media.src}
+                          controls
+                          playsInline
+                          preload="metadata"
+                          aria-label={project.media.alt}
+                          className="aspect-[16/10] w-full bg-black object-contain"
+                        />
+                      ) : (
+                        <img
+                          src={project.media.src}
+                          alt={project.media.alt}
+                          loading="lazy"
+                          decoding="async"
+                          className="aspect-[16/10] w-full object-contain p-3"
+                        />
+                      )}
+                    </div>
+                    <span className="eyebrow mt-6 block">{project.eyebrow}</span>
+                    <h3 className="mt-3 text-lg font-bold leading-snug text-primary-foreground md:text-xl">
+                      {project.title}
+                    </h3>
+                    <p className="mt-3 text-base leading-relaxed text-primary-foreground/75">{project.body}</p>
+                    <p className="mt-4 text-base leading-relaxed text-primary-foreground/60">{relevance}</p>
+                  </article>
+                );
+              })}
+            </div>
+            <p className="mt-12 text-base text-primary-foreground/65">
+              The full set, with the demos playable, is in{" "}
+              <Link
+                to="/#selected-work"
+                className="cursor-pointer text-accent underline decoration-accent/40 underline-offset-4 transition-colors duration-200 hover:decoration-accent"
+              >
+                selected work on the homepage
+              </Link>
+              . These are working systems rather than case studies: we publish no client names, revenue figures,
+              or performance percentages we cannot stand behind.
+            </p>
+          </Section>
+
+          {/* Supporting articles — the informational half of the topic cluster */}
+          <Section tone="alt">
+            <SectionHeader
+              number="11"
               label="Further Reading"
               heading={content.articles.heading}
               intro={content.articles.intro}

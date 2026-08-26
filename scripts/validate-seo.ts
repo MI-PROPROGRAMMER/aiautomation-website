@@ -36,6 +36,52 @@ const CORE_ROUTES = [
   "/terms-of-service",
 ];
 
+/**
+ * Every page an article is allowed to name as its commercial parent. `/` is in
+ * the set even though no article is currently assigned to it: leaving it out
+ * would let a post link to the homepage as a second parent without the
+ * one-parent rule noticing.
+ */
+const COMMERCIAL_PARENTS = ["/", "/services", ...COMMERCIAL_ROUTES];
+
+/**
+ * The 18 articles selected in docs/seo/commercial-content-cluster-map.md, keyed
+ * by source filename, with the single commercial page each supports. That
+ * document is the editorial authority; this map is its build-time enforcement,
+ * so the two have to be changed together.
+ *
+ * A file absent from this map is an unselected article. It carries no cluster
+ * obligation — its links still have to resolve, and it still may not argue for
+ * two commercial parents at once, but it is not required to have one.
+ */
+const CLUSTER_ASSIGNMENTS: Record<string, string> = {
+  "ai-wismo-tickets-dtc-brand.mdx": "/services/ai-chatbot-development",
+  "dtc-refund-reflex-delivered-not-received-claims.mdx": "/services/ai-chatbot-development",
+  "freight-check-calls-before-after-ai.mdx": "/services/ai-chatbot-development",
+  "follow-up-gap-freight-leads.mdx": "/services/ai-chatbot-development",
+  "cancellation-reason-capture-dtc-winback-blind-spot.mdx": "/services/ai-chatbot-development",
+
+  "agentic-ai-blueprint.mdx": "/services/forward-deployed-engineer",
+  "manual-vs-ai-order-exception-handling.mdx": "/services/forward-deployed-engineer",
+  "carrier-vetting-manual-vs-ai-assisted-scoring.mdx": "/services/forward-deployed-engineer",
+  "subcontractor-bid-leveling-ai-assisted.mdx": "/services/forward-deployed-engineer",
+  "daily-reports-gc-jobs-forms-to-ai-summaries.mdx": "/services/forward-deployed-engineer",
+
+  "spot-load-carrier-sourcing-agentic-ai.mdx": "/services/custom-ai-software",
+  "ai-pricing-engines-freight-broker-quote-desks.mdx": "/services/custom-ai-software",
+  "freight-bill-audit-sampled-vs-ai-line-item-review.mdx": "/services/custom-ai-software",
+  "multi-channel-inventory-drift-dtc.mdx": "/services/custom-ai-software",
+  "hidden-cost-manual-submittal-tracking-gcs.mdx": "/services/custom-ai-software",
+
+  "automation-roi-playbook.mdx": "/services",
+  "hidden-cost-manual-freight-sales-desk.mdx": "/services",
+  "manual-tender-acceptance-brokerage-routing-guide.mdx": "/services",
+};
+
+/** Related-article links a selected post carries: enough to be a cluster, few enough to stay readable. */
+const MIN_RELATED_ARTICLES = 2;
+const MAX_RELATED_ARTICLES = 3;
+
 /** Every commercial page must route buyers back into the hub and to a human. */
 const REQUIRED_COMMERCIAL_LINKS = ["/services", "/about", "/contact"];
 
@@ -59,6 +105,14 @@ const MIN_COMMERCIAL_BODY_CHARS = 6000;
  * utility page.
  */
 const NON_INDEXABLE_LINK_TARGETS = ["/invoice-converter"];
+
+/**
+ * Search engines truncate the document title in the result snippet at roughly
+ * this width, and Bing Webmaster Tools reports anything longer as "Title too
+ * long". Measured on the decoded title, so `&amp;` counts as the one character
+ * a reader sees rather than five.
+ */
+const MAX_TITLE_CHARS = 70;
 
 /** Typo variant the spec rules out; `custom AI software` is the approved wording. */
 const BANNED_PHRASE = "AI customer software";
@@ -219,39 +273,76 @@ async function readPublishedPosts(projectRoot: string): Promise<PublishedPost[]>
 /**
  * Checks the links an article carries, reading the MDX source rather than the
  * built page. The rendered document also contains the header and footer, which
- * link to all three commercial pages — scoping to the source is the only way to
+ * link to all three specialist pages — scoping to the source is the only way to
  * see what the *article* claims.
  *
- * One parent per article is a selection rule, not a style preference: a post
- * pointing at two commercial pages argues for two different buying intents and
- * turns its own cluster into cannibalisation.
+ * For a selected article the cluster is an invariant, not a preference: exactly
+ * one link to its assigned parent, no link to any other commercial page, and
+ * two or three related articles that all resolve. A post pointing at two
+ * commercial pages argues for two buying intents and turns its own cluster into
+ * cannibalisation; a post with none is in the cluster map but not in the
+ * cluster.
  */
-function validateArticleLinks(post: PublishedPost, resolvable: Set<string>) {
+function validateArticleLinks(post: PublishedPost, resolvable: Set<string>, blogRoutes: Set<string>) {
   const targets = [
     ...[...post.source.matchAll(MARKDOWN_LINK_RE)].map(([, href]) => href),
     ...[...post.source.matchAll(ANCHOR_HREF_RE)].map(([, href]) => href),
   ].filter((href) => href.startsWith("/"));
 
+  const expected = CLUSTER_ASSIGNMENTS[post.file];
   const broken = new Set<string>();
   const parents = new Set<string>();
+  const related = new Set<string>();
+  let parentLinks = 0;
 
   for (const href of targets) {
     const target = href.split(/[?#]/)[0];
     if (target === "") continue;
 
     const normalized = target.length > 1 ? target.replace(/\/+$/, "") : target;
-    if (COMMERCIAL_ROUTES.includes(normalized)) parents.add(normalized);
-    // Images and other static assets carry an extension; only page links are
-    // expected to resolve to a route.
-    if (!/\.[a-z0-9]{2,5}$/i.test(normalized) && !resolvable.has(normalized)) broken.add(href);
+
+    // Images and other static assets carry an extension. A post's hero lives at
+    // /blog/<slug>/hero.jpg, so without this the hero would be counted as a
+    // related article and would be expected to resolve to a route.
+    const isAsset = /\.[a-z0-9]{2,5}$/i.test(normalized);
+    if (isAsset) continue;
+
+    if (COMMERCIAL_PARENTS.includes(normalized)) {
+      parents.add(normalized);
+      if (normalized === expected) parentLinks += 1;
+    }
+    if (normalized.startsWith("/blog/") && normalized !== post.route) related.add(normalized);
+    if (!resolvable.has(normalized)) broken.add(href);
   }
 
   check(`${post.file} links`, () => {
     assert.deepEqual([...broken], [], `unresolvable internal link(s): ${[...broken].join(", ")}`);
-    assert.ok(
-      parents.size <= 1,
-      `assigned to ${parents.size} commercial parents (${[...parents].join(", ")}); an article belongs to exactly one`,
+  });
+
+  if (expected === undefined) {
+    check(`${post.file} cluster`, () => {
+      assert.ok(
+        parents.size <= 1,
+        `unselected article links to ${parents.size} commercial pages (${[...parents].join(", ")})`,
+      );
+    });
+    return;
+  }
+
+  check(`${post.file} cluster`, () => {
+    assert.equal(parentLinks, 1, `expected exactly 1 link to its parent ${expected}, found ${parentLinks}`);
+    assert.deepEqual(
+      [...parents],
+      [expected],
+      `expected ${expected} as the only commercial parent, found ${parents.size === 0 ? "none" : [...parents].join(", ")}`,
     );
+    assert.ok(
+      related.size >= MIN_RELATED_ARTICLES && related.size <= MAX_RELATED_ARTICLES,
+      `expected ${MIN_RELATED_ARTICLES}–${MAX_RELATED_ARTICLES} related articles, found ${related.size}`,
+    );
+    for (const href of related) {
+      assert.ok(blogRoutes.has(href), `related article ${href} is not a published post`);
+    }
   });
 }
 
@@ -260,6 +351,10 @@ function validateRouteDocument(route: string, doc: RouteDocument) {
     const titles = [...doc.head.matchAll(TITLE_RE)];
     assert.equal(titles.length, 1, `expected 1 <title> in <head>, found ${titles.length}`);
     assert.notEqual(doc.title, "", "<title> is empty");
+    assert.ok(
+      (doc.title?.length ?? 0) <= MAX_TITLE_CHARS,
+      `title is ${doc.title?.length} characters, over the ${MAX_TITLE_CHARS}-character limit: "${doc.title}"`,
+    );
   });
 
   check(`${route} meta description`, () => {
@@ -449,8 +544,14 @@ export async function validateSeoBuild(projectRoot = process.cwd()): Promise<voi
   const blogSlugs = new Set(blogRoutes);
 
   for (const post of posts) {
-    validateArticleLinks(post, resolvableLinks);
+    validateArticleLinks(post, resolvableLinks, blogSlugs);
   }
+
+  check("cluster map coverage", () => {
+    const files = new Set(posts.map((post) => post.file));
+    const missing = Object.keys(CLUSTER_ASSIGNMENTS).filter((file) => !files.has(file));
+    assert.deepEqual(missing, [], `cluster map names unpublished article(s): ${missing.join(", ")}`);
+  });
 
   const documents = new Map<string, RouteDocument>();
 
@@ -483,6 +584,21 @@ export async function validateSeoBuild(projectRoot = process.cwd()): Promise<voi
 
     validateCommercialPage(route, doc, blogSlugs);
   }
+
+  // Two indexable pages sharing a title are two pages competing for the same
+  // result. Checked across every route, not just the commercial ones, because
+  // the risk is highest among the 95 articles.
+  check("title uniqueness", () => {
+    const seen = new Map<string, string>();
+
+    for (const [route, doc] of documents) {
+      if (doc.title === null) continue;
+
+      const owner = seen.get(doc.title);
+      assert.equal(owner, undefined, `${route} shares its title with ${owner}: "${doc.title}"`);
+      seen.set(doc.title, route);
+    }
+  });
 
   // Commercial intent is one-page-one-query: the hub and its three specialist
   // pages must never present search engines with the same title or the same

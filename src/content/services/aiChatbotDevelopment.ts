@@ -355,6 +355,29 @@ export const aiChatbotDevelopment: ServicePageContent = {
     },
   ],
 
+  work: {
+    heading: "Chatbots already running.",
+    intro:
+      "Three of the builds on our selected-work page are conversational systems. They are demos and workflow graphs rather than case studies — no client names, no result claims, just the systems themselves.",
+    items: [
+      {
+        id: "gym-membership-chatbot",
+        relevance:
+          "The fullest public example of a conversation handled end to end: discovery, FAQ, and booking, with no human in the loop on the routine path.",
+      },
+      {
+        id: "omnichannel-messaging-engine",
+        relevance:
+          "One reply layer serving WhatsApp, Instagram, and Messenger from a single workflow — the integration shape behind most support-chatbot briefs.",
+      },
+      {
+        id: "after-hours-retail-support",
+        relevance:
+          "A real transcript of the assistant acting as first responder, which is the behaviour the fit section above is describing.",
+      },
+    ],
+  },
+
   articles: {
     heading: "Reading that sits behind this work.",
     intro:

@@ -355,6 +355,29 @@ export const customAiSoftware: ServicePageContent = {
     },
   ],
 
+  work: {
+    heading: "Custom systems in production.",
+    intro:
+      "Each of these encodes logic specific to the business it was built for, which is the part no off-the-shelf product could supply. Screens and workflow graphs, not results claims.",
+    items: [
+      {
+        id: "fleet-supervisor-copilot",
+        relevance:
+          "A retrieval layer over live fleet data behind a conversational front end. Built, not configured — the underlying question was which record answers a supervisor's question, and no product knew.",
+      },
+      {
+        id: "internal-automation-graph",
+        relevance:
+          "A multi-step orchestration graph on a schedule: the connective-tissue case, where all of the value is in the wiring between systems that were never meant to meet.",
+      },
+      {
+        id: "content-operations-pipeline",
+        relevance:
+          "A pipeline built around one team's editorial rules. That is what custom business logic looks like once it stops living in someone's head.",
+      },
+    ],
+  },
+
   articles: {
     heading: "Reading that sits behind this work.",
     intro:

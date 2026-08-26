@@ -75,7 +75,14 @@ const BlogPost = () => {
   return (
     <>
       <Helmet>
-        <title>{`${title} | ApexifyLabs Journal`}</title>
+        {/*
+          The document title is the article title alone. A " | ApexifyLabs
+          Journal" suffix pushed 75 of these past the 70-character limit search
+          engines truncate at, spending the most valuable part of the title on a
+          brand name the canonical, og:site_name and breadcrumbs already carry.
+          Open Graph and Twitter titles stay descriptive below.
+        */}
+        <title>{title}</title>
         <meta name="description" content={seoDescription ?? excerpt} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={seoDescription ?? excerpt} />

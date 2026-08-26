@@ -9,6 +9,8 @@
  * they cannot drift apart.
  */
 
+import type { PortfolioItemId } from "@/content/portfolio";
+
 export type ServiceFaq = {
   question: string;
   answer: string;
@@ -88,6 +90,17 @@ export type ServicePageContent = {
   };
   engagement: { heading: string; intro: string; body: string[]; points: ServiceDetail[] };
   faqs: ServiceFaq[];
+  /**
+   * Proof, cited from the published Selected Work set. `id` is typed against
+   * that set so a page cannot point at a project the site does not show, and
+   * `relevance` is the only per-page text — the project's own description is
+   * never rewritten to suit the page it appears on.
+   */
+  work: {
+    heading: string;
+    intro: string;
+    items: { id: PortfolioItemId; relevance: string }[];
+  };
   articles: { heading: string; intro: string; items: ServiceArticleLink[] };
   cta: { heading: string; body: string };
 };
