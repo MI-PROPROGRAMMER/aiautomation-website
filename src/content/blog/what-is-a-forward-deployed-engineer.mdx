@@ -1,0 +1,110 @@
+export const frontmatter = {
+  title: "What Is a Forward Deployed Engineer (FDE)?",
+  excerpt:
+    "A forward deployed engineer builds inside your operation instead of from a vendor backlog. What the role involves, what it requires, and why 2026 needs it.",
+  date: "2026-08-26",
+  author: "ApexifyLabs Team",
+  tags: ["Forward Deployed Engineering", "AI Delivery", "Agentic AI", "Hiring"],
+  heroImage: "/blog/what-is-a-forward-deployed-engineer/hero.svg",
+  seoDescription:
+    "What is a forward deployed engineer (FDE)? The role, the skills it requires, how it differs from consulting, and why AI delivery in 2026 depends on it.",
+  readingTime: "4 min read",
+};
+
+A forward deployed engineer (FDE) is a senior engineer who works inside a customer's operation rather than from a vendor's backlog: sitting with the team doing the work, building against live data and real exceptions, and staying through deployment. The title started at Palantir. It spread because AI systems fail in the last mile, not in the demo.
+
+## What is a forward deployed engineer, in plain terms?
+
+Consider the ordinary software relationship. A vendor sells a product. The customer describes what they need. That description travels through a sales engineer, a statement of work, a product backlog, and a release cycle before it reaches the person who actually has the problem. Every hop loses detail, and the detail that gets lost is usually the part that mattered.
+
+A forward deployed engineer removes the hops. One senior engineer is placed inside the customer's environment, with access to the real systems and the real people, and is accountable for whether the operational result changed. They write code. They also sit in the dispatch meeting, watch a coordinator work a queue, and notice the spreadsheet that never came up in the requirements call.
+
+The shorthand: a consultant tells you what to do, a vendor sells you something to do it with, and a forward deployed engineer does it, in your environment, alongside your team.
+
+## Where did the role come from?
+
+Palantir originated the title and built a delivery organisation around it. Their customers had data problems that could not be specified from a distance (defence, intelligence, large industrial operations), so the company sent engineers to the customer's site to build against the actual data rather than a sanitised extract. For most of the 2010s, "forward deployed engineer" was effectively a Palantir-internal job title that nobody else used.
+
+The current generation of AI products changed that. OpenAI, Anthropic, and a long list of applied-AI companies now recruit openly under the same title, and the model has spread well past the labs into vertical software. The role is not new. What is new is how many companies discovered they needed it at the same time.
+
+## What does a forward deployed engineer actually do?
+
+The day-to-day is less exotic than the title suggests:
+
+1. **Map the workflow that exists, not the one that is documented.** Every operation runs on undocumented exceptions. They surface when someone watches the work, not when someone reads a process document.
+2. **Build against live data early.** Working software in front of an operator within days, rather than a specification signed off over weeks.
+3. **Own the integration.** Authentication, rate limits, undocumented fields, stale records, and the one system with no API. This is where the calendar actually goes.
+4. **Design the human checkpoints.** Deciding what the system does on its own, what it drafts for review, and what it escalates. That is an operational judgement, made with the person who carries the risk.
+5. **Carry adoption.** A tool the team does not trust is not deployed, it is installed. The engineer is present through the awkward first weeks.
+6. **Feed the pattern back.** Whatever generalises becomes product. Whatever does not stays configuration.
+
+## What skills does the role require?
+
+| Capability | Why the role needs it |
+|---|---|
+| Full-stack delivery | There is nobody downstream. Data plumbing, backend, interface, and deployment all belong to the same person. |
+| Integration fluency | Real operations run on legacy systems, partial APIs, scheduled exports, and files. A clean interface is the exception. |
+| AI systems literacy | Retrieval, context design, evaluation, and failure modes. Knowing when a model is the wrong tool matters as much as knowing how to use one. |
+| Domain absorption | Learning a vertical's vocabulary in days, well enough to sit in an operational meeting without slowing it down. |
+| Product judgement | Choosing what not to build. Most requests are symptoms, and building the symptom is how a project grows without improving anything. |
+| Direct communication | Explaining a trade-off to an owner who does not care about the technology, in the language of the operation. |
+| Comfort with the unglamorous | Data cleanup, permissions, change management, and the fourth revision of a workflow nobody enjoys. |
+| Discretion | The role sees real margins, real error rates, and real staffing decisions. |
+
+## What are the usual hiring requirements?
+
+Postings for the role converge on a recognisable profile:
+
+- Several years of production engineering experience, often five or more, because there is no senior engineer above the role to escalate to.
+- Demonstrated end-to-end ownership rather than depth in a single layer of the stack.
+- Strong written communication, since most of the artefacts are written for non-engineers.
+- Willingness to work on site, or at least on the customer's calendar rather than the vendor's.
+- Tolerance for ambiguity, assessed on whether the candidate can act before the problem is fully defined.
+- In defence and public-sector work, a security clearance.
+
+The profile is scarce for a structural reason. Strong engineers who also enjoy customer-facing work are uncommon, because the two skills are usually built in different careers.
+
+## How does an FDE differ from the roles it gets confused with?
+
+| Role | Where they sit | What they own | Measured by |
+|---|---|---|---|
+| Solutions engineer | Pre-sale | The technical yes | Deals closed |
+| Implementation consultant | Post-sale project window | Configuration and go-live | Delivered on time and scope |
+| Support engineer | After go-live, reactive | Tickets | Resolution time |
+| Development agency | Their own office | An agreed scope | Scope delivered |
+| Staff augmentation | Your backlog | Assigned tasks | Throughput |
+| Forward deployed engineer | Inside the workflow | The operational outcome | Whether the metric moved |
+
+The last row is the entire distinction. Every other role is complete when a deliverable is handed over. A forward deployed engineer is not finished when the software works, only when the operation works differently.
+
+## Why has this role become more necessary in 2026?
+
+The job existed quietly for two decades. Several things changed at once.
+
+**1. The bottleneck moved from capability to context.** For most operational tasks, model capability is no longer the limiting factor. What a system lacks is your context: your exceptions, your vocabulary, your data quality, your approval chain, your tolerance for a wrong answer. None of that arrives in an onboarding email. Someone has to go and collect it.
+
+**2. AI software behaves differently in every environment.** Traditional software is deterministic. Configure it once and it behaves the same everywhere. A system built on models behaves according to the data it meets, so it has to be evaluated and tuned against your data before anyone can reasonably trust it. That is engineering work, and it can only happen where the data lives.
+
+**3. The pilot record is poor, and for delivery reasons.** A widely covered 2025 report from MIT's Media Lab found that roughly 95% of enterprise generative AI pilots produced no measurable P&L return, attributing the failures to workflow integration and organisational learning rather than model quality. Gartner has separately forecast that more than 40% of agentic AI projects will be cancelled before the end of 2027, citing unclear business value and inadequate risk controls rather than technical infeasibility. Both point at the same conclusion: the demo was never the hard part.
+
+**4. Agents now write into systems of record.** A read-only assistant carries little risk. An agent that books a load, issues a credit, or releases a purchase order touches money and reputation. Permissions, audit trails, rollback, and human checkpoints have to be designed against a specific organisation's risk posture, and that is a conversation with an operator rather than a configuration screen.
+
+**5. Buyers moved from tools to outcomes.** Operators have bought enough software to be sceptical of seats and dashboards. The question is increasingly whether a named number moves. If a vendor is selling an outcome, somebody has to be accountable for that outcome inside the customer's building.
+
+**6. Building got faster than deciding.** AI-assisted development has compressed the time it takes to produce working software. It has not compressed the time it takes to work out what should be built, which is now the larger share of most projects. The forward deployed model exists to shorten that half.
+
+## What does this mean for a mid-size operator?
+
+Large enterprises answer this by hiring. A $10M to $30M brokerage, DTC brand, or general contractor usually cannot. The profile is expensive, difficult to assess if you are not an engineer yourself, and hard to retain on one company's problem set once the interesting work is finished. Hiring a full-time engineer for a nine-month transformation, then finding them another nine months of equivalent work, is a real cost that rarely gets modelled up front.
+
+That is why operations in this range tend to rent the function rather than build it, bringing in [an embedded engineer](/services/forward-deployed-engineer) for the window where the decisions are dense and taking ownership of the result afterwards. The shape of a first project is set out in [the agentic AI blueprint](/blog/agentic-ai-blueprint), the business case in [the automation ROI playbook](/blog/automation-roi-playbook), and what embedded delivery looks like against a live workflow in [order exception handling](/blog/manual-vs-ai-order-exception-handling).
+
+## What this piece deliberately leaves out
+
+There is a version of this article that publishes the scoping template, the discovery checklist, and the week-by-week engagement structure. It would be less useful than it looks. The value in the model is not the sequence, it is the judgement applied at each of the fifty small decisions the sequence produces, and that judgement is the part that takes a decade to build.
+
+What matters for a reader deciding whether they need this is simpler: is the blocker advice, or is it implementation? If the recommendation is already written down and nothing has shipped, the blocker is implementation, and no further analysis is going to move it.
+
+## Curious whether your next project needs one?
+
+If you have an automation project that has been recommended, agreed, and still not built, we run a **completely free automation audit** to work out where it actually stopped. No slide deck, no commitment. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>
