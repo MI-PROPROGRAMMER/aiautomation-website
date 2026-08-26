@@ -1,0 +1,110 @@
+export const frontmatter = {
+  title: "AI Automation Agency vs In-House Team",
+  excerpt:
+    "Salary is the number everyone compares and the smallest part of the decision. Where each model genuinely wins, and why the real question is sequencing.",
+  date: "2026-08-26",
+  author: "ApexifyLabs Team",
+  tags: ["Build vs Buy", "AI Automation", "Operations", "Hiring"],
+  heroImage: "/blog/ai-automation-agency-vs-in-house-team/hero.svg",
+  seoDescription:
+    "AI automation agency vs in-house team: the real cost of hiring, where each model genuinely wins, the failure modes nobody plans for, and how to sequence it.",
+  readingTime: "4 min read",
+};
+
+Hiring an in-house automation team means paying for capability continuously, whether or not there is work for it. Engaging an agency means paying for a step change and then stopping. The decision usually turns on how much automation work exists after the first systems ship, and on who in the building can assess the hire.
+
+## What does each option actually involve?
+
+An in-house team, at the scale most operators are considering, means one or two people. An automation engineer, sometimes with a technical lead above them. They learn the business deeply, sit in the operational meetings, and are available for whatever comes up. Their knowledge compounds and stays.
+
+An agency engagement means renting a capability that already exists. The team has built the pattern before, often several times, and brings the failures as well as the successes. They start faster and stop when the work stops. What they know about your operation is borrowed at the beginning and only partially transfers at the end, unless the engagement is designed to transfer it.
+
+Both descriptions are fair. Most of the bad decisions in this area come from comparing the best version of one against the worst version of the other.
+
+## How do the two compare?
+
+| Dimension | In-house team | Automation agency |
+|---|---|---|
+| Time to first working system | Search, notice period, and ramp usually consume a quarter or two before anything ships | Days to weeks, working from patterns already built |
+| Cost shape | Fixed and continuous, whether or not there is work | Variable, tied to scope or a retainer |
+| Domain knowledge | Deep and compounding, and it stays | Borrowed at first, deepens across the engagement |
+| Pattern exposure | One company's problems | Many companies' problems, including the ones that failed |
+| After launch | The same person maintains it, if they stay | Handover, or an ongoing support arrangement |
+| Risk concentration | One or two people hold the whole context | Firm-level continuity, weaker institutional memory |
+| Quality of the hiring decision | Hard to assess a specialist nobody internally can evaluate | Assessed on work already delivered |
+| Strongest when | Automation work is continuous and close to the product | The need is a step change, then a steady state |
+
+## What does in-house actually cost?
+
+Salary is the number that gets compared, and it is the smallest line in the stack.
+
+The US Bureau of Labor Statistics puts median annual pay for software developers above $130,000, and engineers with current AI and automation experience sit above that median rather than at it. On top of base, the standard accounting convention adds roughly 25% to 40% for payroll taxes, benefits, equipment, and software.
+
+Then there is the part that rarely reaches the spreadsheet:
+
+- **Recruiting.** Either an agency fee or a meaningful share of a senior person's quarter.
+- **The gap before anything ships.** SHRM benchmarking has put average time-to-fill at around 44 days across roles, and specialised engineering searches routinely run longer. Add a notice period, then ramp. A quarter of payroll with nothing in production is a normal outcome, not a bad one.
+- **Direction.** Someone has to decide what gets built and in what order. If nobody in the leadership team is technical, this cost lands on the owner or COO and is paid in attention rather than cash.
+- **The trough.** The first nine months are dense. Then the interesting work is done and the remaining load is maintenance. That is a difficult job to keep a strong engineer in.
+
+None of this argues against hiring. It argues against comparing a salary figure to a project quote and treating that as the analysis.
+
+## When is in-house clearly the right answer?
+
+There are conditions where hiring is not just defensible but obviously correct:
+
+1. **Automation is the product, not support for the product.** If the thing you sell is the automated workflow, the capability belongs inside the company.
+2. **There is already an engineering function.** A new hire who has technical management, code review, and an existing platform to build on will outperform any outside team on cost per unit of work.
+3. **The logic is a competitive moat.** Pricing rules, routing heuristics, and estimating models that genuinely differentiate the business are worth keeping in-house, and worth the slower start.
+4. **The pipeline is continuous.** If you can name twelve months of work at full intensity, and then twelve more, the fixed cost stops being a liability.
+5. **Access is genuinely constrained.** Some regulatory and data environments make outside access expensive enough to change the maths.
+
+If three or more of those are true, hire. An article from an agency saying otherwise would not be worth reading.
+
+## When does an agency make more sense?
+
+The reverse conditions:
+
+1. **The need is a step change, then a steady state.** A handful of workflows are broken, and once they are fixed the load drops to maintenance.
+2. **Nobody internally can assess the hire.** A non-technical leadership team interviewing an AI engineer is guessing, and the cost of guessing wrong is a year.
+3. **The work spans systems you do not own.** A TMS, a 3PL portal, a project management platform, and an accounting system, each with its own quirks. Prior exposure to those integrations is worth more than familiarity with your business.
+4. **You want the failure modes priced in.** Someone who has watched three versions of this go wrong will design around problems your first hire will discover the expensive way.
+5. **Speed matters more than accumulation.** If the operational problem is costing money now, a quarter of search time is a real number.
+
+## What is the failure mode nobody plans for?
+
+Three, and they compound.
+
+**Hiring before the job description exists.** Most first automation hires are made against a guess about what the work will be. The role the business actually needs only becomes visible after the first system is running and the exceptions have surfaced. Hiring against a guess produces a mismatch that neither side can name for about eight months.
+
+**The bus factor of one.** A single internal automation engineer accumulates undocumented context at speed. When they leave, and technology turnover runs high relative to other sectors, the context leaves with them. What remains is working software nobody in the building can safely change.
+
+**The post-launch trough.** The engineer hired for a transformation is now maintaining it. Strong engineers leave that situation, which returns the business to the start of the search with a system in production and nobody who understands it.
+
+## Why the question is usually sequencing, not selection
+
+Most operations that end up with a genuinely good internal capability did not begin there. The order that tends to work: bring in outside delivery to establish the first working systems and to find out what the work actually consists of, then hire against a job description written from evidence rather than from a guess, with a running system for the new person to take ownership of on day one.
+
+Hiring second is cheaper and considerably lower risk than hiring first. The new engineer inherits something that works, documentation that exists because a handover forced it, and a scope defined by what the operation actually needed rather than what it expected to need.
+
+That is also the honest test of an engagement. If the arrangement is not designed to leave the capability behind, it is [staff augmentation with a different invoice](/services/forward-deployed-engineer). The mechanics of an embedded engagement are set out in [what a forward deployed engineer does](/blog/what-is-a-forward-deployed-engineer), the numbers behind a first project in [the automation ROI playbook](/blog/automation-roi-playbook), and the shape of a first thirty days in [the agentic AI blueprint](/blog/agentic-ai-blueprint).
+
+## Five questions that settle it
+
+1. Can you name twelve months of automation work at full intensity, and then twelve more?
+2. Is there anyone in the building who could technically assess a candidate for this role?
+3. Does the workflow depend on systems your team has never integrated before?
+4. If the person you hire leaves in month fourteen, what happens to what they built?
+5. What is the operational problem costing per month while the search runs?
+
+Question five is the one most often skipped, and it frequently exceeds the difference in annual cost between the two options.
+
+## What this piece deliberately leaves out
+
+There is no rate card here, and no cost calculator. A calculator would be the misleading part: the variable that dominates this decision is how much automation work genuinely exists after month nine, and that number is specific to the operation, unknowable from a template, and usually overestimated at the point of hiring.
+
+What generalises is the sequence. Establish the capability, learn what the work is, then decide whether it should live inside. Deciding in that order costs less than deciding first and finding out afterwards.
+
+## Trying to work out whether this is a hire or an engagement?
+
+If you are weighing an automation hire against an outside engagement, we run a **completely free automation audit** that will tell you which one your situation actually calls for, including when the answer is to hire. No slide deck, no commitment. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>

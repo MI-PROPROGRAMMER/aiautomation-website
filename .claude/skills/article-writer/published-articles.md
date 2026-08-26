@@ -14,7 +14,7 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Self-coined "[noun] gap"** branding — already used once ("the follow-up gap"), do not coin another.
 - **Phrase "never says no — just goes silent"** in any form.
 - **Title shape "[Topic], Before and After [AI]"** — used twice (spot-load carrier sourcing, freight check calls). Pick a different shape next.
-- **Title shape "[X] Cost [Y]"** (with or without leading "What" / "How much") — used twice across recent 5 (backorder delays, owner allowance overruns). Saturated. Pick a different shape until it clears the recent-5 window.
+- **Title shape "[X] vs [Y]"** — used three times across the recent 5 (agency vs in-house, AI vs rule-based chatbot, DDP vs DAP). Heavily saturated. Do not use again until it clears the recent-5 window, even for a strong exact-match query.
 
 ## Title-shape diversity rule
 
@@ -26,6 +26,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-08-26 — AI Automation Agency vs In-House Team · unclassified · `ai-automation-agency-vs-in-house-team`
 - 2026-08-26 — AI Chatbot vs Rule-Based Chatbot · unclassified · `ai-chatbot-vs-rule-based-chatbot`
 - 2026-08-26 — What Is a Forward Deployed Engineer (FDE)? · unclassified · `what-is-a-forward-deployed-engineer`
 - 2026-08-26 — When Vendor Invoice Matching Stalls GC AP Desks · construction · `vendor-invoice-matching-stalls-gc-ap-desks`

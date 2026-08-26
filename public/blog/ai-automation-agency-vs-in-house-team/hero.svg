@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Systems in production over twelve months: an agency curve rising immediately versus an in-house hire flat through search, notice and ramp before rising to converge">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.25" cy="0.2" r="0.6">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.17"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="underAgency" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.3">
+    <path d="M0 205 H1500"/><path d="M0 400 H1500"/><path d="M0 665 H1500"/><path d="M0 850 H1500"/>
+  </g>
+
+  <g transform="translate(180,228)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="98" font-size="84" font-weight="700" fill="#ffffff">AI Automation Agency</text>
+    <text y="186" font-size="84" font-weight="700" fill="#ffffff">vs In-House Team</text>
+    <text y="250" font-size="36" font-weight="400" fill="#cfe5f1" opacity="0.9">the cost everyone compares is not the cost that decides</text>
+  </g>
+
+  <g transform="translate(180,558)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">SYSTEMS IN PRODUCTION  ·  FIRST TWELVE MONTHS</text>
+
+    <g font-size="13">
+      <path d="M0 22 H28" stroke="#00B5E2" stroke-width="2.5"/>
+      <text x="38" y="27" fill="#cfe5f1">AGENCY / EMBEDDED DELIVERY</text>
+      <path d="M330 22 H358" stroke="#5e8aa6" stroke-width="2.5" stroke-dasharray="7 5"/>
+      <text x="368" y="27" fill="#7fb6d6">IN-HOUSE HIRE</text>
+    </g>
+
+    <g transform="translate(0,0)">
+      <rect x="0" y="50" width="376" height="200" fill="#00B5E2" opacity="0.085"/>
+      <path d="M376 50 V250" stroke="#5e8aa6" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.75"/>
+
+      <path d="M0 250 C 80 202, 175 148, 320 128 C 570 96, 830 84, 1140 74 L1140 250 Z" fill="url(#underAgency)"/>
+
+      <path d="M0 50 V250 H1140" stroke="#0a3a66" stroke-width="1.5" fill="none"/>
+
+      <path d="M0 250 L 376 250 C 486 246, 578 208, 690 168 C 858 110, 1000 98, 1140 92"
+            stroke="#5e8aa6" stroke-width="2.5" stroke-dasharray="8 6" fill="none"/>
+      <path d="M0 250 C 80 202, 175 148, 320 128 C 570 96, 830 84, 1140 74"
+            stroke="#00B5E2" stroke-width="3" fill="none"/>
+
+      <circle cx="1140" cy="74" r="6" fill="#00B5E2"/>
+      <circle cx="1140" cy="92" r="5" fill="#001a36" stroke="#5e8aa6" stroke-width="2"/>
+
+      <text x="16" y="78" font-size="12" letter-spacing="1" fill="#7fb6d6">SEARCH · NOTICE · RAMP</text>
+      <text x="16" y="96" font-size="12" letter-spacing="1" fill="#5e8aa6">PAYROLL RUNNING, NOTHING SHIPPING</text>
+      <text x="394" y="88" font-size="12" letter-spacing="1" fill="#00B5E2" opacity="0.9">BY HERE, THE ENGAGEMENT IS ALREADY SHIPPING</text>
+
+      <g stroke="#0a3a66" stroke-width="1.5">
+        <path d="M285 250 V258"/><path d="M570 250 V258"/><path d="M855 250 V258"/><path d="M1140 250 V258"/>
+      </g>
+      <g font-size="13" fill="#5e8aa6">
+        <text x="0" y="276">MONTH 0</text>
+        <text x="285" y="276" text-anchor="middle">3</text>
+        <text x="570" y="276" text-anchor="middle">6</text>
+        <text x="855" y="276" text-anchor="middle">9</text>
+        <text x="1140" y="276" text-anchor="middle">12</text>
+      </g>
+    </g>
+
+    <text y="306" font-size="12" letter-spacing="2" fill="#5e8aa6">THE LINES CONVERGE · THE DECISION IS WHAT THE GAP COSTS WHILE THEY DO</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
