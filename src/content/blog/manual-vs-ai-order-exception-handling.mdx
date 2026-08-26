@@ -93,6 +93,8 @@ It is usually not a fit yet when:
 - Fulfillment logistics are still being figured out and the rules under which an agent should act are themselves changing month to month.
 - The brand sells highly bespoke or made-to-order products where each exception is materially different and human judgment is the product.
 
+Almost none of that is model work. It is discovery, integration, and exception design against live data, which is the argument for [embedding an engineer in the ops team](/services/forward-deployed-engineer) rather than handing over a specification and waiting. The upstream causes are covered in [multi-channel inventory drift](/blog/multi-channel-inventory-drift-dtc) and [split shipments across warehouses](/blog/split-shipments-dtc-multi-warehouse-margin-leak); the downstream ticket volume is [the WISMO backlog](/blog/ai-wismo-tickets-dtc-brand).
+
 ## Three signs an exception desk is costing more than it looks
 
 1. **Median first-response time is measured in hours, not minutes, on routine WISMO tickets.** Routine tracking questions are the cheapest possible win for a faster response. If those are slow, retention metrics are leaking quietly elsewhere.

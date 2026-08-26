@@ -82,6 +82,7 @@ const JSON_LD_RE = /<script[^>]*\btype="application\/ld\+json"[^>]*>([\s\S]*?)<\
 const SCRIPT_OR_STYLE_RE = /<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi;
 const TAG_RE = /<[^>]+>/g;
 const LOC_RE = /<loc>([\s\S]*?)<\/loc>/gi;
+const MARKDOWN_LINK_RE = /\]\(([^)\s]+)\)/g;
 const FRONTMATTER_BLOCK_RE = /export const frontmatter\s*=\s*\{([\s\S]*?)^\};/m;
 
 const failures: string[] = [];
@@ -139,6 +140,12 @@ function toVisibleText(html: string) {
     .trim();
 }
 
+type PublishedPost = {
+  file: string;
+  route: string;
+  source: string;
+};
+
 type RouteDocument = {
   html: string;
   head: string;
@@ -180,10 +187,10 @@ function parseRouteDocument(html: string): RouteDocument {
  * `draft: true` or `slug: "..."` silently drop or rename a published route, so
  * the validator would then check a different route set than the sitemap.
  */
-async function readBlogRoutes(projectRoot: string) {
+async function readPublishedPosts(projectRoot: string): Promise<PublishedPost[]> {
   const blogDir = path.resolve(projectRoot, "src/content/blog");
   const entries = await fs.readdir(blogDir, { withFileTypes: true });
-  const slugs: string[] = [];
+  const posts: PublishedPost[] = [];
 
   for (const entry of entries) {
     if (!entry.isFile() || !entry.name.endsWith(".mdx")) continue;
@@ -199,10 +206,53 @@ async function readBlogRoutes(projectRoot: string) {
     if (/^\s*draft:\s*true\b/m.test(block)) continue;
 
     const explicitSlug = block.match(/^\s*slug:\s*"([^"]+)"/m)?.[1];
-    slugs.push(explicitSlug ?? entry.name.replace(/\.mdx$/, ""));
+    posts.push({
+      file: entry.name,
+      route: `/blog/${explicitSlug ?? entry.name.replace(/\.mdx$/, "")}`,
+      source,
+    });
   }
 
-  return slugs.sort().map((slug) => `/blog/${slug}`);
+  return posts.sort((a, b) => a.route.localeCompare(b.route));
+}
+
+/**
+ * Checks the links an article carries, reading the MDX source rather than the
+ * built page. The rendered document also contains the header and footer, which
+ * link to all three commercial pages — scoping to the source is the only way to
+ * see what the *article* claims.
+ *
+ * One parent per article is a selection rule, not a style preference: a post
+ * pointing at two commercial pages argues for two different buying intents and
+ * turns its own cluster into cannibalisation.
+ */
+function validateArticleLinks(post: PublishedPost, resolvable: Set<string>) {
+  const targets = [
+    ...[...post.source.matchAll(MARKDOWN_LINK_RE)].map(([, href]) => href),
+    ...[...post.source.matchAll(ANCHOR_HREF_RE)].map(([, href]) => href),
+  ].filter((href) => href.startsWith("/"));
+
+  const broken = new Set<string>();
+  const parents = new Set<string>();
+
+  for (const href of targets) {
+    const target = href.split(/[?#]/)[0];
+    if (target === "") continue;
+
+    const normalized = target.length > 1 ? target.replace(/\/+$/, "") : target;
+    if (COMMERCIAL_ROUTES.includes(normalized)) parents.add(normalized);
+    // Images and other static assets carry an extension; only page links are
+    // expected to resolve to a route.
+    if (!/\.[a-z0-9]{2,5}$/i.test(normalized) && !resolvable.has(normalized)) broken.add(href);
+  }
+
+  check(`${post.file} links`, () => {
+    assert.deepEqual([...broken], [], `unresolvable internal link(s): ${[...broken].join(", ")}`);
+    assert.ok(
+      parents.size <= 1,
+      `assigned to ${parents.size} commercial parents (${[...parents].join(", ")}); an article belongs to exactly one`,
+    );
+  });
 }
 
 function validateRouteDocument(route: string, doc: RouteDocument) {
@@ -392,10 +442,15 @@ export async function validateSeoBuild(projectRoot = process.cwd()): Promise<voi
   failures.length = 0;
 
   const distDir = path.resolve(projectRoot, "dist");
-  const blogRoutes = await readBlogRoutes(projectRoot);
+  const posts = await readPublishedPosts(projectRoot);
+  const blogRoutes = posts.map((post) => post.route);
   const indexableRoutes = [...CORE_ROUTES, ...blogRoutes];
   const resolvableLinks = new Set([...indexableRoutes, ...NON_INDEXABLE_LINK_TARGETS]);
   const blogSlugs = new Set(blogRoutes);
+
+  for (const post of posts) {
+    validateArticleLinks(post, resolvableLinks);
+  }
 
   const documents = new Map<string, RouteDocument>();
 
