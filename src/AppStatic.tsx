@@ -3,6 +3,9 @@ import { ScrollToHash } from "@/components/ScrollToHash";
 
 import IndexEager from "./pages/Index";
 import ServicesEager from "./pages/Services";
+import AIChatbotDevelopmentEager from "./pages/services/AIChatbotDevelopment";
+import ForwardDeployedEngineerEager from "./pages/services/ForwardDeployedEngineer";
+import CustomAISoftwareEager from "./pages/services/CustomAISoftware";
 import AboutEager from "./pages/About";
 import ContactEager from "./pages/Contact";
 import PrivacyEager from "./pages/Privacy";
@@ -30,6 +33,9 @@ export const AppRoutesStatic = () => (
     <Routes>
       <Route path="/" element={<IndexEager />} />
       <Route path="/services" element={<ServicesEager />} />
+      <Route path="/services/ai-chatbot-development" element={<AIChatbotDevelopmentEager />} />
+      <Route path="/services/forward-deployed-engineer" element={<ForwardDeployedEngineerEager />} />
+      <Route path="/services/custom-ai-software" element={<CustomAISoftwareEager />} />
       <Route path="/about" element={<AboutEager />} />
       <Route path="/contact" element={<ContactEager />} />
       <Route path="/blog" element={<BlogEager />} />

@@ -35,6 +35,9 @@ const ChatbotWidget = lazy(() =>
 // and framer-motion need a careful hydration-mismatch pass first.
 import Index from "./pages/Index";
 const Services = lazy(() => import("./pages/Services"));
+const AIChatbotDevelopment = lazy(() => import("./pages/services/AIChatbotDevelopment"));
+const ForwardDeployedEngineer = lazy(() => import("./pages/services/ForwardDeployedEngineer"));
+const CustomAISoftware = lazy(() => import("./pages/services/CustomAISoftware"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const PrivacyPolicy = lazy(() => import("./pages/Privacy"));
@@ -76,6 +79,9 @@ export const AppRoutes = () => (
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/services/ai-chatbot-development" element={<AIChatbotDevelopment />} />
+      <Route path="/services/forward-deployed-engineer" element={<ForwardDeployedEngineer />} />
+      <Route path="/services/custom-ai-software" element={<CustomAISoftware />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />

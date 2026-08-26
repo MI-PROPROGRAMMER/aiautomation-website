@@ -9,6 +9,17 @@ export type SeoRoute = {
 export const SITE_ORIGIN = "https://apexifylabs.com";
 
 /**
+ * Specialist service pages, each owning one commercial search intent. They are
+ * listed separately so routing, prerendering, sitemap generation, and the SEO
+ * validator all read the same set instead of three hand-kept copies.
+ */
+export const COMMERCIAL_SERVICE_ROUTES = [
+  "/services/ai-chatbot-development",
+  "/services/forward-deployed-engineer",
+  "/services/custom-ai-software",
+];
+
+/**
  * Indexable routes that are not derived from content. `/blog` is the post
  * index; `public/invoice-converter/index.html` is a noindex utility and is
  * deliberately absent.
@@ -16,6 +27,7 @@ export const SITE_ORIGIN = "https://apexifylabs.com";
 export const CORE_ROUTES = [
   "/",
   "/services",
+  ...COMMERCIAL_SERVICE_ROUTES,
   "/about",
   "/contact",
   "/blog",
