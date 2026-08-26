@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { ServicesSection } from "@/components/ServicesSection";
+import { SpecialistServicesSection } from "@/components/services/SpecialistServicesSection";
 import { ProcessSection } from "@/components/ProcessSection";
 import { ToolsSection } from "@/components/ToolsSection";
 import { IndustrySection } from "@/components/IndustrySection";
@@ -25,15 +26,15 @@ const Services = () => {
   return (
     <>
       <Helmet>
-        <title>Our Services - AI Solutions | ApexifyLabs</title>
+        <title>AI Automation Services | ApexifyLabs</title>
         <meta
           name="description"
-          content="Explore our comprehensive automation services: Sales & Marketing, Operations & Workflow, and Customer Support automation. Custom solutions tailored to your business needs."
+          content="AI automation services across sales, operations, and customer support — plus specialist engagements for AI chatbots, embedded delivery, and custom AI software."
         />
-        <meta property="og:title" content="Our Services - ApexifyLabs" />
+        <meta property="og:title" content="AI Automation Services - ApexifyLabs" />
         <meta
           property="og:description"
-          content="Transform your business with our comprehensive automation services across sales, operations, and customer support."
+          content="Sales, operations, and support automation, plus specialist pages for AI chatbot development, forward deployed engineering, and custom AI software."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://apexifylabs.com/services" />
@@ -138,12 +139,14 @@ const Services = () => {
               <div className="mx-auto max-w-6xl">
                 <ChapterMarker number="" label="Services" />
                 <h1 className="mt-8 max-w-5xl text-4xl font-bold leading-[1.05] text-primary-foreground sm:text-5xl md:text-7xl lg:text-8xl">
-                  We don't sell tools.
-                  <span className="block font-normal text-gradient">We deliver outcomes.</span>
+                  AI automation services
+                  <span className="block font-normal text-gradient">that deliver outcomes.</span>
                 </h1>
-                <p className="mt-10 max-w-2xl text-lg leading-relaxed text-primary-foreground/85 md:text-xl">
-                  Our automation work tackles the most time-consuming, error-prone, judgment-light tasks
-                  across your business — and gives that capacity back to your team.
+                <p className="mt-10 max-w-3xl text-lg leading-relaxed text-primary-foreground/85 md:text-xl">
+                  AI automation services cover the design, build, and upkeep of systems that take the most
+                  time-consuming, error-prone, judgment-light work off your team — across sales, operations,
+                  and customer support. We don't sell tools; we deliver the outcome, then hand over the
+                  source so you own it.
                 </p>
 
                 <div className="mt-12 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
@@ -182,6 +185,7 @@ const Services = () => {
             </div>
           </section>
 
+          <SpecialistServicesSection showHubLink={false} />
           <ServicesSection />
           <ProcessSection />
           <ToolsSection />

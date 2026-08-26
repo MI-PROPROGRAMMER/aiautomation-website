@@ -41,16 +41,25 @@ export const Hero = () => {
           </span>
         </m.div>
 
-        <m.p
-          className="mx-auto max-w-3xl text-xl leading-relaxed text-primary-foreground/90 md:text-2xl"
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+        {/*
+          The page's single <h1>. It sits here rather than on the split tagline
+          in HeroCoverOverlay because the tagline's two halves are size-locked
+          by the scroll-cut animation, and the category a buyer (or a crawler)
+          needs — "AI automation agency" — does not fit inside them.
+
+          Deliberately not an <m.h1>: a `whileInView` reveal ships the heading
+          as `opacity: 0` in the prerendered HTML and only clears it once the
+          element scrolls into view, which is not a bet worth taking on the one
+          heading of the homepage. `fontFamily: inherit` keeps the Inter face
+          the base <h1> rule would otherwise replace with the display serif.
+        */}
+        <h1
+          className="mx-auto max-w-3xl text-xl font-normal leading-relaxed tracking-normal text-primary-foreground/90 md:text-2xl"
+          style={{ fontFamily: "inherit" }}
         >
-          Custom AI automation that hands your team back
+          ApexifyLabs is an AI automation agency that hands your team back
           <span className="text-accent"> 40% of their week</span> — so they can focus on growth, strategy, and the work only humans can do.
-        </m.p>
+        </h1>
 
         <m.div
           className="flex flex-col items-center justify-center gap-4 pt-2 sm:flex-row"

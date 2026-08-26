@@ -31,25 +31,26 @@ export const HeroCoverOverlay = ({ progress }: Props) => {
   return (
     <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-6">
       {/*
-        The two headline halves and the seam between them are one <h1>: the
-        page needs a single semantic heading, and the visual split is purely
-        decorative. aria-label carries the real heading text, so the split
-        spans are hidden from assistive tech rather than announced as
-        fragments. Only phrasing content may live inside a heading, so every
-        node below is a <span>.
+        This is the brand tagline, not the page heading — the <h1> is the
+        category sentence further down the hero (see Hero.tsx), which is what
+        a search engine and a first-time reader both need.
+
+        `display-serif` supplies the Playfair face the base <h1> rule used to
+        give this block, so the rendering is unchanged. The two halves read as
+        one continuous line to assistive tech; only the decorative seam between
+        them is hidden. Only phrasing content may live here, so every node
+        below is a <span>.
       */}
-      <h1
-        aria-label="Automate the grind."
-        className="flex w-full flex-col items-center font-display text-center font-bold leading-[0.85] text-primary-foreground"
+      <p
+        className="display-serif flex w-full flex-col items-center text-center font-bold leading-[0.85] text-primary-foreground"
         style={{ maxWidth: "min(64vw, 64rem)" }}
       >
         {/* Top headline */}
         <span
-          aria-hidden="true"
           className="block tracking-[-0.04em] will-change-transform"
           style={{
             // src/index.css gives every <span> the Inter stack in @layer base, so
-            // the headline halves have to opt back into the <h1>'s display serif.
+            // the headline halves have to opt back into the tagline's display serif.
             fontFamily: "inherit",
             fontSize: "clamp(2.5rem, 9vw, 9rem)",
             transform: `translate3d(0, ${topY}vh, 0)`,
@@ -108,11 +109,10 @@ export const HeroCoverOverlay = ({ progress }: Props) => {
 
         {/* Bottom headline */}
         <span
-          aria-hidden="true"
           className="block italic tracking-[-0.04em] will-change-transform"
           style={{
             // src/index.css gives every <span> the Inter stack in @layer base, so
-            // the headline halves have to opt back into the <h1>'s display serif.
+            // the headline halves have to opt back into the tagline's display serif.
             fontFamily: "inherit",
             fontSize: "clamp(2.5rem, 9vw, 9rem)",
             transform: `translate3d(0, ${bottomY}vh, 0)`,
@@ -121,7 +121,7 @@ export const HeroCoverOverlay = ({ progress }: Props) => {
         >
           the grind.
         </span>
-      </h1>
+      </p>
     </div>
   );
 };

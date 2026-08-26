@@ -14,6 +14,11 @@ const ProblemSection = lazy(() =>
 const ServicesSection = lazy(() =>
   import("@/components/ServicesSection").then((module) => ({ default: module.ServicesSection })),
 );
+const SpecialistServicesSection = lazy(() =>
+  import("@/components/services/SpecialistServicesSection").then((module) => ({
+    default: module.SpecialistServicesSection,
+  })),
+);
 const SocialProofSection = lazy(() =>
   import("@/components/SocialProofSection").then((module) => ({ default: module.SocialProofSection })),
 );
@@ -91,10 +96,10 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>ApexifyLabs - Analyze. Automate. Apexify. | Reclaim Your Time</title>
+        <title>AI Automation Agency | ApexifyLabs</title>
         <meta
           name="description"
-          content="Custom AI automation that hands your team back 40% of their week. Trusted by 50+ businesses across five continents. Book your free automation audit today."
+          content="ApexifyLabs is an AI automation agency building custom chatbots, embedded delivery, and bespoke AI software. 50+ clients, five continents, 10,000+ hours automated."
         />
         <meta property="og:title" content="ApexifyLabs - AI Automation Agency" />
         <meta
@@ -190,6 +195,13 @@ const Index = () => {
           <div className="cv-auto">
             <Suspense fallback={null}>
               <ServicesSection />
+            </Suspense>
+          </div>
+
+          {/* Routes into the three specialist service pages. */}
+          <div className="cv-auto">
+            <Suspense fallback={null}>
+              <SpecialistServicesSection />
             </Suspense>
           </div>
 

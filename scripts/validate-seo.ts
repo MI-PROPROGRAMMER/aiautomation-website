@@ -464,6 +464,24 @@ export async function validateSeoBuild(projectRoot = process.cwd()): Promise<voi
         "dist/index.html declares an aggregateRating that visible content does not substantiate",
       );
     });
+
+    check("homepage specialist links", () => {
+      const hrefs = [...homeDoc.body.matchAll(ANCHOR_HREF_RE)].map(([, href]) => href);
+      for (const target of ["/services", ...COMMERCIAL_ROUTES]) {
+        assert.ok(hrefs.includes(target), `homepage does not link to ${target}`);
+      }
+    });
+  }
+
+  const servicesDoc = documents.get("/services");
+
+  if (servicesDoc !== undefined) {
+    check("services hub links", () => {
+      const hrefs = [...servicesDoc.body.matchAll(ANCHOR_HREF_RE)].map(([, href]) => href);
+      for (const target of COMMERCIAL_ROUTES) {
+        assert.ok(hrefs.includes(target), `/services does not link to ${target}`);
+      }
+    });
   }
 
   const notFoundHtml = await readFileOrNull(path.join(distDir, "404.html"));

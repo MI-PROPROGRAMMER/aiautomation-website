@@ -36,17 +36,14 @@ export const MobileHero = () => {
           </m.div>
 
           {/*
-            One <h1> for the whole headline — the halves and the hairline
-            between them are decorative, so aria-label carries the heading
-            text and each part animates as an aria-hidden phrasing span.
+            The brand tagline, matching the desktop hero: a <p>, not the page
+            heading. `display-serif` supplies the Playfair face that the base
+            <h1> rule used to provide. Only the hairline between the halves is
+            decorative, so only it stays aria-hidden.
           */}
-          <h1
-            aria-label="Automate the grind."
-            className="font-display font-bold leading-[0.9] text-primary-foreground"
-          >
+          <p className="display-serif font-bold leading-[0.9] text-primary-foreground">
             {/* Top headline */}
             <m.span
-              aria-hidden="true"
               className="block tracking-[-0.04em]"
               style={{ fontFamily: "inherit", fontSize: "clamp(3.25rem, 14vw, 5.5rem)" }}
               initial={{ opacity: 0, y: 16 }}
@@ -85,7 +82,6 @@ export const MobileHero = () => {
 
             {/* Bottom headline */}
             <m.span
-              aria-hidden="true"
               className="block italic tracking-[-0.04em]"
               style={{ fontFamily: "inherit", fontSize: "clamp(3.25rem, 14vw, 5.5rem)" }}
               initial={{ opacity: 0, y: 16 }}
@@ -94,19 +90,17 @@ export const MobileHero = () => {
             >
               the grind.
             </m.span>
-          </h1>
+          </p>
 
-          {/* Subtitle */}
-          <m.p
-            className="mt-8 text-base leading-relaxed text-primary-foreground/80 sm:text-lg"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+          {/* The page's single <h1> — same sentence the desktop hero carries. */}
+          <h1
+            className="mt-8 text-base font-normal leading-relaxed tracking-normal text-primary-foreground/80 sm:text-lg"
+            style={{ fontFamily: "inherit" }}
           >
-            Custom AI automation that hands your team back{" "}
+            ApexifyLabs is an AI automation agency that hands your team back{" "}
             <span className="font-semibold text-accent">40% of their week</span> — so they can focus on
             growth, strategy, and the work only humans can do.
-          </m.p>
+          </h1>
 
           {/* CTAs — stacked, full width, big touch targets */}
           <m.div

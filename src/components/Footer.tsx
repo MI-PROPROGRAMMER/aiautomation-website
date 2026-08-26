@@ -2,6 +2,24 @@ import { Mail, Linkedin, Instagram } from "lucide-react";
 import { CALENDLY_LINK, CONTACT_EMAIL, SOCIAL_LINKS } from "@/config/constants";
 import { Link } from "react-router-dom";
 
+type FooterLink = { to: string; label: string; children?: { to: string; label: string }[] };
+
+const NAVIGATE_LINKS: FooterLink[] = [
+  {
+    to: "/services",
+    label: "Services",
+    children: [
+      { to: "/services/ai-chatbot-development", label: "AI chatbot development" },
+      { to: "/services/forward-deployed-engineer", label: "Forward deployed engineer" },
+      { to: "/services/custom-ai-software", label: "Custom AI software" },
+    ],
+  },
+  { to: "/#selected-work", label: "Work" },
+  { to: "/about", label: "About" },
+  { to: "/blog", label: "Blog" },
+  { to: "/contact", label: "Contact" },
+];
+
 export const Footer = () => {
   return (
     <footer className="relative bg-[hsl(var(--footer-bg))] text-primary-foreground">
@@ -34,13 +52,7 @@ export const Footer = () => {
           <div className="md:col-span-3">
             <span className="eyebrow">Navigate</span>
             <ul className="mt-6 space-y-3">
-              {[
-                { to: "/services", label: "Services" },
-                { to: "/#selected-work", label: "Work" },
-                { to: "/about", label: "About" },
-                { to: "/blog", label: "Blog" },
-                { to: "/contact", label: "Contact" },
-              ].map((link) => (
+              {NAVIGATE_LINKS.map((link) => (
                 <li key={link.to + link.label}>
                   <Link
                     to={link.to}
@@ -48,6 +60,22 @@ export const Footer = () => {
                   >
                     {link.label}
                   </Link>
+                  {/* Specialist service pages live under Services rather than in
+                      the global header, which stays deliberately short. */}
+                  {link.children && (
+                    <ul className="mt-3 space-y-2 border-l border-primary-foreground/15 pl-4">
+                      {link.children.map((child) => (
+                        <li key={child.to}>
+                          <Link
+                            to={child.to}
+                            className="text-sm text-primary-foreground/65 transition-colors duration-200 hover:text-accent"
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
             </ul>
