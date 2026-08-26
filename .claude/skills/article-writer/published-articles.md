@@ -26,6 +26,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-08-26 — AI Chatbot vs Rule-Based Chatbot · unclassified · `ai-chatbot-vs-rule-based-chatbot`
 - 2026-08-26 — What Is a Forward Deployed Engineer (FDE)? · unclassified · `what-is-a-forward-deployed-engineer`
 - 2026-08-26 — When Vendor Invoice Matching Stalls GC AP Desks · construction · `vendor-invoice-matching-stalls-gc-ap-desks`
 - 2026-08-25 — DDP vs DAP Shipping: The DTC Cross-Border Margin Story · e-com ops · `ddp-vs-dap-shipping-dtc-cross-border-margin-story`
