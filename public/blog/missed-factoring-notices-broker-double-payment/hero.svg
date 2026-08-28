@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="0.65" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <text x="750" y="200" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="8">THE JOURNAL</text>
+
+  <text x="750" y="322" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold">One Load, Two Payees</text>
+
+  <text x="750" y="392" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="32" fill-opacity="0.9">when a carrier's factoring assignment changes mid-relationship</text>
+
+  <line x1="600" y1="440" x2="900" y2="440" stroke="#00B5E2" stroke-opacity="0.35" stroke-width="2"/>
+
+  <rect x="170" y="610" width="250" height="110" rx="8" fill="#0a3a66" fill-opacity="0.75" stroke="#5e8aa6" stroke-opacity="0.5" stroke-width="2"/>
+  <text x="295" y="655" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="21" letter-spacing="2">CARRIER INVOICE</text>
+  <text x="295" y="690" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill-opacity="0.75">one delivered load</text>
+
+  <path d="M420 665 H510 V545 H610" fill="none" stroke="#5e8aa6" stroke-opacity="0.45" stroke-width="2.5"/>
+  <path d="M420 665 H510 V785 H610" fill="none" stroke="#00B5E2" stroke-opacity="0.9" stroke-width="2.5"/>
+
+  <rect x="620" y="500" width="600" height="90" rx="8" fill="#0a3a66" fill-opacity="0.45" stroke="#5e8aa6" stroke-opacity="0.4" stroke-width="2"/>
+  <text x="650" y="536" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="2" fill-opacity="0.85">PAYEE ON FILE</text>
+  <text x="650" y="568" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill-opacity="0.6">prior factor, released weeks ago</text>
+
+  <rect x="620" y="740" width="600" height="90" rx="8" fill="#0a3a66" fill-opacity="0.85" stroke="#00B5E2" stroke-opacity="0.85" stroke-width="2"/>
+  <text x="650" y="776" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="2">CURRENT ASSIGNEE</text>
+  <text x="650" y="808" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill-opacity="0.85">notice on record, payee field unchanged</text>
+
+  <rect x="1240" y="522" width="160" height="46" rx="6" fill="#5e8aa6" fill-opacity="0.25" stroke="#5e8aa6" stroke-opacity="0.5" stroke-width="1.5"/>
+  <text x="1320" y="553" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="2" fill-opacity="0.8">PAID</text>
+
+  <rect x="1240" y="762" width="160" height="46" rx="6" fill="#00B5E2" fill-opacity="0.18" stroke="#00B5E2" stroke-opacity="0.75" stroke-width="1.5"/>
+  <text x="1320" y="793" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="2">STILL OWED</text>
+
+  <text x="930" y="672" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill-opacity="0.8">the same invoice, two claimants</text>
+
+  <text x="750" y="872" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill-opacity="0.7">UCC Article 9: payment to the wrong party may not discharge the debt</text>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
