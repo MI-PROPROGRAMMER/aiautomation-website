@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Matrix of safety records across twelve crew-days, showing which documents reached the file">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.24" r="0.6">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <g id="ok">
+      <rect width="30" height="30" rx="5" fill="#00B5E2" fill-opacity="0.85"/>
+      <path d="M8 15 L13 20.5 L22 10" fill="none" stroke="#001a36" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g id="no">
+      <rect width="30" height="30" rx="5" fill="none" stroke="#5e8aa6" stroke-width="1.6" stroke-dasharray="4 4" opacity="0.85"/>
+    </g>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.3">
+    <path d="M270 125 V875"/><path d="M580 125 V875"/><path d="M890 125 V875"/><path d="M1200 125 V875"/>
+  </g>
+
+  <g transform="translate(150,215)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="98" font-size="80" font-weight="700" fill="#ffffff">The Record Behind</text>
+    <text y="182" font-size="80" font-weight="700" fill="#ffffff">the Work</text>
+    <text y="244" font-size="36" font-weight="400" fill="#cfe5f1" opacity="0.9">a safe job and a complete file are not the same thing</text>
+  </g>
+
+  <g transform="translate(190,570)" font-family="Georgia, serif">
+    <text x="0" y="-26" font-size="14" letter-spacing="3" fill="#7fb6d6">TWELVE CREW-DAYS  ·  WHAT THE FILE CAN ACTUALLY PRODUCE</text>
+    <text x="0" y="21" font-size="17" letter-spacing="1.5" fill="#7fb6d6">TOOLBOX TALK</text>
+    <g><use href="#ok" x="330" y="0"/><use href="#ok" x="392" y="0"/><use href="#ok" x="454" y="0"/><use href="#ok" x="516" y="0"/><use href="#ok" x="578" y="0"/><use href="#ok" x="640" y="0"/><use href="#ok" x="702" y="0"/><use href="#ok" x="764" y="0"/><use href="#ok" x="826" y="0"/><use href="#ok" x="888" y="0"/><use href="#ok" x="950" y="0"/><use href="#ok" x="1012" y="0"/></g>
+    <text x="0" y="73" font-size="17" letter-spacing="1.5" fill="#7fb6d6">PRE-TASK PLAN</text>
+    <g><use href="#ok" x="330" y="52"/><use href="#ok" x="392" y="52"/><use href="#no" x="454" y="52"/><use href="#ok" x="516" y="52"/><use href="#ok" x="578" y="52"/><use href="#ok" x="640" y="52"/><use href="#no" x="702" y="52"/><use href="#ok" x="764" y="52"/><use href="#ok" x="826" y="52"/><use href="#ok" x="888" y="52"/><use href="#no" x="950" y="52"/><use href="#ok" x="1012" y="52"/></g>
+    <text x="0" y="125" font-size="17" letter-spacing="1.5" fill="#7fb6d6">SITE ORIENTATION</text>
+    <g><use href="#ok" x="330" y="104"/><use href="#no" x="392" y="104"/><use href="#ok" x="454" y="104"/><use href="#ok" x="516" y="104"/><use href="#no" x="578" y="104"/><use href="#no" x="640" y="104"/><use href="#ok" x="702" y="104"/><use href="#ok" x="764" y="104"/><use href="#no" x="826" y="104"/><use href="#no" x="888" y="104"/><use href="#ok" x="950" y="104"/><use href="#no" x="1012" y="104"/></g>
+    <text x="0" y="177" font-size="17" letter-spacing="1.5" fill="#7fb6d6">INSPECTION LOG</text>
+    <g><use href="#ok" x="330" y="156"/><use href="#ok" x="392" y="156"/><use href="#ok" x="454" y="156"/><use href="#no" x="516" y="156"/><use href="#ok" x="578" y="156"/><use href="#ok" x="640" y="156"/><use href="#ok" x="702" y="156"/><use href="#no" x="764" y="156"/><use href="#ok" x="826" y="156"/><use href="#ok" x="888" y="156"/><use href="#no" x="950" y="156"/><use href="#ok" x="1012" y="156"/></g>
+    <text x="0" y="229" font-size="17" letter-spacing="1.5" fill="#7fb6d6">CORRECTIVE ACTION</text>
+    <g><use href="#ok" x="330" y="208"/><use href="#no" x="392" y="208"/><use href="#no" x="454" y="208"/><use href="#no" x="516" y="208"/><use href="#ok" x="578" y="208"/><use href="#no" x="640" y="208"/><use href="#no" x="702" y="208"/><use href="#no" x="764" y="208"/><use href="#ok" x="826" y="208"/><use href="#no" x="888" y="208"/><use href="#no" x="950" y="208"/><use href="#no" x="1012" y="208"/></g>
+    <text x="0" y="292" font-size="13" letter-spacing="2" fill="#5e8aa6">FILLED = ON FILE   ·   DASHED = HAPPENED ON SITE, NEVER REACHED THE RECORD</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
