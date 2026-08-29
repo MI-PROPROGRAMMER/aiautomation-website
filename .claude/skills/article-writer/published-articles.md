@@ -26,6 +26,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-08-29 — How Incomplete Safety Records Cost GCs Their Next Bid List · construction · `incomplete-safety-records-cost-gcs-next-bid-list`
 - 2026-08-28 — Missed Factoring Notices Put Brokers on the Hook Twice · logistics · `missed-factoring-notices-broker-double-payment`
 - 2026-08-27 — Why Unconfirmed Supplier POs Break DTC Replenishment · e-com ops · `unconfirmed-supplier-pos-break-dtc-replenishment`
 - 2026-08-26 — AI Automation Agency vs In-House Team · unclassified · `ai-automation-agency-vs-in-house-team`
