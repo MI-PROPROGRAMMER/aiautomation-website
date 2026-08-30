@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Distribution of actual DTC order arrival days plotted against a single promised delivery date, showing the share of orders landing after the promise">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.24" cy="0.3" r="0.66">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="onTime" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="late" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#5e8aa6" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#7fb6d6" stop-opacity="0.75"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.3">
+    <path d="M0 200 H1500"/><path d="M0 400 H1500"/>
+    <path d="M0 600 H1500"/><path d="M0 800 H1500"/>
+  </g>
+
+  <g transform="translate(180,230)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="102" font-size="80" font-weight="700" fill="#ffffff">The Promised Date</text>
+    <text y="172" font-size="38" font-weight="400" fill="#cfe5f1" opacity="0.9">a forecast the storefront makes and the warehouse never sees</text>
+  </g>
+
+  <g transform="translate(180,505)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">WHEN ORDERS ACTUALLY ARRIVE, AGAINST ONE FIXED PROMISE</text>
+
+    <g transform="translate(0,40)">
+      <line x1="0" y1="200" x2="1080" y2="200" stroke="#0a3a66" stroke-width="1.5"/>
+
+      <rect x="24"  y="136" width="86" height="64"  rx="3" fill="url(#onTime)"/>
+      <rect x="140" y="88"  width="86" height="112" rx="3" fill="url(#onTime)"/>
+      <rect x="256" y="40"  width="86" height="160" rx="3" fill="url(#onTime)"/>
+      <rect x="372" y="10"  width="86" height="190" rx="3" fill="url(#onTime)"/>
+
+      <rect x="512" y="54"  width="86" height="146" rx="3" fill="url(#late)"/>
+      <rect x="628" y="106" width="86" height="94"  rx="3" fill="url(#late)"/>
+      <rect x="744" y="146" width="86" height="54"  rx="3" fill="url(#late)"/>
+      <rect x="860" y="170" width="86" height="30"  rx="3" fill="url(#late)"/>
+      <rect x="976" y="184" width="86" height="16"  rx="3" fill="url(#late)"/>
+
+      <line x1="485" y1="-16" x2="485" y2="226" stroke="#00B5E2" stroke-width="2" stroke-dasharray="6 6" opacity="0.9"/>
+      <circle cx="485" cy="-16" r="6" fill="#00B5E2"/>
+      <text x="501" y="-24" font-size="17" fill="#00B5E2">promised date shown at checkout</text>
+
+      <text x="230" y="248" font-size="16" fill="#cfe5f1" opacity="0.85" text-anchor="middle">arrived inside the window</text>
+      <text x="787" y="248" font-size="16" fill="#7fb6d6" text-anchor="middle">arrived after it, support hears first</text>
+    </g>
+
+    <g transform="translate(0,332)">
+      <rect x="0" y="-24" width="6" height="34" fill="#00B5E2" opacity="0.8"/>
+      <text x="22" y="0" font-size="19" fill="#cfe5f1" opacity="0.92">The date was set once. Inventory, routing, cutoffs and carriers kept moving.</text>
+      <text x="22" y="34" font-size="13" letter-spacing="2" fill="#5e8aa6">PADDING THE PROMISE LOSES CHECKOUTS · MISSING IT LOSES THE NEXT ORDER</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
