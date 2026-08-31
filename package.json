@@ -7,11 +7,12 @@
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
-    "vercel-build": "npm run generate:sitemap && vite build && npm run prerender && npm run validate:seo",
+    "vercel-build": "npm run generate:pricing && npm run generate:sitemap && vite build && npm run prerender && npm run validate:seo",
     "lint": "eslint .",
     "preview": "vite preview",
     "prerender": "vite build --ssr scripts/prerender.tsx --outDir dist/_ssr --minify=false && node dist/_ssr/prerender.js && rm -rf dist/_ssr",
     "generate:sitemap": "tsx scripts/generate-sitemap.ts",
+    "generate:pricing": "tsx scripts/generate-pricing-md.ts",
     "validate:seo": "tsx scripts/validate-seo.ts"
   },
   "dependencies": {

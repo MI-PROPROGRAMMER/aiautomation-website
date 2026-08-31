@@ -15,6 +15,7 @@ const NAVIGATE_LINKS: FooterLink[] = [
     ],
   },
   { to: "/#selected-work", label: "Work" },
+  { to: "/pricing", label: "Pricing" },
   { to: "/about", label: "About" },
   { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },

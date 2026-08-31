@@ -47,6 +47,7 @@ const IndustryManufacturing = lazy(() => import("./pages/industries/Manufacturin
 const IndustryRealEstate = lazy(() => import("./pages/industries/RealEstate"));
 const IndustryEducation = lazy(() => import("./pages/industries/Education"));
 const IndustrySaas = lazy(() => import("./pages/industries/Saas"));
+const Pricing = lazy(() => import("./pages/Pricing"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const PrivacyPolicy = lazy(() => import("./pages/Privacy"));
@@ -100,6 +101,7 @@ export const AppRoutes = () => (
       <Route path="/industries/real-estate" element={<IndustryRealEstate />} />
       <Route path="/industries/education" element={<IndustryEducation />} />
       <Route path="/industries/saas" element={<IndustrySaas />} />
+      <Route path="/pricing" element={<Pricing />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />

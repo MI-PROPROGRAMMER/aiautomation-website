@@ -49,6 +49,7 @@ export const CORE_ROUTES = [
   "/services",
   ...COMMERCIAL_SERVICE_ROUTES,
   ...INDUSTRY_ROUTES,
+  "/pricing",
   "/about",
   "/contact",
   "/blog",

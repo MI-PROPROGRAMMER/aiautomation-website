@@ -15,6 +15,7 @@ import IndustryManufacturingEager from "./pages/industries/Manufacturing";
 import IndustryRealEstateEager from "./pages/industries/RealEstate";
 import IndustryEducationEager from "./pages/industries/Education";
 import IndustrySaasEager from "./pages/industries/Saas";
+import PricingEager from "./pages/Pricing";
 import AboutEager from "./pages/About";
 import ContactEager from "./pages/Contact";
 import PrivacyEager from "./pages/Privacy";
@@ -54,6 +55,7 @@ export const AppRoutesStatic = () => (
       <Route path="/industries/real-estate" element={<IndustryRealEstateEager />} />
       <Route path="/industries/education" element={<IndustryEducationEager />} />
       <Route path="/industries/saas" element={<IndustrySaasEager />} />
+      <Route path="/pricing" element={<PricingEager />} />
       <Route path="/about" element={<AboutEager />} />
       <Route path="/contact" element={<ContactEager />} />
       <Route path="/blog" element={<BlogEager />} />

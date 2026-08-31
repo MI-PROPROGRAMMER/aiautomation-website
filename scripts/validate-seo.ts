@@ -48,6 +48,7 @@ const CORE_ROUTES = [
   "/services",
   ...COMMERCIAL_ROUTES,
   ...INDUSTRY_ROUTES,
+  "/pricing",
   "/about",
   "/contact",
   "/blog",

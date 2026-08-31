@@ -26,7 +26,8 @@ ApexifyLabs combines low-code platforms (Zapier, Make, n8n) with custom-coded sy
 
 ## Pricing
 
-- [Pricing (machine-readable)](https://apexifylabs.com/pricing.md): Structured pricing data for AI agents
+- [Pricing](https://apexifylabs.com/pricing): Tiers, inclusions, timelines and payment terms
+- [Pricing (machine-readable)](https://apexifylabs.com/pricing.md): Same figures as structured data for AI agents
 
 Tiers (summary):
 - Focused automation projects: starting at $2,000
