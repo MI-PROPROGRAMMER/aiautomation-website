@@ -347,6 +347,14 @@ export const getRelatedPosts = (current: BlogPost, limit = 4): BlogPost[] => {
   return [...scored, ...backfill].slice(0, limit);
 };
 
+/**
+ * Every published post belonging to a vertical, newest first. The industry
+ * pages list posts through this rather than hand-keeping slugs, so a post
+ * cannot be filed under one vertical by the taxonomy and another by a page.
+ */
+export const getPostsByVertical = (vertical: Vertical): BlogPost[] =>
+  blogPosts.filter((post) => getVertical(post.frontmatter.tags) === vertical);
+
 /** CTA copy: vertical supplies the language, service supplies the destination. */
 export const getServiceCta = (tags: string[] = []) => {
   const vertical = getVertical(tags);

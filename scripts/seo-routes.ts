@@ -20,6 +20,26 @@ export const COMMERCIAL_SERVICE_ROUTES = [
 ];
 
 /**
+ * Industry landing pages. Listed literally rather than imported from
+ * `src/content/industries` because this module is read by Node-side tooling,
+ * which cannot resolve the `@/` alias or the TSX those modules pull in.
+ * `INDUSTRY_PATHS` in that registry is the runtime counterpart; the two must
+ * stay in step, and the prerendered-route count is what catches it if they do
+ * not.
+ */
+export const INDUSTRY_ROUTES = [
+  "/industries/ecommerce",
+  "/industries/logistics",
+  "/industries/construction",
+  "/industries/healthcare",
+  "/industries/finance",
+  "/industries/manufacturing",
+  "/industries/real-estate",
+  "/industries/education",
+  "/industries/saas",
+];
+
+/**
  * Indexable routes that are not derived from content. `/blog` is the post
  * index; `public/invoice-converter/index.html` is a noindex utility and is
  * deliberately absent.
@@ -28,6 +48,7 @@ export const CORE_ROUTES = [
   "/",
   "/services",
   ...COMMERCIAL_SERVICE_ROUTES,
+  ...INDUSTRY_ROUTES,
   "/about",
   "/contact",
   "/blog",

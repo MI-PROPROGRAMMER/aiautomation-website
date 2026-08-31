@@ -6,6 +6,15 @@ import ServicesEager from "./pages/Services";
 import AIChatbotDevelopmentEager from "./pages/services/AIChatbotDevelopment";
 import ForwardDeployedEngineerEager from "./pages/services/ForwardDeployedEngineer";
 import CustomAISoftwareEager from "./pages/services/CustomAISoftware";
+import IndustryEcommerceEager from "./pages/industries/Ecommerce";
+import IndustryLogisticsEager from "./pages/industries/Logistics";
+import IndustryConstructionEager from "./pages/industries/Construction";
+import IndustryHealthcareEager from "./pages/industries/Healthcare";
+import IndustryFinanceEager from "./pages/industries/Finance";
+import IndustryManufacturingEager from "./pages/industries/Manufacturing";
+import IndustryRealEstateEager from "./pages/industries/RealEstate";
+import IndustryEducationEager from "./pages/industries/Education";
+import IndustrySaasEager from "./pages/industries/Saas";
 import AboutEager from "./pages/About";
 import ContactEager from "./pages/Contact";
 import PrivacyEager from "./pages/Privacy";
@@ -36,6 +45,15 @@ export const AppRoutesStatic = () => (
       <Route path="/services/ai-chatbot-development" element={<AIChatbotDevelopmentEager />} />
       <Route path="/services/forward-deployed-engineer" element={<ForwardDeployedEngineerEager />} />
       <Route path="/services/custom-ai-software" element={<CustomAISoftwareEager />} />
+      <Route path="/industries/ecommerce" element={<IndustryEcommerceEager />} />
+      <Route path="/industries/logistics" element={<IndustryLogisticsEager />} />
+      <Route path="/industries/construction" element={<IndustryConstructionEager />} />
+      <Route path="/industries/healthcare" element={<IndustryHealthcareEager />} />
+      <Route path="/industries/finance" element={<IndustryFinanceEager />} />
+      <Route path="/industries/manufacturing" element={<IndustryManufacturingEager />} />
+      <Route path="/industries/real-estate" element={<IndustryRealEstateEager />} />
+      <Route path="/industries/education" element={<IndustryEducationEager />} />
+      <Route path="/industries/saas" element={<IndustrySaasEager />} />
       <Route path="/about" element={<AboutEager />} />
       <Route path="/contact" element={<ContactEager />} />
       <Route path="/blog" element={<BlogEager />} />

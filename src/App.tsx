@@ -38,6 +38,15 @@ const Services = lazy(() => import("./pages/Services"));
 const AIChatbotDevelopment = lazy(() => import("./pages/services/AIChatbotDevelopment"));
 const ForwardDeployedEngineer = lazy(() => import("./pages/services/ForwardDeployedEngineer"));
 const CustomAISoftware = lazy(() => import("./pages/services/CustomAISoftware"));
+const IndustryEcommerce = lazy(() => import("./pages/industries/Ecommerce"));
+const IndustryLogistics = lazy(() => import("./pages/industries/Logistics"));
+const IndustryConstruction = lazy(() => import("./pages/industries/Construction"));
+const IndustryHealthcare = lazy(() => import("./pages/industries/Healthcare"));
+const IndustryFinance = lazy(() => import("./pages/industries/Finance"));
+const IndustryManufacturing = lazy(() => import("./pages/industries/Manufacturing"));
+const IndustryRealEstate = lazy(() => import("./pages/industries/RealEstate"));
+const IndustryEducation = lazy(() => import("./pages/industries/Education"));
+const IndustrySaas = lazy(() => import("./pages/industries/Saas"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const PrivacyPolicy = lazy(() => import("./pages/Privacy"));
@@ -82,6 +91,15 @@ export const AppRoutes = () => (
       <Route path="/services/ai-chatbot-development" element={<AIChatbotDevelopment />} />
       <Route path="/services/forward-deployed-engineer" element={<ForwardDeployedEngineer />} />
       <Route path="/services/custom-ai-software" element={<CustomAISoftware />} />
+      <Route path="/industries/ecommerce" element={<IndustryEcommerce />} />
+      <Route path="/industries/logistics" element={<IndustryLogistics />} />
+      <Route path="/industries/construction" element={<IndustryConstruction />} />
+      <Route path="/industries/healthcare" element={<IndustryHealthcare />} />
+      <Route path="/industries/finance" element={<IndustryFinance />} />
+      <Route path="/industries/manufacturing" element={<IndustryManufacturing />} />
+      <Route path="/industries/real-estate" element={<IndustryRealEstate />} />
+      <Route path="/industries/education" element={<IndustryEducation />} />
+      <Route path="/industries/saas" element={<IndustrySaas />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />

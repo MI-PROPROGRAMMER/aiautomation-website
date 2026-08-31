@@ -12,6 +12,18 @@ ApexifyLabs combines low-code platforms (Zapier, Make, n8n) with custom-coded sy
 - [Contact](https://apexifylabs.com/contact): Free 30-minute consultation booking and contact form
 - [Blog](https://apexifylabs.com/blog): Playbooks and frameworks on agentic AI, automation ROI, and AI adoption
 
+## Industries
+
+- [E-commerce & DTC](https://apexifylabs.com/industries/ecommerce): Order exceptions, returns and refunds, WISMO, multi-channel inventory
+- [Logistics & freight](https://apexifylabs.com/industries/logistics): Check calls, detention and accessorial capture, carrier vetting, freight bill audit
+- [Construction & GC](https://apexifylabs.com/industries/construction): Submittals and RFIs, pay applications, compliance documents, closeout
+- [Healthcare](https://apexifylabs.com/industries/healthcare): Scheduling, insurance verification, prior authorization, records handling
+- [Finance & accounting](https://apexifylabs.com/industries/finance): Invoice processing and matching, reconciliation, AR follow-up, reporting
+- [Manufacturing](https://apexifylabs.com/industries/manufacturing): Supply chain exception detection, quality documentation, inventory reconciliation
+- [Real estate](https://apexifylabs.com/industries/real-estate): Lead qualification and response, listings, client communication, contracts
+- [Education](https://apexifylabs.com/industries/education): Admissions and enrollment processing, applicant communication, records
+- [SaaS & software](https://apexifylabs.com/industries/saas): Lead routing, CRM hygiene, tier-one support, churn signals
+
 ## Pricing
 
 - [Pricing (machine-readable)](https://apexifylabs.com/pricing.md): Structured pricing data for AI agents
