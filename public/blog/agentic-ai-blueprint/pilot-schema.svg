@@ -1,0 +1,67 @@
+<svg width="1200" height="640" viewBox="0 0 1200 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schema of an agentic pilot: a trigger feeds an agent loop of retrieve, decide and act, which writes to the system of record, with human checkpoint, logging and rollback beneath it.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#001a36" />
+      <stop offset="1" stop-color="#00294f" />
+    </linearGradient>
+    <linearGradient id="agent" x1="380" y1="150" x2="820" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00B5E2" stop-opacity="0.22" />
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.08" />
+    </linearGradient>
+    <marker id="arw" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0 0 L10 4 L0 8 Z" fill="#00B5E2" />
+    </marker>
+  </defs>
+
+  <rect width="1200" height="640" rx="28" fill="url(#bg)" />
+
+  <text x="64" y="78" fill="#cfe5f1" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" font-weight="600" letter-spacing="3">PILOT SCHEMA</text>
+  <line x1="64" y1="100" x2="1136" y2="100" stroke="#00B5E2" stroke-opacity="0.25" stroke-width="2" />
+
+  <!-- Trigger -->
+  <rect x="64" y="188" width="216" height="140" rx="18" fill="#0a3a66" stroke="#00B5E2" stroke-opacity="0.45" stroke-width="2" />
+  <text x="172" y="246" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="27" font-weight="700">Trigger</text>
+  <text x="172" y="282" text-anchor="middle" fill="#9fc4dc" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="19">Ticket · webhook</text>
+  <text x="172" y="306" text-anchor="middle" fill="#9fc4dc" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="19">schedule</text>
+
+  <line x1="288" y1="258" x2="364" y2="258" stroke="#00B5E2" stroke-width="3" marker-end="url(#arw)" />
+
+  <!-- Agent loop -->
+  <rect x="376" y="150" width="452" height="216" rx="22" fill="url(#agent)" stroke="#00B5E2" stroke-opacity="0.55" stroke-width="2" />
+  <text x="602" y="192" text-anchor="middle" fill="#00B5E2" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="18" font-weight="700" letter-spacing="2.5">AGENT LOOP</text>
+
+  <rect x="404" y="216" width="124" height="112" rx="14" fill="#001a36" fill-opacity="0.7" stroke="#7fb6d6" stroke-opacity="0.4" />
+  <text x="466" y="270" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="21" font-weight="600">Retrieve</text>
+  <text x="466" y="298" text-anchor="middle" fill="#7fb6d6" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="16">context</text>
+
+  <rect x="540" y="216" width="124" height="112" rx="14" fill="#001a36" fill-opacity="0.7" stroke="#7fb6d6" stroke-opacity="0.4" />
+  <text x="602" y="270" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="21" font-weight="600">Decide</text>
+  <text x="602" y="298" text-anchor="middle" fill="#7fb6d6" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="16">next step</text>
+
+  <rect x="676" y="216" width="124" height="112" rx="14" fill="#001a36" fill-opacity="0.7" stroke="#7fb6d6" stroke-opacity="0.4" />
+  <text x="738" y="270" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="21" font-weight="600">Act</text>
+  <text x="738" y="298" text-anchor="middle" fill="#7fb6d6" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="16">write · notify</text>
+
+  <line x1="836" y1="258" x2="912" y2="258" stroke="#00B5E2" stroke-width="3" marker-end="url(#arw)" />
+
+  <!-- System of record -->
+  <rect x="924" y="188" width="212" height="140" rx="18" fill="#0a3a66" stroke="#00B5E2" stroke-opacity="0.45" stroke-width="2" />
+  <text x="1030" y="240" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="25" font-weight="700">System of</text>
+  <text x="1030" y="272" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="25" font-weight="700">record</text>
+  <text x="1030" y="304" text-anchor="middle" fill="#9fc4dc" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="18">CRM · ERP · TMS</text>
+
+  <!-- Guardrail band -->
+  <rect x="64" y="424" width="1072" height="148" rx="20" fill="#00B5E2" fill-opacity="0.06" stroke="#00B5E2" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="8 7" />
+  <text x="600" y="464" text-anchor="middle" fill="#00B5E2" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="18" font-weight="700" letter-spacing="2.5">GUARDRAILS — EVERY RUN</text>
+
+  <circle cx="268" cy="522" r="7" fill="#00B5E2" />
+  <text x="288" y="529" fill="#cfe5f1" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="21">Human checkpoint</text>
+
+  <circle cx="560" cy="522" r="7" fill="#00B5E2" />
+  <text x="580" y="529" fill="#cfe5f1" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="21">Full run logging</text>
+
+  <circle cx="828" cy="522" r="7" fill="#00B5E2" />
+  <text x="848" y="529" fill="#cfe5f1" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="21">Rollback plan</text>
+
+  <line x1="602" y1="366" x2="602" y2="416" stroke="#00B5E2" stroke-opacity="0.5" stroke-width="2" stroke-dasharray="6 6" />
+</svg>

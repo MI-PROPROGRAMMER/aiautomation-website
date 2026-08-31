@@ -1,0 +1,60 @@
+<svg width="1200" height="640" viewBox="0 0 1200 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sample ROI scorecard ranking four candidate workflows by automation coverage, annual hours saved and annual value, with the highest-scoring workflow marked as the pilot.">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1200" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#001a36" />
+      <stop offset="1" stop-color="#00294f" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="640" rx="28" fill="url(#bg2)" />
+
+  <text x="64" y="78" fill="#cfe5f1" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" font-weight="600" letter-spacing="3">ROI SCORECARD — SAMPLE</text>
+  <line x1="64" y1="100" x2="1136" y2="100" stroke="#00B5E2" stroke-opacity="0.25" stroke-width="2" />
+
+  <!-- Column headers -->
+  <text x="64" y="152" fill="#7fb6d6" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="17" font-weight="700" letter-spacing="1.6">CANDIDATE WORKFLOW</text>
+  <text x="596" y="152" fill="#7fb6d6" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="17" font-weight="700" letter-spacing="1.6">COVERAGE</text>
+  <text x="900" y="152" text-anchor="end" fill="#7fb6d6" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="17" font-weight="700" letter-spacing="1.6">HRS / YR</text>
+  <text x="1136" y="152" text-anchor="end" fill="#7fb6d6" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="17" font-weight="700" letter-spacing="1.6">VALUE / YR</text>
+  <line x1="64" y1="172" x2="1136" y2="172" stroke="#5e8aa6" stroke-opacity="0.35" />
+
+  <!-- Row 1 — pilot -->
+  <rect x="48" y="192" width="1104" height="86" rx="14" fill="#00B5E2" fill-opacity="0.09" />
+  <rect x="48" y="192" width="4" height="86" rx="2" fill="#00B5E2" />
+  <text x="64" y="230" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="24" font-weight="700">Order exception triage</text>
+  <text x="64" y="258" fill="#00B5E2" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="16" font-weight="700" letter-spacing="1.6">START HERE</text>
+  <rect x="596" y="222" width="232" height="14" rx="7" fill="#0a3a66" />
+  <rect x="596" y="222" width="197" height="14" rx="7" fill="#00B5E2" />
+  <text x="596" y="262" fill="#9fc4dc" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="16">85%</text>
+  <text x="900" y="240" text-anchor="end" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="24" font-weight="600">1,840</text>
+  <text x="1136" y="240" text-anchor="end" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="24" font-weight="700">$96,600</text>
+
+  <!-- Row 2 -->
+  <text x="64" y="330" fill="#cfe5f1" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="23" font-weight="600">Invoice matching</text>
+  <rect x="596" y="314" width="232" height="14" rx="7" fill="#0a3a66" />
+  <rect x="596" y="314" width="139" height="14" rx="7" fill="#00B5E2" fill-opacity="0.75" />
+  <text x="596" y="354" fill="#9fc4dc" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="16">60%</text>
+  <text x="900" y="332" text-anchor="end" fill="#cfe5f1" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="23">1,120</text>
+  <text x="1136" y="332" text-anchor="end" fill="#cfe5f1" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="23" font-weight="600">$58,800</text>
+  <line x1="64" y1="378" x2="1136" y2="378" stroke="#5e8aa6" stroke-opacity="0.2" />
+
+  <!-- Row 3 -->
+  <text x="64" y="426" fill="#cfe5f1" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="23" font-weight="600">Carrier status check calls</text>
+  <rect x="596" y="410" width="232" height="14" rx="7" fill="#0a3a66" />
+  <rect x="596" y="410" width="109" height="14" rx="7" fill="#00B5E2" fill-opacity="0.6" />
+  <text x="596" y="450" fill="#9fc4dc" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="16">47%</text>
+  <text x="900" y="428" text-anchor="end" fill="#cfe5f1" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="23">760</text>
+  <text x="1136" y="428" text-anchor="end" fill="#cfe5f1" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="23" font-weight="600">$39,900</text>
+  <line x1="64" y1="474" x2="1136" y2="474" stroke="#5e8aa6" stroke-opacity="0.2" />
+
+  <!-- Row 4 -->
+  <text x="64" y="522" fill="#9fc4dc" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="23" font-weight="600">Quarterly board reporting</text>
+  <rect x="596" y="506" width="232" height="14" rx="7" fill="#0a3a66" />
+  <rect x="596" y="506" width="42" height="14" rx="7" fill="#00B5E2" fill-opacity="0.4" />
+  <text x="596" y="546" fill="#9fc4dc" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="16">18%</text>
+  <text x="900" y="524" text-anchor="end" fill="#9fc4dc" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="23">160</text>
+  <text x="1136" y="524" text-anchor="end" fill="#9fc4dc" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="23" font-weight="600">$8,400</text>
+
+  <line x1="64" y1="566" x2="1136" y2="566" stroke="#00B5E2" stroke-opacity="0.25" stroke-width="2" />
+  <text x="64" y="600" fill="#7fb6d6" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="18">Value = baseline hours × coverage × loaded hourly rate. Illustrative figures at a $52.50 blended rate.</text>
+</svg>

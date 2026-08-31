@@ -14,9 +14,17 @@ export type BlogFrontmatter = {
   draft?: boolean;
 };
 
+/**
+ * Question/answer pairs lifted from the post's own question-form H2s at build
+ * time by the `mdx-blog-faq` Vite plugin, and used to emit FAQPage schema.
+ * Absent when a post has no heading that passes the plugin's quality gates.
+ */
+export type FaqItem = { question: string; answer: string };
+
 export type BlogPost = {
   slug: string;
   frontmatter: BlogFrontmatter;
+  faq: FaqItem[];
   Content: ComponentType<Record<string, unknown>>;
 };
 
@@ -27,6 +35,7 @@ const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 type MdxModule = {
   default: ComponentType<Record<string, unknown>>;
   frontmatter?: Partial<BlogFrontmatter> & { slug?: string };
+  faq?: FaqItem[];
 };
 
 // Vite statically analyses `import.meta.glob(...)` and rewrites the call into
@@ -92,6 +101,7 @@ export const blogPosts: BlogPost[] = Object.entries(modules)
     return {
       slug,
       frontmatter,
+      faq: module.faq ?? [],
       Content: module.default,
     };
   })

@@ -1,6 +1,30 @@
 export const SITE_URL = "https://apexifylabs.com";
 export const ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
+export const AUTHOR_ID = `${SITE_URL}/#author`;
+
+/**
+ * The byline every post carries. Attribution used to resolve to the
+ * Organization, which emits no experience signal at all — and search quality
+ * signals for operational advice lean heavily on a named human who stands
+ * behind it. Single source of truth so the visible byline and the Person node
+ * in schema can never disagree.
+ */
+export const SITE_AUTHOR = {
+  name: "Sami Raza",
+  role: "Software Developer & Technical Author",
+  bio: "Sami Raza builds AI automation for logistics, DTC, and construction operations teams at ApexifyLabs, and writes about the operational failures that automation is actually worth pointing at.",
+} as const;
+
+export const buildPerson = (): Record<string, unknown> => ({
+  "@type": "Person",
+  "@id": AUTHOR_ID,
+  name: SITE_AUTHOR.name,
+  jobTitle: SITE_AUTHOR.role,
+  description: SITE_AUTHOR.bio,
+  worksFor: { "@id": ORG_ID },
+  url: `${SITE_URL}/about`,
+});
 
 export const FAQ_ITEMS: Array<{ question: string; answer: string }> = [
   {

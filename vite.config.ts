@@ -1,6 +1,7 @@
 import { defineConfig, type Plugin } from "vite";
 import mdx from "@mdx-js/rollup";
 import remarkGfm from "remark-gfm";
+import { mdxBlogFaq } from "./scripts/mdx-blog-faq";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import fs from "node:fs";
@@ -142,6 +143,9 @@ export default defineConfig(({ isSsrBuild }) => {
       port: 8080,
     },
     plugins: [
+      // Runs before mdx() (enforce: "pre") so it can append `export const faq`
+      // to each post's source and let MDX compile it like any other export.
+      mdxBlogFaq(),
       mdx({
         extension: /\.mdx?$/,
         // remark-gfm enables GitHub-Flavored Markdown features in MDX:

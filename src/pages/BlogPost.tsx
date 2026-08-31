@@ -4,14 +4,23 @@ import { Button } from "@/components/ui/button";
 import { getPostBySlug } from "@/content/blog/posts";
 import { MDXProvider } from "@mdx-js/react";
 import { format } from "date-fns";
-import { Calendar, Clock, Tag } from "lucide-react";
+import { Calendar, Clock, PenLine } from "lucide-react";
 import { SharePopover } from "@/components/blog/SharePopover";
 import type { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 import { Helmet } from "react-helmet";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { ChapterMarker } from "@/components/ui/editorial";
 import { JsonLd } from "@/components/JsonLd";
-import { buildBreadcrumbs, ORG_ID, SITE_URL } from "@/lib/seo";
+import { RelatedPosts } from "@/components/blog/RelatedPosts";
+import { ServiceCTA } from "@/components/blog/ServiceCTA";
+import {
+  buildBreadcrumbs,
+  buildFAQPage,
+  buildPerson,
+  ORG_ID,
+  SITE_AUTHOR,
+  SITE_URL,
+} from "@/lib/seo";
 
 const mdxComponents = {
   a: ({ href, ...props }: ComponentPropsWithoutRef<"a">) => {
@@ -48,11 +57,9 @@ const mdxComponents = {
   ),
 };
 
-// Every published post is bylined to the company, not to a person. Schema.org
-// author must then resolve to the Organization node rather than inventing a
-// Person that no page on the site backs up. A real human byline stays possible:
-// any other author string still emits a Person, and giving that person their own
-// profile page is a later editorial change.
+// Legacy company byline. Posts still carrying it fall back to the site author
+// rather than resolving authorship to the Organization, which emitted no
+// experience signal at all.
 const ORG_AUTHOR_NAME = "ApexifyLabs Team";
 
 const BlogPost = () => {
@@ -65,10 +72,13 @@ const BlogPost = () => {
 
   const {
     frontmatter: { title, excerpt, heroImage, date, updated, tags, author, readingTime, seoDescription },
+    faq,
     Content,
   } = post;
 
-  const isOrgAuthor = author === undefined || author === ORG_AUTHOR_NAME;
+  const authorName =
+    !author || author === ORG_AUTHOR_NAME ? SITE_AUTHOR.name : author;
+  const isSiteAuthor = authorName === SITE_AUTHOR.name;
   const formattedDate = format(new Date(date), "MMMM d, yyyy");
   const canonicalUrl = `https://apexifylabs.com/blog/${post.slug}`;
 
@@ -93,7 +103,8 @@ const BlogPost = () => {
           content={heroImage.startsWith("http") ? heroImage : `${SITE_URL}${heroImage}`}
         />
         <meta property="article:published_time" content={new Date(date).toISOString()} />
-        {author && <meta property="article:author" content={author} />}
+        <meta property="article:author" content={authorName} />
+        <meta name="author" content={authorName} />
         {tags?.map((tag) => (
           <meta property="article:tag" content={tag} key={tag} />
         ))}
@@ -116,7 +127,7 @@ const BlogPost = () => {
           description: seoDescription ?? excerpt,
           datePublished: new Date(date).toISOString(),
           dateModified: new Date(updated ?? date).toISOString(),
-          author: isOrgAuthor ? { "@id": ORG_ID } : { "@type": "Person", name: author },
+          author: isSiteAuthor ? buildPerson() : { "@type": "Person", name: authorName },
           publisher: { "@id": ORG_ID },
           image: heroImage.startsWith("http") ? heroImage : `${SITE_URL}${heroImage}`,
           url: canonicalUrl,
@@ -132,6 +143,14 @@ const BlogPost = () => {
           { name: title, url: canonicalUrl },
         ])}
       />
+
+      {/*
+        FAQ pairs are lifted from this article's own question-form H2s at build
+        time, so every answer is text the reader can see on the page. Posts
+        whose headings do not produce a clean standalone answer emit nothing
+        rather than padding the markup.
+      */}
+      {faq.length > 0 && <JsonLd data={buildFAQPage(faq)} />}
 
       <div className="min-h-screen bg-background">
         <Header />
@@ -158,21 +177,15 @@ const BlogPost = () => {
                       <Calendar size={14} />
                       {formattedDate}
                     </span>
-                    {author && (
-                      <span className="smallcaps inline-flex items-center gap-2">
-                        <Tag size={14} />
-                        {isOrgAuthor ? (
-                          <Link
-                            to="/about"
-                            className="cursor-pointer underline decoration-primary-foreground/25 underline-offset-4 transition-colors duration-200 hover:text-accent"
-                          >
-                            {author}
-                          </Link>
-                        ) : (
-                          author
-                        )}
-                      </span>
-                    )}
+                    <span className="smallcaps inline-flex items-center gap-2">
+                      <PenLine size={14} />
+                      <Link
+                        to="/about"
+                        className="cursor-pointer underline decoration-primary-foreground/25 underline-offset-4 transition-colors duration-200 hover:text-accent"
+                      >
+                        {authorName}
+                      </Link>
+                    </span>
                     {readingTime && (
                       <span className="smallcaps inline-flex items-center gap-2">
                         <Clock size={14} />
@@ -225,7 +238,35 @@ const BlogPost = () => {
                         <Content />
                       </MDXProvider>
                     </div>
+
+                    {isSiteAuthor && (
+                      <div className="mt-12 flex gap-4 border-t border-white/[0.08] pt-8">
+                        <span
+                          aria-hidden="true"
+                          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent/15 font-display text-base font-bold text-accent"
+                        >
+                          {SITE_AUTHOR.name
+                            .split(" ")
+                            .map((part) => part[0])
+                            .join("")}
+                        </span>
+                        <div>
+                          <p className="font-display text-base font-bold text-primary-foreground">
+                            {SITE_AUTHOR.name}
+                          </p>
+                          <p className="smallcaps mt-0.5 text-[0.65rem] text-accent/85">
+                            {SITE_AUTHOR.role}
+                          </p>
+                          <p className="mt-3 text-sm leading-relaxed text-primary-foreground/65">
+                            {SITE_AUTHOR.bio}
+                          </p>
+                        </div>
+                      </div>
+                    )}
                   </div>
+
+                  <ServiceCTA tags={tags} />
+                  <RelatedPosts post={post} />
                 </div>
               </div>
             </section>
