@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="0.65" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="risk" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.28"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <text x="750" y="200" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="8">THE JOURNAL</text>
+
+  <text x="750" y="322" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold">Cleared Before the Line</text>
+
+  <text x="750" y="392" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="32" fill-opacity="0.9">where cross-border truckload delays are really made</text>
+
+  <line x1="600" y1="440" x2="900" y2="440" stroke="#00B5E2" stroke-opacity="0.35" stroke-width="2"/>
+
+  <rect x="880" y="560" width="300" height="180" fill="url(#risk)"/>
+  <text x="1030" y="546" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="21" letter-spacing="2" fill-opacity="0.9">PACKET STILL OPEN</text>
+
+  <line x1="160" y1="660" x2="1340" y2="660" stroke="#5e8aa6" stroke-opacity="0.55" stroke-width="3"/>
+
+  <line x1="1230" y1="560" x2="1230" y2="800" stroke="#00B5E2" stroke-opacity="0.8" stroke-width="3" stroke-dasharray="14 12"/>
+  <text x="1230" y="836" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="3">THE CROSSING</text>
+
+  <circle cx="230" cy="660" r="13" fill="#0a3a66" stroke="#7fb6d6" stroke-opacity="0.8" stroke-width="3"/>
+  <text x="230" y="622" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="23" fill-opacity="0.85">load booked</text>
+  <text x="230" y="708" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill-opacity="0.65">documents promised</text>
+
+  <circle cx="600" cy="660" r="13" fill="#0a3a66" stroke="#7fb6d6" stroke-opacity="0.8" stroke-width="3"/>
+  <text x="600" y="622" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="23" fill-opacity="0.85">invoice, manifest, entry</text>
+  <text x="600" y="708" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill-opacity="0.65">three parties, one packet</text>
+
+  <circle cx="900" cy="660" r="13" fill="#0a3a66" stroke="#7fb6d6" stroke-opacity="0.8" stroke-width="3"/>
+  <text x="900" y="622" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="23" fill-opacity="0.85">dispatch</text>
+  <text x="900" y="708" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill-opacity="0.65">last chance to fix it cheaply</text>
+
+  <circle cx="1230" cy="660" r="15" fill="#00B5E2" fill-opacity="0.25" stroke="#00B5E2" stroke-opacity="0.95" stroke-width="3"/>
+
+  <text x="1030" y="782" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill-opacity="0.75">the delay is made here, not at the border</text>
+
+  <text x="750" y="884" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill-opacity="0.7">advance manifest, entry release, commercial documents: all due before arrival</text>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
