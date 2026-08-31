@@ -25,10 +25,29 @@ const COMMERCIAL_ROUTES = [
   "/services/custom-ai-software",
 ];
 
+/**
+ * Industry landing pages. Kept as a literal here, like COMMERCIAL_ROUTES: this
+ * validator deliberately re-derives the route list rather than importing
+ * scripts/seo-routes.ts, so that a route added in one place and forgotten in
+ * the other is caught rather than mirrored.
+ */
+const INDUSTRY_ROUTES = [
+  "/industries/ecommerce",
+  "/industries/logistics",
+  "/industries/construction",
+  "/industries/healthcare",
+  "/industries/finance",
+  "/industries/manufacturing",
+  "/industries/real-estate",
+  "/industries/education",
+  "/industries/saas",
+];
+
 const CORE_ROUTES = [
   "/",
   "/services",
   ...COMMERCIAL_ROUTES,
+  ...INDUSTRY_ROUTES,
   "/about",
   "/contact",
   "/blog",
