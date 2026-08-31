@@ -3,6 +3,12 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.apexifylabs.com" }],
+      "destination": "https://apexifylabs.com/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.apexifylabs.com" }],
       "destination": "https://apexifylabs.com/:path*",
