@@ -8,6 +8,8 @@ import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { Button } from "@/components/ui/button";
 import { BentoTile, ChapterMarker } from "@/components/ui/editorial";
+import { ArticleNetwork } from "./ArticleNetwork";
+import { clusterPosts } from "@/content/industries/clusters";
 import type { IndustryPageContent } from "@/content/industries/types";
 import { SERVICES, getPostsByVertical } from "@/lib/blog-taxonomy";
 import { ORG_ID, SITE_URL, buildBreadcrumbs, buildFAQPage } from "@/lib/seo";
@@ -305,23 +307,11 @@ export const IndustryPageLayout = ({ content }: { content: IndustryPageContent }
                 heading={`Written on ${content.name.toLowerCase()} operations.`}
                 intro={`${posts.length} articles on the specific failures this industry runs into, and what changes when they are automated.`}
               />
-              <ul className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.08] sm:grid-cols-2">
-                {posts.map((post) => (
-                  <li key={post.slug} className="bg-[hsl(var(--section-alt))]">
-                    <Link
-                      to={`/blog/${post.slug}`}
-                      className="group flex h-full cursor-pointer flex-col gap-2 p-6 transition-colors duration-200 hover:bg-white/[0.03]"
-                    >
-                      <span className="font-display text-lg font-bold leading-snug text-primary-foreground transition-colors duration-200 group-hover:text-accent">
-                        {post.frontmatter.title}
-                      </span>
-                      <span className="text-sm leading-relaxed text-primary-foreground/65">
-                        {post.frontmatter.excerpt}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <ArticleNetwork
+                hub={content.name}
+                clusters={clusterPosts(content.vertical!, posts)}
+                totalPosts={posts.length}
+              />
             </Section>
           )}
 
