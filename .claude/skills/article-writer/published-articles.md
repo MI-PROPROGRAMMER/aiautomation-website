@@ -14,7 +14,7 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Self-coined "[noun] gap"** branding — already used once ("the follow-up gap"), do not coin another.
 - **Phrase "never says no — just goes silent"** in any form.
 - **Title shape "[Topic], Before and After [AI]"** — used twice (spot-load carrier sourcing, freight check calls). Pick a different shape next.
-- **Title shape "[X] vs [Y]"** — used three times across the recent 5 (agency vs in-house, AI vs rule-based chatbot, DDP vs DAP). Heavily saturated. Do not use again until it clears the recent-5 window, even for a strong exact-match query.
+- **Title shape "[X] Cost(s) [Y] [Z]"** — used twice in the recent window (incomplete safety records, delivery promise dates). Rest it for the next few articles.
 
 ## Title-shape diversity rule
 
@@ -26,6 +26,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-09-01 — When GC Crews Build From an Outdated Drawing Set · construction · `gc-crews-build-from-outdated-drawing-sets`
 - 2026-08-31 — Cross-Border Freight: The Paperwork Dwell Brokers Absorb · logistics · `cross-border-paperwork-dwell-freight-brokers`
 - 2026-08-30 — Delivery Promise Dates and the DTC Cost of Missing Them · e-com ops · `delivery-promise-dates-dtc-cost-of-missing-them`
 - 2026-08-29 — How Incomplete Safety Records Cost GCs Their Next Bid List · construction · `incomplete-safety-records-cost-gcs-next-bid-list`
