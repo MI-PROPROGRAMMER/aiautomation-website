@@ -14,6 +14,7 @@ const NAVIGATE_LINKS: FooterLink[] = [
       { to: "/services/custom-ai-software", label: "Custom AI software" },
     ],
   },
+  { to: "/industries", label: "Industries" },
   { to: "/#selected-work", label: "Work" },
   { to: "/pricing", label: "Pricing" },
   { to: "/about", label: "About" },

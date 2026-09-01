@@ -14,6 +14,7 @@ ApexifyLabs combines low-code platforms (Zapier, Make, n8n) with custom-coded sy
 
 ## Industries
 
+- [All industries](https://apexifylabs.com/industries): Index of the nine industries we cover
 - [E-commerce & DTC](https://apexifylabs.com/industries/ecommerce): Order exceptions, returns and refunds, WISMO, multi-channel inventory
 - [Logistics & freight](https://apexifylabs.com/industries/logistics): Check calls, detention and accessorial capture, carrier vetting, freight bill audit
 - [Construction & GC](https://apexifylabs.com/industries/construction): Submittals and RFIs, pay applications, compliance documents, closeout

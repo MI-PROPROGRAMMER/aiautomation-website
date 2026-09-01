@@ -15,7 +15,6 @@ import { RelatedPosts } from "@/components/blog/RelatedPosts";
 import { ServiceCTA } from "@/components/blog/ServiceCTA";
 import {
   buildBreadcrumbs,
-  buildFAQPage,
   buildPerson,
   ORG_ID,
   SITE_AUTHOR,
@@ -72,7 +71,6 @@ const BlogPost = () => {
 
   const {
     frontmatter: { title, excerpt, heroImage, date, updated, tags, author, readingTime, seoDescription },
-    faq,
     Content,
   } = post;
 
@@ -145,12 +143,10 @@ const BlogPost = () => {
       />
 
       {/*
-        FAQ pairs are lifted from this article's own question-form H2s at build
-        time, so every answer is text the reader can see on the page. Posts
-        whose headings do not produce a clean standalone answer emit nothing
-        rather than padding the markup.
+        FAQPage markup for this post is emitted by scripts/prerender.tsx, not
+        here: helmet strips tags the client no longer declares, and `faq` is an
+        SSR-only export.
       */}
-      {faq.length > 0 && <JsonLd data={buildFAQPage(faq)} />}
 
       <div className="min-h-screen bg-background">
         <Header />

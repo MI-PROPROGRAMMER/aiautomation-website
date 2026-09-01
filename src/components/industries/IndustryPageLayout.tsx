@@ -69,7 +69,7 @@ export const IndustryPageLayout = ({ content }: { content: IndustryPageContent }
       <JsonLd
         data={buildBreadcrumbs([
           { name: "Home", url: `${SITE_URL}/` },
-          { name: "Industries", url: `${SITE_URL}/services` },
+          { name: "Industries", url: `${SITE_URL}/industries` },
           { name: content.name, url: pageUrl },
         ])}
       />

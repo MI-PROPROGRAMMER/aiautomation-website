@@ -38,6 +38,7 @@ const Services = lazy(() => import("./pages/Services"));
 const AIChatbotDevelopment = lazy(() => import("./pages/services/AIChatbotDevelopment"));
 const ForwardDeployedEngineer = lazy(() => import("./pages/services/ForwardDeployedEngineer"));
 const CustomAISoftware = lazy(() => import("./pages/services/CustomAISoftware"));
+const Industries = lazy(() => import("./pages/Industries"));
 const IndustryEcommerce = lazy(() => import("./pages/industries/Ecommerce"));
 const IndustryLogistics = lazy(() => import("./pages/industries/Logistics"));
 const IndustryConstruction = lazy(() => import("./pages/industries/Construction"));
@@ -92,6 +93,7 @@ export const AppRoutes = () => (
       <Route path="/services/ai-chatbot-development" element={<AIChatbotDevelopment />} />
       <Route path="/services/forward-deployed-engineer" element={<ForwardDeployedEngineer />} />
       <Route path="/services/custom-ai-software" element={<CustomAISoftware />} />
+      <Route path="/industries" element={<Industries />} />
       <Route path="/industries/ecommerce" element={<IndustryEcommerce />} />
       <Route path="/industries/logistics" element={<IndustryLogistics />} />
       <Route path="/industries/construction" element={<IndustryConstruction />} />

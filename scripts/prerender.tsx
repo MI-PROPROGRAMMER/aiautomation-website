@@ -13,6 +13,8 @@ import Beasties from "beasties";
 // `import.meta.glob` undefined and blog routes silently render <Navigate />.
 import { AppRoutesStatic } from "../src/AppStatic";
 import { getIndexableRoutes } from "./seo-routes";
+import { getPostBySlug } from "../src/content/blog/posts";
+import { buildFAQPage } from "../src/lib/seo";
 
 // __dirname differs between dev (tsx → scripts/) and prod (Vite SSR build →
 // dist/_ssr/). process.cwd() is the project root in both flows because
@@ -190,6 +192,25 @@ function toRenderError(route: string, error: unknown) {
   return new Error(`Prerender failed for ${route}: ${String(error)}`);
 }
 
+/**
+ * FAQPage markup for a blog route, emitted without react-helmet.
+ *
+ * main.tsx mounts with createRoot, not hydrateRoot, so the client re-renders
+ * from scratch and helmet removes every tag it manages that the client no
+ * longer declares. The post's `faq` export exists only in the SSR graph (see
+ * scripts/mdx-blog-faq.ts), so a helmet-rendered FAQPage survived in the file
+ * and was then deleted in the browser — invisible to anything that renders the
+ * page, Googlebot included. Emitting it in <body> after #root keeps it outside
+ * both owners: helmet clears the head, React replaces #root, neither touches
+ * this. JSON-LD is valid anywhere in the document.
+ */
+function faqTag(route: string): string {
+  if (!route.startsWith("/blog/")) return "";
+  const faq = getPostBySlug(route.slice("/blog/".length))?.faq ?? [];
+  if (faq.length === 0) return "";
+  return `<script type="application/ld+json">${JSON.stringify(buildFAQPage(faq))}</script>`;
+}
+
 async function renderRoute(route: string): Promise<string> {
   const appHtml = await renderAppToHtml(route);
 
@@ -220,6 +241,10 @@ async function renderRoute(route: string): Promise<string> {
 
   const headTags = `${helmet.title.toString()}${helmet.meta.toString()}${helmet.link.toString()}${helmet.script.toString()}`;
   html = html.replace("<!-- SSR_HEAD_OUTLET -->", headTags);
+
+  // Placed after </div id=root> rather than in <head>: react-helmet clears
+  // JSON-LD from the head on client render, and React only owns #root.
+  html = html.replace("</body>", `${faqTag(route)}</body>`);
 
   return html;
 }

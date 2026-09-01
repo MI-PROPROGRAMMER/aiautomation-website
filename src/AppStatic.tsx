@@ -6,6 +6,7 @@ import ServicesEager from "./pages/Services";
 import AIChatbotDevelopmentEager from "./pages/services/AIChatbotDevelopment";
 import ForwardDeployedEngineerEager from "./pages/services/ForwardDeployedEngineer";
 import CustomAISoftwareEager from "./pages/services/CustomAISoftware";
+import IndustriesEager from "./pages/Industries";
 import IndustryEcommerceEager from "./pages/industries/Ecommerce";
 import IndustryLogisticsEager from "./pages/industries/Logistics";
 import IndustryConstructionEager from "./pages/industries/Construction";
@@ -46,6 +47,7 @@ export const AppRoutesStatic = () => (
       <Route path="/services/ai-chatbot-development" element={<AIChatbotDevelopmentEager />} />
       <Route path="/services/forward-deployed-engineer" element={<ForwardDeployedEngineerEager />} />
       <Route path="/services/custom-ai-software" element={<CustomAISoftwareEager />} />
+      <Route path="/industries" element={<IndustriesEager />} />
       <Route path="/industries/ecommerce" element={<IndustryEcommerceEager />} />
       <Route path="/industries/logistics" element={<IndustryLogisticsEager />} />
       <Route path="/industries/construction" element={<IndustryConstructionEager />} />

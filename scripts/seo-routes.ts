@@ -28,6 +28,7 @@ export const COMMERCIAL_SERVICE_ROUTES = [
  * not.
  */
 export const INDUSTRY_ROUTES = [
+  "/industries",
   "/industries/ecommerce",
   "/industries/logistics",
   "/industries/construction",

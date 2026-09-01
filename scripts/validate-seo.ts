@@ -32,6 +32,7 @@ const COMMERCIAL_ROUTES = [
  * the other is caught rather than mirrored.
  */
 const INDUSTRY_ROUTES = [
+  "/industries",
   "/industries/ecommerce",
   "/industries/logistics",
   "/industries/construction",
