@@ -1,0 +1,99 @@
+export const frontmatter = {
+  title: "When GC Crews Build From an Outdated Drawing Set",
+  excerpt:
+    "A revision is issued Tuesday and a crew installs to an older sheet Thursday. On mid-size GC jobs the tear-out is booked as rework before anyone asks why.",
+  date: "2026-09-01",
+  author: "Sami Raza",
+  tags: ["Construction", "Document Control", "GC Operations", "AI Automation"],
+  heroImage: "/blog/gc-crews-build-from-outdated-drawing-sets/hero.svg",
+  seoDescription:
+    "Superseded drawings still reach GC field crews and the tear-out gets coded as rework. What the miss costs, and what changes when distribution keeps up.",
+  readingTime: "4 min read",
+};
+
+When a general contractor's field crew builds to a superseded drawing, the work is usually correct against the sheet in their hands and wrong against the one in the project file. The tear-out gets coded as rework. The real failure happened earlier, at distribution, when the current revision did not reach the person holding the tool.
+
+## Why does a superseded drawing still reach the field?
+
+Not because anyone ignored a bulletin. Revisions get issued properly and still fail to land, in patterns that repeat across mid-size GCs regardless of how good the project management platform is.
+
+1. **The revision lands in the office, not in the gang box.** The PM receives it, files it correctly, and reviews it against the scopes on their radar this week. The scope being installed tomorrow morning by a two-person crew on level four was not on that radar.
+2. **The change arrives as narrative before it arrives as a sheet.** An architect's supplemental instruction or a bulletin describes the change in prose. The reissued sheet follows days or weeks later. Work continues in the interval, and the interval is where the exposure sits.
+3. **An answered RFI changes the design before it changes the drawing.** The response says to relocate the sleeve. Everyone in the RFI thread now knows. Nobody outside it does, and the drawing set still shows the original location until the next issuance.
+4. **Subcontractors carry their own copies.** The sub's foreman printed a set at mobilization, marked it up, and has been working from it since. It was the correct set the week it came off the printer.
+5. **Partial reissues read like full ones.** Six sheets change out of a forty-sheet package. A crew that pulls the package assumes the sheets that did not change did not change for their scope either, and sometimes a dimension moved on an adjacent detail.
+6. **Paper is still faster at 6:30 a.m.** Mobile drawing access on jobsites is genuinely good now. It is also slower than a taped-up sheet when your hands are dirty and the connection at the core is unreliable. The taped-up sheet has no revision cloud on it.
+
+None of this is negligence. It is what happens when the current revision has to travel through several handoffs to reach a crew whose job is to keep production moving.
+
+## What does building to the wrong revision actually cost?
+
+The bill depends almost entirely on how late the miss is caught, and the curve is steep.
+
+| Where the miss is caught | What it takes to correct | Who absorbs it |
+|---|---|---|
+| Same shift, before the work sets | A conversation and an hour of lost production | Foreman |
+| Before the following trade arrives | Selective demo and reinstall of one scope | Sub, then a backcharge argument |
+| After a following trade covers it | Two scopes torn out to reach one, plus resequencing | GC schedule, several subs |
+| At inspection or commissioning | Correction under a hold, with the inspector's return trip on the critical path | GC schedule, owner milestone |
+| At owner walkthrough | Correction inside the turnover window, on overtime | GC margin, almost entirely |
+| At closeout | An as-built that does not match the field, resolved in documentation | GC, and the owner's facilities team for years |
+
+Only the first two rows feel like a field problem at the time. The rest get logged as schedule slip, as backcharge disputes, or as closeout drag, which is why the underlying pattern rarely shows up in a single line on a job cost report.
+
+Industry estimates put the aggregate number high. FMI and PlanGrid's Construction Disconnected study attributed roughly $31.3 billion in US rework in 2018 to poor project data and miscommunication. FMI and Autodesk's 2021 data study put avoidable rework tied to bad data at about $88 billion in the US the prior year, alongside a finding that construction professionals spend around 13% of their working hours simply looking for project data and information. The UK's Get It Right Initiative has estimated that avoidable error costs around 5% of project cost directly, and materially more once indirect and latent costs are counted.
+
+Those are industry figures, not yours. The useful version is the one your own last three jobs would produce, and most GCs have never counted it, because rework caused by a stale drawing gets coded the same way as rework caused by a bad install.
+
+## Is this a document control problem or a distribution problem?
+
+Worth separating, because GCs who conflate the two buy the wrong fix.
+
+Document control is mostly solved. Nearly every mid-size GC runs a platform that holds the current set, stamps revisions, and maintains a clean history. The set in the system is correct. Audits of the system pass.
+
+Distribution is the open problem. The question that matters is not whether the current revision exists in the system. It is whether the specific person about to install a specific assembly knows that the sheet governing their work changed since the last time they looked at it, and knows it before the material is set rather than after.
+
+That is a different shape of problem. It is high frequency, exception heavy, and it depends on knowing what each crew is working on this week, which is exactly the kind of operational context that generic notifications do not carry. Sending every revision to everyone solves nothing: crews stop reading the notifications by week three, and a foreman who receives forty updates a month is functionally receiving zero.
+
+## What changes when the current revision is the only one in a crew's hands?
+
+The pattern GCs describe after fixing this is that revision handling stops being a broadcast and starts being a targeted interruption of a very small number of people.
+
+| Dimension | How it usually runs | How it runs when distribution keeps up |
+|---|---|---|
+| Who gets told about a revision | Everyone on a distribution list, or the PM alone | The crews whose current and next-week scope touches the changed area |
+| What they get told | A package name and a revision number | Which detail moved, on which sheet, affecting which assembly |
+| Timing | When the reissued package is published | When the change is known, including the interval between the bulletin and the sheet |
+| RFI answers | Live in the RFI thread until the next issuance | Flagged against the affected drawing area as soon as they are answered |
+| Subcontractor sets | Whatever the sub printed and marked up | Verified against the current revision before the scope starts |
+| Field verification | Assumed, discovered later | Acknowledged per crew, per changed area |
+| Rework classification | Coded generically as rework | Traceable to the revision that was not received |
+
+The last row is the most valuable one. Once you can attribute rework to a specific distribution failure, it stops being a general cost of doing business and becomes a number with a cause, which is the point at which it can be argued about with a sub, a designer, or an owner.
+
+The part that takes real design work is the middle of that table: deciding which changed areas of a revision are relevant to which crews and scopes in the current lookahead, and escalating only those. Get that wrong in the permissive direction and you have rebuilt the broadcast list nobody reads. Get it wrong in the restrictive direction and you have a silent miss with a confident audit trail. That judgment is where this work lives, and it is specific to how your projects are sequenced and how your subs actually operate.
+
+## Four checks worth running on the job you are building now
+
+A short diagnostic that costs an afternoon and no consultant:
+
+1. Walk the site and pick three posted or printed drawing sets at random. How many are the current revision? Not close to current: current.
+2. Pull your last five answered RFIs that changed a dimension, a location, or a material. For each, name the crew that had to know and confirm they knew before the work was installed.
+3. Take the last job you closed. How much of the rework line can you attribute to a specific cause, and how much is uncategorised?
+4. From bulletin receipt to a foreman knowing about it, what is the actual elapsed time on your current job? Measure it once rather than estimating it.
+
+If the answers are uncomfortable, the exposure is real and it is measurable. That is a better position than most GCs are in, because the cost is usually invisible rather than absent.
+
+## What this will not fix
+
+It will not reduce the number of revisions a design team issues. On a fast-tracked job that number is going to be high, and treating it as a failure of the architect is a conversation that goes nowhere useful.
+
+It will not remove the need for competent superintendents and foremen who read drawings carefully. It makes their attention land on the right sheets rather than spending it on discovery.
+
+And it will not retroactively help with the rework already installed on a job in progress. That is a field conversation, not a systems one.
+
+## Where we come in
+
+We work with mid-size general contractors who suspect their rework line has a distribution problem inside it but have never been able to size it. The first thing we do is measure the actual pattern on your recent jobs: how revisions travel, where they stop, and which scopes they stop short of. Whether automation earns its keep here depends on your trade mix, how your lookahead is maintained, and how much of your set already lives in one system.
+
+If any of the four checks above landed badly, a **completely free automation audit** is a reasonable hour to spend. We map where revisions are stalling, what it is plausibly costing per job, and what would have to change for the field to always be building to the current sheet. No commitment, no slide deck. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>
