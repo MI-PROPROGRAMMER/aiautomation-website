@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Remaining shelf life of four inventory lots shown as horizontal bars against a vertical channel minimum-remaining-life threshold, with two lots already below the threshold">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.26" r="0.68">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="safeLot" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.32"/>
+    </linearGradient>
+    <linearGradient id="riskLot" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7fb6d6" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#5e8aa6" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.28">
+    <path d="M0 220 H1500"/><path d="M0 440 H1500"/>
+    <path d="M0 660 H1500"/><path d="M0 880 H1500"/>
+  </g>
+
+  <g transform="translate(180,230)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="102" font-size="84" font-weight="700" fill="#ffffff">The Lot Clock</text>
+    <text y="172" font-size="38" font-weight="400" fill="#cfe5f1" opacity="0.9">a date the stock report has no column for</text>
+  </g>
+
+  <g transform="translate(180,490)" font-family="Georgia, serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">REMAINING SHELF LIFE PER LOT, AGAINST WHAT THE CHANNEL WILL ACCEPT</text>
+
+    <g transform="translate(0,40)">
+      <g font-size="16" fill="#cfe5f1" opacity="0.75">
+        <text x="0" y="24">LOT 4471</text>
+        <text x="0" y="86">LOT 4488</text>
+        <text x="0" y="148">LOT 4503</text>
+        <text x="0" y="210">LOT 4510</text>
+      </g>
+
+      <g opacity="0.35" stroke="#0a3a66" stroke-width="1">
+        <path d="M120 0 H1080"/><path d="M120 62 H1080"/>
+        <path d="M120 124 H1080"/><path d="M120 186 H1080"/>
+      </g>
+
+      <rect x="120" y="2"   width="832" height="30" rx="3" fill="url(#safeLot)"/>
+      <rect x="120" y="64"  width="411" height="30" rx="3" fill="url(#safeLot)"/>
+      <rect x="120" y="126" width="163" height="30" rx="3" fill="url(#riskLot)"/>
+      <rect x="120" y="188" width="64"  height="30" rx="3" fill="url(#riskLot)"/>
+
+      <line x1="360" y1="-30" x2="360" y2="248" stroke="#00B5E2" stroke-width="2" stroke-dasharray="6 6" opacity="0.9"/>
+      <circle cx="360" cy="-30" r="6" fill="#00B5E2"/>
+      <text x="378" y="-38" font-size="17" fill="#00B5E2">channel minimum remaining life</text>
+
+      <line x1="120" y1="248" x2="1080" y2="248" stroke="#0a3a66" stroke-width="1.5"/>
+      <g font-size="15" fill="#5e8aa6">
+        <text x="120" y="274">today</text>
+        <text x="600" y="274" text-anchor="middle">+180 days</text>
+        <text x="1080" y="274" text-anchor="end">+360 days</text>
+      </g>
+
+      <text x="300" y="147" font-size="15" fill="#7fb6d6">already ineligible somewhere</text>
+      <text x="200" y="209" font-size="15" fill="#7fb6d6">liquidation is the only option left</text>
+    </g>
+
+    <g transform="translate(0,340)">
+      <rect x="0" y="-24" width="6" height="34" fill="#00B5E2" opacity="0.8"/>
+      <text x="22" y="0" font-size="19" fill="#cfe5f1" opacity="0.92">The stock report shows one quantity per SKU. The dates sit in four separate lots.</text>
+      <text x="22" y="32" font-size="13" letter-spacing="2" fill="#5e8aa6">CAUGHT EARLY IT IS A MARGIN DECISION · CAUGHT LATE IT IS A WRITE-OFF</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>

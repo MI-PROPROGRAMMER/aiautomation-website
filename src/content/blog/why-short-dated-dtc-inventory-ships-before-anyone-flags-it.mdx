@@ -1,0 +1,94 @@
+export const frontmatter = {
+  title: "Why Short-Dated DTC Inventory Ships Before Anyone Flags It",
+  excerpt:
+    "Expiry dates live in lot records the storefront never reads. On consumable DTC brands the shelf-life clock surfaces as a write-off, not a decision.",
+  date: "2026-09-02",
+  author: "ApexifyLabs Team",
+  tags: ["E-commerce", "DTC", "Order Ops", "Inventory", "AI Automation"],
+  heroImage: "/blog/why-short-dated-dtc-inventory-ships-before-anyone-flags-it/hero.svg",
+  seoDescription:
+    "Why short-dated stock slips past DTC inventory systems, what a late-caught lot costs across channels, and what changes when the expiry clock is watched.",
+  readingTime: "4 min read",
+};
+
+Short-dated inventory is stock that will reach its expiry or best-before date before it can reasonably sell. On most consumable DTC brands nobody owns that clock. It sits inside lot records the storefront never reads, and it usually surfaces as a marketplace rejection, a customer complaint, or a write-off at quarter close.
+
+## What counts as short-dated inventory in a DTC catalog?
+
+Any brand shipping something a customer consumes carries this exposure: supplements, skincare and colour cosmetics, food and beverage, pet nutrition, and most over-the-counter goods. The unifying feature is that a unit is not simply in stock. It is in stock until a date, for a specific channel.
+
+That last clause is the part most inventory systems have no way to express. Every sales channel a consumable brand touches applies its own minimum remaining shelf life at the point of receipt, and those thresholds differ from one another.
+
+Amazon's published FBA requirements for expiration-dated products set a minimum remaining shelf life at the fulfillment center, with units below it subject to removal or disposal at the seller's cost. European grocery buying has long run on the two-thirds convention, under which roughly two-thirds of a product's total life must remain when it is delivered. Wholesale purchase orders from North American retail buyers routinely carry a minimum-remaining-life clause negotiated per account.
+
+So a single lot can be perfectly saleable on the brand's own site, marginal for a wholesale order, and already ineligible for a marketplace inbound shipment, all on the same morning. The stock report shows one number for all three.
+
+## Why does the expiry clock go unwatched until it is too late?
+
+Not because anyone is careless. Because the date and the decision live in different systems, and nothing sits between them.
+
+Inventory is counted at SKU level; expiry exists at lot level. A mid-size brand's stock system almost always tracks quantity by SKU and location. The lot code and its date live somewhere else: a receiving record at the third-party logistics provider, a spreadsheet from the co-manufacturer, or a printed carton in a rack. Two lots of the same SKU with nine months of life between them appear on the report as one quantity.
+
+Pick sequencing follows receipt order, not date order. First-in-first-out is the common default, and it is a reasonable proxy right up until it is not. A late-arriving lot with a short production run, a returned pallet, or a second supplier with a different manufacturing date breaks the assumption. First-expiry-first-out requires a date the picking system can sort on, which requires the date to be in the system at all.
+
+Velocity moves after the lot arrives. A lot is only short-dated relative to how fast the SKU actually sells. When a promotion ends, a paid channel gets more expensive, or a hero SKU cools off, comfortable cover turns into an expiry problem without anything visibly changing in the warehouse.
+
+Nobody's role covers it. The demand planner watches sell-through, the customer experience lead watches tickets, the 3PL watches throughput, and finance sees the consequence at close. It is a genuinely cross-functional number, which is another way of saying it belongs to no one.
+
+## What does a late-caught lot actually cost?
+
+Four costs, and only the first one gets discussed.
+
+**The write-off.** Units are destroyed or donated at full landed cost, after the brand has already paid for goods, inbound freight, duty, and storage. It is the most expensive possible moment to discover the problem.
+
+**The recovery discount.** A lot flagged four months out has options that cost very little: a bundle, an email segment, a subscription allocation, a wholesale account with a lower threshold. The same lot flagged three weeks out has one option, which is liquidation at or near cost, often through a channel that competes with full-price demand.
+
+**Channel friction.** A rejected marketplace inbound means removal or disposal fees plus freight in both directions. A short-dated wholesale delivery means a chargeback and a conversation with a buyer whose next order is not guaranteed. The National Retail Federation's National Retail Security Survey has placed total retail shrink at roughly 1.6 percent of sales, and while theft dominates that figure, damage and expiry sit inside the same line for most operators.
+
+**Customer trust.** A customer opening a jar with two months of life left on a product they expected to use for six does not file a support ticket about lot management. They leave a review, request a refund, and do not reorder.
+
+Worth sizing, even roughly. Take a brand carrying $1.4M of consumable inventory at landed cost. If three percent of it crosses a channel threshold before it sells, that is about $42,000 a year, most of it recoverable at a much smaller discount if it were seen earlier. That is arithmetic rather than a benchmark, but it is the arithmetic most consumable brands have never run, and the shape of the answer tends to surprise people.
+
+The wider context is not encouraging either. ReFED's ongoing analysis of United States food waste has put annual surplus food in the tens of millions of tons, with a substantial share arising in retail and distribution rather than in homes. Date-driven waste is a structural feature of consumable supply chains, not an occasional accident.
+
+## SKU-level stock control versus lot-aware stock control
+
+The comparison below is not about replacing the planning team. What to promote, which accounts to protect, and when to take a margin hit stay firmly human decisions. What changes is whether those decisions get made with time on the clock.
+
+| Dimension | SKU-level stock control | Lot-aware, date-driven control |
+|---|---|---|
+| Unit of record | Quantity per SKU and location | Quantity per lot, with its own expiry date |
+| Pick sequencing | First-in-first-out by receipt | First-expiry-first-out by actual date |
+| Channel eligibility | One availability number for every channel | Availability evaluated per channel threshold |
+| Velocity | Reviewed on a planning cycle | Compared continuously against days of life remaining |
+| Escalation trigger | A rejection, a complaint, or quarter close | A lot crossing a threshold weeks ahead of it |
+| Recovery options | Liquidation, because time has run out | Bundling, allocation, or a planned promotion |
+| Inbound to marketplaces | Discovered at the receiving dock | Screened before the shipment is built |
+| Financial visibility | A write-off line after the fact | A forecastable exposure figure |
+| Feedback loop | None; the next lot repeats it | Each expiry event refines the next forecast |
+
+The important point is that the AI-assisted version is not being clever about chemistry or shelf life. It is reconciling a date attribute, a velocity curve, and a set of per-channel rules that currently live in three systems which were never introduced to each other. That is continuous work, at a cadence and volume no planner can sustain by hand.
+
+## Three signs a consumable brand is carrying unpriced shelf-life risk
+
+1. **Nobody can state, today, how many units will cross a channel threshold in the next 90 days.** Not total inventory value, not units on hand: units that will become ineligible somewhere, and when. If that number requires a warehouse visit to produce, it is not being managed.
+2. **Expiry losses appear as a quarter-close adjustment.** A write-off discovered by finance is a report. A lot flagged in week six of its life is a decision. The same dollars behave completely differently depending on which one it was.
+3. **Removal fees and short-date chargebacks are filed as routine admin.** These are usually absorbed by whoever handles the account, one at a time, never aggregated. Summed across a year they are often the clearest available estimate of what the blind spot costs.
+
+Any single one of these is normal. All three together generally mean the catalog is being managed as though nothing in it has a date on it.
+
+## What changes when the expiry clock is watched continuously?
+
+The first change is that exposure becomes a forecast rather than a discovery. Remaining days of life set against current velocity produces a simple, forward-looking figure: which lots will not sell in time, and by how much. That is a number the team can act on while acting is still cheap.
+
+The second is that intervention moves earlier, which is the entire economic argument. The difference between a lot caught at 120 days and the same lot caught at 20 is rarely a difference in effort. It is the difference between a modest margin concession and a total loss.
+
+The third is that channel routing becomes deliberate. Short-dated stock has natural homes: subscription shipments that will be consumed quickly, bundles, accounts with lower thresholds. Sending it there on purpose is a margin decision. Sending it there by accident is a chargeback.
+
+None of this shows up as a single savings line. It appears as a shrinking write-off line, fewer inbound rejections, and a planning team that stops finding out about its inventory from a customer review.
+
+## The pitch
+
+If your stock report shows one number per SKU and the expiry dates live at the 3PL, that gap is worth mapping as a workflow in its own right. In our experience it is seldom one broken system. It is the lot record, the velocity signal, and the channel rules sitting in three places, with a person expected to hold all three in their head at once.
+
+If that sounds like your inventory desk, we run a **completely free automation audit** for DTC ops teams that want a second opinion before committing to anything. No obligation, no slide deck. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>
