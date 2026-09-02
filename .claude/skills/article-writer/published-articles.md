@@ -26,6 +26,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-09-02 — Why Short-Dated DTC Inventory Ships Before Anyone Flags It · e-com ops · `why-short-dated-dtc-inventory-ships-before-anyone-flags-it`
 - 2026-09-01 — When GC Crews Build From an Outdated Drawing Set · construction · `gc-crews-build-from-outdated-drawing-sets`
 - 2026-08-31 — Cross-Border Freight: The Paperwork Dwell Brokers Absorb · logistics · `cross-border-paperwork-dwell-freight-brokers`
 - 2026-08-30 — Delivery Promise Dates and the DTC Cost of Missing Them · e-com ops · `delivery-promise-dates-dtc-cost-of-missing-them`
