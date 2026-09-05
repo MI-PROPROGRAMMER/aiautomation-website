@@ -1,0 +1,93 @@
+export const frontmatter = {
+  title: "Shorter FBA Claim Windows Outpace DTC Reconciliation",
+  excerpt:
+    "Amazon cut most FBA reimbursement claim windows from 18 months to 60 days. A monthly reconciliation cadence no longer fits inside the deadline.",
+  date: "2026-09-05",
+  author: "ApexifyLabs Team",
+  tags: ["E-commerce", "DTC", "Order Ops", "Marketplace", "AI Automation"],
+  heroImage: "/blog/shorter-fba-claim-windows-outpace-dtc-reconciliation/hero.svg",
+  seoDescription:
+    "Amazon's FBA claim window fell from 18 months to 60 days. What that does to DTC marketplace reconciliation, and what continuous claim monitoring changes.",
+  readingTime: "4 min read",
+};
+
+Amazon shortened most FBA inventory reimbursement claim windows from 18 months to 60 days in October 2024, then moved lost-inventory reimbursement to a manufacturing-cost basis in March 2025. For DTC brands reconciling marketplace inventory monthly or quarterly, the deadline now closes before the review that would have caught the discrepancy.
+
+## What actually changed in Amazon's FBA reimbursement policy?
+
+Two changes, roughly five months apart, and they pull in different directions.
+
+The first landed on 23 October 2024. Amazon reduced the eligibility window for most FBA inventory reimbursement claim types from 18 months down to 60 days. Alongside it, Amazon began proactively reimbursing sellers for units lost during fulfillment center operations, issuing the credit when the item is reported lost rather than waiting for a seller to file. Amazon's stated rationale for the shorter window was that more than 90 percent of claims were already being submitted within 60 days of an item being reported lost or damaged.
+
+The second landed on 10 March 2025. For inventory lost or damaged **before** a customer places an order, reimbursement is now calculated on the seller's product manufacturing cost: what it cost to source the item from a manufacturer, wholesaler or reseller, excluding shipping, handling, customs duties and similar costs. Units lost or damaged **after** a customer order are unaffected and still reimburse against sale price less applicable fees.
+
+Read together, those two facts describe a narrower opening and a smaller prize behind it. Neither change is unreasonable on Amazon's side. Both take for granted that the seller is operating on a weekly rhythm.
+
+## Why does a 60-day window break a reconciliation cadence that used to work?
+
+Because 18 months forgave cadence and 60 days does not.
+
+Under the old window, an ops team could reconcile marketplace inventory at quarter close, or annually alongside a physical count, and still land comfortably inside the eligibility period. Cadence was a preference. It is now the binding constraint, for four reasons that compound.
+
+**The clock starts on Amazon's event date, not on the brand's discovery date.** Sixty days sounds generous until you subtract the lag between the event and the report that surfaces it. If a discrepancy occurs in the first week of a month, the ops review happens at close, and the reconciled report reaches a human ten days later, roughly half the window is spent before anyone has looked at anything.
+
+**There is no single deadline to diary.** Different claim categories run on different clocks. Fulfillment center losses, customer return shortfalls, removal shipments and inbound receiving discrepancies each carry their own counting rule and their own start event, and published guidance on the exact figures is not consistent across sources. A single monthly reconciliation day cannot align with four independent clocks, so it aligns with none of them.
+
+**The documentation burden rose at the same time.** Claims now expect supporting evidence: purchase invoices, proof of sourcing cost, shipment and tracking records. Assembling that per claim takes days, and those days come out of the same 60.
+
+**Automation absorbed the easy half, leaving the sharp half.** Proactive reimbursement for fulfillment center losses removed a meaningful volume of routine filing. What remains on the manual desk is the residue: the cases that need judgement, evidence and speed at once. The surface got smaller and harder, which is the opposite of what a periodic sweep is good at.
+
+Worth being clear about the framing here. This is not a diligence problem. Most ops teams filing late are filing correctly. They are filing on a monthly rhythm against a clock that stopped waiting for them.
+
+## What does the manufacturing-cost basis change about the economics?
+
+It changes whether chasing a claim by hand is worth the hour it takes.
+
+Seller-tool vendors analysing the March 2025 change have estimated that reimbursement values on pre-order losses fall by something in the range of 40–60 percent versus the previous sale-price basis, with the largest reductions on high-margin products. That estimate comes from practitioners rather than from Amazon, so treat it as a direction rather than a precise figure. The direction is not really in dispute: the wider the gap between a brand's landed cost and its retail price, the more the basis change costs it.
+
+The operational consequence is subtle and matters more than the headline. A manual claims desk has a roughly fixed cost per claim, because the work is dominated by locating evidence rather than by the size of the number. When the recoverable amount per claim halves, a fixed-cost desk crosses a threshold: a growing share of legitimate claims stop being worth a person's time, and get abandoned rather than declined. The money is still owed. It just stops being economic to collect the way the team currently collects it.
+
+There is a second exposure that arrives with proactive reimbursement. When Amazon calculates and issues the credit, the quantity and the basis are set by Amazon. If nobody on the brand's side reconciles the credit against what was actually lost, the number is accepted by default. A credit that arrives without being asked for is easy to treat as good news rather than as a figure to check.
+
+## Periodic reconciliation versus continuous claim monitoring
+
+The comparison below is not an argument for removing the person. Which claims to pursue, which discrepancies signal a supplier problem, and when to escalate to account management stay human calls. What changes is whether those calls get made while the window is still open.
+
+| Dimension | Periodic reconciliation | Continuous claim monitoring |
+|---|---|---|
+| Trigger | The calendar close | The discrepancy event itself |
+| Clock tracked | One assumed deadline | Each claim type, counted from its own start event |
+| Latency to discovery | 30–90 days | Same week |
+| Evidence | Assembled retrospectively, under time pressure | Attached when the event is first recorded |
+| Proactive reimbursements | Accepted as issued | Checked against expected quantity and basis |
+| Coverage | Sampled; largest discrepancies first | Every event, ranked by value and days remaining |
+| Effort per recovered dollar | Rises as claim values fall | Broadly flat regardless of claim size |
+| What expires | Whatever the sweep did not reach | Nothing without a decision |
+| Finance view | An occasional, lumpy credit | A forecastable receivable with an expiry date |
+| Pattern detection | None; next quarter repeats it | Recurring sources become visible |
+
+The point of the right-hand column is not cleverness. Nothing in it requires a model to be smart about Amazon policy. It requires a set of events, a set of counting rules, and a set of evidence records to be held together continuously, at a volume and cadence a person cannot sustain by hand while also doing their actual job.
+
+## Three signs marketplace claims are expiring unfiled
+
+1. **Nobody can state today how many open discrepancies sit within 14 days of their deadline.** Not total discrepancy value, not units unaccounted for: how many claimable events are about to become unclaimable, and when. If producing that number takes a day of work, the number is already unmanaged.
+2. **Reimbursement income is lumpy rather than predictable.** A recovery line that appears in some months and not others usually reflects when somebody had time, not when discrepancies occurred. Discrepancies occur at a fairly steady rate. Recoveries should look similar.
+3. **Proactive reimbursements are reconciled against nothing.** If credits from Amazon are posted to the ledger without anyone comparing quantity and basis to the underlying loss, the brand has accepted a counterparty's arithmetic on its own inventory.
+
+Any one of these on its own is normal. All three together generally mean the claims process is running on a cadence the policy no longer supports.
+
+## What changes when the window is watched instead of the calendar?
+
+Recovery stops being a discovery and becomes a receivable. Open claimable events, their value, and the days left on each are a forward-looking figure that finance can forecast and ops can prioritise, which is a different conversation from an unexpected credit.
+
+Effort shifts from finding to deciding. When evidence is captured at the moment of the event rather than reconstructed sixty days later, the expensive part of the work disappears, and the fixed cost per claim that made small claims uneconomic comes down with it.
+
+The pattern underneath becomes visible, which is often worth more than the claims. Discrepancies are rarely uniform. They cluster around particular inbound lanes, prep partners, case configurations or SKUs. Seen one at a time across a quarter, that clustering is invisible. Seen continuously, it turns into a supplier conversation or a packaging change, which prevents the loss rather than recovering a fraction of it.
+
+None of this shows up as a single savings line, and it is not confined to one marketplace. Every channel a brand sells through operates its own claim windows and its own evidence rules, on its own clocks. The exposure scales with the number of channels, which is exactly the direction most DTC brands are moving.
+
+## The pitch
+
+If your marketplace reconciliation happens at close and your reimbursement line is uneven month to month, the gap between those two facts is worth mapping as a workflow. In our experience the problem is rarely one broken report. It is an event record, a counting rule and an evidence trail sitting in three places, with a person expected to hold all three in their head while the clock runs.
+
+If that sounds like your ops desk, we run a **completely free automation audit** for DTC teams that want a second opinion before committing to anything. No obligation, no slide deck. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book yours</a>

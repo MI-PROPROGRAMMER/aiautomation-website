@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="0.65" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="oldwin" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <text x="750" y="200" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="8">THE JOURNAL</text>
+
+  <text x="750" y="322" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold">Eighteen Months to Sixty Days</text>
+
+  <text x="750" y="392" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="32" fill-opacity="0.9">the reimbursement window closed faster than the recon cycle</text>
+
+  <line x1="600" y1="440" x2="900" y2="440" stroke="#00B5E2" stroke-opacity="0.35" stroke-width="2"/>
+
+  <text x="280" y="552" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="21" letter-spacing="3" fill-opacity="0.85">BEFORE OCTOBER 2024</text>
+  <rect x="280" y="576" width="960" height="46" fill="url(#oldwin)" stroke="#00B5E2" stroke-opacity="0.45" stroke-width="2"/>
+  <text x="1216" y="607" text-anchor="end" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill-opacity="0.9">18 MONTHS TO FILE</text>
+
+  <text x="280" y="692" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="21" letter-spacing="3" fill-opacity="0.85">AFTER OCTOBER 2024</text>
+  <rect x="280" y="716" width="960" height="46" fill="none" stroke="#5e8aa6" stroke-opacity="0.55" stroke-width="2" stroke-dasharray="7 6"/>
+  <rect x="280" y="716" width="107" height="46" fill="#00B5E2" fill-opacity="0.85"/>
+  <text x="407" y="747" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill-opacity="0.9">60 DAYS</text>
+
+  <line x1="560" y1="700" x2="560" y2="800" stroke="#00B5E2" stroke-opacity="0.65" stroke-width="2" stroke-dasharray="6 6"/>
+  <circle cx="560" cy="739" r="13" fill="#00B5E2" fill-opacity="0.28" stroke="#00B5E2" stroke-opacity="0.95" stroke-width="3"/>
+  <text x="596" y="747" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="23" fill-opacity="0.88">month close, plus the report lag</text>
+
+  <line x1="280" y1="800" x2="1240" y2="800" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2"/>
+  <text x="280" y="832" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill-opacity="0.75">event date</text>
+  <text x="1240" y="832" text-anchor="end" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill-opacity="0.75">old deadline</text>
+
+  <text x="750" y="868" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill-opacity="0.7">same discrepancy, same team, a window roughly one ninth as wide</text>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
