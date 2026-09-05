@@ -27,6 +27,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-09-05 — Shorter FBA Claim Windows Outpace DTC Reconciliation · e-com ops · `shorter-fba-claim-windows-outpace-dtc-reconciliation`
 - 2026-09-04 — Sub Manpower Shortfalls Nobody Sees Until Friday · construction · `sub-manpower-shortfalls-nobody-sees-until-friday`
 - 2026-09-03 — Empty Miles Are a Brokerage Problem, Not a Carrier One · logistics · `empty-miles-brokerage-problem-not-carrier`
 - 2026-09-02 — Why Short-Dated DTC Inventory Ships Before Anyone Flags It · e-com ops · `why-short-dated-dtc-inventory-ships-before-anyone-flags-it`
