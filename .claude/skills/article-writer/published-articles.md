@@ -14,7 +14,6 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Self-coined "[noun] gap"** branding — already used once ("the follow-up gap"), do not coin another.
 - **Phrase "never says no — just goes silent"** in any form.
 - **Title shape "[Topic], Before and After [AI]"** — used twice (spot-load carrier sourcing, freight check calls). Pick a different shape next.
-- **Title shape "[X] Cost(s) [Y] [Z]"** — used twice in the recent window (incomplete safety records, delivery promise dates). Rest it for the next few articles.
 - **Delayed-discovery title construction ("Nobody Sees Until [X]", "Before Anyone Flags It")** — used twice inside the most recent 5 (sub manpower shortfalls, short-dated DTC inventory). Rest it; the late-discovery idea can still drive the body, just not the title.
 
 ## Title-shape diversity rule
@@ -27,6 +26,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-09-06 — Power-Only Freight: The Trailer Turns That Set Margin · logistics · `power-only-freight-trailer-turns-set-margin`
 - 2026-09-05 — Shorter FBA Claim Windows Outpace DTC Reconciliation · e-com ops · `shorter-fba-claim-windows-outpace-dtc-reconciliation`
 - 2026-09-04 — Sub Manpower Shortfalls Nobody Sees Until Friday · construction · `sub-manpower-shortfalls-nobody-sees-until-friday`
 - 2026-09-03 — Empty Miles Are a Brokerage Problem, Not a Carrier One · logistics · `empty-miles-brokerage-problem-not-carrier`
