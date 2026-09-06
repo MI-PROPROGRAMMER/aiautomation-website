@@ -1,0 +1,104 @@
+export const frontmatter = {
+  title: "Power-Only Freight: The Trailer Turns That Set Margin",
+  excerpt:
+    "Drop trailer programs move the waiting from the driver to the trailer. The driver's wait is metered and billable. The trailer's wait usually is not.",
+  date: "2026-09-06",
+  author: "ApexifyLabs Team",
+  tags: ["Logistics", "Freight Brokerage", "AI Automation", "Power-Only"],
+  heroImage: "/blog/power-only-freight-trailer-turns-set-margin/hero.svg",
+  seoDescription:
+    "Power-only margin depends on trailer turns, not rate. Here is where a brokerage trailer pool loses turns, and what an AI-assisted view of position changes.",
+  readingTime: "5 min read",
+};
+
+Power-only freight looks like an asset-light win: the brokerage supplies the tractor, the driver stops waiting at the dock, and contract volume gets easier to hold. The economics turn on trailer turns. Most mid-size brokerages running a pool cannot say how many turns theirs are producing, which means the program's margin is being set by a number nobody sees.
+
+## What is power-only freight, and why did brokerages add it?
+
+Power-only is a brokered move where the tractor and driver come from the carrier network but the trailer does not. The trailer belongs to the brokerage, or is leased by it, or is borrowed from the shipper's pool. Freight sits in it before a truck ever shows up, and a driver hooks a loaded trailer instead of waiting through a live load.
+
+Brokerages added these programs for a straightforward reason: drop-and-hook wins contract freight that spot coverage cannot. Shippers with high-volume docks want the wait taken off their yard, and they are willing to award routing guide position to whoever removes it.
+
+The wait they are trying to remove is expensive and well documented. A 2018 US Department of Transportation Office of Inspector General report on driver detention estimated that detention reduced driver earnings by roughly $1.1 billion to $1.3 billion a year and cut carrier net income by an estimated $250 million to $302 million. That is the problem drop trailer programs were built to solve, and they do solve it.
+
+What changes is who holds the waiting. In a live load, the driver waits, and the clock is visible to everyone because detention is billable in hours. In a drop program, the trailer waits, and nothing about that wait is metered.
+
+## Why does a trailer pool behave differently from a truck?
+
+Because a truck announces itself and a trailer does not.
+
+A tractor under dispatch has a driver, an hours of service clock, a phone, and a rate confirmation attached to it. Under FMCSA rules a property-carrying driver gets 11 hours of driving inside a 14 hour on-duty window, so the asset is always being counted by someone with a reason to count it. If a truck goes missing for a day, three people notice.
+
+A trailer has none of that. It has a number stenciled on the side, a last known yard, and whatever a driver remembered to tell dispatch. It generates no messages, misses no appointments, and does not call in. A trailer parked in the wrong corner of a shipper's yard for eleven days produces exactly as much operational noise as one that turned four times in the same period, which is to say none.
+
+Carriers who built their networks around drop-and-hook understand this and price for it. Public fleet disclosures generally show these operations running multiple trailers per tractor, in the low single digits, precisely because trailers spend a large share of their life stationary by design. The ratio is not waste. It is the cost of the model, and it only works when the turns are counted.
+
+Most brokerages inherited the model without inheriting the counting. The pool grew one committed account at a time, the trailers came from three different sources, and the tracking discipline that a fleet would have built in year one never got built at all.
+
+## Where does the margin on a power-only program actually leak?
+
+Not in the rate. The rate on power-only freight is usually negotiated carefully, because it is contract business and someone senior signed it. The leak is in everything the rate assumes.
+
+| Assumption in the pricing | What often happens instead | Where it lands |
+|---|---|---|
+| Each trailer turns N times a month | Turns vary by account and nobody aggregates them | Cost per load quietly rises above the modeled figure |
+| Trailers are at the yards the plan says | Position is a memory, refreshed when a driver mentions it | Repositioning moves that were never priced |
+| The shipper loads within the agreed window | Trailers sit loaded for days with no clock running | Working capital tied up, no accessorial billed |
+| Empty trailers return to the pool | Empties accumulate where inbound freight ended | Chronic shortage in one market, surplus in another |
+| The pool is sized correctly | Sizing is checked when a shortage becomes visible | Emergency leases and turned-down tenders |
+| Damage is caught at handoff | Damage surfaces at the next load or the next audit | Repair cost with no attributable party |
+
+Read that table as one pattern rather than six problems. Every row is the same failure: a fact about a physical asset that exists somewhere in the operation but not anywhere a decision gets made.
+
+That is worth saying plainly because it changes what kind of problem this is. This is not a discipline problem or a people problem. The information genuinely exists. It is scattered across driver texts, gate logs, yard checks, TMS notes and a spreadsheet someone maintains on Fridays, and no human being can hold the aggregate in their head while also covering freight.
+
+## What does one idle trailer cost per week?
+
+The honest answer is that it depends on your lease terms, and the useful answer is that the carrying cost is the small half.
+
+Start with the part that is easy to see. A trailer sitting idle still carries its lease or depreciation, its registration, and its insurance. Whatever your monthly figure is, divide it by the turns it actually produced, not the turns it was supposed to.
+
+Then price the part that does not appear on any invoice. A trailer missing from the pool is a load you cover with something else, or do not cover at all. ATRI's Analysis of the Operational Costs of Trucking put the average marginal cost of operating a truck at $2.27 per mile in 2023, so a repositioning move that exists only because the empty ended up in the wrong market is real spend against zero revenue, and it recurs on that lane until something changes.
+
+Then there is the part that is worst and slowest. Power-only awards are contract commitments with service expectations attached. A tender you decline because no trailer is available in that market does not read to the shipper as a trailer problem. It reads as a coverage failure, and it is scored that way in the routing guide at the next review.
+
+One number is worth calculating before anything else: cost per turn, by account, over the last quarter. Not cost per trailer, and not margin per load. Most desks find that two or three accounts are carrying the program's economics while one is quietly consuming trailers, and until the turns are counted per account, the strong ones subsidize the weak one indefinitely.
+
+## Manual trailer pool tracking vs an AI-assisted view
+
+The difference is not sophistication. It is whether the position of the pool is a live fact or a reconstructed one.
+
+| Question the desk asks | Typical manual pool | AI-assisted view |
+|---|---|---|
+| Where are my trailers right now? | Last known yard, from whenever someone last mentioned it | Current position assembled from the signals the operation already produces |
+| Which trailers are loaded and waiting? | Discovered when a shipper calls about a pickup | Loaded dwell is visible while it is still short |
+| How many turns did account X produce? | Reconstructed at quarter end, if anyone asks | A standing number per account, per month |
+| Do I have equipment for tomorrow's tenders? | A judgment call by whoever covers that region | Available equipment matched against committed volume |
+| Is the pool the right size? | Revisited after a shortage costs a load | Sized against demonstrated turns rather than the original estimate |
+| Who had the trailer when it was damaged? | Unclear, so the brokerage absorbs it | Chain of custody exists because position was continuous |
+
+Nothing in the right-hand column decides anything. It does not negotiate a lease, choose which shipper gets a trailer during a crunch, or judge whether an account is worth keeping. Those are ops decisions and they should stay with the people who own the accounts. What changes is that those decisions stop being made from a picture that is several days old.
+
+## Three counts worth running before the next drop trailer commitment
+
+You can size this on last quarter's data without starting a project.
+
+1. **Turns per trailer, by account.** Count completed loads per trailer over ninety days and split them by the account the trailer was committed to. The spread between your best and worst account is usually wider than anyone on the desk expects, and it is the whole argument.
+2. **Loaded dwell.** For any load you can reconstruct, measure the hours between the trailer being loaded and being pulled. Live loads make this visible automatically. Drop programs hide it, which is why the long tail lives here.
+3. **Empty distribution against tender volume.** Put a count of empties by market beside your committed tender volume by market. Where those two lists disagree, you are paying to reposition equipment or declining freight you already promised to cover.
+
+Individually these are diagnostics. Together they usually show the same thing: the program is profitable on average and losing money in one specific corner nobody has isolated.
+
+## What changes when trailer position stops being a memory?
+
+The visible change is that trailers stop going missing. Equipment that has been sitting for a week in a yard that was supposed to be a two-day stop is something the desk knows about while the week is still recoverable, not at the quarterly review.
+
+The quieter changes matter more over a year. Pool sizing becomes an argument with evidence behind it rather than a negotiation between the person who wants more trailers and the person who signs the leases. Cost per turn becomes comparable across accounts, so pricing the next power-only award starts from what the last one actually produced. Repositioning moves shrink because empties stop accumulating unnoticed in markets with no outbound freight. And declined tenders on committed accounts become rare enough to be worth investigating individually, which is the point at which a routing guide position starts to hold.
+
+None of that requires more trailers. It requires knowing where the ones you have are, while the information is still worth something.
+
+## The pitch
+
+If your power-only program is priced on turns nobody has counted since the account was won, or if trailer position lives in a spreadsheet that is accurate on Friday afternoon and stale by Monday, the margin question is almost never the rate. It is how much of your pool is working this week and how much is parked.
+
+We map where a specific brokerage is losing trailer turns, how much of the tracking work is pure information movement, and which parts should stop depending on a driver remembering to mention something. If that sounds like your yard, we run a **completely free automation audit** for freight brokerages. No commitment, no slide deck, just an honest read on where the turns are going. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="0.65" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="yard" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.02"/>
+    </linearGradient>
+
+    <g id="trailerActive">
+      <rect x="0" y="0" width="160" height="66" rx="4" fill="#00B5E2" fill-opacity="0.20" stroke="#00B5E2" stroke-opacity="0.95" stroke-width="3"/>
+      <rect x="-14" y="46" width="16" height="10" fill="#00B5E2" fill-opacity="0.85"/>
+      <circle cx="118" cy="76" r="9" fill="#0a3a66" stroke="#00B5E2" stroke-opacity="0.9" stroke-width="3"/>
+      <circle cx="144" cy="76" r="9" fill="#0a3a66" stroke="#00B5E2" stroke-opacity="0.9" stroke-width="3"/>
+      <line x1="24" y1="66" x2="24" y2="78" stroke="#00B5E2" stroke-opacity="0.7" stroke-width="3"/>
+    </g>
+
+    <g id="trailerIdle">
+      <rect x="0" y="0" width="160" height="66" rx="4" fill="#0a3a66" fill-opacity="0.45" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="3" stroke-dasharray="10 8"/>
+      <rect x="-14" y="46" width="16" height="10" fill="#5e8aa6" fill-opacity="0.6"/>
+      <circle cx="118" cy="76" r="9" fill="#001a36" stroke="#5e8aa6" stroke-opacity="0.6" stroke-width="3"/>
+      <circle cx="144" cy="76" r="9" fill="#001a36" stroke="#5e8aa6" stroke-opacity="0.6" stroke-width="3"/>
+      <line x1="24" y1="66" x2="24" y2="78" stroke="#5e8aa6" stroke-opacity="0.5" stroke-width="3"/>
+    </g>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <text x="750" y="200" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="8">THE JOURNAL</text>
+
+  <text x="750" y="322" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold">Turns, Not Rate</text>
+
+  <text x="750" y="392" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="32" fill-opacity="0.9">power-only margin is set in the yard, not in the negotiation</text>
+
+  <line x1="600" y1="440" x2="900" y2="440" stroke="#00B5E2" stroke-opacity="0.35" stroke-width="2"/>
+
+  <rect x="230" y="490" width="1040" height="250" rx="8" fill="url(#yard)" stroke="#00B5E2" stroke-opacity="0.18" stroke-width="2"/>
+
+  <use href="#trailerActive" x="278" y="520"/>
+  <use href="#trailerIdle" x="474" y="520"/>
+  <use href="#trailerActive" x="670" y="520"/>
+  <use href="#trailerIdle" x="866" y="520"/>
+  <use href="#trailerActive" x="1062" y="520"/>
+
+  <use href="#trailerIdle" x="278" y="650"/>
+  <use href="#trailerActive" x="474" y="650"/>
+  <use href="#trailerIdle" x="670" y="650"/>
+  <use href="#trailerIdle" x="866" y="650"/>
+  <use href="#trailerIdle" x="1062" y="650"/>
+
+  <text x="358" y="508" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill-opacity="0.9">4 turning</text>
+  <text x="1142" y="508" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill-opacity="0.75">6 parked, still leased</text>
+
+  <rect x="586" y="778" width="34" height="16" rx="3" fill="#00B5E2" fill-opacity="0.20" stroke="#00B5E2" stroke-opacity="0.95" stroke-width="2"/>
+  <text x="632" y="792" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill-opacity="0.88">counted</text>
+
+  <rect x="790" y="778" width="34" height="16" rx="3" fill="#0a3a66" fill-opacity="0.45" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="836" y="792" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill-opacity="0.8">not counted</text>
+
+  <text x="750" y="856" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill-opacity="0.7">the pool is priced on the turns it was promised, not the turns it produces</text>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
