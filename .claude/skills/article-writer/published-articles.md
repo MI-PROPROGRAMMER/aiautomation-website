@@ -15,6 +15,10 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Phrase "never says no — just goes silent"** in any form.
 - **Title shape "[Topic], Before and After [AI]"** — used twice (spot-load carrier sourcing, freight check calls). Pick a different shape next.
 - **Delayed-discovery title construction ("Nobody Sees Until [X]", "Before Anyone Flags It")** — used twice inside the most recent 5 (sub manpower shortfalls, short-dated DTC inventory). Rest it; the late-discovery idea can still drive the body, just not the title.
+- **Phrase "Individually these are diagnostics. Together they usually show…"** — used three times (cross-border dwell, empty miles, power-only). Close the numbered-list section a different way.
+- **Phrase "pure information movement"** in the closing pitch — used three times (empty miles, power-only, stale progress data). Describe the same idea in fresh words.
+- **Phrase "Nothing in the right-hand column decides anything"** after a comparison table — used in power-only. Make the "AI does not decide, your people do" point without this sentence.
+- **Sentence shape "None of that requires [more X]. It requires [Y]."** as the closer before the pitch — used in power-only. Vary the construction.
 
 ## Title-shape diversity rule
 
@@ -26,6 +30,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-09-07 — How Stale Progress Data Distorts GC Schedule Updates · construction · `stale-progress-data-gc-schedule-updates`
 - 2026-09-06 — Power-Only Freight: The Trailer Turns That Set Margin · logistics · `power-only-freight-trailer-turns-set-margin`
 - 2026-09-05 — Shorter FBA Claim Windows Outpace DTC Reconciliation · e-com ops · `shorter-fba-claim-windows-outpace-dtc-reconciliation`
 - 2026-09-04 — Sub Manpower Shortfalls Nobody Sees Until Friday · construction · `sub-manpower-shortfalls-nobody-sees-until-friday`
