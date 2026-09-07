@@ -1,0 +1,101 @@
+export const frontmatter = {
+  title: "How Stale Progress Data Distorts GC Schedule Updates",
+  excerpt:
+    "The monthly schedule update answers a question about today using field data collected over the previous two weeks. Recovery options run out inside that lag.",
+  date: "2026-09-07",
+  author: "ApexifyLabs Team",
+  tags: ["Construction", "General Contractors", "Scheduling", "AI Automation"],
+  heroImage: "/blog/stale-progress-data-gc-schedule-updates/hero.svg",
+  seoDescription:
+    "Mid-size GC schedule updates run on progress data that is weeks old by submission. Here is what the lag costs, and what a continuous view of progress changes.",
+  readingTime: "5 min read",
+};
+
+A monthly schedule update is supposed to tell a general contractor where the job stands and what finishing on time now requires. On most mid-size jobs the progress behind it is gathered by hand over several days, so the update describes the project as it looked two or three weeks ago. Decisions get made against that lag.
+
+## What is a schedule update actually for?
+
+Contractually, it is a deliverable. Most owner agreements require an updated critical path schedule alongside the monthly pay application, showing percent complete by activity, remaining durations, and any change to the projected completion date. Submit it, get paid, repeat.
+
+Operationally, it exists to answer two questions. Are we still going to finish on time? And if not, what is the cheapest recovery still available this month?
+
+There is a third use that only matters later. AACE International's recommended practice for forensic schedule analysis (29R-03) treats contemporaneous schedule updates as the evidentiary spine of a delay claim. Whichever method a forum eventually uses, it works from the updates that existed while the work was happening. A schedule reconstructed after the fact carries far less weight than one that was maintained as the job moved.
+
+So the same document is doing three jobs: it releases cash, it directs the next thirty days, and it becomes the record of who owned which delay. All three depend on the progress numbers underneath it being roughly true.
+
+Whether they are is worth checking. KPMG's Global Construction Survey found that fewer than one in four projects came within 10 percent of their original deadlines, a gap that is hard to explain purely by bad luck on the work itself.
+
+## Why is the data already old by the time the update ships?
+
+Because collecting it is a chase, not a query.
+
+A mid-size commercial job runs fifteen to thirty subcontractors, each of which owns the truth about its own activities. Getting a defensible percent complete for a single trade means some combination of a superintendent's walk, a foreman's estimate, last week's daily reports, an email that says "about 60 percent" without saying of what, and a phone call to the one person who actually knows. Multiply by thirty trades and a cutoff date, and the collection window opens well before the update is due.
+
+Then the sequence runs its course. Data cutoff. Several days of chasing. A day of reconciling numbers that disagree. Narrative and variance write-up. Internal review. Submission. Owner review.
+
+By the time anyone acts on the approved update, the field has moved on. The document is accurate about a moment that has passed.
+
+None of this reflects a team that is bad at its job. FMI and Autodesk's *Construction Disconnected* research put the cost of non-optimal activities in US construction near $177 billion of labor in a single year, with roughly $31 billion of that tied to rework driven by poor project data and miscommunication. Those are not the numbers of an industry that forgets to try. They are the numbers of an industry where establishing what actually happened is genuinely expensive, and where the expense falls on the same people who are running the work.
+
+## What does the lag change on the job?
+
+The update itself is rarely wrong. What changes is when the GC learns something, and therefore which options are still open.
+
+1. **Resequencing.** Moving a trade a week early costs coordination. Moving it after the successor has mobilized costs remobilization and, often, a change order conversation.
+2. **Long-lead expedites.** Expedite fees scale with how late the decision is made. A procurement slip caught during the month is a phone call. Caught at the update, it is a premium.
+3. **Crew loading.** Asking a sub to add people is a negotiation when there is runway and a demand when there is not. The same request costs differently depending on the week it arrives.
+4. **Float ownership.** Float is consumed silently. Once it is gone, every subsequent delay is a completion-date delay, and the conversation with the owner changes character entirely.
+5. **Notice deadlines.** Most contracts require written notice of a delay event within a defined window, often measured in days. A delay discovered at the monthly update may already sit outside that window.
+6. **Owner credibility.** A projected completion date that moves in one large step at month end reads differently than one that drifts visibly and gets addressed. The first invites scrutiny of everything else in the pay application.
+
+Item five is the one that tends to surprise people. The entitlement was real. The clock on it ran out during collection.
+
+## Manual progress collection vs a continuously assembled view
+
+The difference is not sophistication or software preference. It is whether project status is a live fact or something reconstructed on a monthly cycle.
+
+| Question the PM needs answered | Manual monthly collection | Continuously assembled view |
+|---|---|---|
+| What is percent complete on this activity? | Chased per trade, in the days before cutoff | Standing figure, updated from reports the job already produces |
+| Which activities slipped this week? | Visible at the next update | Visible while the week is still recoverable |
+| Is the critical path still the critical path? | Recalculated monthly | Recalculated whenever progress changes |
+| How much float is left on this chain? | Known at update, forgotten between them | A tracked number that trends |
+| Did the two-week look-ahead hold? | Compared informally, if at all | Planned versus actual, per trade, every week |
+| When did this delay actually start? | Reconstructed later, from memory and emails | Dated at the time it happened |
+| Which subs report reliably? | A sense the superintendent carries | A pattern with evidence behind it |
+
+None of that is a system making decisions. Sequencing the job, choosing which trade absorbs a push, deciding whether a sub's number is credible: those calls depend on knowing the people and the site, and they belong to the superintendent and the project manager. The change is narrower than it sounds. The same judgment gets applied to a current picture instead of one assembled a couple of weeks back.
+
+That last row is worth dwelling on. Reporting reliability varies enormously by trade, and every experienced superintendent knows roughly who inflates. Almost nobody has that written down, which means it cannot be used in a buyout decision or a prequal conversation. It stays a private judgment rather than a company asset.
+
+## Where does this show up in money?
+
+Rarely as a line item, which is exactly why it survives budget scrutiny.
+
+McKinsey Global Institute's *Reinventing Construction* found that large projects typically run around 20 percent longer than scheduled, and that construction productivity has grown at roughly 1 percent annually over two decades while other sectors pulled away. Schedule slippage on this scale is not an anomaly to be explained job by job. It is the sector's baseline, and part of it is structural: the industry manages long-duration work using status information that arrives in monthly batches.
+
+On a single mid-size job, the cost surfaces in ordinary-looking places. General conditions extended by a few weeks. An expedite fee that would not have been necessary. Acceleration a GC absorbs because notice was late. A trade priced higher at buyout because the schedule risk was unclear when it was bought. None of these appear in a job cost report under a heading that says the update cycle was slow.
+
+## What can you check without starting a project?
+
+Three things, all of them measurable from records a closed job already produced.
+
+1. **Measure your collection window.** Count the days between the data cutoff on your last update and the date anyone acted on it. That number is the delay between the job changing and the company knowing.
+2. **Compare look-aheads to what happened.** Pull four consecutive two-week look-aheads and mark which activities landed as planned. The hit rate tells you how much your forward planning is worth as a decision input.
+3. **Date the last completion-date move.** Find the most recent time projected completion shifted, then work backward to when the causing event actually started. The distance between those two dates is your exposure window on notice provisions.
+
+Any one of those is just a number. Read together, they tend to point at the same conclusion: the schedule was not wrong, it was late, and the document nobody enjoys producing was never the expensive part of the cycle.
+
+## What changes when progress stops arriving in batches?
+
+The visible change is that the monthly update stops being an event. It becomes a snapshot of something already known, which shortens the write-up and removes most of the argument from owner review.
+
+The quieter changes compound. Recovery decisions get made while they are still cheap, because a slip is visible in the week it happens rather than at the next cutoff. Notice provisions stop expiring during data collection. Float becomes a number the team watches trend rather than a surprise discovered at zero. Sub performance patterns become evidence usable at buyout instead of instinct that leaves with the superintendent. And the contemporaneous record, the thing that decides entitlement if the job ever goes sideways, builds itself as a by-product of running the work.
+
+A different scheduler will not produce any of that, and neither will a larger project team. What sets the ceiling is the distance between the field and the schedule, measured in days.
+
+## The pitch
+
+If your monthly update takes a week to assemble and describes a job that has already moved on, the scheduling itself is probably fine. The problem sits upstream, in how long it takes field reality to become something the office can act on.
+
+What we do is look at one contractor's update cycle end to end and account for the days: which handoffs are people relaying information rather than deciding anything, which numbers arrive late because somebody has to remember to send them, and where a week could realistically come out. If that is a question worth answering on your jobs, we run a **completely free automation audit** for construction teams. No commitment, no slide deck, just an honest read on what the lag is costing you. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>

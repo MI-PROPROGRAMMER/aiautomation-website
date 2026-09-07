@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="0.65" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lagBand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.03"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <text x="750" y="196" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="8">THE JOURNAL</text>
+
+  <text x="750" y="316" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold">Two Weeks Behind</text>
+
+  <text x="750" y="382" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="32" fill-opacity="0.9">the update is accurate about a moment that has passed</text>
+
+  <line x1="620" y1="426" x2="880" y2="426" stroke="#00B5E2" stroke-opacity="0.35" stroke-width="2"/>
+
+  <rect x="1020" y="486" width="230" height="292" fill="url(#lagBand)"/>
+
+  <line x1="1020" y1="486" x2="1020" y2="778" stroke="#00B5E2" stroke-opacity="0.85" stroke-width="3"/>
+  <line x1="1250" y1="486" x2="1250" y2="778" stroke="#7fb6d6" stroke-opacity="0.55" stroke-width="3" stroke-dasharray="9 8"/>
+
+  <text x="1020" y="470" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="1">data cutoff</text>
+  <text x="1250" y="470" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="1" fill-opacity="0.85">today</text>
+
+  <line x1="470" y1="778" x2="1300" y2="778" stroke="#5e8aa6" stroke-opacity="0.35" stroke-width="2"/>
+
+  <text x="440" y="536" text-anchor="end" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill-opacity="0.85">Structure</text>
+  <rect x="470" y="514" width="530" height="26" rx="4" fill="#00B5E2" fill-opacity="0.9"/>
+  <rect x="1000" y="514" width="180" height="26" rx="4" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="8 7"/>
+
+  <text x="440" y="590" text-anchor="end" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill-opacity="0.85">Envelope</text>
+  <rect x="470" y="568" width="410" height="26" rx="4" fill="#00B5E2" fill-opacity="0.9"/>
+  <rect x="880" y="568" width="180" height="26" rx="4" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="8 7"/>
+
+  <text x="440" y="644" text-anchor="end" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill-opacity="0.85">MEP rough-in</text>
+  <rect x="470" y="622" width="290" height="26" rx="4" fill="#00B5E2" fill-opacity="0.9"/>
+  <rect x="760" y="622" width="180" height="26" rx="4" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="8 7"/>
+
+  <text x="440" y="698" text-anchor="end" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill-opacity="0.85">Drywall</text>
+  <rect x="470" y="676" width="170" height="26" rx="4" fill="#00B5E2" fill-opacity="0.9"/>
+  <rect x="640" y="676" width="60" height="26" rx="4" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="8 7"/>
+
+  <text x="440" y="752" text-anchor="end" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill-opacity="0.85">Finishes</text>
+  <rect x="470" y="730" width="70" height="26" rx="4" fill="#00B5E2" fill-opacity="0.9"/>
+  <rect x="540" y="730" width="40" height="26" rx="4" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="8 7"/>
+
+  <rect x="470" y="812" width="34" height="16" rx="3" fill="#00B5E2" fill-opacity="0.9"/>
+  <text x="516" y="826" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill-opacity="0.88">in the update</text>
+
+  <rect x="700" y="812" width="34" height="16" rx="3" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="746" y="826" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill-opacity="0.8">happened since the cutoff</text>
+
+  <text x="750" y="872" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill-opacity="0.7">recovery options expire inside the collection window, not on the schedule</text>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
