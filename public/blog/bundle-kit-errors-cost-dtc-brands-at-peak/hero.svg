@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="0.65" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.14"/>
+    </linearGradient>
+    <linearGradient id="shortbar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7fb6d6" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#7fb6d6" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <text x="750" y="200" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="8">THE JOURNAL</text>
+
+  <text x="750" y="322" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold">One Line, Four Shelves</text>
+
+  <text x="750" y="392" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="32" fill-opacity="0.9">a bundle is only as available as its scarcest component</text>
+
+  <line x1="600" y1="440" x2="900" y2="440" stroke="#00B5E2" stroke-opacity="0.35" stroke-width="2"/>
+
+  <line x1="200" y1="762" x2="900" y2="762" stroke="#5e8aa6" stroke-opacity="0.55" stroke-width="2"/>
+
+  <rect x="228" y="546" width="118" height="216" rx="4" fill="url(#bar)" stroke="#00B5E2" stroke-opacity="0.8" stroke-width="3"/>
+  <rect x="388" y="588" width="118" height="174" rx="4" fill="url(#bar)" stroke="#00B5E2" stroke-opacity="0.8" stroke-width="3"/>
+  <rect x="548" y="716" width="118" height="46" rx="4" fill="url(#shortbar)" stroke="#7fb6d6" stroke-opacity="0.85" stroke-width="3" stroke-dasharray="9 7"/>
+  <rect x="708" y="566" width="118" height="196" rx="4" fill="url(#bar)" stroke="#00B5E2" stroke-opacity="0.8" stroke-width="3"/>
+
+  <text x="287" y="798" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill-opacity="0.85">part A</text>
+  <text x="447" y="798" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill-opacity="0.85">part B</text>
+  <text x="607" y="798" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill-opacity="0.95">part C</text>
+  <text x="767" y="798" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill-opacity="0.85">part D</text>
+
+  <line x1="200" y1="716" x2="900" y2="716" stroke="#00B5E2" stroke-opacity="0.75" stroke-width="2" stroke-dasharray="12 9"/>
+  <text x="200" y="700" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill-opacity="0.95">buildable ceiling</text>
+
+  <line x1="922" y1="716" x2="1046" y2="716" stroke="#00B5E2" stroke-opacity="0.7" stroke-width="3"/>
+  <path d="M1046 716 L1030 706 L1030 726 Z" fill="#00B5E2" fill-opacity="0.85"/>
+
+  <rect x="1066" y="546" width="252" height="216" rx="8" fill="#0a3a66" fill-opacity="0.4" stroke="#00B5E2" stroke-opacity="0.35" stroke-width="3"/>
+  <line x1="1066" y1="716" x2="1318" y2="716" stroke="#00B5E2" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="12 9"/>
+  <rect x="1066" y="716" width="252" height="46" rx="0" fill="#00B5E2" fill-opacity="0.16"/>
+
+  <text x="1192" y="628" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="44" font-weight="bold">the bundle</text>
+  <text x="1192" y="676" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill-opacity="0.85">listed as one SKU</text>
+  <text x="1192" y="798" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill-opacity="0.95">what can actually ship</text>
+
+  <text x="750" y="858" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill-opacity="0.7">the catalog sells the box; the shelf builds it from the shortest part</text>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
