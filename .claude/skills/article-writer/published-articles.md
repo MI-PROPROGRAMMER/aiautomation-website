@@ -19,6 +19,9 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Phrase "pure information movement"** in the closing pitch — used three times (empty miles, power-only, stale progress data). Describe the same idea in fresh words.
 - **Phrase "Nothing in the right-hand column decides anything"** after a comparison table — used in power-only. Make the "AI does not decide, your people do" point without this sentence.
 - **Sentence shape "None of that requires [more X]. It requires [Y]."** as the closer before the pitch — used in power-only. Vary the construction.
+- **H2 "Three signs [X]"** over a three-item diagnostic list — used in shorter-FBA-claim-windows and again in bundle-kit-errors. Keep the three-item list, but phrase the heading as a different question.
+- **Pitch construction "the problem is rarely [one broken thing]. It is [A], [B] and [C] sitting in three places, with a person expected to reconcile all three…"** — used in shorter-FBA-claim-windows and bundle-kit-errors. Retire the "three places, one person" framing for a few articles.
+- **Table lead-in "The comparison below is not an argument for removing the [person/role]."** — used in shorter-FBA-claim-windows and reworded in bundle-kit-errors. Introduce the table a different way.
 
 ## Title-shape diversity rule
 
@@ -30,6 +33,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-09-08 — What Bundle and Kit Errors Cost DTC Brands at Peak · e-com ops · `bundle-kit-errors-cost-dtc-brands-at-peak`
 - 2026-09-07 — How Stale Progress Data Distorts GC Schedule Updates · construction · `stale-progress-data-gc-schedule-updates`
 - 2026-09-06 — Power-Only Freight: The Trailer Turns That Set Margin · logistics · `power-only-freight-trailer-turns-set-margin`
 - 2026-09-05 — Shorter FBA Claim Windows Outpace DTC Reconciliation · e-com ops · `shorter-fba-claim-windows-outpace-dtc-reconciliation`
