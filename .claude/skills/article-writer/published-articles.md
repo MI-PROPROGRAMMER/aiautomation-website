@@ -22,6 +22,8 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **H2 "Three signs [X]"** over a three-item diagnostic list — used in shorter-FBA-claim-windows and again in bundle-kit-errors. Keep the three-item list, but phrase the heading as a different question.
 - **Pitch construction "the problem is rarely [one broken thing]. It is [A], [B] and [C] sitting in three places, with a person expected to reconcile all three…"** — used in shorter-FBA-claim-windows and bundle-kit-errors. Retire the "three places, one person" framing for a few articles.
 - **Table lead-in "The comparison below is not an argument for removing the [person/role]."** — used in shorter-FBA-claim-windows and reworded in bundle-kit-errors. Introduce the table a different way.
+- **Post-table line "Read that table as one pattern rather than [N] problems / line items."** — used in power-only. Summarize a table's shared cause without this construction.
+- **Title shape "When [Actor] [Verb]s [Object]"** — used in reroute-after-pickup (2026-09-09). Rest it for the next few articles.
 
 ## Title-shape diversity rule
 
@@ -33,6 +35,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-09-09 — When Shippers Reroute Freight After the Truck Rolls · logistics · `shippers-reroute-freight-after-truck-rolls`
 - 2026-09-08 — What Bundle and Kit Errors Cost DTC Brands at Peak · e-com ops · `bundle-kit-errors-cost-dtc-brands-at-peak`
 - 2026-09-07 — How Stale Progress Data Distorts GC Schedule Updates · construction · `stale-progress-data-gc-schedule-updates`
 - 2026-09-06 — Power-Only Freight: The Trailer Turns That Set Margin · logistics · `power-only-freight-trailer-turns-set-margin`
