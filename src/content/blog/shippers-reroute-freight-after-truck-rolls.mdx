@@ -1,0 +1,98 @@
+export const frontmatter = {
+  title: "When Shippers Reroute Freight After the Truck Rolls",
+  excerpt:
+    "A load gets redirected after pickup and the desk hears about it third. The reconsignment fee was set years ago. The hours, miles and rework behind it were not.",
+  date: "2026-09-09",
+  author: "ApexifyLabs Team",
+  tags: ["Logistics", "Freight Brokerage", "AI Automation", "Reconsignment"],
+  heroImage: "/blog/shippers-reroute-freight-after-truck-rolls/hero.svg",
+  seoDescription:
+    "Reconsignment fees rarely cover what a mid-transit reroute costs a freight brokerage. Where the money goes, and what an AI-assisted desk catches sooner.",
+  readingTime: "5 min read",
+};
+
+A reconsignment is a delivery change made after a load is already moving: new consignee, new address, or new appointment. Most brokerages bill a flat fee for it. That fee is usually set once and rarely revisited, while the real cost moves with the driver's clock, the added miles, and the paperwork trail the change leaves behind.
+
+## What actually happens when a load is redirected in transit?
+
+The request itself is small. A shipper's customer service rep sends an email, or a customer calls the shipper, and the destination on a load that left this morning is no longer the destination. On the brokerage side, that email lands in one inbox, usually the one belonging to whoever owns the account rather than whoever is covering the truck.
+
+From there the change has to travel. Someone has to reach the carrier's dispatcher, who has to reach the driver, who may be mid-shift and unreachable for the next two hours. The new receiver has to be checked for hours, appointment availability, and whether they can even take the freight. The rate confirmation needs an addendum. The bill of lading now names a different delivery party. And somewhere in that chain, the fee has to be quoted to the shipper and agreed before anyone commits to it.
+
+None of those steps is difficult. The problem is that they run in sequence, through people, and each one waits on the previous one to finish.
+
+## Why does a small change take a full day to land?
+
+Because the truck does not stop moving while the office sorts it out.
+
+Under FMCSA hours of service rules, a property-carrying driver gets 11 hours of driving inside a 14 hour on-duty window, with a 30 minute break required after 8 cumulative hours of driving. That window is the constraint everything else runs against. A reroute confirmed at 10 a.m. is a routing decision. The same reroute confirmed at 4 p.m., after the driver has already run most of the day toward the original consignee, is a reset: the miles already covered in the wrong direction are spent, the new receiver's dock is closed, and the load now delivers tomorrow at the earliest.
+
+The gap between those two outcomes is not distance. It is how long the information took to cross three organizations.
+
+There is a second clock running that nobody bills. Once the truck arrives somewhere it was not originally scheduled to arrive, it usually waits. The 2018 US Department of Transportation Office of Inspector General report on driver detention estimated that detention reduced driver earnings by roughly $1.1 billion to $1.3 billion a year, and unscheduled arrivals are exactly the condition that produces it. A reconsigned load frequently shows up outside the receiving window it was never booked into.
+
+## Where does the money on a reroute actually go?
+
+Not into the fee line. The fee is the one part of this that gets invoiced cleanly. Everything else lands somewhere quieter.
+
+| What the reroute consumes | How it is usually handled | Where the cost lands |
+|---|---|---|
+| Additional loaded and empty miles | Estimated from memory, or waived to keep the account happy | Carrier pay rises, margin absorbs the difference |
+| Driver hours spent driving the wrong direction | Not measured, because the load eventually delivered | Late delivery on a load that was on time at pickup |
+| Waiting at an unscheduled receiver | Detention is claimed only if the driver documented it | Carrier relationship, before it shows up in dollars |
+| Rate confirmation and BOL amendments | Reissued by whoever notices they are stale | Billing disputes weeks later, at settlement |
+| The desk time to run the change | Invisible, folded into a busy afternoon | Coverage that did not happen on other loads |
+| The next load with that carrier | Priced slightly higher, or not offered at all | Capacity cost, never attributed to this event |
+
+Those six rows share a single cause. The change became real the moment the shipper decided it, and stayed unreal to the brokerage until a person happened to open an email.
+
+That distinction matters because it changes what kind of problem this is. It is not a pricing problem, and the fee schedule is not where the fix lives. Almost every input needed to handle a reroute correctly already exists somewhere in the operation the moment the request arrives. What does not exist is a view that assembles those inputs at request time, so the assembly happens by hand, at whatever speed the busiest person on the desk can manage.
+
+## What is the desk actually deciding here?
+
+Worth being precise, because this gets treated as an administrative task and it is not one.
+
+When a reroute request comes in, someone is making a commercial decision under time pressure: accept the change, quote a fee, or decline. Accepting a reroute on a load two hours from its original consignee is a different decision from accepting one on a load that left the yard twenty minutes ago, and the difference can be several hundred dollars of carrier pay plus a service failure on the original delivery date.
+
+On most desks that decision gets made without the numbers in front of it. The rep knows the account, knows the shipper is important, and says yes. That answer is often correct. The issue is that it is being reached the same way whether it is worth $40 or $600, because nobody has the position of the truck, the remaining hours, the new receiver's window and the reroute's marginal miles in one view at the moment of the yes.
+
+There is a compliance edge to this too. Brokers are required under 49 CFR 371.3 to keep a record of each transaction, and interstate carrier liability for the freight itself runs through the Carmack Amendment (49 U.S.C. 14706), which attaches to the delivery party named on the bill of lading. A consignee changed by phone and never reflected in the paperwork is a documentation gap on a load that has already been legally re-pointed.
+
+## Manual reroute handling vs an AI-assisted desk
+
+The difference is not sophistication. It is whether the change becomes visible while the truck can still act on it.
+
+| Moment in the reroute | Typical manual handling | AI-assisted handling |
+|---|---|---|
+| Request arrives | Sits in an account rep's inbox until it is read | Recognized as a delivery change against a live load on arrival |
+| Feasibility | Judged by whoever picks it up, from memory | Truck position, remaining hours and receiver windows surfaced together |
+| Fee quoting | Flat schedule, applied uniformly | Marginal miles and delay priced against this specific load |
+| Carrier notification | Phone chain through dispatch to driver | Notification prepared and sent the moment the change is accepted |
+| Paperwork | Rate confirmation and BOL updated when someone remembers | Amended documents generated from the accepted change |
+| Post-event review | Reroutes are not counted as a category | Frequency and cost visible per account, per quarter |
+
+The right-hand column is not making calls. It does not decide whether to accept a change, what to charge a key shipper, or which carrier relationship is worth protecting. Those judgments belong to the people who own the accounts and should stay there. What moves is the timing: the decision gets made in the first twenty minutes with the relevant facts attached, instead of in hour four from a partial picture.
+
+## Which numbers are worth pulling before the next contract review?
+
+You can size this from last quarter without starting a project.
+
+1. **Reroute frequency by shipper.** Count delivery changes made after pickup, split by account. Most desks find the volume concentrated in two or three customers rather than spread across the book, which changes the conversation from a fee schedule to a specific renewal.
+2. **Time from request to carrier notification.** Measure the gap between the shipper's email timestamp and the moment the driver was actually told. That single interval explains most of the difference between a reroute that costs a fee and one that costs a delivery day.
+3. **Reconsignment fee against reconsignment cost.** For ten reroutes, add the extra carrier pay, the detention claimed or written off, and the delay penalty if the original date was contractual. Compare the total to what was billed. The spread is the number worth taking into the review.
+
+Run those three together and the shape of the problem usually resolves: the fee is roughly right on the routine changes and badly wrong on the late ones, and lateness is a function of how fast the desk found out.
+
+## What changes when a reroute stops being a phone chain?
+
+The visible change is that fewer redirected loads deliver late. A change caught while the truck still has hours left is a routing adjustment. The same change caught at the end of the day is a missed appointment, a night's layover, and a conversation with the receiver tomorrow.
+
+The slower changes matter more across a year. Reconsignment stops being an unpriced courtesy and becomes a line with real history behind it, so the next contract negotiation includes it instead of discovering it. Carriers stop eating the difference on redirected loads, which is the sort of thing that quietly determines who answers your calls during a capacity crunch. And the documentation trail stays intact, because the amendment is produced by the same action that accepted the change rather than by someone circling back to it later.
+
+The equipment did not change and neither did the lane. What changed is how quickly a fact about a moving truck reached the person who could still do something about it.
+
+## The pitch
+
+If reroutes on your desk get handled by whoever reads the email first, or if your reconsignment fee has not been checked against what a redirected load actually costs since the account was signed, the answer is usually not a higher fee. It is a shorter gap between the request and the driver.
+
+We map where a specific brokerage loses time on in-transit changes, how much of that work is moving the same information between three systems by hand, and which parts should stop waiting on a person to notice an inbox. If that sounds like your operation, we run a **completely free automation audit** for freight brokerages. No commitment, no slide deck, just an honest read on where the hours are going. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book the audit</a>

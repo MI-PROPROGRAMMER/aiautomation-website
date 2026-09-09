@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="0.65" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lane" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.35"/>
+    </linearGradient>
+
+    <marker id="arrowCyan" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 1 1 L 11 6 L 1 11 z" fill="#00B5E2" fill-opacity="0.9"/>
+    </marker>
+    <marker id="arrowMuted" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 1 1 L 11 6 L 1 11 z" fill="#5e8aa6" fill-opacity="0.75"/>
+    </marker>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <text x="750" y="200" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="8">THE JOURNAL</text>
+
+  <text x="750" y="322" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold">The Late Reroute</text>
+
+  <text x="750" y="392" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="32" fill-opacity="0.9">the destination changed at ten, the desk found out at four</text>
+
+  <line x1="600" y1="440" x2="900" y2="440" stroke="#00B5E2" stroke-opacity="0.35" stroke-width="2"/>
+
+  <!-- route diagram: one pickup, a decision point, two divergent outcomes -->
+  <rect x="180" y="500" width="1140" height="290" rx="8" fill="#00B5E2" fill-opacity="0.04" stroke="#00B5E2" stroke-opacity="0.16" stroke-width="2"/>
+
+  <!-- origin -->
+  <circle cx="270" cy="645" r="16" fill="#00B5E2" fill-opacity="0.25" stroke="#00B5E2" stroke-opacity="0.95" stroke-width="3"/>
+  <text x="270" y="600" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill-opacity="0.9">pickup</text>
+
+  <!-- trunk to the decision point -->
+  <line x1="292" y1="645" x2="600" y2="645" stroke="url(#lane)" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- decision point -->
+  <circle cx="628" cy="645" r="13" fill="#001a36" stroke="#00B5E2" stroke-opacity="0.9" stroke-width="4"/>
+  <text x="628" y="600" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="22">request in</text>
+
+  <!-- upper branch: caught early -->
+  <path d="M 641 636 C 760 600, 900 578, 1108 570" fill="none" stroke="#00B5E2" stroke-opacity="0.9" stroke-width="6" stroke-linecap="round" marker-end="url(#arrowCyan)"/>
+  <text x="1146" y="562" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill-opacity="0.95">rerouted</text>
+  <text x="1146" y="596" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill-opacity="0.8">same day</text>
+
+  <!-- lower branch: caught late -->
+  <path d="M 641 654 C 760 700, 900 726, 1108 736" fill="none" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="6" stroke-linecap="round" stroke-dasharray="14 11" marker-end="url(#arrowMuted)"/>
+  <text x="1146" y="728" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill-opacity="0.85">miles spent</text>
+  <text x="1146" y="762" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill-opacity="0.7">delivers tomorrow</text>
+
+  <!-- the gap between the two branches -->
+  <line x1="905" y1="586" x2="905" y2="722" stroke="#00B5E2" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="890" y="662" text-anchor="end" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill-opacity="0.75">six hours</text>
+
+  <text x="750" y="856" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill-opacity="0.7">the cost of a reconsignment is set by how fast it reaches the driver, not by the fee schedule</text>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
