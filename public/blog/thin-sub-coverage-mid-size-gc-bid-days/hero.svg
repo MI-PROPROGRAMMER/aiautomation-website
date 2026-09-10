@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="0.65" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="shortBand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <text x="750" y="196" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="8">THE JOURNAL</text>
+
+  <text x="750" y="316" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold">One Number on Bid Day</text>
+
+  <text x="750" y="382" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="32" fill-opacity="0.9">thirty invitations out, one quote in, a scope priced from memory</text>
+
+  <line x1="620" y1="426" x2="880" y2="426" stroke="#00B5E2" stroke-opacity="0.35" stroke-width="2"/>
+
+  <rect x="380" y="676" width="640" height="132" fill="url(#shortBand)"/>
+
+  <line x1="785" y1="488" x2="785" y2="800" stroke="#7fb6d6" stroke-opacity="0.55" stroke-width="3" stroke-dasharray="9 8"/>
+  <text x="785" y="472" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="1" fill-opacity="0.85">coverage target</text>
+
+  <text x="560" y="519" text-anchor="end" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill-opacity="0.85">Concrete</text>
+  <circle cx="600" cy="510" r="15" fill="#00B5E2" fill-opacity="0.9"/>
+  <circle cx="674" cy="510" r="15" fill="#00B5E2" fill-opacity="0.9"/>
+  <circle cx="748" cy="510" r="15" fill="#00B5E2" fill-opacity="0.9"/>
+  <circle cx="822" cy="510" r="15" fill="#00B5E2" fill-opacity="0.9"/>
+  <circle cx="896" cy="510" r="15" fill="#00B5E2" fill-opacity="0.9"/>
+  <circle cx="970" cy="510" r="15" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+
+  <text x="560" y="583" text-anchor="end" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill-opacity="0.85">Structural steel</text>
+  <circle cx="600" cy="574" r="15" fill="#00B5E2" fill-opacity="0.9"/>
+  <circle cx="674" cy="574" r="15" fill="#00B5E2" fill-opacity="0.9"/>
+  <circle cx="748" cy="574" r="15" fill="#00B5E2" fill-opacity="0.9"/>
+  <circle cx="822" cy="574" r="15" fill="#00B5E2" fill-opacity="0.9"/>
+  <circle cx="896" cy="574" r="15" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+  <circle cx="970" cy="574" r="15" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+
+  <text x="560" y="647" text-anchor="end" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill-opacity="0.85">Mechanical</text>
+  <circle cx="600" cy="638" r="15" fill="#00B5E2" fill-opacity="0.9"/>
+  <circle cx="674" cy="638" r="15" fill="#00B5E2" fill-opacity="0.9"/>
+  <circle cx="748" cy="638" r="15" fill="#00B5E2" fill-opacity="0.9"/>
+  <circle cx="822" cy="638" r="15" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+  <circle cx="896" cy="638" r="15" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+  <circle cx="970" cy="638" r="15" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+
+  <text x="560" y="711" text-anchor="end" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill-opacity="0.95">Curtain wall</text>
+  <circle cx="600" cy="702" r="15" fill="#00B5E2" fill-opacity="0.9"/>
+  <circle cx="674" cy="702" r="15" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+  <circle cx="748" cy="702" r="15" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+  <circle cx="822" cy="702" r="15" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+  <circle cx="896" cy="702" r="15" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+  <circle cx="970" cy="702" r="15" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+
+  <text x="560" y="775" text-anchor="end" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill-opacity="0.95">Elevators</text>
+  <circle cx="600" cy="766" r="15" fill="#00B5E2" fill-opacity="0.9"/>
+  <circle cx="674" cy="766" r="15" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+  <circle cx="748" cy="766" r="15" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+  <circle cx="822" cy="766" r="15" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+  <circle cx="896" cy="766" r="15" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+  <circle cx="970" cy="766" r="15" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="6 5"/>
+
+  <text x="1060" y="711" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill-opacity="0.9">priced from history</text>
+  <text x="1060" y="775" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill-opacity="0.9">plus a cushion</text>
+
+  <circle cx="470" cy="826" r="11" fill="#00B5E2" fill-opacity="0.9"/>
+  <text x="496" y="834" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill-opacity="0.88">qualified bid in hand</text>
+
+  <circle cx="800" cy="826" r="11" fill="#0a3a66" fill-opacity="0.5" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="826" y="834" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill-opacity="0.8">invited, never answered</text>
+
+  <text x="750" y="872" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="19" fill-opacity="0.7">the scopes that run thin are knowable in week one, not on the afternoon of the bid</text>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
