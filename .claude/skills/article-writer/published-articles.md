@@ -24,6 +24,8 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Table lead-in "The comparison below is not an argument for removing the [person/role]."** — used in shorter-FBA-claim-windows and reworded in bundle-kit-errors. Introduce the table a different way.
 - **Post-table line "Read that table as one pattern rather than [N] problems / line items."** — used in power-only. Summarize a table's shared cause without this construction.
 - **Title shape "When [Actor] [Verb]s [Object]"** — used in reroute-after-pickup (2026-09-09). Rest it for the next few articles.
+- **Closer construction "The [thing] did not change and neither did the [other thing]. What changed is…"** — used in reroute-after-pickup and reworked in thin-sub-coverage. Retire it; end the "what changes" section a different way.
+- **Diagnostic-list heading "Which numbers are worth pulling…"** — used in reroute-after-pickup and thin-sub-coverage back to back. Keep the three-item measurement list, phrase the heading differently.
 
 ## Title-shape diversity rule
 
@@ -35,6 +37,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-09-10 — Thin Sub Coverage on Mid-Size GC Bid Days · construction · `thin-sub-coverage-mid-size-gc-bid-days`
 - 2026-09-09 — When Shippers Reroute Freight After the Truck Rolls · logistics · `shippers-reroute-freight-after-truck-rolls`
 - 2026-09-08 — What Bundle and Kit Errors Cost DTC Brands at Peak · e-com ops · `bundle-kit-errors-cost-dtc-brands-at-peak`
 - 2026-09-07 — How Stale Progress Data Distorts GC Schedule Updates · construction · `stale-progress-data-gc-schedule-updates`
