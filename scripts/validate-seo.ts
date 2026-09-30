@@ -158,6 +158,7 @@ const SCRIPT_OR_STYLE_RE = /<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi;
 const TAG_RE = /<[^>]+>/g;
 const LOC_RE = /<loc>([\s\S]*?)<\/loc>/gi;
 const MARKDOWN_LINK_RE = /\]\(([^)\s]+)\)/g;
+const MARKDOWN_IMAGE_RE = /!\[[^\]]*\]\(([^)\s]+)(?:\s+[^)]*)?\)/g;
 const FRONTMATTER_BLOCK_RE = /export const frontmatter\s*=\s*\{([\s\S]*?)^\};/m;
 
 const failures: string[] = [];
@@ -219,6 +220,7 @@ type PublishedPost = {
   file: string;
   route: string;
   source: string;
+  heroImage: string | null;
 };
 
 type RouteDocument = {
@@ -285,10 +287,48 @@ async function readPublishedPosts(projectRoot: string): Promise<PublishedPost[]>
       file: entry.name,
       route: `/blog/${explicitSlug ?? entry.name.replace(/\.mdx$/, "")}`,
       source,
+      heroImage: block.match(/^\s*heroImage:\s*"([^"]+)"/m)?.[1] ?? null,
     });
   }
 
   return posts.sort((a, b) => a.route.localeCompare(b.route));
+}
+
+/**
+ * The page wrapper renders the frontmatter hero before the MDX body. Repeating
+ * a file named `hero.*` inside the body produces a second cover image, while
+ * section-specific diagrams remain valid. Hero SVGs also share one 3:2 canvas
+ * so cards and article headers crop consistently.
+ */
+async function validateArticlePresentation(post: PublishedPost, projectRoot: string) {
+  const expectedHero = `${post.route}/hero.svg`;
+  const inlineHeroImages = [...post.source.matchAll(MARKDOWN_IMAGE_RE)]
+    .map(([, href]) => href)
+    .filter((href) => /\/hero\.[a-z0-9]+$/i.test(href));
+
+  check(`${post.file} hero reference`, () => {
+    assert.equal(post.heroImage, expectedHero, `expected frontmatter heroImage to be "${expectedHero}"`);
+  });
+
+  check(`${post.file} inline hero image`, () => {
+    assert.deepEqual(
+      inlineHeroImages,
+      [],
+      `MDX body repeats the page hero: ${inlineHeroImages.join(", ")}`,
+    );
+  });
+
+  if (post.heroImage === null || !post.heroImage.startsWith("/")) return;
+
+  const heroPath = path.resolve(projectRoot, "public", post.heroImage.replace(/^\//, ""));
+  const heroSvg = await readFileOrNull(heroPath);
+
+  check(`${post.file} hero asset`, () => {
+    assert.ok(heroSvg !== null, `missing ${path.relative(projectRoot, heroPath)}`);
+    assert.match(heroSvg, /\bviewBox="0 0 1500 1000"/, "hero SVG must use the 1500×1000 editorial canvas");
+    assert.ok(heroSvg.includes("THE JOURNAL"), 'hero SVG is missing the "THE JOURNAL" label');
+    assert.match(heroSvg, /\by="994"/, "hero SVG is missing the bottom-edge accent at y=994");
+  });
 }
 
 /**
@@ -565,6 +605,7 @@ export async function validateSeoBuild(projectRoot = process.cwd()): Promise<voi
   const blogSlugs = new Set(blogRoutes);
 
   for (const post of posts) {
+    await validateArticlePresentation(post, projectRoot);
     validateArticleLinks(post, resolvableLinks, blogSlugs);
   }
 

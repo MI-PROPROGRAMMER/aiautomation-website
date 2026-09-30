@@ -1,65 +1,73 @@
-<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="640" height="360" rx="32" fill="url(#paint0_linear)" />
-  <g filter="url(#filter0_f)">
-    <ellipse cx="128" cy="252" rx="128" ry="120" fill="url(#paint1_radial)" fill-opacity="0.4" />
-  </g>
-  <g filter="url(#filter1_f)">
-    <ellipse cx="520" cy="116" rx="160" ry="140" fill="url(#paint2_radial)" fill-opacity="0.35" />
-  </g>
-  <g opacity="0.9">
-    <rect x="156" y="190" width="328" height="120" rx="28" fill="#021627" fill-opacity="0.6" />
-    <rect x="188" y="214" width="120" height="28" rx="12" fill="#0E2F4A" />
-    <rect x="188" y="256" width="84" height="20" rx="10" fill="#0E2F4A" />
-    <rect x="332" y="214" width="128" height="10" rx="5" fill="#AEE8FF" fill-opacity="0.8" />
-    <rect x="332" y="234" width="96" height="10" rx="5" fill="#5ED1F5" fill-opacity="0.7" />
-    <rect x="332" y="254" width="144" height="12" rx="6" fill="#8CF7D6" fill-opacity="0.75" />
-  </g>
-  <rect
-    x="210"
-    y="80"
-    width="220"
-    height="72"
-    rx="36"
-    fill="url(#paint3_linear)"
-    fill-opacity="0.75"
-    stroke="rgba(255,255,255,0.25)"
-  />
-  <text
-    x="240"
-    y="124"
-    fill="#ffffff"
-    fill-opacity="0.9"
-    font-family="Inter, 'Segoe UI', sans-serif"
-    font-size="22"
-    font-weight="600"
-    letter-spacing="0.08em"
-  >
-    ROI PLAYBOOK
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Automation ROI scorecard comparing opportunity value, effort, risk, and time to value">
   <defs>
-    <filter id="filter0_f" x="-120" y="52" width="496" height="400" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="80" />
-    </filter>
-    <filter id="filter1_f" x="240" y="-144" width="560" height="520" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="100" />
-    </filter>
-    <linearGradient id="paint0_linear" x1="0" y1="0" x2="640" y2="360" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#021A33" />
-      <stop offset="1" stop-color="#08304d" />
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
     </linearGradient>
-    <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(128 252) rotate(90) scale(120 128)">
-      <stop stop-color="#2EC1FF" />
-      <stop offset="1" stop-color="#2EC1FF" stop-opacity="0" />
+    <radialGradient id="glow" cx="0.2" cy="0.18" r="0.62">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="paint2_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(520 116) rotate(90) scale(140 160)">
-      <stop stop-color="#39F2C3" />
-      <stop offset="1" stop-color="#39F2C3" stop-opacity="0" />
-    </radialGradient>
-    <linearGradient id="paint3_linear" x1="210" y1="80" x2="430" y2="152" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0C2846" />
-      <stop offset="1" stop-color="#1E4E73" />
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#00B5E2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="barStrong" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2"/>
+      <stop offset="1" stop-color="#7fb6d6"/>
     </linearGradient>
   </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <g stroke="#0a3a66" stroke-width="1" opacity="0.32">
+    <path d="M0 210 H1500"/><path d="M0 430 H1500"/><path d="M0 650 H1500"/><path d="M0 860 H1500"/>
+  </g>
+
+  <g transform="translate(180,170)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="22" letter-spacing="6" fill="#00B5E2" opacity="0.85">THE JOURNAL</text>
+    <text y="94" font-size="76" font-weight="700" fill="#ffffff">Automation ROI Playbook:</text>
+    <text y="176" font-size="76" font-weight="700" fill="#ffffff">Turn AI Experiments Into</text>
+    <text y="258" font-size="76" font-weight="700" fill="#ffffff">Pipeline Growth</text>
+    <text y="320" font-size="32" font-weight="400" fill="#cfe5f1" opacity="0.9">Score the opportunity before funding the build</text>
+  </g>
+
+  <g transform="translate(180,575)" font-family="Georgia, 'Times New Roman', serif">
+    <text font-size="14" letter-spacing="3" fill="#7fb6d6">OPPORTUNITY SCORECARD</text>
+
+    <g transform="translate(0,38)">
+      <text x="0" y="24" font-size="15" fill="#cfe5f1">VOLUME</text>
+      <rect x="170" y="5" width="560" height="24" rx="4" fill="#0a3a66"/>
+      <rect x="170" y="5" width="490" height="24" rx="4" fill="url(#barStrong)"/>
+      <text x="755" y="24" font-size="14" fill="#00B5E2">HIGH</text>
+
+      <text x="0" y="78" font-size="15" fill="#cfe5f1">VALUE</text>
+      <rect x="170" y="59" width="560" height="24" rx="4" fill="#0a3a66"/>
+      <rect x="170" y="59" width="435" height="24" rx="4" fill="url(#barStrong)"/>
+      <text x="755" y="78" font-size="14" fill="#00B5E2">STRONG</text>
+
+      <text x="0" y="132" font-size="15" fill="#cfe5f1">COMPLEXITY</text>
+      <rect x="170" y="113" width="560" height="24" rx="4" fill="#0a3a66"/>
+      <rect x="170" y="113" width="310" height="24" rx="4" fill="#5e8aa6"/>
+      <text x="755" y="132" font-size="14" fill="#7fb6d6">MEDIUM</text>
+
+      <text x="0" y="186" font-size="15" fill="#cfe5f1">TIME TO VALUE</text>
+      <rect x="170" y="167" width="560" height="24" rx="4" fill="#0a3a66"/>
+      <rect x="170" y="167" width="465" height="24" rx="4" fill="url(#barStrong)"/>
+      <text x="755" y="186" font-size="14" fill="#00B5E2">FAST</text>
+    </g>
+
+    <g transform="translate(900,16)">
+      <rect width="330" height="250" rx="16" fill="#0a3a66" fill-opacity="0.48" stroke="#5e8aa6" stroke-opacity="0.55"/>
+      <text x="165" y="42" text-anchor="middle" font-size="13" letter-spacing="3" fill="#7fb6d6">PILOT PRIORITY</text>
+      <text x="165" y="126" text-anchor="middle" font-size="68" font-weight="700" fill="#00B5E2">87</text>
+      <text x="165" y="158" text-anchor="middle" font-size="15" fill="#cfe5f1">OUT OF 100</text>
+      <path d="M56 190 H274" stroke="#5e8aa6" stroke-width="1" opacity="0.5"/>
+      <text x="165" y="222" text-anchor="middle" font-size="14" letter-spacing="2" fill="#cfe5f1">FUND THE PROOF OF VALUE</text>
+    </g>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
 </svg>
-
-
