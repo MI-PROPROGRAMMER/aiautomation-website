@@ -37,6 +37,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-11-02 — AI Agents and the 3PL Client Email Backlog · logistics · `ai-agents-3pl-client-email-backlog`
 - 2026-09-10 — Thin Sub Coverage on Mid-Size GC Bid Days · construction · `thin-sub-coverage-mid-size-gc-bid-days`
 - 2026-09-09 — When Shippers Reroute Freight After the Truck Rolls · logistics · `shippers-reroute-freight-after-truck-rolls`
 - 2026-09-08 — What Bundle and Kit Errors Cost DTC Brands at Peak · e-com ops · `bundle-kit-errors-cost-dtc-brands-at-peak`

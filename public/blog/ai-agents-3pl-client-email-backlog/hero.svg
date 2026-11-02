@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="0.65" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 1 1 L 11 6 L 1 11 z" fill="#00B5E2" fill-opacity="0.9"/>
+    </marker>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <text x="750" y="200" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="8">THE JOURNAL</text>
+  <text x="750" y="318" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold">The 3PL Client Inbox</text>
+  <text x="750" y="388" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill-opacity="0.9">AI agents answer the lookups, people take the exceptions</text>
+  <line x1="600" y1="436" x2="900" y2="436" stroke="#00B5E2" stroke-opacity="0.35" stroke-width="2"/>
+
+  <!-- inbound stack of client emails -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#cfe5f1">
+    <rect x="190" y="500" width="330" height="56" rx="6" fill="#0a3a66" stroke="#5e8aa6" stroke-opacity="0.6"/>
+    <text x="214" y="536">Did order 48213 ship?</text>
+    <rect x="190" y="570" width="330" height="56" rx="6" fill="#0a3a66" stroke="#5e8aa6" stroke-opacity="0.6"/>
+    <text x="214" y="606">On-hand count, blue 32oz</text>
+    <rect x="190" y="640" width="330" height="56" rx="6" fill="#0a3a66" stroke="#00B5E2" stroke-opacity="0.9" stroke-width="2"/>
+    <text x="214" y="676" fill="#ffffff">HOLD order 48291</text>
+    <rect x="190" y="710" width="330" height="56" rx="6" fill="#0a3a66" stroke="#5e8aa6" stroke-opacity="0.6"/>
+    <text x="214" y="746">Was Monday's container received?</text>
+    <rect x="190" y="780" width="330" height="56" rx="6" fill="#0a3a66" stroke="#5e8aa6" stroke-opacity="0.6"/>
+    <text x="214" y="816">Why is storage higher?</text>
+  </g>
+
+  <!-- agent node -->
+  <line x1="540" y1="668" x2="660" y2="668" stroke="#00B5E2" stroke-width="3" marker-end="url(#arr)"/>
+  <circle cx="750" cy="668" r="82" fill="#00B5E2" fill-opacity="0.08" stroke="#00B5E2" stroke-width="3"/>
+  <circle cx="750" cy="668" r="48" fill="#00B5E2" fill-opacity="0.18"/>
+  <text x="750" y="662" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="bold">AI</text>
+  <text x="750" y="692" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="20">agent</text>
+
+  <!-- three outbound lanes -->
+  <path d="M 832 640 C 900 560, 940 540, 1010 540" fill="none" stroke="#00B5E2" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M 832 668 L 1010 668" fill="none" stroke="#00B5E2" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M 832 696 C 900 776, 940 796, 1010 796" fill="none" stroke="#7fb6d6" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arr)"/>
+
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <rect x="1020" y="508" width="300" height="64" rx="8" fill="#00B5E2" fill-opacity="0.12" stroke="#00B5E2" stroke-opacity="0.7"/>
+    <text x="1170" y="548" text-anchor="middle" fill="#ffffff" font-size="24">Answered in minutes</text>
+    <rect x="1020" y="636" width="300" height="64" rx="8" fill="#00B5E2" fill-opacity="0.2" stroke="#00B5E2"/>
+    <text x="1170" y="676" text-anchor="middle" fill="#ffffff" font-size="24">Urgent: top of queue</text>
+    <rect x="1020" y="764" width="300" height="64" rx="8" fill="#0a3a66" stroke="#7fb6d6" stroke-opacity="0.8"/>
+    <text x="1170" y="804" text-anchor="middle" fill="#cfe5f1" font-size="24">To a person, with context</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
