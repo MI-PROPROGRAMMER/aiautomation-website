@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="0.7" stop-color="#7fb6d6" stop-opacity="1"/>
+      <stop offset="1" stop-color="#7fb6d6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <text x="750" y="200" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="6">THE JOURNAL</text>
+  <text x="750" y="300" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-weight="bold">AI Chatbots for Final-Mile</text>
+  <text x="750" y="395" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-weight="bold">Delivery Scheduling</text>
+  <text x="750" y="460" text-anchor="middle" fill="#cfe5f1" fill-opacity="0.9" font-family="Georgia, 'Times New Roman', serif" font-size="36">Confirmed windows before the truck leaves the yard</text>
+
+  <!-- Chat thread (left) -->
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <rect x="200" y="530" width="460" height="300" rx="28" fill="#0a3a66" fill-opacity="0.55" stroke="#5e8aa6" stroke-opacity="0.6"/>
+    <rect x="230" y="560" width="330" height="64" rx="20" fill="#5e8aa6" fill-opacity="0.45"/>
+    <text x="252" y="600" fill="#cfe5f1" font-size="22">Your sofa is at our hub. Pick a window:</text>
+    <rect x="300" y="644" width="330" height="56" rx="20" fill="#00B5E2" fill-opacity="0.85"/>
+    <text x="322" y="680" fill="#001a36" font-size="22">Thursday, after noon please</text>
+    <rect x="230" y="720" width="330" height="80" rx="20" fill="#5e8aa6" fill-opacity="0.45"/>
+    <text x="252" y="756" fill="#cfe5f1" font-size="22">Booked: Thu 12:00 to 3:00 PM.</text>
+    <text x="252" y="784" fill="#cfe5f1" font-size="22">Any stairs at the entrance?</text>
+  </g>
+
+  <!-- Connector -->
+  <path d="M 680 680 C 730 680 760 680 810 680" stroke="#00B5E2" stroke-width="3" stroke-dasharray="8 8" fill="none"/>
+  <circle cx="810" cy="680" r="7" fill="#00B5E2"/>
+
+  <!-- Delivery window grid (right) -->
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="840" y="555" fill="#7fb6d6" font-size="22" letter-spacing="3">ROUTE WINDOWS</text>
+    <g>
+      <text x="840" y="610" fill="#cfe5f1" font-size="22">Tue</text>
+      <rect x="910" y="588" width="120" height="34" rx="8" fill="#0a3a66"/>
+      <rect x="1045" y="588" width="120" height="34" rx="8" fill="#0a3a66"/>
+      <rect x="1180" y="588" width="120" height="34" rx="8" fill="#0a3a66"/>
+    </g>
+    <g>
+      <text x="840" y="670" fill="#cfe5f1" font-size="22">Wed</text>
+      <rect x="910" y="648" width="120" height="34" rx="8" fill="#5e8aa6" fill-opacity="0.5"/>
+      <rect x="1045" y="648" width="120" height="34" rx="8" fill="#0a3a66"/>
+      <rect x="1180" y="648" width="120" height="34" rx="8" fill="#5e8aa6" fill-opacity="0.5"/>
+    </g>
+    <g>
+      <text x="840" y="730" fill="#cfe5f1" font-size="22">Thu</text>
+      <rect x="910" y="708" width="120" height="34" rx="8" fill="#0a3a66"/>
+      <rect x="1045" y="708" width="120" height="34" rx="8" fill="#00B5E2"/>
+      <rect x="1180" y="708" width="120" height="34" rx="8" fill="#0a3a66"/>
+    </g>
+    <g>
+      <text x="840" y="790" fill="#cfe5f1" font-size="22">Fri</text>
+      <rect x="910" y="768" width="120" height="34" rx="8" fill="#5e8aa6" fill-opacity="0.5"/>
+      <rect x="1045" y="768" width="120" height="34" rx="8" fill="#5e8aa6" fill-opacity="0.5"/>
+      <rect x="1180" y="768" width="120" height="34" rx="8" fill="#0a3a66"/>
+    </g>
+    <text x="970" y="840" text-anchor="middle" fill="#7fb6d6" font-size="18">AM</text>
+    <text x="1105" y="840" text-anchor="middle" fill="#7fb6d6" font-size="18">MIDDAY</text>
+    <text x="1240" y="840" text-anchor="middle" fill="#7fb6d6" font-size="18">PM</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
