@@ -25,6 +25,7 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Post-table line "Read that table as one pattern rather than [N] problems / line items."** — used in power-only. Summarize a table's shared cause without this construction.
 - **Title shape "When [Actor] [Verb]s [Object]"** — used in reroute-after-pickup (2026-09-09). Rest it for the next few articles.
 - **Closer construction "The [thing] did not change and neither did the [other thing]. What changed is…"** — used in reroute-after-pickup and reworked in thin-sub-coverage. Retire it; end the "what changes" section a different way.
+- **Title shape "AI [Agents/Chatbots/Automation] for/and the [X]"** (keyword-first noun phrase) — used in the 3PL email backlog and final-mile scheduling articles back to back. Lead with the keyword in a different construction (e.g. "X vs Y", a question) for the next few.
 - **Diagnostic-list heading "Which numbers are worth pulling…"** — used in reroute-after-pickup and thin-sub-coverage back to back. Keep the three-item measurement list, phrase the heading differently.
 
 ## Title-shape diversity rule
@@ -37,6 +38,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-11-04 — AI Automation vs Manual Customs Entry Prep · logistics · `ai-automation-vs-manual-customs-entry-prep`
 - 2026-11-03 — AI Chatbots for Final-Mile Delivery Scheduling · logistics · `ai-chatbots-final-mile-delivery-scheduling`
 - 2026-11-02 — AI Agents and the 3PL Client Email Backlog · logistics · `ai-agents-3pl-client-email-backlog`
 - 2026-09-10 — Thin Sub Coverage on Mid-Size GC Bid Days · construction · `thin-sub-coverage-mid-size-gc-bid-days`

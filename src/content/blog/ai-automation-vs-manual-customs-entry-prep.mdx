@@ -1,0 +1,78 @@
+export const frontmatter = {
+  title: "AI Automation vs Manual Customs Entry Prep",
+  excerpt:
+    "Tariff stacking turned one invoice line into several HTS numbers. Here is how manual entry prep compares with AI-assisted prep for importers and customs brokers.",
+  date: "2026-11-04",
+  author: "ApexifyLabs Team",
+  tags: ["Logistics", "AI Automation", "Customs Brokerage", "Cross-Border", "Importers"],
+  heroImage: "/blog/ai-automation-vs-manual-customs-entry-prep/hero.svg",
+  seoDescription:
+    "How AI automation changes customs entry prep for US importers and brokers: invoice extraction, tariff stacking checks and exception flags, with people signing off.",
+  readingTime: "4 min read",
+};
+
+AI automation for customs entry prep reads commercial invoices, packing lists and bills of lading, pulls the line data into a draft entry, checks each line against the importer's classification history and current tariff actions, and flags anything that does not match. A licensed broker or trade specialist still classifies, reviews and files. The difference is where their hours go.
+
+## Why did customs entry prep get so much heavier?
+
+For most of the last decade, entry prep at a mid-size importer was steady, unglamorous work. The same suppliers shipped the same parts under the same HTS numbers, and duty rates rarely moved. That stopped being true in 2025.
+
+Two changes did most of the damage. First, tariff stacking. A single product can now carry several overlapping duties depending on origin, material and program, and each one has to be reflected on the entry. A customs broker in New Jersey [told the Associated Press](https://fortune.com/2025/12/24/tariffs-complex-make-trade-boring-again-cheese-imports/) that one line item of cheese that used to be a single tariff number "now it could be two, three, in some cases five tariff numbers," and that the work per item roughly doubles.
+
+Second, the end of de minimis. An executive order signed on July 30, 2025 removed duty-free entry for shipments valued at $800 or less, effective August 29, 2025, [regardless of country of origin or method of entry](https://www.whitecase.com/insight-alert/united-states-suspend-customs-de-minimis-entry-most-shipments-august-29-2025). The scale is large: the White House fact sheet cited 309 million de minimis shipments in fiscal 2025 through June 30, against 115 million for all of fiscal 2024. Low-value shipments that once cleared with almost no paperwork now need a proper entry. That hits Canadian, UK and Australian brands selling into the US just as hard as US importers buying from overseas.
+
+## What does that cost an importer or a brokerage?
+
+The market has already priced it in. [Reuters reported](https://www.bnnbloomberg.ca/business/international/2025/06/11/us-importers-turn-to-brokers-to-navigate-trump-era-tariffs-at-a-cost/) in June 2025 that customs brokerage fees, typically around $4 to $7 per HTS code, were rising by $1 to $5 per code at some brokers, with at least one adding a $3 charge per product type for merchandise facing tariff stacking. DHL had grown its US customs entry team by 30% since February, and FedEx had more than 40 open customs and trade postings.
+
+For an importer, that shows up in three places on the P&L: higher brokerage invoices, more internal hours spent answering broker questions about product composition and origin, and slower clearance when an entry stalls on a missing document. For a brokerage, it shows up as a staffing problem. Experienced entry writers are scarce, and every hour one of them spends retyping an invoice is an hour not spent on the classification calls only they can make.
+
+## Manual vs AI-assisted entry prep: what actually changes?
+
+The clearest way to see the shift is task by task. Notice that the judgment calls stay with people in both columns; what moves is the reading, matching and checking around them.
+
+| Task | Manual prep | AI-assisted prep |
+|---|---|---|
+| Reading supplier invoices | Entry writer keys line data from PDFs, scans and spreadsheets | Line data extracted on arrival, low-confidence fields highlighted |
+| Matching parts to HTS numbers | Writer searches past entries or asks the importer | Draft classification proposed from the importer's own history, new parts flagged |
+| Tariff stacking | Writer checks each line against current actions from memory and notes | Every line checked against the current set of applicable actions, gaps flagged |
+| Value and quantity checks | Spot checks when time allows | Invoice, packing list and PO compared line by line on every entry |
+| Missing documents | Discovered when the entry is being built | Requested from the supplier or importer as soon as the shipment is booked |
+| Final review and filing | Licensed broker | Licensed broker |
+
+The last row matters most. Under US customs law, the importer owes CBP reasonable care on every entry, and the broker carries professional responsibility for what it files. Automation does not change that. What it changes is how much clean, checked information reaches the person who signs.
+
+## Where does AI automation help customs brokers most?
+
+Brokerages that serve dozens of importers tend to see the biggest gains in four areas:
+
+1. **Document intake.** Commercial invoices arrive in every format imaginable. Extracting line data on arrival means an entry writer starts with a draft, not a blank screen.
+2. **Repeat parts.** Most importers ship the same SKUs again and again. Matching those against prior, approved classifications frees writers to focus on the genuinely new items.
+3. **Tariff change exposure.** When an action changes, the useful question is "which of our clients' open and upcoming entries does this touch?" An automated check against each client's history answers that in minutes rather than days.
+4. **Client back-and-forth.** Questions about material, origin or end use can be drafted automatically from the gap that triggered them and sent to the right contact, with the reply attached to the entry file.
+
+Brokerages that already think in terms of [cross-border paperwork dwell](/blog/cross-border-paperwork-dwell-freight-brokers) will recognize the pattern: most delay comes from information arriving late or incomplete, not from the filing itself.
+
+## Is AI automation reliable enough for customs work?
+
+It is reliable for the parts it should do, and it should not be trusted with the parts it should not. A well-built setup does three things that matter for compliance. It shows its sources, so a reviewer can see exactly which invoice line and which prior entry produced a suggestion. It refuses to guess on new parts, sending them to a person instead of forcing a match. And it keeps a record of every check, which is useful when CBP asks how an importer exercised reasonable care.
+
+What it should not do is classify new merchandise on its own or file without review. Classification depends on product knowledge, rulings and judgment that sit with licensed brokers and trade specialists, and that is where they should spend their day.
+
+The same principle runs through how we approach [line-item freight bill review](/blog/freight-bill-audit-sampled-vs-ai-line-item-review): check everything, decide nothing that a qualified person should decide.
+
+## What should an importer ask its broker, or its own team?
+
+If you are an importer with $2M to $100M in revenue and a growing import bill, these questions usually reveal where the hours are going:
+
+1. How many entries in the last quarter were held or amended because of a missing or inconsistent document?
+2. How long does it take, today, to identify every open entry affected by a new tariff action?
+3. What share of your broker's questions to your team could have been answered from data you already sent?
+
+Brands that sell direct to consumers across borders will find the same questions apply to the trade-off between [DDP and DAP shipping](/blog/ddp-vs-dap-shipping-dtc-cross-border-margin-story), where duty exposure now lands on every small parcel.
+
+## The pitch
+
+Customs entry prep is a good fit for AI automation because the work is document-heavy, repetitive at the line level, and surrounded by checks that people rarely have time to run on every entry. It is a poor fit for anyone who wants software to make classification decisions, and we do not build it that way. The value lies in getting the reading and matching out of the way so your licensed people can spend their hours on judgment. You can see how we work with freight and trade teams on our [logistics industry page](/industries/logistics).
+
+If your import desk or brokerage is feeling the weight of tariff stacking and post-de minimis volume, we offer a **completely free automation audit**. We will walk through a sample of your recent entries with you and show where automation would take the load, and where your specialists should stay firmly in control. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book your free audit</a>

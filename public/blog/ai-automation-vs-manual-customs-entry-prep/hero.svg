@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.2" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="0.5" stop-color="#7fb6d6" stop-opacity="1"/>
+      <stop offset="0.8" stop-color="#00B5E2" stop-opacity="1"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 1 1 L 11 6 L 1 11 z" fill="#00B5E2"/>
+    </marker>
+  </defs>
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <text x="750" y="200" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="6">THE JOURNAL</text>
+  <text x="750" y="315" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold">Customs Entry Prep</text>
+  <text x="750" y="385" text-anchor="middle" fill="#cfe5f1" fill-opacity="0.9" font-family="Georgia, 'Times New Roman', serif" font-size="36">One invoice line, several tariff numbers</text>
+
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <!-- invoice document -->
+    <rect x="230" y="480" width="300" height="340" rx="10" fill="#0a3a66" stroke="#5e8aa6" stroke-opacity="0.7" stroke-width="2"/>
+    <text x="260" y="525" fill="#cfe5f1" font-size="24" font-weight="bold">COMMERCIAL INVOICE</text>
+    <rect x="260" y="550" width="240" height="10" rx="5" fill="#5e8aa6" fill-opacity="0.6"/>
+    <rect x="260" y="580" width="200" height="10" rx="5" fill="#5e8aa6" fill-opacity="0.6"/>
+    <rect x="252" y="612" width="256" height="44" rx="6" fill="#00B5E2" fill-opacity="0.15" stroke="#00B5E2" stroke-width="2"/>
+    <text x="268" y="642" fill="#ffffff" font-size="22">Line 4: aged cheese</text>
+    <rect x="260" y="680" width="220" height="10" rx="5" fill="#5e8aa6" fill-opacity="0.6"/>
+    <rect x="260" y="710" width="180" height="10" rx="5" fill="#5e8aa6" fill-opacity="0.6"/>
+    <rect x="260" y="740" width="230" height="10" rx="5" fill="#5e8aa6" fill-opacity="0.6"/>
+    <rect x="260" y="770" width="160" height="10" rx="5" fill="#5e8aa6" fill-opacity="0.6"/>
+
+    <!-- fan out arrows -->
+    <path d="M 512 634 C 640 634, 680 520, 820 520" fill="none" stroke="#00B5E2" stroke-width="3" marker-end="url(#arr)"/>
+    <path d="M 512 634 C 640 634, 680 600, 820 600" fill="none" stroke="#00B5E2" stroke-width="3" marker-end="url(#arr)"/>
+    <path d="M 512 634 C 640 634, 680 680, 820 680" fill="none" stroke="#00B5E2" stroke-width="3" marker-end="url(#arr)"/>
+    <path d="M 512 634 C 640 634, 680 760, 820 760" fill="none" stroke="#7fb6d6" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arr)"/>
+
+    <!-- tariff lines -->
+    <rect x="830" y="492" width="420" height="56" rx="8" fill="#0a3a66" stroke="#5e8aa6" stroke-opacity="0.7"/>
+    <text x="855" y="528" fill="#ffffff" font-size="24">Base HTS classification</text>
+    <rect x="830" y="572" width="420" height="56" rx="8" fill="#0a3a66" stroke="#5e8aa6" stroke-opacity="0.7"/>
+    <text x="855" y="608" fill="#ffffff" font-size="24">Additional duty action</text>
+    <rect x="830" y="652" width="420" height="56" rx="8" fill="#0a3a66" stroke="#5e8aa6" stroke-opacity="0.7"/>
+    <text x="855" y="688" fill="#ffffff" font-size="24">Origin-based tariff</text>
+    <rect x="830" y="732" width="420" height="56" rx="8" fill="none" stroke="#00B5E2" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="855" y="768" fill="#00B5E2" font-size="24">Flag for broker review</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
