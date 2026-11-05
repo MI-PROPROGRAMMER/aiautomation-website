@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="How AI agents cut distributor quote turnaround">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0a3a66"/>
+      <stop offset="0.35" stop-color="#00B5E2"/>
+      <stop offset="0.7" stop-color="#7fb6d6"/>
+      <stop offset="1" stop-color="#0a3a66"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <text x="150" y="200" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="26" letter-spacing="6">THE JOURNAL</text>
+  <text x="150" y="300" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="bold">How Do AI Agents Cut</text>
+  <text x="150" y="395" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="bold">Distributor Quote Turnaround?</text>
+  <text x="150" y="460" fill="#cfe5f1" opacity="0.9" font-family="Georgia, 'Times New Roman', serif" font-size="38">From messy request to reviewed quote, faster</text>
+  <!-- inputs: stacked request cards -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="24">
+    <rect x="150" y="560" width="260" height="70" rx="10" fill="#0a3a66" stroke="#5e8aa6"/>
+    <text x="175" y="603" fill="#cfe5f1">Email RFQ</text>
+    <rect x="150" y="650" width="260" height="70" rx="10" fill="#0a3a66" stroke="#5e8aa6"/>
+    <text x="175" y="693" fill="#cfe5f1">PDF part list</text>
+    <rect x="150" y="740" width="260" height="70" rx="10" fill="#0a3a66" stroke="#5e8aa6"/>
+    <text x="175" y="783" fill="#cfe5f1">Photo of a list</text>
+    <!-- arrows to agent -->
+    <path d="M410 595 L560 685 M410 685 L560 685 M410 775 L560 685" stroke="#7fb6d6" stroke-width="3" fill="none"/>
+    <!-- agent node -->
+    <circle cx="640" cy="685" r="80" fill="#002347" stroke="#00B5E2" stroke-width="4"/>
+    <text x="640" y="678" fill="#ffffff" text-anchor="middle" font-size="26" font-weight="bold">AI</text>
+    <text x="640" y="710" fill="#ffffff" text-anchor="middle" font-size="26" font-weight="bold">agent</text>
+    <!-- steps -->
+    <path d="M720 685 L860 685" stroke="#00B5E2" stroke-width="4"/>
+    <polygon points="860,675 878,685 860,695" fill="#00B5E2"/>
+    <rect x="890" y="560" width="440" height="250" rx="14" fill="#0a3a66" stroke="#00B5E2" stroke-width="2"/>
+    <text x="920" y="605" fill="#ffffff" font-size="28" font-weight="bold">Draft quote</text>
+    <text x="920" y="650" fill="#cfe5f1">Parts matched to SKUs</text>
+    <text x="920" y="690" fill="#cfe5f1">Stock and lead time</text>
+    <text x="920" y="730" fill="#cfe5f1">Customer pricing</text>
+    <text x="920" y="780" fill="#00B5E2">Rep reviews and sends</text>
+  </g>
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
