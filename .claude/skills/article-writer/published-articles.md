@@ -38,6 +38,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-11-06 — AI Chatbot Dock Scheduling: Fewer Calls at Receiving · logistics (warehousing) · `ai-chatbot-dock-scheduling-warehouse-receiving`
 - 2026-11-05 — How Do AI Agents Cut Distributor Quote Turnaround? · ops (distribution) · `ai-agents-distributor-quote-turnaround`
 - 2026-11-04 — AI Automation vs Manual Customs Entry Prep · logistics · `ai-automation-vs-manual-customs-entry-prep`
 - 2026-11-03 — AI Chatbots for Final-Mile Delivery Scheduling · logistics · `ai-chatbots-final-mile-delivery-scheduling`
