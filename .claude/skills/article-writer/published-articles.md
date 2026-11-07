@@ -27,6 +27,7 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Closer construction "The [thing] did not change and neither did the [other thing]. What changed is…"** — used in reroute-after-pickup and reworked in thin-sub-coverage. Retire it; end the "what changes" section a different way.
 - **Title shape "AI [Agents/Chatbots/Automation] for/and the [X]"** (keyword-first noun phrase) — used in the 3PL email backlog and final-mile scheduling articles back to back. Lead with the keyword in a different construction (e.g. "X vs Y", a question) for the next few.
 - **Diagnostic-list heading "Which numbers are worth pulling…"** — used in reroute-after-pickup and thin-sub-coverage back to back. Keep the three-item measurement list, phrase the heading differently.
+- **Question title shape "How/What Do(es) AI [X] [Verb] ...?"** — used for distributor quote turnaround (2026-11-05) and distributor cash application (2026-11-07). Use a non-question title shape for the next few.
 
 ## Title-shape diversity rule
 
@@ -38,6 +39,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-11-07 — What Does AI Automation Do for Distributor Cash Application? · ops (distribution) · `ai-automation-distributor-cash-application`
 - 2026-11-06 — AI Chatbot Dock Scheduling: Fewer Calls at Receiving · logistics (warehousing) · `ai-chatbot-dock-scheduling-warehouse-receiving`
 - 2026-11-05 — How Do AI Agents Cut Distributor Quote Turnaround? · ops (distribution) · `ai-agents-distributor-quote-turnaround`
 - 2026-11-04 — AI Automation vs Manual Customs Entry Prep · logistics · `ai-automation-vs-manual-customs-entry-prep`
