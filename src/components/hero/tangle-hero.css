@@ -1,0 +1,236 @@
+/* TangleHero: scroll story on the brand navy, with the cyan accent as the one clean line. */
+.tangle-hero {
+  position: relative;
+  height: 420vh;
+  background: hsl(var(--background));
+}
+
+.tangle-hero__stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+/* Layers: the revealed content at the back, the scroll story over it, and the
+   two halves that take over the story's last frame and slide apart. */
+.tangle-hero__stage { --split: 0; }
+.tangle-hero__reveal {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 96px clamp(20px, 5vw, 72px) 40px;
+  opacity: calc(0.25 + 0.75 * var(--split));
+  transform: scale(calc(0.94 + 0.06 * var(--split)));
+  pointer-events: none;
+}
+.tangle-hero__stage.is-open .tangle-hero__reveal { pointer-events: auto; }
+/* The workflow card the split reveals: as large as fits under the navbar */
+.tangle-hero__frame {
+  width: min(1400px, calc(100vw - 48px), calc((100svh - 140px) * 1450 / 840));
+  aspect-ratio: 1450 / 840;
+}
+
+/* The copy that follows the hero, in normal flow */
+.hero-copy {
+  position: relative;
+  padding: clamp(88px, 13vh, 150px) clamp(20px, 5vw, 72px);
+  background: hsl(var(--background));
+}
+.tangle-hero__cover {
+  position: absolute;
+  inset: 0;
+  background: hsl(var(--background));
+}
+.tangle-hero__stage.is-splitting .tangle-hero__cover { visibility: hidden; }
+.tangle-hero__half {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: hsl(var(--background));
+  visibility: hidden;
+  will-change: transform;
+}
+.tangle-hero__stage.is-splitting .tangle-hero__half { visibility: visible; }
+.tangle-hero__stage.is-open .tangle-hero__half { visibility: hidden; }
+.tangle-hero__half.is-top {
+  top: 0;
+  border-bottom: 2px solid hsl(var(--accent));
+  box-shadow: 0 10px 30px -6px hsl(var(--accent) / 0.55);
+  transform: translateY(calc(var(--split) * -100%));
+}
+.tangle-hero__half.is-bottom {
+  top: 50%;
+  border-top: 2px solid hsl(var(--accent));
+  box-shadow: 0 -10px 30px -6px hsl(var(--accent) / 0.55);
+  transform: translateY(calc(var(--split) * 100%));
+}
+.tangle-hero__half .tangle-hero__phase { transition: none; }
+
+.tangle-hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Phases: one statement at a time, bottom left */
+.tangle-hero__phase {
+  position: absolute;
+  left: clamp(20px, 5vw, 72px);
+  bottom: clamp(72px, 14vh, 140px);
+  max-width: min(860px, calc(100vw - 40px));
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+}
+.tangle-hero__phase.is-on {
+  opacity: 1;
+  transform: none;
+}
+.tangle-hero__title {
+  font-family: "Playfair Display Variable", "Playfair Display", serif;
+  font-weight: 600;
+  font-size: clamp(48px, 9vw, 148px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: hsl(var(--primary-foreground));
+}
+.tangle-hero__phase.is-lead .tangle-hero__title {
+  font-weight: 500;
+  font-size: clamp(40px, 6.4vw, 104px);
+}
+.tangle-hero__phase.is-final .tangle-hero__title {
+  font-style: italic;
+}
+.tangle-hero__body {
+  margin-top: 18px;
+  max-width: 42ch;
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.55;
+  color: hsl(var(--primary-foreground) / 0.7);
+}
+
+/* Progress bar on the right */
+.tangle-hero__bar {
+  position: absolute;
+  right: clamp(20px, 5vw, 72px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  gap: 10px;
+}
+.tangle-hero__bar i {
+  display: block;
+  width: 3px;
+  height: 28px;
+  border-radius: 2px;
+  background: hsl(var(--primary-foreground) / 0.18);
+  transition: background-color 0.3s;
+}
+.tangle-hero__bar i.is-on {
+  background: hsl(var(--accent));
+}
+
+.tangle-hero__hint {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%); /* centred, clear of the chat button bottom right */
+  color: hsl(var(--primary-foreground) / 0.6);
+  transition: opacity 0.4s;
+}
+.tangle-hero__hint.is-gone {
+  opacity: 0;
+}
+
+/* Leak points: pulsing rings while "Analyze." is on screen */
+.tangle-hero__leaks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.tangle-hero__leak {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.4s ease calc(var(--i) * 90ms), transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--i) * 90ms);
+}
+.tangle-hero__leaks.is-on .tangle-hero__leak {
+  opacity: 1;
+  transform: none;
+}
+.tangle-hero__dot {
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: hsl(var(--accent));
+}
+.tangle-hero__ring {
+  position: absolute;
+  left: -16px;
+  top: -16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid hsl(var(--accent));
+  animation: tangle-leak 2.2s ease-out infinite;
+  animation-delay: calc(var(--i) * -0.37s);
+}
+.tangle-hero__ring.is-late {
+  animation-delay: calc(var(--i) * -0.37s - 1.1s);
+}
+@keyframes tangle-leak {
+  0% { transform: scale(0.3); opacity: 0.9; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+.tangle-hero__leak em {
+  position: absolute;
+  left: 22px;
+  top: -10px;
+  white-space: nowrap;
+  font-style: normal;
+  font-family: "JetBrains Mono Variable", "JetBrains Mono", monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: hsl(var(--primary-foreground));
+  background: hsl(var(--background));
+  padding: 2px 6px;
+}
+.tangle-hero__leak.is-left em {
+  left: auto;
+  right: 22px;
+}
+
+@media (max-width: 720px) {
+  .tangle-hero {
+    height: 360vh;
+  }
+  .tangle-hero__leak em,
+  .tangle-hero__hint {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tangle-hero {
+    height: 100vh;
+  }
+  .tangle-hero__half {
+    display: none;
+  }
+  .tangle-hero__ring {
+    animation: none;
+  }
+}

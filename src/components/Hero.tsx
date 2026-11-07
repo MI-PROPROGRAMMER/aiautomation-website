@@ -3,30 +3,24 @@ import { ArrowRight } from "lucide-react";
 import { CALENDLY_LINK } from "@/config/constants";
 import { m } from "framer-motion";
 import { Link } from "react-router-dom";
-import ScrollExpandMedia from "@/components/ui/scroll-expansion-hero";
-import { HeroBackdrop } from "@/components/hero/HeroBackdrop";
+import { TangleHero } from "@/components/hero/TangleHero";
 import { HeroFrameSVG } from "@/components/hero/HeroFrameSVG";
-import { HeroCoverOverlay } from "@/components/hero/HeroCoverOverlay";
-import { MobileHero } from "@/components/hero/MobileHero";
-import { useIsMobile } from "@/hooks/use-is-mobile";
 
 /**
- * Hero — cinematic scroll-expansion on desktop, lightweight static layout on
- * mobile. The desktop variant scroll-jacks and runs heavy framer-motion +
- * blur effects that tank performance on phones, so we swap to a purpose-built
- * MobileHero under 768px.
+ * Hero: a scroll story (TangleHero) where a tangle of threads, your operations
+ * today, is analysed and resolves into one clean line; the screen splits along it
+ * and reveals the five-stage engagement workflow (HeroFrameSVG). The copy that
+ * follows carries the page's single <h1>, the CTAs and the stats, in normal flow.
  */
 export const Hero = () => {
-  const isMobile = useIsMobile();
-  if (isMobile) return <MobileHero />;
-
   return (
-    <ScrollExpandMedia
-      mediaType="image"
-      mediaContent={(progress) => <HeroFrameSVG progress={progress} />}
-      bgContent={<HeroBackdrop />}
-      overlayContent={(progress) => <HeroCoverOverlay progress={progress} />}
-    >
+    <>
+    <TangleHero>
+      <div className="tangle-hero__frame">
+        <HeroFrameSVG progress={1} />
+      </div>
+    </TangleHero>
+    <section className="hero-copy" aria-label="ApexifyLabs in brief">
       <div className="mx-auto max-w-5xl space-y-8 text-center">
         <m.div
           className="flex items-center justify-center gap-3"
@@ -101,7 +95,8 @@ export const Hero = () => {
           <HeroStat label="hrs automated" value="10K+" />
         </m.div>
       </div>
-    </ScrollExpandMedia>
+    </section>
+    </>
   );
 };
 

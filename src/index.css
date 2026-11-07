@@ -347,7 +347,10 @@ All colors MUST be HSL.
   }
 
   /* Painted hairline border (gradient ring, no fill) */
-  .lux-border {
+  /* Needs a positioned box for the ::before ring, but must never override an
+     element that is already fixed/absolute/sticky: on the navbar that turned it
+     from fixed into relative on scroll and pushed the whole page down. */
+  .lux-border:not(.fixed):not(.absolute):not(.sticky) {
     position: relative;
   }
   .lux-border::before {

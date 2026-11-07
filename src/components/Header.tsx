@@ -18,7 +18,14 @@ export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    // On the home page the navbar stays clear over the tangle and turns to glass
+    // as the hero splits open; elsewhere it turns to glass after a short scroll.
+    const onScroll = () => {
+      const hero = document.querySelector<HTMLElement>(".tangle-hero");
+      // turns to glass as the hero splits open (TangleHero SPLIT_FROM), so it sits cleanly over the revealed card
+      const threshold = hero ? hero.offsetTop + (hero.offsetHeight - window.innerHeight) * 0.78 : 24;
+      setScrolled(window.scrollY > threshold);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
