@@ -39,6 +39,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-11-08 — Why Fleets Are Putting AI Agents on Driver Recruiting · logistics (trucking) · `ai-agents-trucking-driver-recruiting`
 - 2026-11-07 — What Does AI Automation Do for Distributor Cash Application? · ops (distribution) · `ai-automation-distributor-cash-application`
 - 2026-11-06 — AI Chatbot Dock Scheduling: Fewer Calls at Receiving · logistics (warehousing) · `ai-chatbot-dock-scheduling-warehouse-receiving`
 - 2026-11-05 — How Do AI Agents Cut Distributor Quote Turnaround? · ops (distribution) · `ai-agents-distributor-quote-turnaround`
