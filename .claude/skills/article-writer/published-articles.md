@@ -29,6 +29,8 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Diagnostic-list heading "Which numbers are worth pulling…"** — used in reroute-after-pickup and thin-sub-coverage back to back. Keep the three-item measurement list, phrase the heading differently.
 - **Question title shape "How/What Do(es) AI [X] [Verb] ...?"** — used for distributor quote turnaround (2026-11-05) and distributor cash application (2026-11-07). Use a non-question title shape for the next few.
 
+- **Closing H2 "Where we fit"** — used in distributor cash application; the AP chatbot article used "What it looks like when it is built for your AP office". Vary the closing heading each time.
+
 ## Title-shape diversity rule
 
 Across the most recent 5 articles, no more than one may share the same syntactic template. Pick a shape the recent 5 do NOT use.
@@ -39,6 +41,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-11-09 — AI Chatbots Take Supplier Payment Calls Off the AP Desk · ops (back-office AP) · `ai-chatbots-supplier-payment-calls-ap-desk`
 - 2026-11-08 — Why Fleets Are Putting AI Agents on Driver Recruiting · logistics (trucking) · `ai-agents-trucking-driver-recruiting`
 - 2026-11-07 — What Does AI Automation Do for Distributor Cash Application? · ops (distribution) · `ai-automation-distributor-cash-application`
 - 2026-11-06 — AI Chatbot Dock Scheduling: Fewer Calls at Receiving · logistics (warehousing) · `ai-chatbot-dock-scheduling-warehouse-receiving`

@@ -1,0 +1,89 @@
+export const frontmatter = {
+  title: "AI Chatbots Take Supplier Payment Calls Off the AP Desk",
+  excerpt:
+    "Has my invoice been paid? When will it be paid? Those two questions fill AP inboxes at distributors and manufacturers. Here is what changes when an AI chatbot answers them.",
+  date: "2026-11-09",
+  author: "ApexifyLabs Team",
+  tags: ["Operations", "Chatbots", "Accounts Payable", "Vendor Inquiries", "Back Office"],
+  heroImage: "/blog/ai-chatbots-supplier-payment-calls-ap-desk/hero.svg",
+  seoDescription:
+    "How an AI chatbot for accounts payable answers supplier payment status questions around the clock, cuts vendor inquiry workload and keeps AP focused on exceptions.",
+  readingTime: "4 min read",
+};
+
+An AI chatbot for accounts payable answers the questions suppliers ask most, "has my invoice been paid?" and "when will it be paid?", by checking the ERP and payment run in real time. Suppliers get an accurate answer in seconds, at any hour, and the AP team stops spending its week on status lookups instead of processing invoices and resolving real exceptions.
+
+## Why do supplier payment questions swamp AP teams?
+
+Every supplier that ships you product has an AR person on the other side whose job is to collect. When a payment is late, or simply not visible, they do the only thing they can: they ask. They email the AP inbox, call the main number, message their contact in purchasing, and sometimes do all three for the same invoice.
+
+The pattern is well documented. InvoiceInfo's Accounts Payable Customer Service Survey of more than 150 businesses found that "Has my invoice been paid?" and "When will my invoice be paid?" were the two most common questions AP teams receive, ahead of every other supplier inquiry [by a very significant margin](https://www.pymnts.com/news/b2b-payments/2018/invoiceinfo-invoice-payment-survey/). The same survey, [summarized by NACM North Central](https://www.nacmnc.org/news/406661/Frequent-Invoice-Status-Requests-Challenge-AP-Professionals.htm), found that among companies with a response policy, 48% require an answer within one day, and only 25% offered suppliers a self-service portal.
+
+More recent data points the same way. MineralTree's State of AP 2022 research, [reported by SupplyChainBrain](https://supplychainbrain.com/articles/print/36590-vendor-payment-inquiries-the-growing-ap-productivity-killer), found that over 40% of finance leaders say their teams spend six or more hours a month on vendor payment inquiries, with some spending more than 20. Only 56% of vendors rated AP teams highly on handling those inquiries quickly and effectively.
+
+For a $20M to $100M distributor, manufacturer or 3PL with a two to five person AP team, those hours come straight out of invoice processing capacity. And the questions spike at exactly the wrong moment: month-end, quarter-end, and any week a payment run slips.
+
+## What does a single "where's my payment" inquiry actually involve?
+
+From the outside, it looks like a one-line reply. Inside the AP office, answering it properly usually means:
+
+1. Finding which supplier record the sender belongs to, since the email often comes from a collections address nobody recognizes.
+2. Locating the invoice in the ERP, which may be keyed under a different number than the one on the supplier's statement.
+3. Checking whether it is approved, on hold, disputed, waiting on a receiving match, or scheduled in a payment run.
+4. If it was paid, pulling the remittance: payment date, method, amount and any short-pay reason.
+5. Writing a reply, and often forwarding a copy to purchasing so the buyer is not blindsided.
+
+A few minutes of careful work for a clean case. Far longer when the invoice is stuck on a three-way match exception or sitting in an approver's queue. Multiply that by dozens of suppliers a week and the AP desk starts functioning as a help desk, which is an observation [finance teams have been making since at least 2008](https://www.resourcefulfinancepro.com/articles/is-this-ap-or-the-help-desk/).
+
+## How does an AI chatbot for accounts payable answer supplier inquiries?
+
+A modern AI chatbot does not rely on a menu of canned replies. It reads the supplier's question in plain language, whether it arrives by email, a web chat on your supplier page, or a message in a portal, and works out what is being asked and about which invoices.
+
+It then checks the same systems your AP clerk would: the ERP, the approval workflow and the payment schedule. The reply it sends is specific to that supplier: "Invoice 88412 for $14,230 was approved on October 28 and is scheduled in the November 14 ACH run," or "Invoice 88519 is on hold because the received quantity does not match the invoice; your buyer has been notified."
+
+The key design choice is what the chatbot is allowed to say and to whom. It verifies that the person asking is a known contact for that supplier before sharing anything. It never promises a payment date that is not already scheduled. And when the honest answer is "this needs a person," it routes the case to the right AP specialist or buyer with the context attached, so nobody starts from zero. If you want the difference between this and older scripted bots, we cover it in [AI chatbot vs rule-based chatbot](/blog/ai-chatbot-vs-rule-based-chatbot).
+
+## Manual AP inbox vs AI chatbot: what changes?
+
+The table shows how the same week of supplier questions plays out under each model.
+
+| Moment | Manual AP inbox | With an AI chatbot |
+|---|---|---|
+| Supplier asks "has invoice X been paid?" | Waits in a shared inbox until a clerk picks it up | Answered in seconds from live ERP and payment data |
+| Question arrives at 7 pm or on a weekend | Sits until the next business day | Answered the same evening |
+| Invoice is on hold for a pricing or receiving mismatch | Clerk researches, then emails the buyer separately | Supplier told it is on hold; buyer gets the case with the mismatch flagged |
+| Same supplier asks again two days later | A second clerk repeats the lookup | Chatbot sees the history and gives a consistent update |
+| Month-end spike | Invoice processing slows while inquiries are answered | Inquiry volume is absorbed; staff stay on processing and close |
+| Supplier relationship | Depends on who happens to answer | Consistent, accurate, documented responses |
+
+The chatbot handles the questions where the answer already exists in your systems. Your AP team keeps the ones that need judgment: disputes, early-payment requests, banking detail changes, and anything that touches a supplier relationship your purchasing team is managing closely.
+
+## What about fraud and bank detail change requests?
+
+This is the question every controller should ask first. Supplier impersonation is one of the most common routes for payment fraud, and a chatbot that is careless about identity would make it worse.
+
+A well-built AP chatbot is deliberately limited here. It answers status questions only for verified contacts, and it never accepts, confirms or processes a change to bank details. Those requests are flagged immediately and handed to a person who follows your existing call-back verification policy. Done properly, the chatbot actually improves control: every inquiry is logged, every unusual request is flagged consistently, and fewer suppliers have reason to phone around your office looking for someone who will help.
+
+## Why does supplier payment visibility matter more now?
+
+Payment behavior is getting more scrutiny in several of the markets our clients sell into. In the UK, the Companies (Directors' Report) (Payment Reporting) Regulations 2025 require large companies to disclose their standard payment terms, average days to pay and the share of payments made late in their directors' reports for financial years beginning on or after 1 January 2026, as [CMS summarizes](https://cms.law/en/gbr/legal-updates/new-reporting-requirements-on-suppliers-payment-practices-and-performance). Australia's Payment Times Reporting Scheme has published comparable data on large businesses for several years.
+
+Most of our readers are below those reporting thresholds, but many of their suppliers are smaller still and rely on them for cash flow. The businesses that answer quickly and accurately become the customers suppliers prioritize when capacity is tight, allocations are short, or a rush order needs a favor. In distribution and manufacturing, being a good customer to your suppliers is an operational advantage, not a courtesy.
+
+## Which numbers show whether this is worth fixing?
+
+Before talking to anyone about automation, three figures from your own AP team will tell you how big the opportunity is:
+
+1. **Inquiry volume.** How many supplier status emails and calls arrive in a typical month, and how many in the week after month-end?
+2. **Answer time.** How long, on average, between a supplier asking and receiving an accurate answer?
+3. **Repeat rate.** What share of inquiries are a second or third ask about the same invoice?
+
+A high repeat rate is usually the clearest signal. It means suppliers are not getting answers they can rely on, and your team is doing the same lookup more than once. It also tends to overlap with the matching and approval delays we describe in [vendor invoice matching on AP desks](/blog/vendor-invoice-matching-stalls-gc-ap-desks) and with the receivables-side problems in [AI automation for distributor cash application](/blog/ai-automation-distributor-cash-application).
+
+## What it looks like when it is built for your AP office
+
+A supplier inquiry chatbot only works if it is connected to the systems that hold the truth: your ERP, your approval workflow, your payment runs and your supplier master. It also has to reflect your rules about who sees what, which questions it answers on its own and where cases go when they need a person. That is why off-the-shelf portals often sit unused while the AP inbox keeps filling up.
+
+We build these as custom assistants that sit on top of what your team already uses, answer the routine questions accurately, and hand the rest to your staff with the research already done. You can see how we approach that on our [AI chatbot development page](/services/ai-chatbot-development).
+
+If your AP team spends more of the week answering suppliers than processing invoices, we offer a **completely free automation audit**. We will look at a sample of last month's supplier inquiries with you and show which ones a chatbot could have answered on its own. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book your free audit</a>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" width="1500" height="1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0a3a66"/>
+      <stop offset="0.3" stop-color="#00B5E2"/>
+      <stop offset="0.7" stop-color="#7fb6d6"/>
+      <stop offset="1" stop-color="#0a3a66"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <text x="150" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="6" fill="#00B5E2">THE JOURNAL</text>
+  <text x="150" y="298" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold" fill="#ffffff">Supplier Payment Questions</text>
+  <text x="150" y="362" font-family="Georgia, 'Times New Roman', serif" font-size="38" fill="#cfe5f1" opacity="0.9">Answered by an AI chatbot, not the AP desk</text>
+
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <!-- Supplier message (left) -->
+    <rect x="150" y="440" width="560" height="110" rx="22" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+    <polygon points="190,550 230,550 180,590" fill="#0a3a66"/>
+    <text x="185" y="482" font-size="20" letter-spacing="3" fill="#7fb6d6">SUPPLIER · 7:42 PM</text>
+    <text x="185" y="526" font-size="32" fill="#ffffff">Has invoice 88412 been paid?</text>
+
+    <!-- Chatbot reply (right) -->
+    <rect x="620" y="620" width="730" height="160" rx="22" fill="#002347" stroke="#00B5E2" stroke-width="3"/>
+    <polygon points="1270,780 1310,780 1320,820" fill="#002347" stroke="#00B5E2" stroke-width="3"/>
+    <rect x="1268" y="772" width="44" height="12" fill="#002347"/>
+    <text x="655" y="662" font-size="20" letter-spacing="3" fill="#00B5E2">AP ASSISTANT · 7:42 PM</text>
+    <text x="655" y="708" font-size="30" fill="#ffffff">Approved Oct 28. Scheduled in the</text>
+    <text x="655" y="750" font-size="30" fill="#ffffff">Nov 14 ACH run for $14,230.</text>
+
+    <!-- Status chips -->
+    <rect x="150" y="660" width="190" height="52" rx="26" fill="none" stroke="#00B5E2" stroke-width="2"/>
+    <circle cx="180" cy="686" r="9" fill="#00B5E2"/>
+    <text x="200" y="695" font-size="24" fill="#cfe5f1">Verified</text>
+    <rect x="150" y="730" width="190" height="52" rx="26" fill="none" stroke="#7fb6d6" stroke-width="2"/>
+    <circle cx="180" cy="756" r="9" fill="#7fb6d6"/>
+    <text x="200" y="765" font-size="24" fill="#cfe5f1">ERP live</text>
+    <rect x="150" y="800" width="190" height="52" rx="26" fill="none" stroke="#5e8aa6" stroke-width="2"/>
+    <circle cx="180" cy="826" r="9" fill="#5e8aa6"/>
+    <text x="200" y="835" font-size="24" fill="#cfe5f1">Logged</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
