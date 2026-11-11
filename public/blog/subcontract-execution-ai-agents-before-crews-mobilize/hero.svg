@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0a3a66"/>
+      <stop offset="0.5" stop-color="#00B5E2"/>
+      <stop offset="1" stop-color="#0a3a66"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <text x="750" y="196" text-anchor="middle" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="6">THE JOURNAL</text>
+  <text x="750" y="316" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold">Paper Ahead of the Field</text>
+  <text x="750" y="382" text-anchor="middle" fill="#cfe5f1" fill-opacity="0.9" font-family="Georgia, 'Times New Roman', serif" font-size="36">subcontracts executed before crews mobilize</text>
+
+  <!-- week axis -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#7fb6d6">
+    <text x="330" y="490" text-anchor="middle">Award</text>
+    <text x="590" y="490" text-anchor="middle">Redlines</text>
+    <text x="850" y="490" text-anchor="middle">Signature</text>
+    <text x="1110" y="490" text-anchor="middle">Mobilize</text>
+  </g>
+  <line x1="260" y1="510" x2="1240" y2="510" stroke="#0a3a66" stroke-width="2"/>
+
+  <!-- before: field outruns paper -->
+  <text x="140" y="610" fill="#5e8aa6" font-family="Georgia, 'Times New Roman', serif" font-size="24">Before</text>
+  <rect x="260" y="585" width="980" height="16" rx="8" fill="#0a3a66"/>
+  <rect x="260" y="585" width="520" height="16" rx="8" fill="#5e8aa6"/>
+  <circle cx="1110" cy="593" r="16" fill="none" stroke="#cfe5f1" stroke-width="3"/>
+  <text x="1110" y="650" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="22">crew on site, contract in redlines</text>
+
+  <!-- after: paper leads -->
+  <text x="140" y="760" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="24">After</text>
+  <rect x="260" y="735" width="980" height="16" rx="8" fill="#0a3a66"/>
+  <rect x="260" y="735" width="600" height="16" rx="8" fill="#00B5E2"/>
+  <circle cx="850" cy="743" r="16" fill="#00B5E2"/>
+  <path d="M842 743 l6 7 l12 -14" stroke="#001a36" stroke-width="4" fill="none"/>
+  <circle cx="1110" cy="743" r="16" fill="none" stroke="#cfe5f1" stroke-width="3"/>
+  <text x="980" y="800" text-anchor="middle" fill="#cfe5f1" font-family="Georgia, 'Times New Roman', serif" font-size="22">fully executed, then mobilize</text>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>
