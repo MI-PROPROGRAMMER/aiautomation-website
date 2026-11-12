@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" width="1500" height="1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2"/>
+      <stop offset="0.5" stop-color="#7fb6d6"/>
+      <stop offset="1" stop-color="#0a3a66"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <text x="140" y="215" font-family="Georgia, 'Times New Roman', serif" font-size="26" letter-spacing="6" fill="#00B5E2">THE JOURNAL</text>
+  <text x="140" y="315" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-weight="bold" fill="#ffffff">AI Chatbot or Inbox?</text>
+  <text x="140" y="405" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-weight="bold" fill="#ffffff">Freight Claims Intake</text>
+  <text x="140" y="470" font-family="Georgia, 'Times New Roman', serif" font-size="36" fill="#cfe5f1" opacity="0.9">A complete claim file, before the clock runs</text>
+  <!-- left: scattered inbox -->
+  <g opacity="0.85">
+    <rect x="160" y="560" width="250" height="70" rx="10" fill="#0a3a66" transform="rotate(-6 285 595)"/>
+    <rect x="230" y="650" width="250" height="70" rx="10" fill="#0a3a66" transform="rotate(5 355 685)"/>
+    <rect x="170" y="745" width="250" height="70" rx="10" fill="#0a3a66" transform="rotate(-3 295 780)"/>
+    <text x="185" y="603" font-family="Georgia, serif" font-size="24" fill="#7fb6d6" transform="rotate(-6 285 595)">FW: photos?</text>
+    <text x="255" y="693" font-family="Georgia, serif" font-size="24" fill="#7fb6d6" transform="rotate(5 355 685)">RE: invoice</text>
+    <text x="195" y="788" font-family="Georgia, serif" font-size="24" fill="#7fb6d6" transform="rotate(-3 295 780)">POD signed clean</text>
+  </g>
+  <!-- arrow -->
+  <path d="M540 690 L700 690" stroke="#00B5E2" stroke-width="6" fill="none"/>
+  <path d="M700 670 L735 690 L700 710 Z" fill="#00B5E2"/>
+  <!-- right: checklist file -->
+  <rect x="790" y="545" width="420" height="300" rx="16" fill="#002347" stroke="#5e8aa6" stroke-width="3"/>
+  <g font-family="Georgia, serif" font-size="28" fill="#cfe5f1">
+    <text x="880" y="608">Bill of lading</text>
+    <text x="880" y="668">Delivery receipt</text>
+    <text x="880" y="728">Damage photos</text>
+    <text x="880" y="788">Commercial invoice</text>
+  </g>
+  <g stroke="#00B5E2" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M828 598 L840 610 L860 586"/>
+    <path d="M828 658 L840 670 L860 646"/>
+    <path d="M828 718 L840 730 L860 706"/>
+    <path d="M828 778 L840 790 L860 766"/>
+  </g>
+  <!-- clock -->
+  <circle cx="1300" cy="600" r="62" fill="none" stroke="#7fb6d6" stroke-width="5"/>
+  <path d="M1300 600 L1300 558 M1300 600 L1330 618" stroke="#00B5E2" stroke-width="6" stroke-linecap="round"/>
+  <text x="1300" y="700" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#7fb6d6">Day 1</text>
+  <rect x="0" y="994" width="1500" height="6" fill="url(#bar)"/>
+</svg>

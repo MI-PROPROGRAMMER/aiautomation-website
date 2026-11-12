@@ -31,6 +31,8 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 
 - **Closing H2 "What a [X] build looks like for a [Y]"**: used in 3PL billing (2026-11-10). Vary the closing heading again next time.
 - **Closing H2 "Is this worth a closer look on your next [X]?"**: used in subcontract execution (2026-11-11). Vary the closing heading next time.
+- **Title shape "[Keyword] or [Status quo]? Rethinking [X]"**: used in freight claims intake (2026-11-12). Rest it for the next few.
+- **Closing H2 "Mapping [X] on your own desk"**: used in freight claims intake (2026-11-12). Vary next time.
 - **Closing H2 "Where we fit"** — used in distributor cash application; the AP chatbot article used "What it looks like when it is built for your AP office". Vary the closing heading each time.
 
 ## Title-shape diversity rule
@@ -43,6 +45,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-11-12 — AI Chatbot or Inbox? Rethinking Freight Claims Intake · logistics (brokerage/3PL claims) · `ai-chatbot-freight-claims-intake`
 - 2026-11-11 — Subcontract Execution With AI Agents Before Crews Mobilize · construction (GC contract admin) · `subcontract-execution-ai-agents-before-crews-mobilize`
 - 2026-11-10 — AI Automation vs Manual 3PL Billing: Where Revenue Leaks · logistics (3PL warehousing) · `ai-automation-vs-manual-3pl-billing`
 - 2026-11-09 — AI Chatbots Take Supplier Payment Calls Off the AP Desk · ops (back-office AP) · `ai-chatbots-supplier-payment-calls-ap-desk`
