@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" width="1500" height="1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.72" r="0.5">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5e8aa6" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#00B5E2" stop-opacity="0.9"/>
+      <stop offset="0.7" stop-color="#7fb6d6" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <text x="140" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="6" fill="#00B5E2">THE JOURNAL</text>
+  <text x="140" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-weight="bold" fill="#ffffff">Freight Order Entry</text>
+  <text x="140" y="390" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-weight="bold" fill="#ffffff">Meets AI Automation</text>
+  <text x="140" y="455" font-family="Georgia, 'Times New Roman', serif" font-size="36" fill="#cfe5f1" opacity="0.9">From shipper email to TMS load, without the rekeying</text>
+
+  <!-- Inbox envelopes -->
+  <g stroke="#7fb6d6" stroke-width="3" fill="#0a3a66">
+    <rect x="160" y="560" width="190" height="120" rx="8"/>
+    <polyline points="160,560 255,630 350,560" fill="none"/>
+    <rect x="185" y="600" width="190" height="120" rx="8" opacity="0.85"/>
+    <polyline points="185,600 280,670 375,600" fill="none" opacity="0.85"/>
+    <rect x="210" y="640" width="190" height="120" rx="8" opacity="0.7"/>
+    <polyline points="210,640 305,710 400,640" fill="none" opacity="0.7"/>
+  </g>
+  <text x="280" y="810" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#cfe5f1">Emailed tenders</text>
+
+  <!-- Flow arrow -->
+  <rect x="460" y="655" width="380" height="10" rx="5" fill="url(#flow)"/>
+  <polygon points="840,635 885,660 840,685" fill="#00B5E2"/>
+  <circle cx="660" cy="660" r="46" fill="#002347" stroke="#00B5E2" stroke-width="4"/>
+  <text x="660" y="671" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="bold" fill="#00B5E2">AI</text>
+
+  <!-- TMS load rows -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="22">
+    <rect x="930" y="540" width="430" height="250" rx="10" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+    <rect x="930" y="540" width="430" height="48" rx="10" fill="#002347"/>
+    <text x="955" y="572" fill="#7fb6d6" letter-spacing="3">TMS LOADS</text>
+    <g fill="#cfe5f1">
+      <rect x="955" y="610" width="230" height="14" rx="7" opacity="0.8"/>
+      <rect x="955" y="655" width="200" height="14" rx="7" opacity="0.8"/>
+      <rect x="955" y="700" width="250" height="14" rx="7" opacity="0.8"/>
+      <rect x="955" y="745" width="180" height="14" rx="7" opacity="0.8"/>
+    </g>
+    <g fill="#00B5E2">
+      <circle cx="1320" cy="617" r="11"/>
+      <circle cx="1320" cy="662" r="11"/>
+      <circle cx="1320" cy="707" r="11"/>
+    </g>
+    <circle cx="1320" cy="752" r="11" fill="none" stroke="#7fb6d6" stroke-width="3"/>
+  </g>
+  <text x="1145" y="840" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#cfe5f1">Built, checked, accepted</text>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
