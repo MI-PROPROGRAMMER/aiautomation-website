@@ -34,13 +34,13 @@ const Industries = () => {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={pageUrl} />
-        <meta property="og:image" content={`${SITE_URL}/hero-automation.jpg`} />
+        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta name="twitter:title" content="AI Automation by Industry — ApexifyLabs" />
         <meta
           name="twitter:description"
           content="The operational problems we automate in nine industries."
         />
-        <meta name="twitter:image" content={`${SITE_URL}/hero-automation.jpg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <link rel="canonical" href={pageUrl} />
       </Helmet>
 

@@ -44,10 +44,10 @@ export const IndustryPageLayout = ({ content }: { content: IndustryPageContent }
         <meta property="og:description" content={content.meta.ogDescription} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={pageUrl} />
-        <meta property="og:image" content={`${SITE_URL}/hero-automation.jpg`} />
+        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta name="twitter:title" content={content.meta.ogTitle} />
         <meta name="twitter:description" content={content.meta.ogDescription} />
-        <meta name="twitter:image" content={`${SITE_URL}/hero-automation.jpg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <link rel="canonical" href={pageUrl} />
       </Helmet>
 

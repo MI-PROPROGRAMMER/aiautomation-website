@@ -25,13 +25,13 @@ const Blog = () => {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://apexifylabs.com/blog" />
-        <meta property="og:image" content="https://apexifylabs.com/hero-automation.jpg" />
+        <meta property="og:image" content="https://apexifylabs.com/og-image.png" />
         <meta name="twitter:title" content="ApexifyLabs Blog" />
         <meta
           name="twitter:description"
           content="Frameworks and playbooks for shipping AI automation with confidence."
         />
-        <meta name="twitter:image" content="https://apexifylabs.com/hero-automation.jpg" />
+        <meta name="twitter:image" content="https://apexifylabs.com/og-image.png" />
         <link rel="canonical" href="https://apexifylabs.com/blog" />
       </Helmet>
 

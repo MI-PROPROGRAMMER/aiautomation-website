@@ -108,13 +108,13 @@ const Index = () => {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://apexifylabs.com/" />
-        <meta property="og:image" content="https://apexifylabs.com/hero-automation.jpg" />
+        <meta property="og:image" content="https://apexifylabs.com/og-image.png" />
         <meta name="twitter:title" content="ApexifyLabs - AI Automation Agency" />
         <meta
           name="twitter:description"
           content="Reclaim your team's time with custom AI automation. 50+ clients, 10,000+ hours automated, 4+ years."
         />
-        <meta name="twitter:image" content="https://apexifylabs.com/hero-automation.jpg" />
+        <meta name="twitter:image" content="https://apexifylabs.com/og-image.png" />
         <link rel="canonical" href="https://apexifylabs.com/" />
       </Helmet>
 

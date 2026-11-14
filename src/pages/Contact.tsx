@@ -100,13 +100,13 @@ const Contact = () => {
         <meta property="og:description" content="Ready to automate your workflows? Get in touch with our team for a free consultation." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://apexifylabs.com/contact" />
-        <meta property="og:image" content="https://apexifylabs.com/hero-automation.jpg" />
+        <meta property="og:image" content="https://apexifylabs.com/og-image.png" />
         <meta name="twitter:title" content="Contact Us - ApexifyLabs" />
         <meta
           name="twitter:description"
           content="Book a free 30-minute automation audit or send us a message — we reply within one business day."
         />
-        <meta name="twitter:image" content="https://apexifylabs.com/hero-automation.jpg" />
+        <meta name="twitter:image" content="https://apexifylabs.com/og-image.png" />
         <link rel="canonical" href="https://apexifylabs.com/contact" />
       </Helmet>
 

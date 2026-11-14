@@ -43,13 +43,13 @@ const Pricing = () => {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={pageUrl} />
-        <meta property="og:image" content={`${SITE_URL}/hero-automation.jpg`} />
+        <meta property="og:image" content={`${SITE_URL}/og-image.png`} />
         <meta name="twitter:title" content="AI Automation Pricing — ApexifyLabs" />
         <meta
           name="twitter:description"
           content="Focused workflows from $2,000. Comprehensive systems $10,000–$50,000."
         />
-        <meta name="twitter:image" content={`${SITE_URL}/hero-automation.jpg`} />
+        <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
         <link rel="canonical" href={pageUrl} />
       </Helmet>
 
