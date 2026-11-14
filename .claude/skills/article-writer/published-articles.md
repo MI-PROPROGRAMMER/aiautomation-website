@@ -34,6 +34,7 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Title shape "[Keyword] or [Status quo]? Rethinking [X]"**: used in freight claims intake (2026-11-12). Rest it for the next few.
 - **Closing H2 "Mapping [X] on your own desk"**: used in freight claims intake (2026-11-12). Vary next time.
 - **Title shape "[X] Is the First Job for [AI Y]"**: used in freight order entry (2026-11-13). Rest it for the next few.
+- **Title shape "AI [Keyword] in [X]: From [A] to [B]"**: used in fleet maintenance (2026-11-14). Rest it for the next few.
 - **Closing H2 "Where we fit"** — used in distributor cash application; the AP chatbot article used "What it looks like when it is built for your AP office". Vary the closing heading each time.
 
 ## Title-shape diversity rule
@@ -46,6 +47,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-11-14 — AI Agents in Fleet Maintenance: From DVIR to Work Order · logistics (trucking/fleet maintenance) · `ai-agents-fleet-maintenance-dvir-to-work-order`
 - 2026-11-13 — Freight Order Entry Is the First Job for AI Automation · logistics (brokerage order entry) · `freight-order-entry-ai-automation-brokerages`
 - 2026-11-12 — AI Chatbot or Inbox? Rethinking Freight Claims Intake · logistics (brokerage/3PL claims) · `ai-chatbot-freight-claims-intake`
 - 2026-11-11 — Subcontract Execution With AI Agents Before Crews Mobilize · construction (GC contract admin) · `subcontract-execution-ai-agents-before-crews-mobilize`

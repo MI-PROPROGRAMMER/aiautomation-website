@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" width="1500" height="1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.75" cy="0.7" r="0.5">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.25" stop-color="#7fb6d6" stop-opacity="0.8"/>
+      <stop offset="0.6" stop-color="#00B5E2" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#00B5E2"/>
+    </marker>
+  </defs>
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <text x="140" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="6" fill="#00B5E2">THE JOURNAL</text>
+  <text x="140" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold" fill="#ffffff">AI Agents in Fleet</text>
+  <text x="140" y="395" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold" fill="#ffffff">Maintenance</text>
+  <text x="140" y="460" font-family="Georgia, 'Times New Roman', serif" font-size="38" fill="#cfe5f1" opacity="0.9">From driver report to repaired truck before dispatch</text>
+
+  <!-- Handoff chain: DVIR -> Work order -> Parts -> Dispatch -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="28" text-anchor="middle">
+    <rect x="140" y="600" width="240" height="150" rx="16" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+    <text x="260" y="665" fill="#ffffff" font-weight="bold">DVIR</text>
+    <text x="260" y="705" fill="#7fb6d6" font-size="22">defect reported</text>
+
+    <rect x="470" y="600" width="240" height="150" rx="16" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+    <text x="590" y="665" fill="#ffffff" font-weight="bold">Work order</text>
+    <text x="590" y="705" fill="#7fb6d6" font-size="22">opened, triaged</text>
+
+    <rect x="800" y="600" width="240" height="150" rx="16" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+    <text x="920" y="665" fill="#ffffff" font-weight="bold">Parts + bay</text>
+    <text x="920" y="705" fill="#7fb6d6" font-size="22">checked overnight</text>
+
+    <rect x="1130" y="600" width="240" height="150" rx="16" fill="#002347" stroke="#00B5E2" stroke-width="3"/>
+    <text x="1250" y="665" fill="#00B5E2" font-weight="bold">Dispatch</text>
+    <text x="1250" y="705" fill="#cfe5f1" font-size="22">unit status known</text>
+  </g>
+  <line x1="385" y1="675" x2="462" y2="675" stroke="#00B5E2" stroke-width="4" marker-end="url(#arr)"/>
+  <line x1="715" y1="675" x2="792" y2="675" stroke="#00B5E2" stroke-width="4" marker-end="url(#arr)"/>
+  <line x1="1045" y1="675" x2="1122" y2="675" stroke="#00B5E2" stroke-width="4" marker-end="url(#arr)"/>
+  <path d="M260,760 Q760,860 1250,760" fill="none" stroke="#5e8aa6" stroke-width="2" stroke-dasharray="8 8" opacity="0.7"/>
+  <circle cx="760" cy="810" r="7" fill="#00B5E2"/>
+  <text x="760" y="850" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#7fb6d6" text-anchor="middle">repair certified, loop closed</text>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
