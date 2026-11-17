@@ -39,6 +39,7 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Closing H2 "How do you know if your desk is ready?"**: used in manufacturer order status (2026-11-15). Vary next time.
 - **Title shape "AI [Keyword] [Verb]s the [X] for [Actor]"** (keyword-first verb sentence): used in shipper spot quotes (2026-11-16). Rest it for the next few.
 - **Closing H2 "Who on your team gets their week back?"**: used in shipper spot quotes (2026-11-16). Vary next time.
+- **Closing H2 "What would a [X] look like on your desk?"**: used in distributor AR collections (2026-11-17). Vary next time.
 - **Closing H2 "Where we fit"** — used in distributor cash application; the AP chatbot article used "What it looks like when it is built for your AP office". Vary the closing heading each time.
 
 ## Title-shape diversity rule
@@ -51,6 +52,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-11-17 — AI Agents vs Manual AR Collections for Distributors · ops (distribution AR collections) · `ai-agents-vs-manual-ar-collections-distributors`
 - 2026-11-16 — AI Automation Shortens the Spot Quote Chase for Shippers · logistics (shipper freight procurement) · `ai-automation-shipper-spot-freight-quotes`
 - 2026-11-15 — AI Chatbot ROI on Manufacturer Order Status Calls · ops (manufacturing customer service) · `ai-chatbot-roi-manufacturer-order-status-calls`
 - 2026-11-14 — AI Agents in Fleet Maintenance: From DVIR to Work Order · logistics (trucking/fleet maintenance) · `ai-agents-fleet-maintenance-dvir-to-work-order`
