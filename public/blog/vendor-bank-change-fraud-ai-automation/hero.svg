@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" width="1500" height="1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2"/>
+      <stop offset="0.5" stop-color="#0a3a66"/>
+      <stop offset="0.8" stop-color="#7fb6d6"/>
+      <stop offset="1" stop-color="#00B5E2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <text x="150" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="6" fill="#00B5E2">THE JOURNAL</text>
+  <text x="150" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold" fill="#ffffff">Vendor Bank Change Fraud</text>
+  <text x="150" y="395" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold" fill="#ffffff">and AI Automation</text>
+  <text x="150" y="460" font-family="Georgia, 'Times New Roman', serif" font-size="38" fill="#cfe5f1" opacity="0.9">Holding redirected payments before they leave</text>
+
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <!-- Incoming request email -->
+    <rect x="150" y="560" width="330" height="250" rx="14" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+    <path d="M150 574 L315 680 L480 574" fill="none" stroke="#5e8aa6" stroke-width="2"/>
+    <text x="175" y="740" font-size="24" fill="#cfe5f1">"Please update our</text>
+    <text x="175" y="775" font-size="24" fill="#cfe5f1">payment details"</text>
+
+    <path d="M510 685 L610 685" stroke="#00B5E2" stroke-width="5"/>
+    <path d="M600 670 L625 685 L600 700 Z" fill="#00B5E2"/>
+
+    <!-- Vendor record with flagged field -->
+    <rect x="650" y="540" width="420" height="290" rx="14" fill="#001a36" stroke="#00B5E2" stroke-width="3"/>
+    <text x="680" y="590" font-size="22" letter-spacing="3" fill="#7fb6d6">VENDOR RECORD</text>
+    <rect x="680" y="615" width="360" height="40" rx="6" fill="#0a3a66"/>
+    <rect x="680" y="670" width="360" height="40" rx="6" fill="#0a3a66"/>
+    <rect x="680" y="725" width="360" height="70" rx="6" fill="#0a3a66" stroke="#00B5E2" stroke-width="3" stroke-dasharray="10 6"/>
+    <text x="700" y="768" font-size="24" fill="#ffffff">Bank account: changed</text>
+
+    <path d="M1100 685 L1180 685" stroke="#00B5E2" stroke-width="5"/>
+    <path d="M1170 670 L1195 685 L1170 700 Z" fill="#00B5E2"/>
+
+    <!-- Hold shield -->
+    <path d="M1290 560 L1370 590 L1370 690 Q1370 770 1290 810 Q1210 770 1210 690 L1210 590 Z" fill="#0a3a66" stroke="#00B5E2" stroke-width="4"/>
+    <rect x="1262" y="665" width="56" height="50" rx="6" fill="#00B5E2"/>
+    <path d="M1272 665 L1272 645 Q1290 620 1308 645 L1308 665" fill="none" stroke="#00B5E2" stroke-width="7"/>
+    <text x="1245" y="860" font-size="24" letter-spacing="3" fill="#cfe5f1">HELD</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accent)"/>
+</svg>

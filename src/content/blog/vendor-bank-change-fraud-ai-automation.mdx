@@ -1,0 +1,92 @@
+export const frontmatter = {
+  title: "Vendor Bank Change Fraud and the Case for AI Automation",
+  excerpt:
+    "A single emailed request to update a supplier's bank details can redirect a month of payables. Here is how AI automation changes vendor master controls for mid-size AP teams.",
+  date: "2026-11-19",
+  author: "ApexifyLabs Team",
+  tags: ["Back-Office Ops", "AI Automation", "Accounts Payable", "Vendor Onboarding", "Payments Fraud"],
+  heroImage: "/blog/vendor-bank-change-fraud-ai-automation/hero.svg",
+  seoDescription:
+    "How AI automation helps distributors and manufacturers stop vendor bank change fraud: verified onboarding, flagged remittance changes and audit-ready AP controls.",
+  readingTime: "4 min read",
+};
+
+AI automation reduces vendor bank change fraud by checking every new supplier and every request to change remittance details against what the business already knows: the vendor's history, the sender's domain, the timing, and an independent verification step. Suspicious changes are held before the next payment run, so AP staff review evidence instead of trusting an email.
+
+## What is vendor bank change fraud, and why does it target AP teams?
+
+Vendor bank change fraud (also called payment redirection, or in the UK, mandate fraud) is simple. A fraudster poses as a real supplier and asks your accounts payable team to send future payments to a new account. Sometimes the email comes from a lookalike domain. Increasingly it comes from the supplier's genuine mailbox after that mailbox was compromised, which means the signature, the thread history and the invoice numbers all look right.
+
+The scale is not small. The [2026 AFP Payments Fraud and Control Survey](https://www.financialprofessionals.org/about/learn-more/press-releases/Details/over-75-percent-of-us-firms-experienced-payments-fraud-in-2025-while-ai-adoption-for-fraud-mitigation-lags) found that 76% of US organizations experienced attempted or actual payments fraud in 2025, and 74% were affected by business email compromise. The same survey found that just 17% use AI to fight payments fraud. The FBI's Internet Crime Complaint Center counted roughly [$3 billion in business email compromise losses in 2025](https://securityweek.com/fbi-cybercrime-losses-neared-21-billion-in-2025), out of nearly $21 billion in reported cybercrime losses overall. In the UK, [UK Finance reported](https://www.ukfinance.org.uk/news-and-insight/press-release/fraud-report-2026-press-release) that authorised push payment fraud losses, the category that includes invoice and mandate fraud, rose 19% to £576.4 million in 2025.
+
+Mid-size distributors and manufacturers are an attractive target for a plain reason. They pay hundreds of suppliers, many of them small, on regular terms. Payment amounts are predictable, the AP team is lean, and supplier relationships often run on email rather than a portal.
+
+## Why do manual vendor onboarding checks miss it?
+
+Most AP teams do have a policy: call the vendor back on a known number before changing bank details. The policy is sound. The trouble is everything around it.
+
+- **The request does not always look like a bank change.** It arrives as an updated W-9, a new remittance address on an invoice PDF, or a "please note our new payment details" line at the bottom of a statement. A busy clerk processing 300 invoices a week may not recognize it as a vendor master change at all.
+- **The callback number comes from the wrong place.** If the clerk dials the number printed on the email or the new letterhead, they reach the fraudster.
+- **Changes are made by whoever has access.** In many mid-size ERPs, the same person who receives the request can edit the vendor record and release the payment. Nobody else sees the change until reconciliation.
+- **Timing is engineered.** Requests tend to land just before a payment run, at quarter end or during peak season, when the team is stretched and a delay feels costly.
+
+None of this reflects carelessness. It reflects a control that depends on one person noticing one email at the right moment, every time, across thousands of messages a year.
+
+## How does AI automation change vendor bank detail verification?
+
+AI automation sits between the inbox, the vendor master and the payment run. It reads every incoming supplier document and message, not just the ones someone flags, and recognizes when content implies a change to how a vendor gets paid. That includes the buried cases: a new account number on an invoice template, a changed remittance block, a bank letter attached to an unrelated thread.
+
+When it finds one, it does not change anything. It assembles a case file for your team: what changed, how it compares with the vendor's history, whether the sending domain matches past correspondence, how close the request is to the next scheduled payment, and whether the supplier has recently had other unusual activity. The pending payment to that vendor is held until a person completes verification through a contact that came from your own records, never from the request itself.
+
+The same logic applies at onboarding. New suppliers are checked for consistency between their tax form, their legal name, their bank account holder name and their business details before the record goes live. Mismatches are flagged with the specific discrepancy, rather than left for a reviewer to spot.
+
+## What does the vendor change process look like before and after?
+
+Here is how the same process typically runs on a manual AP desk compared with one supported by AI automation.
+
+| Step | Manual AP desk | AP desk with AI automation |
+|---|---|---|
+| Spotting a change request | Depends on the clerk recognizing it in the inbox | Every message and attachment checked; implied changes caught |
+| Context on the vendor | Clerk searches old emails and the ERP by hand | Payment history, past bank details and domain history assembled automatically |
+| Verification contact | Often taken from the request itself | Pulled only from the verified vendor record |
+| Payment timing | Change can go live before the next run | Payments to the vendor held until verification is complete |
+| Segregation of duties | Same person may receive, edit and pay | Change and approval logged to different people |
+| Audit trail | Notes in an email or nowhere | Every change, check and approver recorded |
+| New vendor onboarding | Forms reviewed by eye, often under time pressure | Name, tax ID and bank holder consistency checked before activation |
+
+The comparison shows where risk concentrates. On the manual desk, every protective step relies on memory and attention. With automation, the protective steps happen by default, and people spend their time on the decisions that need judgment.
+
+## Does AI automation replace callbacks or Positive Pay?
+
+No, and it should not. Callback verification on a known number remains one of the most effective controls available, and bank services like Positive Pay protect the payment itself. What AI automation adds is consistency: it makes sure the callback actually happens, on the right number, before the right payment, for every change rather than the ones someone happened to notice.
+
+It also gives finance leaders something they rarely have today: a view of how many change requests arrived, how many were verified, how many were rejected and how long verification took. That record matters to auditors, insurers and, increasingly, to customers who ask about supplier payment controls in their own due diligence.
+
+## Which businesses carry the most exposure?
+
+The risk is highest where three conditions overlap:
+
+1. **A large, long-tail supplier base.** Distributors, wholesalers and manufacturers paying hundreds of small vendors, many without supplier portals.
+2. **Email-driven AP.** Invoices, statements and remittance updates arrive by email and are keyed into the ERP by hand.
+3. **Thin staffing in finance operations.** One or two AP specialists covering everything from invoice entry to payment runs, with limited separation of duties.
+
+A building products distributor in Texas, a food manufacturer in Ontario, a UK engineering wholesaler paying European component suppliers and an Australian industrial distributor all face the same pattern, even though their payment rails and regulators differ. Cross-border suppliers add another layer, because unfamiliar bank formats make a fraudulent change harder to spot by eye.
+
+## Where should an operations leader look first?
+
+Before investing in anything, a few internal questions usually show how exposed the business is:
+
+1. **How many vendor bank changes did you process in the last twelve months?** If nobody can answer quickly, changes are not being tracked as a distinct event.
+2. **Where did each verification phone number come from?** A sample of ten recent changes will show whether callbacks used the vendor record or the request.
+3. **How many days passed between each change and the next payment?** Changes processed within a day or two of a payment run deserve a second look.
+4. **Who can edit vendor bank details, and who can release payments?** If the answer is the same person, the control depends on that person alone.
+
+If the answers are uncomfortable, that is common. Most mid-size AP teams built their processes when supplier fraud was rarer and email accounts were harder to take over.
+
+If you have read our pieces on [AI chatbots taking supplier payment calls off the AP desk](/blog/ai-chatbots-supplier-payment-calls-ap-desk) and [what AI automation does for distributor cash application](/blog/ai-automation-distributor-cash-application), this is the protective side of the same back office. And the payment redirection problem is not unique to manufacturing: freight brokers face a version of it, as covered in [missed factoring notices that put brokers on the hook twice](/blog/missed-factoring-notices-broker-double-payment).
+
+## Starting with the vendor file you already have
+
+The useful first step is not new software. It is understanding how supplier changes really reach your team today, which inboxes, which document types, which people, and where a fraudulent request would slip through. From there, automation can be built around your ERP, your bank's payment controls and your approval rules, so it fits the way your AP team already works. We build this kind of system as [custom AI software](/services/custom-ai-software) for distributors and [manufacturers](/industries/manufacturing), with your team approving every change.
+
+We offer a **completely free automation audit** for finance and operations teams that want an outside view of their vendor change controls. We will walk through a sample of recent supplier changes with you and show where a redirected payment could get through. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book your free audit</a>

@@ -42,6 +42,8 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Closing H2 "What would a [X] look like on your desk?"**: used in distributor AR collections (2026-11-17). Vary next time.
 - **Title shape "Can an AI [X] Handle [Y]?"**: used in after-hours dispatch (2026-11-18). Rest it for the next few.
 - **Closing H2 "Where does [X] fit in the business?"**: used in after-hours dispatch (2026-11-18). Vary next time.
+- **Title shape "[Problem] and the Case for [Keyword]"**: used in vendor bank change fraud (2026-11-19). Rest it for the next few.
+- **Closing H2 "Starting with the [X] you already have"**: used in vendor bank change fraud (2026-11-19). Vary next time.
 - **Closing H2 "Where we fit"** — used in distributor cash application; the AP chatbot article used "What it looks like when it is built for your AP office". Vary the closing heading each time.
 
 ## Title-shape diversity rule
@@ -54,6 +56,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-11-19 — Vendor Bank Change Fraud and the Case for AI Automation · ops (back-office AP, distribution/manufacturing) · `vendor-bank-change-fraud-ai-automation`
 - 2026-11-18 — Can an AI Chatbot Handle After-Hours Dispatch Calls? · logistics (trucking dispatch) · `ai-chatbot-after-hours-dispatch-calls-trucking`
 - 2026-11-17 — AI Agents vs Manual AR Collections for Distributors · ops (distribution AR collections) · `ai-agents-vs-manual-ar-collections-distributors`
 - 2026-11-16 — AI Automation Shortens the Spot Quote Chase for Shippers · logistics (shipper freight procurement) · `ai-automation-shipper-spot-freight-quotes`
