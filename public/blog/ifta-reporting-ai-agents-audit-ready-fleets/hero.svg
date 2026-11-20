@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" width="1500" height="1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.8" cy="0.75" r="0.5">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#7fb6d6" stop-opacity="0.8"/>
+      <stop offset="0.65" stop-color="#00B5E2" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <text x="140" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="6" fill="#00B5E2">THE JOURNAL</text>
+  <text x="140" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold" fill="#ffffff">IFTA Reporting</text>
+  <text x="140" y="395" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="bold" fill="#ffffff">With AI Agents</text>
+  <text x="140" y="460" font-family="Georgia, 'Times New Roman', serif" font-size="38" fill="#cfe5f1" opacity="0.9">Miles and fuel receipts reconciled all quarter</text>
+
+  <!-- Quarter timeline: four quarters, each with a daily check track -->
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <g>
+      <rect x="140" y="560" width="290" height="250" rx="16" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+      <text x="170" y="610" font-size="32" font-weight="bold" fill="#ffffff">Q1</text>
+      <text x="400" y="610" font-size="20" fill="#7fb6d6" text-anchor="end">due Apr 30</text>
+    </g>
+    <g>
+      <rect x="460" y="560" width="290" height="250" rx="16" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+      <text x="490" y="610" font-size="32" font-weight="bold" fill="#ffffff">Q2</text>
+      <text x="720" y="610" font-size="20" fill="#7fb6d6" text-anchor="end">due Jul 31</text>
+    </g>
+    <g>
+      <rect x="780" y="560" width="290" height="250" rx="16" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+      <text x="810" y="610" font-size="32" font-weight="bold" fill="#ffffff">Q3</text>
+      <text x="1040" y="610" font-size="20" fill="#7fb6d6" text-anchor="end">due Oct 31</text>
+    </g>
+    <g>
+      <rect x="1100" y="560" width="290" height="250" rx="16" fill="#0a3a66" stroke="#00B5E2" stroke-width="3"/>
+      <text x="1130" y="610" font-size="32" font-weight="bold" fill="#ffffff">Q4</text>
+      <text x="1360" y="610" font-size="20" fill="#00B5E2" text-anchor="end">due Jan 31</text>
+    </g>
+  </g>
+
+  <!-- Rows: miles, fuel, roster with small check dots -->
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#cfe5f1">
+    <text x="170" y="665">Miles</text><text x="490" y="665">Miles</text><text x="810" y="665">Miles</text><text x="1130" y="665">Miles</text>
+    <text x="170" y="720">Fuel</text><text x="490" y="720">Fuel</text><text x="810" y="720">Fuel</text><text x="1130" y="720">Fuel</text>
+    <text x="170" y="775">Units</text><text x="490" y="775">Units</text><text x="810" y="775">Units</text><text x="1130" y="775">Units</text>
+  </g>
+  <g fill="#00B5E2">
+    <circle cx="270" cy="658" r="7"/><circle cx="300" cy="658" r="7"/><circle cx="330" cy="658" r="7"/><circle cx="360" cy="658" r="7"/><circle cx="390" cy="658" r="7"/>
+    <circle cx="270" cy="713" r="7"/><circle cx="300" cy="713" r="7"/><circle cx="330" cy="713" r="7"/><circle cx="360" cy="713" r="7"/><circle cx="390" cy="713" r="7"/>
+    <circle cx="270" cy="768" r="7"/><circle cx="300" cy="768" r="7"/><circle cx="330" cy="768" r="7"/><circle cx="360" cy="768" r="7"/><circle cx="390" cy="768" r="7"/>
+    <circle cx="590" cy="658" r="7"/><circle cx="620" cy="658" r="7"/><circle cx="650" cy="658" r="7"/><circle cx="680" cy="658" r="7"/><circle cx="710" cy="658" r="7"/>
+    <circle cx="590" cy="713" r="7"/><circle cx="620" cy="713" r="7"/><circle cx="650" cy="713" r="7" fill="#7fb6d6"/><circle cx="680" cy="713" r="7"/><circle cx="710" cy="713" r="7"/>
+    <circle cx="590" cy="768" r="7"/><circle cx="620" cy="768" r="7"/><circle cx="650" cy="768" r="7"/><circle cx="680" cy="768" r="7"/><circle cx="710" cy="768" r="7"/>
+    <circle cx="910" cy="658" r="7"/><circle cx="940" cy="658" r="7" fill="#7fb6d6"/><circle cx="970" cy="658" r="7"/><circle cx="1000" cy="658" r="7"/><circle cx="1030" cy="658" r="7"/>
+    <circle cx="910" cy="713" r="7"/><circle cx="940" cy="713" r="7"/><circle cx="970" cy="713" r="7"/><circle cx="1000" cy="713" r="7"/><circle cx="1030" cy="713" r="7"/>
+    <circle cx="910" cy="768" r="7"/><circle cx="940" cy="768" r="7"/><circle cx="970" cy="768" r="7"/><circle cx="1000" cy="768" r="7"/><circle cx="1030" cy="768" r="7"/>
+    <circle cx="1230" cy="658" r="7"/><circle cx="1260" cy="658" r="7"/><circle cx="1290" cy="658" r="7"/>
+    <circle cx="1230" cy="713" r="7"/><circle cx="1260" cy="713" r="7"/><circle cx="1290" cy="713" r="7"/>
+    <circle cx="1230" cy="768" r="7"/><circle cx="1260" cy="768" r="7"/><circle cx="1290" cy="768" r="7"/>
+  </g>
+  <g fill="none" stroke="#5e8aa6" stroke-width="2">
+    <circle cx="1320" cy="658" r="7"/><circle cx="1350" cy="658" r="7"/>
+    <circle cx="1320" cy="713" r="7"/><circle cx="1350" cy="713" r="7"/>
+    <circle cx="1320" cy="768" r="7"/><circle cx="1350" cy="768" r="7"/>
+  </g>
+  <text x="140" y="860" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#7fb6d6">Checked daily, filed with evidence attached, audit file kept current</text>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
