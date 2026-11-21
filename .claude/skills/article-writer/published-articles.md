@@ -46,6 +46,8 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Closing H2 "Starting with the [X] you already have"**: used in vendor bank change fraud (2026-11-19). Vary next time.
 - **Title shape "[Task] With AI Agents: [Outcome]"**: used in IFTA reporting (2026-11-20). Rest it for the next few.
 - **Closing H2 "Where should a [X] start before the next [deadline]?"**: used in IFTA reporting (2026-11-20). Vary next time.
+- **Title shape "Why [Actor] Are [Verb]ing [AI Keyword] [X]"**: used in GC field crew questions (2026-11-21), echoes driver recruiting (2026-11-08). Rest it for the next few.
+- **Closing H2 "Which job is the right place to start?"**: used in GC field crew questions (2026-11-21). Vary next time.
 - **Closing H2 "Where we fit"** — used in distributor cash application; the AP chatbot article used "What it looks like when it is built for your AP office". Vary the closing heading each time.
 
 ## Title-shape diversity rule
@@ -58,6 +60,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-11-21 — Why GC Field Crews Are Asking an AI Chatbot First · construction (GC field operations) · `ai-chatbot-gc-field-crew-questions`
 - 2026-11-20 — IFTA Reporting With AI Agents: Audit-Ready Every Quarter · logistics (trucking/fleet fuel tax compliance) · `ifta-reporting-ai-agents-audit-ready-fleets`
 - 2026-11-19 — Vendor Bank Change Fraud and the Case for AI Automation · ops (back-office AP, distribution/manufacturing) · `vendor-bank-change-fraud-ai-automation`
 - 2026-11-18 — Can an AI Chatbot Handle After-Hours Dispatch Calls? · logistics (trucking dispatch) · `ai-chatbot-after-hours-dispatch-calls-trucking`

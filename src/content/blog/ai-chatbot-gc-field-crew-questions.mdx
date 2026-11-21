@@ -1,0 +1,93 @@
+export const frontmatter = {
+  title: "Why GC Field Crews Are Asking an AI Chatbot First",
+  excerpt:
+    "Foremen call the PM for answers that already sit in approved submittals and the schedule. Here is what changes when a jobsite chatbot answers first.",
+  date: "2026-11-21",
+  author: "ApexifyLabs Team",
+  tags: ["Construction", "Chatbots", "Field Operations", "Project Management"],
+  heroImage: "/blog/ai-chatbot-gc-field-crew-questions/hero.svg",
+  seoDescription:
+    "An AI chatbot for construction answers field crew questions from approved drawings, submittals and schedules, so GC project managers stop fielding repeat calls.",
+  readingTime: "4 min read",
+};
+
+An AI chatbot for construction field crews answers the routine questions foremen and superintendents ask every day, such as which finish was approved, when the inspection is booked or where deliveries stage, straight from the general contractor's current drawings, submittals and schedule. The project manager stops being the search engine, and crews stop waiting on a callback to keep working.
+
+## Why do field questions end up on the project manager's phone?
+
+Because the PM is the one person who reliably knows where the current answer lives.
+
+On a typical mid-size commercial job, the information a foreman needs is spread across the drawing set, the submittal log, a spec book that runs to hundreds of pages, an email thread where the architect approved a substitution, a three-week lookahead in a spreadsheet and a site logistics plan someone printed in month one. Each source is fine on its own. Together, they are a maze, and the fastest way through it is to text the PM or the project engineer.
+
+That habit has a measurable cost. In the PlanGrid and FMI [Construction Disconnected](https://www.autodesk.com/blogs/construction/survey-plangrid-fmi/) study, US construction professionals reported spending about five and a half hours a week hunting down project data, part of more than 14 hours a week lost to non-optimal work. The same research in [Australia and New Zealand](https://www.autodesk.com/blogs/construction/construction-firms-australia/) put the search for project information at 4.9 hours a week per worker. Those figures are from 2018 surveys, but anyone who has run a job since will recognize the pattern.
+
+The cost shows up twice. The crew waits, or guesses. And the PM, who should be working RFIs, owner coordination and buyout, spends the day answering the same dozen questions from different trades.
+
+## What does an AI chatbot for construction field crews actually answer?
+
+Mostly questions that already have a documented answer. That is the point: the chatbot is not deciding anything new. It is retrieving what the project team already approved and saying where it came from.
+
+On a GC job, the recurring questions tend to fall into six groups:
+
+1. **Approved products and finishes.** "Which tile did the owner sign off on for the second-floor restrooms?" The answer lives in an approved submittal, and the chatbot can quote it and link the record.
+2. **Spec requirements.** "What's the required cure time before we can cover the slab?" It points to the spec section rather than paraphrasing from memory.
+3. **Schedule and inspections.** "When is the above-ceiling inspection on level three?" It reads the current lookahead, not the version from two weeks ago.
+4. **Site logistics.** "Where do drywall deliveries stage this week, and which gate is open?" These answers change often and are rarely written down in one place.
+5. **Status of open items.** "Has the RFI on the stair landing come back yet?" The bot can say whether an answer exists and when it was issued.
+6. **Who owns what.** "Who's the electrician's foreman on this job, and what's their number?" Simple, constant and surprisingly time-consuming for the office.
+
+Crews ask by text or voice from the phone they already carry. Answers come back in plain language with the source attached, so a foreman can show the superintendent exactly where the information came from.
+
+## How is a jobsite chatbot different from an RFI?
+
+An RFI asks the design team to decide or clarify something. A jobsite chatbot only answers questions that have already been decided.
+
+That line matters. If a framer asks whether a wall can shift four inches to clear a duct, no chatbot should answer that. It should recognize a design question, tell the crew it needs to go through the RFI process and route it to the project engineer with the context attached. Our earlier piece on [what slow RFIs cost a mid-size GC](/blog/slow-rfi-cost-mid-size-gc) covers why that formal channel deserves protecting. The chatbot's job is to keep it clear of questions that never needed to be RFIs in the first place.
+
+## How do field questions compare with and without a chatbot?
+
+The table below follows the same handful of questions through a normal week on a commercial job.
+
+| Question from the field | Phone and text to the PM | AI chatbot answers first |
+|---|---|---|
+| Which finish was approved? | PM searches email and submittal log, replies when free | Answer in seconds, approved submittal linked |
+| When is the inspection booked? | Superintendent checks the lookahead, may quote an old version | Reads the current lookahead and states the date |
+| Where do deliveries stage today? | Depends on who picks up the phone | Answers from the current site logistics plan |
+| Is the RFI answer back? | PE checks the log between other tasks | Reports status and issue date, links the response |
+| Can we move this wall? | Often answered informally on the spot | Flagged as a design question and routed to the RFI process |
+| Record of what was asked | None, scattered across texts | Every question logged by trade, area and topic |
+
+The last row is the one owners and operations leaders tend to underrate. A log of what crews keep asking is a map of where the documents are unclear, which trades are struggling and which areas of the building generate confusion. That is useful information before it becomes rework.
+
+## What goes wrong when crews get answers from the wrong source?
+
+Rework, mostly. The 2018 PlanGrid and FMI research attributed 48 percent of all rework to miscommunication and poor project data. A later [Autodesk and FMI study](https://www.autodesk.com/blogs/construction/autodesk-fmi-study-global-construction-industry-data-strategies/) estimated that decisions made on bad data drove 14 percent of all rework globally in 2020, about $88.7 billion.
+
+The failure is rarely dramatic. A crew installs from a superseded sheet, a scenario we looked at in [GC crews building from an outdated drawing set](/blog/gc-crews-build-from-outdated-drawing-sets). A foreman remembers a finish from the sample board instead of the approved resubmittal. Someone hears "Thursday" for the inspection when it moved to Monday. Each mistake is small. The hours to tear out and redo the work are not.
+
+A chatbot that answers only from the current approved documents, and says so when it cannot find an answer, removes the most common source of those mistakes: a well-meaning person answering from memory.
+
+## Doesn't our project management platform already do this?
+
+Partly, and the direction is clear. In October 2026, Procore [launched Procore AI Go](https://www.procore.com/press/procore-launches-voice-first-ai-mobile-app-built-for-the-jobsite), a voice-first app that lets crews ask questions about drawings, specs, RFIs, submittals and daily logs stored in Procore. Large software vendors are betting that field teams want to ask questions rather than dig through folders.
+
+The gap on many mid-size GC jobs is that the answers do not all live in one platform. The substitution approval sits in an email. The logistics plan is a PDF on the trailer wall. The sub contact list is a spreadsheet the project coordinator maintains. Some subs never get a platform login at all. A chatbot built around how your company actually stores information, including the sources outside your core system, is what makes the answers complete rather than partial.
+
+## What should stay with a person?
+
+Judgment. A well-built jobsite chatbot is narrow by design:
+
+- It answers from approved, current sources and shows the source every time.
+- It says "I don't have that" instead of guessing, and passes the question to the right person.
+- It never interprets design intent, approves a change or commits the company to cost or schedule.
+- It respects who can see what, so a sub sees their scope and the site rules, not the owner's contract.
+
+Getting those boundaries right for your jobs, your document habits and your trade partners is where most of the design work goes. The chatbot itself is the visible part.
+
+## Which job is the right place to start?
+
+Usually the busiest one: a job in the interiors phase, with ten or more trades on site and a PM who is visibly buried. That is where repeat questions peak and where the log of questions becomes most useful. Teams that already capture field activity well, as in our piece on [moving GC daily reports to AI summaries](/blog/daily-reports-gc-jobs-forms-to-ai-summaries), tend to see the fastest results because the source material is already in good shape.
+
+We build [custom AI chatbots](/services/ai-chatbot-development) that answer from a contractor's own documents and systems, with clear limits on what they will and will not answer. You can see more of our work for builders on our [construction industry page](/industries/construction).
+
+If your PMs spend their days as the job's help desk, we offer a **completely free automation audit** for general contractors. We will look at the questions your field teams ask on one live job, where the answers actually live and how many PM hours they consume. No commitment and no slide deck, just a clear picture. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book your free audit</a>
