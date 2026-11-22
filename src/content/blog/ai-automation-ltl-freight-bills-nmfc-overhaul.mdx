@@ -1,0 +1,91 @@
+export const frontmatter = {
+  title: "AI Automation on LTL Freight Bills After the NMFC Overhaul",
+  excerpt:
+    "Density-based classes changed how LTL freight is rated. Reweighs and reclasses now land on invoices weeks after the truck leaves, and most shippers pay them without a fight.",
+  date: "2026-11-22",
+  author: "ApexifyLabs Team",
+  tags: ["Logistics", "AI Automation", "LTL", "Freight Audit", "Shippers"],
+  heroImage: "/blog/ai-automation-ltl-freight-bills-nmfc-overhaul/hero.svg",
+  seoDescription:
+    "How AI automation reviews LTL freight bills for reweigh and reclass corrections after the NMFC density changes, flags disputes early and protects shipper margin.",
+  readingTime: "4 min read",
+};
+
+AI automation on LTL freight bills compares every carrier invoice against what your team actually shipped: the quoted class, the weight and dimensions on the bill of lading, and the product master. It flags each reweigh, reclass or inspection correction worth disputing, gathers the evidence, and queues the claim. Your shipping team decides which ones to file, instead of paying them by default.
+
+## What changed in LTL freight classification?
+
+On July 19, 2025, the National Motor Freight Traffic Association put [Docket 2025-1 into effect](https://nmfta.org/news/nmfta-implements-historic-nmfc-changes-launches-classit-to-support-industry-in-adapting-to-new-classification-standards/), the largest rewrite of the National Motor Freight Classification in decades. Roughly 2,000 commodity listings moved from product-based classes to a standardized density scale, and the density scale itself grew from 11 tiers to 13.
+
+The practical effect is that a much larger share of LTL freight is now rated on pounds per cubic foot rather than on what the product is. NMFTA has estimated that [70 to 80 percent of LTL freight is now classified by density alone](https://www.odfl.com/us/en/resources/OD-Outlook/Accurate-Freight-Data-in-LTL-Shipping.html). That makes your freight class only as accurate as the dimensions and weight your team records at the dock, including the pallet, the overhang and the stretch wrap.
+
+Carriers measure too. Many now run dimensioners and scales at their terminals, and when their numbers disagree with your bill of lading, the invoice changes.
+
+## Why do reweigh and reclass charges pile up for shippers?
+
+Inspection corrections are not new, but density rating gives them more places to come from. A pallet that ships 4 inches taller than the item master says, or a mixed load built differently by the second shift, can move a shipment up a class. Every class step changes the rate.
+
+The frequency is higher than many shipping managers assume. In an Old Dominion white paper on data accuracy, [some shippers report 25 to 30 percent of their freight being re-rated](https://www.odfl.com/us/en/resources/OD-Outlook/Accurate-Freight-Data-in-LTL-Shipping.html). One manufacturer quoted there found that around a quarter of its shipments had incorrect weight, excessive length or the wrong classification. Another logistics manager described looking into as many as 30 correction cases a month.
+
+Then there is the time each one takes. In the same paper, an ODFL solutions specialist notes that reviewing a single invoice can take 10 or 15 minutes. Multiply that across a few hundred LTL shipments a month and freight audit turns into a part-time job nobody was hired to do.
+
+Corrections are also not always right. A 2018 Justice Department lawsuit against YRC, covered by [FreightWaves](https://www.freightwaves.com/news/ltl-suit-against-yrc-spotlights-reweighing-practices), alleged that reweighs were reported when they raised the bill and suppressed when they showed the freight was lighter. Whatever the outcome of any single case, the point for a shipper is simple: a correction notice is a claim from the carrier, not a final fact.
+
+## What does manual LTL freight bill review look like?
+
+At a $10M to $80M manufacturer, distributor or e-commerce brand shipping pallets, the work usually sits with a logistics coordinator or an AP clerk. The process tends to follow the same shape:
+
+1. Invoices arrive by email, EDI or carrier portal, often in weekly batches, two to four weeks after pickup.
+2. Someone matches each invoice to a shipment, usually by PRO number, and compares the billed total to the quote or contract rate.
+3. When the totals differ, they hunt for the correction notice, the inspection photos and the original bill of lading.
+4. They check the item master or ask the warehouse what was actually on the pallet that day.
+5. If the evidence looks good and there is time, they file a dispute through the carrier's portal and track it in a spreadsheet.
+
+Most shipments never make it past step 2. The difference is small, the batch is large and the AP run is due Friday, so the invoice gets approved as billed.
+
+## Manual freight audit vs AI automation: what changes?
+
+| Step | Manual review | With AI automation |
+|---|---|---|
+| Invoice intake | Batches opened by hand from email and portals | Every invoice read as it arrives, from any format |
+| Matching to shipment | PRO lookup, one at a time | Matched to the BOL, order and quote automatically |
+| Spotting corrections | Only when the total looks off to a tired eye | Every reweigh, reclass and accessorial flagged and explained |
+| Evidence | Searched for after the fact, often missing | Assembled up front: BOL, item master dims, dock photos, inspection notice |
+| Dispute decision | Skipped when time runs short | Ranked by dollar value and odds, sent to a person to approve |
+| Pattern learning | Lives in one coordinator's head | Repeat offenders surfaced by SKU, dock, shift and carrier |
+| Time per invoice | 10 to 15 minutes when it happens at all | Seconds for clean invoices; human time only on the exceptions |
+
+The automation is not the one disputing charges with your carriers on its own judgment. It does the reading, the matching and the paperwork, then puts a short list in front of the person who knows the account. They decide which corrections to accept, which to fight and which point to a real problem at your own dock.
+
+## What do the corrections reveal about your own operation?
+
+This is the part most shipping teams find more valuable than the refunds. Once every correction is captured and tagged, patterns show up that no one could see from a stack of PDFs:
+
+- **SKUs with wrong master data.** A product whose recorded dimensions no longer match its current packaging will get reclassed every time it ships.
+- **Docks or shifts that build pallets differently.** If one location triggers most of the density corrections, the fix is a training conversation, not a dispute.
+- **Carriers whose corrections rarely hold up.** If one carrier's reweighs lose on appeal far more often than others, that belongs in your next rate negotiation.
+- **Quotes that were wrong from the start.** Some "corrections" are really a quoting problem, where the class entered at booking was never right for the freight.
+
+Old Dominion's paper describes a manufacturer whose re-rates on weight and length dropped to about one percent after it started capturing accurate dimensions at the dock. Measuring better is the long-term fix. Catching and contesting the corrections you still receive is how you stop paying for the gap in the meantime.
+
+## Is this only for big shippers with a TMS?
+
+No. Large shippers often pay a freight audit firm a percentage of recoveries, and the largest have audit modules inside their transportation management system. Mid-size shippers usually have neither. They book LTL through a broker, a carrier portal or a 3PL, and the invoices land with AP.
+
+That is where AI automation for freight audit fits best: businesses shipping enough LTL that corrections add up, but not enough to justify a dedicated audit team. The same logic holds for Canadian shippers sending LTL freight to US customers, where invoices often arrive later and pass through more hands before anyone checks them.
+
+It also connects naturally to work you may already be thinking about. Freight disputes share a lot of DNA with [freight claims intake](/blog/ai-chatbot-freight-claims-intake), and the invoice side touches the same AP controls we covered in [vendor bank change fraud](/blog/vendor-bank-change-fraud-ai-automation). If your team also chases spot rates when contract carriers reject loads, our piece on [how AI automation shortens the spot quote chase for shippers](/blog/ai-automation-shipper-spot-freight-quotes) covers the front end of the same freight spend.
+
+## What would a first month of corrections tell you?
+
+Before changing anything, it is worth knowing the size of the problem. Three counts from one recent month usually settle it:
+
+1. **How many LTL invoices differed from the quoted or contract amount**, and by how much in total.
+2. **How many of those differences were reweighs, reclasses or inspection corrections**, as opposed to accessorials like liftgate or residential delivery.
+3. **How many were disputed, and how many of those were won.**
+
+If the first number is small, manual review is probably fine. If the second is large and the third is close to zero, the business is absorbing freight cost it may not owe, and the warehouse is missing feedback it could use.
+
+What those counts will not show you is how to set the review up for your freight: which tolerance is worth a dispute on which carrier, how to tie corrections back to the right SKU and dock, how to fit it into the AP approval you already run, and when a person must sign off. That design work is what separates a system your team relies on from another inbox. It is the kind of thing we build through our [custom AI software](/services/custom-ai-software) work, and our [logistics industry page](/industries/logistics) shows how we approach freight operations more broadly.
+
+If your AP team is approving LTL invoices faster than anyone can check them, we would be glad to look with you. We offer a **completely free automation audit**: we review a sample of your recent freight bills, show you where corrections are landing and which ones looked worth contesting, and map what an automated review could take off your desk. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book your free audit</a>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" width="1500" height="1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.25" cy="0.75" r="0.5">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2" stop-opacity="0"/>
+      <stop offset="0.25" stop-color="#7fb6d6" stop-opacity="0.8"/>
+      <stop offset="0.6" stop-color="#00B5E2" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#00B5E2" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <rect width="1500" height="1000" fill="url(#glow)"/>
+
+  <text x="140" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="6" fill="#00B5E2">THE JOURNAL</text>
+  <text x="140" y="295" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-weight="bold" fill="#ffffff">LTL Freight Bills,</text>
+  <text x="140" y="385" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-weight="bold" fill="#ffffff">Checked by AI Automation</text>
+  <text x="140" y="450" font-family="Georgia, 'Times New Roman', serif" font-size="36" fill="#cfe5f1" opacity="0.9">Reweighs and reclasses after the NMFC density shift</text>
+
+  <!-- Density class staircase -->
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="150" y="545" font-size="22" letter-spacing="3" fill="#7fb6d6">DENSITY TIERS</text>
+    <rect x="150" y="760" width="60" height="100" fill="#0a3a66"/>
+    <rect x="222" y="730" width="60" height="130" fill="#0a3a66"/>
+    <rect x="294" y="700" width="60" height="160" fill="#0a3a66"/>
+    <rect x="366" y="670" width="60" height="190" fill="#00B5E2" fill-opacity="0.35" stroke="#00B5E2" stroke-width="2"/>
+    <rect x="438" y="640" width="60" height="220" fill="#5e8aa6"/>
+    <rect x="510" y="610" width="60" height="250" fill="#0a3a66"/>
+    <rect x="582" y="580" width="60" height="280" fill="#0a3a66"/>
+    <path d="M396 650 C 410 600, 450 595, 468 622" stroke="#cfe5f1" stroke-width="3" fill="none" stroke-dasharray="6 6"/>
+    <path d="M460 612 L470 626 L478 608 Z" fill="#cfe5f1"/>
+    <text x="150" y="875" font-size="20" fill="#5e8aa6">one class step on a 4-inch taller pallet</text>
+  </g>
+
+  <!-- Invoice card with flagged correction -->
+  <rect x="790" y="520" width="570" height="350" rx="14" fill="#002347" stroke="#00B5E2" stroke-width="2"/>
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="825" y="572" font-size="24" letter-spacing="3" fill="#7fb6d6">CARRIER INVOICE</text>
+    <text x="825" y="625" font-size="28" fill="#cfe5f1">Quoted class</text>
+    <text x="1325" y="625" font-size="28" fill="#cfe5f1" text-anchor="end">matches BOL</text>
+    <line x1="825" y1="645" x2="1325" y2="645" stroke="#0a3a66" stroke-width="2"/>
+    <text x="825" y="690" font-size="28" fill="#cfe5f1">Weight</text>
+    <text x="1325" y="690" font-size="28" fill="#cfe5f1" text-anchor="end">matches BOL</text>
+    <line x1="825" y1="710" x2="1325" y2="710" stroke="#0a3a66" stroke-width="2"/>
+    <rect x="815" y="725" width="520" height="62" rx="8" fill="#00B5E2" fill-opacity="0.18" stroke="#00B5E2" stroke-width="2"/>
+    <text x="835" y="766" font-size="28" fill="#ffffff">Reclass correction</text>
+    <text x="1315" y="766" font-size="28" fill="#00B5E2" text-anchor="end">Dispute?</text>
+    <text x="825" y="840" font-size="20" fill="#5e8aa6">evidence attached: BOL, item dims, dock photo</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
