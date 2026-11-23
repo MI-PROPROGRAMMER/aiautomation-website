@@ -50,6 +50,8 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Closing H2 "Which job is the right place to start?"**: used in GC field crew questions (2026-11-21). Vary next time.
 - **Title shape "AI [Keyword] on [X] After the [Event]"**: used in LTL freight bills (2026-11-22). Rest it for the next few.
 - **Closing H2 "What would a first month of [X] tell you?"**: used in LTL freight bills (2026-11-22). Vary next time.
+- **Title shape "[Topic]: What [AI Keyword] Change(s) for [Actor]"**: used in carrier invoices (2026-11-23). Rest it for the next few.
+- **Closing H2 "What a free review of your [X] covers"**: used in carrier invoices (2026-11-23). Vary next time.
 - **Closing H2 "Where we fit"** — used in distributor cash application; the AP chatbot article used "What it looks like when it is built for your AP office". Vary the closing heading each time.
 
 ## Title-shape diversity rule
@@ -62,6 +64,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-11-23 — Carrier Invoices: What AI Agents Change for Freight Brokers · logistics (brokerage carrier payables) · `carrier-invoices-ai-agents-freight-brokers`
 - 2026-11-22 — AI Automation on LTL Freight Bills After the NMFC Overhaul · logistics (shipper LTL freight audit) · `ai-automation-ltl-freight-bills-nmfc-overhaul`
 - 2026-11-21 — Why GC Field Crews Are Asking an AI Chatbot First · construction (GC field operations) · `ai-chatbot-gc-field-crew-questions`
 - 2026-11-20 — IFTA Reporting With AI Agents: Audit-Ready Every Quarter · logistics (trucking/fleet fuel tax compliance) · `ifta-reporting-ai-agents-audit-ready-fleets`

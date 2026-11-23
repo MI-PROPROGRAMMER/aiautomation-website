@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Carrier invoices flowing through an AI agent into approved and exception queues">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B5E2"/>
+      <stop offset="0.5" stop-color="#7fb6d6"/>
+      <stop offset="1" stop-color="#00B5E2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="120" y="200" font-size="24" fill="#00B5E2" letter-spacing="6">THE JOURNAL</text>
+    <text x="120" y="300" font-size="84" font-weight="bold" fill="#ffffff">Carrier Invoices</text>
+    <text x="120" y="390" font-size="84" font-weight="bold" fill="#ffffff">and AI Agents</text>
+    <text x="120" y="455" font-size="38" fill="#cfe5f1" opacity="0.9">Matched, checked and ready to pay the same day</text>
+  </g>
+
+  <!-- invoice stack -->
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <rect x="150" y="560" width="200" height="250" rx="10" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+    <rect x="135" y="575" width="200" height="250" rx="10" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+    <rect x="120" y="590" width="200" height="250" rx="10" fill="#002347" stroke="#7fb6d6" stroke-width="2"/>
+    <text x="145" y="635" font-size="22" fill="#cfe5f1">INVOICE</text>
+    <line x1="145" y1="665" x2="295" y2="665" stroke="#5e8aa6" stroke-width="3"/>
+    <line x1="145" y1="695" x2="270" y2="695" stroke="#5e8aa6" stroke-width="3"/>
+    <line x1="145" y1="725" x2="285" y2="725" stroke="#5e8aa6" stroke-width="3"/>
+    <text x="145" y="780" font-size="20" fill="#7fb6d6">+ POD, lumper,</text>
+    <text x="145" y="808" font-size="20" fill="#7fb6d6">detention log</text>
+
+    <!-- arrow to agent -->
+    <line x1="340" y1="715" x2="560" y2="715" stroke="#00B5E2" stroke-width="4"/>
+    <polygon points="560,703 584,715 560,727" fill="#00B5E2"/>
+
+    <!-- agent node -->
+    <circle cx="690" cy="715" r="100" fill="#00B5E2" fill-opacity="0.15" stroke="#00B5E2" stroke-width="3"/>
+    <text x="690" y="705" font-size="32" fill="#ffffff" text-anchor="middle" font-weight="bold">AI agent</text>
+    <text x="690" y="742" font-size="20" fill="#cfe5f1" text-anchor="middle">rate con · POD · payee</text>
+
+    <!-- branches -->
+    <path d="M790 690 C 870 640, 900 615, 960 615" stroke="#00B5E2" stroke-width="4" fill="none"/>
+    <polygon points="960,603 984,615 960,627" fill="#00B5E2"/>
+    <path d="M790 740 C 870 790, 900 815, 960 815" stroke="#7fb6d6" stroke-width="4" fill="none"/>
+    <polygon points="960,803 984,815 960,827" fill="#7fb6d6"/>
+
+    <rect x="995" y="565" width="385" height="100" rx="10" fill="#00B5E2" fill-opacity="0.18" stroke="#00B5E2" stroke-width="2"/>
+    <text x="1020" y="610" font-size="30" fill="#ffffff">Ready to approve</text>
+    <text x="1020" y="645" font-size="22" fill="#cfe5f1">clean match, same day</text>
+
+    <rect x="995" y="765" width="385" height="100" rx="10" fill="#0a3a66" stroke="#7fb6d6" stroke-width="2"/>
+    <text x="1020" y="810" font-size="30" fill="#ffffff">Exception note</text>
+    <text x="1020" y="845" font-size="22" fill="#cfe5f1">routed to your team</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>
