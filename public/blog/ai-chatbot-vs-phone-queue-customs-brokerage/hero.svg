@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Importer questions routed by an AI chatbot: status lookups answered instantly, compliance questions sent to a licensed customs broker">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0a3a66"/>
+      <stop offset="0.35" stop-color="#00B5E2"/>
+      <stop offset="0.65" stop-color="#7fb6d6"/>
+      <stop offset="1" stop-color="#0a3a66"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="120" y="200" font-size="24" fill="#00B5E2" letter-spacing="6">THE JOURNAL</text>
+    <text x="120" y="300" font-size="84" font-weight="bold" fill="#ffffff">AI Chatbot vs</text>
+    <text x="120" y="390" font-size="84" font-weight="bold" fill="#ffffff">the Phone Queue</text>
+    <text x="120" y="455" font-size="38" fill="#cfe5f1" opacity="0.9">Importer questions at a customs brokerage</text>
+  </g>
+
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <!-- incoming question bubbles -->
+    <rect x="120" y="560" width="250" height="56" rx="28" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+    <text x="245" y="596" font-size="22" fill="#cfe5f1" text-anchor="middle">Entry released?</text>
+    <rect x="120" y="636" width="250" height="56" rx="28" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+    <text x="245" y="672" font-size="22" fill="#cfe5f1" text-anchor="middle">Docs missing?</text>
+    <rect x="120" y="712" width="250" height="56" rx="28" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+    <text x="245" y="748" font-size="22" fill="#cfe5f1" text-anchor="middle">Refund status?</text>
+    <rect x="120" y="788" width="250" height="56" rx="28" fill="#0a3a66" stroke="#5e8aa6" stroke-width="2"/>
+    <text x="245" y="824" font-size="22" fill="#cfe5f1" text-anchor="middle">Which HTS code?</text>
+
+    <!-- funnel lines -->
+    <line x1="380" y1="588" x2="560" y2="700" stroke="#5e8aa6" stroke-width="3"/>
+    <line x1="380" y1="664" x2="560" y2="700" stroke="#5e8aa6" stroke-width="3"/>
+    <line x1="380" y1="740" x2="560" y2="700" stroke="#5e8aa6" stroke-width="3"/>
+    <line x1="380" y1="816" x2="560" y2="700" stroke="#5e8aa6" stroke-width="3"/>
+
+    <!-- chatbot node -->
+    <circle cx="660" cy="700" r="100" fill="#00B5E2" fill-opacity="0.15" stroke="#00B5E2" stroke-width="3"/>
+    <text x="660" y="692" font-size="30" fill="#ffffff" text-anchor="middle" font-weight="bold">AI chatbot</text>
+    <text x="660" y="728" font-size="20" fill="#7fb6d6" text-anchor="middle">entry record</text>
+
+    <!-- upper branch: answered -->
+    <path d="M760 670 L900 600 L1000 600" fill="none" stroke="#00B5E2" stroke-width="4"/>
+    <polygon points="1000,588 1024,600 1000,612" fill="#00B5E2"/>
+    <rect x="1035" y="555" width="340" height="90" rx="12" fill="#002347" stroke="#00B5E2" stroke-width="2"/>
+    <text x="1205" y="593" font-size="26" fill="#ffffff" text-anchor="middle" font-weight="bold">Answered now</text>
+    <text x="1205" y="625" font-size="20" fill="#cfe5f1" text-anchor="middle">status, documents, amounts</text>
+
+    <!-- lower branch: broker -->
+    <path d="M760 730 L900 800 L1000 800" fill="none" stroke="#7fb6d6" stroke-width="4" stroke-dasharray="12 8"/>
+    <polygon points="1000,788 1024,800 1000,812" fill="#7fb6d6"/>
+    <rect x="1035" y="755" width="340" height="90" rx="12" fill="#002347" stroke="#7fb6d6" stroke-width="2"/>
+    <text x="1205" y="793" font-size="26" fill="#ffffff" text-anchor="middle" font-weight="bold">Licensed broker</text>
+    <text x="1205" y="825" font-size="20" fill="#cfe5f1" text-anchor="middle">classification, compliance</text>
+  </g>
+
+  <rect x="0" y="994" width="1500" height="6" fill="url(#accentLine)"/>
+</svg>

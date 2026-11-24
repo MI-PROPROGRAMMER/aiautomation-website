@@ -1,0 +1,87 @@
+export const frontmatter = {
+  title: "AI Chatbot vs Phone Queue at a Customs Brokerage",
+  excerpt:
+    "Tariff swings, the end of de minimis and IEEPA refunds have importers calling their broker more than ever. Most of those calls ask for a status, not judgment.",
+  date: "2026-11-24",
+  author: "ApexifyLabs Team",
+  tags: ["Logistics", "Chatbots", "Customs Brokerage", "Cross-Border", "Importers", "Customer Service"],
+  heroImage: "/blog/ai-chatbot-vs-phone-queue-customs-brokerage/hero.svg",
+  seoDescription:
+    "How an AI chatbot for customs brokers answers importer status, document and duty questions from the entry record, so licensed staff spend their day on compliance.",
+  readingTime: "4 min read",
+};
+
+An AI chatbot for customs brokers answers the routine questions importers ask every day (has my entry been released, which document is missing, what duty was assessed, where does my refund stand) directly from the broker's entry records. Licensed staff stop working a phone queue and keep their time for classification, compliance and the questions that need real judgment.
+
+## Why are customs brokers fielding so many more importer questions?
+
+Customs brokerage has always been detailed work. What changed over the last two years is how often the rules move, and how many importers now need help keeping up.
+
+The numbers from the front line are hard to ignore. Greg Timm, CEO of Pacific Customs Brokers, told [The Globe and Mail](https://www.theglobeandmail.com/business/economy/article-meet-the-frazzled-customs-brokers-on-the-front-lines-of-a-trade-war/) that his firm used to receive about 40 new client requests a day and now regularly gets up to 250, while some US entries that once took half an hour can take four to five hours. Reuters, via [BNN Bloomberg](https://www.bnnbloomberg.ca/business/international/2025/06/11/us-importers-turn-to-brokers-to-navigate-trump-era-tariffs-at-a-cost/), reported that DHL grew its US customs entry team by 30% and that brokers were fielding dozens of tariff questions daily.
+
+Then the rules kept moving:
+
+- **De minimis is gone for most shipments.** CBP's [interim final rule of June 24, 2026](https://www.federalregister.gov/documents/2026/06/24/2026-12670/indefinite-suspension-of-the-de-minimis-exemption-for-merchandise-arriving-through-all-modes-other) indefinitely suspended the $800 exemption for goods arriving by every mode except the postal network. CBP processed over 1.36 billion de minimis shipments in fiscal 2024. Many of the businesses behind those shipments now file formal or informal entries, often for the first time, and they have questions.
+- **IEEPA tariffs were struck down, and refunds are messy.** The Supreme Court ruled 6 to 3 on February 20, 2026 that IEEPA did not authorize the tariffs. [NPR reported](https://npr.org/2026/02/21/g-s1-110987/supreme-court-tariffs-refunds) that CBP had collected $133 billion under them by mid-December, with one estimate putting refunds 12 to 18 months out. Every importer who paid wants to know where their money is.
+- **Complexity is rising faster than volume.** A Seko executive told [The Loadstar](https://theloadstar.com/tariff-turmoil-sees-cpb-recruit-retirees-to-deal-with-the-havoc/) that "the volume of requests has increased significantly, but even more so has the complexity."
+
+For a brokerage serving a few hundred importers, that adds up to a client service load that grows every time a notice lands in the Federal Register.
+
+## Which importer questions can an AI chatbot answer, and which need a licensed broker?
+
+The useful split is between questions answered by looking something up and questions answered by applying the law. Most of the daily volume falls in the first group.
+
+**A chatbot handles well:**
+
+1. **Release and hold status.** "Has entry 123 cleared?" "Why is my container on hold?" The answer lives in your entry system and CBP or CBSA messages.
+2. **Missing documents.** "What do you still need from us?" The bot names the exact document, such as the commercial invoice, packing list or a supplier declaration, and takes the upload in the same conversation.
+3. **Duty and fee amounts already assessed.** What was paid on a given entry, broken out the way the entry summary shows it.
+4. **Refund and protest status.** Which entries are in scope, what has been filed, and what stage each claim is at, based on your own tracking.
+5. **Account and onboarding steps.** Power of attorney, bond status, importer of record numbers, and for Canadian clients, where they stand on their CARM account.
+
+**A licensed broker should always own:**
+
+- Tariff classification and country-of-origin calls.
+- Whether a new rule applies to a client's product.
+- Valuation questions, penalties and anything that sounds like legal advice.
+
+The chatbot should recognize those questions and hand them to the right person with the context already gathered. US brokers also operate under the responsible supervision and control requirement in 19 CFR Part 111, so the design has to keep licensed judgment exactly where it belongs. Where the line sits for each client, product line and question type is the real design work, and it differs from one brokerage to the next.
+
+## How does a phone queue compare with an AI chatbot on the same question?
+
+Take a common case: an importer's container is held at the port, and their operations manager wants to know why and what to do.
+
+| Moment | Phone and email queue | AI chatbot on the entry record |
+|---|---|---|
+| Importer asks | Calls or emails; waits for a callback | Asks on the portal, email or SMS; answer starts immediately |
+| Finding the shipment | Staff search by container, PO or entry number | Bot matches the reference to the entry automatically |
+| Explaining the hold | Staff read CBP messages and translate them | Bot gives the plain-language status and the reason on record |
+| Missing paperwork | Request sent; document arrives in a separate thread | Bot names the document and accepts the upload on the spot |
+| Judgment needed | Same person, between other calls | Routed to a licensed broker with the full history attached |
+| After hours | Waits until morning | Status answered any time; urgent items flagged for the morning |
+
+What changes is where your licensed staff spend their hours. Lookups move to the chatbot. Exceptions, classification and client advice stay with people, and those people stop being interrupted every ten minutes.
+
+## Why does this matter for cross-border freight in Canada, the UK and Australia?
+
+The pressure is not only a US story. Canadian brokers absorbed a surge of client questions as tariffs shifted on both sides of the border, while also helping importers adapt to CBSA's CARM portal. UK customs agents have handled heavy declaration volumes since Brexit, and Australian brokers face their own share of importers new to formal clearance. In each market the pattern looks the same: a large share of the client contact asks for something your system already knows.
+
+For brokerages that also run freight forwarding, the same chatbot can answer shipment milestones alongside customs status, so the importer has one place to ask. We wrote about the paperwork side of this in [cross-border paperwork dwell](/blog/cross-border-paperwork-dwell-freight-brokers) and the filing side in [AI automation vs manual customs entry prep](/blog/ai-automation-vs-manual-customs-entry-prep).
+
+## What should a brokerage measure before adding an AI chatbot?
+
+A few weeks of honest counts tell you whether the opportunity is real:
+
+1. **Inbound client contacts per entry.** Calls, emails and portal messages, divided by entries filed. If the ratio has climbed since early 2025, the queue is growing faster than the business.
+2. **Share of contacts that are pure lookups.** Tag a sample of a few hundred as "status, document, amount, refund" or "needs a broker." This is the number that sizes the opportunity.
+3. **Hours licensed staff spend on lookups.** This is the figure that matters most, because licensed time is the scarcest resource you have and the hardest to hire.
+
+If those numbers point the same way, the case for a chatbot is less about cutting headcount and more about giving your brokers room to handle the growth without burning out. It is a similar story to the [3PL client email backlog](/blog/ai-agents-3pl-client-email-backlog): the volume is repetitive, the answers already exist, and the people who know the work are spending too much of it searching for them.
+
+## What does a well-built customs chatbot need behind it?
+
+The difference between a helpful bot and a frustrating one is what it is connected to and the rules it follows. It needs live access to your entry and release data, a clear map of which questions it may answer for which clients, guardrails that stop it from drifting into classification or legal advice, and a clean handoff to the right broker when it reaches its limit. It also needs to say "I don't know, here is who will" gracefully, because importers trust a broker who is careful.
+
+That is the kind of system we design and build through our [AI chatbot development](/services/ai-chatbot-development) service, and our [logistics industry page](/industries/logistics) shows how we work with freight and trade teams more broadly.
+
+If your phones and inboxes have been busier every quarter since the tariff changes began, a second set of eyes may help. We offer a **completely free automation audit**: we look at a sample of your recent client contacts, sort lookups from real broker work, and show you what a chatbot could take off your team's day. No commitment, no pitch deck. → <a href="https://calendly.com/mi-tech0786" target="_blank" rel="noopener noreferrer">Book a free audit</a>
