@@ -58,6 +58,8 @@ If your draft uses any of the items below, rewrite. Add a new item here whenever
 - **Closing H2 "What we would look at first in your [X]"**: used in three-way match backlog (2026-11-25). Vary next time.
 - **Title shape "AI [Keyword] That [Verb] [X]"** (keyword-first relative clause): used in missed LTL pickups (2026-11-26). Rest it for the next few.
 - **Closing H2 "What it takes to make [X] run themselves"**: used in missed LTL pickups (2026-11-26). Vary next time.
+- **Title shape "Put an AI [Keyword] on [X]"** (imperative): used in warranty/RMA intake (2026-11-27). Rest it for the next few.
+- **Closing H2 "Getting an outside read on your [X]"**: used in warranty/RMA intake (2026-11-27). Vary next time.
 - **Closing H2 "Where we fit"** — used in distributor cash application; the AP chatbot article used "What it looks like when it is built for your AP office". Vary the closing heading each time.
 
 ## Title-shape diversity rule
@@ -70,6 +72,7 @@ Each new article picks its own anchor stat. Don't reuse a previously-featured he
 
 ## Articles (newest first)
 
+- 2026-11-27 — Put an AI Chatbot on Warranty and RMA Intake · ops (manufacturing/distribution warranty and returns) · `ai-chatbot-warranty-rma-intake-manufacturers`
 - 2026-11-26 — AI Agents That Recover Missed LTL Pickups · logistics (LTL shipping pickup exceptions) · `ai-agents-recover-missed-ltl-pickups`
 - 2026-11-25 — AI Automation Was Built for the Three-Way Match Backlog · ops (back-office AP, distribution/manufacturing) · `ai-automation-three-way-match-backlog`
 - 2026-11-24 — AI Chatbot vs Phone Queue at a Customs Brokerage · logistics (customs brokerage client service) · `ai-chatbot-vs-phone-queue-customs-brokerage`

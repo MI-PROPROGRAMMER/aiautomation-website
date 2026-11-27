@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" role="img" aria-label="Put an AI Chatbot on Warranty and RMA Intake">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#001a36"/>
+      <stop offset="1" stop-color="#002347"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0a3a66"/>
+      <stop offset="0.5" stop-color="#00B5E2"/>
+      <stop offset="1" stop-color="#0a3a66"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="1000" fill="url(#bg)"/>
+  <text x="140" y="215" fill="#00B5E2" font-family="Georgia, 'Times New Roman', serif" font-size="26" letter-spacing="6">THE JOURNAL</text>
+  <text x="140" y="315" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-weight="bold">Put an AI Chatbot on</text>
+  <text x="140" y="410" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="80" font-weight="bold">Warranty and RMA Intake</text>
+  <text x="140" y="475" fill="#cfe5f1" opacity="0.9" font-family="Georgia, 'Times New Roman', serif" font-size="36">Complete claims on first contact</text>
+  <!-- intake checklist card -->
+  <g transform="translate(140,540)">
+    <rect width="560" height="300" rx="18" fill="#0a3a66" opacity="0.55" stroke="#5e8aa6" stroke-width="2"/>
+    <g font-family="Georgia, 'Times New Roman', serif" font-size="28" fill="#cfe5f1">
+      <g transform="translate(40,60)"><rect width="30" height="30" rx="6" fill="#00B5E2"/><path d="M7 15 l6 7 l11 -14" stroke="#001a36" stroke-width="4" fill="none"/><text x="50" y="25">Serial / lot number</text></g>
+      <g transform="translate(40,120)"><rect width="30" height="30" rx="6" fill="#00B5E2"/><path d="M7 15 l6 7 l11 -14" stroke="#001a36" stroke-width="4" fill="none"/><text x="50" y="25">Original order matched</text></g>
+      <g transform="translate(40,180)"><rect width="30" height="30" rx="6" fill="#00B5E2"/><path d="M7 15 l6 7 l11 -14" stroke="#001a36" stroke-width="4" fill="none"/><text x="50" y="25">Coverage window checked</text></g>
+      <g transform="translate(40,240)"><rect width="30" height="30" rx="6" fill="#00B5E2"/><path d="M7 15 l6 7 l11 -14" stroke="#001a36" stroke-width="4" fill="none"/><text x="50" y="25">Photos collected</text></g>
+    </g>
+  </g>
+  <!-- arrow -->
+  <g stroke="#7fb6d6" stroke-width="6" fill="none" stroke-linecap="round">
+    <line x1="740" y1="690" x2="900" y2="690"/>
+    <path d="M880 668 L905 690 L880 712"/>
+  </g>
+  <!-- RMA badge -->
+  <g transform="translate(940,560)">
+    <rect width="420" height="260" rx="22" fill="none" stroke="#00B5E2" stroke-width="4"/>
+    <text x="210" y="95" text-anchor="middle" fill="#7fb6d6" font-family="Georgia, 'Times New Roman', serif" font-size="28" letter-spacing="4">RMA ISSUED</text>
+    <text x="210" y="165" text-anchor="middle" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="bold">#RMA-2611</text>
+    <text x="210" y="215" text-anchor="middle" fill="#cfe5f1" opacity="0.9" font-family="Georgia, 'Times New Roman', serif" font-size="26">Full file sent to review</text>
+  </g>
+  <rect x="0" y="994" width="1500" height="6" fill="url(#bar)"/>
+</svg>
